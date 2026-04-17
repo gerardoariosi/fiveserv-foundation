@@ -58,8 +58,11 @@ const router = createBrowserRouter([
       // City overview pages (18)
       { path: "cities/:city", element: <CityPage /> },
 
-      // Service pages (4)
-      ...SERVICES.map((s) => ({ path: s.slug, element: <ServicePage /> })),
+      // Service pages (4) — dedicated pages for make-ready & maintenance, generic template for the rest
+      { path: "make-ready", element: <MakeReadyPage /> },
+      { path: "maintenance", element: <MaintenancePage /> },
+      { path: "renovations", element: <ServicePage /> },
+      { path: "residential", element: <ServicePage /> },
 
       // Service x City — 72 dynamic pages
       ...SERVICES.map((s) => ({ path: `${s.slug}/:city`, element: <ServiceCityPage /> })),
