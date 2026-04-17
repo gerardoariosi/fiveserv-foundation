@@ -107,3 +107,39 @@ export const RENOVATIONS_FAQS: { q: string; a: string }[] = [
     a: `${SITE.brand} assigns one project manager to every renovation. They are your single point of contact from quote to final walk-through. Daily progress photos. Weekly written updates. No chasing five subs.`,
   },
 ];
+
+/** Residential page FAQs — 8 questions */
+export const RESIDENTIAL_FAQS: { q: string; a: string }[] = [
+  {
+    q: "What home repairs does FiveServ handle?",
+    a: `${SITE.brand} handles plumbing, electrical, interior painting, drywall, flooring, carpentry, and general home repairs across Central Florida. The same in-house crews that turn 500-unit communities — at your home.`,
+  },
+  {
+    q: "Are you licensed and insured in Florida?",
+    a: `Yes. ${SITE.brand} is fully licensed and insured in Florida. Plumbing, electrical, and HVAC are performed by licensed contractors under our coordination. [LICENSES_AND_INSURANCE].`,
+  },
+  {
+    q: "How fast can you come out for a home repair?",
+    a: "Routine home repairs are scheduled within 24 to 48 hours. Emergency calls — water leaks, no power, no AC, lockouts — get a 2-hour response across the Orlando metro core.",
+  },
+  {
+    q: "Do you offer 24/7 emergency repair for homeowners?",
+    a: `Yes. ${SITE.brand} answers the phone 24/7 for emergencies — water, power, AC, lockouts. Call ${SITE.phone} any time. No answering service.`,
+  },
+  {
+    q: "How do I get a quote for home repair work?",
+    a: `Call ${SITE.phone} or fill out the form. Free on-site assessment within 24 to 48 hours. Clear, line-item quote before any work begins. No surprises on the invoice.`,
+  },
+  {
+    q: "What areas do you serve for residential work?",
+    a: "All 18 Central Florida cities — Orlando, Kissimmee, Sanford, Winter Park, Lakeland, and 13 more. Same-day response in our Orlando metro core, within 24 hours across the rest of the region.",
+  },
+  {
+    q: "Is there a minimum job size?",
+    a: `No minimum. ${SITE.brand} handles single repairs through full home renovations. From a leaky faucet to a kitchen remodel — same crew, same standards, one invoice.`,
+  },
+  {
+    q: "Do you also handle renovations for homeowners?",
+    a: "Yes. Beyond repairs, we handle interior painting, flooring replacement, bathroom and kitchen upgrades, drywall, and full-room remodels for homeowners. One project manager. One invoice on completion.",
+  },
+];
