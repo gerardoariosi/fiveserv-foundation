@@ -12,6 +12,8 @@ import ServicePage from "./pages/ServicePage";
 import CityPage from "./pages/CityPage";
 import ServiceCityPage from "./pages/ServiceCityPage";
 import PlaceholderPage from "./pages/PlaceholderPage";
+import MakeReadyPage from "./pages/MakeReadyPage";
+import MaintenancePage from "./pages/MaintenancePage";
 
 import { SERVICES, CITIES } from "@/lib/site-config";
 
