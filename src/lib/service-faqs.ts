@@ -71,3 +71,39 @@ export const MAINTENANCE_FAQS: { q: string; a: string }[] = [
     a: "All 18 Central Florida cities we serve, with same-day response in our Orlando metro core and within-24-hours coverage for outer cities.",
   },
 ];
+
+/** Renovations / CapEx page FAQs — 8 questions */
+export const RENOVATIONS_FAQS: { q: string; a: string }[] = [
+  {
+    q: "What is CapEx and what does FiveServ handle?",
+    a: `CapEx — capital expenditures — are the larger projects that increase property value and rental income. ${SITE.brand} manages flooring replacement, kitchen and bathroom upgrades, full unit rehabs, common-area improvements, and exterior projects. One contract. One project manager. One invoice.`,
+  },
+  {
+    q: "How do you quote a renovation project?",
+    a: "Free on-site assessment within 24 hours. We deliver a clear, line-item quote within 3 business days — broken out by trade, materials, and labor. You see exactly what you're paying for. No change-order surprises.",
+  },
+  {
+    q: "What is the typical timeline for a renovation?",
+    a: "Single unit rehab: 2 to 3 weeks. Common-area improvements: 1 to 4 weeks depending on scope. Full portfolio rollouts: scheduled in phases to minimize resident impact and vacancy loss.",
+  },
+  {
+    q: "Do you handle permits and inspections?",
+    a: `Yes. ${SITE.brand} pulls all required Florida permits and coordinates municipal inspections. Plumbing, electrical, and HVAC work is performed by licensed contractors under our supervision. You don't chase the city — we do.`,
+  },
+  {
+    q: "What kind of ROI can I expect on value-add renovations?",
+    a: "Value-add renovations in Central Florida multifamily average a 15 to 20 percent rent increase per unit, with payback periods of 18 to 36 months depending on scope. We provide an estimated ROI in every project quote.",
+  },
+  {
+    q: "Do you work with direct property owners or only PM companies?",
+    a: `Both. ${SITE.brand} partners with property management companies on portfolio rollouts and works directly with owners on single assets, small portfolios, and individual unit rehabs.`,
+  },
+  {
+    q: "What types of renovation projects do you take on?",
+    a: "Flooring replacement, kitchen upgrades, bathroom renovations, full unit rehabs, common-area improvements (clubhouses, hallways, fitness centers), and exterior improvements (paint, landscaping coordination, signage).",
+  },
+  {
+    q: "Who manages the project day to day?",
+    a: `${SITE.brand} assigns one project manager to every renovation. They are your single point of contact from quote to final walk-through. Daily progress photos. Weekly written updates. No chasing five subs.`,
+  },
+];
