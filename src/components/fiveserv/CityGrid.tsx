@@ -17,7 +17,7 @@ export const CityGrid = () => {
           {CITIES.map((city) => (
             <Link
               key={city.slug}
-              to={`/cities/${city.slug}`}
+              to={`/maintenance-${city.slug}`}
               className="hover-card group flex items-center gap-2 rounded-md border border-brand-gray bg-brand-gray/40 px-4 py-3"
             >
               <MapPin className="h-4 w-4 text-brand-gold" />
@@ -25,10 +25,10 @@ export const CityGrid = () => {
             </Link>
           ))}
           {COMING_SOON_CITIES.map((c) => (
-            <div key={c.slug} className="flex items-center justify-between gap-2 rounded-md border border-dashed border-brand-gold/50 bg-brand-gray/20 px-4 py-3">
+            <Link key={c.slug} to={`/${c.slug}`} className="hover-card flex items-center justify-between gap-2 rounded-md border border-dashed border-brand-gold/50 bg-brand-gray/20 px-4 py-3">
               <span className="font-bold text-brand-white/70">{c.name}, {c.state}</span>
               <span className="rounded-sm bg-brand-gold px-1.5 py-0.5 text-[10px] font-bold uppercase text-brand-black">Soon</span>
-            </div>
+            </Link>
           ))}
         </div>
 
