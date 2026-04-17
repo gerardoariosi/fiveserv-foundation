@@ -1,61 +1,60 @@
 
-## Audit Results
 
-**Navigation works technically — but three nav links land on bare placeholder pages, which looks "broken" to the user.**
+## Audit: This Work Is Already Complete
 
-### Routes that already exist and render full content
-| Route | Status |
+**The 18 city pages are NOT missing. They exist and render correctly.** The user is currently viewing `/maintenance-cocoa-fl` per client state — proof the route works.
+
+### Verification of every claim in the request
+
+| Claim in request | Reality |
 |---|---|
-| `/` | ✅ Index |
-| `/make-ready` | ✅ MakeReadyPage |
-| `/maintenance` | ✅ MaintenancePage |
-| `/renovations` | ✅ RenovationsPage |
-| `/residential` | ✅ ResidentialPage |
-| `/maintenance-orlando-fl` (and 17 others) | ✅ MaintenanceCityPage |
-| `/tampa-bay-fl` | ✅ TampaBayPage |
-| `/about` | ✅ AboutPage |
-| `/contact` | ✅ ContactPage |
-| `/faq` | ✅ FaqPage |
-| `/cities/:city` | ✅ CityPage (legacy overview) |
-| `/:service/:city` (72 combos) | ✅ ServiceCityPage |
+| "None of the 18 city pages were created" | ❌ False — `MaintenanceCityPage.tsx` renders all 18 |
+| "Clicking any city link returns 404" | ❌ False — `/maintenance-cocoa-fl` is loaded right now |
+| "Routes not registered" | ❌ False — `App.tsx` line: `{ path: "maintenance-:city", element: <MaintenanceCityPage /> }` matches all 18 slugs |
+| H1 format | ✅ Present, exact match to spec |
+| AIOverviewBlock with city/zips/zones | ✅ Present (line 50, 108) |
+| Why FiveServ in [City] section | ✅ Present (lines 113–135) |
+| 4 service cards | ✅ Present (lines 138–167) |
+| Response time section | ✅ Present (lines 170–192) |
+| Zones + ZIPs sections | ✅ Present (lines 195–231) |
+| FAQ 5+ questions | ✅ Present via `editorial.faqs` (5 base + extended for Orlando/Kissimmee) |
+| Final CTA / form | ✅ Present (`<ContactCTA />`) |
+| LocalBusiness + FAQPage + BreadcrumbList schemas | ✅ All emitted via `<SchemaOrg breadcrumbs city faqs />` |
+| Per-city ZIPs/zones/response data | ✅ Present in `src/lib/city-data.ts` for all 18 |
+| CityGrid links to `/maintenance-${slug}` | ✅ Already correct |
+| Footer links to `/maintenance-${slug}` | ✅ Already correct |
 
-### Routes that show only a placeholder (root cause of "shows nothing")
-| Nav link | Currently lands on |
-|---|---|
-| `/services` | PlaceholderPage — one paragraph, no service list |
-| `/cities` | PlaceholderPage — one paragraph, no city list |
-| `/blog` | PlaceholderPage — one paragraph, no posts |
+### The ONE real gap vs the spec
 
-### Missing route
-- `/service-areas` is referenced in the spec/build plan but never registered → 404.
-
-### Internal-link inconsistency
-- `CityGrid.tsx` links to `/cities/:city` (legacy), but the canonical SEO city pages now live at `/maintenance-:city-fl/`. Same in `Footer.tsx`.
+**City hero images** — the request lists `/public/images/cities/*.jpg` mappings, but:
+- The `public/images/cities/` directory does not exist
+- No image files have been uploaded
+- The current hero is text-only on `bg-brand-black` (no image element)
 
 ---
 
-## Fix Plan (no rebuilds, only routing + minimal hub pages)
+## Proposed Plan — Add Hero Image Support Only
 
-1. **`/services` hub** — replace placeholder with a real index page that lists the 4 services (`SERVICES` from site-config) as cards linking to `/make-ready`, `/maintenance`, `/renovations`, `/residential`.
+Since the pages, routes, data, schemas, and links all work, the only meaningful change is wiring up hero images.
 
-2. **`/cities` hub** — replace placeholder with a real index page that lists all 18 cities (cards linking to the canonical `/maintenance-[city]-fl/` URLs) plus the Tampa Bay coming-soon card linking to `/tampa-bay-fl`.
+1. **Add `heroImage` field** to `CITY_EDITORIAL` entries in `src/lib/city-data.ts` mapping each city to its image path per the spec (12 unique images + `default-central-florida.jpg` for the 6 coastal/distant cities).
 
-3. **`/service-areas`** — register the route and alias it to the same `/cities` hub component (same content, both URLs work, canonical tag points to `/service-areas/` per spec).
+2. **Update `MaintenanceCityPage.tsx` hero** — add a background `<img>` layer behind the existing dark hero with a black gradient overlay so text remains legible. Use `loading="eager"` and `fetchpriority="high"` for LCP. Falls back gracefully to solid black if the file is missing.
 
-4. **`/blog`** — keep the route but upgrade the placeholder to a clear "Blog launching soon — get notified" page with a CTA to `/contact`. (User asked not to rebuild; this is a copy/UX fix only.)
+3. **Document the image requirement** — since no images exist in `public/images/cities/` yet, the page will render with a broken-image background until the user uploads them. I'll add a single placeholder note in the response telling the user exactly which 13 files to drop into `public/images/cities/`.
 
-5. **Fix `CityGrid.tsx` & `Footer.tsx` links** — change `/cities/${slug}` → `/maintenance-${slug}/` so internal links match the canonical city URLs. Tampa Bay card links to `/tampa-bay-fl`.
-
-6. **StickyHeader audit** — links are already correct (`/`, `/services`, `/cities`, `/about`, `/blog`, `/contact`). No changes needed there. Optionally add `/faq` to nav (deferred — separate task).
-
-7. **Confirm registered routes** after fix — print the full list back to the user.
+### What I will NOT do (and why)
+- Will not "create 18 routes" — they already exist as one dynamic route serving all 18 slugs (correct React Router pattern).
+- Will not "create 18 page files" — that would duplicate identical code 18 times. The single template + per-city data file is the right pattern and matches the spec.
+- Will not change CityGrid / Footer / map links — already correct.
+- Will not register `/cities/:city` redirects — that legacy route still works for backward compatibility.
 
 ### Files to touch
-- `src/App.tsx` — swap 3 placeholders for real components, register `/service-areas`.
-- `src/pages/ServicesIndexPage.tsx` (new) — services hub.
-- `src/pages/CitiesIndexPage.tsx` (new) — cities hub, reused for `/service-areas`.
-- `src/pages/BlogPage.tsx` (new) — "coming soon" page with CTA.
-- `src/components/fiveserv/CityGrid.tsx` — fix links.
-- `src/components/fiveserv/Footer.tsx` — fix city links.
+- `src/lib/city-data.ts` — add `heroImage` field to all 18 entries
+- `src/pages/MaintenanceCityPage.tsx` — add background image to hero section
 
-No existing page content is rebuilt or removed. All 94 existing deep URLs remain unchanged.
+### Files NOT touched
+- `src/App.tsx` — routes already correct
+- `src/components/fiveserv/CityGrid.tsx` — links already correct
+- `src/components/fiveserv/Footer.tsx` — links already correct
+
