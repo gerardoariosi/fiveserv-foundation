@@ -57,6 +57,7 @@ const router = createBrowserRouter([
       { path: "about", element: <AboutPage /> },
       { path: "blog", element: <PlaceholderPage title="Blog" description="Insights for property managers from FiveServ Property Solutions." path="/blog" heading="FiveServ Blog" /> },
       { path: "contact", element: <ContactPage /> },
+      { path: "faq", element: <FaqPage /> },
       { path: "privacy", element: <PlaceholderPage title="Privacy Policy" description="FiveServ Property Solutions privacy policy." path="/privacy" heading="Privacy Policy" /> },
       { path: "terms", element: <PlaceholderPage title="Terms of Service" description="FiveServ Property Solutions terms of service." path="/terms" heading="Terms of Service" /> },
       { path: "thank-you-b2b", element: <PlaceholderPage title="Thank You" description="Thanks — your request reached FiveServ Property Solutions." path="/thank-you-b2b" heading="Thank You" /> },
