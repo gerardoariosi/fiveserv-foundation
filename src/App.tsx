@@ -20,6 +20,7 @@ import MaintenanceCityPage from "./pages/MaintenanceCityPage";
 import TampaBayPage from "./pages/TampaBayPage";
 import ContactPage from "./pages/ContactPage";
 import AboutPage from "./pages/AboutPage";
+import FaqPage from "./pages/FaqPage";
 
 import { SERVICES, CITIES } from "@/lib/site-config";
 
