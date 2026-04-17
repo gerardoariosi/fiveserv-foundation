@@ -50,12 +50,14 @@ export const Footer = () => {
             <ul className="mt-4 grid grid-cols-2 gap-x-4 gap-y-2 text-sm">
               {CITIES.map((c) => (
                 <li key={c.slug}>
-                  <Link to={`/cities/${c.slug}`} className="text-brand-white hover:text-brand-gold">{c.name}, {c.state}</Link>
+                  <Link to={`/maintenance-${c.slug}`} className="text-brand-white hover:text-brand-gold">{c.name}, {c.state}</Link>
                 </li>
               ))}
               {COMING_SOON_CITIES.map((c) => (
-                <li key={c.slug} className="text-brand-white/60">
-                  {c.name}, {c.state} — <span className="text-brand-gold">Coming Soon</span>
+                <li key={c.slug}>
+                  <Link to={`/${c.slug}`} className="text-brand-white/60 hover:text-brand-gold">
+                    {c.name}, {c.state} — <span className="text-brand-gold">Coming Soon</span>
+                  </Link>
                 </li>
               ))}
             </ul>
