@@ -1,0 +1,8 @@
+/* Netlify-style headers (also works on many static hosts).
+   Mirrors the Next.js securityHeaders config from the original spec. */
+/*
+  X-DNS-Prefetch-Control: on
+  X-Frame-Options: SAMEORIGIN
+  X-Content-Type-Options: nosniff
+  Referrer-Policy: strict-origin-when-cross-origin
+  Permissions-Policy: camera=(), microphone=()
