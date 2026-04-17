@@ -63,7 +63,19 @@ const MaintenanceCityPage = () => {
       />
 
       {/* 1. Hero */}
-      <section className="bg-brand-black pt-32 pb-16">
+      <section className="relative isolate overflow-hidden bg-brand-black pt-32 pb-16">
+        <img
+          src={editorial.heroImage}
+          alt={`${city.name}, ${city.state} skyline`}
+          loading="eager"
+          // @ts-expect-error fetchpriority is valid HTML
+          fetchpriority="high"
+          className="absolute inset-0 -z-10 h-full w-full object-cover opacity-40"
+          onError={(e) => {
+            (e.currentTarget as HTMLImageElement).style.display = "none";
+          }}
+        />
+        <div className="absolute inset-0 -z-10 bg-gradient-to-b from-brand-black/80 via-brand-black/70 to-brand-black" aria-hidden />
         <div className="container">
           <p className="text-sm font-bold uppercase tracking-wide text-brand-gold">
             {SITE.brand} Property Solutions • {city.name}, {city.state}
