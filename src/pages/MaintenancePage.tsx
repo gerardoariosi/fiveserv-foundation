@@ -1,8 +1,8 @@
 import { Link } from "react-router-dom";
-import { Phone, Wrench, Droplets, Zap, Wind, Hammer, Paintbrush, ClipboardList, ShieldCheck, Clock, AlertTriangle, ArrowRight } from "lucide-react";
+import { Phone, Wrench, Droplets, Zap, Wind, Hammer, Paintbrush, ClipboardList, ShieldCheck, Clock, AlertTriangle, ArrowRight, Siren, MapPin } from "lucide-react";
 import Seo from "@/lib/Seo";
 import SchemaOrg from "@/lib/SchemaOrg";
-import { SITE, SERVICES } from "@/lib/site-config";
+import { SITE, SERVICES, CITIES } from "@/lib/site-config";
 import { MAINTENANCE_FAQS } from "@/lib/service-faqs";
 import AIOverviewBlock from "@/components/fiveserv/AIOverviewBlock";
 import SolutionSection from "@/components/fiveserv/SolutionSection";
@@ -150,7 +150,76 @@ const MaintenancePage = () => {
         </div>
       </section>
 
+      {/* Emergencies 24/7 — dedicated section */}
+      <section className="bg-brand-gray">
+        <div className="container py-20">
+          <SectionReveal>
+            <div className="rounded-xl border-2 border-brand-gold bg-brand-black p-8 sm:p-12">
+              <div className="grid gap-8 lg:grid-cols-[auto,1fr,auto] lg:items-center">
+                <div className="flex h-16 w-16 items-center justify-center rounded-full bg-brand-gold/15 text-brand-gold">
+                  <Siren className="h-8 w-8" />
+                </div>
+                <div>
+                  <span className="inline-block rounded-full bg-brand-gold px-3 py-1 text-xs font-bold uppercase tracking-wider text-brand-black">
+                    Emergencies 24/7
+                  </span>
+                  <h2 className="mt-3 font-display text-3xl text-brand-white sm:text-4xl">
+                    Water leak. No power. No AC.{" "}
+                    <span className="text-brand-gold">Call now.</span>
+                  </h2>
+                  <p className="mt-3 text-brand-white/85">
+                    On-site within 2 hours across our Orlando metro core. {SITE.brand} answers the phone — day,
+                    night, weekends, holidays. No answering service. No callbacks.
+                  </p>
+                </div>
+                <a
+                  href={`tel:${SITE.phone}`}
+                  className="cta-gold flex items-center justify-center gap-2 rounded-md px-6 py-4 text-base font-bold uppercase tracking-wide whitespace-nowrap"
+                >
+                  <Phone className="h-5 w-5" /> {SITE.phone}
+                </a>
+              </div>
+            </div>
+          </SectionReveal>
+        </div>
+      </section>
+
       <StatsBar />
+
+      {/* Cities Coverage — all 18 with response times */}
+      <section className="bg-brand-black">
+        <div className="container py-20">
+          <SectionReveal>
+            <h2 className="font-display text-3xl text-brand-white sm:text-4xl">
+              Maintenance Coverage —{" "}
+              <span className="text-brand-gold">18 Cities Across Central Florida</span>
+            </h2>
+            <p className="mt-3 max-w-2xl text-brand-white/80">
+              Same-day response in our Orlando metro core. Within 24 hours across the rest of the region.
+            </p>
+
+            <div className="mt-10 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+              {CITIES.map((c) => (
+                <Link
+                  key={c.slug}
+                  to={`/maintenance/${c.slug}`}
+                  className="hover-card group flex items-center justify-between rounded-md border border-brand-gray bg-brand-gray/40 px-4 py-3"
+                >
+                  <span className="flex items-center gap-3">
+                    <MapPin className="h-4 w-4 text-brand-gold" />
+                    <span className="font-bold text-brand-white">
+                      Maintenance {c.name}, {c.state}
+                    </span>
+                  </span>
+                  <span className="text-xs font-bold uppercase tracking-wide text-brand-gold/80">
+                    {c.responseTime}
+                  </span>
+                </Link>
+              ))}
+            </div>
+          </SectionReveal>
+        </div>
+      </section>
 
       {/* Lead Magnet */}
       <LeadMagnetSection />
