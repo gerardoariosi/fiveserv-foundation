@@ -15,6 +15,7 @@ import PlaceholderPage from "./pages/PlaceholderPage";
 import MakeReadyPage from "./pages/MakeReadyPage";
 import MaintenancePage from "./pages/MaintenancePage";
 import RenovationsPage from "./pages/RenovationsPage";
+import ResidentialPage from "./pages/ResidentialPage";
 
 import { SERVICES, CITIES } from "@/lib/site-config";
 
@@ -63,7 +64,7 @@ const router = createBrowserRouter([
       { path: "make-ready", element: <MakeReadyPage /> },
       { path: "maintenance", element: <MaintenancePage /> },
       { path: "renovations", element: <RenovationsPage /> },
-      { path: "residential", element: <ServicePage /> },
+      { path: "residential", element: <ResidentialPage /> },
 
       // Service x City — 72 dynamic pages
       ...SERVICES.map((s) => ({ path: `${s.slug}/:city`, element: <ServiceCityPage /> })),
