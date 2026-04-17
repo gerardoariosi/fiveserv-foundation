@@ -16,6 +16,8 @@ import MakeReadyPage from "./pages/MakeReadyPage";
 import MaintenancePage from "./pages/MaintenancePage";
 import RenovationsPage from "./pages/RenovationsPage";
 import ResidentialPage from "./pages/ResidentialPage";
+import MaintenanceCityPage from "./pages/MaintenanceCityPage";
+import TampaBayPage from "./pages/TampaBayPage";
 
 import { SERVICES, CITIES } from "@/lib/site-config";
 
@@ -66,8 +68,15 @@ const router = createBrowserRouter([
       { path: "renovations", element: <RenovationsPage /> },
       { path: "residential", element: <ResidentialPage /> },
 
-      // Service x City — 72 dynamic pages
+      // Service x City — 72 dynamic pages (legacy/internal pattern)
       ...SERVICES.map((s) => ({ path: `${s.slug}/:city`, element: <ServiceCityPage /> })),
+
+      // City pages (18) — flat URL: /maintenance-orlando-fl, /maintenance-kissimmee-fl, etc.
+      // Param :city receives the full slug (e.g. "orlando-fl")
+      { path: "maintenance-:city", element: <MaintenanceCityPage /> },
+
+      // Tampa Bay coming soon
+      { path: "tampa-bay-fl", element: <TampaBayPage /> },
 
       // Catch-all
       { path: "*", element: <NotFound /> },
