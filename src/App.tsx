@@ -19,6 +19,7 @@ import ResidentialPage from "./pages/ResidentialPage";
 import MaintenanceCityPage from "./pages/MaintenanceCityPage";
 import TampaBayPage from "./pages/TampaBayPage";
 import ContactPage from "./pages/ContactPage";
+import AboutPage from "./pages/AboutPage";
 
 import { SERVICES, CITIES } from "@/lib/site-config";
 
@@ -52,7 +53,7 @@ const router = createBrowserRouter([
       // Top-level placeholders
       { path: "services", element: <PlaceholderPage title="Services" description="All FiveServ Property Solutions services across Central Florida." path="/services" heading="Our Services" /> },
       { path: "cities", element: <PlaceholderPage title="Cities" description="18 cities served by FiveServ Property Solutions across Central Florida." path="/cities" heading="Cities We Serve" /> },
-      { path: "about", element: <PlaceholderPage title="About" description="FiveServ Property Solutions — Venezuelan-American family business. Five family members. One promise." path="/about" heading="About FiveServ" /> },
+      { path: "about", element: <AboutPage /> },
       { path: "blog", element: <PlaceholderPage title="Blog" description="Insights for property managers from FiveServ Property Solutions." path="/blog" heading="FiveServ Blog" /> },
       { path: "contact", element: <ContactPage /> },
       { path: "privacy", element: <PlaceholderPage title="Privacy Policy" description="FiveServ Property Solutions privacy policy." path="/privacy" heading="Privacy Policy" /> },
