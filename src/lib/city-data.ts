@@ -18,7 +18,10 @@ export type CityEditorial = {
   responseMinutes: number;
   angle?: string;
   faqs: CityFaq[];
+  heroImage: string;
 };
+
+const DEFAULT_HERO = "/images/cities/default-central-florida.jpg";
 
 const baseFaqs = (city: string, zips: string[], minutes: number, zones: string[]): CityFaq[] => [
   {
