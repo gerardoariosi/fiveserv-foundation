@@ -31,7 +31,7 @@ export const ProblemSection = () => {
         <div className="mt-12 grid gap-6 md:grid-cols-3">
           {PAINS.map((p) => (
             <article key={p.title} className="rounded-lg border border-brand-gray bg-brand-black p-6">
-              <XCircle className="h-10 w-10 text-red-500" />
+              <XCircle className="h-10 w-10 text-destructive" />
               <h3 className="mt-4 font-display text-xl text-brand-white">{p.title}</h3>
               <p className="mt-2 text-brand-white/80">{p.description}</p>
             </article>

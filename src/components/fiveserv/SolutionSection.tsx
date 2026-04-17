@@ -33,7 +33,7 @@ export const SolutionSection = () => {
             {ROWS.map(([left, right], i) => (
               <div key={i} className="contents">
                 <div className={`flex items-start gap-3 p-5 ${i % 2 === 0 ? "bg-brand-gray/30" : "bg-brand-gray/10"}`}>
-                  <X className="mt-0.5 h-5 w-5 shrink-0 text-red-500" />
+                  <X className="mt-0.5 h-5 w-5 shrink-0 text-destructive" />
                   <span className="text-brand-white/80">{left}</span>
                 </div>
                 <div className={`flex items-start gap-3 border-l-4 border-brand-gold p-5 ${i % 2 === 0 ? "bg-brand-black" : "bg-brand-gray/20"}`}>
