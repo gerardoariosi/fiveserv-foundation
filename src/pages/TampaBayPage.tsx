@@ -43,20 +43,19 @@ const TampaBayPage = () => {
         ]}
       />
 
-      <section className="relative min-h-screen px-6 pt-32 pb-24">
-        {/* Background image */}
-        <div className="absolute inset-0 -z-10">
+      <section className="relative isolate min-h-screen overflow-hidden bg-brand-black px-6 pt-32 pb-24">
+        <div aria-hidden="true" className="absolute inset-0 z-0">
           <img
             src={tampaBayImg}
-            alt="Tampa Bay, Florida skyline"
-            className="h-full w-full object-cover"
+            alt=""
+            className="h-full w-full object-cover object-center"
             loading="eager"
             fetchPriority="high"
           />
-          <div className="absolute inset-0 bg-brand-black/80" />
+          <div className="absolute inset-0 bg-brand-black/70" />
         </div>
 
-        <div className="mx-auto max-w-2xl text-center">
+        <div className="relative z-10 mx-auto max-w-2xl text-center">
           <div className="flex justify-center">
             <Logo variant="light" imgClassName="h-20 w-auto object-contain" showTagline />
           </div>
@@ -71,8 +70,7 @@ const TampaBayPage = () => {
             We are expanding to Tampa Bay. Be the first to know when we launch.
           </p>
 
-          {/* GHL B2B form */}
-          <div className="mt-12 rounded-lg bg-white p-4 text-left shadow-xl sm:p-6">
+          <div className="mt-12 rounded-lg bg-background p-4 text-left shadow-xl sm:p-6">
             <GhlFormEmbed variant="b2b" className="w-full" />
           </div>
 
