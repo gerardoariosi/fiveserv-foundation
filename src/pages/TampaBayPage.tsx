@@ -45,8 +45,20 @@ const TampaBayPage = () => {
         ]}
       />
 
-      <section className="bg-brand-black pt-32 pb-24">
-        <div className="container max-w-3xl text-center">
+      <section className="relative isolate overflow-hidden bg-brand-black pt-32 pb-24">
+        <img
+          src="/images/cities/tampa-bay.jpg"
+          alt="Tampa Bay, FL skyline"
+          loading="eager"
+          // @ts-expect-error fetchpriority is valid HTML
+          fetchpriority="high"
+          className="absolute inset-0 -z-10 h-full w-full object-cover"
+          onError={(e) => {
+            (e.currentTarget as HTMLImageElement).style.display = "none";
+          }}
+        />
+        <div className="absolute inset-0 -z-10 bg-brand-black/60" aria-hidden />
+        <div className="container relative max-w-3xl text-center">
           {/* Logo monogram */}
           <div className="mx-auto inline-flex h-20 w-20 items-center justify-center rounded-md bg-gray-900 shadow-md">
             <span className="font-display font-bold text-3xl text-brand-gold">FS</span>

@@ -76,12 +76,15 @@ const MaintenanceCityPage = ({ citySlug: propSlug }: MaintenanceCityPageProps = 
           loading="eager"
           // @ts-expect-error fetchpriority is valid HTML
           fetchpriority="high"
-          className="absolute inset-0 -z-10 h-full w-full object-cover opacity-40"
+          className="absolute inset-0 -z-10 h-full w-full object-cover"
           onError={(e) => {
             (e.currentTarget as HTMLImageElement).style.display = "none";
           }}
         />
-        <div className="absolute inset-0 -z-10 bg-gradient-to-b from-brand-black/80 via-brand-black/70 to-brand-black" aria-hidden />
+        {/* 60% dark overlay for text legibility */}
+        <div className="absolute inset-0 -z-10 bg-brand-black/60" aria-hidden />
+        {/* extra bottom fade so the section blends into next light section */}
+        <div className="absolute inset-x-0 bottom-0 -z-10 h-32 bg-gradient-to-b from-transparent to-brand-black" aria-hidden />
         <div className="container">
           <p className="text-xs font-medium uppercase tracking-[0.12em] text-brand-gold">
             — {SITE.brand} Property Solutions • {city.name}, {city.state}

@@ -142,7 +142,7 @@ export const CITY_EDITORIAL: Partial<Record<CitySlug, CityEditorial>> = {
     zones: ["US-27 corridor", "Lake County"],
     zips: ["34711", "34714"],
     responseMinutes: 45,
-    heroImage: "/images/cities/clermont.jpg",
+    heroImage: DEFAULT_HERO,
     faqs: baseFaqs("Clermont", ["34711", "34714"], 45, ["US-27 corridor", "Lake County"]),
   },
   "st-cloud-fl": {
