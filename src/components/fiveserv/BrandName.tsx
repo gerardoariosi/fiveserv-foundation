@@ -15,7 +15,7 @@ type Props = {
 
 export const BrandName = ({ variant = "light", className }: Props) => (
   <span className={className} style={{ whiteSpace: "nowrap" }}>
-    <span className="text-brand-gold font-bold">F</span>
+    <span className="text-brand-gold font-bold text-[brand-gold-hover]">F</span>
     <span className={variant === "light" ? "text-white" : "text-gray-900"}>iveServ</span>
   </span>
 );
