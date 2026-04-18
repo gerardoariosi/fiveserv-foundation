@@ -96,6 +96,8 @@ const router = createBrowserRouter([
       { path: "*", element: <NotFound /> },
     ],
   },
+  // Standalone routes (no header/footer) — distraction-free conversion pages
+  { path: "/thank-you-b2b", element: <ThankYouB2BPage /> },
 ]);
 
 // Pre-computed list of all 72 service×city URLs — used by sitemap generation.
