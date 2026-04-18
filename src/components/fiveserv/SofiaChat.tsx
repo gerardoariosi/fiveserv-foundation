@@ -582,6 +582,25 @@ const SofiaChat = () => {
         >
           <MessageCircle className="h-7 w-7" style={{ color: "#1A1A1A" }} strokeWidth={2.25} />
           <span className="sr-only">Chat with Sofia</span>
+          {showBadge && (
+            <span
+              aria-label="1 new message"
+              className="sofia-badge-pulse pointer-events-none absolute flex items-center justify-center rounded-full font-bold"
+              style={{
+                top: "-4px",
+                right: "-4px",
+                width: "18px",
+                height: "18px",
+                background: "#FFD700",
+                color: "#1A1A1A",
+                fontSize: "11px",
+                lineHeight: 1,
+                boxShadow: "0 0 0 2px #FFFFFF",
+              }}
+            >
+              1
+            </span>
+          )}
         </button>
       )}
 
