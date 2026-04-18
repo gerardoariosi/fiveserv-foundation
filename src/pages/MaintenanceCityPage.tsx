@@ -99,7 +99,7 @@ const MaintenanceCityPage = ({ citySlug: propSlug }: MaintenanceCityPageProps = 
               : `${SITE.brand} serves the ${city.name} multifamily market — bilingual team, written guarantees, one invoice.`}
           </p>
 
-          <ul className="mt-6 flex flex-wrap items-center gap-x-6 gap-y-3 text-sm font-bold text-brand-black">
+          <ul className="mt-6 flex flex-wrap items-center gap-x-6 gap-y-3 text-sm font-bold text-white">
             {[
               `${editorial.responseMinutes}-min from Orlando`,
               "5-Day Make-Ready",
