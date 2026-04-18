@@ -2,6 +2,7 @@ import { Phone } from "lucide-react";
 import Seo from "@/lib/Seo";
 import SchemaOrg from "@/lib/SchemaOrg";
 import { SITE } from "@/lib/site-config";
+import TrustBar from "@/components/fiveserv/TrustBar";
 
 const WhatsAppIcon = ({ className }: { className?: string }) => (
   <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" className={className}>
@@ -71,6 +72,10 @@ const ContactPage = () => {
             <p className="mt-5 text-lg text-brand-white/85">
               Fill out the form and we will get back to you within 24 hours.
             </p>
+          </div>
+
+          <div className="mt-10">
+            <TrustBar />
           </div>
 
           <div className="mt-12 rounded-lg border border-brand-gray bg-brand-gray/30 p-6 sm:p-8">

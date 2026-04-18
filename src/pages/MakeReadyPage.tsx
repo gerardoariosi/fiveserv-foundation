@@ -12,6 +12,7 @@ import LeadMagnetSection from "@/components/fiveserv/LeadMagnetSection";
 import ContactCTA from "@/components/fiveserv/ContactCTA";
 import BeforeAfterSlider from "@/components/fiveserv/BeforeAfterSlider";
 import LiveStatsBar from "@/components/fiveserv/LiveStatsBar";
+import TrustBar from "@/components/fiveserv/TrustBar";
 import { useReveal } from "@/hooks/use-fiveserv";
 
 const INCLUDED = [
@@ -117,6 +118,9 @@ const MakeReadyPage = () => {
           />
         </div>
       </section>
+
+      {/* Trust bar */}
+      <TrustBar />
 
       {/* Live stats — right after hero */}
       <LiveStatsBar />

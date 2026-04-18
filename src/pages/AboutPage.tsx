@@ -6,6 +6,7 @@ import { SITE, STATS, TEAM, FIVE_PILLARS } from "@/lib/site-config";
 import AIOverviewBlock from "@/components/fiveserv/AIOverviewBlock";
 import { useReveal } from "@/hooks/use-fiveserv";
 import LiveStatsBar from "@/components/fiveserv/LiveStatsBar";
+import TrustBar from "@/components/fiveserv/TrustBar";
 
 const SectionReveal = ({ children, className = "" }: { children: React.ReactNode; className?: string }) => {
   const ref = useReveal<HTMLDivElement>();
@@ -71,6 +72,9 @@ const AboutPage = () => {
           <AIOverviewBlock answer={aiAnswer} />
         </div>
       </section>
+
+      {/* Trust bar */}
+      <TrustBar />
 
       {/* 3. History */}
       <section className="bg-brand-gray">
