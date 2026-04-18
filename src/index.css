@@ -121,11 +121,11 @@
 
 @layer utilities {
   .font-display {
-    font-family: "Montserrat", Arial, sans-serif;
-    font-weight: 900;
+    font-family: "Clash Display", system-ui, sans-serif;
+    font-weight: 600;
   }
   .font-body {
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: "Plus Jakarta Sans", system-ui, sans-serif;
   }
 
   /* Section reveal: fade-in + slide-up 20px -> 0 */
