@@ -11,10 +11,10 @@ export const AIOverviewBlock = ({ answer, label = "Quick Answer" }: AIOverviewBl
   return (
     <aside
       aria-label={label}
-      className="mt-8 rounded-lg border-l-4 border-brand-gold bg-brand-gray/60 p-6"
+      className="mt-8 rounded-lg border-l-4 border-brand-gold bg-white p-6 shadow-sm"
     >
       <p className="text-xs font-bold uppercase tracking-wide text-brand-gold">{label}</p>
-      <p className="mt-2 text-brand-white/90">{answer}</p>
+      <p className="mt-2 text-gray-700">{answer}</p>
     </aside>
   );
 };
