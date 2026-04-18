@@ -41,11 +41,11 @@ export const CityPageTemplate = ({ city, service, faqs = [] }: CityPageData) => 
       {/* Hero — dark */}
       <section className="bg-brand-black pt-32 pb-16">
         <div className="container">
-          <p className="text-xs font-bold uppercase tracking-[0.15em] text-brand-gold">{SITE.brand} Property Solutions</p>
-          <h1 className="mt-3 font-display text-4xl text-brand-white sm:text-5xl lg:text-6xl">
+          <p className="text-xs font-medium uppercase tracking-[0.12em] text-brand-gold">— {SITE.brand} Property Solutions</p>
+          <h1 className="mt-3 font-display font-black text-4xl text-white sm:text-5xl lg:text-6xl">
             {service ? service.name : "Property Maintenance"} in <span className="text-brand-gold">{city.name}, {city.state}</span>
           </h1>
-          <div className="mt-6 flex flex-wrap gap-6 text-sm text-brand-white/80">
+          <div className="mt-6 flex flex-wrap gap-6 text-sm text-gray-300">
             <span className="flex items-center gap-2"><MapPin className="h-4 w-4 text-brand-gold" /> {city.zones}</span>
             <span className="flex items-center gap-2"><Clock className="h-4 w-4 text-brand-gold" /> Response: {city.responseTime}</span>
           </div>
