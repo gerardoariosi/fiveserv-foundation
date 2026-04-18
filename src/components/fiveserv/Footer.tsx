@@ -12,7 +12,7 @@ export const Footer = () => {
           <div>
             <Link to="/" className="flex items-center gap-3">
               <img
-                src="/images/logo FS .png"
+                src="/images/logo%20FS%20.png"
                 alt="FiveServ"
                 className="h-10 w-auto object-contain"
               />
