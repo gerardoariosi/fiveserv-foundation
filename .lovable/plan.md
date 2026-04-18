@@ -1,138 +1,147 @@
 
 
-## Audit — Where amber/gold reads weak on white and should become dark gray
+## Servpro-style redesign — audit & change plan
 
-The user's rule:
-- **KEEP gold/amber** where it works: inline accents inside paragraphs, on dark bg, on tinted (gold/cream) bg, as borders/underlines, star ratings, large display digits.
-- **REPLACE with `text-gray-900`** (or `text-gray-700` for secondary) where amber sits as a **standalone label or H2 accent on pure white/gray-50** with no surrounding gold context.
-
-Below: every confirmed bad instance, grouped by pattern. Each pattern row applies to all listed file:line locations.
+Goal: shift FiveServ from "bold black/gold tech" to "serif/professional/trustworthy" matching servpro.com, **without touching content, routes, or component logic**.
 
 ---
 
-### Group A — Section eyebrow labels on white/gray-50 (dominant offender)
+### 1. Typography swap (foundation — touches everything)
 
-These are the `— EYEBROW` tags above H2s. On white they read as muted brown sludge.
-**Proposed:** `text-amber-700` → `text-gray-900` (keep the `— ` em-dash, font stays `font-medium uppercase tracking-[0.12em]`).
+**Files:**
+- `index.html` — replace Clash Display + Plus Jakarta imports with Playfair Display (700, 800) + Inter (400, 500, 600)
+- `tailwind.config.ts` — `fontFamily.display` → `Playfair Display`, `fontFamily.sans/body` → `Inter`
+- `src/index.css` — rewrite `h1`-`h6` rules: Playfair 700, line-height 1.2, looser tracking (serif likes `letter-spacing: 0` or slightly positive, NOT negative). Body: Inter 400, line-height 1.75. Update `.font-display` and `.font-body` utilities.
 
-| File | Line | Element |
+**Note:** Clash Display is geometric sans, Playfair is high-contrast serif — the visual jump is huge. Headings will read as "editorial / law firm / Servpro" instead of "SaaS startup."
+
+---
+
+### 2. Header — invert from black to white
+
+**File:** `src/components/fiveserv/StickyHeader.tsx`
+- Default state: `bg-white border-b border-gray-200` (currently `bg-brand-black`)
+- Logo: keep left, but logo color must work on white (probably swap to dark version or use `text-gray-900`)
+- Nav links: `text-gray-700 font-medium hover:text-brand-gold` (Inter 500)
+- Phone number: right side, `text-brand-gold font-semibold` with phone icon
+- CTA: `bg-brand-gold text-brand-black rounded-full` (already close)
+- Scrolled state: add `shadow-md`, **stay white** (don't flip to black like now)
+- Mobile menu panel: also white instead of black
+
+**File:** `src/components/fiveserv/StickyBanner.tsx`
+- Currently dark — keep dark (it's the announcement strip above the header, that's fine on Servpro too)
+
+---
+
+### 3. Hero — keep dark bg, refine typography only
+
+**File:** `src/components/fiveserv/HeroSection.tsx`
+- H1: remove `font-display text-4xl ... lg:text-6xl` weight implications — use Playfair 700 (auto via h1 rule), `leading-[1.15]`
+- Subtitle: bump to `text-lg lg:text-xl`, `text-gray-300`, Inter 400
+- Trust pills: keep but use Inter 500 small caps
+- CTAs: `rounded-full` instead of `rounded-md`, sentence case ("Get a free quote", "Call now", "WhatsApp us")
+
+**Files (~22 page heros):** All inner page heros (`MakeReadyPage`, `MaintenancePage`, `RenovationsPage`, `Plumbing/Drywall/Electrical/Hvac/Carpentry/Painting/Flooring/Cleaning Page`, `AboutPage`, `FaqPage`, `ContactPage`, `BlogPage`, `ServicesIndexPage`, `CitiesIndexPage`, `MaintenanceCityPage`, `TampaBayPage`, `ResidentialPage`, `ThankYou*`, `CityPageTemplate`, `ServicePageTemplate`)
+- H1 weight: drop `font-black` → rely on Playfair 700 default
+- Eyebrow uppercase labels: Inter 500, tracking-[0.12em], text-xs (already close)
+- Hero CTAs: `rounded-full`, drop `uppercase tracking-wide`, sentence case
+
+---
+
+### 4. Section layout normalization
+
+**Files:** All page files using `<section>` blocks (~25 files)
+- Container: standardize to `max-w-6xl mx-auto px-6` (currently mix of `container` + various max-widths)
+- Vertical padding: `py-20 lg:py-28` (currently `py-24 lg:py-32` — slightly tighter)
+- Background: confirm alternation `bg-white` ↔ `bg-gray-50`
+
+This is mostly a sweep through page files + `ServicePageTemplate.tsx` + `CityPageTemplate.tsx`.
+
+---
+
+### 5. Service icons — line style, no tinted circles
+
+**Files:**
+- `src/components/fiveserv/ServiceCard.tsx` — remove `bg-amber-700/10 ... rounded-full h-14 w-14` wrapper. Render icon directly at `h-8 w-8 text-brand-gold stroke-[1.5]`
+- `src/components/fiveserv/LeadMagnetSection.tsx` — same treatment for the 3 tool cards
+- `src/pages/AboutPage.tsx` — license/insurance card icons
+- `src/pages/ResidentialPage.tsx` — "what we fix" card icons
+- All ~12 service pages (`PlumbingPage`, `Drywall`, `Hvac`, `Electrical`, `Carpentry`, `Painting`, `Flooring`, `Cleaning`, `MakeReady`, `Maintenance`, `Renovations`) — service grid icon circles → bare line icons
+
+Lucide icons are already line-style by default; just removing the circle wrapper achieves it.
+
+---
+
+### 6. Card styling — soft shadow, light border
+
+**Files:**
+- `src/components/fiveserv/ServiceCard.tsx` — change `border border-gray-200 ... hover:shadow-xl hover:-translate-y-1` → `border border-gray-100 shadow-[0_1px_3px_rgba(0,0,0,0.08)] hover:shadow-[0_4px_12px_rgba(0,0,0,0.12)]`, drop the `-translate-y-1` lift, padding `p-6`
+- `src/components/fiveserv/CityGrid.tsx` — city cards: same soft-shadow treatment
+- `src/components/fiveserv/LeadMagnetSection.tsx` — tool cards
+- `src/components/fiveserv/TestimonialCard.tsx` — testimonial cards
+- All page-level card grids (~15 page files) — service cards, "what's included" cards, license cards, blog post cards
+
+Add a custom shadow utility to `tailwind.config.ts`: `shadow-card` and `shadow-card-hover` so we don't repeat the rgba values everywhere.
+
+---
+
+### 7. CTA buttons — pill shape, sentence case, arrow
+
+**Files:**
+- `src/components/fiveserv/HeroSection.tsx` — primary CTA: `rounded-full px-8 py-3`, "Get a free quote →"
+- `src/components/fiveserv/StickyHeader.tsx` — header CTA: `rounded-full`
+- `src/components/fiveserv/ContactCTA.tsx` — bottom CTA section
+- `src/components/fiveserv/StickyBanner.tsx` — banner CTA
+- `src/components/fiveserv/LeadMagnetSection.tsx`
+- `src/components/fiveserv/ExitIntentPopup.tsx`
+- All page hero CTAs (~22 page files) — `ServicePageTemplate.tsx`, `CityPageTemplate.tsx`, `MakeReadyPage`, `MaintenancePage`, etc.
+
+Sweep replacements:
+- `rounded-md` / `rounded-lg` on primary CTAs → `rounded-full`
+- `uppercase tracking-wide` → remove
+- Button text: Title Case → sentence case ("Get a Free Quote" → "Get a free quote")
+- Append `<ArrowRight className="ml-2 h-4 w-4" />` to primary CTAs
+
+**Note:** This affects copy casing too — confirm before applying.
+
+---
+
+### 8. Body text color sweep
+
+**Files:** Site-wide find/replace
+- `text-brand-black` on body text (paragraphs, list items, labels) → `text-gray-700`
+- `text-brand-black` on headings → `text-gray-900`
+- Body paragraph default class everywhere: `text-gray-700 leading-[1.75]`
+
+Most impactful spots:
+- `src/index.css` `body` rule: `text-brand-black` → `text-gray-900`
+- `src/components/fiveserv/SectionHeading.tsx` — H2 already `text-gray-900`, subtext already `text-gray-600` → bump to `text-gray-700`
+- All page files — paragraph default
+
+---
+
+### Files-changed summary
+
+| Tier | Files | Change |
 |---|---|---|
-| `src/components/fiveserv/SectionHeading.tsx` | 26 | Shared eyebrow used by every page |
-| `src/components/fiveserv/BlogArticleLayout.tsx` | 94 | "— Keep Reading" eyebrow (gray-50) |
-| `src/components/fiveserv/BlogArticleLayout.tsx` | 134 | "— FAQ" eyebrow (white) |
-| `src/components/fiveserv/FamilyStory.tsx` | 27 | "Built by a Family" eyebrow (white) |
-| `src/components/fiveserv/AIOverviewBlock.tsx` | 21 | "Quick Answer" label when `tone="light"` |
-| `src/pages/AboutPage.tsx` | 164 | "— {role}" team-card eyebrow |
-| `src/pages/CarpentryPage.tsx` | 303 | "— Quality Spec" |
-| `src/pages/DrywallPage.tsx` | 151, 257 | "— The Hidden Make-Ready Killer", "— Texture Matching" |
-| `src/pages/ElectricalPage.tsx` | 152, 258 | "— Liability & Safety", "— Why Licensed Matters" |
-| `src/pages/HvacPage.tsx` | 153, 258 | "— Florida Heat Reality", "— Florida Compliance" |
-| `src/pages/PlumbingPage.tsx` | 151, 256 | "— The Real Cost of Delay", "— Why Licensed Matters" |
-| `src/pages/CleaningPage.tsx` | (similar block pattern) | section eyebrows on white |
-| `src/pages/PaintingPage.tsx` | (similar block pattern) | section eyebrows on white |
-| `src/pages/FlooringPage.tsx` | (similar block pattern) | section eyebrows on white |
-| `src/pages/MakeReadyPage.tsx`, `MaintenancePage.tsx`, `RenovationsPage.tsx`, `ResidentialPage.tsx` | various | matching eyebrow pattern |
+| Foundation | `index.html`, `tailwind.config.ts`, `src/index.css` | Fonts + base colors + shadow utilities |
+| Header/footer | `StickyHeader.tsx`, `StickyBanner.tsx`, `Footer.tsx` | Header: dark→white. Banner/footer: keep dark |
+| Shared components | `HeroSection.tsx`, `ServiceCard.tsx`, `LeadMagnetSection.tsx`, `CityGrid.tsx`, `TestimonialCard.tsx`, `SectionHeading.tsx`, `ContactCTA.tsx`, `ExitIntentPopup.tsx`, `FamilyStory.tsx`, `SolutionSection.tsx`, `ProblemSection.tsx`, `BlogArticleLayout.tsx` | Card style, icon style, CTA pill, body color |
+| Templates | `ServicePageTemplate.tsx`, `CityPageTemplate.tsx` | Hero typo, CTA pill, container max-w |
+| Pages (~22) | All `src/pages/*.tsx` | Hero H1 weight, CTA pill, container, body color, service icons |
 
-Estimated ~30–40 instances total. **Single shared fix in `SectionHeading.tsx`** handles the majority site-wide.
+**Total: ~40 files touched. No logic changes, no content changes, no route changes.**
 
 ---
 
-### Group B — H2 accent spans on pure white/gray-50
+### Decisions needed before applying
 
-These are the `<span className="text-amber-700">word</span>` inside H2s on light sections. The user keeps gold for *inline paragraph* accents, but H2 accents on white read flat.
-**Proposed:** `text-amber-700` → `text-gray-900` (so the whole H2 is one bold dark unit; emphasis comes from weight/size, not color).
+1. **Logo color in white header** — do you have a dark/black version of the FiveServ logo, or should I render the existing one in `text-gray-900`?
+2. **CTA copy** — confirm flip from `UPPERCASE` to `Sentence case` ("Get a free quote", "Call now", "Request a quote"). Yes/no?
+3. **Hero stays dark** — confirmed per spec. All inner page heros also stay `bg-brand-black`. Correct?
+4. **Trust bar / StatsBar** — currently dark. Servpro keeps stats sections light. Flip to `bg-gray-50` with dark numbers, or keep dark? (Recommend: keep dark for visual rhythm — dark hero → light section → dark stats → light section.)
+5. **Sticky banner** above header — keep (small dark strip with phone + hours) or remove for cleaner Servpro-style?
+6. **Apply all 8 changes in one pass**, or stage it (foundation first → header → cards → sweep)?
 
-Note: this is a judgment call — see decision question below.
-
-| File | Line | H2 phrase |
-|---|---|---|
-| `src/pages/Index.tsx` | 101 | "What Property Managers Say About **FiveServ**" |
-| `src/pages/Index.tsx` | (services H2) | "Everything Your Properties Need. **One Team.**" |
-| `src/components/fiveserv/SolutionSection.tsx` | 23 | "One Call. **One Team.** One Invoice." |
-| `src/components/fiveserv/CityGrid.tsx` | 54 | "Serving 18 Cities Across **Central Florida**" (gray-50) |
-| `src/components/fiveserv/LeadMagnetSection.tsx` | 39 | "Three free tools for **property managers**." (gray-50) |
-| `src/components/fiveserv/FamilyStory.tsx` | 31 | "A **Venezuelan-American Family** Trusted Across Central Florida." |
-| `src/pages/AboutPage.tsx` | 84, 112, 139, 209 | Story / Track Record / Team / Licenses |
-| `src/pages/ResidentialPage.tsx` | 141, 142, 167, 196 | "Venezuelan-American family", "15+ years", "Fix at Home", "3 Steps" |
-| `src/pages/MakeReadyPage.tsx`, `MaintenancePage.tsx`, `Plumbing/Drywall/Hvac/Electrical/Carpentry/Painting/Flooring/Cleaning/Renovations/Faq/Contact/Blog` Pages | many | H2 accent spans on light bg |
-
-Estimated ~50 instances.
-
----
-
-### Group C — Card icons on white card backgrounds
-
-Icon circles `bg-amber-700/10 text-amber-700` on white cards. Sit alone, no surrounding gold context. The icon disappears as muted brown.
-**Proposed:** `bg-amber-700/10 text-amber-700` → `bg-gray-100 text-gray-900` (or keep the gold tint but darken icon to `text-gray-900`).
-
-| File | Line | Card |
-|---|---|---|
-| `src/components/fiveserv/ServiceCard.tsx` | 20 | Service grid card (used 4× on home, in services index) |
-| `src/components/fiveserv/LeadMagnetSection.tsx` | 48 | Free tools cards (3×) |
-| `src/pages/AboutPage.tsx` | 229 | License/insurance cards |
-| `src/pages/ResidentialPage.tsx` | 177 | "What we fix at home" cards |
-| `src/pages/CarpentryPage.tsx`, `Cleaning`, `Drywall`, `Electrical`, `Flooring`, `Hvac`, `Painting`, `Plumbing`, `Renovations`, `MakeReady`, `Maintenance`, `Residential` Pages | various | Service grid icon circles on white cards |
-
-Estimated ~25 instances.
-
----
-
-### Group D — Standalone "Learn more / CTA link" text on white
-
-Bare `text-amber-700` link text on white card footers. No tinted background, no border.
-**Proposed:** `text-amber-700 hover:underline` → `text-gray-900 hover:text-amber-700 hover:underline` (dark by default, gold reveals on hover — best of both).
-
-| File | Line | Element |
-|---|---|---|
-| `src/components/fiveserv/ServiceCard.tsx` | 27 | "Learn more →" |
-| `src/pages/ResidentialPage.tsx` | 154 | "Meet the family →" |
-| `src/components/fiveserv/CityGrid.tsx` | 78 | `group-hover:text-amber-700` on city H3 (already hover-only, **keep as is**) |
-| `src/components/fiveserv/CityGrid.tsx` | 81 | "Within {responseTime}" — standalone amber on white card → change to `text-gray-700` |
-| Multiple page "More from FiveServ" link clusters | various | bare amber links on white |
-
----
-
-### Group E — MapPin icons on white city cards
-
-`<MapPin className="text-amber-700">` standalone on white card in `CityGrid.tsx` (lines 71, 94).
-**Proposed:** keep as `text-amber-700` since the icon also lives on `bg-brand-gold/5` "Coming Soon" card (line 91 — tinted) and the colored pin reads as a map marker (semantic meaning, like the rating stars exception). **Recommend: KEEP.** Confirm?
-
----
-
-### What to KEEP (matches user's "works well" list)
-
-- **`AIOverviewBlock` Quick Answer label** — sits on `bg-white/5 backdrop` on dark bg OR on white card with **gold left border + tinted bg**. The dark-tone variant is fine. The light-tone (line 21) is borderline — the box has a `border-l-4 border-brand-gold` so the amber label has gold context → **proposal: KEEP**. Confirm?
-- **`BlogArticleLayout.tsx` line 50** — "category" pill on `bg-brand-gold/15` (gold tint bg) → **KEEP**.
-- **`BlogArticleLayout.tsx` line 78** — "TL;DR" label inside `border-l-4 border-brand-gold bg-gray-50` box → **KEEP**.
-- **`BlogArticleLayout.tsx` line 44** — "← Back to Blog" sits on dark hero → already on dark, **KEEP**.
-- **`SolutionSection.tsx` line 42, 46** — "With FiveServ" H3 + Check icons sit inside `border-2 border-brand-gold` card with gold context → **KEEP** (icons benefit from semantic green-ish meaning here).
-- **`CleaningPage.tsx` lines 276, 291** + similar — pills on `bg-brand-gold/15` tinted background → **KEEP**.
-- **All hero CTA buttons** with `border-2 border-brand-gold ... text-amber-700` on white sub-section — these have gold border context → **judgment call, lean KEEP**.
-- **`_blocks.tsx` table headers + InternalLinkCluster** — these are **inline link accents** inside paragraphs (matches "inline text accents within paragraphs") → **KEEP**.
-- **`AboutPage.tsx` line 120, 187** — large `text-5xl/6xl text-amber-700` display digits → **KEEP** (large display rule).
-- **All `text-brand-gold` instances on `bg-brand-black`** — heroes, footer, ContactCTA, sticky header, etc. → **KEEP** (already correct).
-- **`TestimonialCard` star fills** → **KEEP**.
-
----
-
-### Files modified estimate (if approved)
-
-| Type | Count | Details |
-|---|---|---|
-| Shared components | 5 | `SectionHeading`, `ServiceCard`, `LeadMagnetSection`, `FamilyStory`, `CityGrid` |
-| Templates | 2 | (no changes — those are dark heros, already gold) |
-| Page files | ~16 | Each page's mid-section eyebrows + H2 accents + icon circles |
-| Total instances | ~110 | Down from current ~1,570 amber instances |
-
-Most of the impact comes from updating **`SectionHeading.tsx`** (cascades site-wide) plus a bulk find-replace per-page on the eyebrow + H2 accent + icon-circle patterns.
-
----
-
-### 3 decision questions before I apply
-
-1. **H2 accent spans** (Group B) — replace with `text-gray-900`? (Option B: replace with `text-gray-700` for slightly softer emphasis. Option C: keep amber and only fix eyebrows + icons.)
-2. **Icon circles** (Group C) — `bg-gray-100 text-gray-900` (neutral) or `bg-amber-700/10 text-gray-900` (keep tint, darken icon)?
-3. **AIOverviewBlock light-tone label** + **hero CTA outline buttons with amber text** — keep gold (they have gold border/border-l context) or also flip to gray-900?
-
-Reply with your answers (or just "1: gray-900, 2: neutral, 3: keep") and I'll execute.
+Reply with answers + "apply" and I'll execute.
 
