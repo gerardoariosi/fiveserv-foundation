@@ -34,6 +34,7 @@ import HvacPage from "./pages/HvacPage";
 import DrywallPage from "./pages/DrywallPage";
 import PaintingPage from "./pages/PaintingPage";
 import FlooringPage from "./pages/FlooringPage";
+import CarpentryPage from "./pages/CarpentryPage";
 
 import { SERVICES, CITIES } from "@/lib/site-config";
 
