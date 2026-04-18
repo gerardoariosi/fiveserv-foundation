@@ -29,7 +29,7 @@ export const BrandName = ({ variant = "light", className }: Props) => {
 
   return (
     <span className={className} style={{ whiteSpace: "nowrap" }}>
-      <span className={`${fColor} font-bold`}>F</span>
+      <span className={`font-bold ${fColor}`}>F</span>
       <span className={restColor}>iveServ</span>
     </span>
   );
