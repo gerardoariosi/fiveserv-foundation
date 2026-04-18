@@ -25,7 +25,7 @@ export const ContactCTA = ({ variant = "b2b" }: Props) => {
     <section id="contact-form" className="bg-brand-black">
       <div className="container py-20">
         <h2 className="font-display text-3xl text-brand-white sm:text-4xl">
-          Get a Free Quote — <span className="text-brand-gold"><BrandName variant="light" /> Property Solutions</span> Orlando, FL
+          Get a Free Quote — <BrandName /> Property Solutions Orlando, FL
         </h2>
         <p className="mt-3 max-w-2xl text-brand-white/80">
           Fill out the form and we will get back to you within 24 hours.
