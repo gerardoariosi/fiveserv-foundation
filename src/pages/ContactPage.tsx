@@ -3,6 +3,7 @@ import Seo from "@/lib/Seo";
 import SchemaOrg from "@/lib/SchemaOrg";
 import { SITE } from "@/lib/site-config";
 import TrustBar from "@/components/fiveserv/TrustBar";
+import GhlFormEmbed from "@/components/fiveserv/GhlFormEmbed";
 
 const WhatsAppIcon = ({ className }: { className?: string }) => (
   <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" className={className}>
@@ -16,7 +17,6 @@ const WhatsAppIcon = ({ className }: { className?: string }) => (
  * Zero secondary nav distractions inside the content area.
  */
 const ContactPage = () => {
-  const ghlForm = import.meta.env.VITE_FORM_GHL;
   const waHref = `https://wa.me/${SITE.phone.replace(/[^\d]/g, "")}`;
 
   const title = `Contact ${SITE.brand} | Get a Free Quote | Central Florida`;
@@ -79,66 +79,7 @@ const ContactPage = () => {
           </div>
 
           <div className="mt-12 rounded-lg border border-gray-100 bg-white shadow-sm p-6 sm:p-8">
-            {ghlForm ? (
-              <iframe
-                src={ghlForm}
-                title={`${SITE.brand} Contact Form`}
-                className="h-[680px] w-full rounded-md border-0"
-              />
-            ) : (
-              <form
-                className="space-y-4"
-                onSubmit={(e) => {
-                  e.preventDefault();
-                  // [FORM_GHL_EMBED] — replace by setting VITE_FORM_GHL
-                }}
-              >
-                <div className="grid gap-4 sm:grid-cols-2">
-                  <input
-                    required
-                    placeholder="Full name"
-                    className="rounded-md bg-brand-black px-4 py-3 text-gray-900 outline-none focus:ring-2 focus:ring-brand-gold"
-                  />
-                  <input
-                    required
-                    type="email"
-                    placeholder="Email"
-                    className="rounded-md bg-brand-black px-4 py-3 text-gray-900 outline-none focus:ring-2 focus:ring-brand-gold"
-                  />
-                  <input
-                    required
-                    type="tel"
-                    placeholder="Phone"
-                    className="rounded-md bg-brand-black px-4 py-3 text-gray-900 outline-none focus:ring-2 focus:ring-brand-gold"
-                  />
-                  <input
-                    placeholder="Company (optional)"
-                    className="rounded-md bg-brand-black px-4 py-3 text-gray-900 outline-none focus:ring-2 focus:ring-brand-gold"
-                  />
-                  <select className="rounded-md bg-brand-black px-4 py-3 text-gray-900 outline-none focus:ring-2 focus:ring-brand-gold sm:col-span-2">
-                    <option value="">Service needed</option>
-                    <option>Make-Ready / Unit Turn</option>
-                    <option>Maintenance &amp; Repairs</option>
-                    <option>CapEx / Renovations</option>
-                    <option>Residential</option>
-                  </select>
-                </div>
-                <textarea
-                  rows={4}
-                  placeholder="Tell us about your property"
-                  className="w-full rounded-md bg-brand-black px-4 py-3 text-gray-900 outline-none focus:ring-2 focus:ring-brand-gold"
-                />
-                <button
-                  type="submit"
-                  className="cta-gold w-full rounded-md px-6 py-4 font-bold uppercase tracking-wide"
-                >
-                  Send My Request
-                </button>
-                <p className="text-xs text-gray-500">
-                  [FORM_GHL_EMBED] — replace this fallback by setting VITE_FORM_GHL.
-                </p>
-              </form>
-            )}
+            <GhlFormEmbed variant="b2b" className="w-full" />
           </div>
 
           {/* Below-form direct contact */}

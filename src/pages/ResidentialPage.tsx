@@ -276,7 +276,7 @@ const ResidentialPage = () => {
       </section>
 
       {/* 8. CTA Final form */}
-      <ContactCTA />
+      <ContactCTA variant="b2c" />
     </>
   );
 };

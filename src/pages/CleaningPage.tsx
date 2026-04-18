@@ -603,7 +603,7 @@ const CleaningPage = () => {
         </div>
       </section>
 
-      <ContactCTA />
+      <ContactCTA variant="b2c" />
     </>
   );
 };

@@ -494,7 +494,7 @@ const FlooringPage = () => {
         </div>
       </section>
 
-      <ContactCTA />
+      <ContactCTA variant="b2c" />
     </>
   );
 };

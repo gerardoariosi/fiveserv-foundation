@@ -1,12 +1,13 @@
 import { useState } from "react";
 import { X, Download } from "lucide-react";
 import { useExitIntent } from "@/hooks/use-fiveserv";
+import GhlFormEmbed from "./GhlFormEmbed";
 
 const KEY = "fiveserv-exit-shown";
 
 /**
  * ExitIntentPopup — triggers when cursor exits viewport.
- * Offers the Make-Ready Checklist PDF — submission posts to GHL form.
+ * Offers the Make-Ready Checklist PDF via embedded GHL form.
  */
 export const ExitIntentPopup = () => {
   const [open, setOpen] = useState(false);
@@ -20,11 +21,9 @@ export const ExitIntentPopup = () => {
 
   if (!open) return null;
 
-  const ghlForm = import.meta.env.VITE_FORM_GHL;
-
   return (
     <div role="dialog" aria-modal="true" className="fixed inset-0 z-50 flex items-center justify-center bg-black/80 p-4">
-      <div className="relative w-full max-w-md rounded-lg border-2 border-brand-gold bg-brand-black p-8">
+      <div className="relative w-full max-w-lg rounded-lg border-2 border-brand-gold bg-brand-black p-6 sm:p-8 max-h-[90vh] overflow-y-auto">
         <button
           aria-label="Close"
           onClick={() => setOpen(false)}
@@ -38,27 +37,9 @@ export const ExitIntentPopup = () => {
         </h2>
         <p className="mt-2 text-brand-white/80">The 47-item checklist we use on every unit. Yours, free.</p>
 
-        {ghlForm ? (
-          <iframe
-            src={ghlForm}
-            title="Make-Ready Checklist Request"
-            className="mt-4 h-[320px] w-full rounded-md border border-brand-gray"
-          />
-        ) : (
-          <form
-            className="mt-4 space-y-3"
-            onSubmit={(e) => {
-              e.preventDefault();
-              // TODO: wire to GHL — VITE_FORM_GHL
-              setOpen(false);
-            }}
-          >
-            <input type="email" required placeholder="your@email.com" className="w-full rounded-md bg-brand-gray px-4 py-3 text-brand-white outline-none focus:ring-2 focus:ring-brand-gold" />
-            <button type="submit" className="cta-gold w-full rounded-md px-4 py-3 font-bold uppercase">
-              Email Me the Checklist
-            </button>
-          </form>
-        )}
+        <div className="mt-4 rounded-md bg-white p-2">
+          <GhlFormEmbed variant="checklist" className="w-full" />
+        </div>
       </div>
     </div>
   );

@@ -1,5 +1,6 @@
 import { Phone } from "lucide-react";
 import { SITE } from "@/lib/site-config";
+import GhlFormEmbed from "./GhlFormEmbed";
 
 const WhatsAppIcon = ({ className }: { className?: string }) => (
   <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" className={className}>
@@ -7,12 +8,16 @@ const WhatsAppIcon = ({ className }: { className?: string }) => (
   </svg>
 );
 
+type Props = {
+  /** "b2b" → property managers form. "b2c" → residential form. Default: b2b. */
+  variant?: "b2b" | "b2c";
+};
+
 /**
- * ContactCTA — final form section. Embeds GHL form when VITE_FORM_GHL is set,
- * else shows a fallback form (POST handler stub). Renders below the LeadMagnetSection.
+ * ContactCTA — final form section. Embeds the appropriate GHL form
+ * (B2B for property managers, B2C for residential).
  */
-export const ContactCTA = () => {
-  const ghlForm = import.meta.env.VITE_FORM_GHL;
+export const ContactCTA = ({ variant = "b2b" }: Props) => {
   const waHref = `https://wa.me/${SITE.phone.replace(/[^\d]/g, "")}`;
 
   return (
@@ -26,42 +31,8 @@ export const ContactCTA = () => {
         </p>
 
         <div className="mt-10 grid gap-10 lg:grid-cols-[2fr,1fr]">
-          <div className="rounded-lg border border-brand-gray bg-brand-gray/30 p-6">
-            {ghlForm ? (
-              <iframe
-                src={ghlForm}
-                title="FiveServ Contact Form"
-                className="h-[640px] w-full rounded-md border-0"
-              />
-            ) : (
-              <form
-                className="space-y-4"
-                onSubmit={(e) => {
-                  e.preventDefault();
-                  // [FORM_GHL_EMBED] — replace with GHL embed via VITE_FORM_GHL
-                }}
-              >
-                <div className="grid gap-4 sm:grid-cols-2">
-                  <input required placeholder="Full name" className="rounded-md bg-brand-black px-4 py-3 text-brand-white outline-none focus:ring-2 focus:ring-brand-gold" />
-                  <input required type="email" placeholder="Work email" className="rounded-md bg-brand-black px-4 py-3 text-brand-white outline-none focus:ring-2 focus:ring-brand-gold" />
-                  <input required type="tel" placeholder="Phone" className="rounded-md bg-brand-black px-4 py-3 text-brand-white outline-none focus:ring-2 focus:ring-brand-gold" />
-                  <input placeholder="Company" className="rounded-md bg-brand-black px-4 py-3 text-brand-white outline-none focus:ring-2 focus:ring-brand-gold" />
-                  <input type="number" placeholder="Units managed" className="rounded-md bg-brand-black px-4 py-3 text-brand-white outline-none focus:ring-2 focus:ring-brand-gold" />
-                  <select className="rounded-md bg-brand-black px-4 py-3 text-brand-white outline-none focus:ring-2 focus:ring-brand-gold">
-                    <option value="">Service needed</option>
-                    <option>Make-Ready / Unit Turn</option>
-                    <option>Maintenance &amp; Repairs</option>
-                    <option>CapEx / Renovations</option>
-                    <option>Residential</option>
-                  </select>
-                </div>
-                <textarea rows={4} placeholder="Tell us about your property" className="w-full rounded-md bg-brand-black px-4 py-3 text-brand-white outline-none focus:ring-2 focus:ring-brand-gold" />
-                <button type="submit" className="cta-gold cta-pill w-full">
-                  Get my free quote
-                </button>
-                <p className="text-xs text-brand-white/60">[FORM_GHL_EMBED] — replace this fallback form by setting VITE_FORM_GHL.</p>
-              </form>
-            )}
+          <div className="rounded-lg border border-brand-gray bg-white p-6">
+            <GhlFormEmbed variant={variant} className="w-full" />
           </div>
 
           <aside className="space-y-4 rounded-lg border-2 border-brand-gold bg-brand-black p-6">
