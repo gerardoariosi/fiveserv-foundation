@@ -415,10 +415,16 @@ const SofiaChat = () => {
 
   const handleReset = () => {
     sessionStorage.removeItem(SS_KEY);
-    setLang("en");
+    const initialLang = detectBrowserLang();
+    setLang(initialLang);
     setStep("opening");
     setData({ userType: null });
-    setMessages([mkSofia(t.en.opening, { quickReplies: [...t.en.openingButtons] })]);
+    setMessages([mkSofia(t[initialLang].opening, { quickReplies: [...t[initialLang].openingButtons] })]);
+  };
+
+  const handleClose = () => {
+    setOpen(false);
+    sessionStorage.setItem(SS_DISMISSED, "true");
   };
 
   const advance = (userText: string, fromQuickReply: boolean) => {
