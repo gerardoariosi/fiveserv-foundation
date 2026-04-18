@@ -4,7 +4,8 @@ import SchemaOrg from "@/lib/SchemaOrg";
 import { SITE } from "@/lib/site-config";
 import Logo from "@/components/fiveserv/Logo";
 import GhlFormEmbed from "@/components/fiveserv/GhlFormEmbed";
-import tampaBayImg from "@/assets/cities/tampa-bay.jpg";
+
+const tampaBayImg = "/images/cities/tampa-bay.jpg";
 
 const TampaBayPage = () => {
   const path = "/tampa-bay-fl/";
