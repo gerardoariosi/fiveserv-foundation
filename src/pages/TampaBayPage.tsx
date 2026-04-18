@@ -59,10 +59,12 @@ const TampaBayPage = () => {
         />
         <div className="absolute inset-0 -z-10 bg-brand-black/60" aria-hidden />
         <div className="container relative max-w-3xl text-center">
-          {/* Logo monogram */}
-          <div className="mx-auto inline-flex h-20 w-20 items-center justify-center rounded-md bg-gray-900 shadow-md">
-            <span className="font-display font-bold text-3xl text-brand-gold">FS</span>
-          </div>
+          {/* Logo */}
+          <img
+            src="/images/logo FS .png"
+            alt="FiveServ"
+            className="mx-auto h-20 w-auto object-contain"
+          />
 
           <p className="mt-8 text-xs font-bold uppercase tracking-[0.3em] text-brand-gold">
             Coming Soon
