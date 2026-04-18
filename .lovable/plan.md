@@ -1,56 +1,101 @@
 
 
-## Goal
-Replace the amateur SVG `InteractiveMap` with a clean, premium 3-column city grid on the homepage and on `/cities` / `/service-areas`. Keep all routes, slugs, and city data intact.
+## Audit findings
 
-## Approach
+**Issue 1 — Invisible hero text on dark heros**
+Found in `FlooringPage.tsx` (line 129: `text-brand-black` on `bg-brand-black` hero), and similar patterns likely repeated in other inner pages. Most dark heros already use `text-brand-white`, but several pages mix `text-brand-black` text on dark hero backgrounds. Audit will sweep all 18+ page hero sections.
 
-### 1. Update `CityGrid.tsx` (the homepage section)
-Rewrite to match the new spec exactly:
-- Section: `bg-gray-50 py-24 lg:py-32`
-- Header: `SectionHeading` with eyebrow `SERVICE AREAS`, H2 `Serving 18 Cities Across <gold>Central Florida</gold>`, subtext `From Orlando to the Space Coast — we cover it all`.
-- Grid: `grid gap-6 sm:grid-cols-2 lg:grid-cols-3`.
-- City card (Link to `/maintenance-{slug}`):
-  - `group block bg-white rounded-xl p-6 transition-all duration-200 hover:-translate-y-1 hover:shadow-md`
-  - Border varies by tier (see below).
-  - Top: `MapPin` icon in gold (`text-brand-gold`), size scales by tier (28 / 24 / 20).
-  - City name: `font-display font-black text-lg text-brand-black group-hover:text-brand-gold`.
-  - Response time row: `text-brand-gold text-sm font-semibold` → `Within {city.responseTime}` (already a string like "30 min" in `site-config`).
-  - Tier 1 only: gold pill `bg-brand-gold text-brand-black text-[10px] font-bold uppercase tracking-wider px-2 py-0.5 rounded-full` → "Primary Market".
-- Tampa Bay card (from `COMING_SOON_CITIES`):
-  - `border border-dashed border-brand-gold/50 bg-brand-gold/5 rounded-xl p-6` — NOT a Link, just a `<div>`.
-  - Gold pin icon + city name + "Coming Soon" gold pill.
+**Issue 2 — Typography too heavy**
+`SectionHeading` (the shared H2 component used everywhere), `FamilyStory`, `BlogArticleLayout`, `ServiceCard`, `LeadMagnetSection`, `CityGrid` all use `font-black` (900). Per spec, only the homepage hero H1 keeps 900. Section H2 → `font-bold`, card H3 → `font-semibold`.
 
-### 2. Tier mapping
-Hardcode tier sets inside `CityGrid.tsx` (no schema change needed):
-- Tier 1 slugs: `orlando-fl`, `kissimmee-fl`, `sanford-fl`, `winter-park-fl`, `lakeland-fl`
-- Tier 2 slugs: `altamonte-springs-fl`, `apopka-fl`, `ocoee-fl`, `winter-garden-fl`, `clermont-fl`, `st-cloud-fl`, `davenport-fl`
-- Tier 3 slugs: everything else (`deltona-fl`, `daytona-beach-fl`, `palm-coast-fl`, `melbourne-fl`, `palm-bay-fl`, `cocoa-fl`)
+**Issue 3 — Logo in header is plain text**
+`StickyHeader.tsx` lines 42–48: just two `<span>`s, no square box, no tagline.
 
-Border per tier:
-- Tier 1: `border border-brand-gold/40 hover:border-brand-gold`
-- Tier 2: `border border-gray-200 hover:border-brand-gold`
-- Tier 3: `border border-gray-100 hover:border-brand-gold`
+**Issue 4 — Footer brand wordmark**
+`Footer.tsx` lines 12–16: gold "F" + white "iveServ", with "Property Solutions" all caps gold below — looks generic.
 
-### 3. Remove `InteractiveMap` usage
-- `src/pages/CitiesIndexPage.tsx`: drop the `<InteractiveMap />` section + import. Keep the page hero and the existing city link grid below (or replace it with `<CityGrid />` for consistency — see decision below).
-- Delete `src/components/fiveserv/InteractiveMap.tsx` entirely (no other consumers — verified via grep would catch it; only `CitiesIndexPage` imports it).
-- Homepage `Index.tsx` already renders `<CityGrid />` — no change needed there beyond the component rewrite.
+**Issue 5 — Section labels too bold**
+Currently `font-bold` everywhere (`SectionHeading`, hero blocks, etc.). Spec wants `font-medium` with a leading `—` glyph.
 
-### 4. Files touched
-- Rewrite: `src/components/fiveserv/CityGrid.tsx`
-- Edit: `src/pages/CitiesIndexPage.tsx` (remove map section + import)
-- Delete: `src/components/fiveserv/InteractiveMap.tsx`
+**Issue 6 — H2 color on light sections**
+`text-brand-black` (true black `#1A1A1A`) used pervasively on white/gray-50 sections in Flooring, Painting, Cleaning, Maintenance, Make-Ready, Renovations, Plumbing, Electrical, HVAC, Carpentry, Drywall, Residential, About pages. Spec wants `text-gray-900` for H2 and `text-gray-600` for body.
 
-## Will NOT change
-- City data in `site-config.ts` (slugs, names, response times, zones)
-- Routes, SEO, schemas
-- Any other section on the homepage or other pages
+---
 
-## One quick decision
+## Fix plan (no content/route changes)
 
-<lov-actions>
-<lov-suggestion message="On /cities and /service-areas pages, replace the current detailed city cards (with zones + response time + clock icon) with the same new CityGrid component used on the homepage, so the design is identical everywhere.">Use the same new grid on /cities too</lov-suggestion>
-<lov-suggestion message="On /cities and /service-areas pages, only remove the InteractiveMap but keep the existing detailed city cards (zones, response time, clock icon) below the hero — they show more info than the homepage grid.">Keep detailed cards on /cities, only remove the SVG map</lov-suggestion>
-</lov-actions>
+### Fix 1 — Hero text contrast sweep
+Audit every page's hero `<section>`. Where `bg-brand-black` is set:
+- H1 → `text-white font-display`
+- Subtitle/paragraph → `text-gray-300`
+- Any breadcrumb → `text-gray-400`
+- Replace any `text-brand-black` inside a dark hero (e.g. `FlooringPage` line 129, line 156).
+
+Files to touch: `FlooringPage`, `PaintingPage`, `CleaningPage`, `CarpentryPage`, `MaintenancePage`, `MakeReadyPage`, `RenovationsPage`, `PlumbingPage`, `ElectricalPage`, `HvacPage`, `DrywallPage`, `ResidentialPage`, `AboutPage`, `FaqPage`, `ContactPage`, `BlogPage`, `ServicesIndexPage`, `CitiesIndexPage`, `MaintenanceCityPage`, `TampaBayPage`, `ThankYou*` pages, `ServicePageTemplate`, `CityPageTemplate`.
+
+### Fix 2 — Typography weights
+- `SectionHeading.tsx` H2 → `font-display font-bold` (was `font-black`)
+- `ServiceCard.tsx`, `LeadMagnetSection.tsx`, `CityGrid.tsx` H3s → `font-semibold` (was `font-black`)
+- `FamilyStory.tsx`, `BlogArticleLayout.tsx` inline H2s → `font-bold`
+- Per-page H2s using `font-display text-3xl/4xl` keep size, switch to `font-bold`
+- `index.css` `h2, h3` rule (currently `font-weight: 900`) → split: H1 stays 900, H2 = 700, H3 = 600
+- Body paragraphs on long-form pages → ensure `leading-relaxed` (1.625) where missing; `leading-7` ≈ 1.7
+
+### Fix 3 — Header logo
+Rewrite logo block in `StickyHeader.tsx`:
+```tsx
+<Link to="/" className="flex items-center gap-3">
+  <span className="inline-flex items-center justify-center bg-brand-black text-brand-gold font-display font-black text-base px-2 py-1.5 rounded-md border border-brand-gold/40">
+    FS
+  </span>
+  <span className="flex flex-col leading-tight">
+    <span className="font-display font-bold text-brand-white text-lg">FiveServ</span>
+    <span className="hidden lg:inline text-[10px] text-gray-400 uppercase tracking-wider">Property Solutions</span>
+  </span>
+</Link>
+```
+
+### Fix 4 — Footer brand
+Replace `Footer.tsx` lines 12–17 with the same logo treatment + gray italic tagline:
+```tsx
+<Link to="/" className="flex items-center gap-3">
+  <span className="inline-flex items-center justify-center bg-brand-black text-brand-gold font-display font-black text-base px-2 py-1.5 rounded-md border border-brand-gold/40">FS</span>
+  <span className="font-display font-bold text-brand-white text-lg">FiveServ</span>
+</Link>
+<p className="mt-3 text-sm italic text-gray-400">Five Days. One Call. Done.</p>
+```
+Remove the gold "Property Solutions" all-caps line.
+
+### Fix 5 — Section label style
+Update `SectionHeading.tsx` eyebrow:
+```tsx
+<p className="text-brand-gold text-xs font-medium uppercase tracking-[0.12em] mb-3">
+  — {eyebrow}
+</p>
+```
+And hand-rolled section labels across pages (the `<p className="text-sm font-bold uppercase tracking-wide text-brand-gold">` pattern) → swap `font-bold` → `font-medium`, prepend `— `. Sweep all pages.
+
+### Fix 6 — H2/body color on light sections
+Global find-and-replace within light-section contexts:
+- H2/H3 on white or `bg-gray-50`: `text-brand-black` → `text-gray-900`
+- Body paragraphs (`<p>` with `text-brand-black` or default): standardize to `text-gray-600`
+
+Will be done per-page targeting only headings inside `bg-white` / `bg-gray-50` / no-bg sections (not inside dark heroes/cards/CTAs/footer where black is intentional like inside gold pills).
+
+---
+
+## Files modified (estimate)
+- 2 shared layout: `StickyHeader.tsx`, `Footer.tsx`
+- 1 design token: `index.css`
+- 3 shared components: `SectionHeading.tsx`, `ServiceCard.tsx`, `CityGrid.tsx`, `LeadMagnetSection.tsx`, `FamilyStory.tsx`, `BlogArticleLayout.tsx`, `ServicePageTemplate.tsx`, `CityPageTemplate.tsx`
+- ~22 page files for hero contrast + label/H2 sweep
+
+## What stays untouched
+- All routes, slugs, schemas, copy, FAQs, blog content, SEO meta
+- Homepage hero (`HeroSection.tsx`) — keeps `font-black` H1
+- All component logic, hooks, data files
+- ServiceAreaMap, all CTAs, all forms
+
+## Out of scope
+- No new components, no new pages, no layout restructuring, no color palette changes beyond swapping `text-brand-black` → `text-gray-900` / `text-gray-600` on light sections
 
