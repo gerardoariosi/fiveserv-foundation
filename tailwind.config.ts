@@ -30,6 +30,7 @@ export default {
           white: "hsl(var(--brand-white))",
           gray: "hsl(var(--brand-gray))",
           "gray-muted": "hsl(var(--brand-gray-muted))",
+          light: "#F5F5F5",
         },
         primary: {
           DEFAULT: "hsl(var(--primary))",
