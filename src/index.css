@@ -82,26 +82,31 @@
   }
   body {
     @apply bg-white text-brand-black antialiased;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: "Plus Jakarta Sans", system-ui, sans-serif;
+    font-weight: 400;
   }
   h1 {
-    font-family: "Montserrat", Arial, sans-serif;
-    font-weight: 900;
-    letter-spacing: -0.01em;
+    font-family: "Clash Display", system-ui, sans-serif;
+    font-weight: 700;
+    letter-spacing: -0.02em;
   }
   h2 {
-    font-family: "Montserrat", Arial, sans-serif;
-    font-weight: 700;
-    letter-spacing: -0.01em;
+    font-family: "Clash Display", system-ui, sans-serif;
+    font-weight: 600;
+    letter-spacing: -0.015em;
   }
   h3 {
-    font-family: "Montserrat", Arial, sans-serif;
+    font-family: "Clash Display", system-ui, sans-serif;
     font-weight: 600;
-    letter-spacing: -0.005em;
+    letter-spacing: -0.01em;
   }
-  h4, h5, h6, .font-arial-bold {
-    font-family: Arial, Helvetica, sans-serif;
-    font-weight: 700;
+  h4, h5, h6 {
+    font-family: "Clash Display", system-ui, sans-serif;
+    font-weight: 500;
+  }
+  .font-arial-bold {
+    font-family: "Plus Jakarta Sans", system-ui, sans-serif;
+    font-weight: 600;
   }
   p {
     line-height: 1.7;
