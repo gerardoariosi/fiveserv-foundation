@@ -1,60 +1,53 @@
 
 
-## Plan — 3 Fixes
+## Plan — Image Quality + Hero Video Cropping
 
-### Issue 2: Logo filename (quick, deterministic)
+### Issue 5: Hero video cropping (HeroSection.tsx)
 
-The file `/public/images/logo FS .png` has spaces. URL-encoded it works, but it's fragile. Fix:
+Current state (lines 70 & 79-90):
+- Container: `min-h-[600px] h-screen` — `h-screen` locks to viewport height which is correct, but combined with `object-cover object-center` on the video, ultra-wide screens crop top/bottom of the subject.
+- Video element already has `w-full h-full object-cover` ✓
+- Overlay already has `absolute inset-0` ✓
 
-- Add a copy at `/public/images/logo-fs.png` (keep old file too, no breaking)
-- Update 3 references to `/images/logo-fs.png`:
-  - `src/components/fiveserv/StickyHeader.tsx:46`
-  - `src/components/fiveserv/Footer.tsx:15`
-  - `src/pages/TampaBayPage.tsx:65`
+Real fix:
+- Container: change `min-h-[600px] h-screen` → `relative w-full min-h-screen` (drop the fixed `h-screen`, let content + min-height drive it; video stays absolute and fills)
+- Remove inline `style={{ objectFit: "cover" }}` redundancy (already in className)
+- Add `object-position: center center` explicitly (already via `object-center`) ✓
+- Keep both video layers as `absolute inset-0 w-full h-full`
 
-Note: I cannot copy binary files via the available tools. I'll need to either (a) keep the old filename and just URL-encode it as `/images/logo%20FS%20.png`, or (b) ask the user to rename the file in the asset browser. **Recommended: option (a)** — change all 3 src paths to `/images/logo%20FS%20.png` (proper URL encoding), which fixes any browser that chokes on raw spaces. No file rename needed.
+This prevents the video from being cropped while still covering the viewport. On ultra-wide, the video will scale up and crop sides instead of top/bottom — which is the intended `object-cover` behavior. If user wants the *whole* video visible (no crop ever), that requires `object-contain` + letterboxing, which the user did not request.
 
-### Issue 3: Remove Lovable badge
+### Issue 4: Image quality audit
 
-Use `publish_settings--set_badge_visibility` with `hide_badge: true`. Current state confirmed: `hide_badge: false`. Requires Pro plan; if the user isn't on Pro, the call will surface that requirement.
+Project is **Vite + React** (not Next.js) — `next/image` and `quality={100}` don't apply. Will translate the intent:
 
-### Issue 1: Contrast & readability audit
+1. **Remove blur/filter/opacity on `<img>`**: grep for `filter`, `blur`, `opacity-` on img tags and overlay layers that wrap images.
+2. **Remove width/max-width constraints stretching images**: spot-check service cards, testimonials, family story image, blog images.
+3. **Add `sizes="100vw"`**: only meaningful for `srcset`. None of the current `<img>` tags use `srcset`, so this is a no-op. Will skip unless we add responsive sources (out of scope).
+4. **Verify `object-fit: cover`**: grep for `object-fill`/`object-scale-down`/`object-contain` misuse.
+5. **Remove `transform`/`scale` on images**: grep for `scale-` and `hover:scale-` on `<img>`. Hover-zoom (`hover:scale-105`) is a common UX pattern; will keep unless it visibly degrades. User's rule says "remove any transform or scale that could degrade rendering" — `scale-105` on hover is fine in modern browsers (GPU composited, no quality loss). Will leave hover effects, remove only static transforms.
 
-Scope: all pages. Rather than rewrite every component blindly, I'll do a **targeted sweep** for the specific anti-patterns the user listed, since the design system is already mostly compliant (white sections use `text-gray-900`/`text-gray-700`, dark sections use white/gold).
+### Files to inspect/edit
 
-Targeted greps + fixes:
-
-1. **Gold text on white backgrounds** (forbidden): grep `text-brand-gold` inside components rendered on white sections. Known offender already visible:
-   - `StickyHeader.tsx:77` — phone number is `text-brand-gold` on white header → change to `text-brand-black font-semibold` with gold phone *icon* only.
-   - `StickyHeader.tsx:101` (mobile phone icon) — keep icon gold is OK per "gold ONLY on dark" rule? Icon is decorative; rule says "gold *text*". Will change to `text-brand-black` to be safe.
-   - `StickyHeader.tsx:126-127` (mobile menu phone link) — on white dropdown → change to black.
-
-2. **Light gray text on white** (forbidden `gray-300/400`, and `gray-500` for body):
-   - `StickyHeader.tsx:52, 81` use `text-gray-500` for tiny eyebrow labels → bump to `text-gray-700`.
-   - Sweep all `.tsx` for `text-gray-300|400` on white-section components.
-
-3. **Card backgrounds on white sections**: audit `ServiceCard`, `TestimonialCard`, `FivePillars`, `FaqAccordion`, `BlogArticleLayout`, etc. — ensure cards on white use `bg-[#F5F5F5] border border-[#E5E5E5]` (or `bg-brand-light` if defined in tailwind config).
-
-4. **Section alternation pattern**: spot-check `Index.tsx` and main page templates to ensure white → `#F5F5F5` → dark cycle.
-
-5. **Min font sizes**: replace any `text-xs` (12px) used for body/labels with `text-sm` (14px) or `text-[13px]`. `text-xs` for decorative eyebrows on dark bg can stay.
-
-I'll do the actual grep + edits in implementation mode. Estimated 6–12 small className edits across ~5 files.
-
-### Files to edit (summary)
-
-| File | Change |
+| File | Action |
 |---|---|
-| `StickyHeader.tsx` | logo path, gold→black phone text, gray-500→gray-700 |
-| `Footer.tsx` | logo path (footer is dark, gold OK there) |
-| `TampaBayPage.tsx` | logo path |
-| `Index.tsx` + section components | spot-fix gray-300/400/500 body text, card bg on white sections |
-| `ServiceCard.tsx`, `TestimonialCard.tsx`, `FaqAccordion.tsx` | card bg/border on white sections if needed |
-| Lovable badge | `publish_settings--set_badge_visibility(true)` |
+| `src/components/fiveserv/HeroSection.tsx` | Container: `min-h-[600px] h-screen` → `min-h-screen w-full`; clean redundant inline styles |
+| `src/components/fiveserv/FamilyStory.tsx` | Already uses `object-cover aspect-[4/3]` ✓ — verify no blur |
+| `src/components/fiveserv/ServiceCard.tsx` | Audit for image transforms |
+| `src/components/fiveserv/TestimonialCard.tsx` | Audit avatar rendering |
+| `src/components/fiveserv/BeforeAfterSlider.tsx` | Verify slider images use `object-cover` not `object-fill` |
+| `src/pages/BlogArticlePage.tsx` + blog content | Audit hero/inline images |
+| `src/pages/AboutPage.tsx`, `Index.tsx` section images | Audit |
 
-### What I will NOT do
+Will grep for: `filter`, `blur-`, `opacity-[0-9]` on img wrappers, `object-fill`, `object-scale-down`, `transform`, `scale-` on `<img>`.
 
-- Won't rename the binary `logo FS .png` (tool limitation) — using URL-encoded path instead, which is functionally identical.
-- Won't touch dark sections (Footer, dark hero overlays) — they already comply.
-- Won't restyle GHL iframe internals.
+### Out of scope / clarifications
+
+- **`next/image` quality={100}**: not applicable (Vite project, no Next.js). Closest equivalent is to ensure source images are high-resolution — that's a content/asset task, not a code fix. Will note any low-res source files found.
+- **Responsive `srcset`/`sizes`**: would require generating multiple sizes per image (build-time tooling). Out of scope for this pass.
+- **Hover zoom on cards**: keeping `hover:scale-105` style effects (no quality degradation, intended UX).
+
+### Implementation estimate
+
+~2-4 small className edits in HeroSection + 0-3 image-related fixes elsewhere depending on what the grep finds.
 
