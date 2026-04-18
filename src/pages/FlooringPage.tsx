@@ -427,13 +427,13 @@ const FlooringPage = () => {
                   { to: "/residential", label: "Residential Services" },
                 ].map((l) => (
                   <li key={l.to}>
-                    <Link to={l.to} className="inline-flex items-center gap-2 text-amber-700 hover:underline">
+                    <Link to={l.to} className="inline-flex items-center gap-2 text-gray-900 hover:text-amber-700 hover:underline">
                       <ArrowRight className="h-4 w-4" /> {l.label}
                     </Link>
                   </li>
                 ))}
                 <li>
-                  <Link to="/contact" className="inline-flex items-center gap-2 text-amber-700 hover:underline">
+                  <Link to="/contact" className="inline-flex items-center gap-2 text-gray-900 hover:text-amber-700 hover:underline">
                     <ArrowRight className="h-4 w-4" /> Contact us
                   </Link>
                 </li>
@@ -447,7 +447,7 @@ const FlooringPage = () => {
                   { slug: "kissimmee-fl", name: "Kissimmee" },
                 ].map((c) => (
                   <li key={c.slug}>
-                    <Link to={`/maintenance-${c.slug}`} className="inline-flex items-center gap-2 text-amber-700 hover:underline">
+                    <Link to={`/maintenance-${c.slug}`} className="inline-flex items-center gap-2 text-gray-900 hover:text-amber-700 hover:underline">
                       <ArrowRight className="h-4 w-4" /> Flooring in {c.name}, FL
                     </Link>
                   </li>

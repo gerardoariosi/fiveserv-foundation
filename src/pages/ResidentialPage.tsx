@@ -259,14 +259,14 @@ const ResidentialPage = () => {
                 const s = SERVICES.find((x) => x.slug === slug)!;
                 return (
                   <li key={slug}>
-                    <Link to={`/${slug}`} className="inline-flex items-center gap-2 text-amber-700 hover:underline">
+                    <Link to={`/${slug}`} className="inline-flex items-center gap-2 text-gray-900 hover:text-amber-700 hover:underline">
                       <ArrowRight className="h-4 w-4" /> {s.name}
                     </Link>
                   </li>
                 );
               })}
               <li>
-                <Link to="/contact" className="inline-flex items-center gap-2 text-amber-700 hover:underline">
+                <Link to="/contact" className="inline-flex items-center gap-2 text-gray-900 hover:text-amber-700 hover:underline">
                   <ArrowRight className="h-4 w-4" /> Contact us
                 </Link>
               </li>

@@ -46,7 +46,7 @@ const ServicesIndexPage = () => (
               <p className="mt-3 text-gray-700">{s.description}</p>
               <Link
                 to={`/${s.slug}`}
-                className="mt-6 inline-flex items-center gap-2 font-bold text-amber-700 group-hover:underline"
+                className="mt-6 inline-flex items-center gap-2 font-bold text-gray-900 group-hover:text-amber-700 group-hover:underline"
               >
                 {s.cta} <ArrowRight className="h-4 w-4" />
               </Link>
