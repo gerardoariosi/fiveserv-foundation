@@ -20,6 +20,7 @@ import FaqAccordion from "@/components/fiveserv/FaqAccordion";
 import LeadMagnetSection from "@/components/fiveserv/LeadMagnetSection";
 import ContactCTA from "@/components/fiveserv/ContactCTA";
 import BeforeAfterSlider from "@/components/fiveserv/BeforeAfterSlider";
+import TrustBar from "@/components/fiveserv/TrustBar";
 import { useReveal } from "@/hooks/use-fiveserv";
 
 const SERVICE_META = [
@@ -128,6 +129,9 @@ const Index = () => {
 
       {/* Element 3: Hero (Elements 1 & 2 are in RootLayout) */}
       <HeroSection />
+
+      {/* Trust bar — right after hero */}
+      <TrustBar />
 
       {/* Element 4: Problem */}
       <ProblemSection />

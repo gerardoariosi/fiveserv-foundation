@@ -135,4 +135,23 @@
   .cta-gold:hover {
     background-color: hsl(var(--brand-gold-hover));
   }
+
+  /* Trust bar infinite scroll */
+  .trustbar-mask {
+    -webkit-mask-image: linear-gradient(to right, transparent, black 8%, black 92%, transparent);
+            mask-image: linear-gradient(to right, transparent, black 8%, black 92%, transparent);
+  }
+  .trustbar-track {
+    animation: trustbar-scroll 30s linear infinite;
+  }
+  .trustbar-track:hover {
+    animation-play-state: paused;
+  }
+  @keyframes trustbar-scroll {
+    from { transform: translateX(0); }
+    to   { transform: translateX(-50%); }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .trustbar-track { animation: none; }
+  }
 }
