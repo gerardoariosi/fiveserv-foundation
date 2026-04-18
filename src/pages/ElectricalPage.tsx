@@ -108,7 +108,7 @@ const ElectricalPage = () => {
           <p className="text-sm font-bold uppercase tracking-wide text-brand-gold">
             {SITE.brand} Property Solutions
           </p>
-          <h1 className="mt-3 font-display text-4xl text-brand-white sm:text-5xl lg:text-6xl">
+          <h1 className="mt-3 font-display text-4xl text-brand-black sm:text-5xl lg:text-6xl">
             Electrical Services for Property Managers in
             <span className="block text-brand-gold">Central Florida</span>
           </h1>
@@ -122,7 +122,7 @@ const ElectricalPage = () => {
             </span>
           </div>
 
-          <p className="mt-6 max-w-2xl text-lg text-brand-white/90">
+          <p className="mt-6 max-w-2xl text-lg text-gray-700">
             Outlets. Panels. Lighting. Wiring. Emergencies. One call. We answer.
           </p>
 
@@ -132,7 +132,7 @@ const ElectricalPage = () => {
             </a>
             <a
               href={`tel:${SITE.phone}`}
-              className="flex items-center gap-2 rounded-md border-2 border-brand-white px-6 py-3 text-sm font-bold uppercase tracking-wide text-brand-white hover:bg-brand-white hover:text-brand-black transition-colors"
+              className="flex items-center gap-2 rounded-md border-2 border-brand-white px-6 py-3 text-sm font-bold uppercase tracking-wide text-brand-black hover:bg-brand-white hover:text-brand-black transition-colors"
             >
               <Phone className="h-4 w-4" /> Call {SITE.phone}
             </a>
@@ -145,28 +145,28 @@ const ElectricalPage = () => {
       </section>
 
       {/* Problem section */}
-      <section className="bg-brand-gray">
+      <section className="bg-gray-50">
         <div className="container py-20">
           <SectionReveal className="grid gap-10 lg:grid-cols-2 lg:items-center">
             <div>
               <p className="text-sm font-bold uppercase tracking-wide text-brand-gold">Liability & Safety</p>
-              <h2 className="mt-3 font-display text-3xl text-brand-white sm:text-4xl">
+              <h2 className="mt-3 font-display text-3xl text-brand-black sm:text-4xl">
                 A failed outlet is a{" "}
                 <span className="text-brand-gold">fire risk and a lawsuit</span>
               </h2>
-              <p className="mt-4 text-brand-white/85">
+              <p className="mt-4 text-gray-700">
                 Electrical issues in rental properties create real liability and safety risks. Sparking outlets,
                 overloaded panels, failed wiring — every hour of delay raises the stakes for residents and the
                 portfolio. {SITE.brand}'s licensed electricians respond within 2 hours, with documentation insurance
                 carriers accept.
               </p>
             </div>
-            <div className="rounded-xl border-2 border-brand-gold bg-brand-black p-8">
+            <div className="rounded-xl border-2 border-brand-gold bg-white shadow-md p-8">
               <div className="flex items-center gap-4">
                 <Siren className="h-10 w-10 text-brand-gold" />
                 <div>
-                  <p className="font-display text-2xl text-brand-white">2-Hour Response</p>
-                  <p className="text-sm text-brand-white/70">Across the Orlando metro core, 24/7</p>
+                  <p className="font-display text-2xl text-brand-black">2-Hour Response</p>
+                  <p className="text-sm text-gray-600">Across the Orlando metro core, 24/7</p>
                 </div>
               </div>
               <a
@@ -181,24 +181,24 @@ const ElectricalPage = () => {
       </section>
 
       {/* Services Grid */}
-      <section className="bg-brand-black">
+      <section className="bg-white">
         <div className="container py-20">
           <SectionReveal>
-            <h2 className="font-display text-3xl text-brand-white sm:text-4xl">
+            <h2 className="font-display text-3xl text-brand-black sm:text-4xl">
               Electrical Services <span className="text-brand-gold">We Handle</span>
             </h2>
-            <p className="mt-3 max-w-2xl text-brand-white/80">
+            <p className="mt-3 max-w-2xl text-gray-700">
               Six core service lines. In-house coordination. Florida-licensed electricians on every job.
             </p>
 
             <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
               {SERVICES_GRID.map((s) => (
-                <article key={s.title} className="hover-card rounded-lg border border-brand-gray bg-brand-gray/40 p-6">
+                <article key={s.title} className="hover-card rounded-lg border border-gray-100 bg-white shadow-sm p-6">
                   <span className="flex h-12 w-12 items-center justify-center rounded-md bg-brand-gold/10 text-brand-gold">
                     <s.icon className="h-6 w-6" />
                   </span>
-                  <h3 className="mt-5 font-display text-xl text-brand-white">{s.title}</h3>
-                  <p className="mt-2 text-brand-white/80">{s.desc}</p>
+                  <h3 className="mt-5 font-display text-xl text-brand-black">{s.title}</h3>
+                  <p className="mt-2 text-gray-700">{s.desc}</p>
                 </article>
               ))}
             </div>
@@ -207,10 +207,10 @@ const ElectricalPage = () => {
       </section>
 
       {/* Response Time section */}
-      <section className="bg-brand-gray">
+      <section className="bg-gray-50">
         <div className="container py-20">
           <SectionReveal>
-            <div className="rounded-xl border-2 border-brand-gold bg-brand-black p-8 sm:p-12">
+            <div className="rounded-xl border-2 border-brand-gold bg-white shadow-md p-8 sm:p-12">
               <div className="grid gap-8 lg:grid-cols-[auto,1fr,auto] lg:items-center">
                 <div className="flex h-16 w-16 items-center justify-center rounded-full bg-brand-gold/15 text-brand-gold">
                   <Clock className="h-8 w-8" />
@@ -219,11 +219,11 @@ const ElectricalPage = () => {
                   <span className="inline-block rounded-full bg-brand-gold px-3 py-1 text-xs font-bold uppercase tracking-wider text-brand-black">
                     Response Time
                   </span>
-                  <h2 className="mt-3 font-display text-3xl text-brand-white sm:text-4xl">
+                  <h2 className="mt-3 font-display text-3xl text-brand-black sm:text-4xl">
                     Emergency electrical response within{" "}
                     <span className="text-brand-gold">2 hours</span> across Central Florida
                   </h2>
-                  <p className="mt-3 text-brand-white/85">
+                  <p className="mt-3 text-gray-700">
                     24/7 dispatch. Real human answers the phone. Truck rolling within minutes for power emergencies in
                     Orlando, Kissimmee, Winter Park, Altamonte Springs, Apopka, Ocoee, and Winter Garden.
                   </p>
@@ -241,32 +241,32 @@ const ElectricalPage = () => {
       </section>
 
       {/* Why Licensed Matters */}
-      <section className="bg-brand-black">
+      <section className="bg-white">
         <div className="container py-20">
           <SectionReveal className="grid gap-10 lg:grid-cols-2 lg:items-center">
-            <div className="rounded-xl border border-brand-gold/60 bg-brand-gray/40 p-8">
+            <div className="rounded-xl border border-gray-100 bg-white shadow-sm p-8">
               <ShieldCheck className="h-12 w-12 text-brand-gold" />
-              <p className="mt-6 font-display text-2xl text-brand-white">
+              <p className="mt-6 font-display text-2xl text-brand-black">
                 One invoice. <span className="text-brand-gold">Zero liability.</span>
               </p>
-              <p className="mt-3 text-brand-white/80">
+              <p className="mt-3 text-gray-700">
                 You don't track the electrician's license. You don't pull the permit. You don't carry the risk.
                 {" "}{SITE.brand} does it all — you get one invoice and full accountability.
               </p>
             </div>
             <div>
               <p className="text-sm font-bold uppercase tracking-wide text-brand-gold">Why Licensed Matters</p>
-              <h2 className="mt-3 font-display text-3xl text-brand-white sm:text-4xl">
+              <h2 className="mt-3 font-display text-3xl text-brand-black sm:text-4xl">
                 All electrical performed by{" "}
                 <span className="text-brand-gold">Florida-licensed contractors</span>
               </h2>
-              <p className="mt-4 text-brand-white/85">
+              <p className="mt-4 text-gray-700">
                 In Florida, electrical work above a low threshold legally requires a licensed electrical contractor.
                 Insurance carriers require it for fire and liability claims. {SITE.brand} coordinates licensed
                 electricians on every job — you get the protection of licensed work plus the simplicity of a single
                 point of contact.
               </p>
-              <ul className="mt-6 space-y-2 text-brand-white/85">
+              <ul className="mt-6 space-y-2 text-gray-700">
                 <li className="flex items-start gap-3">
                   <ShieldCheck className="mt-0.5 h-5 w-5 flex-shrink-0 text-brand-gold" />
                   Licensed electrical contractors on every job
@@ -292,14 +292,14 @@ const ElectricalPage = () => {
       <StatsBar />
 
       {/* Coverage — all 18 cities */}
-      <section className="bg-brand-black">
+      <section className="bg-white">
         <div className="container py-20">
           <SectionReveal>
-            <h2 className="font-display text-3xl text-brand-white sm:text-4xl">
+            <h2 className="font-display text-3xl text-brand-black sm:text-4xl">
               Electrical Coverage —{" "}
               <span className="text-brand-gold">18 Cities Across Central Florida</span>
             </h2>
-            <p className="mt-3 max-w-2xl text-brand-white/80">
+            <p className="mt-3 max-w-2xl text-gray-700">
               Same-day response across the Orlando metro core. Within 24 hours across the rest of the region.
             </p>
 
@@ -308,11 +308,11 @@ const ElectricalPage = () => {
                 <Link
                   key={c.slug}
                   to={`/maintenance-${c.slug}`}
-                  className="hover-card group flex items-center justify-between rounded-md border border-brand-gray bg-brand-gray/40 px-4 py-3"
+                  className="hover-card group flex items-center justify-between rounded-md border border-gray-100 bg-white shadow-sm px-4 py-3"
                 >
                   <span className="flex items-center gap-3">
                     <Zap className="h-4 w-4 text-brand-gold" />
-                    <span className="font-bold text-brand-white">
+                    <span className="font-bold text-brand-black">
                       Electrical {c.name}, {c.state}
                     </span>
                   </span>
@@ -330,11 +330,11 @@ const ElectricalPage = () => {
       <FaqAccordion faqs={ELECTRICAL_FAQS} emitSchema={false} />
 
       {/* Internal links */}
-      <section className="bg-brand-gray">
+      <section className="bg-gray-50">
         <div className="container py-16">
           <SectionReveal className="grid gap-10 md:grid-cols-2">
             <div>
-              <h2 className="font-display text-2xl text-brand-white">Related Services</h2>
+              <h2 className="font-display text-2xl text-brand-black">Related Services</h2>
               <ul className="mt-4 space-y-2">
                 {[
                   { to: "/maintenance", label: "Property Maintenance" },
@@ -356,7 +356,7 @@ const ElectricalPage = () => {
               </ul>
             </div>
             <div>
-              <h2 className="font-display text-2xl text-brand-white">Electrical in your city</h2>
+              <h2 className="font-display text-2xl text-brand-black">Electrical in your city</h2>
               <ul className="mt-4 space-y-2">
                 {[
                   { slug: "orlando-fl", name: "Orlando" },

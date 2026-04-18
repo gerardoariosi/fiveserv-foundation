@@ -53,10 +53,10 @@ const BlogPage = () => {
           <p className="text-xs font-bold uppercase tracking-wider text-brand-gold">
             FiveServ Insights
           </p>
-          <h1 className="mt-4 font-display text-4xl text-brand-white sm:text-5xl">
+          <h1 className="mt-4 font-display text-4xl text-brand-black sm:text-5xl">
             Property Management Maintenance Insights — Central Florida
           </h1>
-          <p className="mt-6 max-w-2xl text-lg text-brand-white/80">
+          <p className="mt-6 max-w-2xl text-lg text-gray-700">
             Make-ready playbooks, CapEx ROI breakdowns, maintenance benchmarks, and the
             on-the-ground guides we use to turn 300+ units a year across Orlando, Kissimmee,
             and the I-4 corridor.
@@ -73,7 +73,7 @@ const BlogPage = () => {
               className={`rounded-full px-4 py-2 text-xs font-bold uppercase tracking-wide transition ${
                 activeCat === "all"
                   ? "bg-brand-gold text-brand-black"
-                  : "border border-brand-gold/40 text-brand-white hover:border-brand-gold"
+                  : "border border-brand-gold/40 text-brand-black hover:border-brand-gold"
               }`}
             >
               All
@@ -85,7 +85,7 @@ const BlogPage = () => {
                 className={`rounded-full px-4 py-2 text-xs font-bold uppercase tracking-wide transition ${
                   activeCat === c.slug
                     ? "bg-brand-gold text-brand-black"
-                    : "border border-brand-gold/40 text-brand-white hover:border-brand-gold"
+                    : "border border-brand-gold/40 text-brand-black hover:border-brand-gold"
                 }`}
               >
                 {c.label}
@@ -96,7 +96,7 @@ const BlogPage = () => {
       </section>
 
       {/* Grid */}
-      <section className="bg-brand-black py-16">
+      <section className="bg-white py-16">
         <div className="container max-w-5xl">
           {visiblePosts.length === 0 ? (
             <p className="text-brand-gray-muted">More articles coming soon in this category.</p>
@@ -106,7 +106,7 @@ const BlogPage = () => {
                 <Link
                   key={post.slug}
                   to={`/blog/${post.slug}`}
-                  className="group flex flex-col overflow-hidden rounded-lg border border-brand-gold/20 bg-brand-gray/30 transition hover:border-brand-gold"
+                  className="group flex flex-col overflow-hidden rounded-lg border border-brand-gold/20 bg-white border border-gray-100 shadow-sm transition hover:border-brand-gold"
                 >
                   <div
                     className="aspect-[16/9] w-full bg-brand-gray"
@@ -123,7 +123,7 @@ const BlogPage = () => {
                     <span className="self-start rounded bg-brand-gold/15 px-2 py-1 text-[10px] font-bold uppercase tracking-wide text-brand-gold">
                       {BLOG_CATEGORIES.find((c) => c.slug === post.category)?.label}
                     </span>
-                    <h2 className="mt-3 font-display text-lg text-brand-white group-hover:text-brand-gold">
+                    <h2 className="mt-3 font-display text-lg text-brand-black group-hover:text-brand-gold">
                       {post.title}
                     </h2>
                     <p className="mt-2 line-clamp-2 text-sm text-brand-gray-muted">

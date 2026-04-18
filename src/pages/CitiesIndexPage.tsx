@@ -23,38 +23,38 @@ const CitiesIndexPage = ({ canonicalPath = "/cities" }: Props) => (
     <section className="bg-brand-black pt-32 pb-16">
       <div className="container">
         <p className="text-sm font-bold uppercase tracking-wide text-brand-gold">{SITE.brand} Property Solutions</p>
-        <h1 className="mt-3 font-display text-4xl text-brand-white sm:text-5xl">
+        <h1 className="mt-3 font-display text-4xl text-brand-black sm:text-5xl">
           18 Cities Across <span className="text-brand-gold">Central Florida</span>
         </h1>
-        <p className="mt-6 max-w-2xl text-brand-white/80">
+        <p className="mt-6 max-w-2xl text-gray-700">
           Same-day or 24-hour response across Orlando metro, Polk, Volusia, Flagler, and Brevard counties. Tampa Bay launching soon.
         </p>
       </div>
     </section>
 
-    <section className="bg-brand-black pb-12">
+    <section className="bg-white pb-12">
       <div className="container">
         <InteractiveMap />
       </div>
     </section>
 
-    <section className="bg-brand-black pb-24">
+    <section className="bg-white pb-24">
       <div className="container grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
         {CITIES.map((city) => (
           <Link
             key={city.slug}
             to={`/maintenance-${city.slug}`}
-            className="hover-card group rounded-lg border border-brand-gray bg-brand-gray/40 p-6"
+            className="hover-card group rounded-lg border border-gray-100 bg-white shadow-sm p-6"
           >
             <div className="flex items-center gap-2 text-brand-gold">
               <MapPin className="h-4 w-4" />
               <span className="text-xs font-bold uppercase tracking-wide">{city.state}</span>
             </div>
-            <h2 className="mt-2 font-display text-xl text-brand-white group-hover:text-brand-gold">
+            <h2 className="mt-2 font-display text-xl text-brand-black group-hover:text-brand-gold">
               {city.name}
             </h2>
-            <p className="mt-2 text-sm text-brand-white/70">{city.zones}</p>
-            <p className="mt-3 flex items-center gap-2 text-xs text-brand-white/60">
+            <p className="mt-2 text-sm text-gray-600">{city.zones}</p>
+            <p className="mt-3 flex items-center gap-2 text-xs text-gray-500">
               <Clock className="h-3.5 w-3.5 text-brand-gold" /> {city.responseTime}
             </p>
           </Link>
@@ -74,8 +74,8 @@ const CitiesIndexPage = ({ canonicalPath = "/cities" }: Props) => (
                 Coming Soon
               </span>
             </div>
-            <h2 className="mt-2 font-display text-xl text-brand-white/80 group-hover:text-brand-gold">{c.name}</h2>
-            <p className="mt-2 text-sm text-brand-white/60">Launching soon — join the waitlist.</p>
+            <h2 className="mt-2 font-display text-xl text-gray-700 group-hover:text-brand-gold">{c.name}</h2>
+            <p className="mt-2 text-sm text-gray-500">Launching soon — join the waitlist.</p>
           </Link>
         ))}
       </div>

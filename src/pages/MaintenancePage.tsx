@@ -62,15 +62,15 @@ const MaintenancePage = () => {
           <p className="text-sm font-bold uppercase tracking-wide text-brand-gold">
             {SITE.brand} Property Solutions
           </p>
-          <h1 className="mt-3 font-display text-4xl text-brand-white sm:text-5xl lg:text-6xl">
+          <h1 className="mt-3 font-display text-4xl text-brand-black sm:text-5xl lg:text-6xl">
             Property Maintenance Services for Property Managers in
             <span className="block text-brand-gold">Central Florida</span>
           </h1>
-          <p className="mt-6 max-w-2xl text-lg text-brand-white/90">
+          <p className="mt-6 max-w-2xl text-lg text-gray-700">
             Plumbing. Electrical. HVAC. Drywall. 24/7 emergencies. One call. We answer.
           </p>
 
-          <ul className="mt-8 flex flex-wrap items-center gap-x-6 gap-y-3 text-sm font-bold text-brand-white">
+          <ul className="mt-8 flex flex-wrap items-center gap-x-6 gap-y-3 text-sm font-bold text-brand-black">
             {["24/7 Emergency", "2-Hour Response", "Licensed & Insured", "Portfolio-Ready", "One Invoice"].map((t, i) => (
               <li key={t} className="flex items-center gap-3">
                 {i > 0 && <span aria-hidden className="text-brand-gold">|</span>}
@@ -85,7 +85,7 @@ const MaintenancePage = () => {
             </a>
             <a
               href={`tel:${SITE.phone}`}
-              className="flex items-center gap-2 rounded-md border-2 border-brand-white px-6 py-3 text-sm font-bold uppercase tracking-wide text-brand-white hover:bg-brand-white hover:text-brand-black transition-colors"
+              className="flex items-center gap-2 rounded-md border-2 border-brand-white px-6 py-3 text-sm font-bold uppercase tracking-wide text-brand-black hover:bg-brand-white hover:text-brand-black transition-colors"
             >
               <Phone className="h-4 w-4" /> Call {SITE.phone}
             </a>
@@ -101,24 +101,24 @@ const MaintenancePage = () => {
       <SolutionSection />
 
       {/* What We Handle — trades */}
-      <section className="bg-brand-gray">
+      <section className="bg-gray-50">
         <div className="container py-20">
           <SectionReveal>
-            <h2 className="font-display text-3xl text-brand-white sm:text-4xl">
+            <h2 className="font-display text-3xl text-brand-black sm:text-4xl">
               What We <span className="text-brand-gold">Handle</span>
             </h2>
-            <p className="mt-3 max-w-2xl text-brand-white/80">
+            <p className="mt-3 max-w-2xl text-gray-700">
               Every trade. One call. In-house team plus licensed contractors under our coordination.
             </p>
 
             <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
               {TRADES.map((t) => (
-                <article key={t.title} className="hover-card rounded-lg border border-brand-gray bg-brand-black p-6">
+                <article key={t.title} className="hover-card rounded-lg border border-gray-100 bg-white shadow-sm p-6">
                   <span className="flex h-12 w-12 items-center justify-center rounded-md bg-brand-gold/10 text-brand-gold">
                     <t.icon className="h-6 w-6" />
                   </span>
-                  <h3 className="mt-5 font-display text-xl text-brand-white" dangerouslySetInnerHTML={{ __html: t.title }} />
-                  <p className="mt-2 text-brand-white/80">{t.desc}</p>
+                  <h3 className="mt-5 font-display text-xl text-brand-black" dangerouslySetInnerHTML={{ __html: t.title }} />
+                  <p className="mt-2 text-gray-700">{t.desc}</p>
                 </article>
               ))}
             </div>
@@ -127,22 +127,22 @@ const MaintenancePage = () => {
       </section>
 
       {/* Response Tiers */}
-      <section className="bg-brand-black">
+      <section className="bg-white">
         <div className="container py-20">
           <SectionReveal>
-            <h2 className="font-display text-3xl text-brand-white sm:text-4xl">
+            <h2 className="font-display text-3xl text-brand-black sm:text-4xl">
               Response <span className="text-brand-gold">Times</span>
             </h2>
 
             <div className="mt-12 grid gap-6 md:grid-cols-3">
               {RESPONSE.map((r) => (
-                <article key={r.title} className="hover-card rounded-lg border-2 border-brand-gold bg-brand-gray/30 p-6">
+                <article key={r.title} className="hover-card rounded-lg border-2 border-brand-gold bg-white border border-gray-100 shadow-sm p-6">
                   <span className="inline-block rounded-full bg-brand-gold px-3 py-1 text-xs font-bold uppercase tracking-wider text-brand-black">
                     {r.badge}
                   </span>
                   <r.icon className="mt-4 h-10 w-10 text-brand-gold" />
-                  <h3 className="mt-3 font-display text-2xl text-brand-white">{r.title}</h3>
-                  <p className="mt-2 text-brand-white/80">{r.body}</p>
+                  <h3 className="mt-3 font-display text-2xl text-brand-black">{r.title}</h3>
+                  <p className="mt-2 text-gray-700">{r.body}</p>
                 </article>
               ))}
             </div>
@@ -151,10 +151,10 @@ const MaintenancePage = () => {
       </section>
 
       {/* Emergencies 24/7 — dedicated section */}
-      <section className="bg-brand-gray">
+      <section className="bg-gray-50">
         <div className="container py-20">
           <SectionReveal>
-            <div className="rounded-xl border-2 border-brand-gold bg-brand-black p-8 sm:p-12">
+            <div className="rounded-xl border-2 border-brand-gold bg-white shadow-md p-8 sm:p-12">
               <div className="grid gap-8 lg:grid-cols-[auto,1fr,auto] lg:items-center">
                 <div className="flex h-16 w-16 items-center justify-center rounded-full bg-brand-gold/15 text-brand-gold">
                   <Siren className="h-8 w-8" />
@@ -163,11 +163,11 @@ const MaintenancePage = () => {
                   <span className="inline-block rounded-full bg-brand-gold px-3 py-1 text-xs font-bold uppercase tracking-wider text-brand-black">
                     Emergencies 24/7
                   </span>
-                  <h2 className="mt-3 font-display text-3xl text-brand-white sm:text-4xl">
+                  <h2 className="mt-3 font-display text-3xl text-brand-black sm:text-4xl">
                     Water leak. No power. No AC.{" "}
                     <span className="text-brand-gold">Call now.</span>
                   </h2>
-                  <p className="mt-3 text-brand-white/85">
+                  <p className="mt-3 text-gray-700">
                     On-site within 2 hours across our Orlando metro core. {SITE.brand} answers the phone — day,
                     night, weekends, holidays. No answering service. No callbacks.
                   </p>
@@ -187,14 +187,14 @@ const MaintenancePage = () => {
       <StatsBar />
 
       {/* Cities Coverage — all 18 with response times */}
-      <section className="bg-brand-black">
+      <section className="bg-white">
         <div className="container py-20">
           <SectionReveal>
-            <h2 className="font-display text-3xl text-brand-white sm:text-4xl">
+            <h2 className="font-display text-3xl text-brand-black sm:text-4xl">
               Maintenance Coverage —{" "}
               <span className="text-brand-gold">18 Cities Across Central Florida</span>
             </h2>
-            <p className="mt-3 max-w-2xl text-brand-white/80">
+            <p className="mt-3 max-w-2xl text-gray-700">
               Same-day response in our Orlando metro core. Within 24 hours across the rest of the region.
             </p>
 
@@ -203,11 +203,11 @@ const MaintenancePage = () => {
                 <Link
                   key={c.slug}
                   to={`/maintenance/${c.slug}`}
-                  className="hover-card group flex items-center justify-between rounded-md border border-brand-gray bg-brand-gray/40 px-4 py-3"
+                  className="hover-card group flex items-center justify-between rounded-md border border-gray-100 bg-white shadow-sm px-4 py-3"
                 >
                   <span className="flex items-center gap-3">
                     <MapPin className="h-4 w-4 text-brand-gold" />
-                    <span className="font-bold text-brand-white">
+                    <span className="font-bold text-brand-black">
                       Maintenance {c.name}, {c.state}
                     </span>
                   </span>
@@ -228,11 +228,11 @@ const MaintenancePage = () => {
       <FaqAccordion faqs={MAINTENANCE_FAQS} emitSchema={false} />
 
       {/* Internal links */}
-      <section className="bg-brand-gray">
+      <section className="bg-gray-50">
         <div className="container py-16">
           <SectionReveal className="grid gap-10 md:grid-cols-2">
             <div>
-              <h2 className="font-display text-2xl text-brand-white">More from {SITE.brand}</h2>
+              <h2 className="font-display text-2xl text-brand-black">More from {SITE.brand}</h2>
               <ul className="mt-4 space-y-2">
                 {(["make-ready", "renovations", "residential"] as const).map((slug) => {
                   const s = SERVICES.find((x) => x.slug === slug)!;
@@ -252,7 +252,7 @@ const MaintenancePage = () => {
               </ul>
             </div>
             <div>
-              <h2 className="font-display text-2xl text-brand-white">Maintenance in your city</h2>
+              <h2 className="font-display text-2xl text-brand-black">Maintenance in your city</h2>
               <ul className="mt-4 space-y-2">
                 {(["orlando-fl", "kissimmee-fl", "sanford-fl"] as const).map((slug) => {
                   const name = slug.replace("-fl", "").split("-").map((w) => w[0].toUpperCase() + w.slice(1)).join(" ");

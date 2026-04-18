@@ -60,16 +60,16 @@ const ContactPage = () => {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(contactPageLd) }}
       />
 
-      <section className="bg-brand-black min-h-[calc(100vh-4rem)]">
+      <section className="bg-white min-h-[calc(100vh-4rem)]">
         <div className="container max-w-3xl py-20 sm:py-28">
           <div className="text-center">
             <p className="text-sm font-bold uppercase tracking-wide text-brand-gold">
               {SITE.brand} Property Solutions
             </p>
-            <h1 className="mt-4 font-display text-4xl text-brand-white sm:text-5xl lg:text-6xl">
+            <h1 className="mt-4 font-display text-4xl text-brand-black sm:text-5xl lg:text-6xl">
               Get a Free Quote
             </h1>
-            <p className="mt-5 text-lg text-brand-white/85">
+            <p className="mt-5 text-lg text-gray-700">
               Fill out the form and we will get back to you within 24 hours.
             </p>
           </div>
@@ -78,7 +78,7 @@ const ContactPage = () => {
             <TrustBar />
           </div>
 
-          <div className="mt-12 rounded-lg border border-brand-gray bg-brand-gray/30 p-6 sm:p-8">
+          <div className="mt-12 rounded-lg border border-gray-100 bg-white shadow-sm p-6 sm:p-8">
             {ghlForm ? (
               <iframe
                 src={ghlForm}
@@ -97,25 +97,25 @@ const ContactPage = () => {
                   <input
                     required
                     placeholder="Full name"
-                    className="rounded-md bg-brand-black px-4 py-3 text-brand-white outline-none focus:ring-2 focus:ring-brand-gold"
+                    className="rounded-md bg-brand-black px-4 py-3 text-brand-black outline-none focus:ring-2 focus:ring-brand-gold"
                   />
                   <input
                     required
                     type="email"
                     placeholder="Email"
-                    className="rounded-md bg-brand-black px-4 py-3 text-brand-white outline-none focus:ring-2 focus:ring-brand-gold"
+                    className="rounded-md bg-brand-black px-4 py-3 text-brand-black outline-none focus:ring-2 focus:ring-brand-gold"
                   />
                   <input
                     required
                     type="tel"
                     placeholder="Phone"
-                    className="rounded-md bg-brand-black px-4 py-3 text-brand-white outline-none focus:ring-2 focus:ring-brand-gold"
+                    className="rounded-md bg-brand-black px-4 py-3 text-brand-black outline-none focus:ring-2 focus:ring-brand-gold"
                   />
                   <input
                     placeholder="Company (optional)"
-                    className="rounded-md bg-brand-black px-4 py-3 text-brand-white outline-none focus:ring-2 focus:ring-brand-gold"
+                    className="rounded-md bg-brand-black px-4 py-3 text-brand-black outline-none focus:ring-2 focus:ring-brand-gold"
                   />
-                  <select className="rounded-md bg-brand-black px-4 py-3 text-brand-white outline-none focus:ring-2 focus:ring-brand-gold sm:col-span-2">
+                  <select className="rounded-md bg-brand-black px-4 py-3 text-brand-black outline-none focus:ring-2 focus:ring-brand-gold sm:col-span-2">
                     <option value="">Service needed</option>
                     <option>Make-Ready / Unit Turn</option>
                     <option>Maintenance &amp; Repairs</option>
@@ -126,7 +126,7 @@ const ContactPage = () => {
                 <textarea
                   rows={4}
                   placeholder="Tell us about your property"
-                  className="w-full rounded-md bg-brand-black px-4 py-3 text-brand-white outline-none focus:ring-2 focus:ring-brand-gold"
+                  className="w-full rounded-md bg-brand-black px-4 py-3 text-brand-black outline-none focus:ring-2 focus:ring-brand-gold"
                 />
                 <button
                   type="submit"
@@ -134,7 +134,7 @@ const ContactPage = () => {
                 >
                   Send My Request
                 </button>
-                <p className="text-xs text-brand-white/60">
+                <p className="text-xs text-gray-500">
                   [FORM_GHL_EMBED] — replace this fallback by setting VITE_FORM_GHL.
                 </p>
               </form>
@@ -154,7 +154,7 @@ const ContactPage = () => {
                 href={waHref}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center gap-2 text-lg font-bold text-brand-white hover:text-brand-gold"
+                className="flex items-center gap-2 text-lg font-bold text-brand-black hover:text-brand-gold"
               >
                 <WhatsAppIcon className="h-5 w-5 text-[#25D366]" />
                 WhatsApp

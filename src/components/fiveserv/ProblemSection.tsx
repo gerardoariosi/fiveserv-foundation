@@ -1,5 +1,6 @@
 import { XCircle } from "lucide-react";
 import { useReveal } from "@/hooks/use-fiveserv";
+import SectionHeading from "./SectionHeading";
 
 const PAINS = [
   {
@@ -20,20 +21,25 @@ export const ProblemSection = () => {
   const ref = useReveal<HTMLDivElement>();
   return (
     <section className="section-light-gray">
-      <div ref={ref} className="container reveal py-20">
-        <h2 className="font-display text-3xl text-brand-black sm:text-4xl">
-          Managing a Make-Ready Shouldn't Require <span className="text-brand-gold">5 Different Vendors.</span>
-        </h2>
-        <p className="mt-6 max-w-3xl text-2xl font-bold text-brand-black">
+      <div ref={ref} className="container reveal py-16 lg:py-24">
+        <SectionHeading eyebrow="The Problem">
+          Managing a Make-Ready Shouldn't Require{" "}
+          <span className="text-brand-gold">5 Different Vendors.</span>
+        </SectionHeading>
+
+        <p className="mt-6 max-w-3xl text-xl font-bold text-brand-black sm:text-2xl">
           The average make-ready takes <span className="text-brand-gold">10+ days</span> when you coordinate vendors yourself.
         </p>
 
         <div className="mt-12 grid gap-6 md:grid-cols-3">
           {PAINS.map((p) => (
-            <article key={p.title} className="hover-card rounded-lg border border-brand-gold/20 bg-white p-6 hover:border-brand-gold hover:shadow-md">
-              <XCircle className="h-10 w-10 text-destructive" />
-              <h3 className="mt-4 font-display text-xl text-brand-black">{p.title}</h3>
-              <p className="mt-2 text-gray-600">{p.description}</p>
+            <article
+              key={p.title}
+              className="rounded-xl border-l-4 border-brand-gold bg-white p-6 shadow-sm transition-shadow hover:shadow-md"
+            >
+              <XCircle className="h-9 w-9 text-red-500" />
+              <h3 className="mt-4 font-display text-xl font-bold text-brand-black">{p.title}</h3>
+              <p className="mt-2 text-sm leading-relaxed text-gray-600">{p.description}</p>
             </article>
           ))}
         </div>

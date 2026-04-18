@@ -85,16 +85,16 @@ const RenovationsPage = () => {
           <p className="text-sm font-bold uppercase tracking-wide text-brand-gold">
             {SITE.brand} Property Solutions
           </p>
-          <h1 className="mt-3 font-display text-4xl text-brand-white sm:text-5xl lg:text-6xl">
+          <h1 className="mt-3 font-display text-4xl text-brand-black sm:text-5xl lg:text-6xl">
             Property Renovation Services Central Florida —{" "}
             <span className="block text-brand-gold">Increase Your NOI</span>
           </h1>
-          <p className="mt-6 max-w-2xl text-lg text-brand-white/90">
+          <p className="mt-6 max-w-2xl text-lg text-gray-700">
             Increase property value and rental income across your portfolio. CapEx projects managed end-to-end. One
             contract. One project manager. One invoice.
           </p>
 
-          <ul className="mt-8 flex flex-wrap items-center gap-x-6 gap-y-3 text-sm font-bold text-brand-white">
+          <ul className="mt-8 flex flex-wrap items-center gap-x-6 gap-y-3 text-sm font-bold text-brand-black">
             {["15–20% Rent Lift", "Portfolio Rollouts", "Permits Handled", "One Project Manager", "One Invoice"].map(
               (t, i) => (
                 <li key={t} className="flex items-center gap-3">
@@ -111,7 +111,7 @@ const RenovationsPage = () => {
             </a>
             <a
               href={`tel:${SITE.phone}`}
-              className="flex items-center gap-2 rounded-md border-2 border-brand-white px-6 py-3 text-sm font-bold uppercase tracking-wide text-brand-white hover:bg-brand-white hover:text-brand-black transition-colors"
+              className="flex items-center gap-2 rounded-md border-2 border-brand-white px-6 py-3 text-sm font-bold uppercase tracking-wide text-brand-black hover:bg-brand-white hover:text-brand-black transition-colors"
             >
               <Phone className="h-4 w-4" /> Call {SITE.phone}
             </a>
@@ -147,25 +147,25 @@ const RenovationsPage = () => {
       </section>
 
       {/* 4. For Who — two columns */}
-      <section className="bg-brand-black">
+      <section className="bg-white">
         <div className="container py-20">
           <SectionReveal>
-            <h2 className="font-display text-3xl text-brand-white sm:text-4xl">
+            <h2 className="font-display text-3xl text-brand-black sm:text-4xl">
               Built for <span className="text-brand-gold">Two Buyers</span>
             </h2>
             <div className="mt-10 grid gap-6 md:grid-cols-2">
-              <article className="hover-card rounded-lg border border-brand-gray bg-brand-gray/40 p-8">
+              <article className="hover-card rounded-lg border border-gray-100 bg-white shadow-sm p-8">
                 <Building2 className="h-10 w-10 text-brand-gold" />
-                <h3 className="mt-4 font-display text-2xl text-brand-white">Property Management Companies</h3>
-                <p className="mt-3 text-brand-white/80">
+                <h3 className="mt-4 font-display text-2xl text-brand-black">Property Management Companies</h3>
+                <p className="mt-3 text-gray-700">
                   Portfolio rollouts across multiple assets. Phased schedules to protect occupancy. Centralized
                   reporting for asset-management decks. One PM. One invoice cycle.
                 </p>
               </article>
-              <article className="hover-card rounded-lg border border-brand-gray bg-brand-gray/40 p-8">
+              <article className="hover-card rounded-lg border border-gray-100 bg-white shadow-sm p-8">
                 <User className="h-10 w-10 text-brand-gold" />
-                <h3 className="mt-4 font-display text-2xl text-brand-white">Direct Property Owners</h3>
-                <p className="mt-3 text-brand-white/80">
+                <h3 className="mt-4 font-display text-2xl text-brand-black">Direct Property Owners</h3>
+                <p className="mt-3 text-gray-700">
                   Single assets, small portfolios, value-add acquisitions. We work directly with owners on full unit
                   rehabs and common-area improvements that move the rent roll.
                 </p>
@@ -176,24 +176,24 @@ const RenovationsPage = () => {
       </section>
 
       {/* 5. Project Types Grid — 6 cards */}
-      <section className="bg-brand-gray">
+      <section className="bg-gray-50">
         <div className="container py-20">
           <SectionReveal>
-            <h2 className="font-display text-3xl text-brand-white sm:text-4xl">
+            <h2 className="font-display text-3xl text-brand-black sm:text-4xl">
               Project <span className="text-brand-gold">Types</span>
             </h2>
-            <p className="mt-3 max-w-2xl text-brand-white/80">
+            <p className="mt-3 max-w-2xl text-gray-700">
               From a single bathroom to a full property repositioning.
             </p>
 
             <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
               {PROJECT_TYPES.map((p) => (
-                <article key={p.title} className="hover-card rounded-lg border border-brand-gray bg-brand-black p-6">
+                <article key={p.title} className="hover-card rounded-lg border border-gray-100 bg-white shadow-sm p-6">
                   <span className="flex h-12 w-12 items-center justify-center rounded-md bg-brand-gold/10 text-brand-gold">
                     <p.icon className="h-6 w-6" />
                   </span>
-                  <h3 className="mt-5 font-display text-xl text-brand-white">{p.title}</h3>
-                  <p className="mt-2 text-brand-white/80">{p.desc}</p>
+                  <h3 className="mt-5 font-display text-xl text-brand-black">{p.title}</h3>
+                  <p className="mt-2 text-gray-700">{p.desc}</p>
                 </article>
               ))}
             </div>
@@ -202,13 +202,13 @@ const RenovationsPage = () => {
       </section>
 
       {/* Before / After slider */}
-      <section className="bg-brand-black">
+      <section className="bg-white">
         <div className="container py-20">
           <SectionReveal>
-            <h2 className="font-display text-3xl text-brand-white sm:text-4xl">
+            <h2 className="font-display text-3xl text-brand-black sm:text-4xl">
               Renovation <span className="text-brand-gold">Transformations</span>
             </h2>
-            <p className="mt-3 max-w-2xl text-brand-white/80">
+            <p className="mt-3 max-w-2xl text-gray-700">
               Drag the handle to compare before and after.
             </p>
             <div className="mt-10">
@@ -223,23 +223,23 @@ const RenovationsPage = () => {
 
 
       {/* 6. Process — 3 steps */}
-      <section className="bg-brand-black">
+      <section className="bg-white">
         <div className="container py-20">
           <SectionReveal>
-            <h2 className="font-display text-3xl text-brand-white sm:text-4xl">
+            <h2 className="font-display text-3xl text-brand-black sm:text-4xl">
               How It Works — <span className="text-brand-gold">3 Steps</span>
             </h2>
             <ol className="mt-12 grid gap-6 md:grid-cols-3">
               {[ClipboardCheck, HardHat, Receipt].map((Icon, i) => {
                 const step = STEPS[i];
                 return (
-                  <li key={step.name} className="hover-card rounded-lg border border-brand-gray bg-brand-gray/30 p-6">
+                  <li key={step.name} className="hover-card rounded-lg border border-gray-100 bg-white shadow-sm p-6">
                     <div className="flex items-center gap-4">
                       <div className="font-display text-5xl leading-none text-brand-gold">{i + 1}</div>
                       <Icon className="h-8 w-8 text-brand-gold/80" />
                     </div>
-                    <h3 className="mt-4 font-display text-xl text-brand-white">{step.name}</h3>
-                    <p className="mt-2 text-brand-white/80">{step.text}</p>
+                    <h3 className="mt-4 font-display text-xl text-brand-black">{step.name}</h3>
+                    <p className="mt-2 text-gray-700">{step.text}</p>
                   </li>
                 );
               })}
@@ -252,11 +252,11 @@ const RenovationsPage = () => {
       <FaqAccordion faqs={RENOVATIONS_FAQS} emitSchema={false} />
 
       {/* Internal links */}
-      <section className="bg-brand-gray">
+      <section className="bg-gray-50">
         <div className="container py-16">
           <SectionReveal className="grid gap-10 md:grid-cols-2">
             <div>
-              <h2 className="font-display text-2xl text-brand-white">More from {SITE.brand}</h2>
+              <h2 className="font-display text-2xl text-brand-black">More from {SITE.brand}</h2>
               <ul className="mt-4 space-y-2">
                 {(["make-ready", "maintenance", "residential"] as const).map((slug) => {
                   const s = SERVICES.find((x) => x.slug === slug)!;
@@ -276,7 +276,7 @@ const RenovationsPage = () => {
               </ul>
             </div>
             <div>
-              <h2 className="font-display text-2xl text-brand-white">Renovations in your city</h2>
+              <h2 className="font-display text-2xl text-brand-black">Renovations in your city</h2>
               <ul className="mt-4 space-y-2">
                 {(["orlando-fl", "kissimmee-fl", "sanford-fl"] as const).map((slug) => {
                   const name = slug

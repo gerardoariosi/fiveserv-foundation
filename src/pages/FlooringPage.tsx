@@ -126,7 +126,7 @@ const FlooringPage = () => {
           <p className="text-sm font-bold uppercase tracking-wide text-brand-gold">
             {SITE.brand} Property Solutions
           </p>
-          <h1 className="mt-3 font-display text-4xl text-brand-white sm:text-5xl lg:text-6xl">
+          <h1 className="mt-3 font-display text-4xl text-brand-black sm:text-5xl lg:text-6xl">
             Flooring Services for Properties and Homes in
             <span className="block text-brand-gold">Central Florida</span>
           </h1>
@@ -143,7 +143,7 @@ const FlooringPage = () => {
             </span>
           </div>
 
-          <p className="mt-6 max-w-2xl text-lg text-brand-white/90">
+          <p className="mt-6 max-w-2xl text-lg text-gray-700">
             Vinyl plank. Tile. Carpet. Hardwood. Removal, subfloor prep, install. One invoice.
           </p>
 
@@ -153,7 +153,7 @@ const FlooringPage = () => {
             </a>
             <a
               href={`tel:${SITE.phone}`}
-              className="flex items-center gap-2 rounded-md border-2 border-brand-white px-6 py-3 text-sm font-bold uppercase tracking-wide text-brand-white hover:bg-brand-white hover:text-brand-black transition-colors"
+              className="flex items-center gap-2 rounded-md border-2 border-brand-white px-6 py-3 text-sm font-bold uppercase tracking-wide text-brand-black hover:bg-brand-white hover:text-brand-black transition-colors"
             >
               <Phone className="h-4 w-4" /> Call {SITE.phone}
             </a>
@@ -166,26 +166,26 @@ const FlooringPage = () => {
       </section>
 
       {/* TWO-AUDIENCE SPLIT */}
-      <section className="bg-brand-gray">
+      <section className="bg-gray-50">
         <div className="container py-20">
           <SectionReveal>
-            <h2 className="font-display text-3xl text-brand-white sm:text-4xl">
+            <h2 className="font-display text-3xl text-brand-black sm:text-4xl">
               One Flooring Team. <span className="text-brand-gold">Two Audiences.</span>
             </h2>
-            <p className="mt-3 max-w-2xl text-brand-white/80">
+            <p className="mt-3 max-w-2xl text-gray-700">
               The same crews installing 50-unit LVP rollouts also handle whole-home installs. Pick your path.
             </p>
 
             <div className="mt-12 grid gap-6 lg:grid-cols-2">
               {/* B2B */}
-              <article className="rounded-xl border-2 border-brand-gold bg-brand-black p-8">
+              <article className="rounded-xl border-2 border-brand-gold bg-white shadow-md p-8">
                 <span className="inline-flex items-center gap-2 rounded-full bg-brand-gold px-3 py-1 text-xs font-bold uppercase tracking-wider text-brand-black">
                   <Building2 className="h-3.5 w-3.5" /> Property Managers
                 </span>
-                <h3 className="mt-4 font-display text-2xl text-brand-white">
+                <h3 className="mt-4 font-display text-2xl text-brand-black">
                   Multifamily & Portfolio Flooring
                 </h3>
-                <ul className="mt-5 space-y-2 text-brand-white/90">
+                <ul className="mt-5 space-y-2 text-gray-700">
                   {[
                     "Flooring replacement on unit turns",
                     "Portfolio-wide flooring upgrades",
@@ -208,14 +208,14 @@ const FlooringPage = () => {
               </article>
 
               {/* B2C */}
-              <article className="rounded-xl border-2 border-brand-gold bg-brand-black p-8">
+              <article className="rounded-xl border-2 border-brand-gold bg-white shadow-md p-8">
                 <span className="inline-flex items-center gap-2 rounded-full bg-brand-gold px-3 py-1 text-xs font-bold uppercase tracking-wider text-brand-black">
                   <Home className="h-3.5 w-3.5" /> Homeowners
                 </span>
-                <h3 className="mt-4 font-display text-2xl text-brand-white">
+                <h3 className="mt-4 font-display text-2xl text-brand-black">
                   Home & Residential Flooring
                 </h3>
-                <ul className="mt-5 space-y-2 text-brand-white/90">
+                <ul className="mt-5 space-y-2 text-gray-700">
                   {[
                     "Full home flooring replacement",
                     "Room-by-room installation",
@@ -242,24 +242,24 @@ const FlooringPage = () => {
       </section>
 
       {/* Flooring Types Grid */}
-      <section className="bg-brand-black">
+      <section className="bg-white">
         <div className="container py-20">
           <SectionReveal>
-            <h2 className="font-display text-3xl text-brand-white sm:text-4xl">
+            <h2 className="font-display text-3xl text-brand-black sm:text-4xl">
               Flooring Types <span className="text-brand-gold">We Install</span>
             </h2>
-            <p className="mt-3 max-w-2xl text-brand-white/80">
+            <p className="mt-3 max-w-2xl text-gray-700">
               Every major material. Removal and subfloor prep coordinated under one workflow.
             </p>
 
             <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
               {FLOORING_TYPES.map((s) => (
-                <article key={s.title} className="hover-card rounded-lg border border-brand-gray bg-brand-gray/40 p-6">
+                <article key={s.title} className="hover-card rounded-lg border border-gray-100 bg-white shadow-sm p-6">
                   <span className="flex h-12 w-12 items-center justify-center rounded-md bg-brand-gold/10 text-brand-gold">
                     <s.icon className="h-6 w-6" />
                   </span>
-                  <h3 className="mt-5 font-display text-xl text-brand-white">{s.title}</h3>
-                  <p className="mt-2 text-brand-white/80">{s.desc}</p>
+                  <h3 className="mt-5 font-display text-xl text-brand-black">{s.title}</h3>
+                  <p className="mt-2 text-gray-700">{s.desc}</p>
                 </article>
               ))}
             </div>
@@ -268,31 +268,31 @@ const FlooringPage = () => {
       </section>
 
       {/* Why LVP for Rentals */}
-      <section className="bg-brand-gray">
+      <section className="bg-gray-50">
         <div className="container py-20">
           <SectionReveal className="grid gap-10 lg:grid-cols-2 lg:items-center">
-            <div className="rounded-xl border border-brand-gold/60 bg-brand-black p-8">
+            <div className="rounded-xl border border-gray-100 bg-white shadow-sm p-8">
               <Droplets className="h-12 w-12 text-brand-gold" />
-              <p className="mt-6 font-display text-2xl text-brand-white">
+              <p className="mt-6 font-display text-2xl text-brand-black">
                 <span className="text-brand-gold">LVP</span> — the #1 rental floor in Florida
               </p>
-              <p className="mt-3 text-brand-white/80">
+              <p className="mt-3 text-gray-700">
                 Waterproof. Scratch-resistant. Tenant-proof. Replaceable plank-by-plank. Presents like wood, costs less,
                 outlasts carpet by 4–5 turns.
               </p>
             </div>
             <div>
               <p className="text-sm font-bold uppercase tracking-wide text-brand-gold">Why LVP for Rentals</p>
-              <h2 className="mt-3 font-display text-3xl text-brand-white sm:text-4xl">
+              <h2 className="mt-3 font-display text-3xl text-brand-black sm:text-4xl">
                 Luxury vinyl plank is the{" "}
                 <span className="text-brand-gold">#1 choice for rental properties</span> in Florida
               </h2>
-              <p className="mt-4 text-brand-white/85">
+              <p className="mt-4 text-gray-700">
                 Florida humidity destroys hardwood. Florida tenants destroy carpet. LVP holds up to both — plus
                 kitchens, bathrooms, pets, and water leaks. {SITE.brand} recommends LVP for every unit turn unless
                 an owner spec calls for something else.
               </p>
-              <ul className="mt-6 space-y-2 text-brand-white/85">
+              <ul className="mt-6 space-y-2 text-gray-700">
                 <li className="flex items-start gap-3">
                   <ShieldCheck className="mt-0.5 h-5 w-5 flex-shrink-0 text-brand-gold" />
                   Waterproof — survives leaks and mop water
@@ -316,10 +316,10 @@ const FlooringPage = () => {
       </section>
 
       {/* ROI section */}
-      <section className="bg-brand-black">
+      <section className="bg-white">
         <div className="container py-20">
           <SectionReveal>
-            <div className="rounded-xl border-2 border-brand-gold bg-brand-gray/40 p-8 sm:p-12">
+            <div className="rounded-xl border-2 border-brand-gold bg-white shadow-md p-8 sm:p-12">
               <div className="grid gap-8 lg:grid-cols-[auto,1fr,auto] lg:items-center">
                 <div className="flex h-16 w-16 items-center justify-center rounded-full bg-brand-gold/15 text-brand-gold">
                   <TrendingUp className="h-8 w-8" />
@@ -328,11 +328,11 @@ const FlooringPage = () => {
                   <span className="inline-block rounded-full bg-brand-gold px-3 py-1 text-xs font-bold uppercase tracking-wider text-brand-black">
                     Highest-ROI Upgrade
                   </span>
-                  <h2 className="mt-3 font-display text-3xl text-brand-white sm:text-4xl">
+                  <h2 className="mt-3 font-display text-3xl text-brand-black sm:text-4xl">
                     Flooring upgrades average{" "}
                     <span className="text-brand-gold">10–15% rent increase</span> in Central Florida multifamily
                   </h2>
-                  <p className="mt-3 text-brand-white/85">
+                  <p className="mt-3 text-gray-700">
                     One of the highest-ROI capital improvements in property management. Faster lease-up, premium
                     pricing, lower turn cost on the next move-out.
                   </p>
@@ -350,22 +350,22 @@ const FlooringPage = () => {
       </section>
 
       {/* Process — 3 steps */}
-      <section className="bg-brand-gray">
+      <section className="bg-gray-50">
         <div className="container py-20">
           <SectionReveal>
-            <h2 className="font-display text-3xl text-brand-white sm:text-4xl">
+            <h2 className="font-display text-3xl text-brand-black sm:text-4xl">
               Our 3-Step <span className="text-brand-gold">Flooring Process</span>
             </h2>
 
             <div className="mt-12 grid gap-6 md:grid-cols-3">
               {PROCESS.map((p, i) => (
-                <article key={p.name} className="rounded-lg border border-brand-gold/40 bg-brand-black p-6">
+                <article key={p.name} className="rounded-lg border border-gray-100 bg-white shadow-sm p-6">
                   <span className="inline-flex h-10 w-10 items-center justify-center rounded-full bg-brand-gold text-base font-bold text-brand-black">
                     {i + 1}
                   </span>
                   <p.icon className="mt-4 h-8 w-8 text-brand-gold" />
-                  <h3 className="mt-3 font-display text-xl text-brand-white">{p.name}</h3>
-                  <p className="mt-2 text-brand-white/80">{p.text}</p>
+                  <h3 className="mt-3 font-display text-xl text-brand-black">{p.name}</h3>
+                  <p className="mt-2 text-gray-700">{p.text}</p>
                 </article>
               ))}
             </div>
@@ -376,14 +376,14 @@ const FlooringPage = () => {
       <StatsBar />
 
       {/* Coverage — all 18 cities */}
-      <section className="bg-brand-black">
+      <section className="bg-white">
         <div className="container py-20">
           <SectionReveal>
-            <h2 className="font-display text-3xl text-brand-white sm:text-4xl">
+            <h2 className="font-display text-3xl text-brand-black sm:text-4xl">
               Flooring Coverage —{" "}
               <span className="text-brand-gold">18 Cities Across Central Florida</span>
             </h2>
-            <p className="mt-3 max-w-2xl text-brand-white/80">
+            <p className="mt-3 max-w-2xl text-gray-700">
               Same-day assessment across the Orlando metro core. Within 24 hours across the rest of the region.
             </p>
 
@@ -392,11 +392,11 @@ const FlooringPage = () => {
                 <Link
                   key={c.slug}
                   to={`/maintenance-${c.slug}`}
-                  className="hover-card group flex items-center justify-between rounded-md border border-brand-gray bg-brand-gray/40 px-4 py-3"
+                  className="hover-card group flex items-center justify-between rounded-md border border-gray-100 bg-white shadow-sm px-4 py-3"
                 >
                   <span className="flex items-center gap-3">
                     <MapPin className="h-4 w-4 text-brand-gold" />
-                    <span className="font-bold text-brand-white">
+                    <span className="font-bold text-brand-black">
                       Flooring {c.name}, {c.state}
                     </span>
                   </span>
@@ -414,11 +414,11 @@ const FlooringPage = () => {
       <FaqAccordion faqs={FLOORING_FAQS} emitSchema={false} />
 
       {/* Internal links */}
-      <section className="bg-brand-gray">
+      <section className="bg-gray-50">
         <div className="container py-16">
           <SectionReveal className="grid gap-10 md:grid-cols-2">
             <div>
-              <h2 className="font-display text-2xl text-brand-white">Related Services</h2>
+              <h2 className="font-display text-2xl text-brand-black">Related Services</h2>
               <ul className="mt-4 space-y-2">
                 {[
                   { to: "/renovations", label: "CapEx & Renovations" },
@@ -440,7 +440,7 @@ const FlooringPage = () => {
               </ul>
             </div>
             <div>
-              <h2 className="font-display text-2xl text-brand-white">Flooring in your city</h2>
+              <h2 className="font-display text-2xl text-brand-black">Flooring in your city</h2>
               <ul className="mt-4 space-y-2">
                 {[
                   { slug: "orlando-fl", name: "Orlando" },
@@ -462,11 +462,11 @@ const FlooringPage = () => {
       <section id="contact-form" className="bg-brand-black">
         <div className="container py-20">
           <SectionReveal>
-            <div className="rounded-xl border-2 border-brand-gold bg-brand-gray/30 p-8 sm:p-12 text-center">
-              <h2 className="font-display text-3xl text-brand-white sm:text-4xl">
+            <div className="rounded-xl border-2 border-brand-gold bg-white border border-gray-100 shadow-sm p-8 sm:p-12 text-center">
+              <h2 className="font-display text-3xl text-brand-black sm:text-4xl">
                 Ready for a <span className="text-brand-gold">flooring quote?</span>
               </h2>
-              <p className="mt-3 text-brand-white/85">
+              <p className="mt-3 text-gray-700">
                 Pick the path that fits. PM portfolios on the left. Homes on the right.
               </p>
               <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
@@ -483,7 +483,7 @@ const FlooringPage = () => {
                   <Home className="h-4 w-4" /> Get a Home Flooring Quote
                 </Link>
               </div>
-              <p className="mt-6 text-sm text-brand-white/70">
+              <p className="mt-6 text-sm text-gray-600">
                 Or call us directly:{" "}
                 <a href={`tel:${SITE.phone}`} className="font-bold text-brand-gold hover:underline">
                   {SITE.phone}

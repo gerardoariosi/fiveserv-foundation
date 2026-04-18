@@ -32,15 +32,17 @@ export const ServicePageTemplate = ({ service, faqs = [] }: ServicePageData) => 
         faqs={faqs}
       />
 
+      {/* Hero — dark */}
       <section className="bg-brand-black pt-32 pb-16">
         <div className="container">
-          <p className="text-sm font-bold uppercase tracking-wide text-brand-gold">{SITE.brand} Property Solutions</p>
-          <h1 className="mt-3 font-display text-4xl text-brand-white sm:text-5xl">
-            {service.name}
-          </h1>
+          <p className="text-sm font-bold uppercase tracking-widest text-brand-gold">{SITE.brand} Property Solutions</p>
+          <h1 className="mt-3 font-display text-4xl text-brand-white sm:text-5xl">{service.name}</h1>
           <p className="mt-4 max-w-2xl text-lg text-brand-white/80">{service.description}</p>
 
-          <AIOverviewBlock answer={`${service.description} ${SITE.brand} serves 18 cities in Central Florida. ${SITE.hours}. Call ${SITE.phone} or request a free quote online.`} />
+          <AIOverviewBlock
+            tone="dark"
+            answer={`${service.description} ${SITE.brand} serves 18 cities in Central Florida. ${SITE.hours}. Call ${SITE.phone} or request a free quote online.`}
+          />
 
           <div className="mt-10 flex flex-wrap gap-4">
             <Link to="/contact" className="cta-gold rounded-md px-6 py-3 font-bold uppercase tracking-wide">{service.cta}</Link>
@@ -53,16 +55,18 @@ export const ServicePageTemplate = ({ service, faqs = [] }: ServicePageData) => 
 
       <StatsBar />
 
-      <section className="bg-brand-gray">
-        <div className="container py-16">
-          <h2 className="font-display text-3xl text-brand-white">{service.name} in your city</h2>
-          <p className="mt-2 text-brand-white/80">Pick your city for local response times and ZIP coverage.</p>
-          <div className="mt-8 grid gap-3 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
+      {/* Cities — light gray */}
+      <section className="bg-gray-50">
+        <div className="container py-16 lg:py-24">
+          <p className="text-brand-gold text-xs font-bold uppercase tracking-widest mb-3">Service Areas</p>
+          <h2 className="text-brand-black font-display font-black text-3xl lg:text-4xl">{service.name} in your city</h2>
+          <p className="mt-3 text-gray-600 leading-relaxed">Pick your city for local response times and ZIP coverage.</p>
+          <div className="mt-10 grid gap-3 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
             {CITIES.map((c) => (
               <Link
                 key={c.slug}
                 to={`/${service.slug}/${c.slug}`}
-                className="hover-card flex items-center justify-between rounded-md border border-brand-gray bg-brand-black px-4 py-3 text-sm font-bold text-brand-white"
+                className="flex items-center justify-between rounded-xl border border-gray-100 bg-white px-4 py-3 text-sm font-bold text-brand-black transition-all hover:border-brand-gold hover:bg-brand-gold/5"
               >
                 {c.name}, {c.state}
                 <ArrowRight className="h-4 w-4 text-brand-gold" />

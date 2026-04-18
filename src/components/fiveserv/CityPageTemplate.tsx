@@ -10,15 +10,10 @@ import LeadMagnetSection from "./LeadMagnetSection";
 
 export type CityPageData = {
   city: typeof import("@/lib/site-config").CITIES[number];
-  /** Optional service context if accessed via /[service]/[city] */
   service?: typeof SERVICES[number];
   faqs?: { q: string; a: string }[];
 };
 
-/**
- * Template for 15+ city pages. Slots: [CITY] [ZIPS] [ZONES] [TIME].
- * Page content intentionally minimal — composed by city pages later.
- */
 export const CityPageTemplate = ({ city, service, faqs = [] }: CityPageData) => {
   const path = service ? `/${service.slug}/${city.slug}` : `/cities/${city.slug}`;
   const title = service
@@ -42,9 +37,10 @@ export const CityPageTemplate = ({ city, service, faqs = [] }: CityPageData) => 
         faqs={faqs}
       />
 
+      {/* Hero — dark */}
       <section className="bg-brand-black pt-32 pb-16">
         <div className="container">
-          <p className="text-sm font-bold uppercase tracking-wide text-brand-gold">{SITE.brand} Property Solutions</p>
+          <p className="text-sm font-bold uppercase tracking-widest text-brand-gold">{SITE.brand} Property Solutions</p>
           <h1 className="mt-3 font-display text-4xl text-brand-white sm:text-5xl">
             {service ? service.name : "Property Maintenance"} in <span className="text-brand-gold">{city.name}, {city.state}</span>
           </h1>
@@ -54,6 +50,7 @@ export const CityPageTemplate = ({ city, service, faqs = [] }: CityPageData) => 
           </div>
 
           <AIOverviewBlock
+            tone="dark"
             answer={`${SITE.brand} Property Solutions provides ${service?.name.toLowerCase() ?? "property maintenance and make-ready services"} in ${city.name}, ${city.state}. We serve zip codes ${city.zips.slice(0, 5).join(", ")}${city.zips.length > 5 ? "+" : ""}. Make-ready in 5 days. One call. One invoice. ${city.responseTime} response. Available 24/7.`}
           />
 
@@ -66,12 +63,14 @@ export const CityPageTemplate = ({ city, service, faqs = [] }: CityPageData) => 
         </div>
       </section>
 
-      <section className="bg-brand-gray">
+      {/* ZIPs — light gray */}
+      <section className="bg-gray-50">
         <div className="container py-16">
-          <h2 className="font-display text-2xl text-brand-white">ZIP Codes We Serve in {city.name}</h2>
-          <div className="mt-4 flex flex-wrap gap-2">
+          <p className="text-brand-gold text-xs font-bold uppercase tracking-widest mb-3">Coverage</p>
+          <h2 className="text-brand-black font-display font-black text-2xl lg:text-3xl">ZIP Codes We Serve in {city.name}</h2>
+          <div className="mt-6 flex flex-wrap gap-2">
             {city.zips.map((z) => (
-              <span key={z} className="rounded-md bg-brand-black px-3 py-1.5 text-sm font-bold text-brand-gold">{z}</span>
+              <span key={z} className="rounded-md border border-gray-100 bg-white px-3 py-1.5 text-sm font-bold text-brand-black">{z}</span>
             ))}
           </div>
         </div>

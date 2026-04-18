@@ -48,19 +48,19 @@ const TampaBayPage = () => {
       <section className="bg-brand-black pt-32 pb-24">
         <div className="container max-w-3xl text-center">
           {/* Logo monogram */}
-          <div className="mx-auto inline-flex h-20 w-20 items-center justify-center rounded-md border-2 border-brand-gold bg-brand-black">
+          <div className="mx-auto inline-flex h-20 w-20 items-center justify-center rounded-md border-2 border-brand-gold bg-white shadow-md">
             <span className="font-display text-3xl text-brand-gold">FS</span>
           </div>
 
           <p className="mt-8 text-xs font-bold uppercase tracking-[0.3em] text-brand-gold">
             Coming Soon
           </p>
-          <h1 className="mt-4 font-display text-4xl text-brand-white sm:text-5xl lg:text-6xl">
+          <h1 className="mt-4 font-display text-4xl text-brand-black sm:text-5xl lg:text-6xl">
             {SITE.brand} is Coming to{" "}
             <span className="text-brand-gold">Tampa Bay, Florida</span>
           </h1>
 
-          <p className="mt-6 text-lg text-brand-white/85">
+          <p className="mt-6 text-lg text-gray-700">
             We're expanding to Tampa Bay. Be the first to know when we launch — get priority scheduling for
             make-ready and property maintenance services.
           </p>
@@ -71,13 +71,13 @@ const TampaBayPage = () => {
             </a>
             <a
               href={`tel:${SITE.phone}`}
-              className="flex items-center gap-2 rounded-md border-2 border-brand-white px-6 py-3 text-sm font-bold uppercase tracking-wide text-brand-white hover:bg-brand-white hover:text-brand-black transition-colors"
+              className="flex items-center gap-2 rounded-md border-2 border-brand-white px-6 py-3 text-sm font-bold uppercase tracking-wide text-brand-black hover:bg-brand-white hover:text-brand-black transition-colors"
             >
               <Phone className="h-4 w-4" /> Call {SITE.phone}
             </a>
           </div>
 
-          <p className="mt-12 text-sm text-brand-white/60">
+          <p className="mt-12 text-sm text-gray-500">
             We'll contact you before we launch in the Tampa Bay area — including ZIP codes 33601 and 33606.
           </p>
         </div>

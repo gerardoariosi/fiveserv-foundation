@@ -19,7 +19,7 @@ export const StickyBanner = () => {
 
   return (
     <div className="fixed inset-x-0 top-0 z-50 h-8 bg-brand-gold text-brand-black">
-      <div className="container flex h-full items-center justify-between gap-4 text-xs font-bold">
+      <div className="container flex h-full items-center justify-between gap-4 text-xs font-medium">
         <Link to="/contact" className="flex-1 truncate text-center hover:underline">
           5-Day Make-Ready Guarantee — Central Florida 24/7 — One Call. One Invoice.
         </Link>

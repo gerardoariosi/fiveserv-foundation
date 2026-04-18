@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import { Check, X } from "lucide-react";
 import { useReveal } from "@/hooks/use-fiveserv";
+import SectionHeading from "./SectionHeading";
 
 const ROWS: [string, string][] = [
   ["5+ vendors to coordinate", "1 call to FiveServ"],
@@ -14,40 +15,45 @@ export const SolutionSection = () => {
   const ref = useReveal<HTMLDivElement>();
   return (
     <section id="solution" className="section-light">
-      <div ref={ref} className="container reveal py-20">
-        <h2 className="font-display text-3xl text-brand-black sm:text-5xl text-center">
+      <div ref={ref} className="container reveal py-16 lg:py-24">
+        <SectionHeading eyebrow="The Solution" align="center" className="mx-auto max-w-3xl">
           One Call. <span className="text-brand-gold">One Team.</span> One Invoice.
-        </h2>
+        </SectionHeading>
 
-        <div className="mt-12 overflow-hidden rounded-lg border border-brand-gold/20">
-          <div className="grid grid-cols-2">
-            {/* Left header */}
-            <div className="bg-brand-light p-5 text-center">
-              <h3 className="font-display text-lg text-gray-500">Without FiveServ</h3>
-            </div>
-            {/* Right header — gold border elevated */}
-            <div className="bg-white p-5 text-center border-l-4 border-brand-gold relative">
-              <h3 className="font-display text-lg text-brand-gold">With FiveServ</h3>
-            </div>
+        <div className="mt-12 grid gap-6 lg:grid-cols-2">
+          {/* Without */}
+          <div className="rounded-xl border border-gray-200 bg-gray-50 p-6">
+            <h3 className="font-display text-lg font-bold text-gray-500">Without FiveServ</h3>
+            <ul className="mt-5 space-y-3">
+              {ROWS.map(([left]) => (
+                <li key={left} className="flex items-start gap-3">
+                  <X className="mt-0.5 h-5 w-5 shrink-0 text-gray-400" />
+                  <span className="text-gray-600">{left}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
 
-            {ROWS.map(([left, right], i) => (
-              <div key={i} className="contents">
-                <div className={`flex items-start gap-3 p-5 ${i % 2 === 0 ? "bg-brand-light" : "bg-white"}`}>
-                  <X className="mt-0.5 h-5 w-5 shrink-0 text-destructive" />
-                  <span className="text-gray-500">{left}</span>
-                </div>
-                <div className={`flex items-start gap-3 border-l-4 border-brand-gold p-5 ${i % 2 === 0 ? "bg-white" : "bg-brand-light"}`}>
+          {/* With — elevated */}
+          <div className="rounded-xl border-2 border-brand-gold bg-white p-6 shadow-md">
+            <h3 className="font-display text-lg font-bold text-brand-gold">With FiveServ</h3>
+            <ul className="mt-5 space-y-3">
+              {ROWS.map(([, right]) => (
+                <li key={right} className="flex items-start gap-3">
                   <Check className="mt-0.5 h-5 w-5 shrink-0 text-brand-gold" />
                   <span className="font-bold text-brand-black">{right}</span>
-                </div>
-              </div>
-            ))}
+                </li>
+              ))}
+            </ul>
           </div>
         </div>
 
         <div className="mt-10 text-center">
           <p className="text-lg text-gray-700">Ready to simplify your make-ready?</p>
-          <Link to="/contact" className="mt-4 inline-block cta-gold rounded-md px-6 py-3 font-bold uppercase tracking-wide">
+          <Link
+            to="/contact"
+            className="cta-dark mt-4 inline-block rounded-md px-6 py-3 font-bold uppercase tracking-wide"
+          >
             Get a Free Quote
           </Link>
         </div>
