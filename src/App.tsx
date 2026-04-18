@@ -94,6 +94,7 @@ const router = createBrowserRouter([
       { path: "drywall", element: <DrywallPage /> },
       { path: "painting", element: <PaintingPage /> },
       { path: "flooring", element: <FlooringPage /> },
+      { path: "carpentry", element: <CarpentryPage /> },
 
       // Service x City — 72 dynamic pages (legacy/internal pattern)
       ...SERVICES.map((s) => ({ path: `${s.slug}/:city`, element: <ServiceCityPage /> })),
