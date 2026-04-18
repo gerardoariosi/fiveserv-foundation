@@ -8,6 +8,8 @@ import AIOverviewBlock from "@/components/fiveserv/AIOverviewBlock";
 import SolutionSection from "@/components/fiveserv/SolutionSection";
 import StatsBar from "@/components/fiveserv/StatsBar";
 import FaqAccordion from "@/components/fiveserv/FaqAccordion";
+import VisibleQA from "@/components/fiveserv/VisibleQA";
+import { VISIBLE_QA } from "@/lib/visible-qa";
 import LeadMagnetSection from "@/components/fiveserv/LeadMagnetSection";
 import ContactCTA from "@/components/fiveserv/ContactCTA";
 import BeforeAfterSlider from "@/components/fiveserv/BeforeAfterSlider";
@@ -237,6 +239,7 @@ const MakeReadyPage = () => {
       <LeadMagnetSection variant="checklist" />
 
       {/* 8. FAQ — 8 questions */}
+      <VisibleQA items={VISIBLE_QA} />
       <FaqAccordion faqs={MAKE_READY_FAQS} emitSchema={false} />
 
       {/* Internal links — services + cities (SEO requirement: 3+ services + 2+ cities) */}

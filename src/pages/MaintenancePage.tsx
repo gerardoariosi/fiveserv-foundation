@@ -8,6 +8,8 @@ import AIOverviewBlock from "@/components/fiveserv/AIOverviewBlock";
 import SolutionSection from "@/components/fiveserv/SolutionSection";
 import StatsBar from "@/components/fiveserv/StatsBar";
 import FaqAccordion from "@/components/fiveserv/FaqAccordion";
+import VisibleQA from "@/components/fiveserv/VisibleQA";
+import { VISIBLE_QA } from "@/lib/visible-qa";
 import LeadMagnetSection from "@/components/fiveserv/LeadMagnetSection";
 import ContactCTA from "@/components/fiveserv/ContactCTA";
 import { useReveal } from "@/hooks/use-fiveserv";
