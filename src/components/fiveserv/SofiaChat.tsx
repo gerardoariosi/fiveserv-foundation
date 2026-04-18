@@ -447,8 +447,10 @@ const SofiaChat = () => {
       }
       case "b2b_capture": {
         setData((d) => ({ ...d, contact: userText }));
-        // eslint-disable-next-line no-console
-        console.log("[SofiaChat] B2B lead captured:", { ...data, contact: userText, lang: activeLang });
+        if (import.meta.env.DEV) {
+          // eslint-disable-next-line no-console
+          console.log("[SofiaChat] B2B lead captured:", { ...data, contact: userText, lang: activeLang });
+        }
         setStep("b2b_done");
         sayLater([
           mkSofia(L.b2bClose, {
@@ -487,8 +489,10 @@ const SofiaChat = () => {
       }
       case "b2c_capture": {
         setData((d) => ({ ...d, contact: userText }));
-        // eslint-disable-next-line no-console
-        console.log("[SofiaChat] B2C lead captured:", { ...data, contact: userText, lang: activeLang });
+        if (import.meta.env.DEV) {
+          // eslint-disable-next-line no-console
+          console.log("[SofiaChat] B2C lead captured:", { ...data, contact: userText, lang: activeLang });
+        }
         setStep("b2c_done");
         sayLater([
           mkSofia(L.b2cClose, {
