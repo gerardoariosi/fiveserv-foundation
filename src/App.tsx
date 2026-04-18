@@ -25,6 +25,7 @@ import ServicesIndexPage from "./pages/ServicesIndexPage";
 import CitiesIndexPage from "./pages/CitiesIndexPage";
 import BlogPage from "./pages/BlogPage";
 import ThankYouB2BPage from "./pages/ThankYouB2BPage";
+import ThankYouResidentialPage from "./pages/ThankYouResidentialPage";
 
 import { SERVICES, CITIES } from "@/lib/site-config";
 
