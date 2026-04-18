@@ -9,15 +9,30 @@
  */
 
 type Props = {
-  variant?: "light" | "dark";
+  /**
+   * light  → for dark backgrounds  (gold "F" + white "iveServ")
+   * dark   → for light/white backgrounds (gold "F" + gray-900 "iveServ")
+   * onGold → for gold backgrounds (black "F" + black "iveServ")
+   */
+  variant?: "light" | "dark" | "onGold";
   className?: string;
 };
 
-export const BrandName = ({ variant = "light", className }: Props) => (
-  <span className={className} style={{ whiteSpace: "nowrap" }}>
-    <span className="text-brand-gold font-bold text-[brand-gold-hover]">F</span>
-    <span className={variant === "light" ? "text-white" : "text-gray-900"}>iveServ</span>
-  </span>
-);
+export const BrandName = ({ variant = "light", className }: Props) => {
+  const fColor = variant === "onGold" ? "text-brand-black" : "text-brand-gold";
+  const restColor =
+    variant === "light"
+      ? "text-white"
+      : variant === "onGold"
+        ? "text-brand-black"
+        : "text-gray-900";
+
+  return (
+    <span className={className} style={{ whiteSpace: "nowrap" }}>
+      <span className={`${fColor} font-bold`}>F</span>
+      <span className={restColor}>iveServ</span>
+    </span>
+  );
+};
 
 export default BrandName;

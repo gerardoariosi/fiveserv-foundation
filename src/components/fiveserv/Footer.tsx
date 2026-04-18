@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import { Instagram, Facebook, Linkedin, Phone, Mail, MapPin, Clock } from "lucide-react";
 import { SITE, SERVICES, CITIES, COMING_SOON_CITIES } from "@/lib/site-config";
 import BrandName from "@/components/fiveserv/BrandName";
+import Logo from "@/components/fiveserv/Logo";
 
 export const Footer = () => {
   return (
@@ -11,11 +12,7 @@ export const Footer = () => {
           {/* Col 1: Brand */}
           <div>
             <Link to="/" className="flex items-center gap-3">
-              <img
-                src="/images/logo%20FS%20.png"
-                alt="FiveServ"
-                className="h-10 w-auto object-contain"
-              />
+              <Logo variant="light" imgClassName="h-10 w-auto object-contain" />
               <span className="font-display font-bold text-brand-white text-lg"><BrandName variant="light" /></span>
             </Link>
             <p className="mt-3 text-sm italic text-gray-400">Five Days. One Call. Done.</p>
