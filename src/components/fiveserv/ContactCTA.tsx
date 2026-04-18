@@ -24,33 +24,39 @@ export const ContactCTA = ({ variant = "b2b" }: Props) => {
   return (
     <section id="contact-form" className="bg-brand-black">
       <div className="container py-20">
-        <h2 className="font-display text-3xl text-brand-white sm:text-4xl">
+        <h2 className="font-display text-3xl text-brand-white sm:text-4xl text-center">
           Get a Free Quote — <BrandName /> Property Solutions Orlando, FL
         </h2>
-        <p className="mt-3 max-w-2xl text-brand-white/80">
+        <p className="mt-3 text-brand-white/80 text-center">
           Fill out the form and we will get back to you within 24 hours.
         </p>
 
-        <div className="mt-10 grid gap-10 lg:grid-cols-[2fr,1fr]">
-          <div className="rounded-lg border border-brand-gray bg-white p-6">
-            <GhlFormEmbed variant={variant} className="w-full" />
-          </div>
+        {/* Contact info row — above the form */}
+        <div className="mt-8 flex flex-wrap items-center justify-center gap-x-8 gap-y-4">
+          <a
+            href={`tel:${SITE.phone}`}
+            className="inline-flex items-center gap-2 text-brand-gold hover:text-brand-white transition-colors font-bold"
+          >
+            <Phone className="h-5 w-5" />
+            <span>{SITE.phone}</span>
+          </a>
+          <a
+            href={waHref}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 rounded-full bg-[#25D366] px-5 py-2 text-sm font-semibold text-white hover:opacity-90 transition-opacity"
+          >
+            <WhatsAppIcon className="h-4 w-4" />
+            <span>WhatsApp Us</span>
+          </a>
+          <span className="text-sm text-brand-white/70">
+            Available 24/7 · Orlando, FL · Central Florida
+          </span>
+        </div>
 
-          <aside className="space-y-4 rounded-lg border-2 border-brand-gold bg-brand-black p-6">
-            <h3 className="font-display text-xl text-brand-gold">Or call us directly</h3>
-            <a href={`tel:${SITE.phone}`} className="flex items-center gap-3 text-brand-white hover:text-brand-gold">
-              <Phone className="h-5 w-5 text-brand-gold" />
-              <span className="font-bold">{SITE.phone}</span>
-            </a>
-            <a href={waHref} target="_blank" rel="noopener noreferrer" className="flex items-center gap-3 text-brand-white hover:text-brand-gold">
-              <WhatsAppIcon className="h-5 w-5 text-[#25D366]" />
-              <span className="font-bold">WhatsApp Us</span>
-            </a>
-            <p className="border-t border-brand-gray pt-4 text-sm text-brand-white/80">
-              <span className="font-bold text-brand-gold">Available 24/7</span><br />
-              Orlando, FL · Central Florida
-            </p>
-          </aside>
+        {/* Form below — centered */}
+        <div className="mt-10 max-w-2xl mx-auto rounded-lg border border-brand-gray bg-white p-6">
+          <GhlFormEmbed variant={variant} className="w-full" />
         </div>
       </div>
     </section>
