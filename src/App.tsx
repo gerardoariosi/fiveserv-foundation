@@ -24,6 +24,7 @@ import FaqPage from "./pages/FaqPage";
 import ServicesIndexPage from "./pages/ServicesIndexPage";
 import CitiesIndexPage from "./pages/CitiesIndexPage";
 import BlogPage from "./pages/BlogPage";
+import BlogArticlePage from "./pages/BlogArticlePage";
 import ThankYouB2BPage from "./pages/ThankYouB2BPage";
 import ThankYouResidentialPage from "./pages/ThankYouResidentialPage";
 import TermsPage from "./pages/TermsPage";
@@ -63,6 +64,7 @@ const router = createBrowserRouter([
       { path: "service-areas", element: <CitiesIndexPage canonicalPath="/service-areas" /> },
       { path: "about", element: <AboutPage /> },
       { path: "blog", element: <BlogPage /> },
+      { path: "blog/:slug", element: <BlogArticlePage /> },
       { path: "contact", element: <ContactPage /> },
       { path: "faq", element: <FaqPage /> },
       { path: "privacy", element: <PlaceholderPage title="Privacy Policy" description="FiveServ Property Solutions privacy policy." path="/privacy" heading="Privacy Policy" /> },
