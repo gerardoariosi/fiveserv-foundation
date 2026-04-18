@@ -144,7 +144,23 @@ const MakeReadyPage = () => {
         </div>
       </section>
 
-      {/* 5. The 5-Day Guarantee */}
+      {/* Before / After slider */}
+      <section className="bg-brand-black">
+        <div className="container py-20">
+          <SectionReveal>
+            <h2 className="font-display text-3xl text-brand-white sm:text-4xl">
+              See the <span className="text-brand-gold">Transformation</span>
+            </h2>
+            <p className="mt-3 max-w-2xl text-brand-white/80">
+              Drag the handle to compare. Same unit, 5 business days apart.
+            </p>
+            <div className="mt-10">
+              <BeforeAfterSlider />
+            </div>
+          </SectionReveal>
+        </div>
+      </section>
+
       <section className="bg-brand-black">
         <div className="container py-20">
           <SectionReveal className="grid gap-12 lg:grid-cols-2 lg:items-center">

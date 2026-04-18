@@ -200,7 +200,26 @@ const RenovationsPage = () => {
         </div>
       </section>
 
-      <StatsBar />
+      {/* Before / After slider */}
+      <section className="bg-brand-black">
+        <div className="container py-20">
+          <SectionReveal>
+            <h2 className="font-display text-3xl text-brand-white sm:text-4xl">
+              Renovation <span className="text-brand-gold">Transformations</span>
+            </h2>
+            <p className="mt-3 max-w-2xl text-brand-white/80">
+              Drag the handle to compare before and after.
+            </p>
+            <div className="mt-10">
+              <BeforeAfterSlider
+                caption="From dated to leasable. Coordinated trades, one invoice, one timeline."
+                ctaLabel="Get a Free Renovation Quote"
+              />
+            </div>
+          </SectionReveal>
+        </div>
+      </section>
+
 
       {/* 6. Process — 3 steps */}
       <section className="bg-brand-black">
