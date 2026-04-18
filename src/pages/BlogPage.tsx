@@ -52,7 +52,11 @@ const BlogPage = () => {
       <section className="bg-brand-black pt-32 pb-12">
         <div className="container max-w-5xl">
           <p className="text-xs font-bold uppercase tracking-wider text-brand-gold">
-            <BrandName variant="light" /> Insights
+            <span style={{ whiteSpace: "nowrap" }}>
+              <span className="text-brand-gold font-bold">F</span>
+              <span className="text-brand-white">iveServ</span>
+            </span>{" "}
+            Insights
           </p>
           <h1 className="mt-4 font-display text-4xl text-white sm:text-5xl">
             Property Management Maintenance Insights — Central Florida
