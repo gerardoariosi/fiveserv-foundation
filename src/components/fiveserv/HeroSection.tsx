@@ -27,6 +27,8 @@ export const HeroSection = ({
 }: HeroProps) => {
   const ref = useReveal<HTMLDivElement>();
   const waHref = `https://wa.me/${SITE.phone.replace(/[^\d]/g, "")}`;
+  const heroTopOffset = "calc(var(--banner-h, 0px) + 5rem)";
+  const heroMediaHeight = "calc(100% - (var(--banner-h, 0px) + 5rem))";
 
   // Smooth loop: crossfade between two video elements near the end
   const videoARef = useRef<HTMLVideoElement>(null);
@@ -64,7 +66,7 @@ export const HeroSection = ({
 
   return (
     <section className="relative isolate w-full min-h-screen overflow-hidden bg-brand-black">
-      {/* Video starts below the sticky header (h-20 = 80px) so subjects aren't cropped at the top */}
+      {/* Video starts below the full top chrome: promo banner + sticky header */}
       <video
         ref={videoARef}
         autoPlay
@@ -72,8 +74,8 @@ export const HeroSection = ({
         playsInline
         preload="auto"
         poster={posterSrc}
-        className="absolute left-0 right-0 top-20 bottom-0 w-full object-cover object-center transition-opacity duration-1000 ease-in-out"
-        style={{ opacity: activeVideo === "A" ? 1 : 0, height: "calc(100% - 5rem)" }}
+        className="absolute inset-x-0 bottom-0 w-full object-cover object-center transition-opacity duration-1000 ease-in-out"
+        style={{ top: heroTopOffset, opacity: activeVideo === "A" ? 1 : 0, height: heroMediaHeight }}
       >
         <source src={videoSrc} type="video/mp4" />
       </video>
@@ -82,15 +84,15 @@ export const HeroSection = ({
         muted
         playsInline
         preload="auto"
-        className="absolute left-0 right-0 top-20 bottom-0 w-full object-cover object-center transition-opacity duration-1000 ease-in-out"
-        style={{ opacity: activeVideo === "B" ? 1 : 0, height: "calc(100% - 5rem)" }}
+        className="absolute inset-x-0 bottom-0 w-full object-cover object-center transition-opacity duration-1000 ease-in-out"
+        style={{ top: heroTopOffset, opacity: activeVideo === "B" ? 1 : 0, height: heroMediaHeight }}
       >
         <source src={videoSrc} type="video/mp4" />
       </video>
-      {/* Solid black band behind the sticky header */}
-      <div className="absolute inset-x-0 top-0 h-20 bg-brand-black" />
+      {/* Solid black band behind the top banner + sticky header */}
+      <div className="absolute inset-x-0 top-0 bg-brand-black" style={{ height: heroTopOffset }} />
       {/* 60% black overlay over the video for readability */}
-      <div className="absolute left-0 right-0 top-20 bottom-0 bg-brand-black/60" />
+      <div className="absolute inset-x-0 bottom-0 bg-brand-black/60" style={{ top: heroTopOffset, height: heroMediaHeight }} />
 
       <div className="relative z-10 flex h-full items-center pt-32 pb-20 lg:pt-40 lg:pb-24">
         <div ref={ref} className="container reveal">
