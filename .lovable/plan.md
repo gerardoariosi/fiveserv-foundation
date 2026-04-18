@@ -1,55 +1,60 @@
 
 
-## FULL AUDIT REPORT
+## Popup Redesign Plan — Servpro-style Light Theme
 
-### ROUTES & PAGES
-- ✅ `/` (Index)
-- ✅ `/make-ready`, `/maintenance`, `/renovations`, `/residential`
-- ✅ `/about`, `/contact`, `/faq`, `/blog`, `/blog/:slug`
-- ✅ `/services`, `/cities`, `/service-areas`
-- ✅ `/terms`, `/thank-you-b2b`, `/thank-you-residential`
-- ✅ `/tampa-bay-fl`
-- ✅ `/plumbing`, `/electrical`, `/hvac`, `/drywall`, `/painting`, `/flooring`, `/carpentry`, `/cleaning`
-- ✅ 18 city pages via `/maintenance-{slug}` pattern
+### Audit Findings
 
-### SEO & AEO — ✅ PASS
-`Seo.tsx` enforces unique title/description, canonical, hreflang en-US/es/x-default, OG, Twitter on all pages. AIOverviewBlock present.
+Searched the codebase for all popup/modal/overlay components:
 
-### JSON-LD SCHEMAS — ✅ PASS
-Organization, LocalBusiness, Service, FAQPage, BreadcrumbList, HowTo, BlogPosting, Person — all wired via `SchemaOrg.tsx`.
+**Active popups found:**
+1. `src/components/fiveserv/ExitIntentPopup.tsx` — **needs redesign** (currently dark `bg-brand-black` + gold border, old AI style)
 
-### GHL FORMS — ✅ PASS
-All 4 form IDs match exactly in `GhlFormEmbed.tsx`. `form_embed.js` script present in `index.html`.
+**Other dialog/overlay components (shadcn primitives — already neutral, no redesign needed):**
+- `src/components/ui/dialog.tsx`, `alert-dialog.tsx`, `sheet.tsx`, `drawer.tsx`, `popover.tsx`, `sonner.tsx`, `toast.tsx` — these use semantic tokens (`bg-background`) and are not styled "dark/gold". No instances of custom themed modals besides ExitIntentPopup.
+- `SofiaChat.tsx` — chat widget, not a modal popup. Not in scope per request ("popups and modals").
 
-### COMPONENTS — ✅ PASS (with notes)
-- ✅ StickyHeader, StickyBanner, HeroSection (video bg), BrandName, SofiaChat, TrustBar, BeforeAfterSlider, ExitIntentPopup, Footer
-- ⚠️ `LiveCounter.tsx` → file is named `LiveStatsBar.tsx` (same purpose, different name)
-- ⚠️ `InteractiveMap.tsx` → file is `ServiceAreaMap.tsx` (same purpose)
+**Conclusion:** Only `ExitIntentPopup.tsx` needs rework.
 
-### DESIGN — ✅ PASS
-Playfair + Inter loaded in `index.html`. Brand colors in `tailwind.config.ts`. Hero video `/images/hero-team-working.mp4` ✅. Logo `/images/logo FS .png` ✅. City images in `/public/images/cities/`.
+### Redesign Spec for ExitIntentPopup
 
-### TECHNICAL
-- ✅ `robots.txt`, `llms.txt` exist
-- ✅ `scripts/generate-sitemap.mjs` present (must be run on build to generate `sitemap.xml`)
-- ✅ Security headers via `public/_headers` (note: Lovable hosting does not process `_headers` — works only on Netlify-style hosts)
-- ✅ Both thank-you pages have `noIndex`
+**Backdrop:**
+- `fixed inset-0 z-50 bg-black/50 flex items-center justify-center p-4` (no blur)
 
-### ❌ THE REAL ISSUE — Header nav missing
+**Container:**
+- `bg-white rounded-2xl shadow-[0_20px_60px_rgba(0,0,0,0.2)] max-w-[480px] w-full p-10 relative max-h-[90vh] overflow-y-auto`
 
-You're viewing at **920px wide**. The desktop nav (Home / Services / Cities / About / Blog / Contact) is gated behind Tailwind's `lg:flex` breakpoint = **1024px+**. Below that, only the hamburger menu (☰) shows on the right. Nothing is broken — the original nav links are still there in code, just hidden at your current width.
+**Close button (top-right):**
+- `absolute top-4 right-4 text-gray-400 hover:text-gray-600`
+- `<X className="h-5 w-5" />`
 
-**Two ways to fix:**
-1. Lower the breakpoint from `lg:` (1024px) to `md:` (768px) so the full nav appears on tablets/narrow desktops like 920px.
-2. Leave it as-is and click the hamburger icon (top-right) to access the nav.
+**Lead magnet offer card (gold accent block above form):**
+- `border-l-4 border-brand-gold bg-amber-50 p-4 rounded-r-lg`
+- Contains a small "FREE DOWNLOAD" eyebrow + checklist label
 
-### Proposed fix (option 1)
+**Headline:**
+- `font-display font-bold text-2xl text-gray-900`
+- Copy: `Free: Make-Ready Checklist from <BrandName variant="dark" />`
+- Use `BrandName` component with `variant="dark"` (gold F + gray-900 "iveServ") for light bg
 
-In `src/components/fiveserv/StickyHeader.tsx`:
-- Change `<nav className="hidden items-center gap-7 lg:flex">` → `md:flex`
-- Change right-side CTA cluster `hidden ... lg:flex` → `md:flex` (or keep at lg if too crowded)
-- Change mobile hamburger `lg:hidden` → `md:hidden`
-- May need to tighten `gap-7` → `gap-5` to fit at ~768–1024px
+**Body text:**
+- `text-base text-gray-600 leading-relaxed mt-2`
+- "The 47-item checklist we use on every unit. Yours, free."
 
-No other audit failures. Want me to apply the breakpoint fix?
+**Form area:**
+- White wrapper, no extra background needed (form is already on white)
+- `mt-6`
+- The embedded GHL form fields are controlled by GHL — we cannot restyle iframe inputs from outside. Keep wrapper clean. (Field-level styling spec applies only to native fields; GHL embed renders its own.)
+
+**Note on CTA button styling:**
+- The submit CTA lives inside the GHL iframe and cannot be restyled from our code. The spec's button/field rules will apply automatically to any future native React forms; for the GHL embed we just provide a clean white container.
+
+### Files to Edit
+
+1. `src/components/fiveserv/ExitIntentPopup.tsx` — full rewrite of JSX + classes per spec above. Logic (exit intent hook, sessionStorage gate, open state) stays identical.
+
+### Out of Scope
+
+- shadcn primitives (already neutral)
+- `SofiaChat` (chat widget, not a popup)
+- GHL iframe internals (cannot be styled from parent)
 
