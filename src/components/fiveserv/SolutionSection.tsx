@@ -4,8 +4,10 @@ import { useReveal } from "@/hooks/use-fiveserv";
 import SectionHeading from "./SectionHeading";
 import BrandName from "@/components/fiveserv/BrandName";
 
-const ROWS: [string, string][] = [
-  ["5+ vendors to coordinate", "1 call to FiveServ"],
+import type { ReactNode } from "react";
+
+const ROWS: [string, ReactNode][] = [
+  ["5+ vendors to coordinate", <>1 call to <BrandName /></>],
   ["10+ days average turnaround", "5 business days guaranteed"],
   ["Multiple invoices per unit", "One clean invoice"],
   ["You chase every vendor", "We handle everything"],
