@@ -41,6 +41,18 @@ export const Footer = () => {
                   <Link to={`/${s.slug}`} className="text-brand-white hover:text-brand-gold">{s.name}</Link>
                 </li>
               ))}
+              {[
+                { slug: "plumbing", name: "Plumbing" },
+                { slug: "electrical", name: "Electrical" },
+                { slug: "hvac", name: "HVAC" },
+                { slug: "painting", name: "Painting" },
+                { slug: "flooring", name: "Flooring" },
+                { slug: "cleaning", name: "Cleaning" },
+              ].map((t) => (
+                <li key={t.slug}>
+                  <Link to={`/${t.slug}`} className="text-brand-white hover:text-brand-gold">{t.name}</Link>
+                </li>
+              ))}
             </ul>
           </div>
 
