@@ -165,7 +165,7 @@ const ResidentialPage = () => {
         <div className="container py-20">
           <SectionReveal>
             <h2 className="font-display font-bold text-3xl text-gray-900 sm:text-4xl">
-              What We <span className="text-amber-700">Fix at Home</span>
+              What We <span className="text-gray-900">Fix at Home</span>
             </h2>
             <p className="mt-3 max-w-2xl text-gray-700">
               From a dripping faucet to a full-room remodel. One number for it all.
@@ -193,7 +193,7 @@ const ResidentialPage = () => {
         <div className="container py-20">
           <SectionReveal>
             <h2 className="font-display font-bold text-3xl text-gray-900 sm:text-4xl">
-              How It Works — <span className="text-amber-700">3 Steps</span>
+              How It Works — <span className="text-gray-900">3 Steps</span>
             </h2>
             <ol className="mt-12 grid gap-6 md:grid-cols-3">
               {STEPS.map((step, i) => (
@@ -217,7 +217,7 @@ const ResidentialPage = () => {
           <SectionReveal>
             <h2 className="font-display font-bold text-3xl text-gray-900 sm:text-4xl">
               Serving Homeowners Across{" "}
-              <span className="text-amber-700">18 Central Florida Cities</span>
+              <span className="text-gray-900">18 Central Florida Cities</span>
             </h2>
             <p className="mt-3 max-w-2xl text-gray-700">
               Same-day response in our Orlando metro core. Within 24 hours across the rest of the region.

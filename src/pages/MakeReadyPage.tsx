@@ -133,7 +133,7 @@ const MakeReadyPage = () => {
         <div className="container py-20">
           <SectionReveal>
             <h2 className="font-display font-bold text-3xl text-gray-900 sm:text-4xl">
-              What's <span className="text-amber-700">Included</span> in Every Make-Ready
+              What's <span className="text-gray-900">Included</span> in Every Make-Ready
             </h2>
             <p className="mt-3 max-w-2xl text-gray-700">
               Eight things on every unit. Same checklist. Every time.
@@ -158,7 +158,7 @@ const MakeReadyPage = () => {
         <div className="container py-20">
           <SectionReveal>
             <h2 className="font-display font-bold text-3xl text-gray-900 sm:text-4xl">
-              See the <span className="text-amber-700">Transformation</span>
+              See the <span className="text-gray-900">Transformation</span>
             </h2>
             <p className="mt-3 max-w-2xl text-gray-700">
               Drag the handle to compare. Same unit, 5 business days apart.
@@ -178,7 +178,7 @@ const MakeReadyPage = () => {
                 <Award className="h-4 w-4" /> Written Guarantee
               </span>
               <h2 className="mt-4 font-display text-3xl text-gray-900 sm:text-5xl">
-                The <span className="text-amber-700">5-Day Guarantee</span>
+                The <span className="text-gray-900">5-Day Guarantee</span>
               </h2>
               <p className="mt-6 text-gray-700">
                 Every make-ready complete in 5 business days from start. In writing. Signed.
@@ -217,7 +217,7 @@ const MakeReadyPage = () => {
         <div className="container py-20">
           <SectionReveal>
             <h2 className="font-display font-bold text-3xl text-gray-900 sm:text-4xl">
-              How It Works — <span className="text-amber-700">3 Steps</span>
+              How It Works — <span className="text-gray-900">3 Steps</span>
             </h2>
             <ol className="mt-12 grid gap-6 md:grid-cols-3">
               {STEPS.map((step, i) => (

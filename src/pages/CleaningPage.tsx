@@ -187,7 +187,7 @@ const CleaningPage = () => {
         <div className="container py-20">
           <SectionReveal>
             <h2 className="font-display font-bold text-3xl text-gray-900 sm:text-4xl">
-              One Cleaning Team. <span className="text-amber-700">Two Audiences.</span>
+              One Cleaning Team. <span className="text-gray-900">Two Audiences.</span>
             </h2>
             <p className="mt-3 max-w-2xl text-gray-700">
               Multifamily move-outs and residential deep cleans run on the same 40-point checklist. Pick your path.
@@ -265,7 +265,7 @@ const CleaningPage = () => {
         <div className="container py-20">
           <SectionReveal>
             <h2 className="font-display font-bold text-3xl text-gray-900 sm:text-4xl">
-              What's Included — <span className="text-amber-700">Two Checklists</span>
+              What's Included — <span className="text-gray-900">Two Checklists</span>
             </h2>
             <p className="mt-3 max-w-2xl text-gray-700">
               Spelled out. No surprises. The same lists we hand to our crews on every job.
@@ -311,7 +311,7 @@ const CleaningPage = () => {
         <div className="container py-20">
           <SectionReveal>
             <h2 className="font-display font-bold text-3xl text-gray-900 sm:text-4xl">
-              Cleaning Services <span className="text-amber-700">We Handle</span>
+              Cleaning Services <span className="text-gray-900">We Handle</span>
             </h2>
             <p className="mt-3 max-w-2xl text-gray-700">
               Six core service lines. In-house crews. Coordinated with the rest of the make-ready when applicable.

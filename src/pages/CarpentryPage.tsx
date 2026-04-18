@@ -153,7 +153,7 @@ const CarpentryPage = () => {
         <div className="container py-20">
           <SectionReveal>
             <h2 className="font-display font-bold text-3xl text-gray-900 sm:text-4xl">
-              One Carpentry Team. <span className="text-amber-700">Two Audiences.</span>
+              One Carpentry Team. <span className="text-gray-900">Two Audiences.</span>
             </h2>
             <p className="mt-3 max-w-2xl text-gray-700">
               The same crews that punch-list 500-unit communities also build for Central Florida homes. Pick your path.
@@ -229,7 +229,7 @@ const CarpentryPage = () => {
         <div className="container py-20">
           <SectionReveal>
             <h2 className="font-display font-bold text-3xl text-gray-900 sm:text-4xl">
-              Carpentry Services <span className="text-amber-700">We Handle</span>
+              Carpentry Services <span className="text-gray-900">We Handle</span>
             </h2>
             <p className="mt-3 max-w-2xl text-gray-700">
               Six core service lines. In-house crews. Coordinated with drywall, paint, and final inspection.
@@ -341,7 +341,7 @@ const CarpentryPage = () => {
           <SectionReveal>
             <h2 className="font-display font-bold text-3xl text-gray-900 sm:text-4xl">
               Carpentry Coverage —{" "}
-              <span className="text-amber-700">18 Cities Across Central Florida</span>
+              <span className="text-gray-900">18 Cities Across Central Florida</span>
             </h2>
             <p className="mt-3 max-w-2xl text-gray-700">
               Same-day assessment across the Orlando metro core. Within 24 hours across the rest of the region.
@@ -425,7 +425,7 @@ const CarpentryPage = () => {
           <SectionReveal>
             <div className="rounded-xl border-2 border-brand-gold bg-white border border-gray-100 shadow-sm p-8 sm:p-12 text-center">
               <h2 className="font-display font-bold text-3xl text-gray-900 sm:text-4xl">
-                Ready for a <span className="text-amber-700">carpentry quote?</span>
+                Ready for a <span className="text-gray-900">carpentry quote?</span>
               </h2>
               <p className="mt-3 text-gray-700">
                 Pick the path that fits. PM portfolios on the left. Homes on the right.

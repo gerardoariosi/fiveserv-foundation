@@ -166,7 +166,7 @@ const PaintingPage = () => {
         <div className="container py-20">
           <SectionReveal>
             <h2 className="font-display font-bold text-3xl text-gray-900 sm:text-4xl">
-              One Painting Team. <span className="text-amber-700">Two Audiences.</span>
+              One Painting Team. <span className="text-gray-900">Two Audiences.</span>
             </h2>
             <p className="mt-3 max-w-2xl text-gray-700">
               The same painters who turn 500-unit communities also paint Central Florida homes. Pick your path.
@@ -242,7 +242,7 @@ const PaintingPage = () => {
         <div className="container py-20">
           <SectionReveal>
             <h2 className="font-display font-bold text-3xl text-gray-900 sm:text-4xl">
-              Painting Services <span className="text-amber-700">We Handle</span>
+              Painting Services <span className="text-gray-900">We Handle</span>
             </h2>
             <p className="mt-3 max-w-2xl text-gray-700">
               Six core service lines. In-house crews. Coordinated with drywall, cleaning, and final inspection.
@@ -350,7 +350,7 @@ const PaintingPage = () => {
         <div className="container py-20">
           <SectionReveal>
             <h2 className="font-display font-bold text-3xl text-gray-900 sm:text-4xl">
-              Our 3-Step <span className="text-amber-700">Painting Process</span>
+              Our 3-Step <span className="text-gray-900">Painting Process</span>
             </h2>
 
             <div className="mt-12 grid gap-6 md:grid-cols-3">
@@ -377,7 +377,7 @@ const PaintingPage = () => {
           <SectionReveal>
             <h2 className="font-display font-bold text-3xl text-gray-900 sm:text-4xl">
               Painting Coverage —{" "}
-              <span className="text-amber-700">18 Cities Across Central Florida</span>
+              <span className="text-gray-900">18 Cities Across Central Florida</span>
             </h2>
             <p className="mt-3 max-w-2xl text-gray-700">
               Same-day assessment across the Orlando metro core. Within 24 hours across the rest of the region.
@@ -460,7 +460,7 @@ const PaintingPage = () => {
           <SectionReveal>
             <div className="rounded-xl border-2 border-brand-gold bg-white border border-gray-100 shadow-sm p-8 sm:p-12 text-center">
               <h2 className="font-display font-bold text-3xl text-gray-900 sm:text-4xl">
-                Ready for a <span className="text-amber-700">painting quote?</span>
+                Ready for a <span className="text-gray-900">painting quote?</span>
               </h2>
               <p className="mt-3 text-gray-700">
                 Pick the path that fits. PM portfolios on the left. Homes on the right.

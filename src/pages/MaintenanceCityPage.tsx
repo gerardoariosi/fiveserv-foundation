@@ -132,7 +132,7 @@ const MaintenanceCityPage = ({ citySlug: propSlug }: MaintenanceCityPageProps = 
         <div className="container py-20">
           <SectionReveal>
             <h2 className="font-display font-bold text-3xl text-gray-900 sm:text-4xl">
-              Why <span className="text-amber-700">{SITE.brand}</span> in {city.name}
+              Why <span className="text-gray-900">{SITE.brand}</span> in {city.name}
             </h2>
             <div className="mt-6 max-w-3xl space-y-4 text-gray-700">
               {editorial.angle ? (
@@ -157,7 +157,7 @@ const MaintenanceCityPage = ({ citySlug: propSlug }: MaintenanceCityPageProps = 
         <div className="container py-20">
           <SectionReveal>
             <h2 className="font-display font-bold text-3xl text-gray-900 sm:text-4xl">
-              Services in <span className="text-amber-700">{city.name}</span>
+              Services in <span className="text-gray-900">{city.name}</span>
             </h2>
             <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
               {SERVICES.map((s) => {

@@ -151,7 +151,7 @@ const RenovationsPage = () => {
         <div className="container py-20">
           <SectionReveal>
             <h2 className="font-display font-bold text-3xl text-gray-900 sm:text-4xl">
-              Built for <span className="text-amber-700">Two Buyers</span>
+              Built for <span className="text-gray-900">Two Buyers</span>
             </h2>
             <div className="mt-10 grid gap-6 md:grid-cols-2">
               <article className="hover-card rounded-lg border border-gray-100 bg-white shadow-sm p-8">
@@ -180,7 +180,7 @@ const RenovationsPage = () => {
         <div className="container py-20">
           <SectionReveal>
             <h2 className="font-display font-bold text-3xl text-gray-900 sm:text-4xl">
-              Project <span className="text-amber-700">Types</span>
+              Project <span className="text-gray-900">Types</span>
             </h2>
             <p className="mt-3 max-w-2xl text-gray-700">
               From a single bathroom to a full property repositioning.
@@ -206,7 +206,7 @@ const RenovationsPage = () => {
         <div className="container py-20">
           <SectionReveal>
             <h2 className="font-display font-bold text-3xl text-gray-900 sm:text-4xl">
-              Renovation <span className="text-amber-700">Transformations</span>
+              Renovation <span className="text-gray-900">Transformations</span>
             </h2>
             <p className="mt-3 max-w-2xl text-gray-700">
               Drag the handle to compare before and after.
@@ -227,7 +227,7 @@ const RenovationsPage = () => {
         <div className="container py-20">
           <SectionReveal>
             <h2 className="font-display font-bold text-3xl text-gray-900 sm:text-4xl">
-              How It Works — <span className="text-amber-700">3 Steps</span>
+              How It Works — <span className="text-gray-900">3 Steps</span>
             </h2>
             <ol className="mt-12 grid gap-6 md:grid-cols-3">
               {[ClipboardCheck, HardHat, Receipt].map((Icon, i) => {

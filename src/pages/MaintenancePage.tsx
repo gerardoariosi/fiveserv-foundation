@@ -105,7 +105,7 @@ const MaintenancePage = () => {
         <div className="container py-20">
           <SectionReveal>
             <h2 className="font-display font-bold text-3xl text-gray-900 sm:text-4xl">
-              What We <span className="text-amber-700">Handle</span>
+              What We <span className="text-gray-900">Handle</span>
             </h2>
             <p className="mt-3 max-w-2xl text-gray-700">
               Every trade. One call. In-house team plus licensed contractors under our coordination.
@@ -131,7 +131,7 @@ const MaintenancePage = () => {
         <div className="container py-20">
           <SectionReveal>
             <h2 className="font-display font-bold text-3xl text-gray-900 sm:text-4xl">
-              Response <span className="text-amber-700">Times</span>
+              Response <span className="text-gray-900">Times</span>
             </h2>
 
             <div className="mt-12 grid gap-6 md:grid-cols-3">
@@ -192,7 +192,7 @@ const MaintenancePage = () => {
           <SectionReveal>
             <h2 className="font-display font-bold text-3xl text-gray-900 sm:text-4xl">
               Maintenance Coverage —{" "}
-              <span className="text-amber-700">18 Cities Across Central Florida</span>
+              <span className="text-gray-900">18 Cities Across Central Florida</span>
             </h2>
             <p className="mt-3 max-w-2xl text-gray-700">
               Same-day response in our Orlando metro core. Within 24 hours across the rest of the region.

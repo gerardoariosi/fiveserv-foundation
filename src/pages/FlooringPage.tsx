@@ -170,7 +170,7 @@ const FlooringPage = () => {
         <div className="container py-20">
           <SectionReveal>
             <h2 className="font-display font-bold text-3xl text-gray-900 sm:text-4xl">
-              One Flooring Team. <span className="text-amber-700">Two Audiences.</span>
+              One Flooring Team. <span className="text-gray-900">Two Audiences.</span>
             </h2>
             <p className="mt-3 max-w-2xl text-gray-700">
               The same crews installing 50-unit LVP rollouts also handle whole-home installs. Pick your path.
@@ -246,7 +246,7 @@ const FlooringPage = () => {
         <div className="container py-20">
           <SectionReveal>
             <h2 className="font-display font-bold text-3xl text-gray-900 sm:text-4xl">
-              Flooring Types <span className="text-amber-700">We Install</span>
+              Flooring Types <span className="text-gray-900">We Install</span>
             </h2>
             <p className="mt-3 max-w-2xl text-gray-700">
               Every major material. Removal and subfloor prep coordinated under one workflow.
@@ -354,7 +354,7 @@ const FlooringPage = () => {
         <div className="container py-20">
           <SectionReveal>
             <h2 className="font-display font-bold text-3xl text-gray-900 sm:text-4xl">
-              Our 3-Step <span className="text-amber-700">Flooring Process</span>
+              Our 3-Step <span className="text-gray-900">Flooring Process</span>
             </h2>
 
             <div className="mt-12 grid gap-6 md:grid-cols-3">
@@ -381,7 +381,7 @@ const FlooringPage = () => {
           <SectionReveal>
             <h2 className="font-display font-bold text-3xl text-gray-900 sm:text-4xl">
               Flooring Coverage —{" "}
-              <span className="text-amber-700">18 Cities Across Central Florida</span>
+              <span className="text-gray-900">18 Cities Across Central Florida</span>
             </h2>
             <p className="mt-3 max-w-2xl text-gray-700">
               Same-day assessment across the Orlando metro core. Within 24 hours across the rest of the region.
@@ -464,7 +464,7 @@ const FlooringPage = () => {
           <SectionReveal>
             <div className="rounded-xl border-2 border-brand-gold bg-white border border-gray-100 shadow-sm p-8 sm:p-12 text-center">
               <h2 className="font-display font-bold text-3xl text-gray-900 sm:text-4xl">
-                Ready for a <span className="text-amber-700">flooring quote?</span>
+                Ready for a <span className="text-gray-900">flooring quote?</span>
               </h2>
               <p className="mt-3 text-gray-700">
                 Pick the path that fits. PM portfolios on the left. Homes on the right.

@@ -81,7 +81,7 @@ const AboutPage = () => {
         <div className="container py-20">
           <SectionReveal className="grid gap-10 lg:grid-cols-[1fr,2fr] lg:items-start">
             <h2 className="font-display font-bold text-3xl text-gray-900 sm:text-4xl">
-              Our <span className="text-amber-700">Story</span>
+              Our <span className="text-gray-900">Story</span>
             </h2>
             <div className="space-y-4 text-gray-700">
               <p>
@@ -109,7 +109,7 @@ const AboutPage = () => {
         <div className="container py-20">
           <SectionReveal>
             <h2 className="font-display font-bold text-3xl text-gray-900 sm:text-4xl">
-              Track <span className="text-amber-700">Record</span>
+              Track <span className="text-gray-900">Record</span>
             </h2>
             <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
               {TRACK_RECORD.map((s) => (
@@ -136,7 +136,7 @@ const AboutPage = () => {
         <div className="container py-20">
           <SectionReveal>
             <h2 className="font-display font-bold text-3xl text-gray-900 sm:text-4xl">
-              The <span className="text-amber-700">Team</span>
+              The <span className="text-gray-900">Team</span>
             </h2>
             <p className="mt-3 max-w-2xl text-gray-700">
               Five family members. Real people behind every decision, every quote, every guarantee.
@@ -206,7 +206,7 @@ const AboutPage = () => {
         <div className="container py-20">
           <SectionReveal>
             <h2 className="font-display font-bold text-3xl text-gray-900 sm:text-4xl">
-              Licenses & <span className="text-amber-700">Insurance</span>
+              Licenses & <span className="text-gray-900">Insurance</span>
             </h2>
             <p className="mt-3 max-w-2xl text-gray-700">
               Fully licensed and insured to operate across Florida. Documentation available on request for
