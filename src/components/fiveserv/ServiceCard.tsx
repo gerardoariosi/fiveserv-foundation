@@ -11,12 +11,12 @@ type ServiceCardProps = {
 
 export const ServiceCard = ({ icon: Icon, title, description, href, cta }: ServiceCardProps) => {
   return (
-    <article className="hover-card group rounded-lg border border-brand-gray bg-brand-black p-8">
+    <article className="hover-card group rounded-lg border border-brand-gold/20 bg-white p-8 hover:border-brand-gold hover:shadow-md">
       <div className="inline-flex h-12 w-12 items-center justify-center rounded-md bg-brand-gold/10 text-brand-gold">
         <Icon className="h-6 w-6" />
       </div>
-      <h3 className="mt-6 font-display text-2xl text-brand-white">{title}</h3>
-      <p className="mt-3 text-brand-white/80">{description}</p>
+      <h3 className="mt-6 font-display text-2xl text-brand-black">{title}</h3>
+      <p className="mt-3 text-gray-600">{description}</p>
       <Link
         to={href}
         className="mt-6 inline-flex items-center gap-2 font-bold text-brand-gold group-hover:underline"

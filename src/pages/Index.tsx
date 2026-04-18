@@ -10,11 +10,9 @@ import ProblemSection from "@/components/fiveserv/ProblemSection";
 import SolutionSection from "@/components/fiveserv/SolutionSection";
 import ServiceCard from "@/components/fiveserv/ServiceCard";
 import FivePillars from "@/components/fiveserv/FivePillars";
-import StatsBar from "@/components/fiveserv/StatsBar";
 import LiveStatsBar from "@/components/fiveserv/LiveStatsBar";
 import FamilyStory from "@/components/fiveserv/FamilyStory";
 import TestimonialCard from "@/components/fiveserv/TestimonialCard";
-import CityGrid from "@/components/fiveserv/CityGrid";
 import InteractiveMap from "@/components/fiveserv/InteractiveMap";
 import FaqAccordion from "@/components/fiveserv/FaqAccordion";
 import LeadMagnetSection from "@/components/fiveserv/LeadMagnetSection";
@@ -54,9 +52,9 @@ const TESTIMONIALS = [
 const ServicesGrid = () => {
   const ref = useReveal<HTMLDivElement>();
   return (
-    <section className="bg-brand-black">
+    <section className="section-light">
       <div ref={ref} className="container reveal py-20">
-        <h2 className="font-display text-3xl text-brand-white sm:text-4xl">
+        <h2 className="font-display text-3xl text-brand-black sm:text-4xl">
           Everything Your Properties Need. <span className="text-brand-gold">One Team.</span>
         </h2>
 
@@ -70,7 +68,7 @@ const ServicesGrid = () => {
                     {m.badge}
                   </span>
                 )}
-                <div className="rounded-lg border border-brand-gold">
+                <div className="rounded-lg">
                   <ServiceCard
                     icon={m.icon}
                     title={svc.name}
@@ -91,9 +89,9 @@ const ServicesGrid = () => {
 const TestimonialsSection = () => {
   const ref = useReveal<HTMLDivElement>();
   return (
-    <section className="bg-brand-black">
+    <section className="section-light">
       <div ref={ref} className="container reveal py-20">
-        <h2 className="font-display text-3xl text-brand-white sm:text-4xl">
+        <h2 className="font-display text-3xl text-brand-black sm:text-4xl">
           What Property Managers Say About <span className="text-brand-gold">FiveServ</span>
         </h2>
         {/* STATIC cards — not carousel — so Google sees all reviews */}
@@ -133,39 +131,39 @@ const Index = () => {
       {/* Trust bar — right after hero */}
       <TrustBar />
 
-      {/* Element 4: Problem */}
+      {/* Element 4: Problem — light gray */}
       <ProblemSection />
 
-      {/* Element 5: Solution */}
+      {/* Element 5: Solution — light */}
       <SolutionSection />
 
-      {/* Element 6: Services 2x2 Grid */}
+      {/* Element 6: Services 2x2 Grid — light */}
       <ServicesGrid />
 
-      {/* Element 7: 5 Pillars */}
+      {/* Element 7: 5 Pillars — gold */}
       <FivePillars />
 
-      {/* Element 8: Stats counter — live */}
+      {/* Element 8: Stats counter — dark */}
       <LiveStatsBar />
 
-      {/* Element 9: Family Story + Before/After slider */}
+      {/* Element 9: Family Story (light gray) + Before/After slider (light) */}
       <FamilyStory />
-      <section className="bg-brand-black">
+      <section className="section-light">
         <div className="container py-16">
           <BeforeAfterSlider />
         </div>
       </section>
 
-      {/* Element 10: Testimonials (static, not carousel) */}
+      {/* Element 10: Testimonials — light */}
       <TestimonialsSection />
 
-      {/* Element 11: Cities + interactive map */}
-      <section className="bg-brand-black">
+      {/* Element 11: Cities + interactive map — light gray */}
+      <section className="section-light-gray">
         <div className="container py-20">
-          <h2 className="font-display text-3xl text-brand-white sm:text-4xl">
+          <h2 className="font-display text-3xl text-brand-black sm:text-4xl">
             18 Cities Across <span className="text-brand-gold">Central Florida</span>
           </h2>
-          <p className="mt-3 max-w-2xl text-brand-white/80">
+          <p className="mt-3 max-w-2xl text-gray-700">
             Hover any city for response time. Tampa Bay coming soon.
           </p>
           <div className="mt-10">
@@ -174,10 +172,10 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Element 12: FAQ — 20 questions, all answers in HTML, FAQPage JSON-LD via SchemaOrg above */}
+      {/* Element 12: FAQ — light */}
       <FaqAccordion faqs={HOMEPAGE_FAQS} emitSchema={false} />
 
-      {/* Element 13: Lead magnets + final CTA form */}
+      {/* Element 13: Lead magnets (light gray) + final CTA form (dark) */}
       <LeadMagnetSection />
       <ContactCTA />
     </>

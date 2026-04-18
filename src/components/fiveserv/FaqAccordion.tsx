@@ -17,16 +17,16 @@ type FaqAccordionProps = {
  */
 export const FaqAccordion = ({ title = "Frequently Asked Questions", faqs, emitSchema = true }: FaqAccordionProps) => {
   return (
-    <section className="bg-brand-black">
+    <section className="section-light">
       <div className="container py-20">
-        <h2 className="font-display text-3xl sm:text-4xl text-brand-white">{title}</h2>
+        <h2 className="font-display text-3xl sm:text-4xl text-brand-black">{title}</h2>
         <Accordion type="single" collapsible className="mt-8">
           {faqs.map((f, i) => (
-            <AccordionItem key={i} value={`item-${i}`} className="border-brand-gray">
-              <AccordionTrigger className="text-left text-brand-white hover:text-brand-gold">
+            <AccordionItem key={i} value={`item-${i}`} className="border-gray-200">
+              <AccordionTrigger className="text-left text-brand-black hover:text-brand-gold">
                 {f.q}
               </AccordionTrigger>
-              <AccordionContent className="text-brand-white/80">{f.a}</AccordionContent>
+              <AccordionContent className="text-gray-700">{f.a}</AccordionContent>
             </AccordionItem>
           ))}
         </Accordion>

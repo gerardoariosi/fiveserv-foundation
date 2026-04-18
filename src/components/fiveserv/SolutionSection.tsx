@@ -13,32 +13,32 @@ const ROWS: [string, string][] = [
 export const SolutionSection = () => {
   const ref = useReveal<HTMLDivElement>();
   return (
-    <section id="solution" className="bg-brand-black">
+    <section id="solution" className="section-light">
       <div ref={ref} className="container reveal py-20">
-        <h2 className="font-display text-3xl text-brand-white sm:text-5xl text-center">
+        <h2 className="font-display text-3xl text-brand-black sm:text-5xl text-center">
           One Call. <span className="text-brand-gold">One Team.</span> One Invoice.
         </h2>
 
-        <div className="mt-12 overflow-hidden rounded-lg border border-brand-gray">
+        <div className="mt-12 overflow-hidden rounded-lg border border-brand-gold/20">
           <div className="grid grid-cols-2">
             {/* Left header */}
-            <div className="bg-brand-gray p-5 text-center">
-              <h3 className="font-display text-lg text-brand-white/80">Without FiveServ</h3>
+            <div className="bg-brand-light p-5 text-center">
+              <h3 className="font-display text-lg text-gray-500">Without FiveServ</h3>
             </div>
             {/* Right header — gold border elevated */}
-            <div className="bg-brand-black p-5 text-center border-l-4 border-brand-gold relative">
+            <div className="bg-white p-5 text-center border-l-4 border-brand-gold relative">
               <h3 className="font-display text-lg text-brand-gold">With FiveServ</h3>
             </div>
 
             {ROWS.map(([left, right], i) => (
               <div key={i} className="contents">
-                <div className={`flex items-start gap-3 p-5 ${i % 2 === 0 ? "bg-brand-gray/30" : "bg-brand-gray/10"}`}>
+                <div className={`flex items-start gap-3 p-5 ${i % 2 === 0 ? "bg-brand-light" : "bg-white"}`}>
                   <X className="mt-0.5 h-5 w-5 shrink-0 text-destructive" />
-                  <span className="text-brand-white/80">{left}</span>
+                  <span className="text-gray-500">{left}</span>
                 </div>
-                <div className={`flex items-start gap-3 border-l-4 border-brand-gold p-5 ${i % 2 === 0 ? "bg-brand-black" : "bg-brand-gray/20"}`}>
+                <div className={`flex items-start gap-3 border-l-4 border-brand-gold p-5 ${i % 2 === 0 ? "bg-white" : "bg-brand-light"}`}>
                   <Check className="mt-0.5 h-5 w-5 shrink-0 text-brand-gold" />
-                  <span className="font-bold text-brand-white">{right}</span>
+                  <span className="font-bold text-brand-black">{right}</span>
                 </div>
               </div>
             ))}
@@ -46,7 +46,7 @@ export const SolutionSection = () => {
         </div>
 
         <div className="mt-10 text-center">
-          <p className="text-lg text-brand-white/80">Ready to simplify your make-ready?</p>
+          <p className="text-lg text-gray-700">Ready to simplify your make-ready?</p>
           <Link to="/contact" className="mt-4 inline-block cta-gold rounded-md px-6 py-3 font-bold uppercase tracking-wide">
             Get a Free Quote
           </Link>

@@ -4,7 +4,7 @@ import { useReveal } from "@/hooks/use-fiveserv";
 export const FamilyStory = () => {
   const ref = useReveal<HTMLDivElement>();
   return (
-    <section className="bg-brand-gray">
+    <section className="section-light-gray">
       <div ref={ref} className="container reveal grid gap-10 py-20 lg:grid-cols-2 lg:items-center">
         <div className="overflow-hidden rounded-lg border border-brand-gold/40">
           <img
@@ -21,16 +21,16 @@ export const FamilyStory = () => {
         </div>
 
         <div>
-          <h2 className="font-display text-3xl text-brand-gold sm:text-4xl">
-            Built by a Family. Trusted by Property Managers Across Central Florida.
+          <h2 className="font-display text-3xl text-brand-black sm:text-4xl">
+            Built by a Family. <span className="text-brand-gold">Trusted</span> by Property Managers Across Central Florida.
           </h2>
-          <p className="mt-6 text-brand-white/90">
+          <p className="mt-6 text-gray-700">
             Venezuelan-American family. We started in maintenance — wrenches, ladders, late nights — and built something to last generations.
           </p>
-          <p className="mt-4 text-brand-white/90">
+          <p className="mt-4 text-gray-700">
             300+ units completed. 50+ communities served. 18 cities active. 15+ years of combined experience.
           </p>
-          <p className="mt-4 text-brand-white/90">
+          <p className="mt-4 text-gray-700">
             Our name is on every job. We show up. We finish. We deliver.
           </p>
           <Link to="/about" className="mt-8 inline-block cta-gold rounded-md px-6 py-3 font-bold uppercase tracking-wide">
