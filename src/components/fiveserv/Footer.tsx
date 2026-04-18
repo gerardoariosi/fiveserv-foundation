@@ -10,8 +10,8 @@ export const Footer = () => {
         <div className="grid gap-12 md:grid-cols-2 lg:grid-cols-4">
           {/* Col 1: Brand */}
           <div>
-            <Link to="/" className="flex flex-col gap-1">
-              <Logo variant="light" imgClassName="h-10 w-auto object-contain" />
+            <Link to="/" className="flex flex-col items-center gap-1 text-center">
+              <Logo variant="light" imgClassName="h-10 w-auto object-contain mx-auto" />
               <span className="text-[11px] font-bold uppercase tracking-[0.2em] text-gray-300">
                 Property Solutions
               </span>
