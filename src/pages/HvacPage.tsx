@@ -150,7 +150,7 @@ const HvacPage = () => {
         <div className="container py-20">
           <SectionReveal className="grid gap-10 lg:grid-cols-2 lg:items-center">
             <div>
-              <p className="text-xs font-medium uppercase tracking-[0.12em] text-amber-700">— Florida Heat Reality</p>
+              <p className="text-xs font-medium uppercase tracking-[0.12em] text-gray-900">— Florida Heat Reality</p>
               <h2 className="mt-3 font-display font-bold text-3xl text-gray-900 sm:text-4xl">
                 A broken AC in July is a{" "}
                 <span className="text-amber-700">code violation waiting to happen</span>
@@ -255,7 +255,7 @@ const HvacPage = () => {
               </p>
             </div>
             <div>
-              <p className="text-xs font-medium uppercase tracking-[0.12em] text-amber-700">— Florida Compliance</p>
+              <p className="text-xs font-medium uppercase tracking-[0.12em] text-gray-900">— Florida Compliance</p>
               <h2 className="mt-3 font-display font-bold text-3xl text-gray-900 sm:text-4xl">
                 Florida law requires landlords to{" "}
                 <span className="text-amber-700">maintain working AC</span>

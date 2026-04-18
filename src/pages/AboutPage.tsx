@@ -161,7 +161,7 @@ const AboutPage = () => {
                   </div>
                   <div>
                     <h3 className="font-display font-semibold text-xl text-gray-900">{member.name}</h3>
-                    <p className="mt-1 text-xs font-medium uppercase tracking-[0.12em] text-amber-700">— {member.role}</p>
+                    <p className="mt-1 text-xs font-medium uppercase tracking-[0.12em] text-gray-900">— {member.role}</p>
                     <p className="mt-3 text-sm text-gray-700">
                       {member.name} brings hands-on expertise to the {SITE.brand} team, working directly with property
                       managers across Central Florida. Personally accountable for every job that carries our family name.

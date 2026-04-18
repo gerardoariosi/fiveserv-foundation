@@ -148,7 +148,7 @@ const DrywallPage = () => {
         <div className="container py-20">
           <SectionReveal className="grid gap-10 lg:grid-cols-2 lg:items-center">
             <div>
-              <p className="text-xs font-medium uppercase tracking-[0.12em] text-amber-700">— The Hidden Make-Ready Killer</p>
+              <p className="text-xs font-medium uppercase tracking-[0.12em] text-gray-900">— The Hidden Make-Ready Killer</p>
               <h2 className="mt-3 font-display font-bold text-3xl text-gray-900 sm:text-4xl">
                 Drywall is the{" "}
                 <span className="text-amber-700">#1 reason make-readies slip</span>
@@ -254,7 +254,7 @@ const DrywallPage = () => {
               </p>
             </div>
             <div>
-              <p className="text-xs font-medium uppercase tracking-[0.12em] text-amber-700">— Texture Matching</p>
+              <p className="text-xs font-medium uppercase tracking-[0.12em] text-gray-900">— Texture Matching</p>
               <h2 className="mt-3 font-display font-bold text-3xl text-gray-900 sm:text-4xl">
                 We match existing wall texture —{" "}
                 <span className="text-amber-700">smooth, orange peel, knockdown</span>

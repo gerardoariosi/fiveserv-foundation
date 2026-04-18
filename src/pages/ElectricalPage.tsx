@@ -149,7 +149,7 @@ const ElectricalPage = () => {
         <div className="container py-20">
           <SectionReveal className="grid gap-10 lg:grid-cols-2 lg:items-center">
             <div>
-              <p className="text-xs font-medium uppercase tracking-[0.12em] text-amber-700">— Liability & Safety</p>
+              <p className="text-xs font-medium uppercase tracking-[0.12em] text-gray-900">— Liability & Safety</p>
               <h2 className="mt-3 font-display font-bold text-3xl text-gray-900 sm:text-4xl">
                 A failed outlet is a{" "}
                 <span className="text-amber-700">fire risk and a lawsuit</span>
@@ -255,7 +255,7 @@ const ElectricalPage = () => {
               </p>
             </div>
             <div>
-              <p className="text-xs font-medium uppercase tracking-[0.12em] text-amber-700">— Why Licensed Matters</p>
+              <p className="text-xs font-medium uppercase tracking-[0.12em] text-gray-900">— Why Licensed Matters</p>
               <h2 className="mt-3 font-display font-bold text-3xl text-gray-900 sm:text-4xl">
                 All electrical performed by{" "}
                 <span className="text-amber-700">Florida-licensed contractors</span>

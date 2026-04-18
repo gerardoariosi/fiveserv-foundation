@@ -148,7 +148,7 @@ const PlumbingPage = () => {
         <div className="container py-20">
           <SectionReveal className="grid gap-10 lg:grid-cols-2 lg:items-center">
             <div>
-              <p className="text-xs font-medium uppercase tracking-[0.12em] text-amber-700">— The Real Cost of Delay</p>
+              <p className="text-xs font-medium uppercase tracking-[0.12em] text-gray-900">— The Real Cost of Delay</p>
               <h2 className="mt-3 font-display font-bold text-3xl text-gray-900 sm:text-4xl">
                 A 4-hour delay on a leak is a{" "}
                 <span className="text-amber-700">$10,000 claim</span>
@@ -253,7 +253,7 @@ const PlumbingPage = () => {
               </p>
             </div>
             <div>
-              <p className="text-xs font-medium uppercase tracking-[0.12em] text-amber-700">— Why Licensed Matters</p>
+              <p className="text-xs font-medium uppercase tracking-[0.12em] text-gray-900">— Why Licensed Matters</p>
               <h2 className="mt-3 font-display font-bold text-3xl text-gray-900 sm:text-4xl">
                 All plumbing performed by{" "}
                 <span className="text-amber-700">Florida-licensed contractors</span>

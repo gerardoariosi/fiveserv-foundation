@@ -36,7 +36,7 @@ export const ServicePageTemplate = ({ service, faqs = [] }: ServicePageData) => 
       {/* Hero — dark */}
       <section className="bg-brand-black pt-32 pb-16">
         <div className="container">
-          <p className="text-xs font-medium uppercase tracking-[0.12em] text-amber-700">— {SITE.brand} Property Solutions</p>
+          <p className="text-xs font-medium uppercase tracking-[0.12em] text-gray-900">— {SITE.brand} Property Solutions</p>
           <h1 className="mt-3 font-display font-black text-4xl text-white sm:text-5xl lg:text-6xl">{service.name}</h1>
           <p className="mt-4 max-w-2xl text-lg text-gray-300">{service.description}</p>
 

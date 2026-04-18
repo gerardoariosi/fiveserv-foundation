@@ -381,7 +381,7 @@ const CleaningPage = () => {
               </p>
             </div>
             <div>
-              <p className="text-xs font-medium uppercase tracking-[0.12em] text-amber-700">— Cleaning Standard</p>
+              <p className="text-xs font-medium uppercase tracking-[0.12em] text-gray-900">— Cleaning Standard</p>
               <h2 className="mt-3 font-display font-bold text-3xl text-gray-900 sm:text-4xl">
                 Verifiable cleaning. <span className="text-amber-700">Not "trust us."</span>
               </h2>

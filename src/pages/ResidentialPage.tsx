@@ -136,7 +136,7 @@ const ResidentialPage = () => {
               />
             </div>
             <div>
-              <p className="text-xs font-bold uppercase tracking-wider text-amber-700">Built by a Family</p>
+              <p className="text-xs font-bold uppercase tracking-wider text-gray-900">Built by a Family</p>
               <h2 className="mt-3 font-display font-bold text-3xl text-gray-900 sm:text-4xl">
                 A <span className="text-amber-700">Venezuelan-American family</span> with{" "}
                 <span className="text-amber-700">15+ years</span> of combined experience.

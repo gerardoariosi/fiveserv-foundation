@@ -300,7 +300,7 @@ const CarpentryPage = () => {
               </p>
             </div>
             <div>
-              <p className="text-xs font-medium uppercase tracking-[0.12em] text-amber-700">— Quality Spec</p>
+              <p className="text-xs font-medium uppercase tracking-[0.12em] text-gray-900">— Quality Spec</p>
               <h2 className="mt-3 font-display font-bold text-3xl text-gray-900 sm:text-4xl">
                 Carpentry that{" "}
                 <span className="text-amber-700">matches the rest of the unit</span>
