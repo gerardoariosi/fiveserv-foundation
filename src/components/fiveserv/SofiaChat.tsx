@@ -325,6 +325,15 @@ const fallbackResponse = (lang: Lang): Message =>
     ],
   });
 
+const SS_OPENED = "sofia.opened";
+const SS_DISMISSED = "sofia.dismissed";
+
+const detectBrowserLang = (): Lang => {
+  if (typeof navigator === "undefined") return "en";
+  const l = (navigator.language || "en").toLowerCase();
+  return l.startsWith("es") ? "es" : "en";
+};
+
 const SofiaChat = () => {
   const [open, setOpen] = useState(false);
   const [lang, setLang] = useState<Lang>("en");
@@ -333,6 +342,7 @@ const SofiaChat = () => {
   const [messages, setMessages] = useState<Message[]>([]);
   const [input, setInput] = useState("");
   const [typing, setTyping] = useState(false);
+  const [showBadge, setShowBadge] = useState(false);
   const scrollRef = useRef<HTMLDivElement>(null);
 
   // Restore from sessionStorage
@@ -348,8 +358,9 @@ const SofiaChat = () => {
         return;
       }
     } catch { /* ignore */ }
-    // First-time opening message
-    setMessages([mkSofia(t.en.opening, { quickReplies: [...t.en.openingButtons] })]);
+    // First-time: detect locale, leave messages empty so the live "typing" sequence
+    // plays when the widget opens (auto or manual).
+    setLang(detectBrowserLang());
   }, []);
 
   // Persist
@@ -364,6 +375,52 @@ const SofiaChat = () => {
     scrollRef.current?.scrollTo({ top: scrollRef.current.scrollHeight, behavior: "smooth" });
   }, [messages, typing, open]);
 
+  // Live opening sequence — runs when the widget opens for the first time
+  // (no messages yet). Step 2: typing 600ms in, Step 3: message at 1800ms.
+  useEffect(() => {
+    if (!open) return;
+    if (messages.length > 0) return;
+    const L = t[lang];
+    const typingTimer = window.setTimeout(() => setTyping(true), 600);
+    const messageTimer = window.setTimeout(() => {
+      setTyping(false);
+      setMessages([mkSofia(L.opening, { quickReplies: [...L.openingButtons] })]);
+    }, 1800);
+    return () => {
+      window.clearTimeout(typingTimer);
+      window.clearTimeout(messageTimer);
+    };
+  }, [open, messages.length, lang]);
+
+  // Auto-open + notification badge — fires once per session
+  useEffect(() => {
+    if (typeof window === "undefined") return;
+    const isMobile = window.matchMedia("(max-width: 639px)").matches;
+    const badgeDelay = 3000;
+    const openDelay = isMobile ? 5000 : 4000;
+
+    const badgeTimer = window.setTimeout(() => setShowBadge(true), badgeDelay);
+
+    const openTimer = window.setTimeout(() => {
+      const alreadyOpened = sessionStorage.getItem(SS_OPENED) === "true";
+      const dismissed = sessionStorage.getItem(SS_DISMISSED) === "true";
+      if (alreadyOpened || dismissed) return;
+      setOpen(true);
+      setShowBadge(false);
+      sessionStorage.setItem(SS_OPENED, "true");
+    }, openDelay);
+
+    return () => {
+      window.clearTimeout(badgeTimer);
+      window.clearTimeout(openTimer);
+    };
+  }, []);
+
+  // Hide badge when chat opens
+  useEffect(() => {
+    if (open) setShowBadge(false);
+  }, [open]);
+
   const sayLater = (msgs: Message[], delay?: number) => {
     setTyping(true);
     window.setTimeout(() => {
@@ -374,10 +431,18 @@ const SofiaChat = () => {
 
   const handleReset = () => {
     sessionStorage.removeItem(SS_KEY);
-    setLang("en");
+    const initialLang = detectBrowserLang();
+    setLang(initialLang);
     setStep("opening");
     setData({ userType: null });
-    setMessages([mkSofia(t.en.opening, { quickReplies: [...t.en.openingButtons] })]);
+    setMessages([]);
+    setTyping(false);
+    // Live sequence effect will replay because messages.length === 0 and open === true
+  };
+
+  const handleClose = () => {
+    setOpen(false);
+    sessionStorage.setItem(SS_DISMISSED, "true");
   };
 
   const advance = (userText: string, fromQuickReply: boolean) => {
@@ -535,6 +600,25 @@ const SofiaChat = () => {
         >
           <MessageCircle className="h-7 w-7" style={{ color: "#1A1A1A" }} strokeWidth={2.25} />
           <span className="sr-only">Chat with Sofia</span>
+          {showBadge && (
+            <span
+              aria-label="1 new message"
+              className="sofia-badge-pulse pointer-events-none absolute flex items-center justify-center rounded-full font-bold"
+              style={{
+                top: "-4px",
+                right: "-4px",
+                width: "18px",
+                height: "18px",
+                background: "#FFD700",
+                color: "#1A1A1A",
+                fontSize: "11px",
+                lineHeight: 1,
+                boxShadow: "0 0 0 2px #FFFFFF",
+              }}
+            >
+              1
+            </span>
+          )}
         </button>
       )}
 
@@ -587,7 +671,7 @@ const SofiaChat = () => {
             </button>
             <button
               type="button"
-              onClick={() => setOpen(false)}
+              onClick={handleClose}
               aria-label="Close chat"
               className="flex h-8 w-8 items-center justify-center rounded-md text-gray-400 transition-colors hover:text-white"
             >
@@ -746,12 +830,20 @@ const SofiaChat = () => {
         </div>
       )}
 
-      {/* Thin scrollbar for messages area */}
+      {/* Thin scrollbar + badge pulse */}
       <style>{`
         .sofia-scroll::-webkit-scrollbar { width: 6px; }
         .sofia-scroll::-webkit-scrollbar-track { background: transparent; }
         .sofia-scroll::-webkit-scrollbar-thumb { background: #E5E7EB; border-radius: 3px; }
         .sofia-scroll { scrollbar-width: thin; scrollbar-color: #E5E7EB transparent; }
+        @keyframes sofia-badge-pulse {
+          0%, 100% { transform: scale(1); }
+          50% { transform: scale(1.2); }
+        }
+        .sofia-badge-pulse { animation: sofia-badge-pulse 1.5s ease-in-out infinite; }
+        @media (prefers-reduced-motion: reduce) {
+          .sofia-badge-pulse { animation: none; }
+        }
       `}</style>
     </>
   );
