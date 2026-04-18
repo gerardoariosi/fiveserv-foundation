@@ -1,53 +1,60 @@
 
 
-## Plan — Image Quality + Hero Video Cropping
+## Plan — 3 Critical Fixes
 
-### Issue 5: Hero video cropping (HeroSection.tsx)
+### Issue 1: Logo not loading (robust fix)
 
-Current state (lines 70 & 79-90):
-- Container: `min-h-[600px] h-screen` — `h-screen` locks to viewport height which is correct, but combined with `object-cover object-center` on the video, ultra-wide screens crop top/bottom of the subject.
-- Video element already has `w-full h-full object-cover` ✓
-- Overlay already has `absolute inset-0` ✓
+**Root cause**: file is `/public/images/logo FS .png` (with spaces). URL-encoding `%20` works in most browsers but is fragile (some CDNs/proxies double-encode or strip). I cannot rename binary files with available tools.
 
-Real fix:
-- Container: change `min-h-[600px] h-screen` → `relative w-full min-h-screen` (drop the fixed `h-screen`, let content + min-height drive it; video stays absolute and fills)
-- Remove inline `style={{ objectFit: "cover" }}` redundancy (already in className)
-- Add `object-position: center center` explicitly (already via `object-center`) ✓
-- Keep both video layers as `absolute inset-0 w-full h-full`
+**Fix**: Create a reusable `<Logo>` component with image + automatic wordmark fallback:
+- Primary: `<img src="/images/logo%20FS%20.png">` 
+- `onError` → swap to inline wordmark: gold "F" + white/black "iveServ" + small "PROPERTY SOLUTIONS" tagline below
+- This guarantees something always renders, regardless of file/path issues
 
-This prevents the video from being cropped while still covering the viewport. On ultra-wide, the video will scale up and crop sides instead of top/bottom — which is the intended `object-cover` behavior. If user wants the *whole* video visible (no crop ever), that requires `object-contain` + letterboxing, which the user did not request.
+Replace the 3 inline `<img>` logo blocks in `StickyHeader.tsx`, `Footer.tsx`, `TampaBayPage.tsx` with `<Logo variant="light|dark" />`.
 
-### Issue 4: Image quality audit
+### Issue 2: Tampa Bay page rebuild
 
-Project is **Vite + React** (not Next.js) — `next/image` and `quality={100}` don't apply. Will translate the intent:
+Page exists at `/tampa-bay-fl` and is routed, but doesn't match the spec (uses CTA buttons + ContactCTA section instead of a waitlist form).
 
-1. **Remove blur/filter/opacity on `<img>`**: grep for `filter`, `blur`, `opacity-` on img tags and overlay layers that wrap images.
-2. **Remove width/max-width constraints stretching images**: spot-check service cards, testimonials, family story image, blog images.
-3. **Add `sizes="100vw"`**: only meaningful for `srcset`. None of the current `<img>` tags use `srcset`, so this is a no-op. Will skip unless we add responsive sources (out of scope).
-4. **Verify `object-fit: cover`**: grep for `object-fill`/`object-scale-down`/`object-contain` misuse.
-5. **Remove `transform`/`scale` on images**: grep for `scale-` and `hover:scale-` on `<img>`. Hover-zoom (`hover:scale-105`) is a common UX pattern; will keep unless it visibly degrades. User's rule says "remove any transform or scale that could degrade rendering" — `scale-105` on hover is fine in modern browsers (GPU composited, no quality loss). Will leave hover effects, remove only static transforms.
+Rewrite `src/pages/TampaBayPage.tsx`:
+- Single centered section, full `bg-brand-black` (#1A1A1A), no hero image overlay
+- `<Logo variant="light" />` centered top
+- H1: "FiveServ is Coming to Tampa Bay, Florida" (white, gold "Tampa Bay")
+- Subhead: "We are expanding to Tampa Bay. Be the first to know when we launch."
+- Native React waitlist form (controlled inputs): Name, Email, Company, Number of units → on submit, log + show success state ("We'll be in touch.") with toast. No backend wiring (out of scope unless requested).
+- Submit button: gold bg `#FFD700`, dark text `#1A1A1A`, "Join the Waitlist"
+- Form card: `bg-[#2D2D2D]` with white inputs, gray-300 labels (on dark = readable)
+- Keep existing `Seo` (title, canonical), `SchemaOrg` breadcrumbs, and Tampa LocalBusiness JSON-LD
+- Remove `<ContactCTA />` (not in spec)
 
-### Files to inspect/edit
+### Issue 3: Contrast audit (gold-on-gold, white-on-white, dark-on-dark)
 
-| File | Action |
+Targeted sweep using greps:
+
+1. **Gold text on gold backgrounds**: search `bg-brand-gold` blocks containing `text-brand-gold`. Known: `FivePillars.tsx` already uses `text-brand-black` on gold bg ✓. Verify no other instances.
+2. **White on white**: search `bg-white`/`bg-brand-white` containing `text-white`/`text-brand-white`.
+3. **Dark on dark**: search `bg-brand-black`/`bg-[#1A1A1A]` containing `text-brand-black`/`text-gray-900`.
+4. **BrandName "F" on wrong bg**: `BrandName` always renders gold "F". On gold/white sections this is invisible/illegible. Add a third variant `variant="onGold"` → "F" becomes `text-brand-black`. Audit all 67 BrandName usages and switch any on gold/white containers to `onGold` (mostly `FivePillars` is the gold case).
+5. **Buttons**: spot-check button.tsx variants — confirm `gold bg → black text` and `dark bg → gold/white text`. Already compliant per existing `cta-gold` class.
+6. **Badges/pills/eyebrows**: grep for `text-brand-gold` on light/white surface containers; flip to `text-brand-black` or `text-gray-900` where needed.
+
+Will fix every violation found. Estimate 5–15 small className edits across ~6 files.
+
+### Files to edit
+
+| File | Change |
 |---|---|
-| `src/components/fiveserv/HeroSection.tsx` | Container: `min-h-[600px] h-screen` → `min-h-screen w-full`; clean redundant inline styles |
-| `src/components/fiveserv/FamilyStory.tsx` | Already uses `object-cover aspect-[4/3]` ✓ — verify no blur |
-| `src/components/fiveserv/ServiceCard.tsx` | Audit for image transforms |
-| `src/components/fiveserv/TestimonialCard.tsx` | Audit avatar rendering |
-| `src/components/fiveserv/BeforeAfterSlider.tsx` | Verify slider images use `object-cover` not `object-fill` |
-| `src/pages/BlogArticlePage.tsx` + blog content | Audit hero/inline images |
-| `src/pages/AboutPage.tsx`, `Index.tsx` section images | Audit |
+| `src/components/fiveserv/Logo.tsx` (new) | Image + wordmark fallback component |
+| `src/components/fiveserv/StickyHeader.tsx` | Use `<Logo variant="dark" />` |
+| `src/components/fiveserv/Footer.tsx` | Use `<Logo variant="light" />` |
+| `src/pages/TampaBayPage.tsx` | Full rewrite per spec, with waitlist form |
+| `src/components/fiveserv/BrandName.tsx` | Add `variant="onGold"` (black F) |
+| `FivePillars.tsx` + any other gold-bg containers | Switch BrandName to `onGold` |
+| Other components (audit-driven) | Fix any remaining same-color violations |
 
-Will grep for: `filter`, `blur-`, `opacity-[0-9]` on img wrappers, `object-fill`, `object-scale-down`, `transform`, `scale-` on `<img>`.
+### Out of scope
 
-### Out of scope / clarifications
-
-- **`next/image` quality={100}**: not applicable (Vite project, no Next.js). Closest equivalent is to ensure source images are high-resolution — that's a content/asset task, not a code fix. Will note any low-res source files found.
-- **Responsive `srcset`/`sizes`**: would require generating multiple sizes per image (build-time tooling). Out of scope for this pass.
-- **Hover zoom on cards**: keeping `hover:scale-105` style effects (no quality degradation, intended UX).
-
-### Implementation estimate
-
-~2-4 small className edits in HeroSection + 0-3 image-related fixes elsewhere depending on what the grep finds.
+- Renaming the binary `logo FS .png` → `logo-fs.png` (tool limitation; fallback wordmark makes this irrelevant)
+- Wiring waitlist form to a backend (not requested; will log + toast success). Can add Lovable Cloud / GHL hookup as a follow-up.
 
