@@ -10,16 +10,13 @@ export const FamilyStory = () => {
       <div ref={ref} className="container reveal py-24 lg:py-32">
         <div className="grid gap-12 lg:grid-cols-2 lg:items-center">
           <div className="overflow-hidden rounded-2xl border border-gray-200 shadow-sm">
+            {/* TODO: Replace with real photo — family-fiveserv.jpg */}
             <img
-              src="/images/family-fiveserv.jpg"
+              src="/images/family-fiveserv.svg"
               alt={`The ${SITE.brand} Venezuelan-American family — property maintenance Central Florida`}
               loading="lazy"
               decoding="async"
               className="h-full w-full object-cover aspect-[4/3]"
-              onError={(e) => {
-                (e.currentTarget as HTMLImageElement).src =
-                  "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 800 600'><rect width='800' height='600' fill='%23F5F5F5'/><text x='50%25' y='50%25' fill='%231A1A1A' font-family='Arial' font-size='28' text-anchor='middle' dominant-baseline='middle'>family-fiveserv.jpg</text></svg>";
-              }}
             />
           </div>
 
