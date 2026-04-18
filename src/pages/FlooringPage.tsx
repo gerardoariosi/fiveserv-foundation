@@ -143,7 +143,7 @@ const FlooringPage = () => {
             </span>
           </div>
 
-          <p className="mt-6 max-w-2xl text-lg text-gray-700">
+          <p className="mt-6 max-w-2xl text-lg text-gray-300">
             Vinyl plank. Tile. Carpet. Hardwood. Removal, subfloor prep, install. One invoice.
           </p>
 
@@ -466,7 +466,7 @@ const FlooringPage = () => {
               <h2 className="font-display font-bold text-3xl text-gray-900 sm:text-4xl">
                 Ready for a <span className="text-gray-900">flooring quote?</span>
               </h2>
-              <p className="mt-3 text-gray-700">
+              <p className="mt-3 text-gray-300">
                 Pick the path that fits. PM portfolios on the left. Homes on the right.
               </p>
               <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
@@ -483,7 +483,7 @@ const FlooringPage = () => {
                   <Home className="h-4 w-4" /> Get a Home Flooring Quote
                 </Link>
               </div>
-              <p className="mt-6 text-sm text-gray-600">
+              <p className="mt-6 text-sm text-gray-400">
                 Or call us directly:{" "}
                 <a href={`tel:${SITE.phone}`} className="font-bold text-amber-700 hover:underline">
                   {SITE.phone}

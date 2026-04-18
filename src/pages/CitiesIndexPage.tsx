@@ -26,7 +26,7 @@ const CitiesIndexPage = ({ canonicalPath = "/cities" }: Props) => (
         <h1 className="mt-3 font-display text-4xl text-white sm:text-5xl">
           18 Cities Across <span className="text-brand-gold">Central Florida</span>
         </h1>
-        <p className="mt-6 max-w-2xl text-gray-700">
+        <p className="mt-6 max-w-2xl text-gray-300">
           Same-day or 24-hour response across Orlando metro, Polk, Volusia, Flagler, and Brevard counties. Tampa Bay launching soon.
         </p>
       </div>

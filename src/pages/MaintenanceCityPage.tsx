@@ -90,7 +90,7 @@ const MaintenanceCityPage = ({ citySlug: propSlug }: MaintenanceCityPageProps = 
             {city.name} {city.state} Property Maintenance —{" "}
             <span className="block text-brand-gold">One Call. One Team. One Invoice.</span>
           </h1>
-          <p className="mt-6 max-w-2xl text-lg text-gray-700">
+          <p className="mt-6 max-w-2xl text-lg text-gray-300">
             {slug === "orlando-fl"
               ? `${SITE.brand} is based in ${city.name} — fastest response times in the market.`
               : `${SITE.brand} serves the ${city.name} multifamily market — bilingual team, written guarantees, one invoice.`}

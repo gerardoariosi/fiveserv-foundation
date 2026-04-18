@@ -60,7 +60,7 @@ const TampaBayPage = () => {
             <span className="text-brand-gold">Tampa Bay, Florida</span>
           </h1>
 
-          <p className="mt-6 text-lg text-gray-700">
+          <p className="mt-6 text-lg text-gray-300">
             We're expanding to Tampa Bay. Be the first to know when we launch — get priority scheduling for
             make-ready and property maintenance services.
           </p>

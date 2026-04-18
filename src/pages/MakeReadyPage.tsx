@@ -87,7 +87,7 @@ const MakeReadyPage = () => {
             Make-Ready &amp; Unit Turn Services —
             <span className="block text-brand-gold">5-Day Guarantee</span>
           </h1>
-          <p className="mt-6 max-w-2xl text-lg text-gray-700">
+          <p className="mt-6 max-w-2xl text-lg text-gray-300">
             Central Florida property managers trust {SITE.brand} for make-ready. One call. Our team. 5 business days. Guaranteed in writing.
           </p>
 
