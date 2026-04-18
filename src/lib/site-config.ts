@@ -24,9 +24,9 @@ export const SITE = {
     handle: "@FiveServ",
   },
   tracking: {
-    ga4: env.VITE_GA4_ID || "",
+    ga4: env.VITE_GA4_ID || "G-S6BNXJZ1XL",
     gsc: env.VITE_GSC_CODE || "",
-    clarity: env.VITE_CLARITY_CODE || "",
+    clarity: env.VITE_CLARITY_CODE || "wdsziferws",
   },
 } as const;
 
