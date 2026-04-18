@@ -48,18 +48,18 @@ const AboutPage = () => {
       {/* 1. Hero */}
       <section className="bg-brand-black pt-32 pb-16">
         <div className="container">
-          <p className="text-sm font-bold uppercase tracking-wide text-brand-gold">
-            About {SITE.brand} Property Solutions
+          <p className="text-xs font-medium uppercase tracking-[0.12em] text-brand-gold">
+            — About {SITE.brand} Property Solutions
           </p>
-          <h1 className="mt-3 max-w-4xl font-display text-4xl text-brand-black sm:text-5xl lg:text-6xl">
+          <h1 className="mt-3 max-w-4xl font-display font-black text-4xl text-white sm:text-5xl lg:text-6xl">
             Built by a Family.{" "}
             <span className="block text-brand-gold">Trusted by Property Managers Across Central Florida.</span>
           </h1>
-          <p className="mt-6 max-w-2xl text-lg text-gray-700">
+          <p className="mt-6 max-w-2xl text-lg text-gray-300">
             Five family members. 15+ years combined experience. One promise on every job.
           </p>
 
-          <ul className="mt-6 flex flex-wrap items-center gap-x-6 gap-y-3 text-sm font-bold text-brand-black">
+          <ul className="mt-6 flex flex-wrap items-center gap-x-6 gap-y-3 text-sm font-medium text-white">
             {["Venezuelan-American Family", "Licensed & Insured", "5-Day Guarantee", "18 Cities Served"].map((t, i) => (
               <li key={t} className="flex items-center gap-3">
                 {i > 0 && <span aria-hidden className="text-brand-gold">|</span>}
@@ -80,7 +80,7 @@ const AboutPage = () => {
       <section className="bg-gray-50">
         <div className="container py-20">
           <SectionReveal className="grid gap-10 lg:grid-cols-[1fr,2fr] lg:items-start">
-            <h2 className="font-display text-3xl text-brand-black sm:text-4xl">
+            <h2 className="font-display font-bold text-3xl text-gray-900 sm:text-4xl">
               Our <span className="text-brand-gold">Story</span>
             </h2>
             <div className="space-y-4 text-gray-700">
@@ -91,8 +91,8 @@ const AboutPage = () => {
               </p>
               <p>
                 {SITE.brand} is built to last generations. The name says everything we stand for:{" "}
-                <span className="font-bold text-brand-black">five family members</span> behind the company, and a{" "}
-                <span className="font-bold text-brand-black">five-day make-ready delivery</span> guaranteed in writing
+                <span className="font-semibold text-gray-900">five family members</span> behind the company, and a{" "}
+                <span className="font-semibold text-gray-900">five-day make-ready delivery</span> guaranteed in writing
                 on every unit turn.
               </p>
               <p>
@@ -108,7 +108,7 @@ const AboutPage = () => {
       <section className="bg-white">
         <div className="container py-20">
           <SectionReveal>
-            <h2 className="font-display text-3xl text-brand-black sm:text-4xl">
+            <h2 className="font-display font-bold text-3xl text-gray-900 sm:text-4xl">
               Track <span className="text-brand-gold">Record</span>
             </h2>
             <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
@@ -121,7 +121,7 @@ const AboutPage = () => {
                     {s.value}
                     <span>{s.suffix}</span>
                   </div>
-                  <p className="mt-3 text-sm font-bold uppercase tracking-wide text-brand-black">{s.label}</p>
+                  <p className="mt-3 text-sm font-bold uppercase tracking-wide text-gray-900">{s.label}</p>
                 </div>
               ))}
             </div>
@@ -135,7 +135,7 @@ const AboutPage = () => {
       <section className="bg-gray-50">
         <div className="container py-20">
           <SectionReveal>
-            <h2 className="font-display text-3xl text-brand-black sm:text-4xl">
+            <h2 className="font-display font-bold text-3xl text-gray-900 sm:text-4xl">
               The <span className="text-brand-gold">Team</span>
             </h2>
             <p className="mt-3 max-w-2xl text-gray-700">
@@ -160,8 +160,8 @@ const AboutPage = () => {
                     />
                   </div>
                   <div>
-                    <h3 className="font-display text-xl text-brand-black">{member.name}</h3>
-                    <p className="mt-1 text-sm font-bold uppercase tracking-wide text-brand-gold">{member.role}</p>
+                    <h3 className="font-display font-semibold text-xl text-gray-900">{member.name}</h3>
+                    <p className="mt-1 text-xs font-medium uppercase tracking-[0.12em] text-brand-gold">— {member.role}</p>
                     <p className="mt-3 text-sm text-gray-700">
                       {member.name} brings hands-on expertise to the {SITE.brand} team, working directly with property
                       managers across Central Florida. Personally accountable for every job that carries our family name.
@@ -178,14 +178,14 @@ const AboutPage = () => {
       <section className="bg-brand-gold">
         <div className="container py-20">
           <SectionReveal>
-            <h2 className="font-display text-3xl text-brand-black sm:text-4xl">
+            <h2 className="font-display font-bold text-3xl text-gray-900 sm:text-4xl">
               The {SITE.brand} Promise
             </h2>
             <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-5">
               {PROMISE.map((p) => (
                 <div key={p.label} className="rounded-lg border-2 border-brand-black bg-brand-black p-6 text-center">
                   <div className="font-display text-3xl text-brand-gold">{p.label}</div>
-                  <p className="mt-2 text-xs font-bold uppercase tracking-wider text-brand-black">{p.sub}</p>
+                  <p className="mt-2 text-xs font-bold uppercase tracking-wider text-gray-900">{p.sub}</p>
                 </div>
               ))}
             </div>
@@ -205,7 +205,7 @@ const AboutPage = () => {
       <section className="bg-white">
         <div className="container py-20">
           <SectionReveal>
-            <h2 className="font-display text-3xl text-brand-black sm:text-4xl">
+            <h2 className="font-display font-bold text-3xl text-gray-900 sm:text-4xl">
               Licenses & <span className="text-brand-gold">Insurance</span>
             </h2>
             <p className="mt-3 max-w-2xl text-gray-700">
@@ -229,7 +229,7 @@ const AboutPage = () => {
                     <span className="flex h-12 w-12 items-center justify-center rounded-md bg-brand-gold/10 text-brand-gold">
                       <Icon className="h-6 w-6" />
                     </span>
-                    <h3 className="mt-5 font-display text-lg text-brand-black">{item.label}</h3>
+                    <h3 className="mt-5 font-display text-lg text-gray-900">{item.label}</h3>
                     <p className="mt-2 text-sm text-gray-600">{item.value}</p>
                   </div>
                 );
@@ -243,10 +243,10 @@ const AboutPage = () => {
       <section className="bg-brand-gold">
         <div className="container py-16 text-center">
           <SectionReveal>
-            <h2 className="font-display text-3xl text-brand-black sm:text-4xl">
+            <h2 className="font-display font-bold text-3xl text-gray-900 sm:text-4xl">
               Work With Us
             </h2>
-            <p className="mt-3 text-lg text-brand-black/80">
+            <p className="mt-3 text-lg text-gray-900/80">
               One call. One team. One invoice. Get a free quote in 24 hours.
             </p>
             <Link

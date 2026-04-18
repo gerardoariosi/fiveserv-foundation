@@ -137,10 +137,10 @@ const CleaningPage = () => {
       {/* Hero */}
       <section className="bg-brand-black pt-32 pb-16">
         <div className="container">
-          <p className="text-sm font-bold uppercase tracking-wide text-brand-gold">
-            {SITE.brand} Property Solutions
+          <p className="text-xs font-medium uppercase tracking-[0.12em] text-brand-gold">
+            — {SITE.brand} Property Solutions
           </p>
-          <h1 className="mt-3 font-display text-4xl text-brand-black sm:text-5xl lg:text-6xl">
+          <h1 className="mt-3 font-display font-black text-4xl text-white sm:text-5xl lg:text-6xl">
             Professional Cleaning Services for Properties and Homes —
             <span className="block text-brand-gold">Central Florida</span>
           </h1>
@@ -170,7 +170,7 @@ const CleaningPage = () => {
             </a>
             <a
               href={`tel:${SITE.phone}`}
-              className="flex items-center gap-2 rounded-md border-2 border-brand-white px-6 py-3 text-sm font-bold uppercase tracking-wide text-brand-black hover:bg-brand-white hover:text-brand-black transition-colors"
+              className="flex items-center gap-2 rounded-md border-2 border-brand-white px-6 py-3 text-sm font-bold uppercase tracking-wide text-white hover:bg-brand-white hover:text-brand-black transition-colors"
             >
               <Phone className="h-4 w-4" /> Call {SITE.phone}
             </a>
@@ -186,7 +186,7 @@ const CleaningPage = () => {
       <section className="bg-gray-50">
         <div className="container py-20">
           <SectionReveal>
-            <h2 className="font-display text-3xl text-brand-black sm:text-4xl">
+            <h2 className="font-display font-bold text-3xl text-gray-900 sm:text-4xl">
               One Cleaning Team. <span className="text-brand-gold">Two Audiences.</span>
             </h2>
             <p className="mt-3 max-w-2xl text-gray-700">
@@ -196,10 +196,10 @@ const CleaningPage = () => {
             <div className="mt-12 grid gap-6 lg:grid-cols-2">
               {/* B2B */}
               <article className="rounded-xl border-2 border-brand-gold bg-white shadow-md p-8">
-                <span className="inline-flex items-center gap-2 rounded-full bg-brand-gold px-3 py-1 text-xs font-bold uppercase tracking-wider text-brand-black">
+                <span className="inline-flex items-center gap-2 rounded-full bg-brand-gold px-3 py-1 text-xs font-bold uppercase tracking-wider text-gray-900">
                   <Building2 className="h-3.5 w-3.5" /> Property Managers
                 </span>
-                <h3 className="mt-4 font-display text-2xl text-brand-black">
+                <h3 className="mt-4 font-display font-semibold text-2xl text-gray-900">
                   Multifamily & Make-Ready Cleaning
                 </h3>
                 <ul className="mt-5 space-y-2 text-gray-700">
@@ -227,10 +227,10 @@ const CleaningPage = () => {
 
               {/* B2C */}
               <article className="rounded-xl border-2 border-brand-gold bg-white shadow-md p-8">
-                <span className="inline-flex items-center gap-2 rounded-full bg-brand-gold px-3 py-1 text-xs font-bold uppercase tracking-wider text-brand-black">
+                <span className="inline-flex items-center gap-2 rounded-full bg-brand-gold px-3 py-1 text-xs font-bold uppercase tracking-wider text-gray-900">
                   <Home className="h-3.5 w-3.5" /> Homeowners
                 </span>
-                <h3 className="mt-4 font-display text-2xl text-brand-black">
+                <h3 className="mt-4 font-display font-semibold text-2xl text-gray-900">
                   Home & Residential Cleaning
                 </h3>
                 <ul className="mt-5 space-y-2 text-gray-700">
@@ -264,7 +264,7 @@ const CleaningPage = () => {
       <section className="bg-white">
         <div className="container py-20">
           <SectionReveal>
-            <h2 className="font-display text-3xl text-brand-black sm:text-4xl">
+            <h2 className="font-display font-bold text-3xl text-gray-900 sm:text-4xl">
               What's Included — <span className="text-brand-gold">Two Checklists</span>
             </h2>
             <p className="mt-3 max-w-2xl text-gray-700">
@@ -276,7 +276,7 @@ const CleaningPage = () => {
                 <span className="inline-flex items-center gap-2 rounded-full bg-brand-gold/15 px-3 py-1 text-xs font-bold uppercase tracking-wider text-brand-gold">
                   <Building2 className="h-3.5 w-3.5" /> Make-Ready / Move-Out
                 </span>
-                <h3 className="mt-4 font-display text-xl text-brand-black">Multifamily Move-Out Checklist</h3>
+                <h3 className="mt-4 font-display font-semibold text-xl text-gray-900">Multifamily Move-Out Checklist</h3>
                 <ul className="mt-5 space-y-2 text-gray-700">
                   {MAKE_READY_CHECKLIST.map((t) => (
                     <li key={t} className="flex items-start gap-3">
@@ -291,7 +291,7 @@ const CleaningPage = () => {
                 <span className="inline-flex items-center gap-2 rounded-full bg-brand-gold/15 px-3 py-1 text-xs font-bold uppercase tracking-wider text-brand-gold">
                   <Home className="h-3.5 w-3.5" /> Residential
                 </span>
-                <h3 className="mt-4 font-display text-xl text-brand-black">Residential Deep Clean Checklist</h3>
+                <h3 className="mt-4 font-display font-semibold text-xl text-gray-900">Residential Deep Clean Checklist</h3>
                 <ul className="mt-5 space-y-2 text-gray-700">
                   {RESIDENTIAL_CHECKLIST.map((t) => (
                     <li key={t} className="flex items-start gap-3">
@@ -310,7 +310,7 @@ const CleaningPage = () => {
       <section className="bg-gray-50">
         <div className="container py-20">
           <SectionReveal>
-            <h2 className="font-display text-3xl text-brand-black sm:text-4xl">
+            <h2 className="font-display font-bold text-3xl text-gray-900 sm:text-4xl">
               Cleaning Services <span className="text-brand-gold">We Handle</span>
             </h2>
             <p className="mt-3 max-w-2xl text-gray-700">
@@ -323,7 +323,7 @@ const CleaningPage = () => {
                   <span className="flex h-12 w-12 items-center justify-center rounded-md bg-brand-gold/10 text-brand-gold">
                     <s.icon className="h-6 w-6" />
                   </span>
-                  <h3 className="mt-5 font-display text-xl text-brand-black">{s.title}</h3>
+                  <h3 className="mt-5 font-display font-semibold text-xl text-gray-900">{s.title}</h3>
                   <p className="mt-2 text-gray-700">{s.desc}</p>
                 </article>
               ))}
@@ -342,10 +342,10 @@ const CleaningPage = () => {
                   <Key className="h-8 w-8" />
                 </div>
                 <div>
-                  <span className="inline-block rounded-full bg-brand-gold px-3 py-1 text-xs font-bold uppercase tracking-wider text-brand-black">
+                  <span className="inline-block rounded-full bg-brand-gold px-3 py-1 text-xs font-bold uppercase tracking-wider text-gray-900">
                     Make-Ready Included
                   </span>
-                  <h2 className="mt-3 font-display text-3xl text-brand-black sm:text-4xl">
+                  <h2 className="mt-3 font-display font-bold text-3xl text-gray-900 sm:text-4xl">
                     Every {SITE.brand} make-ready includes a{" "}
                     <span className="text-brand-gold">full move-out deep clean</span>
                   </h2>
@@ -372,7 +372,7 @@ const CleaningPage = () => {
           <SectionReveal className="grid gap-10 lg:grid-cols-2 lg:items-center">
             <div className="rounded-xl border border-gray-100 bg-white shadow-sm p-8">
               <ClipboardCheck className="h-12 w-12 text-brand-gold" />
-              <p className="mt-6 font-display text-2xl text-brand-black">
+              <p className="mt-6 font-display font-semibold text-2xl text-gray-900">
                 <span className="text-brand-gold">40-point</span> cleaning checklist on every unit
               </p>
               <p className="mt-3 text-gray-700">
@@ -381,8 +381,8 @@ const CleaningPage = () => {
               </p>
             </div>
             <div>
-              <p className="text-sm font-bold uppercase tracking-wide text-brand-gold">Cleaning Standard</p>
-              <h2 className="mt-3 font-display text-3xl text-brand-black sm:text-4xl">
+              <p className="text-xs font-medium uppercase tracking-[0.12em] text-brand-gold">— Cleaning Standard</p>
+              <h2 className="mt-3 font-display font-bold text-3xl text-gray-900 sm:text-4xl">
                 Verifiable cleaning. <span className="text-brand-gold">Not "trust us."</span>
               </h2>
               <p className="mt-4 text-gray-700">
@@ -423,10 +423,10 @@ const CleaningPage = () => {
                   <Bed className="h-8 w-8" />
                 </div>
                 <div>
-                  <span className="inline-block rounded-full bg-brand-gold px-3 py-1 text-xs font-bold uppercase tracking-wider text-brand-black">
+                  <span className="inline-block rounded-full bg-brand-gold px-3 py-1 text-xs font-bold uppercase tracking-wider text-gray-900">
                     Airbnb / Short-Term Rental
                   </span>
-                  <h2 className="mt-3 font-display text-3xl text-brand-black sm:text-4xl">
+                  <h2 className="mt-3 font-display font-bold text-3xl text-gray-900 sm:text-4xl">
                     Central Florida is one of the{" "}
                     <span className="text-brand-gold">top Airbnb markets in the US</span>
                   </h2>
@@ -453,7 +453,7 @@ const CleaningPage = () => {
       <section className="bg-white">
         <div className="container py-20">
           <SectionReveal>
-            <h2 className="font-display text-3xl text-brand-black sm:text-4xl">
+            <h2 className="font-display font-bold text-3xl text-gray-900 sm:text-4xl">
               Cleaning Coverage —{" "}
               <span className="text-brand-gold">18 Cities Across Central Florida</span>
             </h2>
@@ -470,7 +470,7 @@ const CleaningPage = () => {
                 >
                   <span className="flex items-center gap-3">
                     <MapPin className="h-4 w-4 text-brand-gold" />
-                    <span className="font-bold text-brand-black">
+                    <span className="font-semibold text-gray-900">
                       Cleaning {c.name}, {c.state}
                     </span>
                   </span>
@@ -497,10 +497,10 @@ const CleaningPage = () => {
                   <FileText className="h-8 w-8" />
                 </div>
                 <div>
-                  <span className="inline-block rounded-full bg-brand-gold px-3 py-1 text-xs font-bold uppercase tracking-wider text-brand-black">
+                  <span className="inline-block rounded-full bg-brand-gold px-3 py-1 text-xs font-bold uppercase tracking-wider text-gray-900">
                     Free Download
                   </span>
-                  <h2 className="mt-3 font-display text-3xl text-brand-black sm:text-4xl">
+                  <h2 className="mt-3 font-display font-bold text-3xl text-gray-900 sm:text-4xl">
                     Download the{" "}
                     <span className="text-brand-gold">40-point Make-Ready Cleaning Checklist</span>
                   </h2>
@@ -526,7 +526,7 @@ const CleaningPage = () => {
         <div className="container py-16">
           <SectionReveal className="grid gap-10 md:grid-cols-2">
             <div>
-              <h2 className="font-display text-2xl text-brand-black">Related Services</h2>
+              <h2 className="font-display font-semibold text-2xl text-gray-900">Related Services</h2>
               <ul className="mt-4 space-y-2">
                 {[
                   { to: "/make-ready", label: "Make-Ready & Unit Turns" },
@@ -549,7 +549,7 @@ const CleaningPage = () => {
               </ul>
             </div>
             <div>
-              <h2 className="font-display text-2xl text-brand-black">Cleaning in your city</h2>
+              <h2 className="font-display font-semibold text-2xl text-gray-900">Cleaning in your city</h2>
               <ul className="mt-4 space-y-2">
                 {[
                   { slug: "orlando-fl", name: "Orlando" },
@@ -572,7 +572,7 @@ const CleaningPage = () => {
         <div className="container py-20">
           <SectionReveal>
             <div className="rounded-xl border-2 border-brand-gold bg-white shadow-md p-8 sm:p-12 text-center">
-              <h2 className="font-display text-3xl text-brand-black sm:text-4xl">
+              <h2 className="font-display font-bold text-3xl text-gray-900 sm:text-4xl">
                 Ready for a <span className="text-brand-gold">cleaning quote?</span>
               </h2>
               <p className="mt-3 text-gray-700">
@@ -587,7 +587,7 @@ const CleaningPage = () => {
                 </Link>
                 <Link
                   to="/residential"
-                  className="inline-flex items-center justify-center gap-2 rounded-md border-2 border-brand-gold px-6 py-3 text-sm font-bold uppercase tracking-wide text-brand-gold hover:bg-brand-gold hover:text-brand-black transition-colors"
+                  className="inline-flex items-center justify-center gap-2 rounded-md border-2 border-brand-gold px-6 py-3 text-sm font-bold uppercase tracking-wide text-brand-gold hover:bg-brand-gold hover:text-gray-900 transition-colors"
                 >
                   <Sparkles className="h-4 w-4" /> Get a Home Cleaning Quote
                 </Link>

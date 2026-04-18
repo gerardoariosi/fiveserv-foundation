@@ -36,9 +36,9 @@ export const ServicePageTemplate = ({ service, faqs = [] }: ServicePageData) => 
       {/* Hero — dark */}
       <section className="bg-brand-black pt-32 pb-16">
         <div className="container">
-          <p className="text-xs font-bold uppercase tracking-[0.15em] text-brand-gold">{SITE.brand} Property Solutions</p>
-          <h1 className="mt-3 font-display text-4xl text-brand-white sm:text-5xl lg:text-6xl">{service.name}</h1>
-          <p className="mt-4 max-w-2xl text-lg text-brand-white/80">{service.description}</p>
+          <p className="text-xs font-medium uppercase tracking-[0.12em] text-brand-gold">— {SITE.brand} Property Solutions</p>
+          <h1 className="mt-3 font-display font-black text-4xl text-white sm:text-5xl lg:text-6xl">{service.name}</h1>
+          <p className="mt-4 max-w-2xl text-lg text-gray-300">{service.description}</p>
 
           <AIOverviewBlock
             tone="dark"

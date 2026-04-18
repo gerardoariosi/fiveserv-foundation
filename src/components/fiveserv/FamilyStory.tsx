@@ -27,7 +27,7 @@ export const FamilyStory = () => {
             <p className="text-brand-gold text-xs font-bold uppercase tracking-[0.15em] mb-3">
               Built by a Family
             </p>
-            <h2 className="text-gray-900 font-display font-black text-4xl lg:text-5xl leading-tight">
+            <h2 className="text-gray-900 font-display font-bold text-4xl lg:text-5xl leading-tight">
               A <span className="text-brand-gold">Venezuelan-American Family</span> Trusted Across Central Florida.
             </h2>
             <p className="mt-6 text-lg text-gray-600 leading-relaxed">

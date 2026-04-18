@@ -48,7 +48,7 @@ export const LeadMagnetSection = () => {
               <span className="flex h-14 w-14 items-center justify-center rounded-full bg-brand-gold/10 text-brand-gold">
                 <o.icon className="h-7 w-7" />
               </span>
-              <h3 className="mt-5 font-display text-xl font-black text-gray-900">{o.title}</h3>
+              <h3 className="mt-5 font-display text-xl font-semibold text-gray-900">{o.title}</h3>
               <p className="mt-2 flex-1 text-sm leading-relaxed text-gray-600">{o.description}</p>
               <Link
                 to={o.href}

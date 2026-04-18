@@ -40,10 +40,15 @@ export const StickyHeader = () => {
     >
       <div className="container flex h-20 items-center justify-between gap-4">
         {/* FS Monogram + wordmark */}
-        <Link to="/" className="flex items-center gap-2" aria-label="FiveServ home">
-          <span className="font-display font-black text-brand-gold text-2xl">FS</span>
-          <span className="hidden sm:inline font-display font-black text-brand-white text-xl ml-2">
-            FiveServ
+        <Link to="/" className="flex items-center gap-3" aria-label="FiveServ home">
+          <span className="inline-flex items-center justify-center bg-brand-black text-brand-gold font-display font-black text-base px-2 py-1.5 rounded-md border border-brand-gold/40">
+            FS
+          </span>
+          <span className="flex flex-col leading-tight">
+            <span className="font-display font-bold text-brand-white text-lg">FiveServ</span>
+            <span className="hidden lg:inline text-[10px] text-gray-400 uppercase tracking-wider">
+              Property Solutions
+            </span>
           </span>
         </Link>
 

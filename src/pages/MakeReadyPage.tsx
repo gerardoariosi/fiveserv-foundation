@@ -80,10 +80,10 @@ const MakeReadyPage = () => {
       {/* 1. Hero */}
       <section className="bg-brand-black pt-32 pb-16">
         <div className="container">
-          <p className="text-sm font-bold uppercase tracking-wide text-brand-gold">
-            {SITE.brand} Property Solutions
+          <p className="text-xs font-medium uppercase tracking-[0.12em] text-brand-gold">
+            — {SITE.brand} Property Solutions
           </p>
-          <h1 className="mt-3 font-display text-4xl text-brand-black sm:text-5xl lg:text-6xl">
+          <h1 className="mt-3 font-display font-black text-4xl text-white sm:text-5xl lg:text-6xl">
             Make-Ready &amp; Unit Turn Services —
             <span className="block text-brand-gold">5-Day Guarantee</span>
           </h1>
@@ -106,7 +106,7 @@ const MakeReadyPage = () => {
             </a>
             <a
               href={`tel:${SITE.phone}`}
-              className="flex items-center gap-2 rounded-md border-2 border-brand-white px-6 py-3 text-sm font-bold uppercase tracking-wide text-brand-black hover:bg-brand-white hover:text-brand-black transition-colors"
+              className="flex items-center gap-2 rounded-md border-2 border-brand-white px-6 py-3 text-sm font-bold uppercase tracking-wide text-white hover:bg-brand-white hover:text-brand-black transition-colors"
             >
               <Phone className="h-4 w-4" /> Call {SITE.phone}
             </a>
@@ -132,7 +132,7 @@ const MakeReadyPage = () => {
       <section className="bg-gray-50">
         <div className="container py-20">
           <SectionReveal>
-            <h2 className="font-display text-3xl text-brand-black sm:text-4xl">
+            <h2 className="font-display font-bold text-3xl text-gray-900 sm:text-4xl">
               What's <span className="text-brand-gold">Included</span> in Every Make-Ready
             </h2>
             <p className="mt-3 max-w-2xl text-gray-700">
@@ -145,7 +145,7 @@ const MakeReadyPage = () => {
                   <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-md bg-brand-gold/10 text-brand-gold">
                     <it.icon className="h-5 w-5" />
                   </span>
-                  <h3 className="font-display text-base text-brand-black">{it.title}</h3>
+                  <h3 className="font-display text-base text-gray-900">{it.title}</h3>
                 </article>
               ))}
             </div>
@@ -157,7 +157,7 @@ const MakeReadyPage = () => {
       <section className="bg-white">
         <div className="container py-20">
           <SectionReveal>
-            <h2 className="font-display text-3xl text-brand-black sm:text-4xl">
+            <h2 className="font-display font-bold text-3xl text-gray-900 sm:text-4xl">
               See the <span className="text-brand-gold">Transformation</span>
             </h2>
             <p className="mt-3 max-w-2xl text-gray-700">
@@ -177,7 +177,7 @@ const MakeReadyPage = () => {
               <span className="inline-flex items-center gap-2 rounded-full border-2 border-brand-gold px-4 py-1.5 text-xs font-bold uppercase tracking-wider text-brand-gold">
                 <Award className="h-4 w-4" /> Written Guarantee
               </span>
-              <h2 className="mt-4 font-display text-3xl text-brand-black sm:text-5xl">
+              <h2 className="mt-4 font-display text-3xl text-gray-900 sm:text-5xl">
                 The <span className="text-brand-gold">5-Day Guarantee</span>
               </h2>
               <p className="mt-6 text-gray-700">
@@ -201,7 +201,7 @@ const MakeReadyPage = () => {
               ].map((b) => (
                 <div key={b.title} className="rounded-lg border border-gray-100 bg-white shadow-sm p-5">
                   <b.icon className="h-7 w-7 text-brand-gold" />
-                  <h3 className="mt-3 font-display text-lg text-brand-black">{b.title}</h3>
+                  <h3 className="mt-3 font-display text-lg text-gray-900">{b.title}</h3>
                   <p className="mt-1 text-sm text-gray-600">{b.body}</p>
                 </div>
               ))}
@@ -216,14 +216,14 @@ const MakeReadyPage = () => {
       <section className="bg-gray-50">
         <div className="container py-20">
           <SectionReveal>
-            <h2 className="font-display text-3xl text-brand-black sm:text-4xl">
+            <h2 className="font-display font-bold text-3xl text-gray-900 sm:text-4xl">
               How It Works — <span className="text-brand-gold">3 Steps</span>
             </h2>
             <ol className="mt-12 grid gap-6 md:grid-cols-3">
               {STEPS.map((step, i) => (
                 <li key={step.name} className="hover-card relative rounded-lg border border-gray-100 bg-white shadow-sm p-6">
                   <div className="font-display text-6xl leading-none text-brand-gold">{i + 1}</div>
-                  <h3 className="mt-4 font-display text-xl text-brand-black">{step.name}</h3>
+                  <h3 className="mt-4 font-display font-semibold text-xl text-gray-900">{step.name}</h3>
                   <p className="mt-2 text-gray-700">{step.text}</p>
                 </li>
               ))}
@@ -243,7 +243,7 @@ const MakeReadyPage = () => {
         <div className="container py-16">
           <SectionReveal className="grid gap-10 md:grid-cols-2">
             <div>
-              <h2 className="font-display text-2xl text-brand-black">More from {SITE.brand}</h2>
+              <h2 className="font-display font-semibold text-2xl text-gray-900">More from {SITE.brand}</h2>
               <ul className="mt-4 space-y-2">
                 {INTERNAL_SERVICES.map((slug) => {
                   const s = SERVICES.find((x) => x.slug === slug)!;
@@ -263,7 +263,7 @@ const MakeReadyPage = () => {
               </ul>
             </div>
             <div>
-              <h2 className="font-display text-2xl text-brand-black">Make-Ready in your city</h2>
+              <h2 className="font-display font-semibold text-2xl text-gray-900">Make-Ready in your city</h2>
               <ul className="mt-4 space-y-2">
                 {INTERNAL_CITIES.map((slug) => {
                   const name = slug.replace("-fl", "").split("-").map((w) => w[0].toUpperCase() + w.slice(1)).join(" ");

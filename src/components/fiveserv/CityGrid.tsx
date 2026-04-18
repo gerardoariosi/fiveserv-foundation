@@ -75,7 +75,7 @@ export const CityGrid = () => {
                     </span>
                   )}
                 </div>
-                <h3 className="mt-4 font-display text-lg font-black text-brand-black group-hover:text-brand-gold">
+                <h3 className="mt-4 font-display text-lg font-semibold text-gray-900 group-hover:text-brand-gold">
                   {city.name}, {city.state}
                 </h3>
                 <p className="mt-1 text-sm font-semibold text-brand-gold">
@@ -96,7 +96,7 @@ export const CityGrid = () => {
                   Coming Soon
                 </span>
               </div>
-              <h3 className="mt-4 font-display text-lg font-black text-brand-black">
+              <h3 className="mt-4 font-display text-lg font-semibold text-gray-900">
                 {c.name}, {c.state}
               </h3>
               <p className="mt-1 text-sm font-semibold text-gray-500">

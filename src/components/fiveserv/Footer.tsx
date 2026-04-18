@@ -9,12 +9,13 @@ export const Footer = () => {
         <div className="grid gap-12 md:grid-cols-2 lg:grid-cols-4">
           {/* Col 1: Brand */}
           <div>
-            <Link to="/" className="font-display text-3xl">
-              <span className="text-brand-gold">F</span>
-              <span className="text-brand-white">iveServ</span>
+            <Link to="/" className="flex items-center gap-3">
+              <span className="inline-flex items-center justify-center bg-brand-black text-brand-gold font-display font-black text-base px-2 py-1.5 rounded-md border border-brand-gold/40">
+                FS
+              </span>
+              <span className="font-display font-bold text-brand-white text-lg">FiveServ</span>
             </Link>
-            <p className="mt-2 text-xs uppercase tracking-widest text-brand-gray-muted">Property Solutions</p>
-            <p className="mt-4 italic font-bold text-brand-gold">"{SITE.tagline}"</p>
+            <p className="mt-3 text-sm italic text-gray-400">Five Days. One Call. Done.</p>
             <p className="mt-3 text-sm text-brand-white/80">
               Family-owned property maintenance company serving Central Florida.
             </p>
