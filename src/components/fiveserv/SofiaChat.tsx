@@ -50,6 +50,15 @@ type CollectedData = {
 
 const PHONE = SITE.phone;
 const SS_KEY = "sofia.chat.v1";
+const SOFIA_AVATAR = "https://randomuser.me/api/portraits/women/44.jpg";
+
+/** Realistic typing delay based on the longest message about to be shown. */
+const typingDelayFor = (msgs: Message[]): number => {
+  const longest = msgs.reduce((max, m) => Math.max(max, m.text.length), 0);
+  if (longest < 60) return 800;
+  if (longest < 140) return 1200;
+  return 1800;
+};
 
 const COVERED_CITIES = [
   "orlando", "kissimmee", "sanford", "winter park", "lakeland",
@@ -354,12 +363,12 @@ const SofiaChat = () => {
     scrollRef.current?.scrollTo({ top: scrollRef.current.scrollHeight, behavior: "smooth" });
   }, [messages, typing, open]);
 
-  const sayLater = (msgs: Message[], delay = 700) => {
+  const sayLater = (msgs: Message[], delay?: number) => {
     setTyping(true);
     window.setTimeout(() => {
       setTyping(false);
       setMessages((prev) => [...prev, ...msgs]);
-    }, delay);
+    }, delay ?? typingDelayFor(msgs));
   };
 
   const handleReset = () => {
@@ -510,42 +519,63 @@ const SofiaChat = () => {
 
   return (
     <>
-      {/* Collapsed bubble */}
+      {/* Collapsed bubble — white circle, gold icon */}
       {!open && (
         <button
           type="button"
           aria-label="Open Sofia chat"
           onClick={() => setOpen(true)}
-          className="fixed bottom-6 right-6 z-[9999] flex h-14 w-14 items-center justify-center rounded-full bg-brand-gold text-brand-black shadow-lg transition-transform hover:scale-105 focus:outline-none focus:ring-4 focus:ring-brand-gold/40"
+          className="fixed bottom-6 right-6 z-[9999] flex h-14 w-14 items-center justify-center rounded-full bg-white shadow-lg transition-colors hover:bg-gray-50 focus:outline-none focus:ring-4 focus:ring-brand-gold/40"
         >
-          <MessageCircle className="h-6 w-6" />
+          <MessageCircle className="h-7 w-7" style={{ color: "#FFD700" }} />
           <span className="sr-only">Chat with Sofia</span>
         </button>
       )}
 
-      {/* Expanded panel */}
+      {/* Expanded panel — white, modern */}
       {open && (
         <div
           role="dialog"
           aria-label="Sofia chat"
-          className="fixed inset-0 z-[9999] flex flex-col border border-brand-gold bg-brand-black sm:inset-auto sm:bottom-6 sm:right-6 sm:h-[580px] sm:w-[380px] sm:rounded-xl sm:shadow-2xl"
+          className="fixed inset-0 z-[9999] flex flex-col bg-white sm:inset-auto sm:bottom-6 sm:right-6 sm:h-[560px] sm:w-[380px] sm:overflow-hidden"
+          style={{
+            borderRadius: typeof window !== "undefined" && window.innerWidth >= 640 ? "16px" : 0,
+            boxShadow: "0 20px 60px rgba(0,0,0,0.15)",
+          }}
         >
-          {/* Header */}
-          <header className="flex items-center gap-3 border-b border-brand-gold/30 bg-brand-black p-3 sm:rounded-t-xl">
-            <div className="relative flex h-10 w-10 items-center justify-center rounded-full bg-brand-gold font-display text-sm font-black text-brand-black">
-              SF
-              <span className="absolute -right-0.5 -bottom-0.5 h-3 w-3 rounded-full border-2 border-brand-black bg-green-500" aria-hidden />
-            </div>
+          {/* Header — dark */}
+          <header
+            className="flex items-center gap-3 px-4"
+            style={{ background: "#1A1A1A", height: "64px" }}
+          >
+            <img
+              src={SOFIA_AVATAR}
+              alt="Sofia"
+              loading="lazy"
+              className="h-10 w-10 rounded-full object-cover"
+              style={{ border: "2px solid #FFD700" }}
+            />
             <div className="flex-1 leading-tight">
-              <p className="font-display text-sm font-bold text-brand-white">{L.headerTitle}</p>
-              <p className="text-[11px] text-brand-white/60">{L.headerSub} · <span className="text-green-400">{L.online}</span></p>
+              <div className="flex items-center gap-2">
+                <p className="font-semibold text-white" style={{ fontSize: "15px" }}>
+                  {L.headerTitle}
+                </p>
+                <span
+                  className="inline-block rounded-full bg-green-400"
+                  style={{ width: "8px", height: "8px" }}
+                  aria-hidden
+                />
+              </div>
+              <p className="text-gray-400" style={{ fontSize: "12px" }}>
+                FiveServ Assistant · {L.online}
+              </p>
             </div>
             <button
               type="button"
               onClick={handleReset}
               aria-label="Reset conversation"
               title={L.reset}
-              className="flex h-8 w-8 items-center justify-center rounded-md text-brand-white/70 hover:bg-brand-gold/10 hover:text-brand-gold"
+              className="flex h-8 w-8 items-center justify-center rounded-md text-gray-400 transition-colors hover:text-white"
             >
               <RotateCcw className="h-4 w-4" />
             </button>
@@ -553,30 +583,44 @@ const SofiaChat = () => {
               type="button"
               onClick={() => setOpen(false)}
               aria-label="Close chat"
-              className="flex h-8 w-8 items-center justify-center rounded-md text-brand-white/70 hover:bg-brand-gold/10 hover:text-brand-gold"
+              className="flex h-8 w-8 items-center justify-center rounded-md text-gray-400 transition-colors hover:text-white"
             >
               <X className="h-4 w-4" />
             </button>
           </header>
 
           {/* Messages */}
-          <div ref={scrollRef} className="flex-1 space-y-3 overflow-y-auto bg-brand-black p-3">
+          <div
+            ref={scrollRef}
+            className="flex-1 space-y-3 overflow-y-auto bg-white px-3 py-4 sofia-scroll"
+          >
             {messages.map((m, idx) => {
               const isLast = idx === messages.length - 1;
+              const isSofia = m.sender === "sofia";
               return (
-                <div key={m.id} className={m.sender === "user" ? "flex justify-end" : "flex justify-start"}>
+                <div
+                  key={m.id}
+                  className={isSofia ? "flex justify-start gap-2" : "flex justify-end"}
+                >
+                  {isSofia && (
+                    <img
+                      src={SOFIA_AVATAR}
+                      alt=""
+                      aria-hidden
+                      className="h-6 w-6 flex-shrink-0 rounded-full object-cover self-end"
+                    />
+                  )}
                   <div className="max-w-[85%] space-y-2">
                     <div
-                      className={
-                        m.sender === "user"
-                          ? "bg-brand-gold px-3 py-2 text-sm font-semibold text-brand-black"
-                          : "bg-brand-gray px-3 py-2 text-sm text-brand-white"
-                      }
+                      className="px-3 py-2"
                       style={{
-                        borderRadius:
-                          m.sender === "user"
-                            ? "16px 4px 16px 16px"
-                            : "4px 16px 16px 16px",
+                        background: isSofia ? "#F3F4F6" : "#1A1A1A",
+                        color: isSofia ? "#111827" : "#FFFFFF",
+                        fontSize: "13.5px",
+                        lineHeight: 1.5,
+                        borderRadius: isSofia
+                          ? "4px 16px 16px 16px"
+                          : "16px 4px 16px 16px",
                       }}
                     >
                       {m.text}
@@ -589,7 +633,23 @@ const SofiaChat = () => {
                             key={qr}
                             type="button"
                             onClick={() => handleSend(qr)}
-                            className="rounded-full border border-brand-gold px-3 py-1 text-xs font-bold text-brand-gold transition-colors hover:bg-brand-gold hover:text-brand-black"
+                            className="font-medium transition-colors duration-200"
+                            style={{
+                              background: "#FFFFFF",
+                              border: "1.5px solid #1A1A1A",
+                              color: "#1A1A1A",
+                              fontSize: "12px",
+                              padding: "6px 14px",
+                              borderRadius: "20px",
+                            }}
+                            onMouseEnter={(e) => {
+                              e.currentTarget.style.background = "#1A1A1A";
+                              e.currentTarget.style.color = "#FFFFFF";
+                            }}
+                            onMouseLeave={(e) => {
+                              e.currentTarget.style.background = "#FFFFFF";
+                              e.currentTarget.style.color = "#1A1A1A";
+                            }}
                           >
                             {qr}
                           </button>
@@ -603,7 +663,8 @@ const SofiaChat = () => {
                           <a
                             key={c.label}
                             href={c.href}
-                            className="rounded-full bg-brand-gold px-3 py-1.5 text-xs font-bold text-brand-black hover:bg-brand-gold-hover"
+                            className="rounded-full px-3 py-1.5 text-xs font-bold transition-colors"
+                            style={{ background: "#FFD700", color: "#1A1A1A" }}
                           >
                             {c.label} →
                           </a>
@@ -616,14 +677,32 @@ const SofiaChat = () => {
             })}
 
             {typing && (
-              <div className="flex justify-start">
+              <div className="flex justify-start gap-2">
+                <img
+                  src={SOFIA_AVATAR}
+                  alt=""
+                  aria-hidden
+                  className="h-6 w-6 flex-shrink-0 rounded-full object-cover self-end"
+                />
                 <div
-                  className="flex items-center gap-1 bg-brand-gray px-3 py-2"
-                  style={{ borderRadius: "4px 16px 16px 16px" }}
+                  className="flex items-center gap-1 px-3 py-2.5"
+                  style={{
+                    background: "#F3F4F6",
+                    borderRadius: "4px 16px 16px 16px",
+                  }}
                 >
-                  <span className="h-2 w-2 animate-bounce rounded-full bg-brand-gold [animation-delay:-0.3s]" />
-                  <span className="h-2 w-2 animate-bounce rounded-full bg-brand-gold [animation-delay:-0.15s]" />
-                  <span className="h-2 w-2 animate-bounce rounded-full bg-brand-gold" />
+                  <span
+                    className="block animate-bounce rounded-full bg-gray-400"
+                    style={{ width: "6px", height: "6px", animationDelay: "-0.3s" }}
+                  />
+                  <span
+                    className="block animate-bounce rounded-full bg-gray-400"
+                    style={{ width: "6px", height: "6px", animationDelay: "-0.15s" }}
+                  />
+                  <span
+                    className="block animate-bounce rounded-full bg-gray-400"
+                    style={{ width: "6px", height: "6px" }}
+                  />
                 </div>
               </div>
             )}
@@ -632,26 +711,42 @@ const SofiaChat = () => {
           {/* Input */}
           <form
             onSubmit={(e) => { e.preventDefault(); handleSend(); }}
-            className="flex items-center gap-2 border-t border-brand-gold/30 bg-brand-black p-3 sm:rounded-b-xl"
+            className="flex items-center gap-2 px-3 py-3"
+            style={{ background: "#F9FAFB", borderTop: "1px solid #E5E7EB" }}
           >
             <input
               value={input}
               onChange={(e) => setInput(e.target.value)}
               placeholder={L.inputPlaceholder}
               aria-label={L.inputPlaceholder}
-              className="flex-1 rounded-full bg-brand-gray px-4 py-2 text-sm text-brand-white placeholder:text-brand-white/40 outline-none focus:ring-2 focus:ring-brand-gold"
+              className="flex-1 rounded-full border border-gray-200 bg-white text-sm text-gray-900 placeholder:text-gray-400 outline-none focus:ring-2 focus:ring-brand-gold/40"
+              style={{ padding: "8px 16px" }}
             />
             <button
               type="submit"
               aria-label="Send message"
               disabled={!input.trim()}
-              className="flex h-9 w-9 items-center justify-center rounded-full bg-brand-gold text-brand-black transition-colors hover:bg-brand-gold-hover disabled:opacity-40"
+              className="flex items-center justify-center rounded-full transition-opacity disabled:opacity-40"
+              style={{
+                background: "#FFD700",
+                color: "#000000",
+                width: "36px",
+                height: "36px",
+              }}
             >
               <Send className="h-4 w-4" />
             </button>
           </form>
         </div>
       )}
+
+      {/* Thin scrollbar for messages area */}
+      <style>{`
+        .sofia-scroll::-webkit-scrollbar { width: 6px; }
+        .sofia-scroll::-webkit-scrollbar-track { background: transparent; }
+        .sofia-scroll::-webkit-scrollbar-thumb { background: #E5E7EB; border-radius: 3px; }
+        .sofia-scroll { scrollbar-width: thin; scrollbar-color: #E5E7EB transparent; }
+      `}</style>
     </>
   );
 };
