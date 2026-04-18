@@ -11,11 +11,11 @@ import Seo from "@/lib/Seo";
 import SchemaOrg from "@/lib/SchemaOrg";
 import { SITE } from "@/lib/site-config";
 import {
-import BrandName from "@/components/fiveserv/BrandName";
   GENERAL_FAQS,
   FAQ_CATEGORIES,
   type FaqCategory,
 } from "@/lib/general-faqs";
+import BrandName from "@/components/fiveserv/BrandName";
 
 type Filter = "all" | FaqCategory;
 
