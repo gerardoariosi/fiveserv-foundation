@@ -28,65 +28,69 @@ export const HeroSection = ({
   const waHref = `https://wa.me/${SITE.phone.replace(/[^\d]/g, "")}`;
 
   return (
-    <section className="relative isolate overflow-hidden bg-brand-black pt-32 pb-20 lg:pt-40 lg:pb-24">
+    <section className="relative isolate w-full min-h-[600px] h-screen overflow-hidden bg-brand-black">
       <video
-        className="absolute inset-0 -z-10 h-full w-full object-cover"
         autoPlay
         muted
         loop
         playsInline
+        preload="auto"
         poster={posterSrc}
+        className="absolute inset-0 w-full h-full object-cover object-center"
+        style={{ objectFit: "cover" }}
       >
         <source src={videoSrc} type="video/mp4" />
       </video>
-      {/* 60% black overlay per spec */}
-      <div className="absolute inset-0 -z-10 bg-brand-black/60" />
+      {/* 60% black overlay for readability */}
+      <div className="absolute inset-0 bg-brand-black/60" />
 
-      <div ref={ref} className="container reveal">
-        <h1 className="text-4xl text-brand-white sm:text-5xl lg:text-6xl">
-          One call handles your entire make-ready —
-          <span className="block text-brand-gold italic">no vendor chaos. One invoice.</span>
-        </h1>
-        <p className="mt-6 max-w-2xl text-lg lg:text-xl text-gray-300 leading-[1.75]">
-          Painting, cleaning, repairs, drywall, inspections. Our team. 5 business days. Guaranteed.
-        </p>
+      <div className="relative z-10 flex h-full items-center pt-32 pb-20 lg:pt-40 lg:pb-24">
+        <div ref={ref} className="container reveal">
+          <h1 className="text-4xl text-brand-white sm:text-5xl lg:text-6xl">
+            One call handles your entire make-ready —
+            <span className="block text-brand-gold italic">no vendor chaos. One invoice.</span>
+          </h1>
+          <p className="mt-6 max-w-2xl text-lg lg:text-xl text-gray-300 leading-[1.75]">
+            Painting, cleaning, repairs, drywall, inspections. Our team. 5 business days. Guaranteed.
+          </p>
 
-        <div className="mt-8 flex flex-wrap gap-3">
-          <button
-            type="button"
-            onClick={scrollToForm}
-            className="cta-gold cta-pill"
-          >
-            Get a free quote <ArrowRight className="ml-2 h-4 w-4" />
-          </button>
-          <a
-            href={`tel:${SITE.phone}`}
-            className="inline-flex items-center gap-2 rounded-full border-2 border-brand-white px-8 py-3 text-sm font-semibold text-brand-white hover:bg-brand-white hover:text-brand-black transition-colors"
-          >
-            <Phone className="h-4 w-4" /> Call now
-          </a>
-          <a
-            href={waHref}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 rounded-full bg-[#25D366] px-8 py-3 text-sm font-semibold text-white hover:opacity-90 transition-opacity"
-          >
-            <WhatsAppIcon className="h-4 w-4" /> WhatsApp us
-          </a>
+          <div className="mt-8 flex flex-wrap gap-3">
+            <button
+              type="button"
+              onClick={scrollToForm}
+              className="cta-gold cta-pill"
+            >
+              Get a free quote <ArrowRight className="ml-2 h-4 w-4" />
+            </button>
+            <a
+              href={`tel:${SITE.phone}`}
+              className="inline-flex items-center gap-2 rounded-full border-2 border-brand-white px-8 py-3 text-sm font-semibold text-brand-white hover:bg-brand-white hover:text-brand-black transition-colors"
+            >
+              <Phone className="h-4 w-4" /> Call now
+            </a>
+            <a
+              href={waHref}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 rounded-full bg-[#25D366] px-8 py-3 text-sm font-semibold text-white hover:opacity-90 transition-opacity"
+            >
+              <WhatsAppIcon className="h-4 w-4" /> WhatsApp us
+            </a>
+          </div>
+
+          <ul className="mt-10 flex flex-wrap items-center gap-x-6 gap-y-3 text-sm font-medium text-brand-white">
+            {TRUST.map((t, i) => (
+              <li key={t} className="flex items-center gap-3">
+                {i > 0 && <span aria-hidden className="text-brand-gold">|</span>}
+                <span>{t}</span>
+              </li>
+            ))}
+          </ul>
+
+          <AIOverviewBlock
+            answer={`${SITE.brand} Property Solutions provides property maintenance and make-ready services across Central Florida. We complete every unit turn in 5 business days, guaranteed. One call, one team, one invoice — serving property managers with 30 to 500 units.`}
+          />
         </div>
-
-        <ul className="mt-10 flex flex-wrap items-center gap-x-6 gap-y-3 text-sm font-medium text-brand-white">
-          {TRUST.map((t, i) => (
-            <li key={t} className="flex items-center gap-3">
-              {i > 0 && <span aria-hidden className="text-brand-gold">|</span>}
-              <span>{t}</span>
-            </li>
-          ))}
-        </ul>
-
-        <AIOverviewBlock
-          answer={`${SITE.brand} Property Solutions provides property maintenance and make-ready services across Central Florida. We complete every unit turn in 5 business days, guaranteed. One call, one team, one invoice — serving property managers with 30 to 500 units.`}
-        />
       </div>
     </section>
   );
