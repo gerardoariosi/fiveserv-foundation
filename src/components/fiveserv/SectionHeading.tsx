@@ -23,11 +23,11 @@ export const SectionHeading = ({
   return (
     <div className={`max-w-3xl ${alignCls} ${className}`}>
       {eyebrow && (
-        <p className="text-brand-gold text-xs font-bold uppercase tracking-[0.15em] mb-3">
-          {eyebrow}
+        <p className="text-brand-gold text-xs font-medium uppercase tracking-[0.12em] mb-3">
+          — {eyebrow}
         </p>
       )}
-      <h2 className="text-gray-900 font-display font-black text-4xl lg:text-5xl leading-tight">
+      <h2 className="text-gray-900 font-display font-bold text-4xl lg:text-5xl leading-tight">
         {children}
       </h2>
       {subtext && (
