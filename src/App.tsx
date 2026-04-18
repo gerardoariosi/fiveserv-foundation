@@ -25,6 +25,7 @@ import ServicesIndexPage from "./pages/ServicesIndexPage";
 import CitiesIndexPage from "./pages/CitiesIndexPage";
 import BlogPage from "./pages/BlogPage";
 import ThankYouB2BPage from "./pages/ThankYouB2BPage";
+import ThankYouResidentialPage from "./pages/ThankYouResidentialPage";
 
 import { SERVICES, CITIES } from "@/lib/site-config";
 
@@ -65,7 +66,7 @@ const router = createBrowserRouter([
       { path: "faq", element: <FaqPage /> },
       { path: "privacy", element: <PlaceholderPage title="Privacy Policy" description="FiveServ Property Solutions privacy policy." path="/privacy" heading="Privacy Policy" /> },
       { path: "terms", element: <PlaceholderPage title="Terms of Service" description="FiveServ Property Solutions terms of service." path="/terms" heading="Terms of Service" /> },
-      { path: "thank-you-residential", element: <PlaceholderPage title="Thank You" description="Thanks — your request reached FiveServ Property Solutions." path="/thank-you-residential" heading="Thank You" /> },
+      
 
       // City overview pages (18)
       { path: "cities/:city", element: <CityPage /> },
@@ -98,6 +99,7 @@ const router = createBrowserRouter([
   },
   // Standalone routes (no header/footer) — distraction-free conversion pages
   { path: "/thank-you-b2b", element: <ThankYouB2BPage /> },
+  { path: "/thank-you-residential", element: <ThankYouResidentialPage /> },
 ]);
 
 // Pre-computed list of all 72 service×city URLs — used by sitemap generation.
