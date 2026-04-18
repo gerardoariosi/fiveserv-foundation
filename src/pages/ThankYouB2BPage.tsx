@@ -23,7 +23,7 @@ export const ThankYouB2BPage = () => {
         {/* Logo wordmark */}
         <div className="mb-12 select-none">
           <div className="font-display text-3xl tracking-tight sm:text-4xl">
-            <span className="text-brand-gold">F</span>
+            <span className="text-amber-700">F</span>
             <span className="text-white">iveServ</span>
           </div>
           <div className="mt-1 text-[10px] font-bold uppercase tracking-[0.35em] text-brand-gray-muted sm:text-xs">
@@ -46,7 +46,7 @@ export const ThankYouB2BPage = () => {
         </p>
 
         {/* Tagline */}
-        <p className="mt-6 font-display italic text-brand-gold text-lg sm:text-xl">
+        <p className="mt-6 font-display italic text-amber-700 text-lg sm:text-xl">
           One Call. One Team. Done.
         </p>
 
@@ -63,7 +63,7 @@ export const ThankYouB2BPage = () => {
           <p className="text-sm text-brand-gray-muted">Prefer to talk now? Call us directly.</p>
           <a
             href={telHref}
-            className="mt-2 inline-block font-display text-2xl text-brand-gold hover:text-brand-gold-hover sm:text-3xl"
+            className="mt-2 inline-block font-display text-2xl text-amber-700 hover:text-amber-700-hover sm:text-3xl"
           >
             {phone}
           </a>

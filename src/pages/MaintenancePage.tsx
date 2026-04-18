@@ -105,7 +105,7 @@ const MaintenancePage = () => {
         <div className="container py-20">
           <SectionReveal>
             <h2 className="font-display font-bold text-3xl text-gray-900 sm:text-4xl">
-              What We <span className="text-brand-gold">Handle</span>
+              What We <span className="text-amber-700">Handle</span>
             </h2>
             <p className="mt-3 max-w-2xl text-gray-700">
               Every trade. One call. In-house team plus licensed contractors under our coordination.
@@ -114,7 +114,7 @@ const MaintenancePage = () => {
             <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
               {TRADES.map((t) => (
                 <article key={t.title} className="hover-card rounded-lg border border-gray-100 bg-white shadow-sm p-6">
-                  <span className="flex h-12 w-12 items-center justify-center rounded-md bg-brand-gold/10 text-brand-gold">
+                  <span className="flex h-12 w-12 items-center justify-center rounded-md bg-amber-700/10 text-amber-700">
                     <t.icon className="h-6 w-6" />
                   </span>
                   <h3 className="mt-5 font-display font-semibold text-xl text-gray-900" dangerouslySetInnerHTML={{ __html: t.title }} />
@@ -131,7 +131,7 @@ const MaintenancePage = () => {
         <div className="container py-20">
           <SectionReveal>
             <h2 className="font-display font-bold text-3xl text-gray-900 sm:text-4xl">
-              Response <span className="text-brand-gold">Times</span>
+              Response <span className="text-amber-700">Times</span>
             </h2>
 
             <div className="mt-12 grid gap-6 md:grid-cols-3">
@@ -140,7 +140,7 @@ const MaintenancePage = () => {
                   <span className="inline-block rounded-full bg-brand-gold px-3 py-1 text-xs font-bold uppercase tracking-wider text-gray-900">
                     {r.badge}
                   </span>
-                  <r.icon className="mt-4 h-10 w-10 text-brand-gold" />
+                  <r.icon className="mt-4 h-10 w-10 text-amber-700" />
                   <h3 className="mt-3 font-display font-semibold text-2xl text-gray-900">{r.title}</h3>
                   <p className="mt-2 text-gray-700">{r.body}</p>
                 </article>
@@ -156,7 +156,7 @@ const MaintenancePage = () => {
           <SectionReveal>
             <div className="rounded-xl border-2 border-brand-gold bg-white shadow-md p-8 sm:p-12">
               <div className="grid gap-8 lg:grid-cols-[auto,1fr,auto] lg:items-center">
-                <div className="flex h-16 w-16 items-center justify-center rounded-full bg-brand-gold/15 text-brand-gold">
+                <div className="flex h-16 w-16 items-center justify-center rounded-full bg-brand-gold/15 text-amber-700">
                   <Siren className="h-8 w-8" />
                 </div>
                 <div>
@@ -165,7 +165,7 @@ const MaintenancePage = () => {
                   </span>
                   <h2 className="mt-3 font-display font-bold text-3xl text-gray-900 sm:text-4xl">
                     Water leak. No power. No AC.{" "}
-                    <span className="text-brand-gold">Call now.</span>
+                    <span className="text-amber-700">Call now.</span>
                   </h2>
                   <p className="mt-3 text-gray-700">
                     On-site within 2 hours across our Orlando metro core. {SITE.brand} answers the phone — day,
@@ -192,7 +192,7 @@ const MaintenancePage = () => {
           <SectionReveal>
             <h2 className="font-display font-bold text-3xl text-gray-900 sm:text-4xl">
               Maintenance Coverage —{" "}
-              <span className="text-brand-gold">18 Cities Across Central Florida</span>
+              <span className="text-amber-700">18 Cities Across Central Florida</span>
             </h2>
             <p className="mt-3 max-w-2xl text-gray-700">
               Same-day response in our Orlando metro core. Within 24 hours across the rest of the region.
@@ -206,12 +206,12 @@ const MaintenancePage = () => {
                   className="hover-card group flex items-center justify-between rounded-md border border-gray-100 bg-white shadow-sm px-4 py-3"
                 >
                   <span className="flex items-center gap-3">
-                    <MapPin className="h-4 w-4 text-brand-gold" />
+                    <MapPin className="h-4 w-4 text-amber-700" />
                     <span className="font-semibold text-gray-900">
                       Maintenance {c.name}, {c.state}
                     </span>
                   </span>
-                  <span className="text-xs font-bold uppercase tracking-wide text-brand-gold/80">
+                  <span className="text-xs font-bold uppercase tracking-wide text-amber-700/80">
                     {c.responseTime}
                   </span>
                 </Link>
@@ -238,14 +238,14 @@ const MaintenancePage = () => {
                   const s = SERVICES.find((x) => x.slug === slug)!;
                   return (
                     <li key={slug}>
-                      <Link to={`/${slug}`} className="inline-flex items-center gap-2 text-brand-gold hover:underline">
+                      <Link to={`/${slug}`} className="inline-flex items-center gap-2 text-amber-700 hover:underline">
                         <ArrowRight className="h-4 w-4" /> {s.name}
                       </Link>
                     </li>
                   );
                 })}
                 <li>
-                  <Link to="/contact" className="inline-flex items-center gap-2 text-brand-gold hover:underline">
+                  <Link to="/contact" className="inline-flex items-center gap-2 text-amber-700 hover:underline">
                     <ArrowRight className="h-4 w-4" /> Contact us
                   </Link>
                 </li>
@@ -258,7 +258,7 @@ const MaintenancePage = () => {
                   const name = slug.replace("-fl", "").split("-").map((w) => w[0].toUpperCase() + w.slice(1)).join(" ");
                   return (
                     <li key={slug}>
-                      <Link to={`/maintenance/${slug}`} className="inline-flex items-center gap-2 text-brand-gold hover:underline">
+                      <Link to={`/maintenance/${slug}`} className="inline-flex items-center gap-2 text-amber-700 hover:underline">
                         <ArrowRight className="h-4 w-4" /> Maintenance in {name}, FL
                       </Link>
                     </li>

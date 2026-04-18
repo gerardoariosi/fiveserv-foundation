@@ -133,7 +133,7 @@ const MakeReadyPage = () => {
         <div className="container py-20">
           <SectionReveal>
             <h2 className="font-display font-bold text-3xl text-gray-900 sm:text-4xl">
-              What's <span className="text-brand-gold">Included</span> in Every Make-Ready
+              What's <span className="text-amber-700">Included</span> in Every Make-Ready
             </h2>
             <p className="mt-3 max-w-2xl text-gray-700">
               Eight things on every unit. Same checklist. Every time.
@@ -142,7 +142,7 @@ const MakeReadyPage = () => {
             <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
               {INCLUDED.map((it) => (
                 <article key={it.title} className="hover-card flex items-start gap-4 rounded-lg border border-gray-100 bg-white shadow-sm p-5">
-                  <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-md bg-brand-gold/10 text-brand-gold">
+                  <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-md bg-amber-700/10 text-amber-700">
                     <it.icon className="h-5 w-5" />
                   </span>
                   <h3 className="font-display text-base text-gray-900">{it.title}</h3>
@@ -158,7 +158,7 @@ const MakeReadyPage = () => {
         <div className="container py-20">
           <SectionReveal>
             <h2 className="font-display font-bold text-3xl text-gray-900 sm:text-4xl">
-              See the <span className="text-brand-gold">Transformation</span>
+              See the <span className="text-amber-700">Transformation</span>
             </h2>
             <p className="mt-3 max-w-2xl text-gray-700">
               Drag the handle to compare. Same unit, 5 business days apart.
@@ -174,11 +174,11 @@ const MakeReadyPage = () => {
         <div className="container py-20">
           <SectionReveal className="grid gap-12 lg:grid-cols-2 lg:items-center">
             <div>
-              <span className="inline-flex items-center gap-2 rounded-full border-2 border-brand-gold px-4 py-1.5 text-xs font-bold uppercase tracking-wider text-brand-gold">
+              <span className="inline-flex items-center gap-2 rounded-full border-2 border-brand-gold px-4 py-1.5 text-xs font-bold uppercase tracking-wider text-amber-700">
                 <Award className="h-4 w-4" /> Written Guarantee
               </span>
               <h2 className="mt-4 font-display text-3xl text-gray-900 sm:text-5xl">
-                The <span className="text-brand-gold">5-Day Guarantee</span>
+                The <span className="text-amber-700">5-Day Guarantee</span>
               </h2>
               <p className="mt-6 text-gray-700">
                 Every make-ready complete in 5 business days from start. In writing. Signed.
@@ -200,7 +200,7 @@ const MakeReadyPage = () => {
                 { icon: Camera, title: "Photo Proof", body: "Before-and-after on every unit." },
               ].map((b) => (
                 <div key={b.title} className="rounded-lg border border-gray-100 bg-white shadow-sm p-5">
-                  <b.icon className="h-7 w-7 text-brand-gold" />
+                  <b.icon className="h-7 w-7 text-amber-700" />
                   <h3 className="mt-3 font-display text-lg text-gray-900">{b.title}</h3>
                   <p className="mt-1 text-sm text-gray-600">{b.body}</p>
                 </div>
@@ -217,12 +217,12 @@ const MakeReadyPage = () => {
         <div className="container py-20">
           <SectionReveal>
             <h2 className="font-display font-bold text-3xl text-gray-900 sm:text-4xl">
-              How It Works — <span className="text-brand-gold">3 Steps</span>
+              How It Works — <span className="text-amber-700">3 Steps</span>
             </h2>
             <ol className="mt-12 grid gap-6 md:grid-cols-3">
               {STEPS.map((step, i) => (
                 <li key={step.name} className="hover-card relative rounded-lg border border-gray-100 bg-white shadow-sm p-6">
-                  <div className="font-display text-6xl leading-none text-brand-gold">{i + 1}</div>
+                  <div className="font-display text-6xl leading-none text-amber-700">{i + 1}</div>
                   <h3 className="mt-4 font-display font-semibold text-xl text-gray-900">{step.name}</h3>
                   <p className="mt-2 text-gray-700">{step.text}</p>
                 </li>
@@ -249,14 +249,14 @@ const MakeReadyPage = () => {
                   const s = SERVICES.find((x) => x.slug === slug)!;
                   return (
                     <li key={slug}>
-                      <Link to={`/${slug}`} className="inline-flex items-center gap-2 text-brand-gold hover:underline">
+                      <Link to={`/${slug}`} className="inline-flex items-center gap-2 text-amber-700 hover:underline">
                         <ArrowRight className="h-4 w-4" /> {s.name}
                       </Link>
                     </li>
                   );
                 })}
                 <li>
-                  <Link to="/contact" className="inline-flex items-center gap-2 text-brand-gold hover:underline">
+                  <Link to="/contact" className="inline-flex items-center gap-2 text-amber-700 hover:underline">
                     <ArrowRight className="h-4 w-4" /> Contact us
                   </Link>
                 </li>
@@ -269,7 +269,7 @@ const MakeReadyPage = () => {
                   const name = slug.replace("-fl", "").split("-").map((w) => w[0].toUpperCase() + w.slice(1)).join(" ");
                   return (
                     <li key={slug}>
-                      <Link to={`/make-ready/${slug}`} className="inline-flex items-center gap-2 text-brand-gold hover:underline">
+                      <Link to={`/make-ready/${slug}`} className="inline-flex items-center gap-2 text-amber-700 hover:underline">
                         <ArrowRight className="h-4 w-4" /> Make-Ready {name}, FL
                       </Link>
                     </li>

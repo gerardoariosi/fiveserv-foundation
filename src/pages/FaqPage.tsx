@@ -100,7 +100,7 @@ const FaqPage = () => {
           {grouped.map((group) => (
             <div key={group.id}>
               <h2 className="font-display font-semibold text-2xl text-gray-900 sm:text-3xl">
-                <span className="text-brand-gold">{group.label}</span>{" "}
+                <span className="text-amber-700">{group.label}</span>{" "}
                 <span className="text-gray-500 text-lg">({group.items.length})</span>
               </h2>
               <Accordion
@@ -114,7 +114,7 @@ const FaqPage = () => {
                     value={`faq-${group.id}-${i}`}
                     className="border-brand-gray"
                   >
-                    <AccordionTrigger className="text-left text-gray-900 hover:text-brand-gold">
+                    <AccordionTrigger className="text-left text-gray-900 hover:text-amber-700">
                       {f.q}
                     </AccordionTrigger>
                     <AccordionContent className="text-gray-700">
@@ -151,13 +151,13 @@ const FaqPage = () => {
           <div className="mt-8 flex flex-wrap items-center justify-center gap-3">
             <Link
               to="/contact"
-              className="inline-flex items-center gap-2 rounded-md bg-brand-black px-8 py-4 text-sm font-bold uppercase tracking-wide text-brand-gold hover:bg-brand-black/90"
+              className="inline-flex items-center gap-2 rounded-md bg-brand-black px-8 py-4 text-sm font-bold uppercase tracking-wide text-amber-700 hover:bg-brand-black/90"
             >
               Get a Free Quote <ArrowRight className="h-4 w-4" />
             </Link>
             <a
               href={`tel:${SITE.phone}`}
-              className="inline-flex items-center gap-2 rounded-md border-2 border-brand-black px-8 py-4 text-sm font-bold uppercase tracking-wide text-gray-900 hover:bg-brand-black hover:text-brand-gold"
+              className="inline-flex items-center gap-2 rounded-md border-2 border-brand-black px-8 py-4 text-sm font-bold uppercase tracking-wide text-gray-900 hover:bg-brand-black hover:text-amber-700"
             >
               <Phone className="h-4 w-4" /> {SITE.phone}
             </a>
@@ -185,7 +185,7 @@ const FilterButton = ({
     className={`rounded-md px-4 py-2 text-sm font-bold uppercase tracking-wide transition-colors ${
       active
         ? "bg-brand-gold text-gray-900"
-        : "border border-gray-100 bg-white shadow-sm text-gray-900 hover:border-brand-gold hover:text-brand-gold"
+        : "border border-gray-100 bg-white shadow-sm text-gray-900 hover:border-brand-gold hover:text-amber-700"
     }`}
   >
     {children}

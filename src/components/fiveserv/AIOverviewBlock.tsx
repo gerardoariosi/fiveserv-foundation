@@ -18,7 +18,7 @@ export const AIOverviewBlock = ({ answer, label = "Quick Answer", tone = "light"
         isDark ? "bg-white/5 backdrop-blur" : "bg-white"
       }`}
     >
-      <p className="text-xs font-bold uppercase tracking-[0.15em] text-brand-gold">{label}</p>
+      <p className={`text-xs font-bold uppercase tracking-[0.15em] ${isDark ? "text-brand-gold" : "text-amber-700"}`}>{label}</p>
       <p className={`mt-2 leading-relaxed ${isDark ? "text-white/90" : "text-gray-700"}`}>{answer}</p>
     </aside>
   );

@@ -148,10 +148,10 @@ const PlumbingPage = () => {
         <div className="container py-20">
           <SectionReveal className="grid gap-10 lg:grid-cols-2 lg:items-center">
             <div>
-              <p className="text-xs font-medium uppercase tracking-[0.12em] text-brand-gold">— The Real Cost of Delay</p>
+              <p className="text-xs font-medium uppercase tracking-[0.12em] text-amber-700">— The Real Cost of Delay</p>
               <h2 className="mt-3 font-display font-bold text-3xl text-gray-900 sm:text-4xl">
                 A 4-hour delay on a leak is a{" "}
-                <span className="text-brand-gold">$10,000 claim</span>
+                <span className="text-amber-700">$10,000 claim</span>
               </h2>
               <p className="mt-4 text-gray-700">
                 Property managers lose thousands in water damage from delayed plumbing response. Drywall, flooring,
@@ -161,7 +161,7 @@ const PlumbingPage = () => {
             </div>
             <div className="rounded-xl border-2 border-brand-gold bg-white shadow-md p-8">
               <div className="flex items-center gap-4">
-                <Siren className="h-10 w-10 text-brand-gold" />
+                <Siren className="h-10 w-10 text-amber-700" />
                 <div>
                   <p className="font-display font-semibold text-2xl text-gray-900">2-Hour Response</p>
                   <p className="text-sm text-gray-600">Across the Orlando metro core, 24/7</p>
@@ -183,7 +183,7 @@ const PlumbingPage = () => {
         <div className="container py-20">
           <SectionReveal>
             <h2 className="font-display font-bold text-3xl text-gray-900 sm:text-4xl">
-              Plumbing Services <span className="text-brand-gold">We Handle</span>
+              Plumbing Services <span className="text-amber-700">We Handle</span>
             </h2>
             <p className="mt-3 max-w-2xl text-gray-700">
               Six core service lines. In-house coordination. Florida-licensed plumbers on every job.
@@ -192,7 +192,7 @@ const PlumbingPage = () => {
             <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
               {SERVICES_GRID.map((s) => (
                 <article key={s.title} className="hover-card rounded-lg border border-gray-100 bg-white shadow-sm p-6">
-                  <span className="flex h-12 w-12 items-center justify-center rounded-md bg-brand-gold/10 text-brand-gold">
+                  <span className="flex h-12 w-12 items-center justify-center rounded-md bg-amber-700/10 text-amber-700">
                     <s.icon className="h-6 w-6" />
                   </span>
                   <h3 className="mt-5 font-display font-semibold text-xl text-gray-900">{s.title}</h3>
@@ -210,7 +210,7 @@ const PlumbingPage = () => {
           <SectionReveal>
             <div className="rounded-xl border-2 border-brand-gold bg-white shadow-md p-8 sm:p-12">
               <div className="grid gap-8 lg:grid-cols-[auto,1fr,auto] lg:items-center">
-                <div className="flex h-16 w-16 items-center justify-center rounded-full bg-brand-gold/15 text-brand-gold">
+                <div className="flex h-16 w-16 items-center justify-center rounded-full bg-brand-gold/15 text-amber-700">
                   <Clock className="h-8 w-8" />
                 </div>
                 <div>
@@ -219,7 +219,7 @@ const PlumbingPage = () => {
                   </span>
                   <h2 className="mt-3 font-display font-bold text-3xl text-gray-900 sm:text-4xl">
                     Emergency plumbing response within{" "}
-                    <span className="text-brand-gold">2 hours</span> across Central Florida
+                    <span className="text-amber-700">2 hours</span> across Central Florida
                   </h2>
                   <p className="mt-3 text-gray-700">
                     24/7 dispatch. Real human answers the phone. Truck rolling within minutes for water emergencies in
@@ -243,9 +243,9 @@ const PlumbingPage = () => {
         <div className="container py-20">
           <SectionReveal className="grid gap-10 lg:grid-cols-2 lg:items-center">
             <div className="rounded-xl border border-gray-100 bg-white shadow-sm p-8">
-              <ShieldCheck className="h-12 w-12 text-brand-gold" />
+              <ShieldCheck className="h-12 w-12 text-amber-700" />
               <p className="mt-6 font-display font-semibold text-2xl text-gray-900">
-                One invoice. <span className="text-brand-gold">Full accountability.</span>
+                One invoice. <span className="text-amber-700">Full accountability.</span>
               </p>
               <p className="mt-3 text-gray-700">
                 You don't chase the plumber. You don't track the license. You don't reconcile three vendors. {SITE.brand}{" "}
@@ -253,10 +253,10 @@ const PlumbingPage = () => {
               </p>
             </div>
             <div>
-              <p className="text-xs font-medium uppercase tracking-[0.12em] text-brand-gold">— Why Licensed Matters</p>
+              <p className="text-xs font-medium uppercase tracking-[0.12em] text-amber-700">— Why Licensed Matters</p>
               <h2 className="mt-3 font-display font-bold text-3xl text-gray-900 sm:text-4xl">
                 All plumbing performed by{" "}
-                <span className="text-brand-gold">Florida-licensed contractors</span>
+                <span className="text-amber-700">Florida-licensed contractors</span>
               </h2>
               <p className="mt-4 text-gray-700">
                 In Florida, plumbing work above a low threshold legally requires a licensed plumbing contractor.
@@ -265,19 +265,19 @@ const PlumbingPage = () => {
               </p>
               <ul className="mt-6 space-y-2 text-gray-700">
                 <li className="flex items-start gap-3">
-                  <ShieldCheck className="mt-0.5 h-5 w-5 flex-shrink-0 text-brand-gold" />
+                  <ShieldCheck className="mt-0.5 h-5 w-5 flex-shrink-0 text-amber-700" />
                   Licensed plumbing contractors on every job
                 </li>
                 <li className="flex items-start gap-3">
-                  <ShieldCheck className="mt-0.5 h-5 w-5 flex-shrink-0 text-brand-gold" />
+                  <ShieldCheck className="mt-0.5 h-5 w-5 flex-shrink-0 text-amber-700" />
                   Pulled permits when required by code
                 </li>
                 <li className="flex items-start gap-3">
-                  <ShieldCheck className="mt-0.5 h-5 w-5 flex-shrink-0 text-brand-gold" />
+                  <ShieldCheck className="mt-0.5 h-5 w-5 flex-shrink-0 text-amber-700" />
                   Insurance-claim-ready documentation
                 </li>
                 <li className="flex items-start gap-3">
-                  <ShieldCheck className="mt-0.5 h-5 w-5 flex-shrink-0 text-brand-gold" />
+                  <ShieldCheck className="mt-0.5 h-5 w-5 flex-shrink-0 text-amber-700" />
                   One consolidated invoice — coded by unit
                 </li>
               </ul>
@@ -294,7 +294,7 @@ const PlumbingPage = () => {
           <SectionReveal>
             <h2 className="font-display font-bold text-3xl text-gray-900 sm:text-4xl">
               Plumbing Coverage —{" "}
-              <span className="text-brand-gold">18 Cities Across Central Florida</span>
+              <span className="text-amber-700">18 Cities Across Central Florida</span>
             </h2>
             <p className="mt-3 max-w-2xl text-gray-700">
               Same-day response across the Orlando metro core. Within 24 hours across the rest of the region.
@@ -308,12 +308,12 @@ const PlumbingPage = () => {
                   className="hover-card group flex items-center justify-between rounded-md border border-gray-100 bg-white shadow-sm px-4 py-3"
                 >
                   <span className="flex items-center gap-3">
-                    <MapPin className="h-4 w-4 text-brand-gold" />
+                    <MapPin className="h-4 w-4 text-amber-700" />
                     <span className="font-semibold text-gray-900">
                       Plumbing {c.name}, {c.state}
                     </span>
                   </span>
-                  <span className="text-xs font-bold uppercase tracking-wide text-brand-gold/80">
+                  <span className="text-xs font-bold uppercase tracking-wide text-amber-700/80">
                     {c.responseTime}
                   </span>
                 </Link>
@@ -340,13 +340,13 @@ const PlumbingPage = () => {
                   { to: "/hvac", label: "HVAC Services" },
                 ].map((l) => (
                   <li key={l.to}>
-                    <Link to={l.to} className="inline-flex items-center gap-2 text-brand-gold hover:underline">
+                    <Link to={l.to} className="inline-flex items-center gap-2 text-amber-700 hover:underline">
                       <ArrowRight className="h-4 w-4" /> {l.label}
                     </Link>
                   </li>
                 ))}
                 <li>
-                  <Link to="/contact" className="inline-flex items-center gap-2 text-brand-gold hover:underline">
+                  <Link to="/contact" className="inline-flex items-center gap-2 text-amber-700 hover:underline">
                     <ArrowRight className="h-4 w-4" /> Contact us
                   </Link>
                 </li>
@@ -360,7 +360,7 @@ const PlumbingPage = () => {
                   { slug: "kissimmee-fl", name: "Kissimmee" },
                 ].map((c) => (
                   <li key={c.slug}>
-                    <Link to={`/maintenance-${c.slug}`} className="inline-flex items-center gap-2 text-brand-gold hover:underline">
+                    <Link to={`/maintenance-${c.slug}`} className="inline-flex items-center gap-2 text-amber-700 hover:underline">
                       <ArrowRight className="h-4 w-4" /> Plumbing in {c.name}, FL
                     </Link>
                   </li>

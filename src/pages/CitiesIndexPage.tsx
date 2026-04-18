@@ -43,16 +43,16 @@ const CitiesIndexPage = ({ canonicalPath = "/cities" }: Props) => (
             to={`/maintenance-${city.slug}`}
             className="hover-card group rounded-lg border border-gray-100 bg-white shadow-sm p-6"
           >
-            <div className="flex items-center gap-2 text-brand-gold">
+            <div className="flex items-center gap-2 text-amber-700">
               <MapPin className="h-4 w-4" />
               <span className="text-xs font-bold uppercase tracking-wide">{city.state}</span>
             </div>
-            <h2 className="mt-2 font-display font-semibold text-xl text-gray-900 group-hover:text-brand-gold">
+            <h2 className="mt-2 font-display font-semibold text-xl text-gray-900 group-hover:text-amber-700">
               {city.name}
             </h2>
             <p className="mt-2 text-sm text-gray-600">{city.zones}</p>
             <p className="mt-3 flex items-center gap-2 text-xs text-gray-500">
-              <Clock className="h-3.5 w-3.5 text-brand-gold" /> {city.responseTime}
+              <Clock className="h-3.5 w-3.5 text-amber-700" /> {city.responseTime}
             </p>
           </Link>
         ))}
@@ -63,7 +63,7 @@ const CitiesIndexPage = ({ canonicalPath = "/cities" }: Props) => (
             className="hover-card group rounded-lg border border-dashed border-brand-gold/50 bg-brand-gray/20 p-6"
           >
             <div className="flex items-center justify-between">
-              <div className="flex items-center gap-2 text-brand-gold">
+              <div className="flex items-center gap-2 text-amber-700">
                 <MapPin className="h-4 w-4" />
                 <span className="text-xs font-bold uppercase tracking-wide">{c.state}</span>
               </div>
@@ -71,7 +71,7 @@ const CitiesIndexPage = ({ canonicalPath = "/cities" }: Props) => (
                 Coming Soon
               </span>
             </div>
-            <h2 className="mt-2 font-display text-xl text-gray-700 group-hover:text-brand-gold">{c.name}</h2>
+            <h2 className="mt-2 font-display text-xl text-gray-700 group-hover:text-amber-700">{c.name}</h2>
             <p className="mt-2 text-sm text-gray-500">Launching soon — join the waitlist.</p>
           </Link>
         ))}

@@ -19,9 +19,9 @@ const PricingGuideBody = () => (
       <table className="w-full text-sm">
         <thead className="bg-brand-gray/40">
           <tr>
-            <th className="p-3 text-left text-brand-gold">Trade</th>
-            <th className="p-3 text-left text-brand-gold">Rate range</th>
-            <th className="p-3 text-left text-brand-gold">Notes</th>
+            <th className="p-3 text-left text-amber-700">Trade</th>
+            <th className="p-3 text-left text-amber-700">Rate range</th>
+            <th className="p-3 text-left text-amber-700">Notes</th>
           </tr>
         </thead>
         <tbody className="divide-y divide-brand-gold/15 text-brand-white">
@@ -55,9 +55,9 @@ const PricingGuideBody = () => (
       <table className="w-full text-sm">
         <thead className="bg-brand-gray/40">
           <tr>
-            <th className="p-3 text-left text-brand-gold">Project</th>
-            <th className="p-3 text-left text-brand-gold">Per unit (1BR)</th>
-            <th className="p-3 text-left text-brand-gold">Per unit (2BR)</th>
+            <th className="p-3 text-left text-amber-700">Project</th>
+            <th className="p-3 text-left text-amber-700">Per unit (1BR)</th>
+            <th className="p-3 text-left text-amber-700">Per unit (2BR)</th>
           </tr>
         </thead>
         <tbody className="divide-y divide-brand-gold/15 text-brand-white">
@@ -96,14 +96,14 @@ const PricingGuideBody = () => (
       Pricing only matters when it matches the actual scope of work. FiveServ publishes
       flat rates for our most common scopes and quotes anything custom in writing before
       work starts. Browse{" "}
-      <Link to="/make-ready" className="text-brand-gold underline">make-ready</Link>,{" "}
-      <Link to="/maintenance" className="text-brand-gold underline">maintenance</Link>,
+      <Link to="/make-ready" className="text-amber-700 underline">make-ready</Link>,{" "}
+      <Link to="/maintenance" className="text-amber-700 underline">maintenance</Link>,
       or{" "}
-      <Link to="/renovations" className="text-brand-gold underline">CapEx and renovations</Link>{" "}
+      <Link to="/renovations" className="text-amber-700 underline">CapEx and renovations</Link>{" "}
       to see what's included in each tier. We service every city on our{" "}
-      <Link to="/cities" className="text-brand-gold underline">Central Florida coverage map</Link>{" "}
+      <Link to="/cities" className="text-amber-700 underline">Central Florida coverage map</Link>{" "}
       — request a portfolio quote at our{" "}
-      <Link to="/contact" className="text-brand-gold underline">contact page</Link>.
+      <Link to="/contact" className="text-amber-700 underline">contact page</Link>.
     </p>
   </div>
 );

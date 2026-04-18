@@ -120,16 +120,16 @@ const BlogPage = () => {
                     aria-hidden="true"
                   />
                   <div className="flex flex-1 flex-col p-5">
-                    <span className="self-start rounded bg-brand-gold/15 px-2 py-1 text-[10px] font-bold uppercase tracking-wide text-brand-gold">
+                    <span className="self-start rounded bg-brand-gold/15 px-2 py-1 text-[10px] font-bold uppercase tracking-wide text-amber-700">
                       {BLOG_CATEGORIES.find((c) => c.slug === post.category)?.label}
                     </span>
-                    <h2 className="mt-3 font-display text-lg text-gray-900 group-hover:text-brand-gold">
+                    <h2 className="mt-3 font-display text-lg text-gray-900 group-hover:text-amber-700">
                       {post.title}
                     </h2>
                     <p className="mt-2 line-clamp-2 text-sm text-brand-gray-muted">
                       {post.excerpt}
                     </p>
-                    <span className="mt-4 inline-flex items-center gap-1 text-xs font-bold uppercase tracking-wide text-brand-gold">
+                    <span className="mt-4 inline-flex items-center gap-1 text-xs font-bold uppercase tracking-wide text-amber-700">
                       Read More <ArrowRight className="h-3 w-3" />
                     </span>
                   </div>

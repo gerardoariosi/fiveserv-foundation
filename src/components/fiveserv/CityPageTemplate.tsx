@@ -41,13 +41,13 @@ export const CityPageTemplate = ({ city, service, faqs = [] }: CityPageData) => 
       {/* Hero — dark */}
       <section className="bg-brand-black pt-32 pb-16">
         <div className="container">
-          <p className="text-xs font-medium uppercase tracking-[0.12em] text-brand-gold">— {SITE.brand} Property Solutions</p>
+          <p className="text-xs font-medium uppercase tracking-[0.12em] text-amber-700">— {SITE.brand} Property Solutions</p>
           <h1 className="mt-3 font-display font-black text-4xl text-white sm:text-5xl lg:text-6xl">
-            {service ? service.name : "Property Maintenance"} in <span className="text-brand-gold">{city.name}, {city.state}</span>
+            {service ? service.name : "Property Maintenance"} in <span className="text-amber-700">{city.name}, {city.state}</span>
           </h1>
           <div className="mt-6 flex flex-wrap gap-6 text-sm text-gray-300">
-            <span className="flex items-center gap-2"><MapPin className="h-4 w-4 text-brand-gold" /> {city.zones}</span>
-            <span className="flex items-center gap-2"><Clock className="h-4 w-4 text-brand-gold" /> Response: {city.responseTime}</span>
+            <span className="flex items-center gap-2"><MapPin className="h-4 w-4 text-amber-700" /> {city.zones}</span>
+            <span className="flex items-center gap-2"><Clock className="h-4 w-4 text-amber-700" /> Response: {city.responseTime}</span>
           </div>
 
           <AIOverviewBlock
@@ -64,7 +64,7 @@ export const CityPageTemplate = ({ city, service, faqs = [] }: CityPageData) => 
             </Link>
             <a
               href={`tel:${SITE.phone}`}
-              className="flex items-center gap-2 rounded-lg border-2 border-brand-gold px-8 py-4 text-sm font-bold uppercase tracking-wide text-brand-gold transition-colors hover:bg-brand-gold hover:text-brand-black"
+              className="flex items-center gap-2 rounded-lg border-2 border-brand-gold px-8 py-4 text-sm font-bold uppercase tracking-wide text-amber-700 transition-colors hover:bg-brand-gold hover:text-brand-black"
             >
               <Phone className="h-4 w-4" /> Call {SITE.phone}
             </a>
@@ -76,7 +76,7 @@ export const CityPageTemplate = ({ city, service, faqs = [] }: CityPageData) => 
       <section className="bg-gray-50">
         <div className="container py-24 lg:py-32">
           <SectionHeading eyebrow="Coverage">
-            ZIP Codes We Serve <span className="text-brand-gold">in {city.name}</span>
+            ZIP Codes We Serve <span className="text-amber-700">in {city.name}</span>
           </SectionHeading>
           <div className="mt-12 flex flex-wrap justify-center gap-2">
             {city.zips.map((z) => (

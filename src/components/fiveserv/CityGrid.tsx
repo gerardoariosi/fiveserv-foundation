@@ -51,7 +51,7 @@ export const CityGrid = () => {
           eyebrow="Service Areas"
           subtext="From Orlando to the Space Coast — we cover it all"
         >
-          Serving 18 Cities Across <span className="text-brand-gold">Central Florida</span>
+          Serving 18 Cities Across <span className="text-amber-700">Central Florida</span>
         </SectionHeading>
 
         <div className="mt-12">
@@ -68,17 +68,17 @@ export const CityGrid = () => {
                 className={`group block rounded-xl bg-white p-6 transition-all duration-200 hover:-translate-y-1 hover:shadow-md ${tierBorder(tier)}`}
               >
                 <div className="flex items-start justify-between">
-                  <MapPin className="text-brand-gold" size={tierIconSize(tier)} />
+                  <MapPin className="text-amber-700" size={tierIconSize(tier)} />
                   {tier === 1 && (
                     <span className="rounded-full bg-brand-gold px-2 py-0.5 text-[10px] font-bold uppercase tracking-wider text-brand-black">
                       Primary Market
                     </span>
                   )}
                 </div>
-                <h3 className="mt-4 font-display text-lg font-semibold text-gray-900 group-hover:text-brand-gold">
+                <h3 className="mt-4 font-display text-lg font-semibold text-gray-900 group-hover:text-amber-700">
                   {city.name}, {city.state}
                 </h3>
-                <p className="mt-1 text-sm font-semibold text-brand-gold">
+                <p className="mt-1 text-sm font-semibold text-amber-700">
                   Within {city.responseTime}
                 </p>
               </Link>
@@ -91,7 +91,7 @@ export const CityGrid = () => {
               className="rounded-xl border border-dashed border-brand-gold/50 bg-brand-gold/5 p-6"
             >
               <div className="flex items-start justify-between">
-                <MapPin className="text-brand-gold" size={24} />
+                <MapPin className="text-amber-700" size={24} />
                 <span className="rounded-full bg-brand-gold px-2 py-0.5 text-[10px] font-bold uppercase tracking-wider text-brand-black">
                   Coming Soon
                 </span>
