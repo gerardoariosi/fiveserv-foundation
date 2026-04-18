@@ -16,6 +16,8 @@ import FamilyStory from "@/components/fiveserv/FamilyStory";
 import TestimonialCard from "@/components/fiveserv/TestimonialCard";
 import CityGrid from "@/components/fiveserv/CityGrid";
 import FaqAccordion from "@/components/fiveserv/FaqAccordion";
+import VisibleQA from "@/components/fiveserv/VisibleQA";
+import { VISIBLE_QA } from "@/lib/visible-qa";
 import LeadMagnetSection from "@/components/fiveserv/LeadMagnetSection";
 import ContactCTA from "@/components/fiveserv/ContactCTA";
 import BeforeAfterSlider from "@/components/fiveserv/BeforeAfterSlider";
@@ -152,6 +154,7 @@ const Index = () => {
       {/* Cities grid — light gray */}
       <CityGrid />
 
+      <VisibleQA items={VISIBLE_QA} />
       <FaqAccordion faqs={HOMEPAGE_FAQS} emitSchema={false} />
       <LeadMagnetSection />
       <ContactCTA />
