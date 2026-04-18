@@ -29,6 +29,7 @@ import ThankYouB2BPage from "./pages/ThankYouB2BPage";
 import ThankYouResidentialPage from "./pages/ThankYouResidentialPage";
 import TermsPage from "./pages/TermsPage";
 import PlumbingPage from "./pages/PlumbingPage";
+import ElectricalPage from "./pages/ElectricalPage";
 
 import { SERVICES, CITIES } from "@/lib/site-config";
 
@@ -83,6 +84,7 @@ const router = createBrowserRouter([
 
       // Trade pages
       { path: "plumbing", element: <PlumbingPage /> },
+      { path: "electrical", element: <ElectricalPage /> },
 
       // Service x City — 72 dynamic pages (legacy/internal pattern)
       ...SERVICES.map((s) => ({ path: `${s.slug}/:city`, element: <ServiceCityPage /> })),
