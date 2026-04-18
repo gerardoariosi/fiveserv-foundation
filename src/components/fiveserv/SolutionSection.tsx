@@ -7,7 +7,7 @@ import BrandName from "@/components/fiveserv/BrandName";
 import type { ReactNode } from "react";
 
 const ROWS: [string, ReactNode][] = [
-  ["5+ vendors to coordinate", <>1 call to <BrandName /></>],
+  ["5+ vendors to coordinate", <>1 call to <BrandName variant="dark" /></>],
   ["10+ days average turnaround", "5 business days guaranteed"],
   ["Multiple invoices per unit", "One clean invoice"],
   ["You chase every vendor", "We handle everything"],
