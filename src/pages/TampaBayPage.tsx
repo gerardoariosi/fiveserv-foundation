@@ -62,7 +62,7 @@ const TampaBayPage = () => {
         <div className="container relative max-w-3xl text-center">
           {/* Logo */}
           <img
-            src="/images/logo FS .png"
+            src="/images/logo%20FS%20.png"
             alt="FiveServ"
             className="mx-auto h-20 w-auto object-contain"
           />

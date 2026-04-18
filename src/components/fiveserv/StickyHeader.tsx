@@ -43,13 +43,13 @@ export const StickyHeader = () => {
         {/* FS Logo + wordmark */}
         <Link to="/" className="flex items-center gap-3" aria-label="FiveServ home">
           <img
-            src="/images/logo FS .png"
+            src="/images/logo%20FS%20.png"
             alt="FiveServ"
             className="h-10 w-auto object-contain"
           />
           <span className="flex flex-col leading-tight">
             <span className="font-display font-bold text-gray-900 text-lg"><BrandName variant="dark" /></span>
-            <span className="hidden lg:inline text-[10px] text-gray-500 uppercase tracking-wider">
+            <span className="hidden lg:inline text-[13px] text-gray-700 uppercase tracking-wider">
               Property Solutions
             </span>
           </span>
@@ -74,11 +74,11 @@ export const StickyHeader = () => {
 
         <div className="hidden items-center gap-4 md:flex">
           <div className="flex flex-col items-end leading-tight">
-            <a href={`tel:${SITE.phone}`} className="flex items-center gap-1.5 text-brand-gold font-semibold">
-              <Phone className="h-4 w-4" />
+            <a href={`tel:${SITE.phone}`} className="flex items-center gap-1.5 text-brand-black font-semibold">
+              <Phone className="h-4 w-4 text-brand-gold" />
               {SITE.phone}
             </a>
-            <span className="text-[10px] font-medium uppercase tracking-wider text-gray-500">
+            <span className="text-[13px] font-medium uppercase tracking-wider text-gray-700">
               Available 24/7
             </span>
           </div>
@@ -98,8 +98,8 @@ export const StickyHeader = () => {
 
         {/* Mobile: gold phone always clickable + hamburger */}
         <div className="flex items-center gap-3 md:hidden">
-          <a href={`tel:${SITE.phone}`} aria-label="Call FiveServ" className="text-brand-gold">
-            <Phone className="h-6 w-6" />
+          <a href={`tel:${SITE.phone}`} aria-label="Call FiveServ" className="text-brand-black">
+            <Phone className="h-6 w-6 text-brand-gold" />
           </a>
           <button aria-label="Toggle menu" className="text-gray-900" onClick={() => setOpen((s) => !s)}>
             {open ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
@@ -123,8 +123,8 @@ export const StickyHeader = () => {
                 {n.label}
               </NavLink>
             ))}
-            <a href={`tel:${SITE.phone}`} className="text-brand-gold font-semibold">
-              📞 {SITE.phone} <span className="text-xs text-gray-500">· Available 24/7</span>
+            <a href={`tel:${SITE.phone}`} className="text-brand-black font-semibold">
+              📞 {SITE.phone} <span className="text-[13px] text-gray-700">· Available 24/7</span>
             </a>
             <a href={waHref} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-[#25D366] font-semibold">
               <WhatsAppIcon className="h-4 w-4" /> WhatsApp us
