@@ -75,7 +75,7 @@ export const BlogArticleLayout = ({ post, children }: Props) => {
       <section className="bg-white pt-12">
         <div className="container max-w-3xl">
           <div className="rounded-xl border-l-4 border-brand-gold bg-gray-50 p-6 shadow-sm">
-            <p className="text-xs font-bold uppercase tracking-widest text-gray-900">TL;DR</p>
+            <p className="text-xs font-bold uppercase tracking-widest text-amber-700">TL;DR</p>
             <p className="mt-2 text-base leading-relaxed text-brand-black">{post.tldr}</p>
           </div>
         </div>
