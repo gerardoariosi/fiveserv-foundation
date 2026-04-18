@@ -14,7 +14,7 @@ import FivePillars from "@/components/fiveserv/FivePillars";
 import LiveStatsBar from "@/components/fiveserv/LiveStatsBar";
 import FamilyStory from "@/components/fiveserv/FamilyStory";
 import TestimonialCard from "@/components/fiveserv/TestimonialCard";
-import InteractiveMap from "@/components/fiveserv/InteractiveMap";
+import CityGrid from "@/components/fiveserv/CityGrid";
 import FaqAccordion from "@/components/fiveserv/FaqAccordion";
 import LeadMagnetSection from "@/components/fiveserv/LeadMagnetSection";
 import ContactCTA from "@/components/fiveserv/ContactCTA";
@@ -148,20 +148,8 @@ const Index = () => {
       </section>
       <TestimonialsSection />
 
-      {/* Cities + interactive map — light gray */}
-      <section className="bg-gray-50">
-        <div className="container py-24 lg:py-32">
-          <SectionHeading
-            eyebrow="Service Areas"
-            subtext="Hover any city for response time. Tampa Bay coming soon."
-          >
-            18 Cities Across <span className="text-brand-gold">Central Florida</span>
-          </SectionHeading>
-          <div className="mt-16">
-            <InteractiveMap />
-          </div>
-        </div>
-      </section>
+      {/* Cities grid — light gray */}
+      <CityGrid />
 
       <FaqAccordion faqs={HOMEPAGE_FAQS} emitSchema={false} />
       <LeadMagnetSection />

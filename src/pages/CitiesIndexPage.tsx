@@ -3,7 +3,6 @@ import { MapPin, Clock } from "lucide-react";
 import Seo from "@/lib/Seo";
 import SchemaOrg from "@/lib/SchemaOrg";
 import { SITE, CITIES, COMING_SOON_CITIES } from "@/lib/site-config";
-import InteractiveMap from "@/components/fiveserv/InteractiveMap";
 
 type Props = { canonicalPath?: "/cities" | "/service-areas" };
 
@@ -32,13 +31,7 @@ const CitiesIndexPage = ({ canonicalPath = "/cities" }: Props) => (
       </div>
     </section>
 
-    <section className="bg-white pb-12">
-      <div className="container">
-        <InteractiveMap />
-      </div>
-    </section>
-
-    <section className="bg-white pb-24">
+    <section className="bg-white pb-24 pt-16">
       <div className="container grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
         {CITIES.map((city) => (
           <Link

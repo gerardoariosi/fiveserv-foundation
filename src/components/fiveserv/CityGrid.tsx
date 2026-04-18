@@ -4,6 +4,43 @@ import { CITIES, COMING_SOON_CITIES } from "@/lib/site-config";
 import { useReveal } from "@/hooks/use-fiveserv";
 import SectionHeading from "./SectionHeading";
 
+const TIER_1 = new Set([
+  "orlando-fl",
+  "kissimmee-fl",
+  "sanford-fl",
+  "winter-park-fl",
+  "lakeland-fl",
+]);
+
+const TIER_2 = new Set([
+  "altamonte-springs-fl",
+  "apopka-fl",
+  "ocoee-fl",
+  "winter-garden-fl",
+  "clermont-fl",
+  "st-cloud-fl",
+  "davenport-fl",
+]);
+
+const getTier = (slug: string): 1 | 2 | 3 => {
+  if (TIER_1.has(slug)) return 1;
+  if (TIER_2.has(slug)) return 2;
+  return 3;
+};
+
+const tierBorder = (tier: 1 | 2 | 3) => {
+  switch (tier) {
+    case 1:
+      return "border border-brand-gold/40 hover:border-brand-gold";
+    case 2:
+      return "border border-gray-200 hover:border-brand-gold";
+    case 3:
+      return "border border-gray-100 hover:border-brand-gold";
+  }
+};
+
+const tierIconSize = (tier: 1 | 2 | 3) => (tier === 1 ? 28 : tier === 2 ? 24 : 20);
+
 export const CityGrid = () => {
   const ref = useReveal<HTMLDivElement>();
   return (
@@ -11,33 +48,56 @@ export const CityGrid = () => {
       <div ref={ref} className="container reveal py-24 lg:py-32">
         <SectionHeading
           eyebrow="Service Areas"
-          subtext="We serve Orlando, FL and 17 surrounding cities. Tampa Bay coming soon."
+          subtext="From Orlando to the Space Coast — we cover it all"
         >
-          18 Cities Across <span className="text-brand-gold">Central Florida</span>
+          Serving 18 Cities Across <span className="text-brand-gold">Central Florida</span>
         </SectionHeading>
 
-        <div className="mt-16 grid gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-6">
-          {CITIES.map((city) => (
-            <Link
-              key={city.slug}
-              to={`/maintenance-${city.slug}`}
-              className="group flex items-center gap-2 rounded-xl border border-gray-200 bg-white px-4 py-3 transition-all hover:border-brand-gold hover:bg-brand-gold/5"
-            >
-              <MapPin className="h-4 w-4 text-brand-gold" />
-              <span className="font-bold text-gray-900 group-hover:text-brand-gold">
-                {city.name}, {city.state}
-              </span>
-            </Link>
-          ))}
+        <div className="mt-16 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          {CITIES.map((city) => {
+            const tier = getTier(city.slug);
+            return (
+              <Link
+                key={city.slug}
+                to={`/maintenance-${city.slug}`}
+                className={`group block rounded-xl bg-white p-6 transition-all duration-200 hover:-translate-y-1 hover:shadow-md ${tierBorder(tier)}`}
+              >
+                <div className="flex items-start justify-between">
+                  <MapPin className="text-brand-gold" size={tierIconSize(tier)} />
+                  {tier === 1 && (
+                    <span className="rounded-full bg-brand-gold px-2 py-0.5 text-[10px] font-bold uppercase tracking-wider text-brand-black">
+                      Primary Market
+                    </span>
+                  )}
+                </div>
+                <h3 className="mt-4 font-display text-lg font-black text-brand-black group-hover:text-brand-gold">
+                  {city.name}, {city.state}
+                </h3>
+                <p className="mt-1 text-sm font-semibold text-brand-gold">
+                  Within {city.responseTime}
+                </p>
+              </Link>
+            );
+          })}
+
           {COMING_SOON_CITIES.map((c) => (
-            <Link
+            <div
               key={c.slug}
-              to={`/${c.slug}`}
-              className="flex items-center justify-between gap-2 rounded-xl border border-dashed border-gray-300 bg-white px-4 py-3"
+              className="rounded-xl border border-dashed border-brand-gold/50 bg-brand-gold/5 p-6"
             >
-              <span className="font-bold text-gray-500">{c.name}, {c.state}</span>
-              <span className="rounded-sm bg-brand-gold px-1.5 py-0.5 text-[10px] font-bold uppercase text-brand-black">Soon</span>
-            </Link>
+              <div className="flex items-start justify-between">
+                <MapPin className="text-brand-gold" size={24} />
+                <span className="rounded-full bg-brand-gold px-2 py-0.5 text-[10px] font-bold uppercase tracking-wider text-brand-black">
+                  Coming Soon
+                </span>
+              </div>
+              <h3 className="mt-4 font-display text-lg font-black text-brand-black">
+                {c.name}, {c.state}
+              </h3>
+              <p className="mt-1 text-sm font-semibold text-gray-500">
+                Launching soon
+              </p>
+            </div>
           ))}
         </div>
       </div>
