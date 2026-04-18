@@ -64,6 +64,7 @@ export const HeroSection = ({
 
   return (
     <section className="relative isolate w-full min-h-screen overflow-hidden bg-brand-black">
+      {/* Video starts below the sticky header (h-20 = 80px) so subjects aren't cropped at the top */}
       <video
         ref={videoARef}
         autoPlay
@@ -71,8 +72,8 @@ export const HeroSection = ({
         playsInline
         preload="auto"
         poster={posterSrc}
-        className="absolute inset-0 w-full h-full object-cover object-center transition-opacity duration-1000 ease-in-out"
-        style={{ opacity: activeVideo === "A" ? 1 : 0 }}
+        className="absolute left-0 right-0 top-20 bottom-0 w-full object-cover object-center transition-opacity duration-1000 ease-in-out"
+        style={{ opacity: activeVideo === "A" ? 1 : 0, height: "calc(100% - 5rem)" }}
       >
         <source src={videoSrc} type="video/mp4" />
       </video>
@@ -81,13 +82,15 @@ export const HeroSection = ({
         muted
         playsInline
         preload="auto"
-        className="absolute inset-0 w-full h-full object-cover object-center transition-opacity duration-1000 ease-in-out"
-        style={{ opacity: activeVideo === "B" ? 1 : 0 }}
+        className="absolute left-0 right-0 top-20 bottom-0 w-full object-cover object-center transition-opacity duration-1000 ease-in-out"
+        style={{ opacity: activeVideo === "B" ? 1 : 0, height: "calc(100% - 5rem)" }}
       >
         <source src={videoSrc} type="video/mp4" />
       </video>
-      {/* 60% black overlay for readability */}
-      <div className="absolute inset-0 bg-brand-black/60" />
+      {/* Solid black band behind the sticky header */}
+      <div className="absolute inset-x-0 top-0 h-20 bg-brand-black" />
+      {/* 60% black overlay over the video for readability */}
+      <div className="absolute left-0 right-0 top-20 bottom-0 bg-brand-black/60" />
 
       <div className="relative z-10 flex h-full items-center pt-32 pb-20 lg:pt-40 lg:pb-24">
         <div ref={ref} className="container reveal">
