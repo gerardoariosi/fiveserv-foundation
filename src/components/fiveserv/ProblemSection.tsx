@@ -20,31 +20,34 @@ const PAINS = [
 export const ProblemSection = () => {
   const ref = useReveal<HTMLDivElement>();
   return (
-    <section className="section-light-gray">
-      <div ref={ref} className="container reveal py-16 lg:py-24">
-        <SectionHeading eyebrow="The Problem">
+    <section className="bg-gray-50">
+      <div ref={ref} className="container reveal py-24 lg:py-32">
+        <SectionHeading
+          eyebrow="The Problem"
+          subtext={
+            <>
+              The average make-ready takes <span className="font-bold text-gray-900">10+ days</span> when you coordinate vendors yourself.
+            </>
+          }
+        >
           Managing a Make-Ready Shouldn't Require{" "}
           <span className="text-brand-gold">5 Different Vendors.</span>
         </SectionHeading>
 
-        <p className="mt-6 max-w-3xl text-xl font-bold text-brand-black sm:text-2xl">
-          The average make-ready takes <span className="text-brand-gold">10+ days</span> when you coordinate vendors yourself.
-        </p>
-
-        <div className="mt-12 grid gap-6 md:grid-cols-3">
+        <div className="mt-16 grid gap-6 md:grid-cols-3">
           {PAINS.map((p) => (
             <article
               key={p.title}
-              className="rounded-xl border-l-4 border-brand-gold bg-white p-6 shadow-sm transition-shadow hover:shadow-md"
+              className="rounded-2xl border-l-4 border-red-500 bg-white p-6 shadow-sm transition-shadow hover:shadow-md"
             >
-              <XCircle className="h-9 w-9 text-red-500" />
-              <h3 className="mt-4 font-display text-xl font-bold text-brand-black">{p.title}</h3>
+              <XCircle className="h-8 w-8 text-red-500" />
+              <h3 className="mt-4 font-display text-xl font-bold text-gray-900">{p.title}</h3>
               <p className="mt-2 text-sm leading-relaxed text-gray-600">{p.description}</p>
             </article>
           ))}
         </div>
 
-        <p className="mt-10 text-center text-lg font-bold text-brand-black">
+        <p className="mt-12 text-center text-lg font-bold text-gray-900">
           Sound familiar?{" "}
           <a href="#solution" className="text-brand-gold underline underline-offset-4 hover:text-brand-gold-hover">
             There is a better way.

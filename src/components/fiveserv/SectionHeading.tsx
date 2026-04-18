@@ -3,26 +3,36 @@ import { ReactNode } from "react";
 type Props = {
   eyebrow?: string;
   children: ReactNode;
+  subtext?: ReactNode;
   className?: string;
   align?: "left" | "center";
 };
 
 /**
- * SectionHeading — Aspect-style eyebrow + bold black H2 with gold accent spans.
- * Use inside light sections. Pass `<span className="text-brand-gold">…</span>` for accents.
+ * SectionHeading — Servpro-style: gold eyebrow + bold gray-900 H2 (text-4xl/5xl) + optional gray subtext.
+ * Defaults to centered. Pass `<span className="text-brand-gold">…</span>` inside children for accents.
  */
-export const SectionHeading = ({ eyebrow, children, className = "", align = "left" }: Props) => {
-  const alignCls = align === "center" ? "text-center" : "text-left";
+export const SectionHeading = ({
+  eyebrow,
+  children,
+  subtext,
+  className = "",
+  align = "center",
+}: Props) => {
+  const alignCls = align === "center" ? "text-center mx-auto" : "text-left";
   return (
-    <div className={`${alignCls} ${className}`}>
+    <div className={`max-w-3xl ${alignCls} ${className}`}>
       {eyebrow && (
-        <p className="text-brand-gold text-xs font-bold uppercase tracking-widest mb-3">
+        <p className="text-brand-gold text-xs font-bold uppercase tracking-[0.15em] mb-3">
           {eyebrow}
         </p>
       )}
-      <h2 className="text-brand-black font-display font-black text-3xl lg:text-4xl leading-tight">
+      <h2 className="text-gray-900 font-display font-black text-4xl lg:text-5xl leading-tight">
         {children}
       </h2>
+      {subtext && (
+        <p className="mt-4 text-lg leading-relaxed text-gray-600">{subtext}</p>
+      )}
     </div>
   );
 };

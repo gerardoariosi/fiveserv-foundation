@@ -10,7 +10,7 @@ type TestimonialCardProps = {
 
 export const TestimonialCard = ({ quote, name, title, company, photo }: TestimonialCardProps) => {
   return (
-    <article className="flex h-full flex-col rounded-xl border border-gray-100 bg-white p-6 shadow-sm transition-all hover:border-brand-gold hover:shadow-md">
+    <article className="flex h-full flex-col rounded-2xl border border-gray-200 bg-white p-8 shadow-sm transition-all hover:-translate-y-1 hover:border-brand-gold hover:shadow-xl">
       <div className="flex gap-1">
         {Array.from({ length: 5 }).map((_, i) => (
           <Star key={i} className="h-4 w-4 fill-brand-gold text-brand-gold" />
@@ -32,7 +32,7 @@ export const TestimonialCard = ({ quote, name, title, company, photo }: Testimon
           </div>
         )}
         <div>
-          <div className="font-bold text-brand-black">{name}</div>
+          <div className="font-bold text-gray-900">{name}</div>
           <div className="text-sm text-gray-500">{title} · {company}</div>
         </div>
       </div>
