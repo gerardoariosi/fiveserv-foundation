@@ -129,9 +129,8 @@ const ResidentialPage = () => {
         <div className="container py-20">
           <SectionReveal className="grid gap-10 lg:grid-cols-2 lg:items-center">
             <div className="overflow-hidden rounded-xl border border-brand-gold/40">
-              {/* TODO: Replace with real photo — family-fiveserv.jpg */}
               <img
-                src="/images/family-fiveserv.svg"
+                src="/images/family-fiveserv.jpg"
                 alt={`The ${SITE.brand} Venezuelan-American family behind every home repair in Central Florida`}
                 loading="lazy"
                 className="h-full w-full object-cover"
