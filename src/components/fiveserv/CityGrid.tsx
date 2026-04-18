@@ -65,7 +65,7 @@ export const CityGrid = () => {
               <Link
                 key={city.slug}
                 to={`/maintenance-${city.slug}`}
-                className={`group block rounded-lg bg-white p-6 shadow-card transition-shadow duration-200 hover:shadow-card-hover ${tierBorder(tier)}`}
+                className={`group block rounded-lg bg-white p-6 border-l-4 border-l-brand-gold shadow-[0_4px_20px_rgba(0,0,0,0.08)] transition-all duration-200 hover:-translate-y-1 hover:shadow-[0_8px_30px_rgba(255,215,0,0.2)] ${tierBorder(tier)}`}
               >
                 <div className="flex items-start justify-between">
                   <MapPin className="text-brand-gold" strokeWidth={1.5} size={tierIconSize(tier)} />
@@ -75,7 +75,7 @@ export const CityGrid = () => {
                     </span>
                   )}
                 </div>
-                <h3 className="mt-4 text-lg font-semibold text-gray-900 group-hover:text-brand-gold">
+                <h3 className="mt-4 text-lg font-bold text-brand-black group-hover:text-brand-gold">
                   {city.name}, {city.state}
                 </h3>
                 <p className="mt-1 text-sm text-gray-700">
