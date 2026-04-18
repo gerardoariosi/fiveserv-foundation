@@ -9,15 +9,27 @@
  */
 
 type Props = {
-  variant?: "light" | "dark";
+  variant?: "light" | "dark" | "onGold";
   className?: string;
 };
 
-export const BrandName = ({ variant = "light", className }: Props) => (
-  <span className={className}>
-    <span className="text-brand-gold font-bold">F</span>
-    <span className={variant === "light" ? "text-white" : "text-gray-900"}>iveServ</span>
-  </span>
-);
+export const BrandName = ({ variant = "light", className }: Props) => {
+  // On gold backgrounds, render the entire word in black — the gold "F" would disappear.
+  if (variant === "onGold") {
+    return (
+      <span className={className}>
+        <span className="text-gray-900 font-bold">F</span>
+        <span className="text-gray-900">iveServ</span>
+      </span>
+    );
+  }
+
+  return (
+    <span className={className}>
+      <span className="text-brand-gold font-bold">F</span>
+      <span className={variant === "light" ? "text-white" : "text-gray-900"}>iveServ</span>
+    </span>
+  );
+};
 
 export default BrandName;
