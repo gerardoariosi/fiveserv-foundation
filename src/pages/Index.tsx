@@ -9,6 +9,7 @@ import HeroSection from "@/components/fiveserv/HeroSection";
 import ProblemSection from "@/components/fiveserv/ProblemSection";
 import SolutionSection from "@/components/fiveserv/SolutionSection";
 import ServiceCard from "@/components/fiveserv/ServiceCard";
+import SectionHeading from "@/components/fiveserv/SectionHeading";
 import FivePillars from "@/components/fiveserv/FivePillars";
 import LiveStatsBar from "@/components/fiveserv/LiveStatsBar";
 import FamilyStory from "@/components/fiveserv/FamilyStory";
@@ -22,10 +23,10 @@ import TrustBar from "@/components/fiveserv/TrustBar";
 import { useReveal } from "@/hooks/use-fiveserv";
 
 const SERVICE_META = [
-  { slug: "make-ready", icon: Key, badge: "5-Day Guarantee", cta: "Get a Make-Ready Quote" },
-  { slug: "maintenance", icon: Wrench, badge: "24/7", cta: "Get a Maintenance Quote" },
-  { slug: "renovations", icon: Building2, badge: undefined, cta: "Get a Renovation Quote" },
-  { slug: "residential", icon: Home, badge: undefined, cta: "Get a Residential Quote" },
+  { slug: "make-ready", icon: Key, badge: "5-Day Guarantee", cta: "Learn More" },
+  { slug: "maintenance", icon: Wrench, badge: "24/7", cta: "Learn More" },
+  { slug: "renovations", icon: Building2, badge: undefined, cta: "Learn More" },
+  { slug: "residential", icon: Home, badge: undefined, cta: "Learn More" },
 ] as const;
 
 const TESTIMONIALS = [
@@ -52,17 +53,17 @@ const TESTIMONIALS = [
 const ServicesGrid = () => {
   const ref = useReveal<HTMLDivElement>();
   return (
-    <section className="section-light">
-      <div ref={ref} className="container reveal py-16 lg:py-24">
-        <div className="max-w-3xl">
-          <p className="text-brand-gold text-xs font-bold uppercase tracking-widest mb-3">Our Services</p>
-          <h2 className="text-brand-black font-display font-black text-3xl lg:text-4xl leading-tight">
-            Everything Your Properties Need.{" "}
-            <span className="text-brand-gold">One Team.</span>
-          </h2>
-        </div>
+    <section className="bg-white">
+      <div ref={ref} className="container reveal py-24 lg:py-32">
+        <SectionHeading
+          eyebrow="Our Services"
+          subtext="Four core service lines. One team. One invoice. One point of accountability."
+        >
+          Everything Your Properties Need.{" "}
+          <span className="text-brand-gold">One Team.</span>
+        </SectionHeading>
 
-        <div className="mt-12 grid gap-8 md:grid-cols-2">
+        <div className="mt-16 grid gap-8 md:grid-cols-2 lg:grid-cols-4">
           {SERVICE_META.map((m) => {
             const svc = SERVICES.find((s) => s.slug === m.slug)!;
             return (
@@ -78,7 +79,6 @@ const ServicesGrid = () => {
                   description={svc.description}
                   href={`/${svc.slug}`}
                   cta={m.cta}
-                  image={`/images/services/${svc.slug}.jpg`}
                 />
               </div>
             );
@@ -92,21 +92,24 @@ const ServicesGrid = () => {
 const TestimonialsSection = () => {
   const ref = useReveal<HTMLDivElement>();
   return (
-    <section className="section-light">
-      <div ref={ref} className="container reveal py-16 lg:py-24">
-        <div className="max-w-3xl">
-          <p className="text-brand-gold text-xs font-bold uppercase tracking-widest mb-3">Testimonials</p>
-          <h2 className="text-brand-black font-display font-black text-3xl lg:text-4xl leading-tight">
-            What Property Managers Say About <span className="text-brand-gold">FiveServ</span>
-          </h2>
-        </div>
-        <div className="mt-12 grid gap-6 md:grid-cols-3">
+    <section className="bg-gray-50">
+      <div ref={ref} className="container reveal py-24 lg:py-32">
+        <SectionHeading
+          eyebrow="Testimonials"
+          subtext="Property managers across Central Florida trust FiveServ to handle every turn, every repair, every renovation."
+        >
+          What Property Managers Say About <span className="text-brand-gold">FiveServ</span>
+        </SectionHeading>
+        <div className="mt-16 grid gap-6 md:grid-cols-3">
           {TESTIMONIALS.map((t, i) => (
             <TestimonialCard key={i} {...t} />
           ))}
         </div>
         <div className="mt-12 text-center">
-          <Link to="/contact" className="cta-dark inline-block rounded-md px-6 py-3 font-bold uppercase tracking-wide">
+          <Link
+            to="/contact"
+            className="inline-block rounded-lg bg-brand-black px-8 py-4 text-sm font-bold uppercase tracking-wide text-white transition-colors hover:bg-gray-800"
+          >
             Join 50+ Property Managers Who Trust FiveServ
           </Link>
         </div>
@@ -130,60 +133,37 @@ const Index = () => {
         aggregateRating
       />
 
-      {/* Element 3: Hero (Elements 1 & 2 are in RootLayout) */}
       <HeroSection />
-
-      {/* Trust bar — right after hero */}
       <TrustBar />
-
-      {/* Element 4: Problem — light gray */}
       <ProblemSection />
-
-      {/* Element 5: Solution — light */}
       <SolutionSection />
-
-      {/* Element 6: Services 2x2 Grid — light */}
       <ServicesGrid />
-
-      {/* Element 7: 5 Pillars — gold */}
       <FivePillars />
-
-      {/* Element 8: Stats counter — dark */}
       <LiveStatsBar />
-
-      {/* Element 9: Family Story (light gray) + Before/After slider (light) */}
       <FamilyStory />
-      <section className="section-light">
-        <div className="container py-16">
+      <section className="bg-white">
+        <div className="container py-24 lg:py-32">
           <BeforeAfterSlider />
         </div>
       </section>
-
-      {/* Element 10: Testimonials — light */}
       <TestimonialsSection />
 
-      {/* Element 11: Cities + interactive map — light gray */}
-      <section className="section-light-gray">
-        <div className="container py-16 lg:py-24">
-          <div className="max-w-3xl">
-            <p className="text-brand-gold text-xs font-bold uppercase tracking-widest mb-3">Service Areas</p>
-            <h2 className="text-brand-black font-display font-black text-3xl lg:text-4xl leading-tight">
-              18 Cities Across <span className="text-brand-gold">Central Florida</span>
-            </h2>
-          </div>
-          <p className="mt-3 max-w-2xl text-gray-600 leading-relaxed">
-            Hover any city for response time. Tampa Bay coming soon.
-          </p>
-          <div className="mt-10">
+      {/* Cities + interactive map — light gray */}
+      <section className="bg-gray-50">
+        <div className="container py-24 lg:py-32">
+          <SectionHeading
+            eyebrow="Service Areas"
+            subtext="Hover any city for response time. Tampa Bay coming soon."
+          >
+            18 Cities Across <span className="text-brand-gold">Central Florida</span>
+          </SectionHeading>
+          <div className="mt-16">
             <InteractiveMap />
           </div>
         </div>
       </section>
 
-      {/* Element 12: FAQ — light */}
       <FaqAccordion faqs={HOMEPAGE_FAQS} emitSchema={false} />
-
-      {/* Element 13: Lead magnets (light gray) + final CTA form (dark) */}
       <LeadMagnetSection />
       <ContactCTA />
     </>

@@ -7,6 +7,7 @@ import AIOverviewBlock from "./AIOverviewBlock";
 import StatsBar from "./StatsBar";
 import FaqAccordion from "./FaqAccordion";
 import LeadMagnetSection from "./LeadMagnetSection";
+import SectionHeading from "./SectionHeading";
 
 export type ServicePageData = {
   service: { slug: ServiceSlug; name: string; short: string; description: string; cta: string };
@@ -35,8 +36,8 @@ export const ServicePageTemplate = ({ service, faqs = [] }: ServicePageData) => 
       {/* Hero — dark */}
       <section className="bg-brand-black pt-32 pb-16">
         <div className="container">
-          <p className="text-sm font-bold uppercase tracking-widest text-brand-gold">{SITE.brand} Property Solutions</p>
-          <h1 className="mt-3 font-display text-4xl text-brand-white sm:text-5xl">{service.name}</h1>
+          <p className="text-xs font-bold uppercase tracking-[0.15em] text-brand-gold">{SITE.brand} Property Solutions</p>
+          <h1 className="mt-3 font-display text-4xl text-brand-white sm:text-5xl lg:text-6xl">{service.name}</h1>
           <p className="mt-4 max-w-2xl text-lg text-brand-white/80">{service.description}</p>
 
           <AIOverviewBlock
@@ -45,8 +46,16 @@ export const ServicePageTemplate = ({ service, faqs = [] }: ServicePageData) => 
           />
 
           <div className="mt-10 flex flex-wrap gap-4">
-            <Link to="/contact" className="cta-gold rounded-md px-6 py-3 font-bold uppercase tracking-wide">{service.cta}</Link>
-            <a href={`tel:${SITE.phone}`} className="flex items-center gap-2 rounded-md border-2 border-brand-gold px-6 py-3 font-bold uppercase tracking-wide text-brand-gold hover:bg-brand-gold hover:text-brand-black transition-colors">
+            <Link
+              to="/contact"
+              className="rounded-lg bg-brand-gold px-8 py-4 text-sm font-bold uppercase tracking-wide text-brand-black transition-colors hover:bg-yellow-400"
+            >
+              {service.cta}
+            </Link>
+            <a
+              href={`tel:${SITE.phone}`}
+              className="flex items-center gap-2 rounded-lg border-2 border-brand-gold px-8 py-4 text-sm font-bold uppercase tracking-wide text-brand-gold transition-colors hover:bg-brand-gold hover:text-brand-black"
+            >
               <Phone className="h-4 w-4" /> Call {SITE.phone}
             </a>
           </div>
@@ -57,16 +66,19 @@ export const ServicePageTemplate = ({ service, faqs = [] }: ServicePageData) => 
 
       {/* Cities — light gray */}
       <section className="bg-gray-50">
-        <div className="container py-16 lg:py-24">
-          <p className="text-brand-gold text-xs font-bold uppercase tracking-widest mb-3">Service Areas</p>
-          <h2 className="text-brand-black font-display font-black text-3xl lg:text-4xl">{service.name} in your city</h2>
-          <p className="mt-3 text-gray-600 leading-relaxed">Pick your city for local response times and ZIP coverage.</p>
-          <div className="mt-10 grid gap-3 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
+        <div className="container py-24 lg:py-32">
+          <SectionHeading
+            eyebrow="Service Areas"
+            subtext="Pick your city for local response times and ZIP coverage."
+          >
+            {service.name} <span className="text-brand-gold">in your city</span>
+          </SectionHeading>
+          <div className="mt-16 grid gap-3 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
             {CITIES.map((c) => (
               <Link
                 key={c.slug}
                 to={`/${service.slug}/${c.slug}`}
-                className="flex items-center justify-between rounded-xl border border-gray-100 bg-white px-4 py-3 text-sm font-bold text-brand-black transition-all hover:border-brand-gold hover:bg-brand-gold/5"
+                className="flex items-center justify-between rounded-xl border border-gray-200 bg-white px-4 py-3 text-sm font-bold text-gray-900 transition-all hover:border-brand-gold hover:bg-brand-gold/5"
               >
                 {c.name}, {c.state}
                 <ArrowRight className="h-4 w-4 text-brand-gold" />
