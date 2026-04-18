@@ -11,6 +11,7 @@ import SolutionSection from "@/components/fiveserv/SolutionSection";
 import ServiceCard from "@/components/fiveserv/ServiceCard";
 import FivePillars from "@/components/fiveserv/FivePillars";
 import StatsBar from "@/components/fiveserv/StatsBar";
+import LiveStatsBar from "@/components/fiveserv/LiveStatsBar";
 import FamilyStory from "@/components/fiveserv/FamilyStory";
 import TestimonialCard from "@/components/fiveserv/TestimonialCard";
 import CityGrid from "@/components/fiveserv/CityGrid";
@@ -140,8 +141,8 @@ const Index = () => {
       {/* Element 7: 5 Pillars */}
       <FivePillars />
 
-      {/* Element 8: Stats counter */}
-      <StatsBar />
+      {/* Element 8: Stats counter — live */}
+      <LiveStatsBar />
 
       {/* Element 9: Family Story + Before/After slider */}
       <FamilyStory />

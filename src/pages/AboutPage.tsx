@@ -5,6 +5,7 @@ import SchemaOrg from "@/lib/SchemaOrg";
 import { SITE, STATS, TEAM, FIVE_PILLARS } from "@/lib/site-config";
 import AIOverviewBlock from "@/components/fiveserv/AIOverviewBlock";
 import { useReveal } from "@/hooks/use-fiveserv";
+import LiveStatsBar from "@/components/fiveserv/LiveStatsBar";
 
 const SectionReveal = ({ children, className = "" }: { children: React.ReactNode; className?: string }) => {
   const ref = useReveal<HTMLDivElement>();
@@ -123,6 +124,8 @@ const AboutPage = () => {
           </SectionReveal>
         </div>
       </section>
+
+      <LiveStatsBar />
 
       {/* 5. The Team */}
       <section className="bg-brand-gray">

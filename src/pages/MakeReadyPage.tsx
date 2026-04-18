@@ -11,6 +11,7 @@ import FaqAccordion from "@/components/fiveserv/FaqAccordion";
 import LeadMagnetSection from "@/components/fiveserv/LeadMagnetSection";
 import ContactCTA from "@/components/fiveserv/ContactCTA";
 import BeforeAfterSlider from "@/components/fiveserv/BeforeAfterSlider";
+import LiveStatsBar from "@/components/fiveserv/LiveStatsBar";
 import { useReveal } from "@/hooks/use-fiveserv";
 
 const INCLUDED = [
@@ -116,6 +117,9 @@ const MakeReadyPage = () => {
           />
         </div>
       </section>
+
+      {/* Live stats — right after hero */}
+      <LiveStatsBar />
 
       {/* 3. Problem / Solution comparison (reuses homepage component) */}
       <SolutionSection />
