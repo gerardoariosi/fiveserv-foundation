@@ -23,6 +23,7 @@ import AIOverviewBlock from "@/components/fiveserv/AIOverviewBlock";
 import StatsBar from "@/components/fiveserv/StatsBar";
 import FaqAccordion from "@/components/fiveserv/FaqAccordion";
 import ContactCTA from "@/components/fiveserv/ContactCTA";
+import BeforeAfterSlider from "@/components/fiveserv/BeforeAfterSlider";
 import { useReveal } from "@/hooks/use-fiveserv";
 
 const PROJECT_TYPES = [

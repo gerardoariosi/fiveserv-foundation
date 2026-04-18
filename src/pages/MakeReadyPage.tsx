@@ -10,6 +10,7 @@ import StatsBar from "@/components/fiveserv/StatsBar";
 import FaqAccordion from "@/components/fiveserv/FaqAccordion";
 import LeadMagnetSection from "@/components/fiveserv/LeadMagnetSection";
 import ContactCTA from "@/components/fiveserv/ContactCTA";
+import BeforeAfterSlider from "@/components/fiveserv/BeforeAfterSlider";
 import { useReveal } from "@/hooks/use-fiveserv";
 
 const INCLUDED = [
