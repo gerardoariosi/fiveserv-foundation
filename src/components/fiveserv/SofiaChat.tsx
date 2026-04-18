@@ -358,10 +358,9 @@ const SofiaChat = () => {
         return;
       }
     } catch { /* ignore */ }
-    // First-time opening message — use browser locale
-    const initialLang = detectBrowserLang();
-    setLang(initialLang);
-    setMessages([mkSofia(t[initialLang].opening, { quickReplies: [...t[initialLang].openingButtons] })]);
+    // First-time: detect locale, leave messages empty so the live "typing" sequence
+    // plays when the widget opens (auto or manual).
+    setLang(detectBrowserLang());
   }, []);
 
   // Persist
@@ -375,6 +374,23 @@ const SofiaChat = () => {
   useEffect(() => {
     scrollRef.current?.scrollTo({ top: scrollRef.current.scrollHeight, behavior: "smooth" });
   }, [messages, typing, open]);
+
+  // Live opening sequence — runs when the widget opens for the first time
+  // (no messages yet). Step 2: typing 600ms in, Step 3: message at 1800ms.
+  useEffect(() => {
+    if (!open) return;
+    if (messages.length > 0) return;
+    const L = t[lang];
+    const typingTimer = window.setTimeout(() => setTyping(true), 600);
+    const messageTimer = window.setTimeout(() => {
+      setTyping(false);
+      setMessages([mkSofia(L.opening, { quickReplies: [...L.openingButtons] })]);
+    }, 1800);
+    return () => {
+      window.clearTimeout(typingTimer);
+      window.clearTimeout(messageTimer);
+    };
+  }, [open, messages.length, lang]);
 
   // Auto-open + notification badge — fires once per session
   useEffect(() => {
