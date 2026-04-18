@@ -55,7 +55,7 @@ export const StickyHeader = () => {
           </span>
         </Link>
 
-        <nav className="hidden items-center gap-7 lg:flex">
+        <nav className="hidden items-center gap-5 md:flex">
           {NAV.map((n) => (
             <NavLink
               key={n.to}
@@ -72,7 +72,7 @@ export const StickyHeader = () => {
           ))}
         </nav>
 
-        <div className="hidden items-center gap-4 lg:flex">
+        <div className="hidden items-center gap-4 md:flex">
           <div className="flex flex-col items-end leading-tight">
             <a href={`tel:${SITE.phone}`} className="flex items-center gap-1.5 text-brand-gold font-semibold">
               <Phone className="h-4 w-4" />
@@ -97,7 +97,7 @@ export const StickyHeader = () => {
         </div>
 
         {/* Mobile: gold phone always clickable + hamburger */}
-        <div className="flex items-center gap-3 lg:hidden">
+        <div className="flex items-center gap-3 md:hidden">
           <a href={`tel:${SITE.phone}`} aria-label="Call FiveServ" className="text-brand-gold">
             <Phone className="h-6 w-6" />
           </a>
@@ -108,7 +108,7 @@ export const StickyHeader = () => {
       </div>
 
       {open && (
-        <div className="lg:hidden bg-white border-t border-gray-200">
+        <div className="md:hidden bg-white border-t border-gray-200">
           <div className="container flex flex-col gap-4 py-6">
             {NAV.map((n) => (
               <NavLink
