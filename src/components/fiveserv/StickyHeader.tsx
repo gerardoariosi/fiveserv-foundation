@@ -41,14 +41,11 @@ export const StickyHeader = () => {
       }`}
     >
       <div className="container flex h-20 items-center justify-between gap-4">
-        {/* FS Logo + wordmark */}
-        <Link to="/" className="flex items-center gap-3" aria-label="FiveServ home">
+        {/* FS Logo (image fallback shows wordmark itself) */}
+        <Link to="/" className="flex items-center gap-2" aria-label="FiveServ home">
           <Logo variant="dark" imgClassName="h-10 w-auto object-contain" />
-          <span className="flex flex-col leading-tight">
-            <span className="font-display font-bold text-gray-900 text-lg"><BrandName variant="dark" /></span>
-            <span className="hidden lg:inline text-[13px] text-gray-700 uppercase tracking-wider">
-              Property Solutions
-            </span>
+          <span className="hidden lg:inline text-[11px] font-bold text-gray-700 uppercase tracking-[0.2em]">
+            Property Solutions
           </span>
         </Link>
 
