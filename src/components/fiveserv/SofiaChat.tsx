@@ -812,12 +812,20 @@ const SofiaChat = () => {
         </div>
       )}
 
-      {/* Thin scrollbar for messages area */}
+      {/* Thin scrollbar + badge pulse */}
       <style>{`
         .sofia-scroll::-webkit-scrollbar { width: 6px; }
         .sofia-scroll::-webkit-scrollbar-track { background: transparent; }
         .sofia-scroll::-webkit-scrollbar-thumb { background: #E5E7EB; border-radius: 3px; }
         .sofia-scroll { scrollbar-width: thin; scrollbar-color: #E5E7EB transparent; }
+        @keyframes sofia-badge-pulse {
+          0%, 100% { transform: scale(1); }
+          50% { transform: scale(1.2); }
+        }
+        .sofia-badge-pulse { animation: sofia-badge-pulse 1.5s ease-in-out infinite; }
+        @media (prefers-reduced-motion: reduce) {
+          .sofia-badge-pulse { animation: none; }
+        }
       `}</style>
     </>
   );
