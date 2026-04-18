@@ -100,7 +100,7 @@ const RenovationsPage = () => {
               (t, i) => (
                 <li key={t} className="flex items-center gap-3">
                   {i > 0 && <span aria-hidden className="text-brand-gold">|</span>}
-                  <span>{t}</span>
+                  <span className="text-brand-white">{t}</span>
                 </li>
               ),
             )}
