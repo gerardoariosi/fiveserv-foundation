@@ -55,11 +55,11 @@ const AboutPage = () => {
             Built by a Family.{" "}
             <span className="block text-brand-gold">Trusted by Property Managers Across Central Florida.</span>
           </h1>
-          <p className="mt-6 max-w-2xl text-lg text-gray-700">
+          <p className="mt-6 max-w-2xl text-lg text-gray-300">
             Five family members. 15+ years combined experience. One promise on every job.
           </p>
 
-          <ul className="mt-6 flex flex-wrap items-center gap-x-6 gap-y-3 text-sm font-bold text-brand-black">
+          <ul className="mt-6 flex flex-wrap items-center gap-x-6 gap-y-3 text-sm font-medium text-white">
             {["Venezuelan-American Family", "Licensed & Insured", "5-Day Guarantee", "18 Cities Served"].map((t, i) => (
               <li key={t} className="flex items-center gap-3">
                 {i > 0 && <span aria-hidden className="text-brand-gold">|</span>}
