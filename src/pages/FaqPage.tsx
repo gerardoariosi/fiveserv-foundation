@@ -100,7 +100,7 @@ const FaqPage = () => {
           {grouped.map((group) => (
             <div key={group.id}>
               <h2 className="font-display font-semibold text-2xl text-gray-900 sm:text-3xl">
-                <span className="text-amber-700">{group.label}</span>{" "}
+                <span className="text-gray-900">{group.label}</span>{" "}
                 <span className="text-gray-500 text-lg">({group.items.length})</span>
               </h2>
               <Accordion

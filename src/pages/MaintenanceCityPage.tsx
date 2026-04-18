@@ -132,7 +132,7 @@ const MaintenanceCityPage = ({ citySlug: propSlug }: MaintenanceCityPageProps = 
         <div className="container py-20">
           <SectionReveal>
             <h2 className="font-display font-bold text-3xl text-gray-900 sm:text-4xl">
-              Why <span className="text-amber-700">{SITE.brand}</span> in {city.name}
+              Why <span className="text-gray-900">{SITE.brand}</span> in {city.name}
             </h2>
             <div className="mt-6 max-w-3xl space-y-4 text-gray-700">
               {editorial.angle ? (
@@ -157,7 +157,7 @@ const MaintenanceCityPage = ({ citySlug: propSlug }: MaintenanceCityPageProps = 
         <div className="container py-20">
           <SectionReveal>
             <h2 className="font-display font-bold text-3xl text-gray-900 sm:text-4xl">
-              Services in <span className="text-amber-700">{city.name}</span>
+              Services in <span className="text-gray-900">{city.name}</span>
             </h2>
             <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
               {SERVICES.map((s) => {
@@ -168,12 +168,12 @@ const MaintenanceCityPage = ({ citySlug: propSlug }: MaintenanceCityPageProps = 
                     to={`/${s.slug}`}
                     className="hover-card group flex flex-col rounded-lg border border-gray-100 bg-white shadow-sm p-6"
                   >
-                    <span className="flex h-12 w-12 items-center justify-center rounded-md bg-amber-700/10 text-amber-700">
+                    <span className="flex h-12 w-12 items-center justify-center rounded-md bg-amber-700/10 text-gray-900">
                       <Icon className="h-6 w-6" />
                     </span>
                     <h3 className="mt-5 font-display font-semibold text-xl text-gray-900">{s.name}</h3>
                     <p className="mt-2 flex-1 text-sm text-gray-700">{s.short}</p>
-                    <span className="mt-4 inline-flex items-center gap-2 text-sm font-bold text-amber-700 group-hover:underline">
+                    <span className="mt-4 inline-flex items-center gap-2 text-sm font-bold text-gray-900 group-hover:text-amber-700 group-hover:underline">
                       {s.cta} <ArrowRight className="h-4 w-4" />
                     </span>
                   </Link>
@@ -234,7 +234,7 @@ const MaintenanceCityPage = ({ citySlug: propSlug }: MaintenanceCityPageProps = 
                 {editorial.zips.map((z) => (
                   <span
                     key={z}
-                    className="inline-flex items-center gap-2 rounded-md border border-gray-100 bg-white shadow-sm px-3 py-1.5 text-sm font-bold text-amber-700"
+                    className="inline-flex items-center gap-2 rounded-md border border-gray-100 bg-white shadow-sm px-3 py-1.5 text-sm font-bold text-gray-900 hover:text-amber-700"
                   >
                     <MapPin className="h-3.5 w-3.5" /> {z}
                   </span>

@@ -166,7 +166,7 @@ const PaintingPage = () => {
         <div className="container py-20">
           <SectionReveal>
             <h2 className="font-display font-bold text-3xl text-gray-900 sm:text-4xl">
-              One Painting Team. <span className="text-amber-700">Two Audiences.</span>
+              One Painting Team. <span className="text-gray-900">Two Audiences.</span>
             </h2>
             <p className="mt-3 max-w-2xl text-gray-700">
               The same painters who turn 500-unit communities also paint Central Florida homes. Pick your path.
@@ -242,7 +242,7 @@ const PaintingPage = () => {
         <div className="container py-20">
           <SectionReveal>
             <h2 className="font-display font-bold text-3xl text-gray-900 sm:text-4xl">
-              Painting Services <span className="text-amber-700">We Handle</span>
+              Painting Services <span className="text-gray-900">We Handle</span>
             </h2>
             <p className="mt-3 max-w-2xl text-gray-700">
               Six core service lines. In-house crews. Coordinated with drywall, cleaning, and final inspection.
@@ -251,7 +251,7 @@ const PaintingPage = () => {
             <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
               {SERVICES_GRID.map((s) => (
                 <article key={s.title} className="hover-card rounded-lg border border-gray-100 bg-white shadow-sm p-6">
-                  <span className="flex h-12 w-12 items-center justify-center rounded-md bg-amber-700/10 text-amber-700">
+                  <span className="flex h-12 w-12 items-center justify-center rounded-md bg-amber-700/10 text-gray-900">
                     <s.icon className="h-6 w-6" />
                   </span>
                   <h3 className="mt-5 font-display font-semibold text-xl text-gray-900">{s.title}</h3>
@@ -278,7 +278,7 @@ const PaintingPage = () => {
               </p>
             </div>
             <div>
-              <p className="text-xs font-medium uppercase tracking-[0.12em] text-amber-700">— Paint Spec</p>
+              <p className="text-xs font-medium uppercase tracking-[0.12em] text-gray-900">— Paint Spec</p>
               <h2 className="mt-3 font-display font-bold text-3xl text-gray-900 sm:text-4xl">
                 The right paint{" "}
                 <span className="text-amber-700">cuts your turn cost over time</span>
@@ -350,7 +350,7 @@ const PaintingPage = () => {
         <div className="container py-20">
           <SectionReveal>
             <h2 className="font-display font-bold text-3xl text-gray-900 sm:text-4xl">
-              Our 3-Step <span className="text-amber-700">Painting Process</span>
+              Our 3-Step <span className="text-gray-900">Painting Process</span>
             </h2>
 
             <div className="mt-12 grid gap-6 md:grid-cols-3">
@@ -377,7 +377,7 @@ const PaintingPage = () => {
           <SectionReveal>
             <h2 className="font-display font-bold text-3xl text-gray-900 sm:text-4xl">
               Painting Coverage —{" "}
-              <span className="text-amber-700">18 Cities Across Central Florida</span>
+              <span className="text-gray-900">18 Cities Across Central Florida</span>
             </h2>
             <p className="mt-3 max-w-2xl text-gray-700">
               Same-day assessment across the Orlando metro core. Within 24 hours across the rest of the region.
@@ -423,13 +423,13 @@ const PaintingPage = () => {
                   { to: "/residential", label: "Residential Services" },
                 ].map((l) => (
                   <li key={l.to}>
-                    <Link to={l.to} className="inline-flex items-center gap-2 text-amber-700 hover:underline">
+                    <Link to={l.to} className="inline-flex items-center gap-2 text-gray-900 hover:text-amber-700 hover:underline">
                       <ArrowRight className="h-4 w-4" /> {l.label}
                     </Link>
                   </li>
                 ))}
                 <li>
-                  <Link to="/contact" className="inline-flex items-center gap-2 text-amber-700 hover:underline">
+                  <Link to="/contact" className="inline-flex items-center gap-2 text-gray-900 hover:text-amber-700 hover:underline">
                     <ArrowRight className="h-4 w-4" /> Contact us
                   </Link>
                 </li>
@@ -443,7 +443,7 @@ const PaintingPage = () => {
                   { slug: "kissimmee-fl", name: "Kissimmee" },
                 ].map((c) => (
                   <li key={c.slug}>
-                    <Link to={`/maintenance-${c.slug}`} className="inline-flex items-center gap-2 text-amber-700 hover:underline">
+                    <Link to={`/maintenance-${c.slug}`} className="inline-flex items-center gap-2 text-gray-900 hover:text-amber-700 hover:underline">
                       <ArrowRight className="h-4 w-4" /> Painting in {c.name}, FL
                     </Link>
                   </li>
@@ -460,7 +460,7 @@ const PaintingPage = () => {
           <SectionReveal>
             <div className="rounded-xl border-2 border-brand-gold bg-white border border-gray-100 shadow-sm p-8 sm:p-12 text-center">
               <h2 className="font-display font-bold text-3xl text-gray-900 sm:text-4xl">
-                Ready for a <span className="text-amber-700">painting quote?</span>
+                Ready for a <span className="text-gray-900">painting quote?</span>
               </h2>
               <p className="mt-3 text-gray-700">
                 Pick the path that fits. PM portfolios on the left. Homes on the right.

@@ -148,7 +148,7 @@ const DrywallPage = () => {
         <div className="container py-20">
           <SectionReveal className="grid gap-10 lg:grid-cols-2 lg:items-center">
             <div>
-              <p className="text-xs font-medium uppercase tracking-[0.12em] text-amber-700">— The Hidden Make-Ready Killer</p>
+              <p className="text-xs font-medium uppercase tracking-[0.12em] text-gray-900">— The Hidden Make-Ready Killer</p>
               <h2 className="mt-3 font-display font-bold text-3xl text-gray-900 sm:text-4xl">
                 Drywall is the{" "}
                 <span className="text-amber-700">#1 reason make-readies slip</span>
@@ -183,7 +183,7 @@ const DrywallPage = () => {
         <div className="container py-20">
           <SectionReveal>
             <h2 className="font-display font-bold text-3xl text-gray-900 sm:text-4xl">
-              Drywall Services <span className="text-amber-700">We Handle</span>
+              Drywall Services <span className="text-gray-900">We Handle</span>
             </h2>
             <p className="mt-3 max-w-2xl text-gray-700">
               Six core service lines. In-house crews. Coordinated with paint and final inspection.
@@ -192,7 +192,7 @@ const DrywallPage = () => {
             <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
               {SERVICES_GRID.map((s) => (
                 <article key={s.title} className="hover-card rounded-lg border border-gray-100 bg-white shadow-sm p-6">
-                  <span className="flex h-12 w-12 items-center justify-center rounded-md bg-amber-700/10 text-amber-700">
+                  <span className="flex h-12 w-12 items-center justify-center rounded-md bg-amber-700/10 text-gray-900">
                     <s.icon className="h-6 w-6" />
                   </span>
                   <h3 className="mt-5 font-display font-semibold text-xl text-gray-900">{s.title}</h3>
@@ -254,7 +254,7 @@ const DrywallPage = () => {
               </p>
             </div>
             <div>
-              <p className="text-xs font-medium uppercase tracking-[0.12em] text-amber-700">— Texture Matching</p>
+              <p className="text-xs font-medium uppercase tracking-[0.12em] text-gray-900">— Texture Matching</p>
               <h2 className="mt-3 font-display font-bold text-3xl text-gray-900 sm:text-4xl">
                 We match existing wall texture —{" "}
                 <span className="text-amber-700">smooth, orange peel, knockdown</span>
@@ -295,7 +295,7 @@ const DrywallPage = () => {
           <SectionReveal>
             <h2 className="font-display font-bold text-3xl text-gray-900 sm:text-4xl">
               Drywall Coverage —{" "}
-              <span className="text-amber-700">18 Cities Across Central Florida</span>
+              <span className="text-gray-900">18 Cities Across Central Florida</span>
             </h2>
             <p className="mt-3 max-w-2xl text-gray-700">
               Same-day assessment across the Orlando metro core. Within 24 hours across the rest of the region.
@@ -341,13 +341,13 @@ const DrywallPage = () => {
                   { to: "/renovations", label: "CapEx & Renovations" },
                 ].map((l) => (
                   <li key={l.to}>
-                    <Link to={l.to} className="inline-flex items-center gap-2 text-amber-700 hover:underline">
+                    <Link to={l.to} className="inline-flex items-center gap-2 text-gray-900 hover:text-amber-700 hover:underline">
                       <ArrowRight className="h-4 w-4" /> {l.label}
                     </Link>
                   </li>
                 ))}
                 <li>
-                  <Link to="/contact" className="inline-flex items-center gap-2 text-amber-700 hover:underline">
+                  <Link to="/contact" className="inline-flex items-center gap-2 text-gray-900 hover:text-amber-700 hover:underline">
                     <ArrowRight className="h-4 w-4" /> Contact us
                   </Link>
                 </li>
@@ -361,7 +361,7 @@ const DrywallPage = () => {
                   { slug: "kissimmee-fl", name: "Kissimmee" },
                 ].map((c) => (
                   <li key={c.slug}>
-                    <Link to={`/maintenance-${c.slug}`} className="inline-flex items-center gap-2 text-amber-700 hover:underline">
+                    <Link to={`/maintenance-${c.slug}`} className="inline-flex items-center gap-2 text-gray-900 hover:text-amber-700 hover:underline">
                       <ArrowRight className="h-4 w-4" /> Drywall in {c.name}, FL
                     </Link>
                   </li>

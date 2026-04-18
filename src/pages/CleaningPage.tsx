@@ -187,7 +187,7 @@ const CleaningPage = () => {
         <div className="container py-20">
           <SectionReveal>
             <h2 className="font-display font-bold text-3xl text-gray-900 sm:text-4xl">
-              One Cleaning Team. <span className="text-amber-700">Two Audiences.</span>
+              One Cleaning Team. <span className="text-gray-900">Two Audiences.</span>
             </h2>
             <p className="mt-3 max-w-2xl text-gray-700">
               Multifamily move-outs and residential deep cleans run on the same 40-point checklist. Pick your path.
@@ -265,7 +265,7 @@ const CleaningPage = () => {
         <div className="container py-20">
           <SectionReveal>
             <h2 className="font-display font-bold text-3xl text-gray-900 sm:text-4xl">
-              What's Included — <span className="text-amber-700">Two Checklists</span>
+              What's Included — <span className="text-gray-900">Two Checklists</span>
             </h2>
             <p className="mt-3 max-w-2xl text-gray-700">
               Spelled out. No surprises. The same lists we hand to our crews on every job.
@@ -311,7 +311,7 @@ const CleaningPage = () => {
         <div className="container py-20">
           <SectionReveal>
             <h2 className="font-display font-bold text-3xl text-gray-900 sm:text-4xl">
-              Cleaning Services <span className="text-amber-700">We Handle</span>
+              Cleaning Services <span className="text-gray-900">We Handle</span>
             </h2>
             <p className="mt-3 max-w-2xl text-gray-700">
               Six core service lines. In-house crews. Coordinated with the rest of the make-ready when applicable.
@@ -320,7 +320,7 @@ const CleaningPage = () => {
             <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
               {SERVICES_GRID.map((s) => (
                 <article key={s.title} className="hover-card rounded-lg border border-gray-100 bg-white shadow-sm p-6">
-                  <span className="flex h-12 w-12 items-center justify-center rounded-md bg-amber-700/10 text-amber-700">
+                  <span className="flex h-12 w-12 items-center justify-center rounded-md bg-amber-700/10 text-gray-900">
                     <s.icon className="h-6 w-6" />
                   </span>
                   <h3 className="mt-5 font-display font-semibold text-xl text-gray-900">{s.title}</h3>
@@ -381,7 +381,7 @@ const CleaningPage = () => {
               </p>
             </div>
             <div>
-              <p className="text-xs font-medium uppercase tracking-[0.12em] text-amber-700">— Cleaning Standard</p>
+              <p className="text-xs font-medium uppercase tracking-[0.12em] text-gray-900">— Cleaning Standard</p>
               <h2 className="mt-3 font-display font-bold text-3xl text-gray-900 sm:text-4xl">
                 Verifiable cleaning. <span className="text-amber-700">Not "trust us."</span>
               </h2>
@@ -536,13 +536,13 @@ const CleaningPage = () => {
                   { to: "/residential", label: "Residential Services" },
                 ].map((l) => (
                   <li key={l.to}>
-                    <Link to={l.to} className="inline-flex items-center gap-2 text-amber-700 hover:underline">
+                    <Link to={l.to} className="inline-flex items-center gap-2 text-gray-900 hover:text-amber-700 hover:underline">
                       <ArrowRight className="h-4 w-4" /> {l.label}
                     </Link>
                   </li>
                 ))}
                 <li>
-                  <Link to="/contact" className="inline-flex items-center gap-2 text-amber-700 hover:underline">
+                  <Link to="/contact" className="inline-flex items-center gap-2 text-gray-900 hover:text-amber-700 hover:underline">
                     <ArrowRight className="h-4 w-4" /> Contact us
                   </Link>
                 </li>
@@ -556,7 +556,7 @@ const CleaningPage = () => {
                   { slug: "kissimmee-fl", name: "Kissimmee" },
                 ].map((c) => (
                   <li key={c.slug}>
-                    <Link to={`/maintenance-${c.slug}`} className="inline-flex items-center gap-2 text-amber-700 hover:underline">
+                    <Link to={`/maintenance-${c.slug}`} className="inline-flex items-center gap-2 text-gray-900 hover:text-amber-700 hover:underline">
                       <ArrowRight className="h-4 w-4" /> Cleaning in {c.name}, FL
                     </Link>
                   </li>

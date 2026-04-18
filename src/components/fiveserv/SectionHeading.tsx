@@ -23,7 +23,7 @@ export const SectionHeading = ({
   return (
     <div className={`max-w-3xl ${alignCls} ${className}`}>
       {eyebrow && (
-        <p className="text-amber-700 text-xs font-medium uppercase tracking-[0.12em] mb-3">
+        <p className="text-gray-900 text-xs font-medium uppercase tracking-[0.12em] mb-3">
           — {eyebrow}
         </p>
       )}

@@ -36,7 +36,7 @@ export const LeadMagnetSection = () => {
           eyebrow="Free Tools"
           subtext="No pitch. No catch. Just useful."
         >
-          Three free tools for <span className="text-amber-700">property managers</span>.
+          Three free tools for <span className="text-gray-900">property managers</span>.
         </SectionHeading>
 
         <div className="mt-16 grid gap-6 md:grid-cols-3">
@@ -45,7 +45,7 @@ export const LeadMagnetSection = () => {
               key={o.title}
               className="flex flex-col rounded-2xl border border-gray-200 bg-white p-8 shadow-sm transition-all hover:-translate-y-1 hover:border-brand-gold hover:shadow-xl"
             >
-              <span className="flex h-14 w-14 items-center justify-center rounded-full bg-amber-700/10 text-amber-700">
+              <span className="flex h-14 w-14 items-center justify-center rounded-full bg-amber-700/10 text-gray-900">
                 <o.icon className="h-7 w-7" />
               </span>
               <h3 className="mt-5 font-display text-xl font-semibold text-gray-900">{o.title}</h3>

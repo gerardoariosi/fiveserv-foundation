@@ -129,7 +129,7 @@ const BlogPage = () => {
                     <p className="mt-2 line-clamp-2 text-sm text-brand-gray-muted">
                       {post.excerpt}
                     </p>
-                    <span className="mt-4 inline-flex items-center gap-1 text-xs font-bold uppercase tracking-wide text-amber-700">
+                    <span className="mt-4 inline-flex items-center gap-1 text-xs font-bold uppercase tracking-wide text-gray-900 group-hover:text-amber-700">
                       Read More <ArrowRight className="h-3 w-3" />
                     </span>
                   </div>

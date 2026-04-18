@@ -151,11 +151,11 @@ const RenovationsPage = () => {
         <div className="container py-20">
           <SectionReveal>
             <h2 className="font-display font-bold text-3xl text-gray-900 sm:text-4xl">
-              Built for <span className="text-amber-700">Two Buyers</span>
+              Built for <span className="text-gray-900">Two Buyers</span>
             </h2>
             <div className="mt-10 grid gap-6 md:grid-cols-2">
               <article className="hover-card rounded-lg border border-gray-100 bg-white shadow-sm p-8">
-                <Building2 className="h-10 w-10 text-amber-700" />
+                <Building2 className="h-10 w-10 text-gray-900" />
                 <h3 className="mt-4 font-display font-semibold text-2xl text-gray-900">Property Management Companies</h3>
                 <p className="mt-3 text-gray-700">
                   Portfolio rollouts across multiple assets. Phased schedules to protect occupancy. Centralized
@@ -163,7 +163,7 @@ const RenovationsPage = () => {
                 </p>
               </article>
               <article className="hover-card rounded-lg border border-gray-100 bg-white shadow-sm p-8">
-                <User className="h-10 w-10 text-amber-700" />
+                <User className="h-10 w-10 text-gray-900" />
                 <h3 className="mt-4 font-display font-semibold text-2xl text-gray-900">Direct Property Owners</h3>
                 <p className="mt-3 text-gray-700">
                   Single assets, small portfolios, value-add acquisitions. We work directly with owners on full unit
@@ -180,7 +180,7 @@ const RenovationsPage = () => {
         <div className="container py-20">
           <SectionReveal>
             <h2 className="font-display font-bold text-3xl text-gray-900 sm:text-4xl">
-              Project <span className="text-amber-700">Types</span>
+              Project <span className="text-gray-900">Types</span>
             </h2>
             <p className="mt-3 max-w-2xl text-gray-700">
               From a single bathroom to a full property repositioning.
@@ -189,7 +189,7 @@ const RenovationsPage = () => {
             <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
               {PROJECT_TYPES.map((p) => (
                 <article key={p.title} className="hover-card rounded-lg border border-gray-100 bg-white shadow-sm p-6">
-                  <span className="flex h-12 w-12 items-center justify-center rounded-md bg-amber-700/10 text-amber-700">
+                  <span className="flex h-12 w-12 items-center justify-center rounded-md bg-amber-700/10 text-gray-900">
                     <p.icon className="h-6 w-6" />
                   </span>
                   <h3 className="mt-5 font-display font-semibold text-xl text-gray-900">{p.title}</h3>
@@ -206,7 +206,7 @@ const RenovationsPage = () => {
         <div className="container py-20">
           <SectionReveal>
             <h2 className="font-display font-bold text-3xl text-gray-900 sm:text-4xl">
-              Renovation <span className="text-amber-700">Transformations</span>
+              Renovation <span className="text-gray-900">Transformations</span>
             </h2>
             <p className="mt-3 max-w-2xl text-gray-700">
               Drag the handle to compare before and after.
@@ -227,7 +227,7 @@ const RenovationsPage = () => {
         <div className="container py-20">
           <SectionReveal>
             <h2 className="font-display font-bold text-3xl text-gray-900 sm:text-4xl">
-              How It Works — <span className="text-amber-700">3 Steps</span>
+              How It Works — <span className="text-gray-900">3 Steps</span>
             </h2>
             <ol className="mt-12 grid gap-6 md:grid-cols-3">
               {[ClipboardCheck, HardHat, Receipt].map((Icon, i) => {
@@ -262,14 +262,14 @@ const RenovationsPage = () => {
                   const s = SERVICES.find((x) => x.slug === slug)!;
                   return (
                     <li key={slug}>
-                      <Link to={`/${slug}`} className="inline-flex items-center gap-2 text-amber-700 hover:underline">
+                      <Link to={`/${slug}`} className="inline-flex items-center gap-2 text-gray-900 hover:text-amber-700 hover:underline">
                         <ArrowRight className="h-4 w-4" /> {s.name}
                       </Link>
                     </li>
                   );
                 })}
                 <li>
-                  <Link to="/contact" className="inline-flex items-center gap-2 text-amber-700 hover:underline">
+                  <Link to="/contact" className="inline-flex items-center gap-2 text-gray-900 hover:text-amber-700 hover:underline">
                     <ArrowRight className="h-4 w-4" /> Contact us
                   </Link>
                 </li>
@@ -288,7 +288,7 @@ const RenovationsPage = () => {
                     <li key={slug}>
                       <Link
                         to={`/renovations/${slug}`}
-                        className="inline-flex items-center gap-2 text-amber-700 hover:underline"
+                        className="inline-flex items-center gap-2 text-gray-900 hover:text-amber-700 hover:underline"
                       >
                         <ArrowRight className="h-4 w-4" /> Renovations in {name}, FL
                       </Link>

@@ -105,7 +105,7 @@ const MaintenancePage = () => {
         <div className="container py-20">
           <SectionReveal>
             <h2 className="font-display font-bold text-3xl text-gray-900 sm:text-4xl">
-              What We <span className="text-amber-700">Handle</span>
+              What We <span className="text-gray-900">Handle</span>
             </h2>
             <p className="mt-3 max-w-2xl text-gray-700">
               Every trade. One call. In-house team plus licensed contractors under our coordination.
@@ -114,7 +114,7 @@ const MaintenancePage = () => {
             <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
               {TRADES.map((t) => (
                 <article key={t.title} className="hover-card rounded-lg border border-gray-100 bg-white shadow-sm p-6">
-                  <span className="flex h-12 w-12 items-center justify-center rounded-md bg-amber-700/10 text-amber-700">
+                  <span className="flex h-12 w-12 items-center justify-center rounded-md bg-amber-700/10 text-gray-900">
                     <t.icon className="h-6 w-6" />
                   </span>
                   <h3 className="mt-5 font-display font-semibold text-xl text-gray-900" dangerouslySetInnerHTML={{ __html: t.title }} />
@@ -131,7 +131,7 @@ const MaintenancePage = () => {
         <div className="container py-20">
           <SectionReveal>
             <h2 className="font-display font-bold text-3xl text-gray-900 sm:text-4xl">
-              Response <span className="text-amber-700">Times</span>
+              Response <span className="text-gray-900">Times</span>
             </h2>
 
             <div className="mt-12 grid gap-6 md:grid-cols-3">
@@ -140,7 +140,7 @@ const MaintenancePage = () => {
                   <span className="inline-block rounded-full bg-brand-gold px-3 py-1 text-xs font-bold uppercase tracking-wider text-gray-900">
                     {r.badge}
                   </span>
-                  <r.icon className="mt-4 h-10 w-10 text-amber-700" />
+                  <r.icon className="mt-4 h-10 w-10 text-gray-900" />
                   <h3 className="mt-3 font-display font-semibold text-2xl text-gray-900">{r.title}</h3>
                   <p className="mt-2 text-gray-700">{r.body}</p>
                 </article>
@@ -192,7 +192,7 @@ const MaintenancePage = () => {
           <SectionReveal>
             <h2 className="font-display font-bold text-3xl text-gray-900 sm:text-4xl">
               Maintenance Coverage —{" "}
-              <span className="text-amber-700">18 Cities Across Central Florida</span>
+              <span className="text-gray-900">18 Cities Across Central Florida</span>
             </h2>
             <p className="mt-3 max-w-2xl text-gray-700">
               Same-day response in our Orlando metro core. Within 24 hours across the rest of the region.
@@ -238,14 +238,14 @@ const MaintenancePage = () => {
                   const s = SERVICES.find((x) => x.slug === slug)!;
                   return (
                     <li key={slug}>
-                      <Link to={`/${slug}`} className="inline-flex items-center gap-2 text-amber-700 hover:underline">
+                      <Link to={`/${slug}`} className="inline-flex items-center gap-2 text-gray-900 hover:text-amber-700 hover:underline">
                         <ArrowRight className="h-4 w-4" /> {s.name}
                       </Link>
                     </li>
                   );
                 })}
                 <li>
-                  <Link to="/contact" className="inline-flex items-center gap-2 text-amber-700 hover:underline">
+                  <Link to="/contact" className="inline-flex items-center gap-2 text-gray-900 hover:text-amber-700 hover:underline">
                     <ArrowRight className="h-4 w-4" /> Contact us
                   </Link>
                 </li>
@@ -258,7 +258,7 @@ const MaintenancePage = () => {
                   const name = slug.replace("-fl", "").split("-").map((w) => w[0].toUpperCase() + w.slice(1)).join(" ");
                   return (
                     <li key={slug}>
-                      <Link to={`/maintenance/${slug}`} className="inline-flex items-center gap-2 text-amber-700 hover:underline">
+                      <Link to={`/maintenance/${slug}`} className="inline-flex items-center gap-2 text-gray-900 hover:text-amber-700 hover:underline">
                         <ArrowRight className="h-4 w-4" /> Maintenance in {name}, FL
                       </Link>
                     </li>

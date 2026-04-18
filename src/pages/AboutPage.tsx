@@ -81,7 +81,7 @@ const AboutPage = () => {
         <div className="container py-20">
           <SectionReveal className="grid gap-10 lg:grid-cols-[1fr,2fr] lg:items-start">
             <h2 className="font-display font-bold text-3xl text-gray-900 sm:text-4xl">
-              Our <span className="text-amber-700">Story</span>
+              Our <span className="text-gray-900">Story</span>
             </h2>
             <div className="space-y-4 text-gray-700">
               <p>
@@ -109,7 +109,7 @@ const AboutPage = () => {
         <div className="container py-20">
           <SectionReveal>
             <h2 className="font-display font-bold text-3xl text-gray-900 sm:text-4xl">
-              Track <span className="text-amber-700">Record</span>
+              Track <span className="text-gray-900">Record</span>
             </h2>
             <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
               {TRACK_RECORD.map((s) => (
@@ -136,7 +136,7 @@ const AboutPage = () => {
         <div className="container py-20">
           <SectionReveal>
             <h2 className="font-display font-bold text-3xl text-gray-900 sm:text-4xl">
-              The <span className="text-amber-700">Team</span>
+              The <span className="text-gray-900">Team</span>
             </h2>
             <p className="mt-3 max-w-2xl text-gray-700">
               Five family members. Real people behind every decision, every quote, every guarantee.
@@ -161,7 +161,7 @@ const AboutPage = () => {
                   </div>
                   <div>
                     <h3 className="font-display font-semibold text-xl text-gray-900">{member.name}</h3>
-                    <p className="mt-1 text-xs font-medium uppercase tracking-[0.12em] text-amber-700">— {member.role}</p>
+                    <p className="mt-1 text-xs font-medium uppercase tracking-[0.12em] text-gray-900">— {member.role}</p>
                     <p className="mt-3 text-sm text-gray-700">
                       {member.name} brings hands-on expertise to the {SITE.brand} team, working directly with property
                       managers across Central Florida. Personally accountable for every job that carries our family name.
@@ -206,7 +206,7 @@ const AboutPage = () => {
         <div className="container py-20">
           <SectionReveal>
             <h2 className="font-display font-bold text-3xl text-gray-900 sm:text-4xl">
-              Licenses & <span className="text-amber-700">Insurance</span>
+              Licenses & <span className="text-gray-900">Insurance</span>
             </h2>
             <p className="mt-3 max-w-2xl text-gray-700">
               Fully licensed and insured to operate across Florida. Documentation available on request for
@@ -226,7 +226,7 @@ const AboutPage = () => {
                     key={item.label}
                     className="rounded-lg border border-gray-100 bg-white shadow-sm p-6"
                   >
-                    <span className="flex h-12 w-12 items-center justify-center rounded-md bg-amber-700/10 text-amber-700">
+                    <span className="flex h-12 w-12 items-center justify-center rounded-md bg-amber-700/10 text-gray-900">
                       <Icon className="h-6 w-6" />
                     </span>
                     <h3 className="mt-5 font-display text-lg text-gray-900">{item.label}</h3>

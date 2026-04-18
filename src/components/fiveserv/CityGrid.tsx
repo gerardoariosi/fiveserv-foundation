@@ -51,7 +51,7 @@ export const CityGrid = () => {
           eyebrow="Service Areas"
           subtext="From Orlando to the Space Coast — we cover it all"
         >
-          Serving 18 Cities Across <span className="text-amber-700">Central Florida</span>
+          Serving 18 Cities Across <span className="text-gray-900">Central Florida</span>
         </SectionHeading>
 
         <div className="mt-12">
@@ -78,7 +78,7 @@ export const CityGrid = () => {
                 <h3 className="mt-4 font-display text-lg font-semibold text-gray-900 group-hover:text-amber-700">
                   {city.name}, {city.state}
                 </h3>
-                <p className="mt-1 text-sm font-semibold text-amber-700">
+                <p className="mt-1 text-sm font-semibold text-gray-700">
                   Within {city.responseTime}
                 </p>
               </Link>

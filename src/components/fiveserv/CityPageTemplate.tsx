@@ -76,7 +76,7 @@ export const CityPageTemplate = ({ city, service, faqs = [] }: CityPageData) => 
       <section className="bg-gray-50">
         <div className="container py-24 lg:py-32">
           <SectionHeading eyebrow="Coverage">
-            ZIP Codes We Serve <span className="text-amber-700">in {city.name}</span>
+            ZIP Codes We Serve <span className="text-gray-900">in {city.name}</span>
           </SectionHeading>
           <div className="mt-12 flex flex-wrap justify-center gap-2">
             {city.zips.map((z) => (
