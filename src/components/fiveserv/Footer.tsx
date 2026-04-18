@@ -1,7 +1,6 @@
 import { Link } from "react-router-dom";
 import { Instagram, Facebook, Linkedin, Phone, Mail, MapPin, Clock } from "lucide-react";
 import { SITE, SERVICES, CITIES, COMING_SOON_CITIES } from "@/lib/site-config";
-import BrandName from "@/components/fiveserv/BrandName";
 import Logo from "@/components/fiveserv/Logo";
 
 export const Footer = () => {

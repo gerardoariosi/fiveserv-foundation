@@ -2,7 +2,6 @@ import { useEffect, useState } from "react";
 import { Link, NavLink } from "react-router-dom";
 import { Menu, Phone, X } from "lucide-react";
 import { SITE } from "@/lib/site-config";
-import BrandName from "@/components/fiveserv/BrandName";
 import Logo from "@/components/fiveserv/Logo";
 
 const NAV = [
