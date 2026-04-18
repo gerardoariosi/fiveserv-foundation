@@ -14,6 +14,7 @@ import StatsBar from "@/components/fiveserv/StatsBar";
 import FamilyStory from "@/components/fiveserv/FamilyStory";
 import TestimonialCard from "@/components/fiveserv/TestimonialCard";
 import CityGrid from "@/components/fiveserv/CityGrid";
+import InteractiveMap from "@/components/fiveserv/InteractiveMap";
 import FaqAccordion from "@/components/fiveserv/FaqAccordion";
 import LeadMagnetSection from "@/components/fiveserv/LeadMagnetSection";
 import ContactCTA from "@/components/fiveserv/ContactCTA";
@@ -153,8 +154,20 @@ const Index = () => {
       {/* Element 10: Testimonials (static, not carousel) */}
       <TestimonialsSection />
 
-      {/* Element 11: Cities + map */}
-      <CityGrid />
+      {/* Element 11: Cities + interactive map */}
+      <section className="bg-brand-black">
+        <div className="container py-20">
+          <h2 className="font-display text-3xl text-brand-white sm:text-4xl">
+            18 Cities Across <span className="text-brand-gold">Central Florida</span>
+          </h2>
+          <p className="mt-3 max-w-2xl text-brand-white/80">
+            Hover any city for response time. Tampa Bay coming soon.
+          </p>
+          <div className="mt-10">
+            <InteractiveMap />
+          </div>
+        </div>
+      </section>
 
       {/* Element 12: FAQ — 20 questions, all answers in HTML, FAQPage JSON-LD via SchemaOrg above */}
       <FaqAccordion faqs={HOMEPAGE_FAQS} emitSchema={false} />

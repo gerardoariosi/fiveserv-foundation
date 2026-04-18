@@ -3,6 +3,7 @@ import { MapPin, Clock } from "lucide-react";
 import Seo from "@/lib/Seo";
 import SchemaOrg from "@/lib/SchemaOrg";
 import { SITE, CITIES, COMING_SOON_CITIES } from "@/lib/site-config";
+import InteractiveMap from "@/components/fiveserv/InteractiveMap";
 
 type Props = { canonicalPath?: "/cities" | "/service-areas" };
 
@@ -28,6 +29,12 @@ const CitiesIndexPage = ({ canonicalPath = "/cities" }: Props) => (
         <p className="mt-6 max-w-2xl text-brand-white/80">
           Same-day or 24-hour response across Orlando metro, Polk, Volusia, Flagler, and Brevard counties. Tampa Bay launching soon.
         </p>
+      </div>
+    </section>
+
+    <section className="bg-brand-black pb-12">
+      <div className="container">
+        <InteractiveMap />
       </div>
     </section>
 
