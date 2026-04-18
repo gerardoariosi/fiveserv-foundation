@@ -10,7 +10,7 @@ type Props = {
 
 /**
  * SectionHeading — Servpro-style: gold eyebrow + bold gray-900 H2 (text-4xl/5xl) + optional gray subtext.
- * Defaults to centered. Pass `<span className="text-amber-700">…</span>` inside children for accents.
+ * Defaults to centered. Pass `<span className="text-gray-900">…</span>` inside children for accents.
  */
 export const SectionHeading = ({
   eyebrow,

@@ -171,12 +171,12 @@ const MaintenanceCityPage = ({ citySlug: propSlug }: MaintenanceCityPageProps = 
                     to={`/${s.slug}`}
                     className="hover-card group flex flex-col rounded-lg border border-gray-100 bg-white shadow-sm p-6"
                   >
-                    <span className="flex h-12 w-12 items-center justify-center rounded-md bg-amber-700/10 text-gray-900">
+                    <span className="flex h-12 w-12 items-center justify-center rounded-md bg-brand-gold/15 text-gray-900">
                       <Icon className="h-6 w-6" />
                     </span>
                     <h3 className="mt-5 font-display font-semibold text-xl text-gray-900">{s.name}</h3>
                     <p className="mt-2 flex-1 text-sm text-gray-700">{s.short}</p>
-                    <span className="mt-4 inline-flex items-center gap-2 text-sm font-bold text-gray-900 group-hover:text-amber-700 group-hover:underline">
+                    <span className="mt-4 inline-flex items-center gap-2 text-sm font-bold text-gray-900 group-hover:text-gray-900 group-hover:underline">
                       {s.cta} <ArrowRight className="h-4 w-4" />
                     </span>
                   </Link>
@@ -191,7 +191,7 @@ const MaintenanceCityPage = ({ citySlug: propSlug }: MaintenanceCityPageProps = 
       <section className="bg-brand-gold">
         <div className="container py-14">
           <SectionReveal className="grid gap-6 lg:grid-cols-[auto,1fr,auto] lg:items-center">
-            <div className="flex h-16 w-16 items-center justify-center rounded-full bg-brand-black text-amber-700">
+            <div className="flex h-16 w-16 items-center justify-center rounded-full bg-brand-black text-brand-gold">
               <Clock className="h-8 w-8" />
             </div>
             <div>
@@ -204,7 +204,7 @@ const MaintenanceCityPage = ({ citySlug: propSlug }: MaintenanceCityPageProps = 
             </div>
             <a
               href={`tel:${SITE.phone}`}
-              className="flex items-center justify-center gap-2 rounded-md bg-brand-black px-6 py-3 text-sm font-bold uppercase tracking-wide text-amber-700 whitespace-nowrap hover:bg-brand-black/90"
+              className="flex items-center justify-center gap-2 rounded-md bg-brand-black px-6 py-3 text-sm font-bold uppercase tracking-wide text-brand-gold whitespace-nowrap hover:bg-brand-black/90"
             >
               <Phone className="h-4 w-4" /> Call {SITE.phone}
             </a>
@@ -223,7 +223,7 @@ const MaintenanceCityPage = ({ citySlug: propSlug }: MaintenanceCityPageProps = 
               <ul className="mt-5 grid gap-2">
                 {editorial.zones.map((z) => (
                   <li key={z} className="flex items-center gap-3 text-gray-700">
-                    <CheckCircle2 className="h-5 w-5 shrink-0 text-amber-700" />
+                    <CheckCircle2 className="h-5 w-5 shrink-0 text-gray-900" />
                     <span>{z}</span>
                   </li>
                 ))}
@@ -237,7 +237,7 @@ const MaintenanceCityPage = ({ citySlug: propSlug }: MaintenanceCityPageProps = 
                 {editorial.zips.map((z) => (
                   <span
                     key={z}
-                    className="inline-flex items-center gap-2 rounded-md border border-gray-100 bg-white shadow-sm px-3 py-1.5 text-sm font-bold text-gray-900 hover:text-amber-700"
+                    className="inline-flex items-center gap-2 rounded-md border border-gray-100 bg-white shadow-sm px-3 py-1.5 text-sm font-bold text-gray-900 hover:text-gray-900"
                   >
                     <MapPin className="h-3.5 w-3.5" /> {z}
                   </span>

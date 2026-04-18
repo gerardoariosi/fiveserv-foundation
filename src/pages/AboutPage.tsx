@@ -117,7 +117,7 @@ const AboutPage = () => {
                   key={s.label}
                   className="rounded-lg border-2 border-brand-gold bg-brand-gold/5 p-8 text-center"
                 >
-                  <div className="font-display text-5xl text-amber-700 sm:text-6xl">
+                  <div className="font-display text-5xl text-gray-900 sm:text-6xl">
                     {s.value}
                     <span>{s.suffix}</span>
                   </div>
@@ -184,7 +184,7 @@ const AboutPage = () => {
             <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-5">
               {PROMISE.map((p) => (
                 <div key={p.label} className="rounded-lg border-2 border-brand-black bg-brand-black p-6 text-center">
-                  <div className="font-display text-3xl text-amber-700">{p.label}</div>
+                  <div className="font-display text-3xl text-gray-900">{p.label}</div>
                   <p className="mt-2 text-xs font-bold uppercase tracking-wider text-gray-900">{p.sub}</p>
                 </div>
               ))}
@@ -226,7 +226,7 @@ const AboutPage = () => {
                     key={item.label}
                     className="rounded-lg border border-gray-100 bg-white shadow-sm p-6"
                   >
-                    <span className="flex h-12 w-12 items-center justify-center rounded-md bg-amber-700/10 text-gray-900">
+                    <span className="flex h-12 w-12 items-center justify-center rounded-md bg-brand-gold/15 text-gray-900">
                       <Icon className="h-6 w-6" />
                     </span>
                     <h3 className="mt-5 font-display text-lg text-gray-900">{item.label}</h3>
@@ -251,7 +251,7 @@ const AboutPage = () => {
             </p>
             <Link
               to="/contact"
-              className="mt-8 inline-flex items-center gap-2 rounded-md bg-brand-black px-8 py-4 text-sm font-bold uppercase tracking-wide text-amber-700 hover:bg-brand-black/90"
+              className="mt-8 inline-flex items-center gap-2 rounded-md bg-brand-black px-8 py-4 text-sm font-bold uppercase tracking-wide text-brand-gold hover:bg-brand-black/90"
             >
               Get a Free Quote <ArrowRight className="h-4 w-4" />
             </Link>

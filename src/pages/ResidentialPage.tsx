@@ -138,8 +138,8 @@ const ResidentialPage = () => {
             <div>
               <p className="text-xs font-bold uppercase tracking-wider text-gray-900">Built by a Family</p>
               <h2 className="mt-3 font-display font-bold text-3xl text-gray-900 sm:text-4xl">
-                A <span className="text-amber-700">Venezuelan-American family</span> with{" "}
-                <span className="text-amber-700">15+ years</span> of combined experience.
+                A <span className="text-gray-900">Venezuelan-American family</span> with{" "}
+                <span className="text-gray-900">15+ years</span> of combined experience.
               </h2>
               <p className="mt-5 text-gray-700">
                 Five family members. One name on every invoice. We treat your home the way we'd treat our mother's —
@@ -151,7 +151,7 @@ const ResidentialPage = () => {
               </p>
               <Link
                 to="/about"
-                className="mt-6 inline-flex items-center gap-2 font-bold text-gray-900 hover:text-amber-700 hover:underline"
+                className="mt-6 inline-flex items-center gap-2 font-bold text-gray-900 hover:text-gray-900 hover:underline"
               >
                 Meet the family <ArrowRight className="h-4 w-4" />
               </Link>
@@ -174,7 +174,7 @@ const ResidentialPage = () => {
             <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
               {SERVICES_GRID.map((s) => (
                 <article key={s.title} className="hover-card rounded-lg border border-gray-100 bg-white shadow-sm p-6">
-                  <span className="flex h-12 w-12 items-center justify-center rounded-md bg-amber-700/10 text-gray-900">
+                  <span className="flex h-12 w-12 items-center justify-center rounded-md bg-brand-gold/15 text-gray-900">
                     <s.icon className="h-6 w-6" />
                   </span>
                   <h3 className="mt-5 font-display font-semibold text-xl text-gray-900">{s.title}</h3>
@@ -199,8 +199,8 @@ const ResidentialPage = () => {
               {STEPS.map((step, i) => (
                 <li key={step.name} className="hover-card rounded-lg border border-gray-100 bg-white shadow-sm p-6">
                   <div className="flex items-center gap-4">
-                    <div className="font-display text-5xl leading-none text-amber-700">{i + 1}</div>
-                    <step.icon className="h-8 w-8 text-amber-700/80" />
+                    <div className="font-display text-5xl leading-none text-gray-900">{i + 1}</div>
+                    <step.icon className="h-8 w-8 text-gray-700" />
                   </div>
                   <h3 className="mt-4 font-display font-semibold text-xl text-gray-900">{step.name}</h3>
                   <p className="mt-2 text-gray-700">{step.text}</p>
@@ -231,12 +231,12 @@ const ResidentialPage = () => {
                   className="hover-card group flex items-center justify-between rounded-md border border-gray-100 bg-white shadow-sm px-4 py-3"
                 >
                   <span className="flex items-center gap-3">
-                    <MapPin className="h-4 w-4 text-amber-700" />
+                    <MapPin className="h-4 w-4 text-gray-900" />
                     <span className="font-semibold text-gray-900">
                       Home Repairs {c.name}, {c.state}
                     </span>
                   </span>
-                  <span className="text-xs font-bold uppercase tracking-wide text-amber-700/80">
+                  <span className="text-xs font-bold uppercase tracking-wide text-gray-700">
                     {c.responseTime}
                   </span>
                 </Link>
@@ -259,14 +259,14 @@ const ResidentialPage = () => {
                 const s = SERVICES.find((x) => x.slug === slug)!;
                 return (
                   <li key={slug}>
-                    <Link to={`/${slug}`} className="inline-flex items-center gap-2 text-gray-900 hover:text-amber-700 hover:underline">
+                    <Link to={`/${slug}`} className="inline-flex items-center gap-2 text-gray-900 hover:text-gray-900 hover:underline">
                       <ArrowRight className="h-4 w-4" /> {s.name}
                     </Link>
                   </li>
                 );
               })}
               <li>
-                <Link to="/contact" className="inline-flex items-center gap-2 text-gray-900 hover:text-amber-700 hover:underline">
+                <Link to="/contact" className="inline-flex items-center gap-2 text-gray-900 hover:text-gray-900 hover:underline">
                   <ArrowRight className="h-4 w-4" /> Contact us
                 </Link>
               </li>

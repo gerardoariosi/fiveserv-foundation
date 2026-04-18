@@ -142,7 +142,7 @@ const MakeReadyPage = () => {
             <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
               {INCLUDED.map((it) => (
                 <article key={it.title} className="hover-card flex items-start gap-4 rounded-lg border border-gray-100 bg-white shadow-sm p-5">
-                  <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-md bg-amber-700/10 text-gray-900">
+                  <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-md bg-brand-gold/15 text-gray-900">
                     <it.icon className="h-5 w-5" />
                   </span>
                   <h3 className="font-display text-base text-gray-900">{it.title}</h3>
@@ -174,7 +174,7 @@ const MakeReadyPage = () => {
         <div className="container py-20">
           <SectionReveal className="grid gap-12 lg:grid-cols-2 lg:items-center">
             <div>
-              <span className="inline-flex items-center gap-2 rounded-full border-2 border-brand-gold px-4 py-1.5 text-xs font-bold uppercase tracking-wider text-amber-700">
+              <span className="inline-flex items-center gap-2 rounded-full border-2 border-brand-gold px-4 py-1.5 text-xs font-bold uppercase tracking-wider text-gray-900">
                 <Award className="h-4 w-4" /> Written Guarantee
               </span>
               <h2 className="mt-4 font-display text-3xl text-gray-900 sm:text-5xl">
@@ -222,7 +222,7 @@ const MakeReadyPage = () => {
             <ol className="mt-12 grid gap-6 md:grid-cols-3">
               {STEPS.map((step, i) => (
                 <li key={step.name} className="hover-card relative rounded-lg border border-gray-100 bg-white shadow-sm p-6">
-                  <div className="font-display text-6xl leading-none text-amber-700">{i + 1}</div>
+                  <div className="font-display text-6xl leading-none text-gray-900">{i + 1}</div>
                   <h3 className="mt-4 font-display font-semibold text-xl text-gray-900">{step.name}</h3>
                   <p className="mt-2 text-gray-700">{step.text}</p>
                 </li>
@@ -249,14 +249,14 @@ const MakeReadyPage = () => {
                   const s = SERVICES.find((x) => x.slug === slug)!;
                   return (
                     <li key={slug}>
-                      <Link to={`/${slug}`} className="inline-flex items-center gap-2 text-gray-900 hover:text-amber-700 hover:underline">
+                      <Link to={`/${slug}`} className="inline-flex items-center gap-2 text-gray-900 hover:text-gray-900 hover:underline">
                         <ArrowRight className="h-4 w-4" /> {s.name}
                       </Link>
                     </li>
                   );
                 })}
                 <li>
-                  <Link to="/contact" className="inline-flex items-center gap-2 text-gray-900 hover:text-amber-700 hover:underline">
+                  <Link to="/contact" className="inline-flex items-center gap-2 text-gray-900 hover:text-gray-900 hover:underline">
                     <ArrowRight className="h-4 w-4" /> Contact us
                   </Link>
                 </li>
@@ -269,7 +269,7 @@ const MakeReadyPage = () => {
                   const name = slug.replace("-fl", "").split("-").map((w) => w[0].toUpperCase() + w.slice(1)).join(" ");
                   return (
                     <li key={slug}>
-                      <Link to={`/make-ready/${slug}`} className="inline-flex items-center gap-2 text-gray-900 hover:text-amber-700 hover:underline">
+                      <Link to={`/make-ready/${slug}`} className="inline-flex items-center gap-2 text-gray-900 hover:text-gray-900 hover:underline">
                         <ArrowRight className="h-4 w-4" /> Make-Ready {name}, FL
                       </Link>
                     </li>

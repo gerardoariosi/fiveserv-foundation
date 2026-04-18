@@ -43,11 +43,11 @@ export const BlogArticleLayout = ({ post, children }: Props) => {
         <div className="container max-w-3xl">
           <Link
             to="/blog"
-            className="text-xs font-bold uppercase tracking-widest text-amber-700 hover:underline"
+            className="text-xs font-bold uppercase tracking-widest text-gray-900 hover:underline"
           >
             ← Back to Blog
           </Link>
-          <p className="mt-6 inline-block rounded bg-brand-gold/15 px-3 py-1 text-xs font-bold uppercase tracking-widest text-amber-700">
+          <p className="mt-6 inline-block rounded bg-brand-gold/15 px-3 py-1 text-xs font-bold uppercase tracking-widest text-gray-900">
             {post.category.replace(/-/g, " ")}
           </p>
           <h1 className="mt-4 font-display text-4xl leading-tight text-brand-white sm:text-5xl">
@@ -75,7 +75,7 @@ export const BlogArticleLayout = ({ post, children }: Props) => {
       <section className="bg-white pt-12">
         <div className="container max-w-3xl">
           <div className="rounded-xl border-l-4 border-brand-gold bg-gray-50 p-6 shadow-sm">
-            <p className="text-xs font-bold uppercase tracking-widest text-amber-700">TL;DR</p>
+            <p className="text-xs font-bold uppercase tracking-widest text-gray-900">TL;DR</p>
             <p className="mt-2 text-base leading-relaxed text-brand-black">{post.tldr}</p>
           </div>
         </div>

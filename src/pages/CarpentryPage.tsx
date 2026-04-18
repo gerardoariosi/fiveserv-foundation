@@ -177,7 +177,7 @@ const CarpentryPage = () => {
                     "One invoice per property",
                   ].map((t) => (
                     <li key={t} className="flex items-start gap-3">
-                      <CheckCircle2 className="mt-0.5 h-5 w-5 flex-shrink-0 text-amber-700" />
+                      <CheckCircle2 className="mt-0.5 h-5 w-5 flex-shrink-0 text-gray-900" />
                       <span>{t}</span>
                     </li>
                   ))}
@@ -207,7 +207,7 @@ const CarpentryPage = () => {
                     "Deck and fence repair",
                   ].map((t) => (
                     <li key={t} className="flex items-start gap-3">
-                      <CheckCircle2 className="mt-0.5 h-5 w-5 flex-shrink-0 text-amber-700" />
+                      <CheckCircle2 className="mt-0.5 h-5 w-5 flex-shrink-0 text-gray-900" />
                       <span>{t}</span>
                     </li>
                   ))}
@@ -238,7 +238,7 @@ const CarpentryPage = () => {
             <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
               {SERVICES_GRID.map((s) => (
                 <article key={s.title} className="hover-card rounded-lg border border-gray-100 bg-white shadow-sm p-6">
-                  <span className="flex h-12 w-12 items-center justify-center rounded-md bg-amber-700/10 text-gray-900">
+                  <span className="flex h-12 w-12 items-center justify-center rounded-md bg-brand-gold/15 text-gray-900">
                     <s.icon className="h-6 w-6" />
                   </span>
                   <h3 className="mt-5 font-display font-semibold text-xl text-gray-900">{s.title}</h3>
@@ -256,7 +256,7 @@ const CarpentryPage = () => {
           <SectionReveal>
             <div className="rounded-xl border-2 border-brand-gold bg-white shadow-md p-8 sm:p-12">
               <div className="grid gap-8 lg:grid-cols-[auto,1fr,auto] lg:items-center">
-                <div className="flex h-16 w-16 items-center justify-center rounded-full bg-brand-gold/15 text-amber-700">
+                <div className="flex h-16 w-16 items-center justify-center rounded-full bg-brand-gold/15 text-gray-900">
                   <Key className="h-8 w-8" />
                 </div>
                 <div>
@@ -265,7 +265,7 @@ const CarpentryPage = () => {
                   </span>
                   <h2 className="mt-3 font-display font-bold text-3xl text-gray-900 sm:text-4xl">
                     Damaged doors, broken cabinets, missing trim —{" "}
-                    <span className="text-amber-700">caught on every assessment</span>
+                    <span className="text-gray-900">caught on every assessment</span>
                   </h2>
                   <p className="mt-3 text-gray-700">
                     These are the most common punch-list items on a unit turn, and the ones most often missed by
@@ -290,9 +290,9 @@ const CarpentryPage = () => {
         <div className="container py-20">
           <SectionReveal className="grid gap-10 lg:grid-cols-2 lg:items-center">
             <div className="rounded-xl border border-gray-100 bg-white shadow-sm p-8">
-              <Wrench className="h-12 w-12 text-amber-700" />
+              <Wrench className="h-12 w-12 text-gray-900" />
               <p className="mt-6 font-display font-semibold text-2xl text-gray-900">
-                <span className="text-amber-700">Invisible repairs</span> that pass inspection
+                <span className="text-gray-900">Invisible repairs</span> that pass inspection
               </p>
               <p className="mt-3 text-gray-700">
                 Same wood species. Same paint color. Same hardware style. Same trim profile. Carpentry that
@@ -303,7 +303,7 @@ const CarpentryPage = () => {
               <p className="text-xs font-medium uppercase tracking-[0.12em] text-gray-900">— Quality Spec</p>
               <h2 className="mt-3 font-display font-bold text-3xl text-gray-900 sm:text-4xl">
                 Carpentry that{" "}
-                <span className="text-amber-700">matches the rest of the unit</span>
+                <span className="text-gray-900">matches the rest of the unit</span>
               </h2>
               <p className="mt-4 text-gray-700">
                 A door that doesn't match the others on the floor, trim with a different profile, hardware in the
@@ -312,19 +312,19 @@ const CarpentryPage = () => {
               </p>
               <ul className="mt-6 space-y-2 text-gray-700">
                 <li className="flex items-start gap-3">
-                  <ShieldCheck className="mt-0.5 h-5 w-5 flex-shrink-0 text-amber-700" />
+                  <ShieldCheck className="mt-0.5 h-5 w-5 flex-shrink-0 text-gray-900" />
                   Wood species and grain matched
                 </li>
                 <li className="flex items-start gap-3">
-                  <ShieldCheck className="mt-0.5 h-5 w-5 flex-shrink-0 text-amber-700" />
+                  <ShieldCheck className="mt-0.5 h-5 w-5 flex-shrink-0 text-gray-900" />
                   Paint color matched and recorded for portfolio
                 </li>
                 <li className="flex items-start gap-3">
-                  <ShieldCheck className="mt-0.5 h-5 w-5 flex-shrink-0 text-amber-700" />
+                  <ShieldCheck className="mt-0.5 h-5 w-5 flex-shrink-0 text-gray-900" />
                   Hardware finish matched (brushed nickel, bronze, brass, matte black)
                 </li>
                 <li className="flex items-start gap-3">
-                  <ShieldCheck className="mt-0.5 h-5 w-5 flex-shrink-0 text-amber-700" />
+                  <ShieldCheck className="mt-0.5 h-5 w-5 flex-shrink-0 text-gray-900" />
                   Trim profiles matched — no mixed casing or baseboard
                 </li>
               </ul>
@@ -355,12 +355,12 @@ const CarpentryPage = () => {
                   className="hover-card group flex items-center justify-between rounded-md border border-gray-100 bg-white shadow-sm px-4 py-3"
                 >
                   <span className="flex items-center gap-3">
-                    <MapPin className="h-4 w-4 text-amber-700" />
+                    <MapPin className="h-4 w-4 text-gray-900" />
                     <span className="font-semibold text-gray-900">
                       Carpentry {c.name}, {c.state}
                     </span>
                   </span>
-                  <span className="text-xs font-bold uppercase tracking-wide text-amber-700/80">
+                  <span className="text-xs font-bold uppercase tracking-wide text-gray-700">
                     {c.responseTime}
                   </span>
                 </Link>
@@ -388,13 +388,13 @@ const CarpentryPage = () => {
                   { to: "/residential", label: "Residential Services" },
                 ].map((l) => (
                   <li key={l.to}>
-                    <Link to={l.to} className="inline-flex items-center gap-2 text-gray-900 hover:text-amber-700 hover:underline">
+                    <Link to={l.to} className="inline-flex items-center gap-2 text-gray-900 hover:text-gray-900 hover:underline">
                       <ArrowRight className="h-4 w-4" /> {l.label}
                     </Link>
                   </li>
                 ))}
                 <li>
-                  <Link to="/contact" className="inline-flex items-center gap-2 text-gray-900 hover:text-amber-700 hover:underline">
+                  <Link to="/contact" className="inline-flex items-center gap-2 text-gray-900 hover:text-gray-900 hover:underline">
                     <ArrowRight className="h-4 w-4" /> Contact us
                   </Link>
                 </li>
@@ -408,7 +408,7 @@ const CarpentryPage = () => {
                   { slug: "kissimmee-fl", name: "Kissimmee" },
                 ].map((c) => (
                   <li key={c.slug}>
-                    <Link to={`/maintenance-${c.slug}`} className="inline-flex items-center gap-2 text-gray-900 hover:text-amber-700 hover:underline">
+                    <Link to={`/maintenance-${c.slug}`} className="inline-flex items-center gap-2 text-gray-900 hover:text-gray-900 hover:underline">
                       <ArrowRight className="h-4 w-4" /> Carpentry in {c.name}, FL
                     </Link>
                   </li>
@@ -439,14 +439,14 @@ const CarpentryPage = () => {
                 </Link>
                 <Link
                   to="/residential"
-                  className="inline-flex items-center justify-center gap-2 rounded-md border-2 border-brand-gold px-6 py-3 text-sm font-bold uppercase tracking-wide text-amber-700 hover:bg-brand-gold hover:text-gray-900 transition-colors"
+                  className="inline-flex items-center justify-center gap-2 rounded-md border-2 border-brand-gold px-6 py-3 text-sm font-bold uppercase tracking-wide text-gray-900 hover:bg-brand-gold hover:text-gray-900 transition-colors"
                 >
                   <Home className="h-4 w-4" /> Get a Home Carpentry Quote
                 </Link>
               </div>
               <p className="mt-6 text-sm text-gray-400">
                 Or call us directly:{" "}
-                <a href={`tel:${SITE.phone}`} className="font-bold text-amber-700 hover:underline">
+                <a href={`tel:${SITE.phone}`} className="font-bold text-gray-900 hover:underline">
                   {SITE.phone}
                 </a>
               </p>

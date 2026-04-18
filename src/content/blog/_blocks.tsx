@@ -49,7 +49,7 @@ export const renderBlocks = (blocks: Block[]) => (
                 <thead className="bg-brand-gray/40">
                   <tr>
                     {b.headers.map((h) => (
-                      <th key={h} className="p-3 text-left text-amber-700">{h}</th>
+                      <th key={h} className="p-3 text-left text-gray-900">{h}</th>
                     ))}
                   </tr>
                 </thead>
@@ -77,16 +77,16 @@ export const renderBlocks = (blocks: Block[]) => (
 /** Common internal-link snippets used at end of every cluster article */
 export const InternalLinkCluster = () => (
   <p>
-    Explore <Link to="/make-ready" className="text-amber-700 underline">make-ready</Link>,{" "}
-    <Link to="/maintenance" className="text-amber-700 underline">maintenance</Link>,{" "}
-    <Link to="/renovations" className="text-amber-700 underline">CapEx and renovations</Link>, and{" "}
-    <Link to="/residential" className="text-amber-700 underline">residential services</Link>.
+    Explore <Link to="/make-ready" className="text-gray-900 underline">make-ready</Link>,{" "}
+    <Link to="/maintenance" className="text-gray-900 underline">maintenance</Link>,{" "}
+    <Link to="/renovations" className="text-gray-900 underline">CapEx and renovations</Link>, and{" "}
+    <Link to="/residential" className="text-gray-900 underline">residential services</Link>.
     Active across all{" "}
-    <Link to="/cities" className="text-amber-700 underline">Central Florida cities</Link>{" "}
+    <Link to="/cities" className="text-gray-900 underline">Central Florida cities</Link>{" "}
     including{" "}
-    <Link to="/maintenance-orlando-fl" className="text-amber-700 underline">Orlando</Link> and{" "}
-    <Link to="/maintenance-kissimmee-fl" className="text-amber-700 underline">Kissimmee</Link>.
+    <Link to="/maintenance-orlando-fl" className="text-gray-900 underline">Orlando</Link> and{" "}
+    <Link to="/maintenance-kissimmee-fl" className="text-gray-900 underline">Kissimmee</Link>.
     Get a free quote at our{" "}
-    <Link to="/contact" className="text-amber-700 underline">contact page</Link>.
+    <Link to="/contact" className="text-gray-900 underline">contact page</Link>.
   </p>
 );
