@@ -63,7 +63,7 @@ export const HeroSection = ({
   }, [activeVideo]);
 
   return (
-    <section className="relative isolate w-full min-h-[600px] h-screen overflow-hidden bg-brand-black">
+    <section className="relative isolate w-full min-h-screen overflow-hidden bg-brand-black">
       <video
         ref={videoARef}
         autoPlay
@@ -72,7 +72,7 @@ export const HeroSection = ({
         preload="auto"
         poster={posterSrc}
         className="absolute inset-0 w-full h-full object-cover object-center transition-opacity duration-1000 ease-in-out"
-        style={{ objectFit: "cover", opacity: activeVideo === "A" ? 1 : 0 }}
+        style={{ opacity: activeVideo === "A" ? 1 : 0 }}
       >
         <source src={videoSrc} type="video/mp4" />
       </video>
@@ -82,7 +82,7 @@ export const HeroSection = ({
         playsInline
         preload="auto"
         className="absolute inset-0 w-full h-full object-cover object-center transition-opacity duration-1000 ease-in-out"
-        style={{ objectFit: "cover", opacity: activeVideo === "B" ? 1 : 0 }}
+        style={{ opacity: activeVideo === "B" ? 1 : 0 }}
       >
         <source src={videoSrc} type="video/mp4" />
       </video>
