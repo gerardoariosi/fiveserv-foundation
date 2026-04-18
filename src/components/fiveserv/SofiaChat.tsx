@@ -435,7 +435,9 @@ const SofiaChat = () => {
     setLang(initialLang);
     setStep("opening");
     setData({ userType: null });
-    setMessages([mkSofia(t[initialLang].opening, { quickReplies: [...t[initialLang].openingButtons] })]);
+    setMessages([]);
+    setTyping(false);
+    // Live sequence effect will replay because messages.length === 0 and open === true
   };
 
   const handleClose = () => {
