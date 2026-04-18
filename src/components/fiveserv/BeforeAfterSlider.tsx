@@ -19,9 +19,7 @@ type BeforeAfterSliderProps = {
  * Falls back to solid-color SVG placeholders when image src is missing or fails to load.
  */
 export const BeforeAfterSlider = ({
-  // TODO: Replace with real photo — before-unit.jpg
   beforeSrc = "/images/before-after/before-unit.svg",
-  // TODO: Replace with real photo — after-unit.jpg
   afterSrc = "/images/before-after/after-unit.svg",
   beforeLabel = "BEFORE",
   afterLabel = "AFTER",
