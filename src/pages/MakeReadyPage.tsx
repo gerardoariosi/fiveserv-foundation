@@ -200,7 +200,7 @@ const MakeReadyPage = () => {
                 { icon: Camera, title: "Photo Proof", body: "Before-and-after on every unit." },
               ].map((b) => (
                 <div key={b.title} className="rounded-lg border border-gray-100 bg-white shadow-sm p-5">
-                  <b.icon className="h-7 w-7 text-amber-700" />
+                  <b.icon className="h-7 w-7 text-gray-900" />
                   <h3 className="mt-3 font-display text-lg text-gray-900">{b.title}</h3>
                   <p className="mt-1 text-sm text-gray-600">{b.body}</p>
                 </div>
@@ -249,14 +249,14 @@ const MakeReadyPage = () => {
                   const s = SERVICES.find((x) => x.slug === slug)!;
                   return (
                     <li key={slug}>
-                      <Link to={`/${slug}`} className="inline-flex items-center gap-2 text-amber-700 hover:underline">
+                      <Link to={`/${slug}`} className="inline-flex items-center gap-2 text-gray-900 hover:text-amber-700 hover:underline">
                         <ArrowRight className="h-4 w-4" /> {s.name}
                       </Link>
                     </li>
                   );
                 })}
                 <li>
-                  <Link to="/contact" className="inline-flex items-center gap-2 text-amber-700 hover:underline">
+                  <Link to="/contact" className="inline-flex items-center gap-2 text-gray-900 hover:text-amber-700 hover:underline">
                     <ArrowRight className="h-4 w-4" /> Contact us
                   </Link>
                 </li>
@@ -269,7 +269,7 @@ const MakeReadyPage = () => {
                   const name = slug.replace("-fl", "").split("-").map((w) => w[0].toUpperCase() + w.slice(1)).join(" ");
                   return (
                     <li key={slug}>
-                      <Link to={`/make-ready/${slug}`} className="inline-flex items-center gap-2 text-amber-700 hover:underline">
+                      <Link to={`/make-ready/${slug}`} className="inline-flex items-center gap-2 text-gray-900 hover:text-amber-700 hover:underline">
                         <ArrowRight className="h-4 w-4" /> Make-Ready {name}, FL
                       </Link>
                     </li>

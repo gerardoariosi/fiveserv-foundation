@@ -140,7 +140,7 @@ const MaintenancePage = () => {
                   <span className="inline-block rounded-full bg-brand-gold px-3 py-1 text-xs font-bold uppercase tracking-wider text-gray-900">
                     {r.badge}
                   </span>
-                  <r.icon className="mt-4 h-10 w-10 text-amber-700" />
+                  <r.icon className="mt-4 h-10 w-10 text-gray-900" />
                   <h3 className="mt-3 font-display font-semibold text-2xl text-gray-900">{r.title}</h3>
                   <p className="mt-2 text-gray-700">{r.body}</p>
                 </article>
@@ -238,14 +238,14 @@ const MaintenancePage = () => {
                   const s = SERVICES.find((x) => x.slug === slug)!;
                   return (
                     <li key={slug}>
-                      <Link to={`/${slug}`} className="inline-flex items-center gap-2 text-amber-700 hover:underline">
+                      <Link to={`/${slug}`} className="inline-flex items-center gap-2 text-gray-900 hover:text-amber-700 hover:underline">
                         <ArrowRight className="h-4 w-4" /> {s.name}
                       </Link>
                     </li>
                   );
                 })}
                 <li>
-                  <Link to="/contact" className="inline-flex items-center gap-2 text-amber-700 hover:underline">
+                  <Link to="/contact" className="inline-flex items-center gap-2 text-gray-900 hover:text-amber-700 hover:underline">
                     <ArrowRight className="h-4 w-4" /> Contact us
                   </Link>
                 </li>
@@ -258,7 +258,7 @@ const MaintenancePage = () => {
                   const name = slug.replace("-fl", "").split("-").map((w) => w[0].toUpperCase() + w.slice(1)).join(" ");
                   return (
                     <li key={slug}>
-                      <Link to={`/maintenance/${slug}`} className="inline-flex items-center gap-2 text-amber-700 hover:underline">
+                      <Link to={`/maintenance/${slug}`} className="inline-flex items-center gap-2 text-gray-900 hover:text-amber-700 hover:underline">
                         <ArrowRight className="h-4 w-4" /> Maintenance in {name}, FL
                       </Link>
                     </li>

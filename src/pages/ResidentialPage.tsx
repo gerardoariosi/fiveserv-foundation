@@ -151,7 +151,7 @@ const ResidentialPage = () => {
               </p>
               <Link
                 to="/about"
-                className="mt-6 inline-flex items-center gap-2 font-bold text-amber-700 hover:underline"
+                className="mt-6 inline-flex items-center gap-2 font-bold text-gray-900 hover:text-amber-700 hover:underline"
               >
                 Meet the family <ArrowRight className="h-4 w-4" />
               </Link>

@@ -173,7 +173,7 @@ const MaintenanceCityPage = ({ citySlug: propSlug }: MaintenanceCityPageProps = 
                     </span>
                     <h3 className="mt-5 font-display font-semibold text-xl text-gray-900">{s.name}</h3>
                     <p className="mt-2 flex-1 text-sm text-gray-700">{s.short}</p>
-                    <span className="mt-4 inline-flex items-center gap-2 text-sm font-bold text-amber-700 group-hover:underline">
+                    <span className="mt-4 inline-flex items-center gap-2 text-sm font-bold text-gray-900 group-hover:text-amber-700 group-hover:underline">
                       {s.cta} <ArrowRight className="h-4 w-4" />
                     </span>
                   </Link>
@@ -234,7 +234,7 @@ const MaintenanceCityPage = ({ citySlug: propSlug }: MaintenanceCityPageProps = 
                 {editorial.zips.map((z) => (
                   <span
                     key={z}
-                    className="inline-flex items-center gap-2 rounded-md border border-gray-100 bg-white shadow-sm px-3 py-1.5 text-sm font-bold text-amber-700"
+                    className="inline-flex items-center gap-2 rounded-md border border-gray-100 bg-white shadow-sm px-3 py-1.5 text-sm font-bold text-gray-900 hover:text-amber-700"
                   >
                     <MapPin className="h-3.5 w-3.5" /> {z}
                   </span>

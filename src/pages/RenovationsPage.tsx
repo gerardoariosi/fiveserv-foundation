@@ -155,7 +155,7 @@ const RenovationsPage = () => {
             </h2>
             <div className="mt-10 grid gap-6 md:grid-cols-2">
               <article className="hover-card rounded-lg border border-gray-100 bg-white shadow-sm p-8">
-                <Building2 className="h-10 w-10 text-amber-700" />
+                <Building2 className="h-10 w-10 text-gray-900" />
                 <h3 className="mt-4 font-display font-semibold text-2xl text-gray-900">Property Management Companies</h3>
                 <p className="mt-3 text-gray-700">
                   Portfolio rollouts across multiple assets. Phased schedules to protect occupancy. Centralized
@@ -163,7 +163,7 @@ const RenovationsPage = () => {
                 </p>
               </article>
               <article className="hover-card rounded-lg border border-gray-100 bg-white shadow-sm p-8">
-                <User className="h-10 w-10 text-amber-700" />
+                <User className="h-10 w-10 text-gray-900" />
                 <h3 className="mt-4 font-display font-semibold text-2xl text-gray-900">Direct Property Owners</h3>
                 <p className="mt-3 text-gray-700">
                   Single assets, small portfolios, value-add acquisitions. We work directly with owners on full unit
@@ -262,14 +262,14 @@ const RenovationsPage = () => {
                   const s = SERVICES.find((x) => x.slug === slug)!;
                   return (
                     <li key={slug}>
-                      <Link to={`/${slug}`} className="inline-flex items-center gap-2 text-amber-700 hover:underline">
+                      <Link to={`/${slug}`} className="inline-flex items-center gap-2 text-gray-900 hover:text-amber-700 hover:underline">
                         <ArrowRight className="h-4 w-4" /> {s.name}
                       </Link>
                     </li>
                   );
                 })}
                 <li>
-                  <Link to="/contact" className="inline-flex items-center gap-2 text-amber-700 hover:underline">
+                  <Link to="/contact" className="inline-flex items-center gap-2 text-gray-900 hover:text-amber-700 hover:underline">
                     <ArrowRight className="h-4 w-4" /> Contact us
                   </Link>
                 </li>
@@ -288,7 +288,7 @@ const RenovationsPage = () => {
                     <li key={slug}>
                       <Link
                         to={`/renovations/${slug}`}
-                        className="inline-flex items-center gap-2 text-amber-700 hover:underline"
+                        className="inline-flex items-center gap-2 text-gray-900 hover:text-amber-700 hover:underline"
                       >
                         <ArrowRight className="h-4 w-4" /> Renovations in {name}, FL
                       </Link>
