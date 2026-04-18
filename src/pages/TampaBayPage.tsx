@@ -48,8 +48,8 @@ const TampaBayPage = () => {
       <section className="bg-brand-black pt-32 pb-24">
         <div className="container max-w-3xl text-center">
           {/* Logo monogram */}
-          <div className="mx-auto inline-flex h-20 w-20 items-center justify-center rounded-md border-2 border-brand-gold bg-white shadow-md">
-            <span className="font-display text-3xl text-brand-gold">FS</span>
+          <div className="mx-auto inline-flex h-20 w-20 items-center justify-center rounded-md bg-gray-900 shadow-md">
+            <span className="font-display font-bold text-3xl text-brand-gold">FS</span>
           </div>
 
           <p className="mt-8 text-xs font-bold uppercase tracking-[0.3em] text-brand-gold">
