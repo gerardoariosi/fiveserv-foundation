@@ -3,6 +3,7 @@ import StickyHeader from "@/components/fiveserv/StickyHeader";
 import StickyBanner from "@/components/fiveserv/StickyBanner";
 import Footer from "@/components/fiveserv/Footer";
 import ExitIntentPopup from "@/components/fiveserv/ExitIntentPopup";
+import SofiaChat from "@/components/fiveserv/SofiaChat";
 import { Helmet } from "react-helmet-async";
 import { SITE } from "@/lib/site-config";
 
@@ -40,6 +41,7 @@ export const RootLayout = () => {
       </main>
       <Footer />
       <ExitIntentPopup />
+      <SofiaChat />
 
       {/* ■ REPLACE: GHL_CHAT_WIDGET_SNIPPET — paste from GoHighLevel */}
       {/* <script>[GHL_CHAT_WIDGET_SNIPPET]</script> */}
