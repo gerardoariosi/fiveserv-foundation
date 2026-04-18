@@ -228,6 +228,7 @@ const MaintenancePage = () => {
       <LeadMagnetSection variant="scorecard" />
 
       {/* FAQ */}
+      <VisibleQA items={VISIBLE_QA} />
       <FaqAccordion faqs={MAINTENANCE_FAQS} emitSchema={false} />
 
       {/* Internal links */}
