@@ -3,6 +3,7 @@ import { ArrowRight, Wrench, Hammer, Building2, Home } from "lucide-react";
 import Seo from "@/lib/Seo";
 import SchemaOrg from "@/lib/SchemaOrg";
 import { SITE, SERVICES } from "@/lib/site-config";
+import BrandName from "@/components/fiveserv/BrandName";
 
 const ICONS: Record<string, typeof Wrench> = {
   "make-ready": Hammer,
@@ -26,7 +27,7 @@ const ServicesIndexPage = () => (
     />
     <section className="bg-brand-black pt-32 pb-16">
       <div className="container">
-        <p className="text-xs font-medium uppercase tracking-[0.12em] text-brand-gold">— {SITE.brand} Property Solutions</p>
+        <p className="text-xs font-medium uppercase tracking-[0.12em] text-brand-gold">— <BrandName variant="light" /> Property Solutions</p>
         <h1 className="mt-3 font-display text-4xl text-white sm:text-5xl">Our Services</h1>
         <p className="mt-6 max-w-2xl text-gray-300">
           Four service lines. One family. Built for property managers and homeowners across Central Florida.

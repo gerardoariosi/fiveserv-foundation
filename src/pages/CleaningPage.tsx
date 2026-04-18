@@ -24,6 +24,7 @@ import StatsBar from "@/components/fiveserv/StatsBar";
 import FaqAccordion from "@/components/fiveserv/FaqAccordion";
 import ContactCTA from "@/components/fiveserv/ContactCTA";
 import { useReveal } from "@/hooks/use-fiveserv";
+import BrandName from "@/components/fiveserv/BrandName";
 
 const SERVICES_GRID = [
   { icon: Key, title: "Move-Out Deep Clean", desc: "Full vacate clean for unit turns. Appliances, bathrooms, floors, baseboards, cabinets — everything." },
@@ -138,7 +139,7 @@ const CleaningPage = () => {
       <section className="bg-brand-black pt-32 pb-16">
         <div className="container">
           <p className="text-xs font-medium uppercase tracking-[0.12em] text-brand-gold">
-            — {SITE.brand} Property Solutions
+            — <BrandName variant="light" /> Property Solutions
           </p>
           <h1 className="mt-3 font-display font-black text-4xl text-white sm:text-5xl lg:text-6xl">
             Professional Cleaning Services for Properties and Homes —
@@ -346,7 +347,7 @@ const CleaningPage = () => {
                     Make-Ready Included
                   </span>
                   <h2 className="mt-3 font-display font-bold text-3xl text-gray-900 sm:text-4xl">
-                    Every {SITE.brand} make-ready includes a{" "}
+                    Every <BrandName variant="dark" /> make-ready includes a{" "}
                     <span className="text-gray-900">full move-out deep clean</span>
                   </h2>
                   <p className="mt-3 text-gray-700">

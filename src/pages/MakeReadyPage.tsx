@@ -14,6 +14,7 @@ import BeforeAfterSlider from "@/components/fiveserv/BeforeAfterSlider";
 import LiveStatsBar from "@/components/fiveserv/LiveStatsBar";
 import TrustBar from "@/components/fiveserv/TrustBar";
 import { useReveal } from "@/hooks/use-fiveserv";
+import BrandName from "@/components/fiveserv/BrandName";
 
 const INCLUDED = [
   { icon: Paintbrush, title: "Paint touch-up or full repaint" },
@@ -81,14 +82,14 @@ const MakeReadyPage = () => {
       <section className="bg-brand-black pt-32 pb-16">
         <div className="container">
           <p className="text-xs font-medium uppercase tracking-[0.12em] text-brand-gold">
-            — {SITE.brand} Property Solutions
+            — <BrandName variant="light" /> Property Solutions
           </p>
           <h1 className="mt-3 font-display font-black text-4xl text-white sm:text-5xl lg:text-6xl">
             Make-Ready &amp; Unit Turn Services —
             <span className="block text-brand-gold">5-Day Guarantee</span>
           </h1>
           <p className="mt-6 max-w-2xl text-lg text-gray-300">
-            Central Florida property managers trust {SITE.brand} for make-ready. One call. Our team. 5 business days. Guaranteed in writing.
+            Central Florida property managers trust <BrandName variant="light" /> for make-ready. One call. Our team. 5 business days. Guaranteed in writing.
           </p>
 
           <ul className="mt-8 flex flex-wrap items-center gap-x-6 gap-y-3 text-sm font-bold text-brand-black">
@@ -243,7 +244,7 @@ const MakeReadyPage = () => {
         <div className="container py-16">
           <SectionReveal className="grid gap-10 md:grid-cols-2">
             <div>
-              <h2 className="font-display font-semibold text-2xl text-gray-900">More from {SITE.brand}</h2>
+              <h2 className="font-display font-semibold text-2xl text-gray-900">More from <BrandName variant="dark" /></h2>
               <ul className="mt-4 space-y-2">
                 {INTERNAL_SERVICES.map((slug) => {
                   const s = SERVICES.find((x) => x.slug === slug)!;

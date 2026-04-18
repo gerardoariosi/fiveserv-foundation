@@ -1,7 +1,8 @@
 import { renderBlocks, InternalLinkCluster, type Block } from "./_blocks";
+import BrandName from "@/components/fiveserv/BrandName";
 
 const blocks: Block[] = [
-  { type: "p", text: <><strong>FiveServ Property Solutions</strong> services HVAC year-round across Central Florida. The terminology trips up new property managers — here's the clear difference.</> },
+  { type: "p", text: <><strong><BrandName variant="light" /> Property Solutions</strong> services HVAC year-round across Central Florida. The terminology trips up new property managers — here's the clear difference.</> },
   { type: "h2", text: "HVAC — Heating, Ventilation, Air Conditioning" },
   { type: "p", text: "A complete climate-control system. Includes a heat source (heat pump, heat strips, furnace), cooling (compressor, condenser, evaporator coil), and ventilation/air handler." },
   { type: "h2", text: "AC — Air Conditioning only" },

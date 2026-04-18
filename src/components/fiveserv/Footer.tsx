@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import { Instagram, Facebook, Linkedin, Phone, Mail, MapPin, Clock } from "lucide-react";
 import { SITE, SERVICES, CITIES, COMING_SOON_CITIES } from "@/lib/site-config";
+import BrandName from "@/components/fiveserv/BrandName";
 
 export const Footer = () => {
   return (
@@ -15,7 +16,7 @@ export const Footer = () => {
                 alt="FiveServ"
                 className="h-10 w-auto object-contain"
               />
-              <span className="font-display font-bold text-brand-white text-lg">FiveServ</span>
+              <span className="font-display font-bold text-brand-white text-lg"><BrandName variant="light" /></span>
             </Link>
             <p className="mt-3 text-sm italic text-gray-400">Five Days. One Call. Done.</p>
             <p className="mt-3 text-sm text-brand-white/80">

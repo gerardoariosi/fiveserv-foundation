@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import BrandName from "@/components/fiveserv/BrandName";
 
 const PLACEHOLDER_CLIENTS = [
   "ABC Property Management",
@@ -46,7 +47,7 @@ const TrustBar = () => {
 
         <div className="mt-4 flex flex-col items-center gap-1 text-center sm:flex-row sm:justify-center sm:gap-3">
           <p className="text-[12px] text-[#888]">
-            Join 50+ property managers who trust FiveServ across Central Florida
+            Join 50+ property managers who trust <BrandName variant="light" /> across Central Florida
           </p>
           <Link
             to="/contact"

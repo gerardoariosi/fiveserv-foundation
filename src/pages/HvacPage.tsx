@@ -23,6 +23,7 @@ import StatsBar from "@/components/fiveserv/StatsBar";
 import FaqAccordion from "@/components/fiveserv/FaqAccordion";
 import ContactCTA from "@/components/fiveserv/ContactCTA";
 import { useReveal } from "@/hooks/use-fiveserv";
+import BrandName from "@/components/fiveserv/BrandName";
 
 const SERVICES_GRID = [
   { icon: Snowflake, title: "AC Repair & Diagnostics", desc: "No-cool calls, weak airflow, frozen coils, capacitors, refrigerant. Diagnose, fix, document." },
@@ -107,7 +108,7 @@ const HvacPage = () => {
       <section className="bg-brand-black pt-32 pb-16">
         <div className="container">
           <p className="text-xs font-medium uppercase tracking-[0.12em] text-brand-gold">
-            — {SITE.brand} Property Solutions
+            — <BrandName variant="light" /> Property Solutions
           </p>
           <h1 className="mt-3 font-display font-black text-4xl text-white sm:text-5xl lg:text-6xl">
             HVAC Services for Property Managers in
@@ -157,7 +158,7 @@ const HvacPage = () => {
               </h2>
               <p className="mt-4 text-gray-700">
                 In Florida heat, a broken AC in a rental unit means angry residents, lease violations, code enforcement
-                calls, and potential legal exposure. {SITE.brand}'s HVAC technicians respond within 2 hours — keeping
+                calls, and potential legal exposure. <BrandName variant="dark" />'s HVAC technicians respond within 2 hours — keeping
                 residents cool and your portfolio compliant.
               </p>
             </div>
@@ -250,7 +251,7 @@ const HvacPage = () => {
                 Compliant. <span className="text-gray-900">Year-round.</span>
               </p>
               <p className="mt-3 text-gray-700">
-                ${SITE.brand} keeps your portfolio inside the lines on AC habitability — quarterly filter programs,
+                $<BrandName variant="dark" /> keeps your portfolio inside the lines on AC habitability — quarterly filter programs,
                 rapid no-cool response, full documentation for any code or insurance review.
               </p>
             </div>
@@ -263,7 +264,7 @@ const HvacPage = () => {
               <p className="mt-4 text-gray-700">
                 Under Florida Statute 83.51 and most local codes, working air conditioning is part of the habitability
                 standard landlords must maintain. Slow AC repair triggers lease disputes, rent withholding, code
-                enforcement, and fair-housing exposure. {SITE.brand} keeps you compliant — and your residents
+                enforcement, and fair-housing exposure. <BrandName variant="dark" /> keeps you compliant — and your residents
                 comfortable — year-round.
               </p>
               <ul className="mt-6 space-y-2 text-gray-700">

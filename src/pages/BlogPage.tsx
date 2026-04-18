@@ -5,6 +5,7 @@ import Seo from "@/lib/Seo";
 import SchemaOrg from "@/lib/SchemaOrg";
 import { SITE } from "@/lib/site-config";
 import { BLOG_POSTS, BLOG_CATEGORIES, type BlogCategory } from "@/lib/blog-data";
+import BrandName from "@/components/fiveserv/BrandName";
 
 const BlogPage = () => {
   const [activeCat, setActiveCat] = useState<BlogCategory | "all">("all");
@@ -51,7 +52,7 @@ const BlogPage = () => {
       <section className="bg-brand-black pt-32 pb-12">
         <div className="container max-w-5xl">
           <p className="text-xs font-bold uppercase tracking-wider text-brand-gold">
-            FiveServ Insights
+            <BrandName variant="light" /> Insights
           </p>
           <h1 className="mt-4 font-display text-4xl text-white sm:text-5xl">
             Property Management Maintenance Insights — Central Florida

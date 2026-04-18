@@ -1,5 +1,6 @@
 import { Helmet } from "react-helmet-async";
 import { SITE } from "./site-config";
+import BrandName from "@/components/fiveserv/BrandName";
 
 type SeoProps = {
   title: string;

@@ -1,7 +1,8 @@
 import { renderBlocks, InternalLinkCluster, type Block } from "./_blocks";
+import BrandName from "@/components/fiveserv/BrandName";
 
 const blocks: Block[] = [
-  { type: "p", text: <><strong>FiveServ Property Solutions</strong> runs preventive maintenance contracts across Central Florida multifamily communities. Here's the full quarterly and annual checklist every property should run.</> },
+  { type: "p", text: <><strong><BrandName variant="light" /> Property Solutions</strong> runs preventive maintenance contracts across Central Florida multifamily communities. Here's the full quarterly and annual checklist every property should run.</> },
   { type: "h2", text: "Monthly items" },
   { type: "ul", items: [
     "HVAC filter replacement (all units + common areas)",

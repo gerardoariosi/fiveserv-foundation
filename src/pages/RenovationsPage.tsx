@@ -25,6 +25,7 @@ import FaqAccordion from "@/components/fiveserv/FaqAccordion";
 import ContactCTA from "@/components/fiveserv/ContactCTA";
 import BeforeAfterSlider from "@/components/fiveserv/BeforeAfterSlider";
 import { useReveal } from "@/hooks/use-fiveserv";
+import BrandName from "@/components/fiveserv/BrandName";
 
 const PROJECT_TYPES = [
   { icon: Layers, title: "Flooring Replacement", desc: "LVP, tile, carpet — single units to full portfolios." },
@@ -83,7 +84,7 @@ const RenovationsPage = () => {
       <section className="bg-brand-black pt-32 pb-16">
         <div className="container">
           <p className="text-xs font-medium uppercase tracking-[0.12em] text-brand-gold">
-            — {SITE.brand} Property Solutions
+            — <BrandName variant="light" /> Property Solutions
           </p>
           <h1 className="mt-3 font-display font-black text-4xl text-white sm:text-5xl lg:text-6xl">
             Property Renovation Services Central Florida —{" "}
@@ -138,7 +139,7 @@ const RenovationsPage = () => {
                 <span className="underline decoration-4 underline-offset-4">15–20% rent increase</span>.
               </h2>
               <p className="mt-4 max-w-3xl text-gray-900/80">
-                Payback periods of 18 to 36 months depending on scope. Every {SITE.brand} renovation quote includes an
+                Payback periods of 18 to 36 months depending on scope. Every <BrandName variant="dark" /> renovation quote includes an
                 estimated ROI so you can underwrite the project before a hammer swings.
               </p>
             </div>
@@ -256,7 +257,7 @@ const RenovationsPage = () => {
         <div className="container py-16">
           <SectionReveal className="grid gap-10 md:grid-cols-2">
             <div>
-              <h2 className="font-display font-semibold text-2xl text-gray-900">More from {SITE.brand}</h2>
+              <h2 className="font-display font-semibold text-2xl text-gray-900">More from <BrandName variant="dark" /></h2>
               <ul className="mt-4 space-y-2">
                 {(["make-ready", "maintenance", "residential"] as const).map((slug) => {
                   const s = SERVICES.find((x) => x.slug === slug)!;

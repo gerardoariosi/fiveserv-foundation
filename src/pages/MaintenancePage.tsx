@@ -11,6 +11,7 @@ import FaqAccordion from "@/components/fiveserv/FaqAccordion";
 import LeadMagnetSection from "@/components/fiveserv/LeadMagnetSection";
 import ContactCTA from "@/components/fiveserv/ContactCTA";
 import { useReveal } from "@/hooks/use-fiveserv";
+import BrandName from "@/components/fiveserv/BrandName";
 
 const TRADES = [
   { icon: Droplets, title: "Plumbing", desc: "Leaks, drains, water heaters, fixtures." },
@@ -60,7 +61,7 @@ const MaintenancePage = () => {
       <section className="bg-brand-black pt-32 pb-16">
         <div className="container">
           <p className="text-xs font-medium uppercase tracking-[0.12em] text-brand-gold">
-            — {SITE.brand} Property Solutions
+            — <BrandName variant="light" /> Property Solutions
           </p>
           <h1 className="mt-3 font-display font-black text-4xl text-white sm:text-5xl lg:text-6xl">
             Property Maintenance Services for Property Managers in
@@ -168,7 +169,7 @@ const MaintenancePage = () => {
                     <span className="text-gray-900">Call now.</span>
                   </h2>
                   <p className="mt-3 text-gray-700">
-                    On-site within 2 hours across our Orlando metro core. {SITE.brand} answers the phone — day,
+                    On-site within 2 hours across our Orlando metro core. <BrandName variant="dark" /> answers the phone — day,
                     night, weekends, holidays. No answering service. No callbacks.
                   </p>
                 </div>
@@ -232,7 +233,7 @@ const MaintenancePage = () => {
         <div className="container py-16">
           <SectionReveal className="grid gap-10 md:grid-cols-2">
             <div>
-              <h2 className="font-display font-semibold text-2xl text-gray-900">More from {SITE.brand}</h2>
+              <h2 className="font-display font-semibold text-2xl text-gray-900">More from <BrandName variant="dark" /></h2>
               <ul className="mt-4 space-y-2">
                 {(["make-ready", "renovations", "residential"] as const).map((slug) => {
                   const s = SERVICES.find((x) => x.slug === slug)!;

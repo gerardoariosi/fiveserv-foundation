@@ -1,8 +1,9 @@
 import { renderBlocks, InternalLinkCluster, type Block } from "./_blocks";
 import { Link } from "react-router-dom";
+import BrandName from "@/components/fiveserv/BrandName";
 
 const blocks: Block[] = [
-  { type: "p", text: <><strong>FiveServ Property Solutions</strong> is headquartered in Orlando and runs make-ready service across the entire Central Florida region from here. Here's exactly what to expect when you book a turn in Orlando.</> },
+  { type: "p", text: <><strong><BrandName variant="light" /> Property Solutions</strong> is headquartered in Orlando and runs make-ready service across the entire Central Florida region from here. Here's exactly what to expect when you book a turn in Orlando.</> },
   { type: "h2", text: "Service area within Orlando" },
   { type: "ul", items: [
     "Downtown",
@@ -25,7 +26,7 @@ const blocks: Block[] = [
   { type: "h2", text: "What's included" },
   { type: "p", text: "Trash-out, deep clean, paint touch-up or repaint, drywall and trim repair, plumbing and electrical inspection, appliance check, HVAC filter, final walk-through with photo log." },
   { type: "h2", text: "Why Orlando is our home market" },
-  { type: "p", text: <>FiveServ was founded in Orlando and runs the broader Central Florida operation from here. See the dedicated <Link to="/maintenance-orlando-fl" className="text-gray-900 underline">Orlando service page</Link> for full coverage detail.</> },
+  { type: "p", text: <><BrandName variant="dark" /> was founded in Orlando and runs the broader Central Florida operation from here. See the dedicated <Link to="/maintenance-orlando-fl" className="text-gray-900 underline">Orlando service page</Link> for full coverage detail.</> },
   { type: "h2", text: "Book a turn" },
   { type: "p", text: <><InternalLinkCluster /></> },
 ];

@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import { MessageCircle, X, Send, RotateCcw } from "lucide-react";
 import { SITE } from "@/lib/site-config";
+import BrandName from "@/components/fiveserv/BrandName";
 
 /**
  * SofiaChat — fully scripted bilingual (EN/ES) chat widget.
@@ -567,7 +568,7 @@ const SofiaChat = () => {
                 />
               </div>
               <p className="text-gray-400" style={{ fontSize: "12px" }}>
-                FiveServ Assistant · {L.online}
+                <BrandName variant="light" /> Assistant · {L.online}
               </p>
             </div>
             <button

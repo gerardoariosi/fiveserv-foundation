@@ -1,7 +1,8 @@
 import { renderBlocks, InternalLinkCluster, type Block } from "./_blocks";
+import BrandName from "@/components/fiveserv/BrandName";
 
 const blocks: Block[] = [
-  { type: "p", text: <><strong>FiveServ Property Solutions</strong> publishes this glossary as a free reference for Central Florida property managers and onsite teams. Copy it, share it, use it in onboarding.</> },
+  { type: "p", text: <><strong><BrandName variant="light" /> Property Solutions</strong> publishes this glossary as a free reference for Central Florida property managers and onsite teams. Copy it, share it, use it in onboarding.</> },
   { type: "h2", text: "A – C" },
   { type: "ul", items: [
     <><strong>AOA</strong> — Annual Operating Agreement. Vendor contract covering 12 months of recurring scope.</>,

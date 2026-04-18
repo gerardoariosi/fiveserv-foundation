@@ -20,6 +20,7 @@ import FaqAccordion from "@/components/fiveserv/FaqAccordion";
 import ContactCTA from "@/components/fiveserv/ContactCTA";
 import NotFound from "@/pages/NotFound";
 import { useReveal } from "@/hooks/use-fiveserv";
+import BrandName from "@/components/fiveserv/BrandName";
 
 const SERVICE_ICONS: Record<string, typeof Key> = {
   "make-ready": Key,
@@ -87,7 +88,7 @@ const MaintenanceCityPage = ({ citySlug: propSlug }: MaintenanceCityPageProps = 
         <div className="absolute inset-x-0 bottom-0 -z-10 h-32 bg-gradient-to-b from-transparent to-brand-black" aria-hidden />
         <div className="container">
           <p className="text-xs font-medium uppercase tracking-[0.12em] text-brand-gold">
-            — {SITE.brand} Property Solutions • {city.name}, {city.state}
+            — <BrandName variant="light" /> Property Solutions • {city.name}, {city.state}
           </p>
           <h1 className="mt-3 font-display font-black text-4xl text-white sm:text-5xl lg:text-6xl">
             {city.name} {city.state} Property Maintenance —{" "}
@@ -135,14 +136,14 @@ const MaintenanceCityPage = ({ citySlug: propSlug }: MaintenanceCityPageProps = 
         <div className="container py-20">
           <SectionReveal>
             <h2 className="font-display font-bold text-3xl text-gray-900 sm:text-4xl">
-              Why <span className="text-gray-900">{SITE.brand}</span> in {city.name}
+              Why <span className="text-gray-900"><BrandName variant="dark" /></span> in {city.name}
             </h2>
             <div className="mt-6 max-w-3xl space-y-4 text-gray-700">
               {editorial.angle ? (
                 <p>{editorial.angle}</p>
               ) : (
                 <p>
-                  {SITE.brand} works {city.name} regularly out of our Orlando base — we know the {editorial.zones.slice(0, 2).join(" and ")} markets, and we cover ZIP codes {editorial.zips.join(", ")}. Same crews, same standards, every job.
+                  <BrandName variant="dark" /> works {city.name} regularly out of our Orlando base — we know the {editorial.zones.slice(0, 2).join(" and ")} markets, and we cover ZIP codes {editorial.zips.join(", ")}. Same crews, same standards, every job.
                 </p>
               )}
               <p>

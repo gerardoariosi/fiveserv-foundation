@@ -21,6 +21,7 @@ import StatsBar from "@/components/fiveserv/StatsBar";
 import FaqAccordion from "@/components/fiveserv/FaqAccordion";
 import ContactCTA from "@/components/fiveserv/ContactCTA";
 import { useReveal } from "@/hooks/use-fiveserv";
+import BrandName from "@/components/fiveserv/BrandName";
 
 const SERVICES_GRID = [
   { icon: Droplets, title: "Leak Detection & Repair", desc: "Pinhole leaks, slab leaks, supply lines, fixtures. Found fast, fixed clean." },
@@ -105,7 +106,7 @@ const PlumbingPage = () => {
       <section className="bg-brand-black pt-32 pb-16">
         <div className="container">
           <p className="text-xs font-medium uppercase tracking-[0.12em] text-brand-gold">
-            — {SITE.brand} Property Solutions
+            — <BrandName variant="light" /> Property Solutions
           </p>
           <h1 className="mt-3 font-display font-black text-4xl text-white sm:text-5xl lg:text-6xl">
             Plumbing Services for Property Managers in
@@ -155,7 +156,7 @@ const PlumbingPage = () => {
               </h2>
               <p className="mt-4 text-gray-700">
                 Property managers lose thousands in water damage from delayed plumbing response. Drywall, flooring,
-                cabinets, downstairs units. Insurance claims, displaced residents, lost rent. {SITE.brand} responds
+                cabinets, downstairs units. Insurance claims, displaced residents, lost rent. <BrandName variant="dark" /> responds
                 within 2 hours — before the damage compounds.
               </p>
             </div>
@@ -248,7 +249,7 @@ const PlumbingPage = () => {
                 One invoice. <span className="text-gray-900">Full accountability.</span>
               </p>
               <p className="mt-3 text-gray-700">
-                You don't chase the plumber. You don't track the license. You don't reconcile three vendors. {SITE.brand}{" "}
+                You don't chase the plumber. You don't track the license. You don't reconcile three vendors. <BrandName variant="dark" />{" "}
                 does it. You get one invoice and one accountable team.
               </p>
             </div>
@@ -260,7 +261,7 @@ const PlumbingPage = () => {
               </h2>
               <p className="mt-4 text-gray-700">
                 In Florida, plumbing work above a low threshold legally requires a licensed plumbing contractor.
-                Insurance carriers require it for claims. {SITE.brand} coordinates licensed plumbers on every job —
+                Insurance carriers require it for claims. <BrandName variant="dark" /> coordinates licensed plumbers on every job —
                 you get the protection of licensed work plus the simplicity of a single point of contact.
               </p>
               <ul className="mt-6 space-y-2 text-gray-700">

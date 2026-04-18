@@ -5,6 +5,7 @@ import SchemaOrg from "@/lib/SchemaOrg";
 import { SITE, SERVICES, CITIES } from "@/lib/site-config";
 import type { BlogPost } from "@/lib/blog-data";
 import ContactCTA from "./ContactCTA";
+import BrandName from "@/components/fiveserv/BrandName";
 
 type Props = {
   post: BlogPost;
@@ -54,7 +55,7 @@ export const BlogArticleLayout = ({ post, children }: Props) => {
             {post.title}
           </h1>
           <div className="mt-4 flex flex-wrap items-center gap-3 text-sm text-brand-gray-muted">
-            <span>FiveServ Property Solutions</span>
+            <span><BrandName variant="light" /> Property Solutions</span>
             <span aria-hidden="true">•</span>
             <time dateTime={post.datePublished}>
               {new Date(post.datePublished).toLocaleDateString("en-US", {
@@ -92,7 +93,7 @@ export const BlogArticleLayout = ({ post, children }: Props) => {
       <section className="bg-gray-50 py-16">
         <div className="container max-w-3xl">
           <p className="text-gray-900 text-xs font-medium uppercase tracking-[0.12em] mb-3">— Keep Reading</p>
-          <h2 className="text-gray-900 font-display font-bold text-3xl lg:text-4xl">Related FiveServ resources</h2>
+          <h2 className="text-gray-900 font-display font-bold text-3xl lg:text-4xl">Related <BrandName variant="dark" /> resources</h2>
           <div className="mt-6 grid gap-3 sm:grid-cols-2">
             {SERVICES.map((s) => (
               <Link
@@ -123,7 +124,7 @@ export const BlogArticleLayout = ({ post, children }: Props) => {
             to="/contact"
             className="cta-dark mt-8 inline-flex items-center gap-2 rounded-md px-6 py-3 text-sm font-bold uppercase tracking-wide"
           >
-            Contact FiveServ <ArrowRight className="h-4 w-4" />
+            Contact <BrandName variant="dark" /> <ArrowRight className="h-4 w-4" />
           </Link>
         </div>
       </section>

@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import BrandName from "@/components/fiveserv/BrandName";
 
 /**
  * Pillar 3 — Property Maintenance Costs in Central Florida — 2025 Pricing Guide
@@ -6,7 +7,7 @@ import { Link } from "react-router-dom";
 const PricingGuideBody = () => (
   <div className="space-y-6 text-base leading-relaxed text-brand-white/90">
     <p>
-      <strong>FiveServ Property Solutions</strong> publishes flat-rate pricing because
+      <strong><BrandName variant="light" /> Property Solutions</strong> publishes flat-rate pricing because
       every property manager we've ever worked with has the same complaint: they can't
       build an accurate annual maintenance budget when every vendor quotes differently.
       This 2025 pricing guide gives you the actual numbers across hourly labor,
@@ -93,7 +94,7 @@ const PricingGuideBody = () => (
 
     <h2 className="font-display text-2xl text-brand-white">Get quoted scope, not estimates</h2>
     <p>
-      Pricing only matters when it matches the actual scope of work. FiveServ publishes
+      Pricing only matters when it matches the actual scope of work. <BrandName variant="light" /> publishes
       flat rates for our most common scopes and quotes anything custom in writing before
       work starts. Browse{" "}
       <Link to="/make-ready" className="text-gray-900 underline">make-ready</Link>,{" "}

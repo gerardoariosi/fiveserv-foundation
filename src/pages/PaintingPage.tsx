@@ -22,6 +22,7 @@ import StatsBar from "@/components/fiveserv/StatsBar";
 import FaqAccordion from "@/components/fiveserv/FaqAccordion";
 import ContactCTA from "@/components/fiveserv/ContactCTA";
 import { useReveal } from "@/hooks/use-fiveserv";
+import BrandName from "@/components/fiveserv/BrandName";
 
 const SERVICES_GRID = [
   { icon: Paintbrush, title: "Interior Room Painting", desc: "Bedrooms, living rooms, kitchens, bathrooms. Walls, ceilings, trim, doors." },
@@ -120,7 +121,7 @@ const PaintingPage = () => {
       <section className="bg-brand-black pt-32 pb-16">
         <div className="container">
           <p className="text-xs font-medium uppercase tracking-[0.12em] text-brand-gold">
-            — {SITE.brand} Property Solutions
+            — <BrandName variant="light" /> Property Solutions
           </p>
           <h1 className="mt-3 font-display font-black text-4xl text-white sm:text-5xl lg:text-6xl">
             Professional Painting Services in Central Florida —
@@ -325,7 +326,7 @@ const PaintingPage = () => {
                     Make-Ready Included
                   </span>
                   <h2 className="mt-3 font-display font-bold text-3xl text-gray-900 sm:text-4xl">
-                    Every {SITE.brand} make-ready includes{" "}
+                    Every <BrandName variant="dark" /> make-ready includes{" "}
                     <span className="text-gray-900">painting</span>
                   </h2>
                   <p className="mt-3 text-gray-700">

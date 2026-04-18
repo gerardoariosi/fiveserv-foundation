@@ -1,5 +1,6 @@
 import Seo from "@/lib/Seo";
 import { SITE } from "@/lib/site-config";
+import BrandName from "@/components/fiveserv/BrandName";
 
 /**
  * Terms & Conditions — light-themed legal document page.
@@ -48,7 +49,7 @@ export const TermsPage = () => {
 
           <Section number={1} title="Introduction">
             <p>
-              <strong>FiveServ Group LLC</strong> — Orlando, Florida.
+              <strong><BrandName variant="dark" /> Group LLC</strong> — Orlando, Florida.
             </p>
             <p>
               Email:{" "}
@@ -62,15 +63,15 @@ export const TermsPage = () => {
             </p>
             <p>
               These Terms &amp; Conditions govern your use of this website and the services
-              provided by FiveServ Group LLC. By submitting a form, requesting a quote, or
-              engaging FiveServ, you agree to the terms below.
+              provided by <BrandName variant="dark" /> Group LLC. By submitting a form, requesting a quote, or
+              engaging <BrandName variant="dark" />, you agree to the terms below.
             </p>
           </Section>
 
           <Section number={2} title="Communication Consent">
             <p>
               By submitting any form on this website, the user agrees to be contacted by
-              FiveServ Group LLC via phone, email, or SMS. Message frequency varies.
+              <BrandName variant="dark" /> Group LLC via phone, email, or SMS. Message frequency varies.
               Reply <strong>STOP</strong> to unsubscribe from SMS. Standard message and
               data rates may apply.
             </p>
@@ -78,7 +79,7 @@ export const TermsPage = () => {
 
           <Section number={3} title="Services">
             <p>
-              FiveServ provides property maintenance, make-ready and unit turn services,
+              <BrandName variant="dark" /> provides property maintenance, make-ready and unit turn services,
               repairs, renovations, and residential maintenance in Central Florida.
             </p>
           </Section>
@@ -86,7 +87,7 @@ export const TermsPage = () => {
           <Section number={4} title="No Guarantee of Availability">
             <p>
               Service availability is subject to scheduling, market conditions, and
-              geographic coverage. FiveServ will notify the client if services are
+              geographic coverage. <BrandName variant="dark" /> will notify the client if services are
               unavailable.
             </p>
           </Section>
@@ -100,7 +101,7 @@ export const TermsPage = () => {
 
           <Section number={6} title="Privacy">
             <p>
-              FiveServ does not sell or share personal information with third parties.
+              <BrandName variant="light" /> does not sell or share personal information with third parties.
               Information collected is used solely to respond to service requests.
             </p>
           </Section>

@@ -23,6 +23,7 @@ import StatsBar from "@/components/fiveserv/StatsBar";
 import FaqAccordion from "@/components/fiveserv/FaqAccordion";
 import ContactCTA from "@/components/fiveserv/ContactCTA";
 import { useReveal } from "@/hooks/use-fiveserv";
+import BrandName from "@/components/fiveserv/BrandName";
 
 const SERVICES_GRID = [
   { icon: DoorOpen, title: "Door Repair & Replacement", desc: "Interior doors, exterior doors, closet doors, hardware, frames, weatherstripping." },
@@ -107,7 +108,7 @@ const CarpentryPage = () => {
       <section className="bg-brand-black pt-32 pb-16">
         <div className="container">
           <p className="text-xs font-medium uppercase tracking-[0.12em] text-brand-gold">
-            — {SITE.brand} Property Solutions
+            — <BrandName variant="light" /> Property Solutions
           </p>
           <h1 className="mt-3 font-display font-black text-4xl text-white sm:text-5xl lg:text-6xl">
             Carpentry Services for Properties and Homes —
@@ -269,7 +270,7 @@ const CarpentryPage = () => {
                   </h2>
                   <p className="mt-3 text-gray-700">
                     These are the most common punch-list items on a unit turn, and the ones most often missed by
-                    single-trade vendors. {SITE.brand} carpentry is included in every make-ready assessment so
+                    single-trade vendors. <BrandName variant="dark" /> carpentry is included in every make-ready assessment so
                     nothing slips through to the resident walk.
                   </p>
                 </div>

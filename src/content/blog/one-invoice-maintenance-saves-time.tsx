@@ -1,7 +1,8 @@
 import { renderBlocks, InternalLinkCluster, type Block } from "./_blocks";
+import BrandName from "@/components/fiveserv/BrandName";
 
 const blocks: Block[] = [
-  { type: "p", text: <><strong>FiveServ Property Solutions</strong> consolidates all property work into one monthly invoice across Central Florida. Here's the math behind why one-invoice maintenance saves PMs real time and money.</> },
+  { type: "p", text: <><strong><BrandName variant="light" /> Property Solutions</strong> consolidates all property work into one monthly invoice across Central Florida. Here's the math behind why one-invoice maintenance saves PMs real time and money.</> },
   { type: "h2", text: "The hidden admin cost" },
   { type: "p", text: "Every vendor invoice triggers AP processing, GL coding, approval routing, and month-end accrual. At a fully-loaded $75/hr admin cost, each invoice runs $12–$18 in processing." },
   { type: "h2", text: "Real-portfolio math" },
