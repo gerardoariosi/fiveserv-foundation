@@ -1,7 +1,8 @@
 import { renderBlocks, InternalLinkCluster, type Block } from "./_blocks";
+import BrandName from "@/components/fiveserv/BrandName";
 
 const blocks: Block[] = [
-  { type: "p", text: <><strong>FiveServ Property Solutions</strong> answers all 5 of these questions before any new client signs. Use them in every vendor interview to separate real maintenance partners from one-person shops.</> },
+  { type: "p", text: <><strong><BrandName variant="light" /> Property Solutions</strong> answers all 5 of these questions before any new client signs. Use them in every vendor interview to separate real maintenance partners from one-person shops.</> },
   { type: "h2", text: "1. What's your insurance limit?" },
   { type: "p", text: "Looking for $1M general liability / $2M aggregate minimum. Get a COI before any work starts." },
   { type: "h2", text: "2. Are crews in-house or subbed?" },

@@ -1,7 +1,8 @@
 import { renderBlocks, InternalLinkCluster, type Block } from "./_blocks";
+import BrandName from "@/components/fiveserv/BrandName";
 
 const blocks: Block[] = [
-  { type: "p", text: <><strong>FiveServ Property Solutions</strong> gets asked this every week by new property managers and onsite teams: what exactly is a unit turn? Here is the full definition, the standard scope, and why the answer affects your operating budget.</> },
+  { type: "p", text: <><strong><BrandName variant="light" /> Property Solutions</strong> gets asked this every week by new property managers and onsite teams: what exactly is a unit turn? Here is the full definition, the standard scope, and why the answer affects your operating budget.</> },
   { type: "h2", text: "Definition" },
   { type: "p", text: "A unit turn is the maintenance work performed between one resident's move-out and the next resident's move-in. It transforms a vacated unit back to lease-ready condition." },
   { type: "h2", text: "Standard scope of a turn" },

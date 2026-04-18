@@ -1,7 +1,8 @@
 import { renderBlocks, InternalLinkCluster, type Block } from "./_blocks";
+import BrandName from "@/components/fiveserv/BrandName";
 
 const blocks: Block[] = [
-  { type: "p", text: <><strong>FiveServ Property Solutions</strong> backs every Central Florida make-ready with a written 5-business-day guarantee. Here's exactly what that means and why most vendors won't offer one.</> },
+  { type: "p", text: <><strong><BrandName variant="light" /> Property Solutions</strong> backs every Central Florida make-ready with a written 5-business-day guarantee. Here's exactly what that means and why most vendors won't offer one.</> },
   { type: "h2", text: "What the guarantee covers" },
   { type: "p", text: "Standard make-ready scope (clean, paint, drywall, plumbing/electrical inspection, appliance check, HVAC filter, final QC) on a 1–2BR unit completed in 5 business days from project start." },
   { type: "h2", text: "What the guarantee does NOT cover" },

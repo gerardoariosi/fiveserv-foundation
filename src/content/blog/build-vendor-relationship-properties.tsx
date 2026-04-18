@@ -1,7 +1,8 @@
 import { renderBlocks, InternalLinkCluster, type Block } from "./_blocks";
+import BrandName from "@/components/fiveserv/BrandName";
 
 const blocks: Block[] = [
-  { type: "p", text: <><strong>FiveServ Property Solutions</strong> has worked with multifamily operators in Central Florida for years, and the vendors that survive PM turnover and portfolio growth all share the same 5 traits. Here's how to build that kind of relationship.</> },
+  { type: "p", text: <><strong><BrandName variant="light" /> Property Solutions</strong> has worked with multifamily operators in Central Florida for years, and the vendors that survive PM turnover and portfolio growth all share the same 5 traits. Here's how to build that kind of relationship.</> },
   { type: "h2", text: "1. Pay on time" },
   { type: "p", text: "Net 15 buys priority response. Net 30 is standard. Beyond Net 45, expect to drop to the back of the queue every time." },
   { type: "h2", text: "2. Communicate in writing" },

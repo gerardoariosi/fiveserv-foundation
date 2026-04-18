@@ -1,7 +1,8 @@
 import { renderBlocks, InternalLinkCluster, type Block } from "./_blocks";
+import BrandName from "@/components/fiveserv/BrandName";
 
 const blocks: Block[] = [
-  { type: "p", text: <><strong>FiveServ Property Solutions</strong> repairs drywall on every Central Florida make-ready. Knowing what's normal wear vs. damage that needs root-cause investigation protects both your turn budget and security-deposit defensibility.</> },
+  { type: "p", text: <><strong><BrandName variant="light" /> Property Solutions</strong> repairs drywall on every Central Florida make-ready. Knowing what's normal wear vs. damage that needs root-cause investigation protects both your turn budget and security-deposit defensibility.</> },
   { type: "h2", text: "Normal wear" },
   { type: "ul", items: [
     "Nail pops from settling (a few per unit)",

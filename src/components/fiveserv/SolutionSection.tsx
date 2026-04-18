@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import { Check, X } from "lucide-react";
 import { useReveal } from "@/hooks/use-fiveserv";
 import SectionHeading from "./SectionHeading";
+import BrandName from "@/components/fiveserv/BrandName";
 
 const ROWS: [string, string][] = [
   ["5+ vendors to coordinate", "1 call to FiveServ"],
@@ -26,7 +27,7 @@ export const SolutionSection = () => {
         <div className="mt-16 grid gap-6 lg:grid-cols-2">
           {/* Without */}
           <div className="rounded-xl border border-gray-200 bg-gray-50 p-6">
-            <h3 className="font-display text-lg font-bold text-gray-500">Without FiveServ</h3>
+            <h3 className="font-display text-lg font-bold text-gray-500">Without <BrandName variant="dark" /></h3>
             <ul className="mt-5 space-y-3">
               {ROWS.map(([left]) => (
                 <li key={left} className="flex items-start gap-3">
@@ -39,7 +40,7 @@ export const SolutionSection = () => {
 
           {/* With — elevated */}
           <div className="rounded-xl border-2 border-brand-gold bg-white p-6 shadow-lg">
-            <h3 className="font-display text-lg font-bold text-gray-900">With FiveServ</h3>
+            <h3 className="font-display text-lg font-bold text-gray-900">With <BrandName variant="dark" /></h3>
             <ul className="mt-5 space-y-3">
               {ROWS.map(([, right]) => (
                 <li key={right} className="flex items-start gap-3">

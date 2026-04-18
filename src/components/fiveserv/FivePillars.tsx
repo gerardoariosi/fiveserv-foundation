@@ -1,4 +1,5 @@
 import { useReveal } from "@/hooks/use-fiveserv";
+import BrandName from "@/components/fiveserv/BrandName";
 
 const PILLARS = [
   { number: "5", unit: "DAYS", description: "Every make-ready in 5 business days. Guaranteed in writing." },
@@ -13,7 +14,7 @@ export const FivePillars = () => {
   return (
     <section className="bg-brand-gold text-brand-black">
       <div ref={ref} className="container reveal py-20">
-        <h2 className="font-display text-3xl text-brand-black sm:text-4xl">The FiveServ Promise</h2>
+        <h2 className="font-display text-3xl text-brand-black sm:text-4xl">The <BrandName variant="dark" /> Promise</h2>
 
         <div className="mt-12 grid gap-10 sm:grid-cols-2 lg:grid-cols-5">
           {PILLARS.map((p) => (

@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import Seo from "@/lib/Seo";
 import { SITE } from "@/lib/site-config";
+import BrandName from "@/components/fiveserv/BrandName";
 
 /**
  * Thank You (B2B) — distraction-free conversion confirmation page.
@@ -41,7 +42,7 @@ export const ThankYouB2BPage = () => {
 
         {/* Subtext */}
         <p className="mt-8 max-w-xl text-base text-brand-gray-muted sm:text-lg">
-          We received your request. A FiveServ team member will contact you within{" "}
+          We received your request. A <BrandName variant="light" /> team member will contact you within{" "}
           <span className="font-bold text-white">2 business hours</span>.
         </p>
 

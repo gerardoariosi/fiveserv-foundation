@@ -1,7 +1,8 @@
 import { renderBlocks, InternalLinkCluster, type Block } from "./_blocks";
+import BrandName from "@/components/fiveserv/BrandName";
 
 const blocks: Block[] = [
-  { type: "p", text: <><strong>FiveServ Property Solutions</strong> turns 300+ units a year, and the math on vacancy cost is the single best argument for a fast make-ready. Here's the full daily cost of a vacant unit in Central Florida.</> },
+  { type: "p", text: <><strong><BrandName variant="light" /> Property Solutions</strong> turns 300+ units a year, and the math on vacancy cost is the single best argument for a fast make-ready. Here's the full daily cost of a vacant unit in Central Florida.</> },
   { type: "h2", text: "Daily cost components" },
   { type: "table", headers: ["Component", "Per day"], rows: [
     ["Lost rent (1BR avg)", "$55"],

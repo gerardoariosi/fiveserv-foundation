@@ -21,6 +21,7 @@ import ContactCTA from "@/components/fiveserv/ContactCTA";
 import BeforeAfterSlider from "@/components/fiveserv/BeforeAfterSlider";
 import TrustBar from "@/components/fiveserv/TrustBar";
 import { useReveal } from "@/hooks/use-fiveserv";
+import BrandName from "@/components/fiveserv/BrandName";
 
 const SERVICE_META = [
   { slug: "make-ready", icon: Key, badge: "5-Day Guarantee", cta: "Learn More" },
@@ -98,7 +99,7 @@ const TestimonialsSection = () => {
           eyebrow="Testimonials"
           subtext="Property managers across Central Florida trust FiveServ to handle every turn, every repair, every renovation."
         >
-          What Property Managers Say About <span className="text-gray-900">FiveServ</span>
+          What Property Managers Say About <span className="text-gray-900"><BrandName variant="dark" /></span>
         </SectionHeading>
         <div className="mt-16 grid gap-6 md:grid-cols-3">
           {TESTIMONIALS.map((t, i) => (
@@ -110,7 +111,7 @@ const TestimonialsSection = () => {
             to="/contact"
             className="inline-block rounded-lg bg-brand-black px-8 py-4 text-sm font-bold uppercase tracking-wide text-white transition-colors hover:bg-gray-800"
           >
-            Join 50+ Property Managers Who Trust FiveServ
+            Join 50+ Property Managers Who Trust <BrandName variant="light" />
           </Link>
         </div>
       </div>

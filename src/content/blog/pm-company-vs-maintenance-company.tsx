@@ -1,7 +1,8 @@
 import { renderBlocks, InternalLinkCluster, type Block } from "./_blocks";
+import BrandName from "@/components/fiveserv/BrandName";
 
 const blocks: Block[] = [
-  { type: "p", text: <><strong>FiveServ Property Solutions</strong> is a maintenance company, not a property management company. The two work together — here's the clear distinction.</> },
+  { type: "p", text: <><strong><BrandName variant="light" /> Property Solutions</strong> is a maintenance company, not a property management company. The two work together — here's the clear distinction.</> },
   { type: "h2", text: "Property management company" },
   { type: "p", text: "Handles leasing, marketing, accounting, resident relations, lease enforcement, and regulatory compliance. Acts as the owner's representative." },
   { type: "h2", text: "Maintenance company" },

@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { Link, NavLink } from "react-router-dom";
 import { Menu, Phone, X } from "lucide-react";
 import { SITE } from "@/lib/site-config";
+import BrandName from "@/components/fiveserv/BrandName";
 
 const NAV = [
   { to: "/", label: "Home" },
@@ -47,7 +48,7 @@ export const StickyHeader = () => {
             className="h-10 w-auto object-contain"
           />
           <span className="flex flex-col leading-tight">
-            <span className="font-display font-bold text-gray-900 text-lg">FiveServ</span>
+            <span className="font-display font-bold text-gray-900 text-lg"><BrandName variant="dark" /></span>
             <span className="hidden lg:inline text-[10px] text-gray-500 uppercase tracking-wider">
               Property Solutions
             </span>

@@ -1,7 +1,8 @@
 import { renderBlocks, InternalLinkCluster, type Block } from "./_blocks";
+import BrandName from "@/components/fiveserv/BrandName";
 
 const blocks: Block[] = [
-  { type: "p", text: <><strong>FiveServ Property Solutions</strong> publishes flat-rate make-ready pricing across Central Florida so property managers can build accurate annual budgets. Here's the 2025 cost breakdown.</> },
+  { type: "p", text: <><strong><BrandName variant="light" /> Property Solutions</strong> publishes flat-rate make-ready pricing across Central Florida so property managers can build accurate annual budgets. Here's the 2025 cost breakdown.</> },
   { type: "h2", text: "Standard turn pricing" },
   { type: "table", headers: ["Unit size", "Standard turn", "With repaint"], rows: [
     ["Studio / 1BR", "$850 – $1,200", "$1,250 – $1,800"],

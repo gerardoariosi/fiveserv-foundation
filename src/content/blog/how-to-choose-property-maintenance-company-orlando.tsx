@@ -1,7 +1,8 @@
 import { renderBlocks, InternalLinkCluster, type Block } from "./_blocks";
+import BrandName from "@/components/fiveserv/BrandName";
 
 const blocks: Block[] = [
-  { type: "p", text: <><strong>FiveServ Property Solutions</strong> is one of dozens of property maintenance companies in Orlando. Here are the 7 criteria you should use to evaluate any vendor — including us — before signing.</> },
+  { type: "p", text: <><strong><BrandName variant="light" /> Property Solutions</strong> is one of dozens of property maintenance companies in Orlando. Here are the 7 criteria you should use to evaluate any vendor — including us — before signing.</> },
   { type: "h2", text: "1. Insurance limits" },
   { type: "p", text: "$1M general liability / $2M aggregate is the multifamily standard. Anything lower exposes you to claim risk." },
   { type: "h2", text: "2. In-house crews vs subbed work" },
