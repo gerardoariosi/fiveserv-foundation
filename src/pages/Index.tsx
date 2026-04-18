@@ -53,30 +53,33 @@ const ServicesGrid = () => {
   const ref = useReveal<HTMLDivElement>();
   return (
     <section className="section-light">
-      <div ref={ref} className="container reveal py-20">
-        <h2 className="font-display text-3xl text-brand-black sm:text-4xl">
-          Everything Your Properties Need. <span className="text-brand-gold">One Team.</span>
-        </h2>
+      <div ref={ref} className="container reveal py-16 lg:py-24">
+        <div className="max-w-3xl">
+          <p className="text-brand-gold text-xs font-bold uppercase tracking-widest mb-3">Our Services</p>
+          <h2 className="text-brand-black font-display font-black text-3xl lg:text-4xl leading-tight">
+            Everything Your Properties Need.{" "}
+            <span className="text-brand-gold">One Team.</span>
+          </h2>
+        </div>
 
-        <div className="mt-12 grid gap-6 md:grid-cols-2">
+        <div className="mt-12 grid gap-8 md:grid-cols-2">
           {SERVICE_META.map((m) => {
             const svc = SERVICES.find((s) => s.slug === m.slug)!;
             return (
               <div key={svc.slug} className="relative">
                 {m.badge && (
-                  <span className="absolute -top-3 left-6 z-10 rounded-full bg-brand-gold px-3 py-1 text-xs font-bold uppercase text-brand-black">
+                  <span className="absolute -top-3 left-6 z-10 rounded-full bg-brand-gold px-3 py-1 text-xs font-bold uppercase text-brand-black shadow-md">
                     {m.badge}
                   </span>
                 )}
-                <div className="rounded-lg">
-                  <ServiceCard
-                    icon={m.icon}
-                    title={svc.name}
-                    description={svc.description}
-                    href={`/${svc.slug}`}
-                    cta={m.cta}
-                  />
-                </div>
+                <ServiceCard
+                  icon={m.icon}
+                  title={svc.name}
+                  description={svc.description}
+                  href={`/${svc.slug}`}
+                  cta={m.cta}
+                  image={`/images/services/${svc.slug}.jpg`}
+                />
               </div>
             );
           })}
@@ -90,18 +93,20 @@ const TestimonialsSection = () => {
   const ref = useReveal<HTMLDivElement>();
   return (
     <section className="section-light">
-      <div ref={ref} className="container reveal py-20">
-        <h2 className="font-display text-3xl text-brand-black sm:text-4xl">
-          What Property Managers Say About <span className="text-brand-gold">FiveServ</span>
-        </h2>
-        {/* STATIC cards — not carousel — so Google sees all reviews */}
+      <div ref={ref} className="container reveal py-16 lg:py-24">
+        <div className="max-w-3xl">
+          <p className="text-brand-gold text-xs font-bold uppercase tracking-widest mb-3">Testimonials</p>
+          <h2 className="text-brand-black font-display font-black text-3xl lg:text-4xl leading-tight">
+            What Property Managers Say About <span className="text-brand-gold">FiveServ</span>
+          </h2>
+        </div>
         <div className="mt-12 grid gap-6 md:grid-cols-3">
           {TESTIMONIALS.map((t, i) => (
             <TestimonialCard key={i} {...t} />
           ))}
         </div>
-        <div className="mt-10 text-center">
-          <Link to="/contact" className="cta-gold inline-block rounded-md px-6 py-3 font-bold uppercase tracking-wide">
+        <div className="mt-12 text-center">
+          <Link to="/contact" className="cta-dark inline-block rounded-md px-6 py-3 font-bold uppercase tracking-wide">
             Join 50+ Property Managers Who Trust FiveServ
           </Link>
         </div>
@@ -159,11 +164,14 @@ const Index = () => {
 
       {/* Element 11: Cities + interactive map — light gray */}
       <section className="section-light-gray">
-        <div className="container py-20">
-          <h2 className="font-display text-3xl text-brand-black sm:text-4xl">
-            18 Cities Across <span className="text-brand-gold">Central Florida</span>
-          </h2>
-          <p className="mt-3 max-w-2xl text-gray-700">
+        <div className="container py-16 lg:py-24">
+          <div className="max-w-3xl">
+            <p className="text-brand-gold text-xs font-bold uppercase tracking-widest mb-3">Service Areas</p>
+            <h2 className="text-brand-black font-display font-black text-3xl lg:text-4xl leading-tight">
+              18 Cities Across <span className="text-brand-gold">Central Florida</span>
+            </h2>
+          </div>
+          <p className="mt-3 max-w-2xl text-gray-600 leading-relaxed">
             Hover any city for response time. Tampa Bay coming soon.
           </p>
           <div className="mt-10">
