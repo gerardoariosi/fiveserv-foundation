@@ -96,6 +96,12 @@
   }
 }
 
+@layer components {
+  .section-light       { @apply bg-white text-brand-black; }
+  .section-light-gray  { @apply bg-brand-light text-brand-black; }
+  .section-dark        { @apply bg-brand-black text-brand-white; }
+}
+
 @layer utilities {
   .font-display {
     font-family: "Montserrat", Arial, sans-serif;
