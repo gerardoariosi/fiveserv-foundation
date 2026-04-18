@@ -90,7 +90,7 @@ const ResidentialPage = () => {
           </p>
           <h1 className="mt-3 font-display font-black text-4xl text-white sm:text-5xl lg:text-6xl">
             Home Maintenance Services Orlando FL —{" "}
-            <span className="block text-brand-gold">Repairs &amp; Renovations</span>
+            <span className="block text-brand-gold">Repairs <span className="font-sans font-normal">&amp;</span> Renovations</span>
           </h1>
           <p className="mt-6 max-w-2xl text-lg text-gray-300">
             The same crews that turn 500-unit communities — now at your home. One call. One team. One invoice.
