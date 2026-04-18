@@ -76,7 +76,7 @@ export const HeroSection = ({
         playsInline
         preload="auto"
         poster={posterSrc}
-        className="absolute inset-0 h-full w-full object-cover object-[center_top] md:object-[center_18%] lg:object-[center_24%] transition-opacity duration-1000 ease-in-out"
+        className="absolute inset-0 h-full w-full object-cover object-[center_30%] md:object-[center_18%] lg:object-[center_24%] transition-opacity duration-1000 ease-in-out"
         style={{ opacity: activeVideo === "A" ? 1 : 0 }}
       >
         <source src={videoSrc} type="video/mp4" />
@@ -86,7 +86,7 @@ export const HeroSection = ({
         muted
         playsInline
         preload="auto"
-        className="absolute inset-0 h-full w-full object-cover object-[center_top] md:object-[center_18%] lg:object-[center_24%] transition-opacity duration-1000 ease-in-out"
+        className="absolute inset-0 h-full w-full object-cover object-[center_30%] md:object-[center_18%] lg:object-[center_24%] transition-opacity duration-1000 ease-in-out"
         style={{ opacity: activeVideo === "B" ? 1 : 0 }}
       >
         <source src={videoSrc} type="video/mp4" />
@@ -94,27 +94,27 @@ export const HeroSection = ({
       {/* 60% black overlay over the video for readability */}
       <div className="absolute inset-0 bg-brand-black/60" />
 
-      <div className="relative z-10 flex items-center py-16 lg:py-20" style={{ minHeight: heroVisibleHeight }}>
+      <div className="relative z-10 flex items-center py-10 sm:py-14 lg:py-20" style={{ minHeight: heroVisibleHeight }}>
         <div ref={ref} className="container reveal">
-          <h1 className="text-4xl text-brand-white sm:text-5xl lg:text-6xl">
+          <h1 className="text-3xl text-brand-white sm:text-5xl lg:text-6xl leading-tight">
             One call handles your entire make-ready —
             <span className="block text-brand-gold italic">no vendor chaos. One invoice.</span>
           </h1>
-          <p className="mt-6 max-w-2xl text-lg lg:text-xl text-gray-300 leading-[1.75]">
+          <p className="mt-5 max-w-2xl text-base sm:text-lg lg:text-xl text-gray-300 leading-relaxed sm:leading-[1.75]">
             Painting, cleaning, repairs, drywall, inspections. Our team. 5 business days. Guaranteed.
           </p>
 
-          <div className="mt-8 flex flex-wrap gap-3">
+          <div className="mt-7 flex flex-col sm:flex-row sm:flex-wrap gap-3">
             <button
               type="button"
               onClick={scrollToForm}
-              className="cta-gold cta-pill"
+              className="cta-gold cta-pill w-full sm:w-auto justify-center"
             >
               Get a free quote <ArrowRight className="ml-2 h-4 w-4" />
             </button>
             <a
               href={`tel:${SITE.phone}`}
-              className="inline-flex items-center gap-2 rounded-full border-2 border-brand-white px-8 py-3 text-sm font-semibold text-brand-white hover:bg-brand-white hover:text-brand-black transition-colors"
+              className="inline-flex items-center justify-center gap-2 rounded-full border-2 border-brand-white px-6 sm:px-8 py-3 text-sm font-semibold text-brand-white hover:bg-brand-white hover:text-brand-black transition-colors w-full sm:w-auto"
             >
               <Phone className="h-4 w-4" /> Call now
             </a>
@@ -122,15 +122,15 @@ export const HeroSection = ({
               href={waHref}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 rounded-full bg-[#25D366] px-8 py-3 text-sm font-semibold text-white hover:opacity-90 transition-opacity"
+              className="inline-flex items-center justify-center gap-2 rounded-full bg-[#25D366] px-6 sm:px-8 py-3 text-sm font-semibold text-white hover:opacity-90 transition-opacity w-full sm:w-auto"
             >
               <WhatsAppIcon className="h-4 w-4" /> WhatsApp us
             </a>
           </div>
 
-          <ul className="mt-10 flex flex-wrap items-center gap-x-6 gap-y-3 text-sm font-medium text-brand-white">
+          <ul className="mt-8 sm:mt-10 flex flex-wrap items-center gap-x-4 sm:gap-x-6 gap-y-2 sm:gap-y-3 text-xs sm:text-sm font-medium text-brand-white">
             {TRUST.map((t, i) => (
-              <li key={t} className="flex items-center gap-3">
+              <li key={t} className="flex items-center gap-2 sm:gap-3">
                 {i > 0 && <span aria-hidden className="text-brand-gold">|</span>}
                 <span>{t}</span>
               </li>
