@@ -19,7 +19,7 @@ type Props = {
 };
 
 export const BrandName = ({ variant = "light", className }: Props) => {
-  const fColor = variant === "light" || variant === "onGold" ? "text-brand-black" : "text-brand-gold";
+  const fColor = variant === "light" || variant === "onGold" ? "text-primary" : "text-brand-gold";
   const restColor =
     variant === "light"
       ? "text-[brand-gold-hover] text-brand-black"
@@ -29,7 +29,7 @@ export const BrandName = ({ variant = "light", className }: Props) => {
 
   return (
     <span className={className} style={{ whiteSpace: "nowrap" }}>
-      <span className={`${fColor} font-bold`}>F</span>
+      <span className={`font-bold ${fColor}`}>F</span>
       <span className={restColor}>iveServ</span>
     </span>
   );
