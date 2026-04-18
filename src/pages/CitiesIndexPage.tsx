@@ -3,7 +3,7 @@ import { MapPin, Clock } from "lucide-react";
 import Seo from "@/lib/Seo";
 import SchemaOrg from "@/lib/SchemaOrg";
 import { SITE, CITIES, COMING_SOON_CITIES } from "@/lib/site-config";
-import GoogleMapEmbed from "@/components/fiveserv/GoogleMapEmbed";
+import ServiceAreaMap from "@/components/fiveserv/ServiceAreaMap";
 
 type Props = { canonicalPath?: "/cities" | "/service-areas" };
 
@@ -34,7 +34,7 @@ const CitiesIndexPage = ({ canonicalPath = "/cities" }: Props) => (
 
     <section className="bg-white pb-24 pt-16">
       <div className="container">
-        <GoogleMapEmbed />
+        <ServiceAreaMap />
       </div>
       <div className="container mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
         {CITIES.map((city) => (
