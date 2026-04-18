@@ -17,6 +17,7 @@ import CityGrid from "@/components/fiveserv/CityGrid";
 import FaqAccordion from "@/components/fiveserv/FaqAccordion";
 import LeadMagnetSection from "@/components/fiveserv/LeadMagnetSection";
 import ContactCTA from "@/components/fiveserv/ContactCTA";
+import BeforeAfterSlider from "@/components/fiveserv/BeforeAfterSlider";
 import { useReveal } from "@/hooks/use-fiveserv";
 
 const SERVICE_META = [
@@ -141,8 +142,13 @@ const Index = () => {
       {/* Element 8: Stats counter */}
       <StatsBar />
 
-      {/* Element 9: Family Story */}
+      {/* Element 9: Family Story + Before/After slider */}
       <FamilyStory />
+      <section className="bg-brand-black">
+        <div className="container py-16">
+          <BeforeAfterSlider />
+        </div>
+      </section>
 
       {/* Element 10: Testimonials (static, not carousel) */}
       <TestimonialsSection />
