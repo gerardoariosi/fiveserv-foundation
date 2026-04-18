@@ -110,7 +110,7 @@ export const SchemaOrg = ({
       "@context": "https://schema.org",
       "@type": "LocalBusiness",
       name: `${SITE.brand} — ${city.name}, ${city.state}`,
-      url: `${SITE.url}/cities/${city.slug}`,
+      url: `${SITE.url}/maintenance-${city.slug}`,
       telephone: SITE.phone,
       address: {
         "@type": "PostalAddress",

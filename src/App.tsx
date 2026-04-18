@@ -80,8 +80,14 @@ const router = createBrowserRouter([
       ...SERVICES.map((s) => ({ path: `${s.slug}/:city`, element: <ServiceCityPage /> })),
 
       // City pages (18) — flat URL: /maintenance-orlando-fl, /maintenance-kissimmee-fl, etc.
-      // Param :city receives the full slug (e.g. "orlando-fl")
-      { path: "maintenance-:city", element: <MaintenanceCityPage /> },
+      // React Router v6 cannot match params embedded in partial path segments
+      // (e.g. "maintenance-:city" will not match "/maintenance-sanford-fl"),
+      // so each city is registered as an explicit static route. The component
+      // still reads ":city" via useParams, which we provide by parsing the URL.
+      ...CITIES.map((c) => ({
+        path: `maintenance-${c.slug}`,
+        element: <MaintenanceCityPage citySlug={c.slug} />,
+      })),
 
       // Tampa Bay coming soon
       { path: "tampa-bay-fl", element: <TampaBayPage /> },
