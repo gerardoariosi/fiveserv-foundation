@@ -3,7 +3,7 @@ import { MapPin } from "lucide-react";
 import { CITIES, COMING_SOON_CITIES } from "@/lib/site-config";
 import { useReveal } from "@/hooks/use-fiveserv";
 import SectionHeading from "./SectionHeading";
-import GoogleMapEmbed from "./GoogleMapEmbed";
+import ServiceAreaMap from "./ServiceAreaMap";
 
 const TIER_1 = new Set([
   "orlando-fl",
@@ -55,7 +55,7 @@ export const CityGrid = () => {
         </SectionHeading>
 
         <div className="mt-12">
-          <GoogleMapEmbed />
+          <ServiceAreaMap />
         </div>
 
         <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
