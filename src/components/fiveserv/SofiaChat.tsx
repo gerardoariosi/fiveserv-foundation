@@ -325,6 +325,15 @@ const fallbackResponse = (lang: Lang): Message =>
     ],
   });
 
+const SS_OPENED = "sofia.opened";
+const SS_DISMISSED = "sofia.dismissed";
+
+const detectBrowserLang = (): Lang => {
+  if (typeof navigator === "undefined") return "en";
+  const l = (navigator.language || "en").toLowerCase();
+  return l.startsWith("es") ? "es" : "en";
+};
+
 const SofiaChat = () => {
   const [open, setOpen] = useState(false);
   const [lang, setLang] = useState<Lang>("en");
@@ -333,6 +342,7 @@ const SofiaChat = () => {
   const [messages, setMessages] = useState<Message[]>([]);
   const [input, setInput] = useState("");
   const [typing, setTyping] = useState(false);
+  const [showBadge, setShowBadge] = useState(false);
   const scrollRef = useRef<HTMLDivElement>(null);
 
   // Restore from sessionStorage
@@ -348,8 +358,10 @@ const SofiaChat = () => {
         return;
       }
     } catch { /* ignore */ }
-    // First-time opening message
-    setMessages([mkSofia(t.en.opening, { quickReplies: [...t.en.openingButtons] })]);
+    // First-time opening message — use browser locale
+    const initialLang = detectBrowserLang();
+    setLang(initialLang);
+    setMessages([mkSofia(t[initialLang].opening, { quickReplies: [...t[initialLang].openingButtons] })]);
   }, []);
 
   // Persist
@@ -363,6 +375,35 @@ const SofiaChat = () => {
   useEffect(() => {
     scrollRef.current?.scrollTo({ top: scrollRef.current.scrollHeight, behavior: "smooth" });
   }, [messages, typing, open]);
+
+  // Auto-open + notification badge — fires once per session
+  useEffect(() => {
+    if (typeof window === "undefined") return;
+    const isMobile = window.matchMedia("(max-width: 639px)").matches;
+    const badgeDelay = 3000;
+    const openDelay = isMobile ? 5000 : 4000;
+
+    const badgeTimer = window.setTimeout(() => setShowBadge(true), badgeDelay);
+
+    const openTimer = window.setTimeout(() => {
+      const alreadyOpened = sessionStorage.getItem(SS_OPENED) === "true";
+      const dismissed = sessionStorage.getItem(SS_DISMISSED) === "true";
+      if (alreadyOpened || dismissed) return;
+      setOpen(true);
+      setShowBadge(false);
+      sessionStorage.setItem(SS_OPENED, "true");
+    }, openDelay);
+
+    return () => {
+      window.clearTimeout(badgeTimer);
+      window.clearTimeout(openTimer);
+    };
+  }, []);
+
+  // Hide badge when chat opens
+  useEffect(() => {
+    if (open) setShowBadge(false);
+  }, [open]);
 
   const sayLater = (msgs: Message[], delay?: number) => {
     setTyping(true);
