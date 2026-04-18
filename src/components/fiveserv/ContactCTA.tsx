@@ -56,8 +56,8 @@ export const ContactCTA = () => {
                   </select>
                 </div>
                 <textarea rows={4} placeholder="Tell us about your property" className="w-full rounded-md bg-brand-black px-4 py-3 text-brand-white outline-none focus:ring-2 focus:ring-brand-gold" />
-                <button type="submit" className="cta-gold w-full rounded-md px-6 py-3 font-bold uppercase tracking-wide">
-                  Get My Free Quote
+                <button type="submit" className="cta-gold cta-pill w-full">
+                  Get my free quote
                 </button>
                 <p className="text-xs text-brand-white/60">[FORM_GHL_EMBED] — replace this fallback form by setting VITE_FORM_GHL.</p>
               </form>

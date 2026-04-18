@@ -1,4 +1,4 @@
-import { Phone } from "lucide-react";
+import { ArrowRight, Phone } from "lucide-react";
 import { SITE } from "@/lib/site-config";
 import { useReveal } from "@/hooks/use-fiveserv";
 import AIOverviewBlock from "./AIOverviewBlock";
@@ -43,11 +43,11 @@ export const HeroSection = ({
       <div className="absolute inset-0 -z-10 bg-brand-black/60" />
 
       <div ref={ref} className="container reveal">
-        <h1 className="font-display text-4xl leading-[1.05] text-brand-white sm:text-5xl lg:text-6xl">
-          One Call Handles Your Entire Make-Ready —
-          <span className="block text-brand-gold">No Vendor Chaos. One Invoice.</span>
+        <h1 className="text-4xl text-brand-white sm:text-5xl lg:text-6xl">
+          One call handles your entire make-ready —
+          <span className="block text-brand-gold italic">no vendor chaos. One invoice.</span>
         </h1>
-        <p className="mt-6 max-w-2xl text-lg text-brand-white/90">
+        <p className="mt-6 max-w-2xl text-lg lg:text-xl text-gray-300 leading-[1.75]">
           Painting, cleaning, repairs, drywall, inspections. Our team. 5 business days. Guaranteed.
         </p>
 
@@ -55,27 +55,27 @@ export const HeroSection = ({
           <button
             type="button"
             onClick={scrollToForm}
-            className="cta-gold rounded-md px-6 py-3 text-sm font-bold uppercase tracking-wide"
+            className="cta-gold cta-pill"
           >
-            Get a Free Quote
+            Get a free quote <ArrowRight className="ml-2 h-4 w-4" />
           </button>
           <a
             href={`tel:${SITE.phone}`}
-            className="flex items-center gap-2 rounded-md border-2 border-brand-white px-6 py-3 text-sm font-bold uppercase tracking-wide text-brand-white hover:bg-brand-white hover:text-brand-black transition-colors"
+            className="inline-flex items-center gap-2 rounded-full border-2 border-brand-white px-8 py-3 text-sm font-semibold text-brand-white hover:bg-brand-white hover:text-brand-black transition-colors"
           >
-            <Phone className="h-4 w-4" /> Call Now
+            <Phone className="h-4 w-4" /> Call now
           </a>
           <a
             href={waHref}
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center gap-2 rounded-md bg-[#25D366] px-6 py-3 text-sm font-bold uppercase tracking-wide text-white hover:opacity-90 transition-opacity"
+            className="inline-flex items-center gap-2 rounded-full bg-[#25D366] px-8 py-3 text-sm font-semibold text-white hover:opacity-90 transition-opacity"
           >
-            <WhatsAppIcon className="h-4 w-4" /> WhatsApp Us
+            <WhatsAppIcon className="h-4 w-4" /> WhatsApp us
           </a>
         </div>
 
-        <ul className="mt-10 flex flex-wrap items-center gap-x-6 gap-y-3 text-sm font-bold text-brand-white">
+        <ul className="mt-10 flex flex-wrap items-center gap-x-6 gap-y-3 text-sm font-medium text-brand-white">
           {TRUST.map((t, i) => (
             <li key={t} className="flex items-center gap-3">
               {i > 0 && <span aria-hidden className="text-brand-gold">|</span>}
