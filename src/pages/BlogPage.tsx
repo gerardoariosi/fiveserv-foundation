@@ -74,7 +74,7 @@ const BlogPage = () => {
               className={`rounded-full px-4 py-2 text-xs font-bold uppercase tracking-wide transition ${
                 activeCat === "all"
                   ? "bg-brand-gold text-gray-900"
-                  : "border border-brand-gold/40 text-gray-900 hover:border-brand-gold"
+                  : "border border-brand-gold/40 text-brand-white hover:border-brand-gold"
               }`}
             >
               All
@@ -86,7 +86,7 @@ const BlogPage = () => {
                 className={`rounded-full px-4 py-2 text-xs font-bold uppercase tracking-wide transition ${
                   activeCat === c.slug
                     ? "bg-brand-gold text-gray-900"
-                    : "border border-brand-gold/40 text-gray-900 hover:border-brand-gold"
+                    : "border border-brand-gold/40 text-brand-white hover:border-brand-gold"
                 }`}
               >
                 {c.label}
