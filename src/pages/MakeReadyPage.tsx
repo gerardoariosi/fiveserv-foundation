@@ -142,7 +142,7 @@ const MakeReadyPage = () => {
             <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
               {INCLUDED.map((it) => (
                 <article key={it.title} className="hover-card flex items-start gap-4 rounded-lg border border-gray-100 bg-white shadow-sm p-5">
-                  <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-md bg-amber-700/10 text-amber-700">
+                  <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-md bg-amber-700/10 text-gray-900">
                     <it.icon className="h-5 w-5" />
                   </span>
                   <h3 className="font-display text-base text-gray-900">{it.title}</h3>

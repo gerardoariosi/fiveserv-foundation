@@ -168,7 +168,7 @@ const MaintenanceCityPage = ({ citySlug: propSlug }: MaintenanceCityPageProps = 
                     to={`/${s.slug}`}
                     className="hover-card group flex flex-col rounded-lg border border-gray-100 bg-white shadow-sm p-6"
                   >
-                    <span className="flex h-12 w-12 items-center justify-center rounded-md bg-amber-700/10 text-amber-700">
+                    <span className="flex h-12 w-12 items-center justify-center rounded-md bg-amber-700/10 text-gray-900">
                       <Icon className="h-6 w-6" />
                     </span>
                     <h3 className="mt-5 font-display font-semibold text-xl text-gray-900">{s.name}</h3>

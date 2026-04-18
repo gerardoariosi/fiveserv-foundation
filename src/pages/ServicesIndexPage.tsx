@@ -39,7 +39,7 @@ const ServicesIndexPage = () => (
           const Icon = ICONS[s.slug] ?? Wrench;
           return (
             <article key={s.slug} className="hover-card group rounded-lg border border-gray-100 bg-white shadow-sm p-8">
-              <div className="inline-flex h-12 w-12 items-center justify-center rounded-md bg-amber-700/10 text-amber-700">
+              <div className="inline-flex h-12 w-12 items-center justify-center rounded-md bg-amber-700/10 text-gray-900">
                 <Icon className="h-6 w-6" />
               </div>
               <h2 className="mt-6 font-display font-semibold text-2xl text-gray-900">{s.name}</h2>
