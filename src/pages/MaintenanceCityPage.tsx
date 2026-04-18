@@ -37,8 +37,14 @@ const SectionReveal = ({ children, className = "" }: { children: React.ReactNode
   );
 };
 
-const MaintenanceCityPage = () => {
-  const { city: slug } = useParams<{ city: CitySlug }>();
+type MaintenanceCityPageProps = {
+  /** Optional explicit slug — when provided, overrides the route param. */
+  citySlug?: CitySlug;
+};
+
+const MaintenanceCityPage = ({ citySlug: propSlug }: MaintenanceCityPageProps = {}) => {
+  const params = useParams<{ city: CitySlug }>();
+  const slug = propSlug ?? params.city;
   const city = CITIES.find((c) => c.slug === slug);
   const editorial = slug ? CITY_EDITORIAL[slug as CitySlug] : undefined;
   if (!city || !editorial) return <NotFound />;
