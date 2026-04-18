@@ -531,7 +531,7 @@ const SofiaChat = () => {
           className="fixed inset-0 z-[9999] flex flex-col border border-brand-gold bg-brand-black sm:inset-auto sm:bottom-6 sm:right-6 sm:h-[580px] sm:w-[380px] sm:rounded-xl sm:shadow-2xl"
         >
           {/* Header */}
-          <header className="flex items-center gap-3 border-b border-brand-gold/30 bg-[#1a1a1a] p-3 sm:rounded-t-xl">
+          <header className="flex items-center gap-3 border-b border-brand-gold/30 bg-brand-black p-3 sm:rounded-t-xl">
             <div className="relative flex h-10 w-10 items-center justify-center rounded-full bg-brand-gold font-display text-sm font-black text-brand-black">
               SF
               <span className="absolute -right-0.5 -bottom-0.5 h-3 w-3 rounded-full border-2 border-brand-black bg-green-500" aria-hidden />
@@ -570,7 +570,7 @@ const SofiaChat = () => {
                       className={
                         m.sender === "user"
                           ? "bg-brand-gold px-3 py-2 text-sm font-semibold text-brand-black"
-                          : "bg-[#2D2D2D] px-3 py-2 text-sm text-brand-white"
+                          : "bg-brand-gray px-3 py-2 text-sm text-brand-white"
                       }
                       style={{
                         borderRadius:
@@ -618,7 +618,7 @@ const SofiaChat = () => {
             {typing && (
               <div className="flex justify-start">
                 <div
-                  className="flex items-center gap-1 bg-[#2D2D2D] px-3 py-2"
+                  className="flex items-center gap-1 bg-brand-gray px-3 py-2"
                   style={{ borderRadius: "4px 16px 16px 16px" }}
                 >
                   <span className="h-2 w-2 animate-bounce rounded-full bg-brand-gold [animation-delay:-0.3s]" />
@@ -632,14 +632,14 @@ const SofiaChat = () => {
           {/* Input */}
           <form
             onSubmit={(e) => { e.preventDefault(); handleSend(); }}
-            className="flex items-center gap-2 border-t border-brand-gold/30 bg-[#1a1a1a] p-3 sm:rounded-b-xl"
+            className="flex items-center gap-2 border-t border-brand-gold/30 bg-brand-black p-3 sm:rounded-b-xl"
           >
             <input
               value={input}
               onChange={(e) => setInput(e.target.value)}
               placeholder={L.inputPlaceholder}
               aria-label={L.inputPlaceholder}
-              className="flex-1 rounded-full bg-[#2D2D2D] px-4 py-2 text-sm text-brand-white placeholder:text-brand-white/40 outline-none focus:ring-2 focus:ring-brand-gold"
+              className="flex-1 rounded-full bg-brand-gray px-4 py-2 text-sm text-brand-white placeholder:text-brand-white/40 outline-none focus:ring-2 focus:ring-brand-gold"
             />
             <button
               type="submit"
