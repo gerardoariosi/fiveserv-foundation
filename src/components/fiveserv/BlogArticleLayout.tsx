@@ -92,7 +92,7 @@ export const BlogArticleLayout = ({ post, children }: Props) => {
       <section className="bg-gray-50 py-16">
         <div className="container max-w-3xl">
           <p className="text-brand-gold text-xs font-bold uppercase tracking-widest mb-3">Keep Reading</p>
-          <h2 className="text-brand-black font-display font-black text-2xl lg:text-3xl">Related FiveServ resources</h2>
+          <h2 className="text-gray-900 font-display font-black text-3xl lg:text-4xl">Related FiveServ resources</h2>
           <div className="mt-6 grid gap-3 sm:grid-cols-2">
             {SERVICES.map((s) => (
               <Link
@@ -132,7 +132,7 @@ export const BlogArticleLayout = ({ post, children }: Props) => {
       <section className="bg-white py-16">
         <div className="container max-w-3xl">
           <p className="text-brand-gold text-xs font-bold uppercase tracking-widest mb-3">FAQ</p>
-          <h2 className="text-brand-black font-display font-black text-3xl">Frequently asked questions</h2>
+          <h2 className="text-gray-900 font-display font-black text-3xl lg:text-4xl">Frequently asked questions</h2>
           <div className="mt-8 space-y-6">
             {post.faqs.map((f) => (
               <div key={f.q} className="rounded-xl border border-gray-100 bg-white p-5 shadow-sm">

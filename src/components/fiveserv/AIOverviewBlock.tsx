@@ -15,11 +15,11 @@ export const AIOverviewBlock = ({ answer, label = "Quick Answer", tone = "light"
     <aside
       aria-label={label}
       className={`mt-8 rounded-xl border-l-4 border-brand-gold p-6 shadow-sm ${
-        isDark ? "bg-brand-white/5 backdrop-blur" : "bg-white"
+        isDark ? "bg-white/5 backdrop-blur" : "bg-white"
       }`}
     >
-      <p className="text-xs font-bold uppercase tracking-widest text-brand-gold">{label}</p>
-      <p className={`mt-2 leading-relaxed ${isDark ? "text-brand-white/90" : "text-gray-700"}`}>{answer}</p>
+      <p className="text-xs font-bold uppercase tracking-[0.15em] text-brand-gold">{label}</p>
+      <p className={`mt-2 leading-relaxed ${isDark ? "text-white/90" : "text-gray-700"}`}>{answer}</p>
     </aside>
   );
 };
