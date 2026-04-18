@@ -33,19 +33,17 @@ export const StickyHeader = () => {
 
   return (
     <header
-      className={`fixed inset-x-0 top-0 z-40 transition-colors duration-300 ${
-        scrolled ? "bg-brand-black/95 backdrop-blur shadow-lg" : "bg-transparent"
+      style={{ top: "var(--banner-h, 0px)" }}
+      className={`fixed inset-x-0 z-40 transition-colors duration-300 ${
+        scrolled ? "bg-brand-black/95 backdrop-blur shadow-lg" : "bg-brand-black/80 backdrop-blur"
       }`}
     >
       <div className="container flex h-20 items-center justify-between gap-4">
         {/* FS Monogram + wordmark */}
         <Link to="/" className="flex items-center gap-2" aria-label="FiveServ home">
-          <span className="flex h-10 w-10 items-center justify-center rounded-md border-2 border-brand-gold font-display text-brand-gold text-lg">
-            FS
-          </span>
-          <span className="hidden sm:inline font-display text-xl tracking-tight">
-            <span className="text-brand-gold">F</span>
-            <span className="text-brand-white">iveServ</span>
+          <span className="font-display font-black text-brand-gold text-2xl">FS</span>
+          <span className="hidden sm:inline font-display font-black text-brand-white text-xl ml-2">
+            FiveServ
           </span>
         </Link>
 
