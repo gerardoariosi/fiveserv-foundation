@@ -101,9 +101,15 @@ const ServiceAreaMap = () => (
       scrollWheelZoom={false}
       style={{ height: 480, width: "100%" }}
     >
+      {/* Satellite imagery base */}
       <TileLayer
-        attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>'
-        url="https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png"
+        attribution='Tiles &copy; Esri &mdash; Source: Esri, Maxar, Earthstar Geographics'
+        url="https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}"
+      />
+      {/* Street labels & roads overlay */}
+      <TileLayer
+        attribution='Labels &copy; Esri'
+        url="https://server.arcgisonline.com/ArcGIS/rest/services/Reference/World_Boundaries_and_Places/MapServer/tile/{z}/{y}/{x}"
       />
       {CITIES.map((city) => {
         const coords = CITY_COORDS[city.slug];
