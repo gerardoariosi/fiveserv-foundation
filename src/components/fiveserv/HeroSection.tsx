@@ -76,7 +76,7 @@ export const HeroSection = ({
         playsInline
         preload="auto"
         poster={posterSrc}
-        className="absolute inset-0 h-full w-full object-cover object-center transition-opacity duration-1000 ease-in-out"
+        className="absolute inset-0 h-full w-full object-cover object-[center_top] md:object-[center_18%] lg:object-[center_24%] transition-opacity duration-1000 ease-in-out"
         style={{ opacity: activeVideo === "A" ? 1 : 0 }}
       >
         <source src={videoSrc} type="video/mp4" />
@@ -86,7 +86,7 @@ export const HeroSection = ({
         muted
         playsInline
         preload="auto"
-        className="absolute inset-0 h-full w-full object-cover object-center transition-opacity duration-1000 ease-in-out"
+        className="absolute inset-0 h-full w-full object-cover object-[center_top] md:object-[center_18%] lg:object-[center_24%] transition-opacity duration-1000 ease-in-out"
         style={{ opacity: activeVideo === "B" ? 1 : 0 }}
       >
         <source src={videoSrc} type="video/mp4" />
