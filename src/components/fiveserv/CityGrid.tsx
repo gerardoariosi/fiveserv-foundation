@@ -65,20 +65,20 @@ export const CityGrid = () => {
               <Link
                 key={city.slug}
                 to={`/maintenance-${city.slug}`}
-                className={`group block rounded-xl bg-white p-6 transition-all duration-200 hover:-translate-y-1 hover:shadow-md ${tierBorder(tier)}`}
+                className={`group block rounded-lg bg-white p-6 shadow-card transition-shadow duration-200 hover:shadow-card-hover ${tierBorder(tier)}`}
               >
                 <div className="flex items-start justify-between">
-                  <MapPin className="text-amber-700" size={tierIconSize(tier)} />
+                  <MapPin className="text-brand-gold" strokeWidth={1.5} size={tierIconSize(tier)} />
                   {tier === 1 && (
-                    <span className="rounded-full bg-brand-gold px-2 py-0.5 text-[10px] font-bold uppercase tracking-wider text-brand-black">
+                    <span className="rounded-full bg-brand-gold px-2 py-0.5 text-[10px] font-semibold uppercase tracking-wider text-brand-black">
                       Primary Market
                     </span>
                   )}
                 </div>
-                <h3 className="mt-4 font-display text-lg font-semibold text-gray-900 group-hover:text-amber-700">
+                <h3 className="mt-4 text-lg font-semibold text-gray-900 group-hover:text-brand-gold">
                   {city.name}, {city.state}
                 </h3>
-                <p className="mt-1 text-sm font-semibold text-gray-700">
+                <p className="mt-1 text-sm text-gray-700">
                   Within {city.responseTime}
                 </p>
               </Link>
@@ -88,18 +88,18 @@ export const CityGrid = () => {
           {COMING_SOON_CITIES.map((c) => (
             <div
               key={c.slug}
-              className="rounded-xl border border-dashed border-brand-gold/50 bg-brand-gold/5 p-6"
+              className="rounded-lg border border-dashed border-brand-gold/50 bg-brand-gold/5 p-6"
             >
               <div className="flex items-start justify-between">
-                <MapPin className="text-amber-700" size={24} />
-                <span className="rounded-full bg-brand-gold px-2 py-0.5 text-[10px] font-bold uppercase tracking-wider text-brand-black">
+                <MapPin className="text-brand-gold" strokeWidth={1.5} size={24} />
+                <span className="rounded-full bg-brand-gold px-2 py-0.5 text-[10px] font-semibold uppercase tracking-wider text-brand-black">
                   Coming Soon
                 </span>
               </div>
-              <h3 className="mt-4 font-display text-lg font-semibold text-gray-900">
+              <h3 className="mt-4 text-lg font-semibold text-gray-900">
                 {c.name}, {c.state}
               </h3>
-              <p className="mt-1 text-sm font-semibold text-gray-500">
+              <p className="mt-1 text-sm text-gray-500">
                 Launching soon
               </p>
             </div>

@@ -7,24 +7,22 @@ type ServiceCardProps = {
   description: string;
   href: string;
   cta: string;
-  /** Kept for API compatibility — Servpro-style cards use a gold icon circle, not a photo. */
+  /** Kept for API compatibility — Servpro-style cards use a thin gold line icon, not a photo. */
   image?: string;
 };
 
 /**
- * ServiceCard — Servpro-style: white card, gold icon circle on top, lifts on hover.
+ * ServiceCard — Servpro-style: white card, thin border, soft shadow, line icon in brand-gold.
  */
 export const ServiceCard = ({ icon: Icon, title, description, href, cta }: ServiceCardProps) => {
   return (
-    <article className="group flex h-full flex-col rounded-2xl border border-gray-200 bg-white p-8 transition-all duration-300 hover:-translate-y-1 hover:border-brand-gold hover:shadow-xl">
-      <span className="flex h-14 w-14 items-center justify-center rounded-full bg-amber-700/10 text-gray-900">
-        <Icon className="h-7 w-7" />
-      </span>
-      <h3 className="mt-5 font-display text-xl font-semibold text-gray-900">{title}</h3>
-      <p className="mt-3 flex-1 text-sm leading-relaxed text-gray-600">{description}</p>
+    <article className="group flex h-full flex-col rounded-lg border border-gray-100 bg-white p-6 shadow-card transition-shadow duration-200 hover:shadow-card-hover">
+      <Icon className="h-8 w-8 text-brand-gold" strokeWidth={1.5} />
+      <h3 className="mt-5 text-xl font-semibold text-gray-900">{title}</h3>
+      <p className="mt-3 flex-1 text-sm leading-[1.75] text-gray-700">{description}</p>
       <Link
         to={href}
-        className="mt-6 inline-flex items-center gap-2 text-sm font-bold text-gray-900 hover:text-amber-700 hover:underline"
+        className="mt-6 inline-flex items-center gap-2 text-sm font-semibold text-gray-900 hover:text-brand-gold hover:underline"
       >
         {cta} <ArrowRight className="h-4 w-4" />
       </Link>

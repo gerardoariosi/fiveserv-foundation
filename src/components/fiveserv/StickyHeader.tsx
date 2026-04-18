@@ -34,19 +34,19 @@ export const StickyHeader = () => {
   return (
     <header
       style={{ top: "var(--banner-h, 0px)" }}
-      className={`fixed inset-x-0 z-40 transition-colors duration-300 ${
-        scrolled ? "bg-brand-black/95 backdrop-blur shadow-lg" : "bg-brand-black/80 backdrop-blur"
+      className={`fixed inset-x-0 z-40 bg-white border-b border-gray-200 transition-shadow duration-300 ${
+        scrolled ? "shadow-md" : "shadow-none"
       }`}
     >
       <div className="container flex h-20 items-center justify-between gap-4">
         {/* FS Monogram + wordmark */}
         <Link to="/" className="flex items-center gap-3" aria-label="FiveServ home">
-          <span className="inline-flex items-center justify-center bg-brand-black text-brand-gold font-display font-black text-base px-2 py-1.5 rounded-md border border-brand-gold/40">
+          <span className="inline-flex items-center justify-center bg-gray-900 text-brand-gold font-display font-bold text-base px-2 py-1.5 rounded-md">
             FS
           </span>
           <span className="flex flex-col leading-tight">
-            <span className="font-display font-bold text-brand-white text-lg">FiveServ</span>
-            <span className="hidden lg:inline text-[10px] text-gray-400 uppercase tracking-wider">
+            <span className="font-display font-bold text-gray-900 text-lg">FiveServ</span>
+            <span className="hidden lg:inline text-[10px] text-gray-500 uppercase tracking-wider">
               Property Solutions
             </span>
           </span>
@@ -59,8 +59,8 @@ export const StickyHeader = () => {
               to={n.to}
               end={n.to === "/"}
               className={({ isActive }) =>
-                `text-sm font-bold uppercase tracking-wide transition-colors hover:text-brand-gold ${
-                  isActive ? "text-brand-gold" : "text-brand-white"
+                `text-sm font-medium transition-colors hover:text-brand-gold ${
+                  isActive ? "text-brand-gold" : "text-gray-700"
                 }`
               }
             >
@@ -71,11 +71,11 @@ export const StickyHeader = () => {
 
         <div className="hidden items-center gap-4 lg:flex">
           <div className="flex flex-col items-end leading-tight">
-            <a href={`tel:${SITE.phone}`} className="flex items-center gap-1.5 text-brand-gold font-bold">
+            <a href={`tel:${SITE.phone}`} className="flex items-center gap-1.5 text-brand-gold font-semibold">
               <Phone className="h-4 w-4" />
               {SITE.phone}
             </a>
-            <span className="text-[10px] font-bold uppercase tracking-wider text-brand-gold/80">
+            <span className="text-[10px] font-medium uppercase tracking-wider text-gray-500">
               Available 24/7
             </span>
           </div>
@@ -88,8 +88,8 @@ export const StickyHeader = () => {
           >
             <WhatsAppIcon className="h-5 w-5" />
           </a>
-          <Link to="/contact" className="cta-gold rounded-md px-5 py-2.5 text-sm font-bold uppercase tracking-wide">
-            Get a Free Quote
+          <Link to="/contact" className="cta-gold cta-pill">
+            Get a free quote
           </Link>
         </div>
 
@@ -98,14 +98,14 @@ export const StickyHeader = () => {
           <a href={`tel:${SITE.phone}`} aria-label="Call FiveServ" className="text-brand-gold">
             <Phone className="h-6 w-6" />
           </a>
-          <button aria-label="Toggle menu" className="text-brand-white" onClick={() => setOpen((s) => !s)}>
+          <button aria-label="Toggle menu" className="text-gray-900" onClick={() => setOpen((s) => !s)}>
             {open ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
           </button>
         </div>
       </div>
 
       {open && (
-        <div className="lg:hidden bg-brand-black border-t border-brand-gray">
+        <div className="lg:hidden bg-white border-t border-gray-200">
           <div className="container flex flex-col gap-4 py-6">
             {NAV.map((n) => (
               <NavLink
@@ -114,20 +114,20 @@ export const StickyHeader = () => {
                 end={n.to === "/"}
                 onClick={() => setOpen(false)}
                 className={({ isActive }) =>
-                  `text-base font-bold uppercase ${isActive ? "text-brand-gold" : "text-brand-white"}`
+                  `text-base font-medium ${isActive ? "text-brand-gold" : "text-gray-700"}`
                 }
               >
                 {n.label}
               </NavLink>
             ))}
-            <a href={`tel:${SITE.phone}`} className="text-brand-gold font-bold">
-              📞 {SITE.phone} <span className="text-xs">· Available 24/7</span>
+            <a href={`tel:${SITE.phone}`} className="text-brand-gold font-semibold">
+              📞 {SITE.phone} <span className="text-xs text-gray-500">· Available 24/7</span>
             </a>
-            <a href={waHref} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-[#25D366] font-bold">
-              <WhatsAppIcon className="h-4 w-4" /> WhatsApp Us
+            <a href={waHref} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-[#25D366] font-semibold">
+              <WhatsAppIcon className="h-4 w-4" /> WhatsApp us
             </a>
-            <Link to="/contact" onClick={() => setOpen(false)} className="cta-gold rounded-md px-5 py-3 text-center font-bold">
-              Get a Free Quote
+            <Link to="/contact" onClick={() => setOpen(false)} className="cta-gold cta-pill text-center">
+              Get a free quote
             </Link>
           </div>
         </div>

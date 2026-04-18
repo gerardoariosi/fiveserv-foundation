@@ -14,9 +14,9 @@ export default {
     },
     extend: {
       fontFamily: {
-        display: ['"Clash Display"', "system-ui", "sans-serif"],
-        body: ['"Plus Jakarta Sans"', "system-ui", "sans-serif"],
-        sans: ['"Plus Jakarta Sans"', "system-ui", "sans-serif"],
+        display: ['"Playfair Display"', "Georgia", "serif"],
+        body: ['"Inter"', "system-ui", "sans-serif"],
+        sans: ['"Inter"', "system-ui", "sans-serif"],
       },
       colors: {
         border: "hsl(var(--border))",
@@ -74,6 +74,8 @@ export default {
       },
       boxShadow: {
         gold: "0 8px 30px hsl(51 100% 50% / 0.2)",
+        card: "0 1px 3px rgba(0,0,0,0.08)",
+        "card-hover": "0 4px 12px rgba(0,0,0,0.12)",
       },
       borderRadius: {
         lg: "var(--radius)",

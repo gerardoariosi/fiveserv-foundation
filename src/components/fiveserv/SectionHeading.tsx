@@ -27,11 +27,11 @@ export const SectionHeading = ({
           — {eyebrow}
         </p>
       )}
-      <h2 className="text-gray-900 font-display font-bold text-4xl lg:text-5xl leading-tight">
+      <h2 className="text-gray-900 text-4xl lg:text-5xl">
         {children}
       </h2>
       {subtext && (
-        <p className="mt-4 text-lg leading-relaxed text-gray-600">{subtext}</p>
+        <p className="mt-4 text-lg leading-[1.75] text-gray-700">{subtext}</p>
       )}
     </div>
   );
