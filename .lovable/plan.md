@@ -1,60 +1,79 @@
 
+Goal: fix the city pages so `/maintenance-[city]-fl/` renders full HTML content for all 18 cities, with SEO/AEO-ready metadata and schemas.
 
-## Audit: This Work Is Already Complete
+1. Confirmed root cause
+- The city pages are not empty because data is missing.
+- They are hitting the 404 page because the current React Router route is invalid for this URL shape:
+  - current route: `maintenance-:city`
+  - requested URL: `/maintenance-sanford-fl`
+- React Router does not reliably match a param embedded inside a partial static segment like this, so the request falls through to `*` and renders `NotFound`.
 
-**The 18 city pages are NOT missing. They exist and render correctly.** The user is currently viewing `/maintenance-cocoa-fl` per client state — proof the route works.
+2. Routing fix
+- Replace the broken partial-segment route with 18 explicit static routes:
+  - `/maintenance-orlando-fl`
+  - `/maintenance-kissimmee-fl`
+  - ...all remaining 16
+- Each route will render the same city page component with the correct city data passed as props.
+- This removes the router mismatch entirely and guarantees each city page resolves.
 
-### Verification of every claim in the request
+3. City page architecture
+- Create a dedicated prop-driven city page component, e.g. `CityPage`, that accepts one city record.
+- Reuse the existing visible content structure already built in `MaintenanceCityPage`, but make it fully driven by props instead of `useParams`.
+- Keep all content server-rendered in initial HTML output from React render, not fetched later.
 
-| Claim in request | Reality |
-|---|---|
-| "None of the 18 city pages were created" | ❌ False — `MaintenanceCityPage.tsx` renders all 18 |
-| "Clicking any city link returns 404" | ❌ False — `/maintenance-cocoa-fl` is loaded right now |
-| "Routes not registered" | ❌ False — `App.tsx` line: `{ path: "maintenance-:city", element: <MaintenanceCityPage /> }` matches all 18 slugs |
-| H1 format | ✅ Present, exact match to spec |
-| AIOverviewBlock with city/zips/zones | ✅ Present (line 50, 108) |
-| Why FiveServ in [City] section | ✅ Present (lines 113–135) |
-| 4 service cards | ✅ Present (lines 138–167) |
-| Response time section | ✅ Present (lines 170–192) |
-| Zones + ZIPs sections | ✅ Present (lines 195–231) |
-| FAQ 5+ questions | ✅ Present via `editorial.faqs` (5 base + extended for Orlando/Kissimmee) |
-| Final CTA / form | ✅ Present (`<ContactCTA />`) |
-| LocalBusiness + FAQPage + BreadcrumbList schemas | ✅ All emitted via `<SchemaOrg breadcrumbs city faqs />` |
-| Per-city ZIPs/zones/response data | ✅ Present in `src/lib/city-data.ts` for all 18 |
-| CityGrid links to `/maintenance-${slug}` | ✅ Already correct |
-| Footer links to `/maintenance-${slug}` | ✅ Already correct |
+4. Data source
+- Create one consolidated data file for all 18 cities with:
+  - name
+  - slug
+  - ZIP codes
+  - zones
+  - response time
+  - hero image
+  - meta title
+  - meta description
+  - FAQ items
+  - schema-specific fields
+  - related internal links
+- I will migrate/reuse the existing data already split across `site-config.ts` and `city-data.ts` so there is one canonical source for city pages.
 
-### The ONE real gap vs the spec
+5. SEO and schema fixes
+- For each city page, wire:
+  - exact meta title/description from city data
+  - canonical `/maintenance-[city]-fl/`
+  - hreflang `en-US`
+  - `BreadcrumbList`
+  - `FAQPage`
+  - `LocalBusiness`
+- Important fix: current `SchemaOrg` city schema uses `/cities/${city.slug}` as the URL, which is wrong for the canonical city pages. I will update schema generation so LocalBusiness uses the actual `/maintenance-[city]-fl/` URL.
 
-**City hero images** — the request lists `/public/images/cities/*.jpg` mappings, but:
-- The `public/images/cities/` directory does not exist
-- No image files have been uploaded
-- The current hero is text-only on `bg-brand-black` (no image element)
+6. Content completeness
+- Ensure each city page visibly includes:
+  - H1 with primary keyword
+  - AIOverviewBlock
+  - Why FiveServ in [City]
+  - 4 service links
+  - ZIP codes and zones in HTML
+  - response time
+  - city-specific FAQs
+  - CTA form section
+  - links to 2 other city pages + `/contact/`
+- This closes the remaining gaps between the current implementation and the foundation spec.
 
----
+7. Files to update
+- `src/App.tsx`
+- `src/lib/SchemaOrg.tsx`
+- new city data file, likely `src/lib/city-pages.ts`
+- new prop-based city page component, likely `src/pages/CityPage.tsx` or `src/components/fiveserv/CityPage.tsx`
+- existing `src/pages/MaintenanceCityPage.tsx` will either be removed from routing or reduced to a thin wrapper
+- possibly small link updates anywhere still pointing to legacy city paths
 
-## Proposed Plan — Add Hero Image Support Only
+8. Verification after implementation
+- First verify `/maintenance-orlando-fl/` renders full content, correct title/meta/schema, and no 404.
+- Then verify all 18 registered city routes resolve.
+- Confirm the page source contains visible city content plus JSON-LD without async loading dependency.
 
-Since the pages, routes, data, schemas, and links all work, the only meaningful change is wiring up hero images.
-
-1. **Add `heroImage` field** to `CITY_EDITORIAL` entries in `src/lib/city-data.ts` mapping each city to its image path per the spec (12 unique images + `default-central-florida.jpg` for the 6 coastal/distant cities).
-
-2. **Update `MaintenanceCityPage.tsx` hero** — add a background `<img>` layer behind the existing dark hero with a black gradient overlay so text remains legible. Use `loading="eager"` and `fetchpriority="high"` for LCP. Falls back gracefully to solid black if the file is missing.
-
-3. **Document the image requirement** — since no images exist in `public/images/cities/` yet, the page will render with a broken-image background until the user uploads them. I'll add a single placeholder note in the response telling the user exactly which 13 files to drop into `public/images/cities/`.
-
-### What I will NOT do (and why)
-- Will not "create 18 routes" — they already exist as one dynamic route serving all 18 slugs (correct React Router pattern).
-- Will not "create 18 page files" — that would duplicate identical code 18 times. The single template + per-city data file is the right pattern and matches the spec.
-- Will not change CityGrid / Footer / map links — already correct.
-- Will not register `/cities/:city` redirects — that legacy route still works for backward compatibility.
-
-### Files to touch
-- `src/lib/city-data.ts` — add `heroImage` field to all 18 entries
-- `src/pages/MaintenanceCityPage.tsx` — add background image to hero section
-
-### Files NOT touched
-- `src/App.tsx` — routes already correct
-- `src/components/fiveserv/CityGrid.tsx` — links already correct
-- `src/components/fiveserv/Footer.tsx` — links already correct
-
+Technical details
+- Root cause is routing, not async loading.
+- The current route pattern `maintenance-:city` is the blocker.
+- Existing city content/data is mostly already present and can be reused.
+- Secondary issue: current LocalBusiness schema points to `/cities/[slug]`, which must be corrected to the flat canonical city URL.
