@@ -97,7 +97,7 @@ const TestimonialsSection = () => {
       <div ref={ref} className="container reveal py-24 lg:py-32">
         <SectionHeading
           eyebrow="Testimonials"
-          subtext="Property managers across Central Florida trust FiveServ to handle every turn, every repair, every renovation."
+          subtext={<>Property managers across Central Florida trust <BrandName variant="dark" /> to handle every turn, every repair, every renovation.</>}
         >
           What Property Managers Say About <span className="text-gray-900"><BrandName variant="dark" /></span>
         </SectionHeading>

@@ -12,7 +12,7 @@ import type { ReactNode } from "react";
 
 export type Block =
   | { type: "p"; text: ReactNode }
-  | { type: "h2"; text: string }
+  | { type: "h2"; text: ReactNode }
   | { type: "ul"; items: ReactNode[] }
   | { type: "ol"; items: ReactNode[] }
   | { type: "table"; headers: string[]; rows: string[][] }
