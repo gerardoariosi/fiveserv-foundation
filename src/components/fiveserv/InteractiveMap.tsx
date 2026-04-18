@@ -188,8 +188,9 @@ export const InteractiveMap = ({ className = "" }: InteractiveMapProps) => {
           {CITY_POINTS.map((c, i) => {
             const isActive = activeSlug === c.slug;
             return (
-              <g
+              <a
                 key={c.slug}
+                href={`/maintenance-${c.slug}`}
                 tabIndex={0}
                 role="link"
                 aria-label={`${c.name}, FL — within ${c.responseMin} minutes from Orlando base`}
@@ -202,7 +203,6 @@ export const InteractiveMap = ({ className = "" }: InteractiveMapProps) => {
                   outline: "none",
                   opacity: revealed ? 1 : 0,
                   transition: `opacity 400ms ease ${i * 100}ms`,
-                  transformOrigin: `${c.x}px ${c.y}px`,
                 }}
               >
                 {/* Pulse ring */}
@@ -237,7 +237,7 @@ export const InteractiveMap = ({ className = "" }: InteractiveMapProps) => {
                 >
                   {c.name}
                 </text>
-              </g>
+              </a>
             );
           })}
         </svg>
