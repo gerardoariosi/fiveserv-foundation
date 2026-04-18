@@ -51,7 +51,7 @@ export const CityGrid = () => {
           eyebrow="Service Areas"
           subtext="From Orlando to the Space Coast — we cover it all"
         >
-          Serving 18 Cities Across <span className="text-amber-700">Central Florida</span>
+          Serving 18 Cities Across <span className="text-gray-900">Central Florida</span>
         </SectionHeading>
 
         <div className="mt-12">
