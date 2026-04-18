@@ -43,16 +43,14 @@ export const LeadMagnetSection = () => {
           {OFFERS.map((o) => (
             <article
               key={o.title}
-              className="flex flex-col rounded-2xl border border-gray-200 bg-white p-8 shadow-sm transition-all hover:-translate-y-1 hover:border-brand-gold hover:shadow-xl"
+              className="flex flex-col rounded-lg border border-gray-100 bg-white p-6 shadow-card transition-shadow duration-200 hover:shadow-card-hover"
             >
-              <span className="flex h-14 w-14 items-center justify-center rounded-full bg-amber-700/10 text-gray-900">
-                <o.icon className="h-7 w-7" />
-              </span>
-              <h3 className="mt-5 font-display text-xl font-semibold text-gray-900">{o.title}</h3>
-              <p className="mt-2 flex-1 text-sm leading-relaxed text-gray-600">{o.description}</p>
+              <o.icon className="h-8 w-8 text-brand-gold" strokeWidth={1.5} />
+              <h3 className="mt-5 text-xl font-semibold text-gray-900">{o.title}</h3>
+              <p className="mt-2 flex-1 text-sm leading-[1.75] text-gray-700">{o.description}</p>
               <Link
                 to={o.href}
-                className="mt-6 inline-block rounded-lg bg-brand-black px-6 py-3 text-center text-sm font-bold uppercase tracking-wide text-white transition-colors hover:bg-gray-800"
+                className="mt-6 inline-flex items-center justify-center rounded-full bg-gray-900 px-6 py-3 text-sm font-semibold text-white transition-colors hover:bg-gray-800"
               >
                 {o.cta}
               </Link>
