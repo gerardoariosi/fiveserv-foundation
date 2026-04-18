@@ -11,7 +11,7 @@ const blocks: Block[] = [
     "Some accounting systems require one specific term in the GL",
     "Vendors typically follow whatever term the client uses",
   ]},
-  { type: "h2", text: "Does FiveServ care?" },
+  { type: "h2", text: <>Does <BrandName variant="dark" /> care?</> },
   { type: "p", text: "No. We follow your team's terminology. What matters is the scope sheet, not the vocabulary." },
   { type: "h2", text: "Related" },
   { type: "p", text: <><InternalLinkCluster /></> },

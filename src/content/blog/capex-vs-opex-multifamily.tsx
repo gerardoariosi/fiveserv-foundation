@@ -36,7 +36,7 @@ const blocks: Block[] = [
   { type: "p", text: "Booking CapEx as OpEx understates NOI and inflates expense ratios. Booking OpEx as CapEx overstates NOI and creates audit risk. Get this right before year-end close." },
   { type: "h2", text: "Quoting CapEx vs OpEx" },
   { type: "p", text: "OpEx typically gets a flat-rate quote with quick turnaround. CapEx gets a project quote with scope, timeline, milestone payments, and warranty terms." },
-  { type: "h2", text: "Where FiveServ fits" },
+  { type: "h2", text: <>Where <BrandName variant="dark" /> fits</> },
   { type: "p", text: <><InternalLinkCluster /></> },
 ];
 

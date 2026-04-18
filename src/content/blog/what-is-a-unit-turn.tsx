@@ -27,7 +27,7 @@ const blocks: Block[] = [
   ]},
   { type: "h2", text: "What's NOT a turn" },
   { type: "p", text: "Heavy damage, smoke remediation, full flooring replacement, cabinet replacement, or any insurance work. These are CapEx scopes — quoted separately on a project timeline." },
-  { type: "h2", text: "Where FiveServ fits" },
+  { type: "h2", text: <>Where <BrandName variant="dark" /> fits</> },
   { type: "p", text: <><InternalLinkCluster /></> },
 ];
 
