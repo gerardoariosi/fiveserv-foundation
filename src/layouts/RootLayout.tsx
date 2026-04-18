@@ -17,7 +17,7 @@ export const RootLayout = () => {
   const clarity = SITE.tracking.clarity;
 
   return (
-    <div className="flex min-h-screen flex-col bg-background text-foreground">
+    <div className="flex min-h-screen flex-col bg-white text-brand-black">
       <Helmet>
         {/* ■ REPLACE: NEXT_PUBLIC_GSC_CODE — Google Search Console verification */}
         {gsc && <meta name="google-site-verification" content={gsc} />}

@@ -1,32 +1,37 @@
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import SchemaOrg from "@/lib/SchemaOrg";
+import SectionHeading from "./SectionHeading";
 
 type Faq = { q: string; a: string };
 
 type FaqAccordionProps = {
   title?: string;
+  eyebrow?: string;
   faqs: Faq[];
-  /** Set false if FAQ JSON-LD is rendered elsewhere on the page */
   emitSchema?: boolean;
 };
 
-/**
- * Accordion of FAQs. ALL answers are rendered in HTML (open or closed)
- * so search engines can read them — Radix Accordion keeps content in DOM.
- * Emits FAQPage JSON-LD by default.
- */
-export const FaqAccordion = ({ title = "Frequently Asked Questions", faqs, emitSchema = true }: FaqAccordionProps) => {
+export const FaqAccordion = ({
+  title = "Frequently Asked Questions",
+  eyebrow = "FAQ",
+  faqs,
+  emitSchema = true,
+}: FaqAccordionProps) => {
   return (
     <section className="section-light">
-      <div className="container py-20">
-        <h2 className="font-display text-3xl sm:text-4xl text-brand-black">{title}</h2>
-        <Accordion type="single" collapsible className="mt-8">
+      <div className="container py-16 lg:py-24">
+        <SectionHeading eyebrow={eyebrow}>{title}</SectionHeading>
+        <Accordion type="single" collapsible className="mt-10 space-y-3">
           {faqs.map((f, i) => (
-            <AccordionItem key={i} value={`item-${i}`} className="border-gray-200">
-              <AccordionTrigger className="text-left text-brand-black hover:text-brand-gold">
+            <AccordionItem
+              key={i}
+              value={`item-${i}`}
+              className="rounded-xl border border-gray-100 bg-white px-5 transition-colors data-[state=open]:border-brand-gold data-[state=open]:bg-brand-gold/5"
+            >
+              <AccordionTrigger className="text-left text-brand-black font-semibold hover:text-brand-gold [&>svg]:text-brand-gold">
                 {f.q}
               </AccordionTrigger>
-              <AccordionContent className="text-gray-700">{f.a}</AccordionContent>
+              <AccordionContent className="text-gray-600 leading-relaxed">{f.a}</AccordionContent>
             </AccordionItem>
           ))}
         </Accordion>

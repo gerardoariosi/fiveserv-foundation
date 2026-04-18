@@ -21,24 +21,24 @@
     --brand-gray: 0 0% 18%;
     --brand-gray-muted: 0 0% 65%;
 
-    /* Semantic mapping (dark-first, since brand is dark) */
-    --background: 0 0% 10%;
-    --foreground: 0 0% 100%;
+    /* Semantic mapping (light-first) */
+    --background: 0 0% 100%;
+    --foreground: 0 0% 10%;
 
-    --card: 0 0% 10%;
-    --card-foreground: 0 0% 100%;
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 10%;
 
-    --popover: 0 0% 10%;
-    --popover-foreground: 0 0% 100%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 10%;
 
     --primary: 51 100% 50%;
     --primary-foreground: 0 0% 10%;
 
-    --secondary: 0 0% 18%;
-    --secondary-foreground: 0 0% 100%;
+    --secondary: 0 0% 96%;
+    --secondary-foreground: 0 0% 10%;
 
-    --muted: 0 0% 18%;
-    --muted-foreground: 0 0% 65%;
+    --muted: 0 0% 96%;
+    --muted-foreground: 0 0% 40%;
 
     --accent: 51 100% 50%;
     --accent-foreground: 0 0% 10%;
@@ -46,8 +46,8 @@
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 0 0% 18%;
-    --input: 0 0% 18%;
+    --border: 0 0% 92%;
+    --input: 0 0% 92%;
     --ring: 51 100% 50%;
 
     --radius: 0.5rem;
@@ -57,17 +57,16 @@
     --transition-cta: background-color 200ms ease;
 
     /* Sidebar (kept for shadcn compatibility) */
-    --sidebar-background: 0 0% 10%;
-    --sidebar-foreground: 0 0% 100%;
+    --sidebar-background: 0 0% 100%;
+    --sidebar-foreground: 0 0% 10%;
     --sidebar-primary: 51 100% 50%;
     --sidebar-primary-foreground: 0 0% 10%;
-    --sidebar-accent: 0 0% 18%;
-    --sidebar-accent-foreground: 0 0% 100%;
-    --sidebar-border: 0 0% 18%;
+    --sidebar-accent: 0 0% 96%;
+    --sidebar-accent-foreground: 0 0% 10%;
+    --sidebar-border: 0 0% 92%;
     --sidebar-ring: 51 100% 50%;
   }
 
-  /* No light mode for brand — site is intentionally dark */
   .dark {
     --background: 0 0% 10%;
     --foreground: 0 0% 100%;
@@ -82,7 +81,7 @@
     scroll-behavior: smooth;
   }
   body {
-    @apply bg-background text-foreground antialiased;
+    @apply bg-white text-brand-black antialiased;
     font-family: Arial, Helvetica, sans-serif;
   }
   h1, h2, h3 {
@@ -140,6 +139,16 @@
   }
   .cta-gold:hover {
     background-color: hsl(var(--brand-gold-hover));
+  }
+
+  /* Dark CTA — primary on light sections */
+  .cta-dark {
+    background-color: hsl(var(--brand-black));
+    color: #ffffff;
+    transition: var(--transition-cta);
+  }
+  .cta-dark:hover {
+    background-color: #000000;
   }
 
   /* Trust bar infinite scroll */
