@@ -1,4 +1,5 @@
 import { ArrowRight, Phone } from "lucide-react";
+import { useEffect, useRef, useState } from "react";
 import { SITE } from "@/lib/site-config";
 import { useReveal } from "@/hooks/use-fiveserv";
 import AIOverviewBlock from "./AIOverviewBlock";
@@ -27,17 +28,61 @@ export const HeroSection = ({
   const ref = useReveal<HTMLDivElement>();
   const waHref = `https://wa.me/${SITE.phone.replace(/[^\d]/g, "")}`;
 
+  // Smooth loop: crossfade between two video elements near the end
+  const videoARef = useRef<HTMLVideoElement>(null);
+  const videoBRef = useRef<HTMLVideoElement>(null);
+  const [activeVideo, setActiveVideo] = useState<"A" | "B">("A");
+  const FADE_DURATION = 1.2; // seconds before end to start crossfade
+
+  useEffect(() => {
+    const videoA = videoARef.current;
+    const videoB = videoBRef.current;
+    if (!videoA || !videoB) return;
+
+    const handleTimeUpdate = (e: Event) => {
+      const video = e.target as HTMLVideoElement;
+      if (!video.duration || isNaN(video.duration)) return;
+      const timeLeft = video.duration - video.currentTime;
+      const isVideoA = video === videoA;
+      const currentlyActive = isVideoA ? "A" : "B";
+
+      if (timeLeft <= FADE_DURATION && activeVideo === currentlyActive) {
+        const other = isVideoA ? videoB : videoA;
+        other.currentTime = 0;
+        other.play().catch(() => {});
+        setActiveVideo(isVideoA ? "B" : "A");
+      }
+    };
+
+    videoA.addEventListener("timeupdate", handleTimeUpdate);
+    videoB.addEventListener("timeupdate", handleTimeUpdate);
+    return () => {
+      videoA.removeEventListener("timeupdate", handleTimeUpdate);
+      videoB.removeEventListener("timeupdate", handleTimeUpdate);
+    };
+  }, [activeVideo]);
+
   return (
     <section className="relative isolate w-full min-h-[600px] h-screen overflow-hidden bg-brand-black">
       <video
+        ref={videoARef}
         autoPlay
         muted
-        loop
         playsInline
         preload="auto"
         poster={posterSrc}
-        className="absolute inset-0 w-full h-full object-cover object-center"
-        style={{ objectFit: "cover" }}
+        className="absolute inset-0 w-full h-full object-cover object-center transition-opacity duration-1000 ease-in-out"
+        style={{ objectFit: "cover", opacity: activeVideo === "A" ? 1 : 0 }}
+      >
+        <source src={videoSrc} type="video/mp4" />
+      </video>
+      <video
+        ref={videoBRef}
+        muted
+        playsInline
+        preload="auto"
+        className="absolute inset-0 w-full h-full object-cover object-center transition-opacity duration-1000 ease-in-out"
+        style={{ objectFit: "cover", opacity: activeVideo === "B" ? 1 : 0 }}
       >
         <source src={videoSrc} type="video/mp4" />
       </video>
