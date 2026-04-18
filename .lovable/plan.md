@@ -1,60 +1,60 @@
 
 
-## Popup Redesign Plan — Servpro-style Light Theme
+## Plan — 3 Fixes
 
-### Audit Findings
+### Issue 2: Logo filename (quick, deterministic)
 
-Searched the codebase for all popup/modal/overlay components:
+The file `/public/images/logo FS .png` has spaces. URL-encoded it works, but it's fragile. Fix:
 
-**Active popups found:**
-1. `src/components/fiveserv/ExitIntentPopup.tsx` — **needs redesign** (currently dark `bg-brand-black` + gold border, old AI style)
+- Add a copy at `/public/images/logo-fs.png` (keep old file too, no breaking)
+- Update 3 references to `/images/logo-fs.png`:
+  - `src/components/fiveserv/StickyHeader.tsx:46`
+  - `src/components/fiveserv/Footer.tsx:15`
+  - `src/pages/TampaBayPage.tsx:65`
 
-**Other dialog/overlay components (shadcn primitives — already neutral, no redesign needed):**
-- `src/components/ui/dialog.tsx`, `alert-dialog.tsx`, `sheet.tsx`, `drawer.tsx`, `popover.tsx`, `sonner.tsx`, `toast.tsx` — these use semantic tokens (`bg-background`) and are not styled "dark/gold". No instances of custom themed modals besides ExitIntentPopup.
-- `SofiaChat.tsx` — chat widget, not a modal popup. Not in scope per request ("popups and modals").
+Note: I cannot copy binary files via the available tools. I'll need to either (a) keep the old filename and just URL-encode it as `/images/logo%20FS%20.png`, or (b) ask the user to rename the file in the asset browser. **Recommended: option (a)** — change all 3 src paths to `/images/logo%20FS%20.png` (proper URL encoding), which fixes any browser that chokes on raw spaces. No file rename needed.
 
-**Conclusion:** Only `ExitIntentPopup.tsx` needs rework.
+### Issue 3: Remove Lovable badge
 
-### Redesign Spec for ExitIntentPopup
+Use `publish_settings--set_badge_visibility` with `hide_badge: true`. Current state confirmed: `hide_badge: false`. Requires Pro plan; if the user isn't on Pro, the call will surface that requirement.
 
-**Backdrop:**
-- `fixed inset-0 z-50 bg-black/50 flex items-center justify-center p-4` (no blur)
+### Issue 1: Contrast & readability audit
 
-**Container:**
-- `bg-white rounded-2xl shadow-[0_20px_60px_rgba(0,0,0,0.2)] max-w-[480px] w-full p-10 relative max-h-[90vh] overflow-y-auto`
+Scope: all pages. Rather than rewrite every component blindly, I'll do a **targeted sweep** for the specific anti-patterns the user listed, since the design system is already mostly compliant (white sections use `text-gray-900`/`text-gray-700`, dark sections use white/gold).
 
-**Close button (top-right):**
-- `absolute top-4 right-4 text-gray-400 hover:text-gray-600`
-- `<X className="h-5 w-5" />`
+Targeted greps + fixes:
 
-**Lead magnet offer card (gold accent block above form):**
-- `border-l-4 border-brand-gold bg-amber-50 p-4 rounded-r-lg`
-- Contains a small "FREE DOWNLOAD" eyebrow + checklist label
+1. **Gold text on white backgrounds** (forbidden): grep `text-brand-gold` inside components rendered on white sections. Known offender already visible:
+   - `StickyHeader.tsx:77` — phone number is `text-brand-gold` on white header → change to `text-brand-black font-semibold` with gold phone *icon* only.
+   - `StickyHeader.tsx:101` (mobile phone icon) — keep icon gold is OK per "gold ONLY on dark" rule? Icon is decorative; rule says "gold *text*". Will change to `text-brand-black` to be safe.
+   - `StickyHeader.tsx:126-127` (mobile menu phone link) — on white dropdown → change to black.
 
-**Headline:**
-- `font-display font-bold text-2xl text-gray-900`
-- Copy: `Free: Make-Ready Checklist from <BrandName variant="dark" />`
-- Use `BrandName` component with `variant="dark"` (gold F + gray-900 "iveServ") for light bg
+2. **Light gray text on white** (forbidden `gray-300/400`, and `gray-500` for body):
+   - `StickyHeader.tsx:52, 81` use `text-gray-500` for tiny eyebrow labels → bump to `text-gray-700`.
+   - Sweep all `.tsx` for `text-gray-300|400` on white-section components.
 
-**Body text:**
-- `text-base text-gray-600 leading-relaxed mt-2`
-- "The 47-item checklist we use on every unit. Yours, free."
+3. **Card backgrounds on white sections**: audit `ServiceCard`, `TestimonialCard`, `FivePillars`, `FaqAccordion`, `BlogArticleLayout`, etc. — ensure cards on white use `bg-[#F5F5F5] border border-[#E5E5E5]` (or `bg-brand-light` if defined in tailwind config).
 
-**Form area:**
-- White wrapper, no extra background needed (form is already on white)
-- `mt-6`
-- The embedded GHL form fields are controlled by GHL — we cannot restyle iframe inputs from outside. Keep wrapper clean. (Field-level styling spec applies only to native fields; GHL embed renders its own.)
+4. **Section alternation pattern**: spot-check `Index.tsx` and main page templates to ensure white → `#F5F5F5` → dark cycle.
 
-**Note on CTA button styling:**
-- The submit CTA lives inside the GHL iframe and cannot be restyled from our code. The spec's button/field rules will apply automatically to any future native React forms; for the GHL embed we just provide a clean white container.
+5. **Min font sizes**: replace any `text-xs` (12px) used for body/labels with `text-sm` (14px) or `text-[13px]`. `text-xs` for decorative eyebrows on dark bg can stay.
 
-### Files to Edit
+I'll do the actual grep + edits in implementation mode. Estimated 6–12 small className edits across ~5 files.
 
-1. `src/components/fiveserv/ExitIntentPopup.tsx` — full rewrite of JSX + classes per spec above. Logic (exit intent hook, sessionStorage gate, open state) stays identical.
+### Files to edit (summary)
 
-### Out of Scope
+| File | Change |
+|---|---|
+| `StickyHeader.tsx` | logo path, gold→black phone text, gray-500→gray-700 |
+| `Footer.tsx` | logo path (footer is dark, gold OK there) |
+| `TampaBayPage.tsx` | logo path |
+| `Index.tsx` + section components | spot-fix gray-300/400/500 body text, card bg on white sections |
+| `ServiceCard.tsx`, `TestimonialCard.tsx`, `FaqAccordion.tsx` | card bg/border on white sections if needed |
+| Lovable badge | `publish_settings--set_badge_visibility(true)` |
 
-- shadcn primitives (already neutral)
-- `SofiaChat` (chat widget, not a popup)
-- GHL iframe internals (cannot be styled from parent)
+### What I will NOT do
+
+- Won't rename the binary `logo FS .png` (tool limitation) — using URL-encoded path instead, which is functionally identical.
+- Won't touch dark sections (Footer, dark hero overlays) — they already comply.
+- Won't restyle GHL iframe internals.
 
