@@ -28,7 +28,7 @@ export const HeroSection = ({
   const ref = useReveal<HTMLDivElement>();
   const waHref = `https://wa.me/${SITE.phone.replace(/[^\d]/g, "")}`;
   const heroTopOffset = "calc(var(--banner-h, 0px) + 5rem)";
-  const heroMediaHeight = "calc(100% - (var(--banner-h, 0px) + 5rem))";
+  const heroVisibleHeight = "calc(100svh - (var(--banner-h, 0px) + 5rem))";
 
   // Smooth loop: crossfade between two video elements near the end
   const videoARef = useRef<HTMLVideoElement>(null);
@@ -65,8 +65,10 @@ export const HeroSection = ({
   }, [activeVideo]);
 
   return (
-    <section className="relative isolate w-full min-h-screen overflow-hidden bg-brand-black">
-      {/* Video starts below the full top chrome: promo banner + sticky header */}
+    <section
+      className="relative isolate w-full overflow-hidden bg-brand-black"
+      style={{ marginTop: heroTopOffset, minHeight: heroVisibleHeight }}
+    >
       <video
         ref={videoARef}
         autoPlay
@@ -74,8 +76,8 @@ export const HeroSection = ({
         playsInline
         preload="auto"
         poster={posterSrc}
-        className="absolute inset-x-0 bottom-0 w-full object-cover object-center transition-opacity duration-1000 ease-in-out"
-        style={{ top: heroTopOffset, opacity: activeVideo === "A" ? 1 : 0, height: heroMediaHeight }}
+        className="absolute inset-0 h-full w-full object-cover object-center transition-opacity duration-1000 ease-in-out"
+        style={{ opacity: activeVideo === "A" ? 1 : 0 }}
       >
         <source src={videoSrc} type="video/mp4" />
       </video>
@@ -84,17 +86,15 @@ export const HeroSection = ({
         muted
         playsInline
         preload="auto"
-        className="absolute inset-x-0 bottom-0 w-full object-cover object-center transition-opacity duration-1000 ease-in-out"
-        style={{ top: heroTopOffset, opacity: activeVideo === "B" ? 1 : 0, height: heroMediaHeight }}
+        className="absolute inset-0 h-full w-full object-cover object-center transition-opacity duration-1000 ease-in-out"
+        style={{ opacity: activeVideo === "B" ? 1 : 0 }}
       >
         <source src={videoSrc} type="video/mp4" />
       </video>
-      {/* Solid black band behind the top banner + sticky header */}
-      <div className="absolute inset-x-0 top-0 bg-brand-black" style={{ height: heroTopOffset }} />
       {/* 60% black overlay over the video for readability */}
-      <div className="absolute inset-x-0 bottom-0 bg-brand-black/60" style={{ top: heroTopOffset, height: heroMediaHeight }} />
+      <div className="absolute inset-0 bg-brand-black/60" />
 
-      <div className="relative z-10 flex h-full items-center pt-32 pb-20 lg:pt-40 lg:pb-24">
+      <div className="relative z-10 flex items-center py-16 lg:py-20" style={{ minHeight: heroVisibleHeight }}>
         <div ref={ref} className="container reveal">
           <h1 className="text-4xl text-brand-white sm:text-5xl lg:text-6xl">
             One call handles your entire make-ready —
