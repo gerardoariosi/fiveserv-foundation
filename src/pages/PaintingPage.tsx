@@ -490,7 +490,7 @@ const PaintingPage = () => {
         </div>
       </section>
 
-      <ContactCTA />
+      <ContactCTA variant="b2c" />
     </>
   );
 };

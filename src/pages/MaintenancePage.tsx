@@ -222,7 +222,7 @@ const MaintenancePage = () => {
       </section>
 
       {/* Lead Magnet */}
-      <LeadMagnetSection />
+      <LeadMagnetSection variant="scorecard" />
 
       {/* FAQ */}
       <FaqAccordion faqs={MAINTENANCE_FAQS} emitSchema={false} />

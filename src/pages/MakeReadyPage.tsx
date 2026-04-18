@@ -233,7 +233,7 @@ const MakeReadyPage = () => {
       </section>
 
       {/* 7. Lead Magnet */}
-      <LeadMagnetSection />
+      <LeadMagnetSection variant="checklist" />
 
       {/* 8. FAQ — 8 questions */}
       <FaqAccordion faqs={MAKE_READY_FAQS} emitSchema={false} />
