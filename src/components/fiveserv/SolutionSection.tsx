@@ -4,8 +4,10 @@ import { useReveal } from "@/hooks/use-fiveserv";
 import SectionHeading from "./SectionHeading";
 import BrandName from "@/components/fiveserv/BrandName";
 
-const ROWS: [string, string][] = [
-  ["5+ vendors to coordinate", "1 call to FiveServ"],
+import type { ReactNode } from "react";
+
+const ROWS: [string, ReactNode][] = [
+  ["5+ vendors to coordinate", <>1 call to <BrandName /></>],
   ["10+ days average turnaround", "5 business days guaranteed"],
   ["Multiple invoices per unit", "One clean invoice"],
   ["You chase every vendor", "We handle everything"],
@@ -42,8 +44,8 @@ export const SolutionSection = () => {
           <div className="rounded-xl border-2 border-brand-gold bg-white p-6 shadow-lg">
             <h3 className="font-display text-lg font-bold text-gray-900">With <BrandName variant="dark" /></h3>
             <ul className="mt-5 space-y-3">
-              {ROWS.map(([, right]) => (
-                <li key={right} className="flex items-start gap-3">
+              {ROWS.map(([left, right], i) => (
+                <li key={`r-${i}`} className="flex items-start gap-3">
                   <Check className="mt-0.5 h-5 w-5 shrink-0 text-gray-900" />
                   <span className="font-bold text-gray-900">{right}</span>
                 </li>
