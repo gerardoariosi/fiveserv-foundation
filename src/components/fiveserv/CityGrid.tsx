@@ -78,7 +78,7 @@ export const CityGrid = () => {
                 <h3 className="mt-4 font-display text-lg font-semibold text-gray-900 group-hover:text-amber-700">
                   {city.name}, {city.state}
                 </h3>
-                <p className="mt-1 text-sm font-semibold text-amber-700">
+                <p className="mt-1 text-sm font-semibold text-gray-700">
                   Within {city.responseTime}
                 </p>
               </Link>
