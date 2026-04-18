@@ -91,7 +91,7 @@ export const BlogArticleLayout = ({ post, children }: Props) => {
       {/* Internal links — light gray */}
       <section className="bg-gray-50 py-16">
         <div className="container max-w-3xl">
-          <p className="text-amber-700 text-xs font-medium uppercase tracking-[0.12em] mb-3">— Keep Reading</p>
+          <p className="text-gray-900 text-xs font-medium uppercase tracking-[0.12em] mb-3">— Keep Reading</p>
           <h2 className="text-gray-900 font-display font-bold text-3xl lg:text-4xl">Related FiveServ resources</h2>
           <div className="mt-6 grid gap-3 sm:grid-cols-2">
             {SERVICES.map((s) => (
@@ -131,7 +131,7 @@ export const BlogArticleLayout = ({ post, children }: Props) => {
       {/* FAQ mini — light */}
       <section className="bg-white py-16">
         <div className="container max-w-3xl">
-          <p className="text-amber-700 text-xs font-medium uppercase tracking-[0.12em] mb-3">— FAQ</p>
+          <p className="text-gray-900 text-xs font-medium uppercase tracking-[0.12em] mb-3">— FAQ</p>
           <h2 className="text-gray-900 font-display font-bold text-3xl lg:text-4xl">Frequently asked questions</h2>
           <div className="mt-8 space-y-6">
             {post.faqs.map((f) => (

@@ -60,7 +60,7 @@ const ServicesGrid = () => {
           subtext="Four core service lines. One team. One invoice. One point of accountability."
         >
           Everything Your Properties Need.{" "}
-          <span className="text-brand-gold">One Team.</span>
+          <span className="text-gray-900">One Team.</span>
         </SectionHeading>
 
         <div className="mt-16 grid gap-8 md:grid-cols-2 lg:grid-cols-4">
@@ -98,7 +98,7 @@ const TestimonialsSection = () => {
           eyebrow="Testimonials"
           subtext="Property managers across Central Florida trust FiveServ to handle every turn, every repair, every renovation."
         >
-          What Property Managers Say About <span className="text-amber-700">FiveServ</span>
+          What Property Managers Say About <span className="text-gray-900">FiveServ</span>
         </SectionHeading>
         <div className="mt-16 grid gap-6 md:grid-cols-3">
           {TESTIMONIALS.map((t, i) => (
