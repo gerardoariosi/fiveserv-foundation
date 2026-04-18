@@ -24,11 +24,11 @@ export const FamilyStory = () => {
           </div>
 
           <div>
-            <p className="text-amber-700 text-xs font-bold uppercase tracking-[0.15em] mb-3">
+            <p className="text-gray-900 text-xs font-bold uppercase tracking-[0.15em] mb-3">
               Built by a Family
             </p>
             <h2 className="text-gray-900 font-display font-bold text-4xl lg:text-5xl leading-tight">
-              A <span className="text-amber-700">Venezuelan-American Family</span> Trusted Across Central Florida.
+              A <span className="text-gray-900">Venezuelan-American Family</span> Trusted Across Central Florida.
             </h2>
             <p className="mt-6 text-lg text-gray-600 leading-relaxed">
               We started in maintenance — wrenches, ladders, late nights — and built something to last generations.
