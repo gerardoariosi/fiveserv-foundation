@@ -82,7 +82,7 @@ const MakeReadyPage = () => {
       <section className="bg-brand-black pt-32 pb-16">
         <div className="container">
           <p className="text-xs font-medium uppercase tracking-[0.12em] text-brand-gold">
-            — <BrandName variant="light" /> Property Solutions
+            — <span style={{ whiteSpace: "nowrap" }}><span className="font-bold text-brand-gold">F</span><span className="text-white">iveServ</span></span> Property Solutions
           </p>
           <h1 className="mt-3 font-display font-black text-4xl text-white sm:text-5xl lg:text-6xl">
             Make-Ready &amp; Unit Turn Services —
