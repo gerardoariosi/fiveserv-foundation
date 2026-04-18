@@ -114,7 +114,7 @@ const MaintenancePage = () => {
             <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
               {TRADES.map((t) => (
                 <article key={t.title} className="hover-card rounded-lg border border-gray-100 bg-white shadow-sm p-6">
-                  <span className="flex h-12 w-12 items-center justify-center rounded-md bg-amber-700/10 text-gray-900">
+                  <span className="flex h-12 w-12 items-center justify-center rounded-md bg-brand-gold/15 text-gray-900">
                     <t.icon className="h-6 w-6" />
                   </span>
                   <h3 className="mt-5 font-display font-semibold text-xl text-gray-900" dangerouslySetInnerHTML={{ __html: t.title }} />
@@ -156,7 +156,7 @@ const MaintenancePage = () => {
           <SectionReveal>
             <div className="rounded-xl border-2 border-brand-gold bg-white shadow-md p-8 sm:p-12">
               <div className="grid gap-8 lg:grid-cols-[auto,1fr,auto] lg:items-center">
-                <div className="flex h-16 w-16 items-center justify-center rounded-full bg-brand-gold/15 text-amber-700">
+                <div className="flex h-16 w-16 items-center justify-center rounded-full bg-brand-gold/15 text-gray-900">
                   <Siren className="h-8 w-8" />
                 </div>
                 <div>
@@ -165,7 +165,7 @@ const MaintenancePage = () => {
                   </span>
                   <h2 className="mt-3 font-display font-bold text-3xl text-gray-900 sm:text-4xl">
                     Water leak. No power. No AC.{" "}
-                    <span className="text-amber-700">Call now.</span>
+                    <span className="text-gray-900">Call now.</span>
                   </h2>
                   <p className="mt-3 text-gray-700">
                     On-site within 2 hours across our Orlando metro core. {SITE.brand} answers the phone — day,
@@ -206,12 +206,12 @@ const MaintenancePage = () => {
                   className="hover-card group flex items-center justify-between rounded-md border border-gray-100 bg-white shadow-sm px-4 py-3"
                 >
                   <span className="flex items-center gap-3">
-                    <MapPin className="h-4 w-4 text-amber-700" />
+                    <MapPin className="h-4 w-4 text-gray-900" />
                     <span className="font-semibold text-gray-900">
                       Maintenance {c.name}, {c.state}
                     </span>
                   </span>
-                  <span className="text-xs font-bold uppercase tracking-wide text-amber-700/80">
+                  <span className="text-xs font-bold uppercase tracking-wide text-gray-700">
                     {c.responseTime}
                   </span>
                 </Link>
@@ -238,14 +238,14 @@ const MaintenancePage = () => {
                   const s = SERVICES.find((x) => x.slug === slug)!;
                   return (
                     <li key={slug}>
-                      <Link to={`/${slug}`} className="inline-flex items-center gap-2 text-gray-900 hover:text-amber-700 hover:underline">
+                      <Link to={`/${slug}`} className="inline-flex items-center gap-2 text-gray-900 hover:text-gray-900 hover:underline">
                         <ArrowRight className="h-4 w-4" /> {s.name}
                       </Link>
                     </li>
                   );
                 })}
                 <li>
-                  <Link to="/contact" className="inline-flex items-center gap-2 text-gray-900 hover:text-amber-700 hover:underline">
+                  <Link to="/contact" className="inline-flex items-center gap-2 text-gray-900 hover:text-gray-900 hover:underline">
                     <ArrowRight className="h-4 w-4" /> Contact us
                   </Link>
                 </li>
@@ -258,7 +258,7 @@ const MaintenancePage = () => {
                   const name = slug.replace("-fl", "").split("-").map((w) => w[0].toUpperCase() + w.slice(1)).join(" ");
                   return (
                     <li key={slug}>
-                      <Link to={`/maintenance/${slug}`} className="inline-flex items-center gap-2 text-gray-900 hover:text-amber-700 hover:underline">
+                      <Link to={`/maintenance/${slug}`} className="inline-flex items-center gap-2 text-gray-900 hover:text-gray-900 hover:underline">
                         <ArrowRight className="h-4 w-4" /> Maintenance in {name}, FL
                       </Link>
                     </li>

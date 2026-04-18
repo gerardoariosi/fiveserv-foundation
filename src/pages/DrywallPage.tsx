@@ -151,7 +151,7 @@ const DrywallPage = () => {
               <p className="text-xs font-medium uppercase tracking-[0.12em] text-gray-900">— The Hidden Make-Ready Killer</p>
               <h2 className="mt-3 font-display font-bold text-3xl text-gray-900 sm:text-4xl">
                 Drywall is the{" "}
-                <span className="text-amber-700">#1 reason make-readies slip</span>
+                <span className="text-gray-900">#1 reason make-readies slip</span>
               </h2>
               <p className="mt-4 text-gray-700">
                 Holes, cracks, and water damage left unrepaired cost vacancy days and owner trust. The painter can't
@@ -161,7 +161,7 @@ const DrywallPage = () => {
             </div>
             <div className="rounded-xl border-2 border-brand-gold bg-white shadow-md p-8">
               <div className="flex items-center gap-4">
-                <Key className="h-10 w-10 text-amber-700" />
+                <Key className="h-10 w-10 text-gray-900" />
                 <div>
                   <p className="font-display font-semibold text-2xl text-gray-900">5-Day Make-Ready</p>
                   <p className="text-sm text-gray-600">Drywall + paint + clean — coordinated</p>
@@ -192,7 +192,7 @@ const DrywallPage = () => {
             <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
               {SERVICES_GRID.map((s) => (
                 <article key={s.title} className="hover-card rounded-lg border border-gray-100 bg-white shadow-sm p-6">
-                  <span className="flex h-12 w-12 items-center justify-center rounded-md bg-amber-700/10 text-gray-900">
+                  <span className="flex h-12 w-12 items-center justify-center rounded-md bg-brand-gold/15 text-gray-900">
                     <s.icon className="h-6 w-6" />
                   </span>
                   <h3 className="mt-5 font-display font-semibold text-xl text-gray-900">{s.title}</h3>
@@ -210,7 +210,7 @@ const DrywallPage = () => {
           <SectionReveal>
             <div className="rounded-xl border-2 border-brand-gold bg-white shadow-md p-8 sm:p-12">
               <div className="grid gap-8 lg:grid-cols-[auto,1fr,auto] lg:items-center">
-                <div className="flex h-16 w-16 items-center justify-center rounded-full bg-brand-gold/15 text-amber-700">
+                <div className="flex h-16 w-16 items-center justify-center rounded-full bg-brand-gold/15 text-gray-900">
                   <Key className="h-8 w-8" />
                 </div>
                 <div>
@@ -219,7 +219,7 @@ const DrywallPage = () => {
                   </span>
                   <h2 className="mt-3 font-display font-bold text-3xl text-gray-900 sm:text-4xl">
                     Every {SITE.brand} make-ready includes{" "}
-                    <span className="text-amber-700">drywall inspection and repair</span>
+                    <span className="text-gray-900">drywall inspection and repair</span>
                   </h2>
                   <p className="mt-3 text-gray-700">
                     No separate contractor. No separate invoice. No scheduling conflicts. Drywall, paint, cleaning, and
@@ -243,10 +243,10 @@ const DrywallPage = () => {
         <div className="container py-20">
           <SectionReveal className="grid gap-10 lg:grid-cols-2 lg:items-center">
             <div className="rounded-xl border border-gray-100 bg-white shadow-sm p-8">
-              <Sparkles className="h-12 w-12 text-amber-700" />
+              <Sparkles className="h-12 w-12 text-gray-900" />
               <p className="mt-6 font-display font-semibold text-2xl text-gray-900">
                 Repairs that{" "}
-                <span className="text-amber-700">disappear under paint.</span>
+                <span className="text-gray-900">disappear under paint.</span>
               </p>
               <p className="mt-3 text-gray-700">
                 The wrong texture shows up the second the light hits it. Residents notice. Inspectors notice. We
@@ -257,7 +257,7 @@ const DrywallPage = () => {
               <p className="text-xs font-medium uppercase tracking-[0.12em] text-gray-900">— Texture Matching</p>
               <h2 className="mt-3 font-display font-bold text-3xl text-gray-900 sm:text-4xl">
                 We match existing wall texture —{" "}
-                <span className="text-amber-700">smooth, orange peel, knockdown</span>
+                <span className="text-gray-900">smooth, orange peel, knockdown</span>
               </h2>
               <p className="mt-4 text-gray-700">
                 Most multifamily walls in Central Florida are orange peel or knockdown. We carry the spray rigs, the
@@ -266,19 +266,19 @@ const DrywallPage = () => {
               </p>
               <ul className="mt-6 space-y-2 text-gray-700">
                 <li className="flex items-start gap-3">
-                  <ShieldCheck className="mt-0.5 h-5 w-5 flex-shrink-0 text-amber-700" />
+                  <ShieldCheck className="mt-0.5 h-5 w-5 flex-shrink-0 text-gray-900" />
                   Smooth wall finishing — Level 4 and Level 5
                 </li>
                 <li className="flex items-start gap-3">
-                  <ShieldCheck className="mt-0.5 h-5 w-5 flex-shrink-0 text-amber-700" />
+                  <ShieldCheck className="mt-0.5 h-5 w-5 flex-shrink-0 text-gray-900" />
                   Orange peel and knockdown spray-matching
                 </li>
                 <li className="flex items-start gap-3">
-                  <ShieldCheck className="mt-0.5 h-5 w-5 flex-shrink-0 text-amber-700" />
+                  <ShieldCheck className="mt-0.5 h-5 w-5 flex-shrink-0 text-gray-900" />
                   Popcorn ceiling patching when required
                 </li>
                 <li className="flex items-start gap-3">
-                  <ShieldCheck className="mt-0.5 h-5 w-5 flex-shrink-0 text-amber-700" />
+                  <ShieldCheck className="mt-0.5 h-5 w-5 flex-shrink-0 text-gray-900" />
                   Primer-ready, paint-ready handoff to our paint crew
                 </li>
               </ul>
@@ -309,12 +309,12 @@ const DrywallPage = () => {
                   className="hover-card group flex items-center justify-between rounded-md border border-gray-100 bg-white shadow-sm px-4 py-3"
                 >
                   <span className="flex items-center gap-3">
-                    <MapPin className="h-4 w-4 text-amber-700" />
+                    <MapPin className="h-4 w-4 text-gray-900" />
                     <span className="font-semibold text-gray-900">
                       Drywall {c.name}, {c.state}
                     </span>
                   </span>
-                  <span className="text-xs font-bold uppercase tracking-wide text-amber-700/80">
+                  <span className="text-xs font-bold uppercase tracking-wide text-gray-700">
                     {c.responseTime}
                   </span>
                 </Link>
@@ -341,13 +341,13 @@ const DrywallPage = () => {
                   { to: "/renovations", label: "CapEx & Renovations" },
                 ].map((l) => (
                   <li key={l.to}>
-                    <Link to={l.to} className="inline-flex items-center gap-2 text-gray-900 hover:text-amber-700 hover:underline">
+                    <Link to={l.to} className="inline-flex items-center gap-2 text-gray-900 hover:text-gray-900 hover:underline">
                       <ArrowRight className="h-4 w-4" /> {l.label}
                     </Link>
                   </li>
                 ))}
                 <li>
-                  <Link to="/contact" className="inline-flex items-center gap-2 text-gray-900 hover:text-amber-700 hover:underline">
+                  <Link to="/contact" className="inline-flex items-center gap-2 text-gray-900 hover:text-gray-900 hover:underline">
                     <ArrowRight className="h-4 w-4" /> Contact us
                   </Link>
                 </li>
@@ -361,7 +361,7 @@ const DrywallPage = () => {
                   { slug: "kissimmee-fl", name: "Kissimmee" },
                 ].map((c) => (
                   <li key={c.slug}>
-                    <Link to={`/maintenance-${c.slug}`} className="inline-flex items-center gap-2 text-gray-900 hover:text-amber-700 hover:underline">
+                    <Link to={`/maintenance-${c.slug}`} className="inline-flex items-center gap-2 text-gray-900 hover:text-gray-900 hover:underline">
                       <ArrowRight className="h-4 w-4" /> Drywall in {c.name}, FL
                     </Link>
                   </li>

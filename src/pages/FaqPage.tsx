@@ -114,7 +114,7 @@ const FaqPage = () => {
                     value={`faq-${group.id}-${i}`}
                     className="border-brand-gray"
                   >
-                    <AccordionTrigger className="text-left text-gray-900 hover:text-amber-700">
+                    <AccordionTrigger className="text-left text-gray-900 hover:text-gray-900">
                       {f.q}
                     </AccordionTrigger>
                     <AccordionContent className="text-gray-700">
@@ -151,13 +151,13 @@ const FaqPage = () => {
           <div className="mt-8 flex flex-wrap items-center justify-center gap-3">
             <Link
               to="/contact"
-              className="inline-flex items-center gap-2 rounded-md bg-brand-black px-8 py-4 text-sm font-bold uppercase tracking-wide text-amber-700 hover:bg-brand-black/90"
+              className="inline-flex items-center gap-2 rounded-md bg-brand-black px-8 py-4 text-sm font-bold uppercase tracking-wide text-brand-gold hover:bg-brand-black/90"
             >
               Get a Free Quote <ArrowRight className="h-4 w-4" />
             </Link>
             <a
               href={`tel:${SITE.phone}`}
-              className="inline-flex items-center gap-2 rounded-md border-2 border-brand-black px-8 py-4 text-sm font-bold uppercase tracking-wide text-gray-900 hover:bg-brand-black hover:text-amber-700"
+              className="inline-flex items-center gap-2 rounded-md border-2 border-brand-black px-8 py-4 text-sm font-bold uppercase tracking-wide text-gray-900 hover:bg-brand-black hover:text-brand-gold"
             >
               <Phone className="h-4 w-4" /> {SITE.phone}
             </a>
@@ -185,7 +185,7 @@ const FilterButton = ({
     className={`rounded-md px-4 py-2 text-sm font-bold uppercase tracking-wide transition-colors ${
       active
         ? "bg-brand-gold text-gray-900"
-        : "border border-gray-100 bg-white shadow-sm text-gray-900 hover:border-brand-gold hover:text-amber-700"
+        : "border border-gray-100 bg-white shadow-sm text-gray-900 hover:border-brand-gold hover:text-gray-900"
     }`}
   >
     {children}

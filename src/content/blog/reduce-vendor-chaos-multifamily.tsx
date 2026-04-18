@@ -55,8 +55,8 @@ const VendorChaosBody = () => (
       <table className="w-full text-sm">
         <thead className="bg-brand-gray/40">
           <tr>
-            <th className="p-3 text-left text-amber-700">Check</th>
-            <th className="p-3 text-left text-amber-700">Why it matters</th>
+            <th className="p-3 text-left text-gray-900">Check</th>
+            <th className="p-3 text-left text-gray-900">Why it matters</th>
           </tr>
         </thead>
         <tbody className="divide-y divide-brand-gold/15 text-brand-white">
@@ -85,15 +85,15 @@ const VendorChaosBody = () => (
       filters, appliance repair, make-ready coordination, and CapEx project management
       with one team. Specialty work (roofing, asphalt, pool resurfacing) stays with
       specialists — that's not where chaos lives. See the full{" "}
-      <Link to="/services" className="text-amber-700 underline">services list</Link>,
+      <Link to="/services" className="text-gray-900 underline">services list</Link>,
       our{" "}
-      <Link to="/maintenance" className="text-amber-700 underline">maintenance page</Link>,
+      <Link to="/maintenance" className="text-gray-900 underline">maintenance page</Link>,
       or jump straight to{" "}
-      <Link to="/renovations" className="text-amber-700 underline">CapEx and renovations</Link>{" "}
+      <Link to="/renovations" className="text-gray-900 underline">CapEx and renovations</Link>{" "}
       to see how we structure project scopes. We're active across all our{" "}
-      <Link to="/cities" className="text-amber-700 underline">Central Florida cities</Link>{" "}
+      <Link to="/cities" className="text-gray-900 underline">Central Florida cities</Link>{" "}
       — request a portfolio audit at our{" "}
-      <Link to="/contact" className="text-amber-700 underline">contact page</Link>.
+      <Link to="/contact" className="text-gray-900 underline">contact page</Link>.
     </p>
   </div>
 );

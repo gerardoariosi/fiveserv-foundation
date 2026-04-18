@@ -128,7 +128,7 @@ const RenovationsPage = () => {
       <section className="bg-brand-gold">
         <div className="container py-16">
           <SectionReveal className="grid gap-8 lg:grid-cols-[auto,1fr] lg:items-center">
-            <div className="flex h-20 w-20 items-center justify-center rounded-full bg-brand-black text-amber-700">
+            <div className="flex h-20 w-20 items-center justify-center rounded-full bg-brand-black text-brand-gold">
               <TrendingUp className="h-10 w-10" />
             </div>
             <div>
@@ -189,7 +189,7 @@ const RenovationsPage = () => {
             <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
               {PROJECT_TYPES.map((p) => (
                 <article key={p.title} className="hover-card rounded-lg border border-gray-100 bg-white shadow-sm p-6">
-                  <span className="flex h-12 w-12 items-center justify-center rounded-md bg-amber-700/10 text-gray-900">
+                  <span className="flex h-12 w-12 items-center justify-center rounded-md bg-brand-gold/15 text-gray-900">
                     <p.icon className="h-6 w-6" />
                   </span>
                   <h3 className="mt-5 font-display font-semibold text-xl text-gray-900">{p.title}</h3>
@@ -235,8 +235,8 @@ const RenovationsPage = () => {
                 return (
                   <li key={step.name} className="hover-card rounded-lg border border-gray-100 bg-white shadow-sm p-6">
                     <div className="flex items-center gap-4">
-                      <div className="font-display text-5xl leading-none text-amber-700">{i + 1}</div>
-                      <Icon className="h-8 w-8 text-amber-700/80" />
+                      <div className="font-display text-5xl leading-none text-gray-900">{i + 1}</div>
+                      <Icon className="h-8 w-8 text-gray-700" />
                     </div>
                     <h3 className="mt-4 font-display font-semibold text-xl text-gray-900">{step.name}</h3>
                     <p className="mt-2 text-gray-700">{step.text}</p>
@@ -262,14 +262,14 @@ const RenovationsPage = () => {
                   const s = SERVICES.find((x) => x.slug === slug)!;
                   return (
                     <li key={slug}>
-                      <Link to={`/${slug}`} className="inline-flex items-center gap-2 text-gray-900 hover:text-amber-700 hover:underline">
+                      <Link to={`/${slug}`} className="inline-flex items-center gap-2 text-gray-900 hover:text-gray-900 hover:underline">
                         <ArrowRight className="h-4 w-4" /> {s.name}
                       </Link>
                     </li>
                   );
                 })}
                 <li>
-                  <Link to="/contact" className="inline-flex items-center gap-2 text-gray-900 hover:text-amber-700 hover:underline">
+                  <Link to="/contact" className="inline-flex items-center gap-2 text-gray-900 hover:text-gray-900 hover:underline">
                     <ArrowRight className="h-4 w-4" /> Contact us
                   </Link>
                 </li>
@@ -288,7 +288,7 @@ const RenovationsPage = () => {
                     <li key={slug}>
                       <Link
                         to={`/renovations/${slug}`}
-                        className="inline-flex items-center gap-2 text-gray-900 hover:text-amber-700 hover:underline"
+                        className="inline-flex items-center gap-2 text-gray-900 hover:text-gray-900 hover:underline"
                       >
                         <ArrowRight className="h-4 w-4" /> Renovations in {name}, FL
                       </Link>

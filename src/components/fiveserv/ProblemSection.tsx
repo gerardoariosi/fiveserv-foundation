@@ -31,7 +31,7 @@ export const ProblemSection = () => {
           }
         >
           Managing a Make-Ready Shouldn't Require{" "}
-          <span className="text-amber-700">5 Different Vendors.</span>
+          <span className="text-gray-900">5 Different Vendors.</span>
         </SectionHeading>
 
         <div className="mt-16 grid gap-6 md:grid-cols-3">
@@ -49,7 +49,7 @@ export const ProblemSection = () => {
 
         <p className="mt-12 text-center text-lg font-bold text-gray-900">
           Sound familiar?{" "}
-          <a href="#solution" className="text-amber-700 underline underline-offset-4 hover:text-amber-700-hover">
+          <a href="#solution" className="text-gray-900 underline underline-offset-4 hover:text-gray-700">
             There is a better way.
           </a>
         </p>

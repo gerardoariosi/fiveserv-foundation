@@ -190,7 +190,7 @@ const PaintingPage = () => {
                     "One invoice per property",
                   ].map((t) => (
                     <li key={t} className="flex items-start gap-3">
-                      <CheckCircle2 className="mt-0.5 h-5 w-5 flex-shrink-0 text-amber-700" />
+                      <CheckCircle2 className="mt-0.5 h-5 w-5 flex-shrink-0 text-gray-900" />
                       <span>{t}</span>
                     </li>
                   ))}
@@ -220,7 +220,7 @@ const PaintingPage = () => {
                     "Color consultation included",
                   ].map((t) => (
                     <li key={t} className="flex items-start gap-3">
-                      <CheckCircle2 className="mt-0.5 h-5 w-5 flex-shrink-0 text-amber-700" />
+                      <CheckCircle2 className="mt-0.5 h-5 w-5 flex-shrink-0 text-gray-900" />
                       <span>{t}</span>
                     </li>
                   ))}
@@ -251,7 +251,7 @@ const PaintingPage = () => {
             <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
               {SERVICES_GRID.map((s) => (
                 <article key={s.title} className="hover-card rounded-lg border border-gray-100 bg-white shadow-sm p-6">
-                  <span className="flex h-12 w-12 items-center justify-center rounded-md bg-amber-700/10 text-gray-900">
+                  <span className="flex h-12 w-12 items-center justify-center rounded-md bg-brand-gold/15 text-gray-900">
                     <s.icon className="h-6 w-6" />
                   </span>
                   <h3 className="mt-5 font-display font-semibold text-xl text-gray-900">{s.title}</h3>
@@ -268,9 +268,9 @@ const PaintingPage = () => {
         <div className="container py-20">
           <SectionReveal className="grid gap-10 lg:grid-cols-2 lg:items-center">
             <div className="rounded-xl border border-gray-100 bg-white shadow-sm p-8">
-              <Palette className="h-12 w-12 text-amber-700" />
+              <Palette className="h-12 w-12 text-gray-900" />
               <p className="mt-6 font-display font-semibold text-2xl text-gray-900">
-                <span className="text-amber-700">Sherwin-Williams</span> premium paints
+                <span className="text-gray-900">Sherwin-Williams</span> premium paints
               </p>
               <p className="mt-3 text-gray-700">
                 Durable. Washable. Tenant-proof. The grade of paint that holds up across multiple turns and stays
@@ -281,7 +281,7 @@ const PaintingPage = () => {
               <p className="text-xs font-medium uppercase tracking-[0.12em] text-gray-900">— Paint Spec</p>
               <h2 className="mt-3 font-display font-bold text-3xl text-gray-900 sm:text-4xl">
                 The right paint{" "}
-                <span className="text-amber-700">cuts your turn cost over time</span>
+                <span className="text-gray-900">cuts your turn cost over time</span>
               </h2>
               <p className="mt-4 text-gray-700">
                 Cheap paint shows scuffs in 6 months and needs full repaints every turn. Sherwin-Williams premium
@@ -290,19 +290,19 @@ const PaintingPage = () => {
               </p>
               <ul className="mt-6 space-y-2 text-gray-700">
                 <li className="flex items-start gap-3">
-                  <ShieldCheck className="mt-0.5 h-5 w-5 flex-shrink-0 text-amber-700" />
+                  <ShieldCheck className="mt-0.5 h-5 w-5 flex-shrink-0 text-gray-900" />
                   Washable, scrubbable wall finishes
                 </li>
                 <li className="flex items-start gap-3">
-                  <ShieldCheck className="mt-0.5 h-5 w-5 flex-shrink-0 text-amber-700" />
+                  <ShieldCheck className="mt-0.5 h-5 w-5 flex-shrink-0 text-gray-900" />
                   Recommended tenant-proof palettes available on request
                 </li>
                 <li className="flex items-start gap-3">
-                  <ShieldCheck className="mt-0.5 h-5 w-5 flex-shrink-0 text-amber-700" />
+                  <ShieldCheck className="mt-0.5 h-5 w-5 flex-shrink-0 text-gray-900" />
                   Owner-spec brands honored on request
                 </li>
                 <li className="flex items-start gap-3">
-                  <ShieldCheck className="mt-0.5 h-5 w-5 flex-shrink-0 text-amber-700" />
+                  <ShieldCheck className="mt-0.5 h-5 w-5 flex-shrink-0 text-gray-900" />
                   Color matched and recorded for portfolio consistency
                 </li>
               </ul>
@@ -317,7 +317,7 @@ const PaintingPage = () => {
           <SectionReveal>
             <div className="rounded-xl border-2 border-brand-gold bg-white shadow-md p-8 sm:p-12">
               <div className="grid gap-8 lg:grid-cols-[auto,1fr,auto] lg:items-center">
-                <div className="flex h-16 w-16 items-center justify-center rounded-full bg-brand-gold/15 text-amber-700">
+                <div className="flex h-16 w-16 items-center justify-center rounded-full bg-brand-gold/15 text-gray-900">
                   <Key className="h-8 w-8" />
                 </div>
                 <div>
@@ -326,7 +326,7 @@ const PaintingPage = () => {
                   </span>
                   <h2 className="mt-3 font-display font-bold text-3xl text-gray-900 sm:text-4xl">
                     Every {SITE.brand} make-ready includes{" "}
-                    <span className="text-amber-700">painting</span>
+                    <span className="text-gray-900">painting</span>
                   </h2>
                   <p className="mt-3 text-gray-700">
                     Touch-up or full repaint depending on unit condition. No separate painter, no separate invoice, no
@@ -359,7 +359,7 @@ const PaintingPage = () => {
                   <span className="inline-flex h-10 w-10 items-center justify-center rounded-full bg-brand-gold text-base font-semibold text-gray-900">
                     {i + 1}
                   </span>
-                  <p.icon className="mt-4 h-8 w-8 text-amber-700" />
+                  <p.icon className="mt-4 h-8 w-8 text-gray-900" />
                   <h3 className="mt-3 font-display font-semibold text-xl text-gray-900">{p.name}</h3>
                   <p className="mt-2 text-gray-700">{p.text}</p>
                 </article>
@@ -391,12 +391,12 @@ const PaintingPage = () => {
                   className="hover-card group flex items-center justify-between rounded-md border border-gray-100 bg-white shadow-sm px-4 py-3"
                 >
                   <span className="flex items-center gap-3">
-                    <MapPin className="h-4 w-4 text-amber-700" />
+                    <MapPin className="h-4 w-4 text-gray-900" />
                     <span className="font-semibold text-gray-900">
                       Painting {c.name}, {c.state}
                     </span>
                   </span>
-                  <span className="text-xs font-bold uppercase tracking-wide text-amber-700/80">
+                  <span className="text-xs font-bold uppercase tracking-wide text-gray-700">
                     {c.responseTime}
                   </span>
                 </Link>
@@ -423,13 +423,13 @@ const PaintingPage = () => {
                   { to: "/residential", label: "Residential Services" },
                 ].map((l) => (
                   <li key={l.to}>
-                    <Link to={l.to} className="inline-flex items-center gap-2 text-gray-900 hover:text-amber-700 hover:underline">
+                    <Link to={l.to} className="inline-flex items-center gap-2 text-gray-900 hover:text-gray-900 hover:underline">
                       <ArrowRight className="h-4 w-4" /> {l.label}
                     </Link>
                   </li>
                 ))}
                 <li>
-                  <Link to="/contact" className="inline-flex items-center gap-2 text-gray-900 hover:text-amber-700 hover:underline">
+                  <Link to="/contact" className="inline-flex items-center gap-2 text-gray-900 hover:text-gray-900 hover:underline">
                     <ArrowRight className="h-4 w-4" /> Contact us
                   </Link>
                 </li>
@@ -443,7 +443,7 @@ const PaintingPage = () => {
                   { slug: "kissimmee-fl", name: "Kissimmee" },
                 ].map((c) => (
                   <li key={c.slug}>
-                    <Link to={`/maintenance-${c.slug}`} className="inline-flex items-center gap-2 text-gray-900 hover:text-amber-700 hover:underline">
+                    <Link to={`/maintenance-${c.slug}`} className="inline-flex items-center gap-2 text-gray-900 hover:text-gray-900 hover:underline">
                       <ArrowRight className="h-4 w-4" /> Painting in {c.name}, FL
                     </Link>
                   </li>
@@ -474,14 +474,14 @@ const PaintingPage = () => {
                 </Link>
                 <Link
                   to="/residential"
-                  className="inline-flex items-center justify-center gap-2 rounded-md border-2 border-brand-gold px-6 py-3 text-sm font-bold uppercase tracking-wide text-amber-700 hover:bg-brand-gold hover:text-gray-900 transition-colors"
+                  className="inline-flex items-center justify-center gap-2 rounded-md border-2 border-brand-gold px-6 py-3 text-sm font-bold uppercase tracking-wide text-gray-900 hover:bg-brand-gold hover:text-gray-900 transition-colors"
                 >
                   <Home className="h-4 w-4" /> Get a Home Painting Quote
                 </Link>
               </div>
               <p className="mt-6 text-sm text-gray-400">
                 Or call us directly:{" "}
-                <a href={`tel:${SITE.phone}`} className="font-bold text-amber-700 hover:underline">
+                <a href={`tel:${SITE.phone}`} className="font-bold text-gray-900 hover:underline">
                   {SITE.phone}
                 </a>
               </p>
