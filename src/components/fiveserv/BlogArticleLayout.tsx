@@ -44,18 +44,18 @@ export const BlogArticleLayout = ({ post, children }: Props) => {
         <div className="container max-w-3xl">
           <Link
             to="/blog"
-            className="text-xs font-bold uppercase tracking-widest text-gray-900 hover:underline"
+            className="text-xs font-bold uppercase tracking-widest text-brand-white hover:underline"
           >
             ← Back to Blog
           </Link>
-          <p className="mt-6 inline-block rounded bg-brand-gold/15 px-3 py-1 text-xs font-bold uppercase tracking-widest text-gray-900">
+          <p className="mt-6 inline-block rounded bg-brand-gold/15 px-3 py-1 text-xs font-bold uppercase tracking-widest text-brand-white">
             {post.category.replace(/-/g, " ")}
           </p>
           <h1 className="mt-4 font-display text-4xl leading-tight text-brand-white sm:text-5xl">
             {post.title}
           </h1>
           <div className="mt-4 flex flex-wrap items-center gap-3 text-sm text-brand-gray-muted">
-            <span><BrandName variant="light" /> Property Solutions</span>
+            <span className="text-brand-white"><BrandName /> Property Solutions</span>
             <span aria-hidden="true">•</span>
             <time dateTime={post.datePublished}>
               {new Date(post.datePublished).toLocaleDateString("en-US", {

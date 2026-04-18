@@ -47,7 +47,7 @@ const TrustBar = () => {
 
         <div className="mt-4 flex flex-col items-center gap-1 text-center sm:flex-row sm:justify-center sm:gap-3">
           <p className="text-[12px] text-[#888]">
-            Join 50+ property managers who trust <BrandName variant="light" /> across Central Florida
+            Join 50+ property managers who trust <span className="text-brand-white"><BrandName /></span> across Central Florida
           </p>
           <Link
             to="/contact"
