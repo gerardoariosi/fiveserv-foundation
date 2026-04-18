@@ -20,7 +20,7 @@ export const SolutionSection = () => {
           eyebrow="The Solution"
           subtext="One trusted partner that owns the entire turn — start to finish."
         >
-          One Call. <span className="text-brand-gold">One Team.</span> One Invoice.
+          One Call. <span className="text-amber-700">One Team.</span> One Invoice.
         </SectionHeading>
 
         <div className="mt-16 grid gap-6 lg:grid-cols-2">
@@ -39,11 +39,11 @@ export const SolutionSection = () => {
 
           {/* With — elevated */}
           <div className="rounded-xl border-2 border-brand-gold bg-white p-6 shadow-lg">
-            <h3 className="font-display text-lg font-bold text-brand-gold">With FiveServ</h3>
+            <h3 className="font-display text-lg font-bold text-amber-700">With FiveServ</h3>
             <ul className="mt-5 space-y-3">
               {ROWS.map(([, right]) => (
                 <li key={right} className="flex items-start gap-3">
-                  <Check className="mt-0.5 h-5 w-5 shrink-0 text-brand-gold" />
+                  <Check className="mt-0.5 h-5 w-5 shrink-0 text-amber-700" />
                   <span className="font-bold text-gray-900">{right}</span>
                 </li>
               ))}

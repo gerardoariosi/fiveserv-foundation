@@ -25,7 +25,7 @@ const blocks: Block[] = [
   { type: "h2", text: "What's included" },
   { type: "p", text: "Trash-out, deep clean, paint touch-up or repaint, drywall and trim repair, plumbing and electrical inspection, appliance check, HVAC filter, final walk-through with photo log." },
   { type: "h2", text: "Why Orlando is our home market" },
-  { type: "p", text: <>FiveServ was founded in Orlando and runs the broader Central Florida operation from here. See the dedicated <Link to="/maintenance-orlando-fl" className="text-brand-gold underline">Orlando service page</Link> for full coverage detail.</> },
+  { type: "p", text: <>FiveServ was founded in Orlando and runs the broader Central Florida operation from here. See the dedicated <Link to="/maintenance-orlando-fl" className="text-amber-700 underline">Orlando service page</Link> for full coverage detail.</> },
   { type: "h2", text: "Book a turn" },
   { type: "p", text: <><InternalLinkCluster /></> },
 ];

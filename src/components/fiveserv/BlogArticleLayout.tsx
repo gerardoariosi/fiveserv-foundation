@@ -43,11 +43,11 @@ export const BlogArticleLayout = ({ post, children }: Props) => {
         <div className="container max-w-3xl">
           <Link
             to="/blog"
-            className="text-xs font-bold uppercase tracking-widest text-brand-gold hover:underline"
+            className="text-xs font-bold uppercase tracking-widest text-amber-700 hover:underline"
           >
             ← Back to Blog
           </Link>
-          <p className="mt-6 inline-block rounded bg-brand-gold/15 px-3 py-1 text-xs font-bold uppercase tracking-widest text-brand-gold">
+          <p className="mt-6 inline-block rounded bg-brand-gold/15 px-3 py-1 text-xs font-bold uppercase tracking-widest text-amber-700">
             {post.category.replace(/-/g, " ")}
           </p>
           <h1 className="mt-4 font-display text-4xl leading-tight text-brand-white sm:text-5xl">
@@ -75,7 +75,7 @@ export const BlogArticleLayout = ({ post, children }: Props) => {
       <section className="bg-white pt-12">
         <div className="container max-w-3xl">
           <div className="rounded-xl border-l-4 border-brand-gold bg-gray-50 p-6 shadow-sm">
-            <p className="text-xs font-bold uppercase tracking-widest text-brand-gold">TL;DR</p>
+            <p className="text-xs font-bold uppercase tracking-widest text-amber-700">TL;DR</p>
             <p className="mt-2 text-base leading-relaxed text-brand-black">{post.tldr}</p>
           </div>
         </div>
@@ -91,7 +91,7 @@ export const BlogArticleLayout = ({ post, children }: Props) => {
       {/* Internal links — light gray */}
       <section className="bg-gray-50 py-16">
         <div className="container max-w-3xl">
-          <p className="text-brand-gold text-xs font-medium uppercase tracking-[0.12em] mb-3">— Keep Reading</p>
+          <p className="text-amber-700 text-xs font-medium uppercase tracking-[0.12em] mb-3">— Keep Reading</p>
           <h2 className="text-gray-900 font-display font-bold text-3xl lg:text-4xl">Related FiveServ resources</h2>
           <div className="mt-6 grid gap-3 sm:grid-cols-2">
             {SERVICES.map((s) => (
@@ -131,7 +131,7 @@ export const BlogArticleLayout = ({ post, children }: Props) => {
       {/* FAQ mini — light */}
       <section className="bg-white py-16">
         <div className="container max-w-3xl">
-          <p className="text-brand-gold text-xs font-medium uppercase tracking-[0.12em] mb-3">— FAQ</p>
+          <p className="text-amber-700 text-xs font-medium uppercase tracking-[0.12em] mb-3">— FAQ</p>
           <h2 className="text-gray-900 font-display font-bold text-3xl lg:text-4xl">Frequently asked questions</h2>
           <div className="mt-8 space-y-6">
             {post.faqs.map((f) => (

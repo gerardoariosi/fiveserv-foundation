@@ -36,7 +36,7 @@ export const ServicePageTemplate = ({ service, faqs = [] }: ServicePageData) => 
       {/* Hero — dark */}
       <section className="bg-brand-black pt-32 pb-16">
         <div className="container">
-          <p className="text-xs font-medium uppercase tracking-[0.12em] text-brand-gold">— {SITE.brand} Property Solutions</p>
+          <p className="text-xs font-medium uppercase tracking-[0.12em] text-amber-700">— {SITE.brand} Property Solutions</p>
           <h1 className="mt-3 font-display font-black text-4xl text-white sm:text-5xl lg:text-6xl">{service.name}</h1>
           <p className="mt-4 max-w-2xl text-lg text-gray-300">{service.description}</p>
 
@@ -54,7 +54,7 @@ export const ServicePageTemplate = ({ service, faqs = [] }: ServicePageData) => 
             </Link>
             <a
               href={`tel:${SITE.phone}`}
-              className="flex items-center gap-2 rounded-lg border-2 border-brand-gold px-8 py-4 text-sm font-bold uppercase tracking-wide text-brand-gold transition-colors hover:bg-brand-gold hover:text-brand-black"
+              className="flex items-center gap-2 rounded-lg border-2 border-brand-gold px-8 py-4 text-sm font-bold uppercase tracking-wide text-amber-700 transition-colors hover:bg-brand-gold hover:text-brand-black"
             >
               <Phone className="h-4 w-4" /> Call {SITE.phone}
             </a>
@@ -71,7 +71,7 @@ export const ServicePageTemplate = ({ service, faqs = [] }: ServicePageData) => 
             eyebrow="Service Areas"
             subtext="Pick your city for local response times and ZIP coverage."
           >
-            {service.name} <span className="text-brand-gold">in your city</span>
+            {service.name} <span className="text-amber-700">in your city</span>
           </SectionHeading>
           <div className="mt-16 grid gap-3 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
             {CITIES.map((c) => (
@@ -81,7 +81,7 @@ export const ServicePageTemplate = ({ service, faqs = [] }: ServicePageData) => 
                 className="flex items-center justify-between rounded-xl border border-gray-200 bg-white px-4 py-3 text-sm font-bold text-gray-900 transition-all hover:border-brand-gold hover:bg-brand-gold/5"
               >
                 {c.name}, {c.state}
-                <ArrowRight className="h-4 w-4 text-brand-gold" />
+                <ArrowRight className="h-4 w-4 text-amber-700" />
               </Link>
             ))}
           </div>

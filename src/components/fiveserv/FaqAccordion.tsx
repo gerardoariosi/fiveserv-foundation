@@ -28,7 +28,7 @@ export const FaqAccordion = ({
               value={`item-${i}`}
               className="border-b border-gray-100 px-1 transition-colors data-[state=open]:border-brand-gold"
             >
-              <AccordionTrigger className="text-left text-lg font-bold text-gray-900 hover:text-brand-gold [&>svg]:text-brand-gold">
+              <AccordionTrigger className="text-left text-lg font-bold text-gray-900 hover:text-amber-700 [&>svg]:text-amber-700">
                 {f.q}
               </AccordionTrigger>
               <AccordionContent className="pt-3 text-base leading-relaxed text-gray-600">{f.a}</AccordionContent>

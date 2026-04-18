@@ -41,9 +41,9 @@ const MakeReadyGuideBody = () => (
       <table className="w-full text-sm">
         <thead className="bg-brand-gray/40">
           <tr>
-            <th className="p-3 text-left text-brand-gold">Day</th>
-            <th className="p-3 text-left text-brand-gold">Trade</th>
-            <th className="p-3 text-left text-brand-gold">Scope</th>
+            <th className="p-3 text-left text-amber-700">Day</th>
+            <th className="p-3 text-left text-amber-700">Trade</th>
+            <th className="p-3 text-left text-amber-700">Scope</th>
           </tr>
         </thead>
         <tbody className="divide-y divide-brand-gold/15 text-brand-white">
@@ -104,11 +104,11 @@ const MakeReadyGuideBody = () => (
       We send one project manager, in-house painters, in-house cleaners, and licensed
       plumbing/electrical subs we coordinate. You get one invoice, one point of contact,
       and a guaranteed 5-business-day timeline on standard scope across our{" "}
-      <Link to="/cities" className="text-brand-gold underline">Central Florida service area</Link>.
+      <Link to="/cities" className="text-amber-700 underline">Central Florida service area</Link>.
       If you want the full breakdown, the{" "}
-      <Link to="/make-ready" className="text-brand-gold underline">make-ready service page</Link>{" "}
+      <Link to="/make-ready" className="text-amber-700 underline">make-ready service page</Link>{" "}
       shows the included scope and pricing tiers, or you can{" "}
-      <Link to="/contact" className="text-brand-gold underline">request a quote</Link> for
+      <Link to="/contact" className="text-amber-700 underline">request a quote</Link> for
       your specific community.
     </p>
   </div>

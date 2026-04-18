@@ -98,7 +98,7 @@ const TestimonialsSection = () => {
           eyebrow="Testimonials"
           subtext="Property managers across Central Florida trust FiveServ to handle every turn, every repair, every renovation."
         >
-          What Property Managers Say About <span className="text-brand-gold">FiveServ</span>
+          What Property Managers Say About <span className="text-amber-700">FiveServ</span>
         </SectionHeading>
         <div className="mt-16 grid gap-6 md:grid-cols-3">
           {TESTIMONIALS.map((t, i) => (

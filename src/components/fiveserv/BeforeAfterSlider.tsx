@@ -147,7 +147,7 @@ export const BeforeAfterSlider = ({
         <span className="pointer-events-none absolute left-3 top-3 rounded-full bg-brand-black/70 px-3 py-1 text-xs font-bold tracking-wider text-brand-white">
           {beforeLabel}
         </span>
-        <span className="pointer-events-none absolute right-3 top-3 rounded-full bg-brand-black/70 px-3 py-1 text-xs font-bold tracking-wider text-brand-gold">
+        <span className="pointer-events-none absolute right-3 top-3 rounded-full bg-brand-black/70 px-3 py-1 text-xs font-bold tracking-wider text-amber-700">
           {afterLabel}
         </span>
 
