@@ -19,10 +19,10 @@ type Props = {
 };
 
 export const BrandName = ({ variant = "light", className }: Props) => {
-  const fColor = variant === "light" || variant === "onGold" ? "text-primary" : "text-brand-gold";
+  const fColor = variant === "onGold" ? "text-brand-black" : "text-brand-gold";
   const restColor =
     variant === "light"
-      ? "text-[brand-gold-hover] text-brand-black"
+      ? "text-white"
       : variant === "onGold"
         ? "text-brand-black"
         : "text-gray-900";
