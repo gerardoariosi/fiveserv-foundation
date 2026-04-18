@@ -28,7 +28,7 @@ const ServicesIndexPage = () => (
       <div className="container">
         <p className="text-xs font-medium uppercase tracking-[0.12em] text-brand-gold">— {SITE.brand} Property Solutions</p>
         <h1 className="mt-3 font-display text-4xl text-white sm:text-5xl">Our Services</h1>
-        <p className="mt-6 max-w-2xl text-gray-700">
+        <p className="mt-6 max-w-2xl text-gray-300">
           Four service lines. One family. Built for property managers and homeowners across Central Florida.
         </p>
       </div>

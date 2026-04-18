@@ -122,7 +122,7 @@ const ElectricalPage = () => {
             </span>
           </div>
 
-          <p className="mt-6 max-w-2xl text-lg text-gray-700">
+          <p className="mt-6 max-w-2xl text-lg text-gray-300">
             Outlets. Panels. Lighting. Wiring. Emergencies. One call. We answer.
           </p>
 

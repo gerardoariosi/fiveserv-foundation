@@ -66,7 +66,7 @@ const MaintenancePage = () => {
             Property Maintenance Services for Property Managers in
             <span className="block text-brand-gold">Central Florida</span>
           </h1>
-          <p className="mt-6 max-w-2xl text-lg text-gray-700">
+          <p className="mt-6 max-w-2xl text-lg text-gray-300">
             Plumbing. Electrical. HVAC. Drywall. 24/7 emergencies. One call. We answer.
           </p>
 

@@ -56,7 +56,7 @@ const BlogPage = () => {
           <h1 className="mt-4 font-display text-4xl text-white sm:text-5xl">
             Property Management Maintenance Insights — Central Florida
           </h1>
-          <p className="mt-6 max-w-2xl text-lg text-gray-700">
+          <p className="mt-6 max-w-2xl text-lg text-gray-300">
             Make-ready playbooks, CapEx ROI breakdowns, maintenance benchmarks, and the
             on-the-ground guides we use to turn 300+ units a year across Orlando, Kissimmee,
             and the I-4 corridor.

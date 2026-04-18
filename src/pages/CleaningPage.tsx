@@ -160,7 +160,7 @@ const CleaningPage = () => {
             </span>
           </div>
 
-          <p className="mt-6 max-w-2xl text-lg text-gray-700">
+          <p className="mt-6 max-w-2xl text-lg text-gray-300">
             Move-out. Deep clean. Make-ready. Post-construction. Airbnb. One call.
           </p>
 

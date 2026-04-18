@@ -91,7 +91,7 @@ const ResidentialPage = () => {
             Home Maintenance Services Orlando FL —{" "}
             <span className="block text-brand-gold">Repairs &amp; Renovations</span>
           </h1>
-          <p className="mt-6 max-w-2xl text-lg text-gray-700">
+          <p className="mt-6 max-w-2xl text-lg text-gray-300">
             The same crews that turn 500-unit communities — now at your home. One call. One team. One invoice.
           </p>
 

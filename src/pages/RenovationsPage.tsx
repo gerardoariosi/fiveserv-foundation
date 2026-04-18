@@ -89,7 +89,7 @@ const RenovationsPage = () => {
             Property Renovation Services Central Florida —{" "}
             <span className="block text-brand-gold">Increase Your NOI</span>
           </h1>
-          <p className="mt-6 max-w-2xl text-lg text-gray-700">
+          <p className="mt-6 max-w-2xl text-lg text-gray-300">
             Increase property value and rental income across your portfolio. CapEx projects managed end-to-end. One
             contract. One project manager. One invoice.
           </p>

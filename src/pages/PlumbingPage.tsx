@@ -121,7 +121,7 @@ const PlumbingPage = () => {
             </span>
           </div>
 
-          <p className="mt-6 max-w-2xl text-lg text-gray-700">
+          <p className="mt-6 max-w-2xl text-lg text-gray-300">
             Leaks. Pipes. Water heaters. Drains. Emergencies. One call. We answer.
           </p>
 

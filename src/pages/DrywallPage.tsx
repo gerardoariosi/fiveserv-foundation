@@ -121,7 +121,7 @@ const DrywallPage = () => {
             </span>
           </div>
 
-          <p className="mt-6 max-w-2xl text-lg text-gray-700">
+          <p className="mt-6 max-w-2xl text-lg text-gray-300">
             Holes. Cracks. Water damage. Full panels. Texture matched. Paint-ready.
           </p>
 
