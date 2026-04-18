@@ -269,7 +269,7 @@ const CarpentryPage = () => {
                   </h2>
                   <p className="mt-3 text-brand-white/85">
                     These are the most common punch-list items on a unit turn, and the ones most often missed by
-                    single-trade vendors. ${SITE.brand} carpentry is included in every make-ready assessment so
+                    single-trade vendors. {SITE.brand} carpentry is included in every make-ready assessment so
                     nothing slips through to the resident walk.
                   </p>
                 </div>
