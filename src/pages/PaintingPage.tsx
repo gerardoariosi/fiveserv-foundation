@@ -122,7 +122,7 @@ const PaintingPage = () => {
           <p className="text-sm font-bold uppercase tracking-wide text-brand-gold">
             {SITE.brand} Property Solutions
           </p>
-          <h1 className="mt-3 font-display text-4xl text-brand-white sm:text-5xl lg:text-6xl">
+          <h1 className="mt-3 font-display text-4xl text-brand-black sm:text-5xl lg:text-6xl">
             Professional Painting Services in Central Florida —
             <span className="block text-brand-gold">Properties & Homes</span>
           </h1>
@@ -139,7 +139,7 @@ const PaintingPage = () => {
             </span>
           </div>
 
-          <p className="mt-6 max-w-2xl text-lg text-brand-white/90">
+          <p className="mt-6 max-w-2xl text-lg text-gray-700">
             Interior. Exterior. Make-ready. Accent walls. Sherwin-Williams. One call.
           </p>
 
@@ -149,7 +149,7 @@ const PaintingPage = () => {
             </a>
             <a
               href={`tel:${SITE.phone}`}
-              className="flex items-center gap-2 rounded-md border-2 border-brand-white px-6 py-3 text-sm font-bold uppercase tracking-wide text-brand-white hover:bg-brand-white hover:text-brand-black transition-colors"
+              className="flex items-center gap-2 rounded-md border-2 border-brand-white px-6 py-3 text-sm font-bold uppercase tracking-wide text-brand-black hover:bg-brand-white hover:text-brand-black transition-colors"
             >
               <Phone className="h-4 w-4" /> Call {SITE.phone}
             </a>
@@ -162,26 +162,26 @@ const PaintingPage = () => {
       </section>
 
       {/* TWO-AUDIENCE SPLIT */}
-      <section className="bg-brand-gray">
+      <section className="bg-gray-50">
         <div className="container py-20">
           <SectionReveal>
-            <h2 className="font-display text-3xl text-brand-white sm:text-4xl">
+            <h2 className="font-display text-3xl text-brand-black sm:text-4xl">
               One Painting Team. <span className="text-brand-gold">Two Audiences.</span>
             </h2>
-            <p className="mt-3 max-w-2xl text-brand-white/80">
+            <p className="mt-3 max-w-2xl text-gray-700">
               The same painters who turn 500-unit communities also paint Central Florida homes. Pick your path.
             </p>
 
             <div className="mt-12 grid gap-6 lg:grid-cols-2">
               {/* B2B */}
-              <article className="rounded-xl border-2 border-brand-gold bg-brand-black p-8">
+              <article className="rounded-xl border-2 border-brand-gold bg-white shadow-md p-8">
                 <span className="inline-flex items-center gap-2 rounded-full bg-brand-gold px-3 py-1 text-xs font-bold uppercase tracking-wider text-brand-black">
                   <Building2 className="h-3.5 w-3.5" /> Property Managers
                 </span>
-                <h3 className="mt-4 font-display text-2xl text-brand-white">
+                <h3 className="mt-4 font-display text-2xl text-brand-black">
                   Multifamily & Portfolio Painting
                 </h3>
-                <ul className="mt-5 space-y-2 text-brand-white/90">
+                <ul className="mt-5 space-y-2 text-gray-700">
                   {[
                     "Make-ready painting between tenants",
                     "Full unit repaints on turnover",
@@ -204,14 +204,14 @@ const PaintingPage = () => {
               </article>
 
               {/* B2C */}
-              <article className="rounded-xl border-2 border-brand-gold bg-brand-black p-8">
+              <article className="rounded-xl border-2 border-brand-gold bg-white shadow-md p-8">
                 <span className="inline-flex items-center gap-2 rounded-full bg-brand-gold px-3 py-1 text-xs font-bold uppercase tracking-wider text-brand-black">
                   <Home className="h-3.5 w-3.5" /> Homeowners
                 </span>
-                <h3 className="mt-4 font-display text-2xl text-brand-white">
+                <h3 className="mt-4 font-display text-2xl text-brand-black">
                   Home & Residential Painting
                 </h3>
-                <ul className="mt-5 space-y-2 text-brand-white/90">
+                <ul className="mt-5 space-y-2 text-gray-700">
                   {[
                     "Interior room painting",
                     "Full home repaints",
@@ -238,24 +238,24 @@ const PaintingPage = () => {
       </section>
 
       {/* Services Grid */}
-      <section className="bg-brand-black">
+      <section className="bg-white">
         <div className="container py-20">
           <SectionReveal>
-            <h2 className="font-display text-3xl text-brand-white sm:text-4xl">
+            <h2 className="font-display text-3xl text-brand-black sm:text-4xl">
               Painting Services <span className="text-brand-gold">We Handle</span>
             </h2>
-            <p className="mt-3 max-w-2xl text-brand-white/80">
+            <p className="mt-3 max-w-2xl text-gray-700">
               Six core service lines. In-house crews. Coordinated with drywall, cleaning, and final inspection.
             </p>
 
             <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
               {SERVICES_GRID.map((s) => (
-                <article key={s.title} className="hover-card rounded-lg border border-brand-gray bg-brand-gray/40 p-6">
+                <article key={s.title} className="hover-card rounded-lg border border-gray-100 bg-white shadow-sm p-6">
                   <span className="flex h-12 w-12 items-center justify-center rounded-md bg-brand-gold/10 text-brand-gold">
                     <s.icon className="h-6 w-6" />
                   </span>
-                  <h3 className="mt-5 font-display text-xl text-brand-white">{s.title}</h3>
-                  <p className="mt-2 text-brand-white/80">{s.desc}</p>
+                  <h3 className="mt-5 font-display text-xl text-brand-black">{s.title}</h3>
+                  <p className="mt-2 text-gray-700">{s.desc}</p>
                 </article>
               ))}
             </div>
@@ -264,31 +264,31 @@ const PaintingPage = () => {
       </section>
 
       {/* Sherwin-Williams */}
-      <section className="bg-brand-gray">
+      <section className="bg-gray-50">
         <div className="container py-20">
           <SectionReveal className="grid gap-10 lg:grid-cols-2 lg:items-center">
-            <div className="rounded-xl border border-brand-gold/60 bg-brand-black p-8">
+            <div className="rounded-xl border border-gray-100 bg-white shadow-sm p-8">
               <Palette className="h-12 w-12 text-brand-gold" />
-              <p className="mt-6 font-display text-2xl text-brand-white">
+              <p className="mt-6 font-display text-2xl text-brand-black">
                 <span className="text-brand-gold">Sherwin-Williams</span> premium paints
               </p>
-              <p className="mt-3 text-brand-white/80">
+              <p className="mt-3 text-gray-700">
                 Durable. Washable. Tenant-proof. The grade of paint that holds up across multiple turns and stays
                 looking new in real-world rentals.
               </p>
             </div>
             <div>
               <p className="text-sm font-bold uppercase tracking-wide text-brand-gold">Paint Spec</p>
-              <h2 className="mt-3 font-display text-3xl text-brand-white sm:text-4xl">
+              <h2 className="mt-3 font-display text-3xl text-brand-black sm:text-4xl">
                 The right paint{" "}
                 <span className="text-brand-gold">cuts your turn cost over time</span>
               </h2>
-              <p className="mt-4 text-brand-white/85">
+              <p className="mt-4 text-gray-700">
                 Cheap paint shows scuffs in 6 months and needs full repaints every turn. Sherwin-Williams premium
                 lines wash clean, hold color, and let us touch-up instead of fully repaint on most turns — which
                 compounds into real savings across a portfolio.
               </p>
-              <ul className="mt-6 space-y-2 text-brand-white/85">
+              <ul className="mt-6 space-y-2 text-gray-700">
                 <li className="flex items-start gap-3">
                   <ShieldCheck className="mt-0.5 h-5 w-5 flex-shrink-0 text-brand-gold" />
                   Washable, scrubbable wall finishes
@@ -312,10 +312,10 @@ const PaintingPage = () => {
       </section>
 
       {/* Make-Ready Connection */}
-      <section className="bg-brand-black">
+      <section className="bg-white">
         <div className="container py-20">
           <SectionReveal>
-            <div className="rounded-xl border-2 border-brand-gold bg-brand-gray/40 p-8 sm:p-12">
+            <div className="rounded-xl border-2 border-brand-gold bg-white shadow-md p-8 sm:p-12">
               <div className="grid gap-8 lg:grid-cols-[auto,1fr,auto] lg:items-center">
                 <div className="flex h-16 w-16 items-center justify-center rounded-full bg-brand-gold/15 text-brand-gold">
                   <Key className="h-8 w-8" />
@@ -324,11 +324,11 @@ const PaintingPage = () => {
                   <span className="inline-block rounded-full bg-brand-gold px-3 py-1 text-xs font-bold uppercase tracking-wider text-brand-black">
                     Make-Ready Included
                   </span>
-                  <h2 className="mt-3 font-display text-3xl text-brand-white sm:text-4xl">
+                  <h2 className="mt-3 font-display text-3xl text-brand-black sm:text-4xl">
                     Every {SITE.brand} make-ready includes{" "}
                     <span className="text-brand-gold">painting</span>
                   </h2>
-                  <p className="mt-3 text-brand-white/85">
+                  <p className="mt-3 text-gray-700">
                     Touch-up or full repaint depending on unit condition. No separate painter, no separate invoice, no
                     scheduling conflicts. Drywall, paint, and cleaning move as one workflow inside the 5-day window.
                   </p>
@@ -346,22 +346,22 @@ const PaintingPage = () => {
       </section>
 
       {/* Process — 3 steps */}
-      <section className="bg-brand-gray">
+      <section className="bg-gray-50">
         <div className="container py-20">
           <SectionReveal>
-            <h2 className="font-display text-3xl text-brand-white sm:text-4xl">
+            <h2 className="font-display text-3xl text-brand-black sm:text-4xl">
               Our 3-Step <span className="text-brand-gold">Painting Process</span>
             </h2>
 
             <div className="mt-12 grid gap-6 md:grid-cols-3">
               {PROCESS.map((p, i) => (
-                <article key={p.name} className="rounded-lg border border-brand-gold/40 bg-brand-black p-6">
+                <article key={p.name} className="rounded-lg border border-gray-100 bg-white shadow-sm p-6">
                   <span className="inline-flex h-10 w-10 items-center justify-center rounded-full bg-brand-gold text-base font-bold text-brand-black">
                     {i + 1}
                   </span>
                   <p.icon className="mt-4 h-8 w-8 text-brand-gold" />
-                  <h3 className="mt-3 font-display text-xl text-brand-white">{p.name}</h3>
-                  <p className="mt-2 text-brand-white/80">{p.text}</p>
+                  <h3 className="mt-3 font-display text-xl text-brand-black">{p.name}</h3>
+                  <p className="mt-2 text-gray-700">{p.text}</p>
                 </article>
               ))}
             </div>
@@ -372,14 +372,14 @@ const PaintingPage = () => {
       <StatsBar />
 
       {/* Coverage — all 18 cities */}
-      <section className="bg-brand-black">
+      <section className="bg-white">
         <div className="container py-20">
           <SectionReveal>
-            <h2 className="font-display text-3xl text-brand-white sm:text-4xl">
+            <h2 className="font-display text-3xl text-brand-black sm:text-4xl">
               Painting Coverage —{" "}
               <span className="text-brand-gold">18 Cities Across Central Florida</span>
             </h2>
-            <p className="mt-3 max-w-2xl text-brand-white/80">
+            <p className="mt-3 max-w-2xl text-gray-700">
               Same-day assessment across the Orlando metro core. Within 24 hours across the rest of the region.
             </p>
 
@@ -388,11 +388,11 @@ const PaintingPage = () => {
                 <Link
                   key={c.slug}
                   to={`/maintenance-${c.slug}`}
-                  className="hover-card group flex items-center justify-between rounded-md border border-brand-gray bg-brand-gray/40 px-4 py-3"
+                  className="hover-card group flex items-center justify-between rounded-md border border-gray-100 bg-white shadow-sm px-4 py-3"
                 >
                   <span className="flex items-center gap-3">
                     <MapPin className="h-4 w-4 text-brand-gold" />
-                    <span className="font-bold text-brand-white">
+                    <span className="font-bold text-brand-black">
                       Painting {c.name}, {c.state}
                     </span>
                   </span>
@@ -410,11 +410,11 @@ const PaintingPage = () => {
       <FaqAccordion faqs={PAINTING_FAQS} emitSchema={false} />
 
       {/* Internal links */}
-      <section className="bg-brand-gray">
+      <section className="bg-gray-50">
         <div className="container py-16">
           <SectionReveal className="grid gap-10 md:grid-cols-2">
             <div>
-              <h2 className="font-display text-2xl text-brand-white">Related Services</h2>
+              <h2 className="font-display text-2xl text-brand-black">Related Services</h2>
               <ul className="mt-4 space-y-2">
                 {[
                   { to: "/make-ready", label: "Make-Ready & Unit Turns" },
@@ -436,7 +436,7 @@ const PaintingPage = () => {
               </ul>
             </div>
             <div>
-              <h2 className="font-display text-2xl text-brand-white">Painting in your city</h2>
+              <h2 className="font-display text-2xl text-brand-black">Painting in your city</h2>
               <ul className="mt-4 space-y-2">
                 {[
                   { slug: "orlando-fl", name: "Orlando" },
@@ -458,11 +458,11 @@ const PaintingPage = () => {
       <section id="contact-form" className="bg-brand-black">
         <div className="container py-20">
           <SectionReveal>
-            <div className="rounded-xl border-2 border-brand-gold bg-brand-gray/30 p-8 sm:p-12 text-center">
-              <h2 className="font-display text-3xl text-brand-white sm:text-4xl">
+            <div className="rounded-xl border-2 border-brand-gold bg-white border border-gray-100 shadow-sm p-8 sm:p-12 text-center">
+              <h2 className="font-display text-3xl text-brand-black sm:text-4xl">
                 Ready for a <span className="text-brand-gold">painting quote?</span>
               </h2>
-              <p className="mt-3 text-brand-white/85">
+              <p className="mt-3 text-gray-700">
                 Pick the path that fits. PM portfolios on the left. Homes on the right.
               </p>
               <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
@@ -479,7 +479,7 @@ const PaintingPage = () => {
                   <Home className="h-4 w-4" /> Get a Home Painting Quote
                 </Link>
               </div>
-              <p className="mt-6 text-sm text-brand-white/70">
+              <p className="mt-6 text-sm text-gray-600">
                 Or call us directly:{" "}
                 <a href={`tel:${SITE.phone}`} className="font-bold text-brand-gold hover:underline">
                   {SITE.phone}

@@ -107,7 +107,7 @@ const DrywallPage = () => {
           <p className="text-sm font-bold uppercase tracking-wide text-brand-gold">
             {SITE.brand} Property Solutions
           </p>
-          <h1 className="mt-3 font-display text-4xl text-brand-white sm:text-5xl lg:text-6xl">
+          <h1 className="mt-3 font-display text-4xl text-brand-black sm:text-5xl lg:text-6xl">
             Drywall Repair Services for Property Managers in
             <span className="block text-brand-gold">Central Florida</span>
           </h1>
@@ -121,7 +121,7 @@ const DrywallPage = () => {
             </span>
           </div>
 
-          <p className="mt-6 max-w-2xl text-lg text-brand-white/90">
+          <p className="mt-6 max-w-2xl text-lg text-gray-700">
             Holes. Cracks. Water damage. Full panels. Texture matched. Paint-ready.
           </p>
 
@@ -131,7 +131,7 @@ const DrywallPage = () => {
             </a>
             <a
               href={`tel:${SITE.phone}`}
-              className="flex items-center gap-2 rounded-md border-2 border-brand-white px-6 py-3 text-sm font-bold uppercase tracking-wide text-brand-white hover:bg-brand-white hover:text-brand-black transition-colors"
+              className="flex items-center gap-2 rounded-md border-2 border-brand-white px-6 py-3 text-sm font-bold uppercase tracking-wide text-brand-black hover:bg-brand-white hover:text-brand-black transition-colors"
             >
               <Phone className="h-4 w-4" /> Call {SITE.phone}
             </a>
@@ -144,27 +144,27 @@ const DrywallPage = () => {
       </section>
 
       {/* Problem section */}
-      <section className="bg-brand-gray">
+      <section className="bg-gray-50">
         <div className="container py-20">
           <SectionReveal className="grid gap-10 lg:grid-cols-2 lg:items-center">
             <div>
               <p className="text-sm font-bold uppercase tracking-wide text-brand-gold">The Hidden Make-Ready Killer</p>
-              <h2 className="mt-3 font-display text-3xl text-brand-white sm:text-4xl">
+              <h2 className="mt-3 font-display text-3xl text-brand-black sm:text-4xl">
                 Drywall is the{" "}
                 <span className="text-brand-gold">#1 reason make-readies slip</span>
               </h2>
-              <p className="mt-4 text-brand-white/85">
+              <p className="mt-4 text-gray-700">
                 Holes, cracks, and water damage left unrepaired cost vacancy days and owner trust. The painter can't
                 paint until drywall is done. The cleaner can't clean until paint is dry. {SITE.brand} runs drywall
                 inside the make-ready workflow — not as a separate contractor — so the schedule actually holds.
               </p>
             </div>
-            <div className="rounded-xl border-2 border-brand-gold bg-brand-black p-8">
+            <div className="rounded-xl border-2 border-brand-gold bg-white shadow-md p-8">
               <div className="flex items-center gap-4">
                 <Key className="h-10 w-10 text-brand-gold" />
                 <div>
-                  <p className="font-display text-2xl text-brand-white">5-Day Make-Ready</p>
-                  <p className="text-sm text-brand-white/70">Drywall + paint + clean — coordinated</p>
+                  <p className="font-display text-2xl text-brand-black">5-Day Make-Ready</p>
+                  <p className="text-sm text-gray-600">Drywall + paint + clean — coordinated</p>
                 </div>
               </div>
               <Link
@@ -179,24 +179,24 @@ const DrywallPage = () => {
       </section>
 
       {/* Services Grid */}
-      <section className="bg-brand-black">
+      <section className="bg-white">
         <div className="container py-20">
           <SectionReveal>
-            <h2 className="font-display text-3xl text-brand-white sm:text-4xl">
+            <h2 className="font-display text-3xl text-brand-black sm:text-4xl">
               Drywall Services <span className="text-brand-gold">We Handle</span>
             </h2>
-            <p className="mt-3 max-w-2xl text-brand-white/80">
+            <p className="mt-3 max-w-2xl text-gray-700">
               Six core service lines. In-house crews. Coordinated with paint and final inspection.
             </p>
 
             <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
               {SERVICES_GRID.map((s) => (
-                <article key={s.title} className="hover-card rounded-lg border border-brand-gray bg-brand-gray/40 p-6">
+                <article key={s.title} className="hover-card rounded-lg border border-gray-100 bg-white shadow-sm p-6">
                   <span className="flex h-12 w-12 items-center justify-center rounded-md bg-brand-gold/10 text-brand-gold">
                     <s.icon className="h-6 w-6" />
                   </span>
-                  <h3 className="mt-5 font-display text-xl text-brand-white">{s.title}</h3>
-                  <p className="mt-2 text-brand-white/80">{s.desc}</p>
+                  <h3 className="mt-5 font-display text-xl text-brand-black">{s.title}</h3>
+                  <p className="mt-2 text-gray-700">{s.desc}</p>
                 </article>
               ))}
             </div>
@@ -205,10 +205,10 @@ const DrywallPage = () => {
       </section>
 
       {/* Make-Ready connection */}
-      <section className="bg-brand-gray">
+      <section className="bg-gray-50">
         <div className="container py-20">
           <SectionReveal>
-            <div className="rounded-xl border-2 border-brand-gold bg-brand-black p-8 sm:p-12">
+            <div className="rounded-xl border-2 border-brand-gold bg-white shadow-md p-8 sm:p-12">
               <div className="grid gap-8 lg:grid-cols-[auto,1fr,auto] lg:items-center">
                 <div className="flex h-16 w-16 items-center justify-center rounded-full bg-brand-gold/15 text-brand-gold">
                   <Key className="h-8 w-8" />
@@ -217,11 +217,11 @@ const DrywallPage = () => {
                   <span className="inline-block rounded-full bg-brand-gold px-3 py-1 text-xs font-bold uppercase tracking-wider text-brand-black">
                     Make-Ready Included
                   </span>
-                  <h2 className="mt-3 font-display text-3xl text-brand-white sm:text-4xl">
+                  <h2 className="mt-3 font-display text-3xl text-brand-black sm:text-4xl">
                     Every {SITE.brand} make-ready includes{" "}
                     <span className="text-brand-gold">drywall inspection and repair</span>
                   </h2>
-                  <p className="mt-3 text-brand-white/85">
+                  <p className="mt-3 text-gray-700">
                     No separate contractor. No separate invoice. No scheduling conflicts. Drywall, paint, cleaning, and
                     final inspection move as one workflow — that's how we hit 5 business days.
                   </p>
@@ -239,32 +239,32 @@ const DrywallPage = () => {
       </section>
 
       {/* Texture Matching */}
-      <section className="bg-brand-black">
+      <section className="bg-white">
         <div className="container py-20">
           <SectionReveal className="grid gap-10 lg:grid-cols-2 lg:items-center">
-            <div className="rounded-xl border border-brand-gold/60 bg-brand-gray/40 p-8">
+            <div className="rounded-xl border border-gray-100 bg-white shadow-sm p-8">
               <Sparkles className="h-12 w-12 text-brand-gold" />
-              <p className="mt-6 font-display text-2xl text-brand-white">
+              <p className="mt-6 font-display text-2xl text-brand-black">
                 Repairs that{" "}
                 <span className="text-brand-gold">disappear under paint.</span>
               </p>
-              <p className="mt-3 text-brand-white/80">
+              <p className="mt-3 text-gray-700">
                 The wrong texture shows up the second the light hits it. Residents notice. Inspectors notice. We
                 texture-match so the wall reads as one continuous surface.
               </p>
             </div>
             <div>
               <p className="text-sm font-bold uppercase tracking-wide text-brand-gold">Texture Matching</p>
-              <h2 className="mt-3 font-display text-3xl text-brand-white sm:text-4xl">
+              <h2 className="mt-3 font-display text-3xl text-brand-black sm:text-4xl">
                 We match existing wall texture —{" "}
                 <span className="text-brand-gold">smooth, orange peel, knockdown</span>
               </h2>
-              <p className="mt-4 text-brand-white/85">
+              <p className="mt-4 text-gray-700">
                 Most multifamily walls in Central Florida are orange peel or knockdown. We carry the spray rigs, the
                 hopper textures, and the experience to feather a repair into the surrounding wall so it disappears
                 after primer and topcoat.
               </p>
-              <ul className="mt-6 space-y-2 text-brand-white/85">
+              <ul className="mt-6 space-y-2 text-gray-700">
                 <li className="flex items-start gap-3">
                   <ShieldCheck className="mt-0.5 h-5 w-5 flex-shrink-0 text-brand-gold" />
                   Smooth wall finishing — Level 4 and Level 5
@@ -290,14 +290,14 @@ const DrywallPage = () => {
       <StatsBar />
 
       {/* Coverage — all 18 cities */}
-      <section className="bg-brand-black">
+      <section className="bg-white">
         <div className="container py-20">
           <SectionReveal>
-            <h2 className="font-display text-3xl text-brand-white sm:text-4xl">
+            <h2 className="font-display text-3xl text-brand-black sm:text-4xl">
               Drywall Coverage —{" "}
               <span className="text-brand-gold">18 Cities Across Central Florida</span>
             </h2>
-            <p className="mt-3 max-w-2xl text-brand-white/80">
+            <p className="mt-3 max-w-2xl text-gray-700">
               Same-day assessment across the Orlando metro core. Within 24 hours across the rest of the region.
             </p>
 
@@ -306,11 +306,11 @@ const DrywallPage = () => {
                 <Link
                   key={c.slug}
                   to={`/maintenance-${c.slug}`}
-                  className="hover-card group flex items-center justify-between rounded-md border border-brand-gray bg-brand-gray/40 px-4 py-3"
+                  className="hover-card group flex items-center justify-between rounded-md border border-gray-100 bg-white shadow-sm px-4 py-3"
                 >
                   <span className="flex items-center gap-3">
                     <MapPin className="h-4 w-4 text-brand-gold" />
-                    <span className="font-bold text-brand-white">
+                    <span className="font-bold text-brand-black">
                       Drywall {c.name}, {c.state}
                     </span>
                   </span>
@@ -328,11 +328,11 @@ const DrywallPage = () => {
       <FaqAccordion faqs={DRYWALL_FAQS} emitSchema={false} />
 
       {/* Internal links */}
-      <section className="bg-brand-gray">
+      <section className="bg-gray-50">
         <div className="container py-16">
           <SectionReveal className="grid gap-10 md:grid-cols-2">
             <div>
-              <h2 className="font-display text-2xl text-brand-white">Related Services</h2>
+              <h2 className="font-display text-2xl text-brand-black">Related Services</h2>
               <ul className="mt-4 space-y-2">
                 {[
                   { to: "/make-ready", label: "Make-Ready & Unit Turns" },
@@ -354,7 +354,7 @@ const DrywallPage = () => {
               </ul>
             </div>
             <div>
-              <h2 className="font-display text-2xl text-brand-white">Drywall in your city</h2>
+              <h2 className="font-display text-2xl text-brand-black">Drywall in your city</h2>
               <ul className="mt-4 space-y-2">
                 {[
                   { slug: "orlando-fl", name: "Orlando" },

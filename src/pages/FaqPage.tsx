@@ -58,13 +58,13 @@ const FaqPage = () => {
           <p className="text-sm font-bold uppercase tracking-wide text-brand-gold">
             {SITE.brand} Property Solutions
           </p>
-          <h1 className="mt-3 max-w-4xl font-display text-4xl text-brand-white sm:text-5xl lg:text-6xl">
+          <h1 className="mt-3 max-w-4xl font-display text-4xl text-brand-black sm:text-5xl lg:text-6xl">
             Property Maintenance FAQ —{" "}
             <span className="block text-brand-gold">
               Everything Property Managers Need to Know
             </span>
           </h1>
-          <p className="mt-6 max-w-2xl text-lg text-brand-white/85">
+          <p className="mt-6 max-w-2xl text-lg text-gray-700">
             30 answers across make-ready, maintenance, CapEx, and getting started.
             All answers visible — no clicks required.
           </p>
@@ -95,13 +95,13 @@ const FaqPage = () => {
       </section>
 
       {/* 3. FAQ groups */}
-      <section className="bg-brand-gray">
+      <section className="bg-gray-50">
         <div className="container py-16 space-y-12">
           {grouped.map((group) => (
             <div key={group.id}>
-              <h2 className="font-display text-2xl text-brand-white sm:text-3xl">
+              <h2 className="font-display text-2xl text-brand-black sm:text-3xl">
                 <span className="text-brand-gold">{group.label}</span>{" "}
-                <span className="text-brand-white/60 text-lg">({group.items.length})</span>
+                <span className="text-gray-500 text-lg">({group.items.length})</span>
               </h2>
               <Accordion
                 type="multiple"
@@ -114,10 +114,10 @@ const FaqPage = () => {
                     value={`faq-${group.id}-${i}`}
                     className="border-brand-gray"
                   >
-                    <AccordionTrigger className="text-left text-brand-white hover:text-brand-gold">
+                    <AccordionTrigger className="text-left text-brand-black hover:text-brand-gold">
                       {f.q}
                     </AccordionTrigger>
-                    <AccordionContent className="text-brand-white/85">
+                    <AccordionContent className="text-gray-700">
                       {f.a}
                     </AccordionContent>
                   </AccordionItem>
@@ -185,7 +185,7 @@ const FilterButton = ({
     className={`rounded-md px-4 py-2 text-sm font-bold uppercase tracking-wide transition-colors ${
       active
         ? "bg-brand-gold text-brand-black"
-        : "border border-brand-gray bg-brand-black text-brand-white hover:border-brand-gold hover:text-brand-gold"
+        : "border border-gray-100 bg-white shadow-sm text-brand-black hover:border-brand-gold hover:text-brand-gold"
     }`}
   >
     {children}

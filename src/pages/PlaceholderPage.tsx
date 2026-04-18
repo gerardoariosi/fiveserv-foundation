@@ -17,8 +17,8 @@ const PlaceholderPage = ({ title, description, path, heading }: PlaceholderPageP
     <section className="bg-brand-black pt-32 pb-24">
       <div className="container">
         <p className="text-sm font-bold uppercase tracking-wide text-brand-gold">{SITE.brand} Property Solutions</p>
-        <h1 className="mt-3 font-display text-4xl text-brand-white sm:text-5xl">{heading}</h1>
-        <p className="mt-6 max-w-2xl text-brand-white/80">
+        <h1 className="mt-3 font-display text-4xl text-brand-black sm:text-5xl">{heading}</h1>
+        <p className="mt-6 max-w-2xl text-gray-700">
           This page is part of the foundation. Content will be built in the next phase.
         </p>
       </div>
