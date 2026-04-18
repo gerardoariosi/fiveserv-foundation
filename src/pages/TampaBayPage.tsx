@@ -55,7 +55,7 @@ const TampaBayPage = () => {
           <p className="mt-8 text-xs font-bold uppercase tracking-[0.3em] text-brand-gold">
             Coming Soon
           </p>
-          <h1 className="mt-4 font-display text-4xl text-brand-black sm:text-5xl lg:text-6xl">
+          <h1 className="mt-4 font-display font-black text-4xl text-white sm:text-5xl lg:text-6xl">
             {SITE.brand} is Coming to{" "}
             <span className="text-brand-gold">Tampa Bay, Florida</span>
           </h1>
@@ -71,7 +71,7 @@ const TampaBayPage = () => {
             </a>
             <a
               href={`tel:${SITE.phone}`}
-              className="flex items-center gap-2 rounded-md border-2 border-brand-white px-6 py-3 text-sm font-bold uppercase tracking-wide text-brand-black hover:bg-brand-white hover:text-brand-black transition-colors"
+              className="flex items-center gap-2 rounded-md border-2 border-brand-white px-6 py-3 text-sm font-bold uppercase tracking-wide text-white hover:bg-brand-white hover:text-brand-black transition-colors"
             >
               <Phone className="h-4 w-4" /> Call {SITE.phone}
             </a>

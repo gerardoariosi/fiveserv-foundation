@@ -106,10 +106,10 @@ const CarpentryPage = () => {
       {/* Hero */}
       <section className="bg-brand-black pt-32 pb-16">
         <div className="container">
-          <p className="text-sm font-bold uppercase tracking-wide text-brand-gold">
-            {SITE.brand} Property Solutions
+          <p className="text-xs font-medium uppercase tracking-[0.12em] text-brand-gold">
+            — {SITE.brand} Property Solutions
           </p>
-          <h1 className="mt-3 font-display text-4xl text-brand-black sm:text-5xl lg:text-6xl">
+          <h1 className="mt-3 font-display font-black text-4xl text-white sm:text-5xl lg:text-6xl">
             Carpentry Services for Properties and Homes —
             <span className="block text-brand-gold">Central Florida</span>
           </h1>
@@ -136,7 +136,7 @@ const CarpentryPage = () => {
             </a>
             <a
               href={`tel:${SITE.phone}`}
-              className="flex items-center gap-2 rounded-md border-2 border-brand-white px-6 py-3 text-sm font-bold uppercase tracking-wide text-brand-black hover:bg-brand-white hover:text-brand-black transition-colors"
+              className="flex items-center gap-2 rounded-md border-2 border-brand-white px-6 py-3 text-sm font-bold uppercase tracking-wide text-white hover:bg-brand-white hover:text-brand-black transition-colors"
             >
               <Phone className="h-4 w-4" /> Call {SITE.phone}
             </a>
@@ -152,7 +152,7 @@ const CarpentryPage = () => {
       <section className="bg-gray-50">
         <div className="container py-20">
           <SectionReveal>
-            <h2 className="font-display text-3xl text-brand-black sm:text-4xl">
+            <h2 className="font-display font-bold text-3xl text-gray-900 sm:text-4xl">
               One Carpentry Team. <span className="text-brand-gold">Two Audiences.</span>
             </h2>
             <p className="mt-3 max-w-2xl text-gray-700">
@@ -162,10 +162,10 @@ const CarpentryPage = () => {
             <div className="mt-12 grid gap-6 lg:grid-cols-2">
               {/* B2B */}
               <article className="rounded-xl border-2 border-brand-gold bg-white shadow-md p-8">
-                <span className="inline-flex items-center gap-2 rounded-full bg-brand-gold px-3 py-1 text-xs font-bold uppercase tracking-wider text-brand-black">
+                <span className="inline-flex items-center gap-2 rounded-full bg-brand-gold px-3 py-1 text-xs font-bold uppercase tracking-wider text-gray-900">
                   <Building2 className="h-3.5 w-3.5" /> Property Managers
                 </span>
-                <h3 className="mt-4 font-display text-2xl text-brand-black">
+                <h3 className="mt-4 font-display font-semibold text-2xl text-gray-900">
                   Multifamily & Portfolio Carpentry
                 </h3>
                 <ul className="mt-5 space-y-2 text-gray-700">
@@ -192,10 +192,10 @@ const CarpentryPage = () => {
 
               {/* B2C */}
               <article className="rounded-xl border-2 border-brand-gold bg-white shadow-md p-8">
-                <span className="inline-flex items-center gap-2 rounded-full bg-brand-gold px-3 py-1 text-xs font-bold uppercase tracking-wider text-brand-black">
+                <span className="inline-flex items-center gap-2 rounded-full bg-brand-gold px-3 py-1 text-xs font-bold uppercase tracking-wider text-gray-900">
                   <Home className="h-3.5 w-3.5" /> Homeowners
                 </span>
-                <h3 className="mt-4 font-display text-2xl text-brand-black">
+                <h3 className="mt-4 font-display font-semibold text-2xl text-gray-900">
                   Home & Residential Carpentry
                 </h3>
                 <ul className="mt-5 space-y-2 text-gray-700">
@@ -228,7 +228,7 @@ const CarpentryPage = () => {
       <section className="bg-white">
         <div className="container py-20">
           <SectionReveal>
-            <h2 className="font-display text-3xl text-brand-black sm:text-4xl">
+            <h2 className="font-display font-bold text-3xl text-gray-900 sm:text-4xl">
               Carpentry Services <span className="text-brand-gold">We Handle</span>
             </h2>
             <p className="mt-3 max-w-2xl text-gray-700">
@@ -241,7 +241,7 @@ const CarpentryPage = () => {
                   <span className="flex h-12 w-12 items-center justify-center rounded-md bg-brand-gold/10 text-brand-gold">
                     <s.icon className="h-6 w-6" />
                   </span>
-                  <h3 className="mt-5 font-display text-xl text-brand-black">{s.title}</h3>
+                  <h3 className="mt-5 font-display font-semibold text-xl text-gray-900">{s.title}</h3>
                   <p className="mt-2 text-gray-700">{s.desc}</p>
                 </article>
               ))}
@@ -260,10 +260,10 @@ const CarpentryPage = () => {
                   <Key className="h-8 w-8" />
                 </div>
                 <div>
-                  <span className="inline-block rounded-full bg-brand-gold px-3 py-1 text-xs font-bold uppercase tracking-wider text-brand-black">
+                  <span className="inline-block rounded-full bg-brand-gold px-3 py-1 text-xs font-bold uppercase tracking-wider text-gray-900">
                     Make-Ready Included
                   </span>
-                  <h2 className="mt-3 font-display text-3xl text-brand-black sm:text-4xl">
+                  <h2 className="mt-3 font-display font-bold text-3xl text-gray-900 sm:text-4xl">
                     Damaged doors, broken cabinets, missing trim —{" "}
                     <span className="text-brand-gold">caught on every assessment</span>
                   </h2>
@@ -291,7 +291,7 @@ const CarpentryPage = () => {
           <SectionReveal className="grid gap-10 lg:grid-cols-2 lg:items-center">
             <div className="rounded-xl border border-gray-100 bg-white shadow-sm p-8">
               <Wrench className="h-12 w-12 text-brand-gold" />
-              <p className="mt-6 font-display text-2xl text-brand-black">
+              <p className="mt-6 font-display font-semibold text-2xl text-gray-900">
                 <span className="text-brand-gold">Invisible repairs</span> that pass inspection
               </p>
               <p className="mt-3 text-gray-700">
@@ -300,8 +300,8 @@ const CarpentryPage = () => {
               </p>
             </div>
             <div>
-              <p className="text-sm font-bold uppercase tracking-wide text-brand-gold">Quality Spec</p>
-              <h2 className="mt-3 font-display text-3xl text-brand-black sm:text-4xl">
+              <p className="text-xs font-medium uppercase tracking-[0.12em] text-brand-gold">— Quality Spec</p>
+              <h2 className="mt-3 font-display font-bold text-3xl text-gray-900 sm:text-4xl">
                 Carpentry that{" "}
                 <span className="text-brand-gold">matches the rest of the unit</span>
               </h2>
@@ -339,7 +339,7 @@ const CarpentryPage = () => {
       <section className="bg-white">
         <div className="container py-20">
           <SectionReveal>
-            <h2 className="font-display text-3xl text-brand-black sm:text-4xl">
+            <h2 className="font-display font-bold text-3xl text-gray-900 sm:text-4xl">
               Carpentry Coverage —{" "}
               <span className="text-brand-gold">18 Cities Across Central Florida</span>
             </h2>
@@ -356,7 +356,7 @@ const CarpentryPage = () => {
                 >
                   <span className="flex items-center gap-3">
                     <MapPin className="h-4 w-4 text-brand-gold" />
-                    <span className="font-bold text-brand-black">
+                    <span className="font-semibold text-gray-900">
                       Carpentry {c.name}, {c.state}
                     </span>
                   </span>
@@ -378,7 +378,7 @@ const CarpentryPage = () => {
         <div className="container py-16">
           <SectionReveal className="grid gap-10 md:grid-cols-2">
             <div>
-              <h2 className="font-display text-2xl text-brand-black">Related Services</h2>
+              <h2 className="font-display font-semibold text-2xl text-gray-900">Related Services</h2>
               <ul className="mt-4 space-y-2">
                 {[
                   { to: "/make-ready", label: "Make-Ready & Unit Turns" },
@@ -401,7 +401,7 @@ const CarpentryPage = () => {
               </ul>
             </div>
             <div>
-              <h2 className="font-display text-2xl text-brand-black">Carpentry in your city</h2>
+              <h2 className="font-display font-semibold text-2xl text-gray-900">Carpentry in your city</h2>
               <ul className="mt-4 space-y-2">
                 {[
                   { slug: "orlando-fl", name: "Orlando" },
@@ -424,7 +424,7 @@ const CarpentryPage = () => {
         <div className="container py-20">
           <SectionReveal>
             <div className="rounded-xl border-2 border-brand-gold bg-white border border-gray-100 shadow-sm p-8 sm:p-12 text-center">
-              <h2 className="font-display text-3xl text-brand-black sm:text-4xl">
+              <h2 className="font-display font-bold text-3xl text-gray-900 sm:text-4xl">
                 Ready for a <span className="text-brand-gold">carpentry quote?</span>
               </h2>
               <p className="mt-3 text-gray-700">
@@ -439,7 +439,7 @@ const CarpentryPage = () => {
                 </Link>
                 <Link
                   to="/residential"
-                  className="inline-flex items-center justify-center gap-2 rounded-md border-2 border-brand-gold px-6 py-3 text-sm font-bold uppercase tracking-wide text-brand-gold hover:bg-brand-gold hover:text-brand-black transition-colors"
+                  className="inline-flex items-center justify-center gap-2 rounded-md border-2 border-brand-gold px-6 py-3 text-sm font-bold uppercase tracking-wide text-brand-gold hover:bg-brand-gold hover:text-gray-900 transition-colors"
                 >
                   <Home className="h-4 w-4" /> Get a Home Carpentry Quote
                 </Link>

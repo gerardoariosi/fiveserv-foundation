@@ -53,7 +53,7 @@ const BlogPage = () => {
           <p className="text-xs font-bold uppercase tracking-wider text-brand-gold">
             FiveServ Insights
           </p>
-          <h1 className="mt-4 font-display text-4xl text-brand-black sm:text-5xl">
+          <h1 className="mt-4 font-display text-4xl text-white sm:text-5xl">
             Property Management Maintenance Insights — Central Florida
           </h1>
           <p className="mt-6 max-w-2xl text-lg text-gray-700">
@@ -72,8 +72,8 @@ const BlogPage = () => {
               onClick={() => setActiveCat("all")}
               className={`rounded-full px-4 py-2 text-xs font-bold uppercase tracking-wide transition ${
                 activeCat === "all"
-                  ? "bg-brand-gold text-brand-black"
-                  : "border border-brand-gold/40 text-brand-black hover:border-brand-gold"
+                  ? "bg-brand-gold text-gray-900"
+                  : "border border-brand-gold/40 text-gray-900 hover:border-brand-gold"
               }`}
             >
               All
@@ -84,8 +84,8 @@ const BlogPage = () => {
                 onClick={() => setActiveCat(c.slug)}
                 className={`rounded-full px-4 py-2 text-xs font-bold uppercase tracking-wide transition ${
                   activeCat === c.slug
-                    ? "bg-brand-gold text-brand-black"
-                    : "border border-brand-gold/40 text-brand-black hover:border-brand-gold"
+                    ? "bg-brand-gold text-gray-900"
+                    : "border border-brand-gold/40 text-gray-900 hover:border-brand-gold"
                 }`}
               >
                 {c.label}
@@ -123,7 +123,7 @@ const BlogPage = () => {
                     <span className="self-start rounded bg-brand-gold/15 px-2 py-1 text-[10px] font-bold uppercase tracking-wide text-brand-gold">
                       {BLOG_CATEGORIES.find((c) => c.slug === post.category)?.label}
                     </span>
-                    <h2 className="mt-3 font-display text-lg text-brand-black group-hover:text-brand-gold">
+                    <h2 className="mt-3 font-display text-lg text-gray-900 group-hover:text-brand-gold">
                       {post.title}
                     </h2>
                     <p className="mt-2 line-clamp-2 text-sm text-brand-gray-muted">

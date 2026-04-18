@@ -83,10 +83,10 @@ const MaintenanceCityPage = ({ citySlug: propSlug }: MaintenanceCityPageProps = 
         />
         <div className="absolute inset-0 -z-10 bg-gradient-to-b from-brand-black/80 via-brand-black/70 to-brand-black" aria-hidden />
         <div className="container">
-          <p className="text-sm font-bold uppercase tracking-wide text-brand-gold">
-            {SITE.brand} Property Solutions • {city.name}, {city.state}
+          <p className="text-xs font-medium uppercase tracking-[0.12em] text-brand-gold">
+            — {SITE.brand} Property Solutions • {city.name}, {city.state}
           </p>
-          <h1 className="mt-3 font-display text-4xl text-brand-black sm:text-5xl lg:text-6xl">
+          <h1 className="mt-3 font-display font-black text-4xl text-white sm:text-5xl lg:text-6xl">
             {city.name} {city.state} Property Maintenance —{" "}
             <span className="block text-brand-gold">One Call. One Team. One Invoice.</span>
           </h1>
@@ -116,7 +116,7 @@ const MaintenanceCityPage = ({ citySlug: propSlug }: MaintenanceCityPageProps = 
             </a>
             <a
               href={`tel:${SITE.phone}`}
-              className="flex items-center gap-2 rounded-md border-2 border-brand-white px-6 py-3 text-sm font-bold uppercase tracking-wide text-brand-black hover:bg-brand-white hover:text-brand-black transition-colors"
+              className="flex items-center gap-2 rounded-md border-2 border-brand-white px-6 py-3 text-sm font-bold uppercase tracking-wide text-white hover:bg-brand-white hover:text-brand-black transition-colors"
             >
               <Phone className="h-4 w-4" /> Call {SITE.phone}
             </a>
@@ -131,7 +131,7 @@ const MaintenanceCityPage = ({ citySlug: propSlug }: MaintenanceCityPageProps = 
       <section className="bg-gray-50">
         <div className="container py-20">
           <SectionReveal>
-            <h2 className="font-display text-3xl text-brand-black sm:text-4xl">
+            <h2 className="font-display font-bold text-3xl text-gray-900 sm:text-4xl">
               Why <span className="text-brand-gold">{SITE.brand}</span> in {city.name}
             </h2>
             <div className="mt-6 max-w-3xl space-y-4 text-gray-700">
@@ -144,8 +144,8 @@ const MaintenanceCityPage = ({ citySlug: propSlug }: MaintenanceCityPageProps = 
               )}
               <p>
                 Coverage in {city.name} includes ZIP codes{" "}
-                <span className="font-bold text-brand-black">{editorial.zips.join(", ")}</span>, with focus on{" "}
-                <span className="font-bold text-brand-black">{editorial.zones.join(", ")}</span>.
+                <span className="font-semibold text-gray-900">{editorial.zips.join(", ")}</span>, with focus on{" "}
+                <span className="font-semibold text-gray-900">{editorial.zones.join(", ")}</span>.
               </p>
             </div>
           </SectionReveal>
@@ -156,7 +156,7 @@ const MaintenanceCityPage = ({ citySlug: propSlug }: MaintenanceCityPageProps = 
       <section className="bg-white">
         <div className="container py-20">
           <SectionReveal>
-            <h2 className="font-display text-3xl text-brand-black sm:text-4xl">
+            <h2 className="font-display font-bold text-3xl text-gray-900 sm:text-4xl">
               Services in <span className="text-brand-gold">{city.name}</span>
             </h2>
             <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
@@ -171,7 +171,7 @@ const MaintenanceCityPage = ({ citySlug: propSlug }: MaintenanceCityPageProps = 
                     <span className="flex h-12 w-12 items-center justify-center rounded-md bg-brand-gold/10 text-brand-gold">
                       <Icon className="h-6 w-6" />
                     </span>
-                    <h3 className="mt-5 font-display text-xl text-brand-black">{s.name}</h3>
+                    <h3 className="mt-5 font-display font-semibold text-xl text-gray-900">{s.name}</h3>
                     <p className="mt-2 flex-1 text-sm text-gray-700">{s.short}</p>
                     <span className="mt-4 inline-flex items-center gap-2 text-sm font-bold text-brand-gold group-hover:underline">
                       {s.cta} <ArrowRight className="h-4 w-4" />
@@ -192,8 +192,8 @@ const MaintenanceCityPage = ({ citySlug: propSlug }: MaintenanceCityPageProps = 
               <Clock className="h-8 w-8" />
             </div>
             <div>
-              <p className="text-xs font-bold uppercase tracking-wider text-brand-black/70">Response Time</p>
-              <h2 className="mt-1 font-display text-2xl text-brand-black sm:text-3xl">
+              <p className="text-xs font-bold uppercase tracking-wider text-gray-900/70">Response Time</p>
+              <h2 className="mt-1 font-display font-semibold text-2xl text-gray-900 sm:text-3xl">
                 We typically reach {city.name} within{" "}
                 <span className="underline decoration-4 underline-offset-4">{editorial.responseMinutes} minutes</span>{" "}
                 from our Orlando base.
@@ -214,7 +214,7 @@ const MaintenanceCityPage = ({ citySlug: propSlug }: MaintenanceCityPageProps = 
         <div className="container py-20">
           <SectionReveal className="grid gap-10 md:grid-cols-2">
             <div>
-              <h2 className="font-display text-2xl text-brand-black">
+              <h2 className="font-display font-semibold text-2xl text-gray-900">
                 Zones We Cover in {city.name}
               </h2>
               <ul className="mt-5 grid gap-2">
@@ -227,7 +227,7 @@ const MaintenanceCityPage = ({ citySlug: propSlug }: MaintenanceCityPageProps = 
               </ul>
             </div>
             <div>
-              <h2 className="font-display text-2xl text-brand-black">
+              <h2 className="font-display font-semibold text-2xl text-gray-900">
                 ZIP Codes We Serve in {city.name}
               </h2>
               <div className="mt-5 flex flex-wrap gap-2">

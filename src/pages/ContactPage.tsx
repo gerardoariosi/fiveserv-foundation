@@ -63,10 +63,10 @@ const ContactPage = () => {
       <section className="bg-white min-h-[calc(100vh-4rem)]">
         <div className="container max-w-3xl py-20 sm:py-28">
           <div className="text-center">
-            <p className="text-sm font-bold uppercase tracking-wide text-brand-gold">
-              {SITE.brand} Property Solutions
+            <p className="text-xs font-medium uppercase tracking-[0.12em] text-brand-gold">
+              — {SITE.brand} Property Solutions
             </p>
-            <h1 className="mt-4 font-display text-4xl text-brand-black sm:text-5xl lg:text-6xl">
+            <h1 className="mt-4 font-display text-4xl text-gray-900 sm:text-5xl lg:text-6xl">
               Get a Free Quote
             </h1>
             <p className="mt-5 text-lg text-gray-700">
@@ -97,25 +97,25 @@ const ContactPage = () => {
                   <input
                     required
                     placeholder="Full name"
-                    className="rounded-md bg-brand-black px-4 py-3 text-brand-black outline-none focus:ring-2 focus:ring-brand-gold"
+                    className="rounded-md bg-brand-black px-4 py-3 text-gray-900 outline-none focus:ring-2 focus:ring-brand-gold"
                   />
                   <input
                     required
                     type="email"
                     placeholder="Email"
-                    className="rounded-md bg-brand-black px-4 py-3 text-brand-black outline-none focus:ring-2 focus:ring-brand-gold"
+                    className="rounded-md bg-brand-black px-4 py-3 text-gray-900 outline-none focus:ring-2 focus:ring-brand-gold"
                   />
                   <input
                     required
                     type="tel"
                     placeholder="Phone"
-                    className="rounded-md bg-brand-black px-4 py-3 text-brand-black outline-none focus:ring-2 focus:ring-brand-gold"
+                    className="rounded-md bg-brand-black px-4 py-3 text-gray-900 outline-none focus:ring-2 focus:ring-brand-gold"
                   />
                   <input
                     placeholder="Company (optional)"
-                    className="rounded-md bg-brand-black px-4 py-3 text-brand-black outline-none focus:ring-2 focus:ring-brand-gold"
+                    className="rounded-md bg-brand-black px-4 py-3 text-gray-900 outline-none focus:ring-2 focus:ring-brand-gold"
                   />
-                  <select className="rounded-md bg-brand-black px-4 py-3 text-brand-black outline-none focus:ring-2 focus:ring-brand-gold sm:col-span-2">
+                  <select className="rounded-md bg-brand-black px-4 py-3 text-gray-900 outline-none focus:ring-2 focus:ring-brand-gold sm:col-span-2">
                     <option value="">Service needed</option>
                     <option>Make-Ready / Unit Turn</option>
                     <option>Maintenance &amp; Repairs</option>
@@ -126,7 +126,7 @@ const ContactPage = () => {
                 <textarea
                   rows={4}
                   placeholder="Tell us about your property"
-                  className="w-full rounded-md bg-brand-black px-4 py-3 text-brand-black outline-none focus:ring-2 focus:ring-brand-gold"
+                  className="w-full rounded-md bg-brand-black px-4 py-3 text-gray-900 outline-none focus:ring-2 focus:ring-brand-gold"
                 />
                 <button
                   type="submit"
@@ -154,7 +154,7 @@ const ContactPage = () => {
                 href={waHref}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center gap-2 text-lg font-bold text-brand-black hover:text-brand-gold"
+                className="flex items-center gap-2 text-lg font-semibold text-gray-900 hover:text-brand-gold"
               >
                 <WhatsAppIcon className="h-5 w-5 text-[#25D366]" />
                 WhatsApp

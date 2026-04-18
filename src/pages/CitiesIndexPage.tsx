@@ -22,8 +22,8 @@ const CitiesIndexPage = ({ canonicalPath = "/cities" }: Props) => (
     />
     <section className="bg-brand-black pt-32 pb-16">
       <div className="container">
-        <p className="text-sm font-bold uppercase tracking-wide text-brand-gold">{SITE.brand} Property Solutions</p>
-        <h1 className="mt-3 font-display text-4xl text-brand-black sm:text-5xl">
+        <p className="text-xs font-medium uppercase tracking-[0.12em] text-brand-gold">— {SITE.brand} Property Solutions</p>
+        <h1 className="mt-3 font-display text-4xl text-white sm:text-5xl">
           18 Cities Across <span className="text-brand-gold">Central Florida</span>
         </h1>
         <p className="mt-6 max-w-2xl text-gray-700">
@@ -47,7 +47,7 @@ const CitiesIndexPage = ({ canonicalPath = "/cities" }: Props) => (
               <MapPin className="h-4 w-4" />
               <span className="text-xs font-bold uppercase tracking-wide">{city.state}</span>
             </div>
-            <h2 className="mt-2 font-display text-xl text-brand-black group-hover:text-brand-gold">
+            <h2 className="mt-2 font-display font-semibold text-xl text-gray-900 group-hover:text-brand-gold">
               {city.name}
             </h2>
             <p className="mt-2 text-sm text-gray-600">{city.zones}</p>
@@ -67,7 +67,7 @@ const CitiesIndexPage = ({ canonicalPath = "/cities" }: Props) => (
                 <MapPin className="h-4 w-4" />
                 <span className="text-xs font-bold uppercase tracking-wide">{c.state}</span>
               </div>
-              <span className="rounded-sm bg-brand-gold px-1.5 py-0.5 text-[10px] font-bold uppercase text-brand-black">
+              <span className="rounded-sm bg-brand-gold px-1.5 py-0.5 text-[10px] font-bold uppercase text-gray-900">
                 Coming Soon
               </span>
             </div>

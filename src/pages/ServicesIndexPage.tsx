@@ -26,8 +26,8 @@ const ServicesIndexPage = () => (
     />
     <section className="bg-brand-black pt-32 pb-16">
       <div className="container">
-        <p className="text-sm font-bold uppercase tracking-wide text-brand-gold">{SITE.brand} Property Solutions</p>
-        <h1 className="mt-3 font-display text-4xl text-brand-black sm:text-5xl">Our Services</h1>
+        <p className="text-xs font-medium uppercase tracking-[0.12em] text-brand-gold">— {SITE.brand} Property Solutions</p>
+        <h1 className="mt-3 font-display text-4xl text-white sm:text-5xl">Our Services</h1>
         <p className="mt-6 max-w-2xl text-gray-700">
           Four service lines. One family. Built for property managers and homeowners across Central Florida.
         </p>
@@ -42,7 +42,7 @@ const ServicesIndexPage = () => (
               <div className="inline-flex h-12 w-12 items-center justify-center rounded-md bg-brand-gold/10 text-brand-gold">
                 <Icon className="h-6 w-6" />
               </div>
-              <h2 className="mt-6 font-display text-2xl text-brand-black">{s.name}</h2>
+              <h2 className="mt-6 font-display font-semibold text-2xl text-gray-900">{s.name}</h2>
               <p className="mt-3 text-gray-700">{s.description}</p>
               <Link
                 to={`/${s.slug}`}

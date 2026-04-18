@@ -84,10 +84,10 @@ const ResidentialPage = () => {
       {/* 1. Hero */}
       <section className="bg-brand-black pt-32 pb-16">
         <div className="container">
-          <p className="text-sm font-bold uppercase tracking-wide text-brand-gold">
-            {SITE.brand} Property Solutions
+          <p className="text-xs font-medium uppercase tracking-[0.12em] text-brand-gold">
+            — {SITE.brand} Property Solutions
           </p>
-          <h1 className="mt-3 font-display text-4xl text-brand-black sm:text-5xl lg:text-6xl">
+          <h1 className="mt-3 font-display font-black text-4xl text-white sm:text-5xl lg:text-6xl">
             Home Maintenance Services Orlando FL —{" "}
             <span className="block text-brand-gold">Repairs &amp; Renovations</span>
           </h1>
@@ -110,7 +110,7 @@ const ResidentialPage = () => {
             </a>
             <a
               href={`tel:${SITE.phone}`}
-              className="flex items-center gap-2 rounded-md border-2 border-brand-white px-6 py-3 text-sm font-bold uppercase tracking-wide text-brand-black hover:bg-brand-white hover:text-brand-black transition-colors"
+              className="flex items-center gap-2 rounded-md border-2 border-brand-white px-6 py-3 text-sm font-bold uppercase tracking-wide text-white hover:bg-brand-white hover:text-brand-black transition-colors"
             >
               <Phone className="h-4 w-4" /> Call {SITE.phone}
             </a>
@@ -137,7 +137,7 @@ const ResidentialPage = () => {
             </div>
             <div>
               <p className="text-xs font-bold uppercase tracking-wider text-brand-gold">Built by a Family</p>
-              <h2 className="mt-3 font-display text-3xl text-brand-black sm:text-4xl">
+              <h2 className="mt-3 font-display font-bold text-3xl text-gray-900 sm:text-4xl">
                 A <span className="text-brand-gold">Venezuelan-American family</span> with{" "}
                 <span className="text-brand-gold">15+ years</span> of combined experience.
               </h2>
@@ -164,7 +164,7 @@ const ResidentialPage = () => {
       <section className="bg-white">
         <div className="container py-20">
           <SectionReveal>
-            <h2 className="font-display text-3xl text-brand-black sm:text-4xl">
+            <h2 className="font-display font-bold text-3xl text-gray-900 sm:text-4xl">
               What We <span className="text-brand-gold">Fix at Home</span>
             </h2>
             <p className="mt-3 max-w-2xl text-gray-700">
@@ -177,7 +177,7 @@ const ResidentialPage = () => {
                   <span className="flex h-12 w-12 items-center justify-center rounded-md bg-brand-gold/10 text-brand-gold">
                     <s.icon className="h-6 w-6" />
                   </span>
-                  <h3 className="mt-5 font-display text-xl text-brand-black">{s.title}</h3>
+                  <h3 className="mt-5 font-display font-semibold text-xl text-gray-900">{s.title}</h3>
                   <p className="mt-2 text-gray-700">{s.desc}</p>
                 </article>
               ))}
@@ -192,7 +192,7 @@ const ResidentialPage = () => {
       <section className="bg-gray-50">
         <div className="container py-20">
           <SectionReveal>
-            <h2 className="font-display text-3xl text-brand-black sm:text-4xl">
+            <h2 className="font-display font-bold text-3xl text-gray-900 sm:text-4xl">
               How It Works — <span className="text-brand-gold">3 Steps</span>
             </h2>
             <ol className="mt-12 grid gap-6 md:grid-cols-3">
@@ -202,7 +202,7 @@ const ResidentialPage = () => {
                     <div className="font-display text-5xl leading-none text-brand-gold">{i + 1}</div>
                     <step.icon className="h-8 w-8 text-brand-gold/80" />
                   </div>
-                  <h3 className="mt-4 font-display text-xl text-brand-black">{step.name}</h3>
+                  <h3 className="mt-4 font-display font-semibold text-xl text-gray-900">{step.name}</h3>
                   <p className="mt-2 text-gray-700">{step.text}</p>
                 </li>
               ))}
@@ -215,7 +215,7 @@ const ResidentialPage = () => {
       <section className="bg-white">
         <div className="container py-20">
           <SectionReveal>
-            <h2 className="font-display text-3xl text-brand-black sm:text-4xl">
+            <h2 className="font-display font-bold text-3xl text-gray-900 sm:text-4xl">
               Serving Homeowners Across{" "}
               <span className="text-brand-gold">18 Central Florida Cities</span>
             </h2>
@@ -232,7 +232,7 @@ const ResidentialPage = () => {
                 >
                   <span className="flex items-center gap-3">
                     <MapPin className="h-4 w-4 text-brand-gold" />
-                    <span className="font-bold text-brand-black">
+                    <span className="font-semibold text-gray-900">
                       Home Repairs {c.name}, {c.state}
                     </span>
                   </span>
@@ -253,7 +253,7 @@ const ResidentialPage = () => {
       <section className="bg-gray-50">
         <div className="container py-16">
           <SectionReveal>
-            <h2 className="font-display text-2xl text-brand-black">More from {SITE.brand}</h2>
+            <h2 className="font-display font-semibold text-2xl text-gray-900">More from {SITE.brand}</h2>
             <ul className="mt-4 grid gap-2 sm:grid-cols-2">
               {(["make-ready", "maintenance", "renovations"] as const).map((slug) => {
                 const s = SERVICES.find((x) => x.slug === slug)!;

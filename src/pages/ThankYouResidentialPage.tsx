@@ -53,7 +53,7 @@ export const ThankYouResidentialPage = () => {
         {/* Primary CTA */}
         <Link
           to="/residential"
-          className="mt-10 inline-flex items-center justify-center rounded-md bg-brand-gold px-8 py-4 font-display text-base text-brand-black transition-colors hover:bg-brand-gold-hover sm:text-lg"
+          className="mt-10 inline-flex items-center justify-center rounded-md bg-brand-gold px-8 py-4 font-display text-base text-gray-900 transition-colors hover:bg-brand-gold-hover sm:text-lg"
         >
           See Our Services →
         </Link>

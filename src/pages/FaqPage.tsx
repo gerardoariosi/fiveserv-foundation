@@ -55,10 +55,10 @@ const FaqPage = () => {
       {/* 1. Hero */}
       <section className="bg-brand-black pt-32 pb-12">
         <div className="container">
-          <p className="text-sm font-bold uppercase tracking-wide text-brand-gold">
-            {SITE.brand} Property Solutions
+          <p className="text-xs font-medium uppercase tracking-[0.12em] text-brand-gold">
+            — {SITE.brand} Property Solutions
           </p>
-          <h1 className="mt-3 max-w-4xl font-display text-4xl text-brand-black sm:text-5xl lg:text-6xl">
+          <h1 className="mt-3 max-w-4xl font-display font-black text-4xl text-white sm:text-5xl lg:text-6xl">
             Property Maintenance FAQ —{" "}
             <span className="block text-brand-gold">
               Everything Property Managers Need to Know
@@ -99,7 +99,7 @@ const FaqPage = () => {
         <div className="container py-16 space-y-12">
           {grouped.map((group) => (
             <div key={group.id}>
-              <h2 className="font-display text-2xl text-brand-black sm:text-3xl">
+              <h2 className="font-display font-semibold text-2xl text-gray-900 sm:text-3xl">
                 <span className="text-brand-gold">{group.label}</span>{" "}
                 <span className="text-gray-500 text-lg">({group.items.length})</span>
               </h2>
@@ -114,7 +114,7 @@ const FaqPage = () => {
                     value={`faq-${group.id}-${i}`}
                     className="border-brand-gray"
                   >
-                    <AccordionTrigger className="text-left text-brand-black hover:text-brand-gold">
+                    <AccordionTrigger className="text-left text-gray-900 hover:text-brand-gold">
                       {f.q}
                     </AccordionTrigger>
                     <AccordionContent className="text-gray-700">
@@ -142,10 +142,10 @@ const FaqPage = () => {
       {/* 4. CTA Final */}
       <section className="bg-brand-gold">
         <div className="container py-16 text-center">
-          <h2 className="font-display text-3xl text-brand-black sm:text-4xl">
+          <h2 className="font-display font-bold text-3xl text-gray-900 sm:text-4xl">
             Still have questions?
           </h2>
-          <p className="mt-3 text-lg text-brand-black/80">
+          <p className="mt-3 text-lg text-gray-900/80">
             Get a free quote in 24 hours — or call us right now.
           </p>
           <div className="mt-8 flex flex-wrap items-center justify-center gap-3">
@@ -157,7 +157,7 @@ const FaqPage = () => {
             </Link>
             <a
               href={`tel:${SITE.phone}`}
-              className="inline-flex items-center gap-2 rounded-md border-2 border-brand-black px-8 py-4 text-sm font-bold uppercase tracking-wide text-brand-black hover:bg-brand-black hover:text-brand-gold"
+              className="inline-flex items-center gap-2 rounded-md border-2 border-brand-black px-8 py-4 text-sm font-bold uppercase tracking-wide text-gray-900 hover:bg-brand-black hover:text-brand-gold"
             >
               <Phone className="h-4 w-4" /> {SITE.phone}
             </a>
@@ -184,8 +184,8 @@ const FilterButton = ({
     onClick={onClick}
     className={`rounded-md px-4 py-2 text-sm font-bold uppercase tracking-wide transition-colors ${
       active
-        ? "bg-brand-gold text-brand-black"
-        : "border border-gray-100 bg-white shadow-sm text-brand-black hover:border-brand-gold hover:text-brand-gold"
+        ? "bg-brand-gold text-gray-900"
+        : "border border-gray-100 bg-white shadow-sm text-gray-900 hover:border-brand-gold hover:text-brand-gold"
     }`}
   >
     {children}
