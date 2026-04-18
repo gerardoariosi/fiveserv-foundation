@@ -94,7 +94,7 @@ const MakeReadyPage = () => {
             Central Florida property managers trust <BrandName variant="light" /> for make-ready. One call. Our team. 5 business days. Guaranteed in writing.
           </p>
 
-          <ul className="mt-8 flex flex-wrap items-center gap-x-6 gap-y-3 text-sm font-bold text-brand-black">
+          <ul className="mt-8 flex flex-wrap items-center gap-x-6 gap-y-3 text-sm font-bold text-brand-white">
             {["300+ Units", "50+ Communities", "18 Cities", "24/7", "5-Day Guarantee"].map((t, i) => (
               <li key={t} className="flex items-center gap-3">
                 {i > 0 && <span aria-hidden className="text-brand-gold">|</span>}
