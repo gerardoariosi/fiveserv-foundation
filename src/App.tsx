@@ -66,7 +66,7 @@ const router = createBrowserRouter([
       { path: "contact", element: <ContactPage /> },
       { path: "faq", element: <FaqPage /> },
       { path: "privacy", element: <PlaceholderPage title="Privacy Policy" description="FiveServ Property Solutions privacy policy." path="/privacy" heading="Privacy Policy" /> },
-      { path: "terms", element: <PlaceholderPage title="Terms of Service" description="FiveServ Property Solutions terms of service." path="/terms" heading="Terms of Service" /> },
+      { path: "terms", element: <TermsPage /> },
       
 
       // City overview pages (18)
