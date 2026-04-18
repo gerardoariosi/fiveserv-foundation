@@ -4,6 +4,7 @@ import Seo from "@/lib/Seo";
 import SchemaOrg from "@/lib/SchemaOrg";
 import { SITE, CITIES, COMING_SOON_CITIES } from "@/lib/site-config";
 import ServiceAreaMap from "@/components/fiveserv/ServiceAreaMap";
+import BrandName from "@/components/fiveserv/BrandName";
 
 type Props = { canonicalPath?: "/cities" | "/service-areas" };
 
@@ -22,7 +23,7 @@ const CitiesIndexPage = ({ canonicalPath = "/cities" }: Props) => (
     />
     <section className="bg-brand-black pt-32 pb-16">
       <div className="container">
-        <p className="text-xs font-medium uppercase tracking-[0.12em] text-brand-gold">— {SITE.brand} Property Solutions</p>
+        <p className="text-xs font-medium uppercase tracking-[0.12em] text-brand-gold">— <BrandName variant="light" /> Property Solutions</p>
         <h1 className="mt-3 font-display text-4xl text-white sm:text-5xl">
           18 Cities Across <span className="text-brand-gold">Central Florida</span>
         </h1>

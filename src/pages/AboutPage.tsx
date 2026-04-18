@@ -7,6 +7,7 @@ import AIOverviewBlock from "@/components/fiveserv/AIOverviewBlock";
 import { useReveal } from "@/hooks/use-fiveserv";
 import LiveStatsBar from "@/components/fiveserv/LiveStatsBar";
 import TrustBar from "@/components/fiveserv/TrustBar";
+import BrandName from "@/components/fiveserv/BrandName";
 
 const SectionReveal = ({ children, className = "" }: { children: React.ReactNode; className?: string }) => {
   const ref = useReveal<HTMLDivElement>();
@@ -49,7 +50,7 @@ const AboutPage = () => {
       <section className="bg-brand-black pt-32 pb-16">
         <div className="container">
           <p className="text-xs font-medium uppercase tracking-[0.12em] text-brand-gold">
-            — About {SITE.brand} Property Solutions
+            — About <BrandName variant="light" /> Property Solutions
           </p>
           <h1 className="mt-3 max-w-4xl font-display font-black text-4xl text-white sm:text-5xl lg:text-6xl">
             Built by a Family.{" "}
@@ -90,7 +91,7 @@ const AboutPage = () => {
                 team instead of a chain of subcontractors and excuses.
               </p>
               <p>
-                {SITE.brand} is built to last generations. The name says everything we stand for:{" "}
+                <BrandName variant="dark" /> is built to last generations. The name says everything we stand for:{" "}
                 <span className="font-semibold text-gray-900">five family members</span> behind the company, and a{" "}
                 <span className="font-semibold text-gray-900">five-day make-ready delivery</span> guaranteed in writing
                 on every unit turn.
@@ -163,7 +164,7 @@ const AboutPage = () => {
                     <h3 className="font-display font-semibold text-xl text-gray-900">{member.name}</h3>
                     <p className="mt-1 text-xs font-medium uppercase tracking-[0.12em] text-gray-900">— {member.role}</p>
                     <p className="mt-3 text-sm text-gray-700">
-                      {member.name} brings hands-on expertise to the {SITE.brand} team, working directly with property
+                      {member.name} brings hands-on expertise to the <BrandName variant="dark" /> team, working directly with property
                       managers across Central Florida. Personally accountable for every job that carries our family name.
                     </p>
                   </div>
@@ -179,7 +180,7 @@ const AboutPage = () => {
         <div className="container py-20">
           <SectionReveal>
             <h2 className="font-display font-bold text-3xl text-gray-900 sm:text-4xl">
-              The {SITE.brand} Promise
+              The <BrandName variant="dark" /> Promise
             </h2>
             <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-5">
               {PROMISE.map((p) => (

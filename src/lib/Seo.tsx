@@ -1,5 +1,6 @@
 import { Helmet } from "react-helmet-async";
 import { SITE } from "./site-config";
+import BrandName from "@/components/fiveserv/BrandName";
 
 type SeoProps = {
   title: string;
@@ -37,7 +38,7 @@ export const Seo = ({ title, description, path, ogImage, noIndex }: SeoProps) =>
       <meta property="og:url" content={url} />
       <meta property="og:image" content={image} />
       <meta property="og:locale" content="en_US" />
-      <meta property="og:site_name" content={SITE.brand} />
+      <meta property="og:site_name" content=<BrandName variant="light" /> />
 
       <meta name="twitter:card" content="summary_large_image" />
       <meta name="twitter:title" content={fullTitle} />

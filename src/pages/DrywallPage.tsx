@@ -21,6 +21,7 @@ import StatsBar from "@/components/fiveserv/StatsBar";
 import FaqAccordion from "@/components/fiveserv/FaqAccordion";
 import ContactCTA from "@/components/fiveserv/ContactCTA";
 import { useReveal } from "@/hooks/use-fiveserv";
+import BrandName from "@/components/fiveserv/BrandName";
 
 const SERVICES_GRID = [
   { icon: Square, title: "Hole Repair & Patching", desc: "Doorknob holes, fist holes, anchor blowouts, picture nail damage. Patched, taped, mudded, sanded." },
@@ -105,7 +106,7 @@ const DrywallPage = () => {
       <section className="bg-brand-black pt-32 pb-16">
         <div className="container">
           <p className="text-xs font-medium uppercase tracking-[0.12em] text-brand-gold">
-            — {SITE.brand} Property Solutions
+            — <BrandName variant="light" /> Property Solutions
           </p>
           <h1 className="mt-3 font-display font-black text-4xl text-white sm:text-5xl lg:text-6xl">
             Drywall Repair Services for Property Managers in
@@ -155,7 +156,7 @@ const DrywallPage = () => {
               </h2>
               <p className="mt-4 text-gray-700">
                 Holes, cracks, and water damage left unrepaired cost vacancy days and owner trust. The painter can't
-                paint until drywall is done. The cleaner can't clean until paint is dry. {SITE.brand} runs drywall
+                paint until drywall is done. The cleaner can't clean until paint is dry. <BrandName variant="dark" /> runs drywall
                 inside the make-ready workflow — not as a separate contractor — so the schedule actually holds.
               </p>
             </div>
@@ -218,7 +219,7 @@ const DrywallPage = () => {
                     Make-Ready Included
                   </span>
                   <h2 className="mt-3 font-display font-bold text-3xl text-gray-900 sm:text-4xl">
-                    Every {SITE.brand} make-ready includes{" "}
+                    Every <BrandName variant="dark" /> make-ready includes{" "}
                     <span className="text-gray-900">drywall inspection and repair</span>
                   </h2>
                   <p className="mt-3 text-gray-700">

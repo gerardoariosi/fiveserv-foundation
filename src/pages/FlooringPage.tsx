@@ -26,6 +26,7 @@ import StatsBar from "@/components/fiveserv/StatsBar";
 import FaqAccordion from "@/components/fiveserv/FaqAccordion";
 import ContactCTA from "@/components/fiveserv/ContactCTA";
 import { useReveal } from "@/hooks/use-fiveserv";
+import BrandName from "@/components/fiveserv/BrandName";
 
 const FLOORING_TYPES = [
   { icon: LayoutGrid, title: "Luxury Vinyl Plank (LVP)", desc: "Waterproof, scratch-resistant, the #1 multifamily floor. Wood and stone looks, click-lock or glue-down." },
@@ -124,7 +125,7 @@ const FlooringPage = () => {
       <section className="bg-brand-black pt-32 pb-16">
         <div className="container">
           <p className="text-xs font-medium uppercase tracking-[0.12em] text-brand-gold">
-            — {SITE.brand} Property Solutions
+            — <BrandName variant="light" /> Property Solutions
           </p>
           <h1 className="mt-3 font-display font-black text-4xl text-white sm:text-5xl lg:text-6xl">
             Flooring Services for Properties and Homes in
@@ -289,7 +290,7 @@ const FlooringPage = () => {
               </h2>
               <p className="mt-4 text-gray-700">
                 Florida humidity destroys hardwood. Florida tenants destroy carpet. LVP holds up to both — plus
-                kitchens, bathrooms, pets, and water leaks. {SITE.brand} recommends LVP for every unit turn unless
+                kitchens, bathrooms, pets, and water leaks. <BrandName variant="dark" /> recommends LVP for every unit turn unless
                 an owner spec calls for something else.
               </p>
               <ul className="mt-6 space-y-2 text-gray-700">

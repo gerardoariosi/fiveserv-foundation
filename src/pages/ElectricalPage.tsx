@@ -22,6 +22,7 @@ import StatsBar from "@/components/fiveserv/StatsBar";
 import FaqAccordion from "@/components/fiveserv/FaqAccordion";
 import ContactCTA from "@/components/fiveserv/ContactCTA";
 import { useReveal } from "@/hooks/use-fiveserv";
+import BrandName from "@/components/fiveserv/BrandName";
 
 const SERVICES_GRID = [
   { icon: Plug, title: "Outlet & Switch Repair", desc: "Dead outlets, GFCI failures, scorched switches, USB outlets, smart switches." },
@@ -106,7 +107,7 @@ const ElectricalPage = () => {
       <section className="bg-brand-black pt-32 pb-16">
         <div className="container">
           <p className="text-xs font-medium uppercase tracking-[0.12em] text-brand-gold">
-            — {SITE.brand} Property Solutions
+            — <BrandName variant="light" /> Property Solutions
           </p>
           <h1 className="mt-3 font-display font-black text-4xl text-white sm:text-5xl lg:text-6xl">
             Electrical Services for Property Managers in
@@ -157,7 +158,7 @@ const ElectricalPage = () => {
               <p className="mt-4 text-gray-700">
                 Electrical issues in rental properties create real liability and safety risks. Sparking outlets,
                 overloaded panels, failed wiring — every hour of delay raises the stakes for residents and the
-                portfolio. {SITE.brand}'s licensed electricians respond within 2 hours, with documentation insurance
+                portfolio. <BrandName variant="dark" />'s licensed electricians respond within 2 hours, with documentation insurance
                 carriers accept.
               </p>
             </div>
@@ -251,7 +252,7 @@ const ElectricalPage = () => {
               </p>
               <p className="mt-3 text-gray-700">
                 You don't track the electrician's license. You don't pull the permit. You don't carry the risk.
-                {" "}{SITE.brand} does it all — you get one invoice and full accountability.
+                {" "}<BrandName variant="dark" /> does it all — you get one invoice and full accountability.
               </p>
             </div>
             <div>
@@ -262,7 +263,7 @@ const ElectricalPage = () => {
               </h2>
               <p className="mt-4 text-gray-700">
                 In Florida, electrical work above a low threshold legally requires a licensed electrical contractor.
-                Insurance carriers require it for fire and liability claims. {SITE.brand} coordinates licensed
+                Insurance carriers require it for fire and liability claims. <BrandName variant="dark" /> coordinates licensed
                 electricians on every job — you get the protection of licensed work plus the simplicity of a single
                 point of contact.
               </p>

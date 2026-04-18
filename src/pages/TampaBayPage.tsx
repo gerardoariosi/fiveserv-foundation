@@ -4,6 +4,7 @@ import { Helmet } from "react-helmet-async";
 import SchemaOrg from "@/lib/SchemaOrg";
 import { SITE } from "@/lib/site-config";
 import ContactCTA from "@/components/fiveserv/ContactCTA";
+import BrandName from "@/components/fiveserv/BrandName";
 
 const TampaBayPage = () => {
   const path = "/tampa-bay-fl";
@@ -70,7 +71,7 @@ const TampaBayPage = () => {
             Coming Soon
           </p>
           <h1 className="mt-4 font-display font-black text-4xl text-white sm:text-5xl lg:text-6xl">
-            {SITE.brand} is Coming to{" "}
+            <BrandName variant="light" /> is Coming to{" "}
             <span className="text-brand-gold">Tampa Bay, Florida</span>
           </h1>
 

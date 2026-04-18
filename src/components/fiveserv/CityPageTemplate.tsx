@@ -8,6 +8,7 @@ import FaqAccordion from "./FaqAccordion";
 import AIOverviewBlock from "./AIOverviewBlock";
 import LeadMagnetSection from "./LeadMagnetSection";
 import SectionHeading from "./SectionHeading";
+import BrandName from "@/components/fiveserv/BrandName";
 
 export type CityPageData = {
   city: typeof import("@/lib/site-config").CITIES[number];
@@ -41,7 +42,7 @@ export const CityPageTemplate = ({ city, service, faqs = [] }: CityPageData) => 
       {/* Hero — dark */}
       <section className="bg-brand-black pt-32 pb-16">
         <div className="container">
-          <p className="text-xs font-medium uppercase tracking-[0.12em] text-gray-900">— {SITE.brand} Property Solutions</p>
+          <p className="text-xs font-medium uppercase tracking-[0.12em] text-gray-900">— <BrandName variant="dark" /> Property Solutions</p>
           <h1 className="mt-3 font-display font-black text-4xl text-white sm:text-5xl lg:text-6xl">
             {service ? service.name : "Property Maintenance"} in <span className="text-gray-900">{city.name}, {city.state}</span>
           </h1>

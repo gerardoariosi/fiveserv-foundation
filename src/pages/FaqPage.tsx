@@ -11,6 +11,7 @@ import Seo from "@/lib/Seo";
 import SchemaOrg from "@/lib/SchemaOrg";
 import { SITE } from "@/lib/site-config";
 import {
+import BrandName from "@/components/fiveserv/BrandName";
   GENERAL_FAQS,
   FAQ_CATEGORIES,
   type FaqCategory,
@@ -56,7 +57,7 @@ const FaqPage = () => {
       <section className="bg-brand-black pt-32 pb-12">
         <div className="container">
           <p className="text-xs font-medium uppercase tracking-[0.12em] text-brand-gold">
-            — {SITE.brand} Property Solutions
+            — <BrandName variant="light" /> Property Solutions
           </p>
           <h1 className="mt-3 max-w-4xl font-display font-black text-4xl text-white sm:text-5xl lg:text-6xl">
             Property Maintenance FAQ —{" "}
