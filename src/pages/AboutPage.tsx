@@ -180,7 +180,7 @@ const AboutPage = () => {
         <div className="container py-20">
           <SectionReveal>
             <h2 className="font-display font-bold text-3xl text-gray-900 sm:text-4xl">
-              The <BrandName variant="dark" /> Promise
+              The <BrandName variant="onGold" /> Promise
             </h2>
             <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-5">
               {PROMISE.map((p) => (
