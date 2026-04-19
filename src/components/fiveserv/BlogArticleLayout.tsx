@@ -40,7 +40,7 @@ export const BlogArticleLayout = ({ post, children }: Props) => {
       />
 
       {/* Hero — dark */}
-      <section className="bg-brand-black pt-32 pb-12">
+      <section className="relative bg-brand-black pt-32 pb-32">
         <div className="container max-w-3xl">
           <Link
             to="/blog"
@@ -48,13 +48,14 @@ export const BlogArticleLayout = ({ post, children }: Props) => {
           >
             ← Back to Blog
           </Link>
-          <p className="mt-6 inline-block rounded bg-brand-gold/15 px-3 py-1 text-xs font-bold uppercase tracking-widest text-brand-white">
+          <p className="mt-6 inline-block rounded bg-brand-gold px-3 py-1 text-xs font-bold uppercase tracking-widest text-brand-black">
             {post.category.replace(/-/g, " ")}
           </p>
           <h1 className="mt-4 font-display text-4xl leading-tight text-brand-white sm:text-5xl">
             {post.title}
           </h1>
-          <div className="mt-4 flex flex-wrap items-center gap-3 text-sm text-brand-gray-muted">
+          <div className="mt-4 h-1 w-16 rounded bg-brand-gold" aria-hidden="true" />
+          <div className="mt-5 flex flex-wrap items-center gap-3 text-sm text-brand-gray-muted">
             <span className="text-brand-white"><BrandName /> Property Solutions</span>
             <span aria-hidden="true">•</span>
             <time dateTime={post.datePublished}>
@@ -72,19 +73,36 @@ export const BlogArticleLayout = ({ post, children }: Props) => {
         </div>
       </section>
 
+      {/* Cover image band — overlaps dark hero, magazine style */}
+      {post.image && (
+        <section className="bg-white">
+          <div className="container max-w-4xl -mt-24">
+            <div className="relative overflow-hidden rounded-2xl shadow-2xl ring-1 ring-black/5">
+              <img
+                src={post.image}
+                alt={post.title}
+                className="aspect-[16/9] w-full object-cover"
+                loading="eager"
+              />
+              <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent" />
+            </div>
+          </div>
+        </section>
+      )}
+
       {/* TL;DR — light */}
-      <section className="bg-white pt-12">
+      <section className={`bg-white ${post.image ? "pt-12" : "pt-12"}`}>
         <div className="container max-w-3xl">
-          <div className="rounded-xl border-l-4 border-brand-gold bg-gray-50 p-6 shadow-sm">
-            <p className="text-xs font-bold uppercase tracking-widest text-gray-900">TL;DR</p>
-            <p className="mt-2 text-base leading-relaxed text-brand-black">{post.tldr}</p>
+          <div className="rounded-xl border-l-4 border-brand-gold bg-gradient-to-br from-amber-50/80 to-white p-6 shadow-sm">
+            <p className="text-xs font-bold uppercase tracking-[0.18em] text-brand-gold">— TL;DR</p>
+            <p className="mt-3 text-base leading-relaxed text-gray-900">{post.tldr}</p>
           </div>
         </div>
       </section>
 
       {/* Body — light */}
-      <article className="bg-white pb-16 pt-8">
-        <div className="container max-w-3xl prose-blog text-brand-black">
+      <article className="bg-white pb-16 pt-10">
+        <div className="container max-w-3xl">
           {children}
         </div>
       </article>
