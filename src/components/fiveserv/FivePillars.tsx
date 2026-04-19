@@ -14,7 +14,7 @@ export const FivePillars = () => {
   return (
     <section className="bg-brand-gold text-brand-black">
       <div ref={ref} className="container reveal py-20">
-        <h2 className="font-display text-3xl text-brand-black sm:text-4xl">The <BrandName variant="onGold" /> Promise</h2>
+        <h2 className="font-display text-3xl text-brand-black sm:text-4xl">The <span className="text-brand-black font-bold">F</span><span className="text-brand-black">iveServ</span> Promise</h2>
 
         <div className="mt-12 grid gap-10 sm:grid-cols-2 lg:grid-cols-5">
           {PILLARS.map((p) => (
