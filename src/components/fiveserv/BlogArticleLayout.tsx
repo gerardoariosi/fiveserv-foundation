@@ -142,7 +142,7 @@ export const BlogArticleLayout = ({ post, children }: Props) => {
             to="/contact"
             className="cta-dark mt-8 inline-flex items-center gap-2 rounded-md px-6 py-3 text-sm font-bold uppercase tracking-wide"
           >
-            Contact <BrandName variant="dark" /> <ArrowRight className="h-4 w-4" />
+            Contact <BrandName variant="light" /> <ArrowRight className="h-4 w-4" />
           </Link>
         </div>
       </section>
