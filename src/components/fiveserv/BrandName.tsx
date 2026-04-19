@@ -22,7 +22,7 @@ export const BrandName = ({ variant = "light", className }: Props) => {
   const fColor = variant === "onGold" ? "text-brand-black" : "text-brand-gold";
   const restColor =
     variant === "light"
-      ? "text-white"
+      ? "text-brand-black"
       : variant === "onGold"
         ? "text-brand-black"
         : "text-gray-900";
