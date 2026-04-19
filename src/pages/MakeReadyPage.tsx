@@ -87,7 +87,7 @@ const MakeReadyPage = () => {
             — <span style={{ whiteSpace: "nowrap" }}><span className="font-bold text-brand-gold">F</span><span className="text-white">iveServ</span></span> Property Solutions
           </p>
           <h1 className="mt-3 font-display font-black text-4xl text-white sm:text-5xl lg:text-6xl">
-            Make-Ready &amp; Unit Turn Services —
+            Make-Ready <span className="font-sans font-normal">&amp;</span> Unit Turn Services —
             <span className="block text-brand-gold">5-Day Guarantee</span>
           </h1>
           <p className="mt-6 max-w-2xl text-lg text-gray-300">
