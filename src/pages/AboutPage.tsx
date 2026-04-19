@@ -185,8 +185,8 @@ const AboutPage = () => {
             <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-5">
               {PROMISE.map((p) => (
                 <div key={p.label} className="rounded-lg border-2 border-brand-black bg-brand-black p-6 text-center">
-                  <div className="font-display text-3xl text-gray-900">{p.label}</div>
-                  <p className="mt-2 text-xs font-bold uppercase tracking-wider text-gray-900">{p.sub}</p>
+                  <div className="font-display text-3xl text-brand-white">{p.label}</div>
+                  <p className="mt-2 text-xs font-bold uppercase tracking-wider text-brand-white">{p.sub}</p>
                 </div>
               ))}
             </div>
