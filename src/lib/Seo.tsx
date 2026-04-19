@@ -18,7 +18,7 @@ type SeoProps = {
  */
 export const Seo = ({ title, description, path, ogImage, noIndex }: SeoProps) => {
   const url = `${SITE.url}${path}`;
-  const image = ogImage || `${SITE.url}/og-default.jpg`;
+  const image = ogImage || `${SITE.url}/og-default.png`;
   const fullTitle = title.includes("FiveServ") ? title : `${title} | ${SITE.brand}`;
 
   return (
