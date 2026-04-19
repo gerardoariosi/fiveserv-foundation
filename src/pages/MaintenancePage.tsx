@@ -19,8 +19,8 @@ const TRADES = [
   { icon: Droplets, title: "Plumbing", desc: "Leaks, drains, water heaters, fixtures." },
   { icon: Zap, title: "Electrical", desc: "Outlets, breakers, lighting, ceiling fans." },
   { icon: Wind, title: "HVAC", desc: "AC repair, filter changes, thermostats, no-cool calls." },
-  { icon: Hammer, title: "Drywall &amp; Carpentry", desc: "Holes, doors, trim, cabinetry." },
-  { icon: Paintbrush, title: "Painting &amp; Touch-Ups", desc: "Hallways, units, common areas." },
+  { icon: Hammer, title: <>Drywall <span className="font-sans font-normal">&amp;</span> Carpentry</>, desc: "Holes, doors, trim, cabinetry." },
+  { icon: Paintbrush, title: <>Painting <span className="font-sans font-normal">&amp;</span> Touch-Ups</>, desc: "Hallways, units, common areas." },
   { icon: ClipboardList, title: "General Work Orders", desc: "Whatever's on the resident portal — done." },
 ];
 
