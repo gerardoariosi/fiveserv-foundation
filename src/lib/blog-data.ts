@@ -55,6 +55,7 @@ export const BLOG_POSTS: BlogPost[] = [
     keyword: "make-ready guide Florida",
     datePublished: "2025-04-01",
     readMinutes: 12,
+    image: "/images/blog/make-ready-guide-florida-2025.png",
     pillar: true,
     bodySlug: "make-ready-guide-florida-2025",
     faqs: [
@@ -96,6 +97,7 @@ export const BLOG_POSTS: BlogPost[] = [
     keyword: "vendor management property management Florida",
     datePublished: "2025-04-05",
     readMinutes: 11,
+    image: "/images/blog/reduce-vendor-chaos-multifamily.png",
     pillar: true,
     bodySlug: "reduce-vendor-chaos-multifamily",
     faqs: [
@@ -133,6 +135,7 @@ export const BLOG_POSTS: BlogPost[] = [
     keyword: "property maintenance costs Florida",
     datePublished: "2025-04-10",
     readMinutes: 10,
+    image: "/images/blog/property-maintenance-costs-central-florida-2025.png",
     pillar: true,
     bodySlug: "property-maintenance-costs-central-florida-2025",
     faqs: [
@@ -171,6 +174,7 @@ export const BLOG_POSTS: BlogPost[] = [
     keyword: "unit turn definition",
     datePublished: "2025-04-12",
     readMinutes: 7,
+    image: "/images/blog/what-is-a-unit-turn.png",
     bodySlug: "what-is-a-unit-turn",
     faqs: [
       { q: "Is a unit turn the same as a make-ready?", a: "Yes — the terms are interchangeable in Florida multifamily. Some operators use 'turn' for the whole process and 'make-ready' for the final QC step, but most vendors and PMs treat them as synonyms." },
@@ -192,6 +196,7 @@ export const BLOG_POSTS: BlogPost[] = [
     keyword: "make-ready checklist",
     datePublished: "2025-04-13",
     readMinutes: 9,
+    image: "/images/blog/make-ready-checklist-40-items.png",
     bodySlug: "make-ready-checklist-40-items",
     faqs: [
       { q: "Is a 40-item checklist excessive?", a: "No — 40 items maps to roughly 8 categories (clean, paint, drywall, plumbing, electrical, appliances, HVAC, QC) with 5 items each. It's the minimum to catch issues before a new resident moves in." },
@@ -212,6 +217,7 @@ export const BLOG_POSTS: BlogPost[] = [
     keyword: "apartment maintenance overhaul",
     datePublished: "2025-04-14",
     readMinutes: 8,
+    image: "/images/blog/5-signs-maintenance-overhaul.png",
     bodySlug: "5-signs-maintenance-overhaul",
     faqs: [
       { q: "How long does a maintenance overhaul take?", a: "60–90 days to consolidate vendors, set new SLAs, and standardize work-order routing. Results show within the first 30 days." },
@@ -232,6 +238,7 @@ export const BLOG_POSTS: BlogPost[] = [
     keyword: "property maintenance company Orlando",
     datePublished: "2025-04-15",
     readMinutes: 8,
+    image: "/images/blog/how-to-choose-property-maintenance-company-orlando.png",
     bodySlug: "how-to-choose-property-maintenance-company-orlando",
     faqs: [
       { q: "Should I pick the cheapest vendor?", a: "No. Cheapest vendors typically sub everything out, which reintroduces the vendor chaos you're trying to solve. Mid-priced in-house crews almost always win on total cost." },
@@ -252,6 +259,7 @@ export const BLOG_POSTS: BlogPost[] = [
     keyword: "emergency property maintenance Florida",
     datePublished: "2025-04-15",
     readMinutes: 8,
+    image: "/images/blog/emergency-property-maintenance-after-hours.png",
     bodySlug: "emergency-property-maintenance-after-hours",
     faqs: [
       { q: "What counts as an emergency?", a: "Active water intrusion, electrical hazard, no AC over 85°F, no heat under 50°F, gas smell, lockout when no other access exists. Everything else is next-business-day." },
@@ -272,6 +280,7 @@ export const BLOG_POSTS: BlogPost[] = [
     keyword: "capex vs opex multifamily",
     datePublished: "2025-04-15",
     readMinutes: 9,
+    image: "/images/blog/capex-vs-opex-multifamily.png",
     bodySlug: "capex-vs-opex-multifamily",
     faqs: [
       { q: "Is a unit turn CapEx or OpEx?", a: "OpEx — turns are recurring operating cost. Heavy renovation during a turn (new flooring, new cabinets) is CapEx." },
@@ -292,6 +301,7 @@ export const BLOG_POSTS: BlogPost[] = [
     keyword: "one invoice maintenance",
     datePublished: "2025-04-15",
     readMinutes: 7,
+    image: "/images/blog/one-invoice-maintenance-saves-time.png",
     bodySlug: "one-invoice-maintenance-saves-time",
     faqs: [
       { q: "What if I want line-item detail?", a: "One invoice per project still itemizes line-by-line — it's a single PDF instead of 8 separate vendor invoices to reconcile." },
@@ -312,6 +322,7 @@ export const BLOG_POSTS: BlogPost[] = [
     keyword: "unit turn vs make-ready",
     datePublished: "2025-04-15",
     readMinutes: 5,
+    image: "/images/blog/unit-turn-vs-make-ready.png",
     bodySlug: "unit-turn-vs-make-ready",
     faqs: [
       { q: "Is there any real difference?", a: "Operationally, no. Some accounting systems use one term over the other, but the scope is identical." },
@@ -331,6 +342,7 @@ export const BLOG_POSTS: BlogPost[] = [
     keyword: "make-ready cost Florida",
     datePublished: "2025-04-15",
     readMinutes: 6,
+    image: "/images/blog/make-ready-cost-central-florida-2025.png",
     bodySlug: "make-ready-cost-central-florida-2025",
     faqs: [
       { q: "What drives make-ready cost up?", a: "Heavy paint scope (smoke, dark accent walls), extensive drywall damage, plumbing fixture replacement, and any flooring work." },
@@ -351,6 +363,7 @@ export const BLOG_POSTS: BlogPost[] = [
     keyword: "vendor relationship property management",
     datePublished: "2025-04-15",
     readMinutes: 7,
+    image: "/images/blog/build-vendor-relationship-properties.png",
     bodySlug: "build-vendor-relationship-properties",
     faqs: [
       { q: "How fast should I pay vendors?", a: "Net 15 if you want priority response. Net 30 is standard. Beyond Net 45, expect to drop to the back of the queue." },
@@ -370,6 +383,7 @@ export const BLOG_POSTS: BlogPost[] = [
     keyword: "property maintenance checklist",
     datePublished: "2025-04-15",
     readMinutes: 8,
+    image: "/images/blog/property-maintenance-checklist-multifamily.png",
     bodySlug: "property-maintenance-checklist-multifamily",
     faqs: [
       { q: "Monthly or quarterly inspections?", a: "Monthly for HVAC filters and detectors. Quarterly for the full preventive checklist. Annual for major exterior items." },
@@ -389,6 +403,7 @@ export const BLOG_POSTS: BlogPost[] = [
     keyword: "maintenance request system",
     datePublished: "2025-04-15",
     readMinutes: 6,
+    image: "/images/blog/maintenance-request-system.png",
     bodySlug: "maintenance-request-system",
     faqs: [
       { q: "Do I need software or is a form fine?", a: "A form works for under 50 units. Beyond that, software pays for itself in routing and SLA tracking." },
@@ -408,6 +423,7 @@ export const BLOG_POSTS: BlogPost[] = [
     keyword: "HVAC maintenance apartments Florida",
     datePublished: "2025-04-15",
     readMinutes: 8,
+    image: "/images/blog/hvac-maintenance-apartments-florida.png",
     bodySlug: "hvac-maintenance-apartments-florida",
     faqs: [
       { q: "Monthly filter changes — really?", a: "In Florida, yes. Humidity and dust load make 90-day filters underperform fast. Monthly is the standard for multifamily." },
@@ -427,6 +443,7 @@ export const BLOG_POSTS: BlogPost[] = [
     keyword: "plumbing emergency multifamily",
     datePublished: "2025-04-15",
     readMinutes: 7,
+    image: "/images/blog/plumbing-emergency-multifamily.png",
     bodySlug: "plumbing-emergency-multifamily",
     faqs: [
       { q: "Where are unit shutoffs in most Florida apartments?", a: "Under each sink, behind each toilet, and at the water heater. Building shutoff is typically near the meter or in a mechanical closet." },
@@ -446,6 +463,7 @@ export const BLOG_POSTS: BlogPost[] = [
     keyword: "vacant unit cost Florida",
     datePublished: "2025-04-15",
     readMinutes: 7,
+    image: "/images/blog/true-cost-vacant-unit-central-florida.png",
     bodySlug: "true-cost-vacant-unit-central-florida",
     faqs: [
       { q: "How do I calculate per-day vacancy cost?", a: "Annual rent ÷ 365 + daily utilities + amortized marketing per turn. Most 1–2BR units land at $63–$110/day all-in." },
@@ -465,6 +483,7 @@ export const BLOG_POSTS: BlogPost[] = [
     keyword: "make-ready vs cleaning",
     datePublished: "2025-04-15",
     readMinutes: 4,
+    image: "/images/blog/make-ready-vs-cleaning.png",
     bodySlug: "make-ready-vs-cleaning",
     faqs: [
       { q: "Can I just clean between residents?", a: "Only on a short turn with no damage and no paint required. Otherwise you're skipping required scope." },
@@ -484,6 +503,7 @@ export const BLOG_POSTS: BlogPost[] = [
     keyword: "PM vs maintenance company",
     datePublished: "2025-04-15",
     readMinutes: 4,
+    image: "/images/blog/pm-company-vs-maintenance-company.png",
     bodySlug: "pm-company-vs-maintenance-company",
     faqs: [
       { q: "Can one company do both?", a: "Some can, but they typically sub the maintenance side. Best-in-class operators separate the two." },
@@ -503,6 +523,7 @@ export const BLOG_POSTS: BlogPost[] = [
     keyword: "how long make-ready take",
     datePublished: "2025-04-15",
     readMinutes: 4,
+    image: "/images/blog/how-long-make-ready-take.png",
     bodySlug: "how-long-make-ready-take",
     faqs: [
       { q: "Why does the same scope take 14 days with multiple vendors?", a: "Idle days between trades — painter doesn't show until day 4, plumber not booked until day 7. Each handoff loses 1–2 days." },
@@ -522,6 +543,7 @@ export const BLOG_POSTS: BlogPost[] = [
     keyword: "24/7 property maintenance meaning",
     datePublished: "2025-04-15",
     readMinutes: 4,
+    image: "/images/blog/what-does-24-7-maintenance-mean.png",
     bodySlug: "what-does-24-7-maintenance-mean",
     faqs: [
       { q: "How do I test a vendor's 24/7 claim?", a: "Call them at 11pm on a Saturday. If you get voicemail, it's not real 24/7." },
@@ -541,6 +563,7 @@ export const BLOG_POSTS: BlogPost[] = [
     keyword: "questions before hiring",
     datePublished: "2025-04-15",
     readMinutes: 5,
+    image: "/images/blog/5-questions-before-hiring-maintenance.png",
     bodySlug: "5-questions-before-hiring-maintenance",
     faqs: [
       { q: "What's a deal-breaker answer?", a: "Subbed crews with no licensed trades on staff, or refusal to provide references." },
@@ -560,6 +583,7 @@ export const BLOG_POSTS: BlogPost[] = [
     keyword: "make-ready Orlando FL",
     datePublished: "2025-04-15",
     readMinutes: 5,
+    image: "/images/blog/make-ready-orlando-fl-what-to-expect.png",
     bodySlug: "make-ready-orlando-fl-what-to-expect",
     faqs: [
       { q: "Same-day response across all of Orlando?", a: "Yes — Orlando is our home market. Same-day on-site for emergencies, 24-hour quote turnaround for make-readies." },
@@ -579,6 +603,7 @@ export const BLOG_POSTS: BlogPost[] = [
     keyword: "capex renovations Florida timing",
     datePublished: "2025-04-15",
     readMinutes: 5,
+    image: "/images/blog/best-time-capex-renovations-florida.png",
     bodySlug: "best-time-capex-renovations-florida",
     faqs: [
       { q: "Why not summer?", a: "Peak leasing season — vacancy during May–September is most expensive. Save CapEx for low-demand months." },
@@ -598,6 +623,7 @@ export const BLOG_POSTS: BlogPost[] = [
     keyword: "multifamily inspection frequency",
     datePublished: "2025-04-15",
     readMinutes: 5,
+    image: "/images/blog/multifamily-inspection-frequency-florida.png",
     bodySlug: "multifamily-inspection-frequency-florida",
     faqs: [
       { q: "Are inspections required by law in Florida?", a: "No state-level mandate, but lender and insurance requirements often require them. Check your loan covenants." },
@@ -617,6 +643,7 @@ export const BLOG_POSTS: BlogPost[] = [
     keyword: "drywall repairs apartments",
     datePublished: "2025-04-15",
     readMinutes: 5,
+    image: "/images/blog/drywall-repairs-apartments-normal-not.png",
     bodySlug: "drywall-repairs-apartments-normal-not",
     faqs: [
       { q: "Is a wall crack always structural?", a: "No — most are settling. Horizontal cracks at the same height across multiple walls are the warning sign that needs structural inspection." },
@@ -636,6 +663,7 @@ export const BLOG_POSTS: BlogPost[] = [
     keyword: "HVAC AC difference Florida",
     datePublished: "2025-04-15",
     readMinutes: 4,
+    image: "/images/blog/hvac-vs-ac-maintenance-florida.png",
     bodySlug: "hvac-vs-ac-maintenance-florida",
     faqs: [
       { q: "Do I need to service heat in Florida?", a: "Yes — once a year at minimum. Heat strips fail silently and you'll find out the one cold week of the year." },
@@ -655,6 +683,7 @@ export const BLOG_POSTS: BlogPost[] = [
     keyword: "5 day guarantee make-ready",
     datePublished: "2025-04-15",
     readMinutes: 5,
+    image: "/images/blog/5-day-make-ready-guarantee.png",
     bodySlug: "5-day-make-ready-guarantee",
     faqs: [
       { q: "What's the credit if FiveServ misses the deadline?", a: "Daily lost-rent credit per the written agreement. Real number, not vague." },
@@ -674,6 +703,7 @@ export const BLOG_POSTS: BlogPost[] = [
     keyword: "property maintenance glossary",
     datePublished: "2025-04-15",
     readMinutes: 6,
+    image: "/images/blog/property-maintenance-glossary-a-z.png",
     bodySlug: "property-maintenance-glossary-a-z",
     faqs: [
       { q: "Are these terms standard across vendors?", a: "Mostly yes. Some vendors use 'turn' vs 'make-ready' differently — confirm definitions in your scope sheet." },
