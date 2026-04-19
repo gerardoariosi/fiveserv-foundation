@@ -111,30 +111,38 @@ const BlogPage = () => {
                 <Link
                   key={post.slug}
                   to={`/blog/${post.slug}`}
-                  className="group flex flex-col overflow-hidden rounded-lg border border-brand-gold/20 bg-white border border-gray-100 shadow-sm transition hover:border-brand-gold"
+                  className="group flex flex-col overflow-hidden rounded-xl border border-gray-100 bg-white shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-brand-gold hover:shadow-xl"
                 >
-                  <div
-                    className="aspect-[16/9] w-full bg-brand-gray"
-                    style={{
-                      backgroundImage: post.image
-                        ? `url(${post.image})`
-                        : `linear-gradient(135deg, hsl(var(--brand-gray)) 0%, hsl(var(--brand-black)) 100%)`,
-                      backgroundSize: "cover",
-                      backgroundPosition: "center",
-                    }}
-                    aria-hidden="true"
-                  />
+                  <div className="aspect-[16/9] w-full overflow-hidden bg-brand-gray">
+                    {post.image ? (
+                      <img
+                        src={post.image}
+                        alt={post.title}
+                        loading="lazy"
+                        className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+                      />
+                    ) : (
+                      <div
+                        className="h-full w-full"
+                        style={{
+                          background:
+                            "linear-gradient(135deg, hsl(var(--brand-gray)) 0%, hsl(var(--brand-black)) 100%)",
+                        }}
+                        aria-hidden="true"
+                      />
+                    )}
+                  </div>
                   <div className="flex flex-1 flex-col p-5">
-                    <span className="self-start rounded bg-brand-gold/15 px-2 py-1 text-[10px] font-bold uppercase tracking-wide text-gray-900">
+                    <span className="self-start rounded bg-brand-gold px-2 py-1 text-[10px] font-bold uppercase tracking-wide text-brand-black">
                       {BLOG_CATEGORIES.find((c) => c.slug === post.category)?.label}
                     </span>
-                    <h2 className="mt-3 font-display text-lg text-gray-900 group-hover:text-gray-900">
+                    <h2 className="mt-3 font-display text-lg font-bold text-gray-900 transition-colors group-hover:text-brand-gold">
                       {post.title}
                     </h2>
-                    <p className="mt-2 line-clamp-2 text-sm text-brand-gray-muted">
+                    <p className="mt-2 line-clamp-2 text-sm text-gray-600">
                       {post.excerpt}
                     </p>
-                    <span className="mt-4 inline-flex items-center gap-1 text-xs font-bold uppercase tracking-wide text-gray-900 group-hover:text-gray-900">
+                    <span className="mt-4 inline-flex items-center gap-1 text-xs font-bold uppercase tracking-wide text-brand-black transition-colors group-hover:text-brand-gold">
                       Read More <ArrowRight className="h-3 w-3" />
                     </span>
                   </div>

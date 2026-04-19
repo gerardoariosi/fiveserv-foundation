@@ -195,4 +195,18 @@
   @media (prefers-reduced-motion: reduce) {
     .trustbar-track { animation: none; }
   }
+
+  /* Premium blog article typography */
+  .prose-blog > p:first-of-type::first-letter {
+    font-family: "Playfair Display", Georgia, serif;
+    font-weight: 700;
+    float: left;
+    font-size: 4.25rem;
+    line-height: 0.9;
+    padding: 0.35rem 0.75rem 0 0;
+    color: hsl(var(--brand-black));
+  }
+  .prose-blog p {
+    color: rgb(31 41 55);
+  }
 }
