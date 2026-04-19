@@ -205,7 +205,7 @@ const MaintenancePage = () => {
               {CITIES.map((c) => (
                 <Link
                   key={c.slug}
-                  to={`/maintenance/${c.slug}`}
+                  to={`/maintenance-${c.slug}`}
                   className="hover-card group flex items-center justify-between rounded-md border border-gray-100 bg-white shadow-sm px-4 py-3"
                 >
                   <span className="flex items-center gap-3">
@@ -262,7 +262,7 @@ const MaintenancePage = () => {
                   const name = slug.replace("-fl", "").split("-").map((w) => w[0].toUpperCase() + w.slice(1)).join(" ");
                   return (
                     <li key={slug}>
-                      <Link to={`/maintenance/${slug}`} className="inline-flex items-center gap-2 text-gray-900 hover:text-gray-900 hover:underline">
+                      <Link to={`/maintenance-${slug}`} className="inline-flex items-center gap-2 text-gray-900 hover:text-gray-900 hover:underline">
                         <ArrowRight className="h-4 w-4" /> Maintenance in {name}, FL
                       </Link>
                     </li>
