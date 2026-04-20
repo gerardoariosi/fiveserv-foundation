@@ -226,7 +226,7 @@ export const ExitIntentPopup = () => {
             padding: "4px",
           }}
         >
-          <X size={20} />
+          <X size={24} />
         </button>
 
         <h2
