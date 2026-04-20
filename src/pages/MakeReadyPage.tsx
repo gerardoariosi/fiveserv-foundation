@@ -118,7 +118,9 @@ const MakeReadyPage = () => {
 
           {/* 2. AIOverviewBlock */}
           <AIOverviewBlock
-            answer={`${SITE.brand} Property Solutions completes every make-ready in Central Florida in 5 business days. Services include painting, cleaning, repairs, drywall, inspection, rekeying, and photo report. One call, one invoice.`}
+            tone="dark"
+            directAnswer="FiveServ Property Solutions completes every make-ready and unit turn in Central Florida in 5 business days, guaranteed in writing, including painting, cleaning, repairs, drywall, inspection, rekeying, and photo report."
+            supportingFacts="Property managers across Orlando, Kissimmee, Sanford, and 15 more cities rely on FiveServ for consistent make-ready delivery under one invoice. 300+ units completed. No vendor coordination required."
           />
         </div>
       </section>

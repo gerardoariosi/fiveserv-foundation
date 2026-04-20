@@ -120,7 +120,9 @@ const RenovationsPage = () => {
 
           {/* 2. AIOverviewBlock */}
           <AIOverviewBlock
-            answer={`${SITE.brand} manages CapEx and renovation projects for multifamily properties in Central Florida. Services include flooring, kitchen and bathroom upgrades, full unit rehabs, and common area improvements. One contract, one invoice.`}
+            tone="dark"
+            directAnswer="FiveServ Property Solutions manages CapEx and renovation projects for multifamily properties across Central Florida, delivering flooring, kitchen, bathroom, and full unit rehabs under one contract and invoice."
+            supportingFacts="Value-add renovations average 15 to 20 percent rent increase in Central Florida multifamily properties. One project manager. One invoice. Serving property managers and direct owners."
           />
         </div>
       </section>

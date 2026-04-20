@@ -44,6 +44,12 @@ export const Seo = ({ title, description, path, ogImage, noIndex }: SeoProps) =>
       <meta name="twitter:title" content={fullTitle} />
       <meta name="twitter:description" content={description} />
       <meta name="twitter:image" content={image} />
+
+      {/* Geo tags — entity / local SEO signal (Orlando, FL) */}
+      <meta name="geo.region" content="US-FL" />
+      <meta name="geo.placename" content="Orlando, Florida" />
+      <meta name="geo.position" content="28.5383;-81.3792" />
+      <meta name="ICBM" content="28.5383, -81.3792" />
     </Helmet>
   );
 };
