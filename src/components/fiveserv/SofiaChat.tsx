@@ -53,6 +53,34 @@ const PHONE = SITE.phone;
 const SS_KEY = "sofia.chat.v1";
 const SOFIA_AVATAR = "https://randomuser.me/api/portraits/women/44.jpg";
 
+/**
+ * Returns true if current time is within FiveServ business hours (Eastern Time).
+ * Mon–Fri 7:00–20:00, Sat 8:00–17:00, Sun closed.
+ */
+const isWithinBusinessHoursET = (): boolean => {
+  try {
+    const fmt = new Intl.DateTimeFormat("en-US", {
+      timeZone: "America/New_York",
+      weekday: "short",
+      hour: "numeric",
+      hour12: false,
+    });
+    const parts = fmt.formatToParts(new Date());
+    const weekday = parts.find((p) => p.type === "weekday")?.value ?? "";
+    const hourStr = parts.find((p) => p.type === "hour")?.value ?? "0";
+    let hour = parseInt(hourStr, 10);
+    if (hour === 24) hour = 0;
+    if (weekday === "Sun") return false;
+    if (weekday === "Sat") return hour >= 8 && hour < 17;
+    return hour >= 7 && hour < 20; // Mon–Fri
+  } catch {
+    return true;
+  }
+};
+
+const isEmergencyText = (s: string) => /\b(emergency|emergencia)\b/i.test(s);
+
+
 /** Realistic typing delay based on the longest message about to be shown. */
 const typingDelayFor = (msgs: Message[]): number => {
   const longest = msgs.reduce((max, m) => Math.max(max, m.text.length), 0);
