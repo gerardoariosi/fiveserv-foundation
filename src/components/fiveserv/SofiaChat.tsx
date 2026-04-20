@@ -53,6 +53,34 @@ const PHONE = SITE.phone;
 const SS_KEY = "sofia.chat.v1";
 const SOFIA_AVATAR = "https://randomuser.me/api/portraits/women/44.jpg";
 
+/**
+ * Returns true if current time is within FiveServ business hours (Eastern Time).
+ * Mon–Fri 7:00–20:00, Sat 8:00–17:00, Sun closed.
+ */
+const isWithinBusinessHoursET = (): boolean => {
+  try {
+    const fmt = new Intl.DateTimeFormat("en-US", {
+      timeZone: "America/New_York",
+      weekday: "short",
+      hour: "numeric",
+      hour12: false,
+    });
+    const parts = fmt.formatToParts(new Date());
+    const weekday = parts.find((p) => p.type === "weekday")?.value ?? "";
+    const hourStr = parts.find((p) => p.type === "hour")?.value ?? "0";
+    let hour = parseInt(hourStr, 10);
+    if (hour === 24) hour = 0;
+    if (weekday === "Sun") return false;
+    if (weekday === "Sat") return hour >= 8 && hour < 17;
+    return hour >= 7 && hour < 20; // Mon–Fri
+  } catch {
+    return true;
+  }
+};
+
+const isEmergencyText = (s: string) => /\b(emergency|emergencia)\b/i.test(s);
+
+
 /** Realistic typing delay based on the longest message about to be shown. */
 const typingDelayFor = (msgs: Message[]): number => {
   const longest = msgs.reduce((max, m) => Math.max(max, m.text.length), 0);
@@ -343,7 +371,21 @@ const SofiaChat = () => {
   const [input, setInput] = useState("");
   const [typing, setTyping] = useState(false);
   const [showBadge, setShowBadge] = useState(false);
+  const [online, setOnline] = useState<boolean>(() => isWithinBusinessHoursET());
+  const [emergencyOverride, setEmergencyOverride] = useState(false);
+  const [offlineForm, setOfflineForm] = useState({ name: "", phone: "", need: "" });
+  const [offlineSubmitted, setOfflineSubmitted] = useState(false);
   const scrollRef = useRef<HTMLDivElement>(null);
+
+  // Recompute business hours on chat open + every 60s while open
+  useEffect(() => {
+    if (!open) return;
+    setOnline(isWithinBusinessHoursET());
+    const id = window.setInterval(() => setOnline(isWithinBusinessHoursET()), 60000);
+    return () => window.clearInterval(id);
+  }, [open]);
+
+  const effectivelyOnline = online || emergencyOverride;
 
   // Restore from sessionStorage
   useEffect(() => {
@@ -376,15 +418,23 @@ const SofiaChat = () => {
   }, [messages, typing, open]);
 
   // Live opening sequence — runs when the widget opens for the first time
-  // (no messages yet). Step 2: typing 600ms in, Step 3: message at 1800ms.
+  // (no messages yet). When offline (and no emergency), show offline message instead.
   useEffect(() => {
     if (!open) return;
     if (messages.length > 0) return;
     const L = t[lang];
+    const offlineMsg =
+      lang === "es"
+        ? "Hola! Estamos fuera de horario pero te llamamos mañana a primera hora. Deja tu información y nuestro equipo te contacta a las 8am."
+        : "Hi! We are currently offline but we will call you first thing in the morning. Leave your info below and our team will reach out at 8am.";
     const typingTimer = window.setTimeout(() => setTyping(true), 600);
     const messageTimer = window.setTimeout(() => {
       setTyping(false);
-      setMessages([mkSofia(L.opening, { quickReplies: [...L.openingButtons] })]);
+      if (effectivelyOnline) {
+        setMessages([mkSofia(L.opening, { quickReplies: [...L.openingButtons] })]);
+      } else {
+        setMessages([mkSofia(offlineMsg)]);
+      }
     }, 1800);
     return () => {
       window.clearTimeout(typingTimer);
@@ -456,6 +506,20 @@ const SofiaChat = () => {
 
     // Push user message immediately
     setMessages((prev) => [...prev, mkUser(userText)]);
+
+    // Emergency override — works even when offline
+    if (isEmergencyText(userText)) {
+      setEmergencyOverride(true);
+      sayLater([
+        mkSofia(
+          activeLang === "es"
+            ? "Para emergencias estamos disponibles 24/7. Llámanos ahora."
+            : "For emergencies we are available 24/7. Call us now.",
+          { ctas: [{ kind: "link", label: activeLang === "es" ? "Llamar Ahora" : "Call Now", href: `tel:${PHONE}` }] },
+        ),
+      ]);
+      return;
+    }
 
     // FAQ keyword shortcut for free-text input (not quick reply)
     if (!fromQuickReply) {
@@ -591,35 +655,70 @@ const SofiaChat = () => {
     <>
       {/* Collapsed bubble — white circle, gold icon */}
       {!open && (
-        <button
-          type="button"
-          aria-label="Open Sofia chat"
-          onClick={() => setOpen(true)}
-          className="fixed right-6 z-[9999] flex h-14 w-14 items-center justify-center rounded-full shadow-lg transition-all hover:scale-105 focus:outline-none focus:ring-4 focus:ring-brand-gold/40"
-          style={{ background: "#FFD700", bottom: "calc(1.5rem + var(--sofia-bottom-offset, 0px))" }}
+        <div
+          className="fixed right-6 z-[9999] flex flex-col items-center"
+          style={{ bottom: "calc(1.5rem + var(--sofia-bottom-offset, 0px))" }}
         >
-          <MessageCircle className="h-7 w-7" style={{ color: "#1A1A1A" }} strokeWidth={2.25} />
-          <span className="sr-only">Chat with Sofia</span>
-          {showBadge && (
+          <button
+            type="button"
+            aria-label="Open Sofia chat"
+            onClick={() => setOpen(true)}
+            className="relative flex h-14 w-14 items-center justify-center rounded-full shadow-lg transition-all hover:scale-105 focus:outline-none focus:ring-4 focus:ring-brand-gold/40"
+            style={{ background: "#FFD700" }}
+          >
+            <MessageCircle className="h-7 w-7" style={{ color: "#1A1A1A" }} strokeWidth={2.25} />
+            <span className="sr-only">Chat with Sofia</span>
+            {/* online/offline dot */}
             <span
-              aria-label="1 new message"
-              className="sofia-badge-pulse pointer-events-none absolute flex items-center justify-center rounded-full font-bold"
+              aria-hidden
+              className="absolute"
               style={{
-                top: "-4px",
-                right: "-4px",
-                width: "18px",
-                height: "18px",
-                background: "#FFD700",
-                color: "#1A1A1A",
-                fontSize: "11px",
-                lineHeight: 1,
+                bottom: "2px",
+                right: "2px",
+                width: "12px",
+                height: "12px",
+                borderRadius: "9999px",
+                background: effectivelyOnline ? "#22c55e" : "#9CA3AF",
                 boxShadow: "0 0 0 2px #FFFFFF",
               }}
+            />
+            {showBadge && (
+              <span
+                aria-label="1 new message"
+                className="sofia-badge-pulse pointer-events-none absolute flex items-center justify-center rounded-full font-bold"
+                style={{
+                  top: "-4px",
+                  right: "-4px",
+                  width: "18px",
+                  height: "18px",
+                  background: "#FFD700",
+                  color: "#1A1A1A",
+                  fontSize: "11px",
+                  lineHeight: 1,
+                  boxShadow: "0 0 0 2px #FFFFFF",
+                }}
+              >
+                1
+              </span>
+            )}
+          </button>
+          {!effectivelyOnline && (
+            <span
+              style={{
+                marginTop: "4px",
+                fontSize: "10px",
+                color: "#6B7280",
+                background: "#FFFFFF",
+                padding: "2px 6px",
+                borderRadius: "9999px",
+                boxShadow: "0 1px 3px rgba(0,0,0,0.1)",
+                fontWeight: 600,
+              }}
             >
-              1
+              Offline
             </span>
           )}
-        </button>
+        </div>
       )}
 
       {/* Expanded panel — white, modern */}
@@ -648,16 +747,16 @@ const SofiaChat = () => {
             <div className="flex-1 leading-tight">
               <div className="flex items-center gap-2">
                 <p className="font-semibold text-white" style={{ fontSize: "15px" }}>
-                  {L.headerTitle}
+                  {effectivelyOnline ? L.headerTitle : `${L.headerTitle} — ${lang === "es" ? "Fuera de Horario" : "Currently Offline"}`}
                 </p>
                 <span
-                  className="inline-block rounded-full bg-green-400"
-                  style={{ width: "8px", height: "8px" }}
+                  className="inline-block rounded-full"
+                  style={{ width: "8px", height: "8px", background: effectivelyOnline ? "#4ade80" : "#9CA3AF" }}
                   aria-hidden
                 />
               </div>
               <p className="text-gray-400" style={{ fontSize: "12px" }}>
-                <BrandName variant="light" /> Assistant · {L.online}
+                <BrandName variant="light" /> Assistant · {effectivelyOnline ? L.online : (lang === "es" ? "Fuera de línea" : "Offline")}
               </p>
             </div>
             <button
@@ -796,6 +895,89 @@ const SofiaChat = () => {
                 </div>
               </div>
             )}
+
+            {/* Offline capture form / confirmation */}
+            {!effectivelyOnline && !offlineSubmitted && messages.length > 0 && !typing && (
+              <form
+                onSubmit={(e) => {
+                  e.preventDefault();
+                  if (import.meta.env.DEV) {
+                    // eslint-disable-next-line no-console
+                    console.log("[SofiaChat] Offline lead captured:", { ...offlineForm, lang });
+                  }
+                  setOfflineSubmitted(true);
+                }}
+                className="flex flex-col gap-2"
+                style={{
+                  animation: "sofia-fade-in 300ms ease",
+                  background: "#FFFFFF",
+                  border: "1px solid #E5E7EB",
+                  borderRadius: "12px",
+                  padding: "12px",
+                }}
+              >
+                <input
+                  required
+                  type="text"
+                  placeholder={lang === "es" ? "Nombre" : "Name"}
+                  value={offlineForm.name}
+                  onChange={(e) => setOfflineForm((f) => ({ ...f, name: e.target.value }))}
+                  className="rounded-md border border-gray-200 px-3 py-2 text-sm text-gray-900 outline-none focus:ring-2 focus:ring-brand-gold/40"
+                />
+                <input
+                  required
+                  type="tel"
+                  placeholder={lang === "es" ? "Teléfono" : "Phone"}
+                  value={offlineForm.phone}
+                  onChange={(e) => setOfflineForm((f) => ({ ...f, phone: e.target.value }))}
+                  className="rounded-md border border-gray-200 px-3 py-2 text-sm text-gray-900 outline-none focus:ring-2 focus:ring-brand-gold/40"
+                />
+                <input
+                  required
+                  type="text"
+                  placeholder={lang === "es" ? "Qué necesitas?" : "What do you need?"}
+                  value={offlineForm.need}
+                  onChange={(e) => setOfflineForm((f) => ({ ...f, need: e.target.value }))}
+                  className="rounded-md border border-gray-200 px-3 py-2 text-sm text-gray-900 outline-none focus:ring-2 focus:ring-brand-gold/40"
+                />
+                <button
+                  type="submit"
+                  className="mt-1 rounded-full font-bold"
+                  style={{
+                    background: "#FFD700",
+                    color: "#1A1A1A",
+                    padding: "10px 16px",
+                    fontSize: "13px",
+                  }}
+                >
+                  {lang === "es" ? "Dejar Mensaje" : "Leave Message"}
+                </button>
+              </form>
+            )}
+
+            {!effectivelyOnline && offlineSubmitted && (
+              <div
+                className="flex justify-start gap-2"
+                style={{ animation: "sofia-fade-in 300ms ease" }}
+              >
+                <img src={SOFIA_AVATAR} alt="" aria-hidden className="h-6 w-6 flex-shrink-0 rounded-full object-cover self-end" />
+                <div
+                  className="px-3 py-2"
+                  style={{
+                    background: "#F3F4F6",
+                    color: "#111827",
+                    fontSize: "13.5px",
+                    lineHeight: 1.5,
+                    borderRadius: "4px 16px 16px 16px",
+                    maxWidth: "85%",
+                  }}
+                >
+                  {lang === "es"
+                    ? "Listo! Nuestro equipo te llama mañana. Una llamada. Un equipo. Sin excusas."
+                    : "Got it! Our team will call you tomorrow morning. Five Days. One Call. Done."}
+                </div>
+              </div>
+            )}
           </div>
 
           {/* Input */}
@@ -836,6 +1018,10 @@ const SofiaChat = () => {
         .sofia-scroll::-webkit-scrollbar-track { background: transparent; }
         .sofia-scroll::-webkit-scrollbar-thumb { background: #E5E7EB; border-radius: 3px; }
         .sofia-scroll { scrollbar-width: thin; scrollbar-color: #E5E7EB transparent; }
+        @keyframes sofia-fade-in {
+          from { opacity: 0; transform: translateY(4px); }
+          to { opacity: 1; transform: translateY(0); }
+        }
         @keyframes sofia-badge-pulse {
           0%, 100% { transform: scale(1); }
           50% { transform: scale(1.2); }
