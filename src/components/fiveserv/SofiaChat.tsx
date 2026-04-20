@@ -895,6 +895,89 @@ const SofiaChat = () => {
                 </div>
               </div>
             )}
+
+            {/* Offline capture form / confirmation */}
+            {!effectivelyOnline && !offlineSubmitted && messages.length > 0 && !typing && (
+              <form
+                onSubmit={(e) => {
+                  e.preventDefault();
+                  if (import.meta.env.DEV) {
+                    // eslint-disable-next-line no-console
+                    console.log("[SofiaChat] Offline lead captured:", { ...offlineForm, lang });
+                  }
+                  setOfflineSubmitted(true);
+                }}
+                className="flex flex-col gap-2"
+                style={{
+                  animation: "sofia-fade-in 300ms ease",
+                  background: "#FFFFFF",
+                  border: "1px solid #E5E7EB",
+                  borderRadius: "12px",
+                  padding: "12px",
+                }}
+              >
+                <input
+                  required
+                  type="text"
+                  placeholder={lang === "es" ? "Nombre" : "Name"}
+                  value={offlineForm.name}
+                  onChange={(e) => setOfflineForm((f) => ({ ...f, name: e.target.value }))}
+                  className="rounded-md border border-gray-200 px-3 py-2 text-sm text-gray-900 outline-none focus:ring-2 focus:ring-brand-gold/40"
+                />
+                <input
+                  required
+                  type="tel"
+                  placeholder={lang === "es" ? "Teléfono" : "Phone"}
+                  value={offlineForm.phone}
+                  onChange={(e) => setOfflineForm((f) => ({ ...f, phone: e.target.value }))}
+                  className="rounded-md border border-gray-200 px-3 py-2 text-sm text-gray-900 outline-none focus:ring-2 focus:ring-brand-gold/40"
+                />
+                <input
+                  required
+                  type="text"
+                  placeholder={lang === "es" ? "Qué necesitas?" : "What do you need?"}
+                  value={offlineForm.need}
+                  onChange={(e) => setOfflineForm((f) => ({ ...f, need: e.target.value }))}
+                  className="rounded-md border border-gray-200 px-3 py-2 text-sm text-gray-900 outline-none focus:ring-2 focus:ring-brand-gold/40"
+                />
+                <button
+                  type="submit"
+                  className="mt-1 rounded-full font-bold"
+                  style={{
+                    background: "#FFD700",
+                    color: "#1A1A1A",
+                    padding: "10px 16px",
+                    fontSize: "13px",
+                  }}
+                >
+                  {lang === "es" ? "Dejar Mensaje" : "Leave Message"}
+                </button>
+              </form>
+            )}
+
+            {!effectivelyOnline && offlineSubmitted && (
+              <div
+                className="flex justify-start gap-2"
+                style={{ animation: "sofia-fade-in 300ms ease" }}
+              >
+                <img src={SOFIA_AVATAR} alt="" aria-hidden className="h-6 w-6 flex-shrink-0 rounded-full object-cover self-end" />
+                <div
+                  className="px-3 py-2"
+                  style={{
+                    background: "#F3F4F6",
+                    color: "#111827",
+                    fontSize: "13.5px",
+                    lineHeight: 1.5,
+                    borderRadius: "4px 16px 16px 16px",
+                    maxWidth: "85%",
+                  }}
+                >
+                  {lang === "es"
+                    ? "Listo! Nuestro equipo te llama mañana. Una llamada. Un equipo. Sin excusas."
+                    : "Got it! Our team will call you tomorrow morning. Five Days. One Call. Done."}
+                </div>
+              </div>
+            )}
           </div>
 
           {/* Input */}
@@ -935,6 +1018,10 @@ const SofiaChat = () => {
         .sofia-scroll::-webkit-scrollbar-track { background: transparent; }
         .sofia-scroll::-webkit-scrollbar-thumb { background: #E5E7EB; border-radius: 3px; }
         .sofia-scroll { scrollbar-width: thin; scrollbar-color: #E5E7EB transparent; }
+        @keyframes sofia-fade-in {
+          from { opacity: 0; transform: translateY(4px); }
+          to { opacity: 1; transform: translateY(0); }
+        }
         @keyframes sofia-badge-pulse {
           0%, 100% { transform: scale(1); }
           50% { transform: scale(1.2); }
