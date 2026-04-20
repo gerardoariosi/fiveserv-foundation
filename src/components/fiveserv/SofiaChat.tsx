@@ -595,8 +595,8 @@ const SofiaChat = () => {
           type="button"
           aria-label="Open Sofia chat"
           onClick={() => setOpen(true)}
-          className="fixed bottom-6 right-6 z-[9999] flex h-14 w-14 items-center justify-center rounded-full shadow-lg transition-transform hover:scale-105 focus:outline-none focus:ring-4 focus:ring-brand-gold/40"
-          style={{ background: "#FFD700" }}
+          className="fixed right-6 z-[9999] flex h-14 w-14 items-center justify-center rounded-full shadow-lg transition-all hover:scale-105 focus:outline-none focus:ring-4 focus:ring-brand-gold/40"
+          style={{ background: "#FFD700", bottom: "calc(1.5rem + var(--sofia-bottom-offset, 0px))" }}
         >
           <MessageCircle className="h-7 w-7" style={{ color: "#1A1A1A" }} strokeWidth={2.25} />
           <span className="sr-only">Chat with Sofia</span>
