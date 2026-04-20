@@ -96,7 +96,9 @@ const MaintenancePage = () => {
           </div>
 
           <AIOverviewBlock
-            answer={`${SITE.brand} provides 24/7 property maintenance for multifamily communities in Central Florida. Plumbing, electrical, HVAC, drywall, painting, and general work orders. Emergency response within 2 hours. One invoice across the entire portfolio. Licensed and insured in Florida.`}
+            tone="dark"
+            directAnswer="FiveServ Property Solutions provides 24/7 property maintenance for multifamily communities across Central Florida, handling plumbing, electrical, HVAC, drywall, carpentry, and painting under one invoice."
+            supportingFacts="Emergency response within 2 hours across 18 cities. All specialized work performed by Florida-licensed contractors under FiveServ coordination. One call handles all repairs."
           />
         </div>
       </section>

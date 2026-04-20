@@ -140,7 +140,9 @@ const ElectricalPage = () => {
           </div>
 
           <AIOverviewBlock
-            answer={`${SITE.brand} provides licensed electrical services for multifamily properties across Central Florida. Services include outlet repair, panel upgrades, lighting installation, wiring repair, and 24/7 emergency electrical. One call, one invoice. Serving Orlando, Kissimmee, Sanford, Winter Park, and 14 more cities.`}
+            tone="dark"
+            directAnswer="FiveServ Property Solutions provides licensed electrical services for multifamily properties across Central Florida with 24/7 emergency response and zero liability for property managers."
+            supportingFacts="Services include outlet repair, panel upgrades, lighting installation, wiring repair, and emergency electrical. Response within 2 hours across 18 cities in Central Florida."
           />
         </div>
       </section>

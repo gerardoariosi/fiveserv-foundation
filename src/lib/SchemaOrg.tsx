@@ -42,17 +42,24 @@ export const SchemaOrg = ({
 }: SchemaProps) => {
   const blocks: object[] = [];
 
-  // 1. Organization + LocalBusiness
+  // 1. Organization + LocalBusiness — entity-building schema (AEO)
   if (organization) {
     blocks.push({
       "@context": "https://schema.org",
       "@type": ["Organization", "LocalBusiness"],
-      name: SITE.legal,
+      "@id": `${SITE.url}/#organization`,
+      name: SITE.name,
+      legalName: SITE.legal,
       alternateName: SITE.brand,
       url: SITE.url,
+      logo: `${SITE.url}/images/logo-fs.png`,
+      image: `${SITE.url}/images/og-default.jpg`,
+      description:
+        "Family-owned property maintenance company serving multifamily communities across Central Florida. Make-ready in 5 business days guaranteed. One call, one team, one invoice.",
+      foundingLocation: "Orlando, Florida",
+      slogan: SITE.tagline,
       email: SITE.email,
       telephone: SITE.phone,
-      image: `${SITE.url}/og-default.jpg`,
       priceRange: "$$",
       address: {
         "@type": "PostalAddress",
@@ -60,8 +67,23 @@ export const SchemaOrg = ({
         addressRegion: SITE.baseState,
         addressCountry: "US",
       },
-      areaServed: CITIES.map((c) => ({ "@type": "City", name: `${c.name}, ${c.state}` })),
-      sameAs: [SITE.social.instagram, SITE.social.facebook, SITE.social.linkedin],
+      areaServed: CITIES.map((c) => `${c.name} ${c.state}`),
+      sameAs: [
+        "https://www.facebook.com/FiveServ",
+        "https://www.instagram.com/FiveServ",
+        "https://www.linkedin.com/company/fiveserv",
+        "https://g.co/kgs/fiveserv",
+      ],
+      hasOfferCatalog: {
+        "@type": "OfferCatalog",
+        name: "Property Maintenance Services",
+        itemListElement: [
+          { "@type": "Offer", itemOffered: { "@type": "Service", name: "Make-Ready / Unit Turns", url: `${SITE.url}/make-ready/` } },
+          { "@type": "Offer", itemOffered: { "@type": "Service", name: "Property Maintenance & Repairs", url: `${SITE.url}/maintenance/` } },
+          { "@type": "Offer", itemOffered: { "@type": "Service", name: "CapEx & Renovations", url: `${SITE.url}/renovations/` } },
+          { "@type": "Offer", itemOffered: { "@type": "Service", name: "Residential Services", url: `${SITE.url}/residential/` } },
+        ],
+      },
     });
   }
 

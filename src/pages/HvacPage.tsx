@@ -141,7 +141,9 @@ const HvacPage = () => {
           </div>
 
           <AIOverviewBlock
-            answer={`${SITE.brand} provides licensed HVAC services for multifamily properties across Central Florida. Services include AC repair, unit replacement, filter maintenance, duct cleaning, and 24/7 emergency HVAC. Florida heat makes fast response critical. One call, one invoice. Serving Orlando, Kissimmee, Sanford, Winter Park, and 14 more cities.`}
+            tone="dark"
+            directAnswer="FiveServ Property Solutions provides licensed HVAC services for multifamily properties across Central Florida, critical under Florida law requiring landlords to maintain working air conditioning year-round."
+            supportingFacts="Services include AC repair, unit replacement, filter maintenance, duct cleaning, and 24/7 emergency HVAC. Response within 2 hours. Serving Orlando and 17 more cities."
           />
         </div>
       </section>

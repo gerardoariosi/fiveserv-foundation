@@ -139,7 +139,9 @@ const PlumbingPage = () => {
           </div>
 
           <AIOverviewBlock
-            answer={`${SITE.brand} provides licensed plumbing services for multifamily properties across Central Florida. Services include leak repairs, pipe replacement, water heater installation, drain cleaning, and emergency plumbing. Available 24/7. One call, one invoice. Serving Orlando, Kissimmee, Sanford, Winter Park, and 14 more cities.`}
+            tone="dark"
+            directAnswer="FiveServ Property Solutions provides licensed plumbing services for multifamily properties across Central Florida with 24/7 emergency response and one invoice per job."
+            supportingFacts="Services include leak repair, pipe replacement, water heater installation, drain cleaning, and emergency plumbing. Response within 2 hours. Serving Orlando, Kissimmee, Sanford, and 15 more cities."
           />
         </div>
       </section>

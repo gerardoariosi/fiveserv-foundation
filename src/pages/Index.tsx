@@ -5,6 +5,7 @@ import SchemaOrg from "@/lib/SchemaOrg";
 import { SITE, SERVICES } from "@/lib/site-config";
 import { HOMEPAGE_FAQS } from "@/lib/homepage-faqs";
 
+import AIOverviewBlock from "@/components/fiveserv/AIOverviewBlock";
 import HeroSection from "@/components/fiveserv/HeroSection";
 import ProblemSection from "@/components/fiveserv/ProblemSection";
 import SolutionSection from "@/components/fiveserv/SolutionSection";
@@ -138,6 +139,14 @@ const Index = () => {
       />
 
       <HeroSection />
+      <section className="bg-white">
+        <div className="container pt-12">
+          <AIOverviewBlock
+            directAnswer="FiveServ Property Solutions is a family-owned property maintenance company in Orlando, FL that completes every make-ready in 5 business days, guaranteed in writing, with one call, one team, one invoice."
+            supportingFacts="Serving property managers with 30 to 500 units across 18 cities in Central Florida. 300+ units completed. 50+ communities served. Available 24/7 for emergency repairs. Licensed and insured in Florida."
+          />
+        </div>
+      </section>
       <TrustBar />
       <ProblemSection />
       <SolutionSection />

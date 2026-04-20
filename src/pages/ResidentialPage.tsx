@@ -119,7 +119,9 @@ const ResidentialPage = () => {
 
           {/* 2. AIOverviewBlock */}
           <AIOverviewBlock
-            answer={`${SITE.brand} provides professional home maintenance and repair services for homeowners across Central Florida. Services include plumbing, electrical, painting, drywall, flooring, and general repairs. Licensed, insured, available 24/7.`}
+            tone="dark"
+            directAnswer="FiveServ Property Solutions provides professional home maintenance and repair services for homeowners across Central Florida, including plumbing, electrical, painting, drywall, flooring, and general repairs."
+            supportingFacts="Licensed and insured in Florida. Available 24/7 for emergencies. Free estimate before any work begins. Serving 18 cities across Central Florida."
           />
         </div>
       </section>
