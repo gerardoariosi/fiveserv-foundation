@@ -507,6 +507,20 @@ const SofiaChat = () => {
     // Push user message immediately
     setMessages((prev) => [...prev, mkUser(userText)]);
 
+    // Emergency override — works even when offline
+    if (isEmergencyText(userText)) {
+      setEmergencyOverride(true);
+      sayLater([
+        mkSofia(
+          activeLang === "es"
+            ? "Para emergencias estamos disponibles 24/7. Llámanos ahora."
+            : "For emergencies we are available 24/7. Call us now.",
+          { ctas: [{ kind: "link", label: activeLang === "es" ? "Llamar Ahora" : "Call Now", href: `tel:${PHONE}` }] },
+        ),
+      ]);
+      return;
+    }
+
     // FAQ keyword shortcut for free-text input (not quick reply)
     if (!fromQuickReply) {
       const faq = faqResponse(userText, activeLang);
@@ -641,35 +655,70 @@ const SofiaChat = () => {
     <>
       {/* Collapsed bubble — white circle, gold icon */}
       {!open && (
-        <button
-          type="button"
-          aria-label="Open Sofia chat"
-          onClick={() => setOpen(true)}
-          className="fixed right-6 z-[9999] flex h-14 w-14 items-center justify-center rounded-full shadow-lg transition-all hover:scale-105 focus:outline-none focus:ring-4 focus:ring-brand-gold/40"
-          style={{ background: "#FFD700", bottom: "calc(1.5rem + var(--sofia-bottom-offset, 0px))" }}
+        <div
+          className="fixed right-6 z-[9999] flex flex-col items-center"
+          style={{ bottom: "calc(1.5rem + var(--sofia-bottom-offset, 0px))" }}
         >
-          <MessageCircle className="h-7 w-7" style={{ color: "#1A1A1A" }} strokeWidth={2.25} />
-          <span className="sr-only">Chat with Sofia</span>
-          {showBadge && (
+          <button
+            type="button"
+            aria-label="Open Sofia chat"
+            onClick={() => setOpen(true)}
+            className="relative flex h-14 w-14 items-center justify-center rounded-full shadow-lg transition-all hover:scale-105 focus:outline-none focus:ring-4 focus:ring-brand-gold/40"
+            style={{ background: "#FFD700" }}
+          >
+            <MessageCircle className="h-7 w-7" style={{ color: "#1A1A1A" }} strokeWidth={2.25} />
+            <span className="sr-only">Chat with Sofia</span>
+            {/* online/offline dot */}
             <span
-              aria-label="1 new message"
-              className="sofia-badge-pulse pointer-events-none absolute flex items-center justify-center rounded-full font-bold"
+              aria-hidden
+              className="absolute"
               style={{
-                top: "-4px",
-                right: "-4px",
-                width: "18px",
-                height: "18px",
-                background: "#FFD700",
-                color: "#1A1A1A",
-                fontSize: "11px",
-                lineHeight: 1,
+                bottom: "2px",
+                right: "2px",
+                width: "12px",
+                height: "12px",
+                borderRadius: "9999px",
+                background: effectivelyOnline ? "#22c55e" : "#9CA3AF",
                 boxShadow: "0 0 0 2px #FFFFFF",
               }}
+            />
+            {showBadge && (
+              <span
+                aria-label="1 new message"
+                className="sofia-badge-pulse pointer-events-none absolute flex items-center justify-center rounded-full font-bold"
+                style={{
+                  top: "-4px",
+                  right: "-4px",
+                  width: "18px",
+                  height: "18px",
+                  background: "#FFD700",
+                  color: "#1A1A1A",
+                  fontSize: "11px",
+                  lineHeight: 1,
+                  boxShadow: "0 0 0 2px #FFFFFF",
+                }}
+              >
+                1
+              </span>
+            )}
+          </button>
+          {!effectivelyOnline && (
+            <span
+              style={{
+                marginTop: "4px",
+                fontSize: "10px",
+                color: "#6B7280",
+                background: "#FFFFFF",
+                padding: "2px 6px",
+                borderRadius: "9999px",
+                boxShadow: "0 1px 3px rgba(0,0,0,0.1)",
+                fontWeight: 600,
+              }}
             >
-              1
+              Offline
             </span>
           )}
-        </button>
+        </div>
       )}
 
       {/* Expanded panel — white, modern */}
