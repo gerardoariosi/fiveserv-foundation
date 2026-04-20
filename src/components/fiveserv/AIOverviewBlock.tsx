@@ -10,6 +10,8 @@ type AIOverviewBlockProps = {
   label?: string;
   /** Tone is kept for API compatibility but the new minimalist style is transparent on any background. */
   tone?: "light" | "dark";
+  /** When true, renders content visually hidden (SR-only) but still in the HTML for crawlers. */
+  hidden?: boolean;
 };
 
 /**
