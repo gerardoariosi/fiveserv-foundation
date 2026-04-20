@@ -371,7 +371,21 @@ const SofiaChat = () => {
   const [input, setInput] = useState("");
   const [typing, setTyping] = useState(false);
   const [showBadge, setShowBadge] = useState(false);
+  const [online, setOnline] = useState<boolean>(() => isWithinBusinessHoursET());
+  const [emergencyOverride, setEmergencyOverride] = useState(false);
+  const [offlineForm, setOfflineForm] = useState({ name: "", phone: "", need: "" });
+  const [offlineSubmitted, setOfflineSubmitted] = useState(false);
   const scrollRef = useRef<HTMLDivElement>(null);
+
+  // Recompute business hours on chat open + every 60s while open
+  useEffect(() => {
+    if (!open) return;
+    setOnline(isWithinBusinessHoursET());
+    const id = window.setInterval(() => setOnline(isWithinBusinessHoursET()), 60000);
+    return () => window.clearInterval(id);
+  }, [open]);
+
+  const effectivelyOnline = online || emergencyOverride;
 
   // Restore from sessionStorage
   useEffect(() => {
