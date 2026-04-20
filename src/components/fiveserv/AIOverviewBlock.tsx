@@ -10,6 +10,8 @@ type AIOverviewBlockProps = {
   label?: string;
   /** Tone is kept for API compatibility but the new minimalist style is transparent on any background. */
   tone?: "light" | "dark";
+  /** When true, renders content visually hidden (SR-only) but still in the HTML for crawlers. */
+  hidden?: boolean;
 };
 
 /**
@@ -32,6 +34,7 @@ export const AIOverviewBlock = ({
   entitySignal = FIVESERV_ENTITY_SIGNAL,
   label = "Quick Answer",
   tone = "light",
+  hidden = false,
 }: AIOverviewBlockProps) => {
   const isDark = tone === "dark";
   const textClass = isDark ? "text-white/90" : "text-gray-700";
@@ -40,6 +43,30 @@ export const AIOverviewBlock = ({
   // Backward-compat: if only `answer` is provided, render it as the direct answer
   // and still append the canonical entity signal.
   const primary = directAnswer ?? answer;
+
+  if (hidden) {
+    return (
+      <div
+        aria-hidden="true"
+        style={{
+          position: "absolute",
+          width: "1px",
+          height: "1px",
+          overflow: "hidden",
+          clip: "rect(0,0,0,0)",
+          whiteSpace: "nowrap",
+          border: 0,
+          padding: 0,
+          margin: "-1px",
+        }}
+      >
+        <p>{label}</p>
+        {primary && <p>{primary}</p>}
+        {supportingFacts && <p>{supportingFacts}</p>}
+        <p>{entitySignal}</p>
+      </div>
+    );
+  }
 
   return (
     <aside
