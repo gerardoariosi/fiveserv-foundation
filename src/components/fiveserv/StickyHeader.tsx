@@ -3,6 +3,7 @@ import { Link, NavLink } from "react-router-dom";
 import { Menu, Phone, X } from "lucide-react";
 import { SITE } from "@/lib/site-config";
 import Logo from "@/components/fiveserv/Logo";
+import SocialProofTicker from "@/components/fiveserv/SocialProofTicker";
 
 const NAV = [
   { to: "/", label: "Home" },
@@ -99,6 +100,8 @@ export const StickyHeader = () => {
           </button>
         </div>
       </div>
+
+      <SocialProofTicker />
 
       {open && (
         <div className="md:hidden bg-white border-t border-gray-200">

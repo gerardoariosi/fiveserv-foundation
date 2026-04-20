@@ -4,6 +4,7 @@ import StickyBanner from "@/components/fiveserv/StickyBanner";
 import Footer from "@/components/fiveserv/Footer";
 import ExitIntentPopup from "@/components/fiveserv/ExitIntentPopup";
 import SofiaChat from "@/components/fiveserv/SofiaChat";
+import ScrollProgress from "@/components/fiveserv/ScrollProgress";
 import { Helmet } from "react-helmet-async";
 import { SITE } from "@/lib/site-config";
 
@@ -34,6 +35,7 @@ export const RootLayout = () => {
         )}
       </Helmet>
 
+      <ScrollProgress />
       <StickyBanner />
       <StickyHeader />
       <main className="flex-1">
