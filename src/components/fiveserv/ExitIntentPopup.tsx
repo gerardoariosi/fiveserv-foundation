@@ -116,6 +116,7 @@ export const ExitIntentPopup = () => {
       if (sessionStorage.getItem(KEY) === "1") return;
       triggered = true;
       sessionStorage.setItem(KEY, "1");
+      setMobile(isMobile());
       setOpen(true);
     };
 
