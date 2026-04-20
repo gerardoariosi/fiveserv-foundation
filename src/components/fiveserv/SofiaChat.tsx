@@ -418,15 +418,23 @@ const SofiaChat = () => {
   }, [messages, typing, open]);
 
   // Live opening sequence — runs when the widget opens for the first time
-  // (no messages yet). Step 2: typing 600ms in, Step 3: message at 1800ms.
+  // (no messages yet). When offline (and no emergency), show offline message instead.
   useEffect(() => {
     if (!open) return;
     if (messages.length > 0) return;
     const L = t[lang];
+    const offlineMsg =
+      lang === "es"
+        ? "Hola! Estamos fuera de horario pero te llamamos mañana a primera hora. Deja tu información y nuestro equipo te contacta a las 8am."
+        : "Hi! We are currently offline but we will call you first thing in the morning. Leave your info below and our team will reach out at 8am.";
     const typingTimer = window.setTimeout(() => setTyping(true), 600);
     const messageTimer = window.setTimeout(() => {
       setTyping(false);
-      setMessages([mkSofia(L.opening, { quickReplies: [...L.openingButtons] })]);
+      if (effectivelyOnline) {
+        setMessages([mkSofia(L.opening, { quickReplies: [...L.openingButtons] })]);
+      } else {
+        setMessages([mkSofia(offlineMsg)]);
+      }
     }, 1800);
     return () => {
       window.clearTimeout(typingTimer);
