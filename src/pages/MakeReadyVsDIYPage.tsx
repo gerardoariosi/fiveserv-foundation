@@ -181,7 +181,7 @@ const MakeReadyVsDIYPage = () => {
                     </div>
                     <div className={`px-5 py-4 border-t border-gray-100 ${i % 2 === 0 ? "bg-white" : "bg-gray-50"}`}>
                       <p className="flex items-start gap-2 text-gray-600">
-                        <X className="mt-0.5 h-4 w-4 shrink-0 text-red-500" />
+                        <X className="mt-0.5 h-4 w-4 shrink-0 text-gray-400" />
                         <span>{row.diy}</span>
                       </p>
                     </div>

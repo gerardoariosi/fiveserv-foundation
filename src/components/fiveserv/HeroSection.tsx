@@ -2,7 +2,6 @@ import { ArrowRight, Phone } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
 import { SITE } from "@/lib/site-config";
 import { useReveal } from "@/hooks/use-fiveserv";
-import AIOverviewBlock from "./AIOverviewBlock";
 
 const WhatsAppIcon = ({ className }: { className?: string }) => (
   <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" className={className}>
@@ -136,10 +135,6 @@ export const HeroSection = ({
               </li>
             ))}
           </ul>
-
-          <AIOverviewBlock
-            answer={`${SITE.brand} Property Solutions provides property maintenance and make-ready services across Central Florida. We complete every unit turn in 5 business days, guaranteed. One call, one team, one invoice — serving property managers with 30 to 500 units.`}
-          />
         </div>
       </div>
     </section>

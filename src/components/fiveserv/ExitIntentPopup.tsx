@@ -100,6 +100,7 @@ export const ExitIntentPopup = () => {
   const { pathname } = useLocation();
   const [open, setOpen] = useState(false);
   const [closing, setClosing] = useState(false);
+  const [mobile, setMobile] = useState(false);
   const offer = getOffer(pathname);
 
   useEffect(() => {
@@ -115,6 +116,7 @@ export const ExitIntentPopup = () => {
       if (sessionStorage.getItem(KEY) === "1") return;
       triggered = true;
       sessionStorage.setItem(KEY, "1");
+      setMobile(isMobile());
       setOpen(true);
     };
 
@@ -190,9 +192,9 @@ export const ExitIntentPopup = () => {
           width: "100%",
           maxWidth: "480px",
           backgroundColor: "#1A1A1A",
-          border: "2px solid #FFD700",
+          border: "1px solid #FFD700",
           borderRadius: "12px",
-          padding: "32px 28px",
+          padding: mobile ? "24px" : "40px",
           color: "#FFFFFF",
           transform: closing ? "scale(0.8)" : "scale(1)",
           opacity: closing ? 0 : 1,
@@ -224,7 +226,7 @@ export const ExitIntentPopup = () => {
             padding: "4px",
           }}
         >
-          <X size={20} />
+          <X size={24} />
         </button>
 
         <h2

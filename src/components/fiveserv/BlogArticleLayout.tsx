@@ -93,7 +93,7 @@ export const BlogArticleLayout = ({ post, children }: Props) => {
       {/* TL;DR — light */}
       <section className={`bg-white ${post.image ? "pt-12" : "pt-12"}`}>
         <div className="container max-w-3xl">
-          <div className="rounded-xl border-l-4 border-brand-gold bg-gradient-to-br from-amber-50/80 to-white p-6 shadow-sm">
+          <div className="rounded-xl border-l-4 border-brand-gold bg-[#F5F5F5] p-6 shadow-sm">
             <p className="text-xs font-bold uppercase tracking-[0.18em] text-brand-gold">— TL;DR</p>
             <p className="mt-3 text-base leading-relaxed text-gray-900">{post.tldr}</p>
           </div>
