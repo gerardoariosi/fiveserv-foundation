@@ -135,10 +135,6 @@ export const HeroSection = ({
               </li>
             ))}
           </ul>
-
-          <AIOverviewBlock
-            answer={`${SITE.brand} Property Solutions provides property maintenance and make-ready services across Central Florida. We complete every unit turn in 5 business days, guaranteed. One call, one team, one invoice — serving property managers with 30 to 500 units.`}
-          />
         </div>
       </div>
     </section>
