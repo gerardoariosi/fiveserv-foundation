@@ -15,6 +15,7 @@ import ContactCTA from "@/components/fiveserv/ContactCTA";
 import BeforeAfterSlider from "@/components/fiveserv/BeforeAfterSlider";
 import LiveStatsBar from "@/components/fiveserv/LiveStatsBar";
 import TrustBar from "@/components/fiveserv/TrustBar";
+import VacancyCalculator from "@/components/fiveserv/VacancyCalculator";
 import { useReveal } from "@/hooks/use-fiveserv";
 import BrandName from "@/components/fiveserv/BrandName";
 
@@ -156,7 +157,7 @@ const MakeReadyPage = () => {
         </div>
       </section>
 
-      {/* Before / After slider */}
+      <VacancyCalculator />
       <section className="bg-white">
         <div className="container py-20">
           <SectionReveal>

@@ -12,6 +12,7 @@ import ServiceCard from "@/components/fiveserv/ServiceCard";
 import SectionHeading from "@/components/fiveserv/SectionHeading";
 import FivePillars from "@/components/fiveserv/FivePillars";
 import LiveStatsBar from "@/components/fiveserv/LiveStatsBar";
+import VacancyCalculator from "@/components/fiveserv/VacancyCalculator";
 import FamilyStory from "@/components/fiveserv/FamilyStory";
 import TestimonialCard from "@/components/fiveserv/TestimonialCard";
 import CityGrid from "@/components/fiveserv/CityGrid";
@@ -141,6 +142,7 @@ const Index = () => {
       <ProblemSection />
       <SolutionSection />
       <ServicesGrid />
+      <VacancyCalculator />
       <FivePillars />
       <LiveStatsBar />
       <FamilyStory />

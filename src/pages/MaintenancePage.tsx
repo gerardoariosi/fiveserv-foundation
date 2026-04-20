@@ -14,6 +14,7 @@ import LeadMagnetSection from "@/components/fiveserv/LeadMagnetSection";
 import ContactCTA from "@/components/fiveserv/ContactCTA";
 import { useReveal } from "@/hooks/use-fiveserv";
 import BrandName from "@/components/fiveserv/BrandName";
+import VacancyCalculator from "@/components/fiveserv/VacancyCalculator";
 
 const TRADES = [
   { icon: Droplets, title: "Plumbing", desc: "Leaks, drains, water heaters, fixtures." },
@@ -128,6 +129,8 @@ const MaintenancePage = () => {
           </SectionReveal>
         </div>
       </section>
+
+      <VacancyCalculator />
 
       {/* Response Tiers */}
       <section className="bg-white">
