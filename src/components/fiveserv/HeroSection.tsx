@@ -2,7 +2,6 @@ import { ArrowRight, Phone } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
 import { SITE } from "@/lib/site-config";
 import { useReveal } from "@/hooks/use-fiveserv";
-import AIOverviewBlock from "./AIOverviewBlock";
 
 const WhatsAppIcon = ({ className }: { className?: string }) => (
   <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" className={className}>
