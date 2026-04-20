@@ -271,6 +271,16 @@ const MaintenancePage = () => {
                     </li>
                   );
                 })}
+                <li>
+                  <Link to="/fiveserv-vs-handyman-orlando" className="inline-flex items-center gap-2 text-gray-900 hover:text-gray-900 hover:underline">
+                    <ArrowRight className="h-4 w-4" /> <BrandName variant="dark" /> vs Handyman in Orlando
+                  </Link>
+                </li>
+                <li>
+                  <Link to="/make-ready-vs-diy-property-management" className="inline-flex items-center gap-2 text-gray-900 hover:text-gray-900 hover:underline">
+                    <ArrowRight className="h-4 w-4" /> Make-Ready In-House vs <BrandName variant="dark" />
+                  </Link>
+                </li>
               </ul>
             </div>
           </SectionReveal>
