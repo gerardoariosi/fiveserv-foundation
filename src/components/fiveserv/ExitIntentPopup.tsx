@@ -100,6 +100,7 @@ export const ExitIntentPopup = () => {
   const { pathname } = useLocation();
   const [open, setOpen] = useState(false);
   const [closing, setClosing] = useState(false);
+  const [mobile, setMobile] = useState(false);
   const offer = getOffer(pathname);
 
   useEffect(() => {
