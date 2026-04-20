@@ -747,16 +747,16 @@ const SofiaChat = () => {
             <div className="flex-1 leading-tight">
               <div className="flex items-center gap-2">
                 <p className="font-semibold text-white" style={{ fontSize: "15px" }}>
-                  {L.headerTitle}
+                  {effectivelyOnline ? L.headerTitle : `${L.headerTitle} — ${lang === "es" ? "Fuera de Horario" : "Currently Offline"}`}
                 </p>
                 <span
-                  className="inline-block rounded-full bg-green-400"
-                  style={{ width: "8px", height: "8px" }}
+                  className="inline-block rounded-full"
+                  style={{ width: "8px", height: "8px", background: effectivelyOnline ? "#4ade80" : "#9CA3AF" }}
                   aria-hidden
                 />
               </div>
               <p className="text-gray-400" style={{ fontSize: "12px" }}>
-                <BrandName variant="light" /> Assistant · {L.online}
+                <BrandName variant="light" /> Assistant · {effectivelyOnline ? L.online : (lang === "es" ? "Fuera de línea" : "Offline")}
               </p>
             </div>
             <button
