@@ -87,14 +87,6 @@ const FiveServVsHandymanPage = () => {
           { name: "FiveServ vs Handyman Orlando", url: URL },
         ]}
         faqs={FAQS}
-        service={{
-          slug: "make-ready",
-          name: "Property Maintenance Orlando",
-          description:
-            "Licensed property maintenance for multifamily properties in Orlando. Make-ready, plumbing, electrical, HVAC, renovations under one contract.",
-          // @ts-expect-error — SERVICES type allows partial here for schema only
-          icon: undefined,
-        }}
       />
 
       {/* HERO */}
