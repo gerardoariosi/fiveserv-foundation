@@ -29,12 +29,12 @@ export const ProblemSection = () => {
           eyebrow="The Problem"
           subtext={
             <>
-              The average make-ready takes <span className="font-bold text-red-600">10+ days</span> when you coordinate vendors yourself.
+              The average make-ready takes <span className="font-bold text-gray-900">10+ days</span> when you coordinate vendors yourself.
             </>
           }
         >
           Managing a Make-Ready Shouldn't Require{" "}
-          <span className="text-red-600">5 Different Vendors.</span>
+          <span className="text-gray-900">5 Different Vendors.</span>
         </SectionHeading>
 
         <div className="mt-16 grid gap-6 md:grid-cols-3">
@@ -43,10 +43,10 @@ export const ProblemSection = () => {
             return (
               <article
                 key={p.title}
-                className="rounded-2xl border-l-4 border-red-600 bg-white p-6 shadow-sm transition-shadow hover:shadow-md"
+                className="rounded-2xl border-l-4 border-brand-gold bg-white p-6 shadow-sm transition-shadow hover:shadow-md"
               >
-                <Icon className="h-8 w-8 text-red-600" strokeWidth={2.25} />
-                <h3 className="mt-4 font-display text-xl font-bold text-red-600">{p.title}</h3>
+                <Icon className="h-8 w-8 text-brand-gold" strokeWidth={2.25} />
+                <h3 className="mt-4 font-display text-xl font-bold text-gray-900">{p.title}</h3>
                 <p className="mt-2 text-sm leading-relaxed text-gray-700">{p.description}</p>
               </article>
             );
