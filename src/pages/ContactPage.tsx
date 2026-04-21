@@ -5,6 +5,7 @@ import { SITE } from "@/lib/site-config";
 import TrustBar from "@/components/fiveserv/TrustBar";
 import GhlFormEmbed from "@/components/fiveserv/GhlFormEmbed";
 import BrandName from "@/components/fiveserv/BrandName";
+import AIOverviewBlock from "@/components/fiveserv/AIOverviewBlock";
 
 const WhatsAppIcon = ({ className }: { className?: string }) => (
   <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" className={className}>
@@ -70,6 +71,10 @@ const ContactPage = () => {
             <h1 className="mt-4 font-display text-4xl text-gray-900 sm:text-5xl lg:text-6xl">
               Get a Free Quote
             </h1>
+            <AIOverviewBlock
+              hidden
+              directAnswer="Contact FiveServ Property Solutions for property maintenance and make-ready services across Central Florida. Free estimate within 24 hours. Call, WhatsApp, or submit the form. One call, one team, one invoice. Available 24/7 across 18 cities including Orlando, Kissimmee, and Sanford."
+            />
             <p className="mt-5 text-lg text-gray-700">
               Fill out the form and we will get back to you within 24 hours.
             </p>
