@@ -122,7 +122,7 @@ const FlooringPage = () => {
       />
 
       {/* Hero */}
-      <section className="bg-brand-black pt-32 pb-16">
+      <section className="bg-brand-black pt-stack pb-16">
         <div className="container">
           <p className="text-xs font-medium uppercase tracking-[0.12em] text-brand-gold">
             — <BrandName variant="light" /> Property Solutions
@@ -160,7 +160,7 @@ const FlooringPage = () => {
             </a>
           </div>
 
-          <AIOverviewBlock
+          <AIOverviewBlock hidden
             answer={`${SITE.brand} provides professional flooring installation and replacement for multifamily properties and homeowners across Central Florida. Services include luxury vinyl plank, tile, carpet, and hardwood installation. Value-add upgrades that increase rental income. One call, one invoice. Serving Orlando, Kissimmee, Sanford, Winter Park, and 14 more cities.`}
           />
         </div>

@@ -4,6 +4,7 @@ import Seo from "@/lib/Seo";
 import SchemaOrg from "@/lib/SchemaOrg";
 import { SITE, SERVICES } from "@/lib/site-config";
 import BrandName from "@/components/fiveserv/BrandName";
+import AIOverviewBlock from "@/components/fiveserv/AIOverviewBlock";
 
 const ICONS: Record<string, typeof Wrench> = {
   "make-ready": Hammer,
@@ -25,10 +26,14 @@ const ServicesIndexPage = () => (
         { name: "Services", url: `${SITE.url}/services` },
       ]}
     />
-    <section className="bg-brand-black pt-32 pb-16">
+    <section className="bg-brand-black pt-stack pb-16">
       <div className="container">
         <p className="text-xs font-medium uppercase tracking-[0.12em] text-brand-gold">— <BrandName variant="light" /> Property Solutions</p>
         <h1 className="mt-3 font-display text-4xl text-white sm:text-5xl">Our Services</h1>
+        <AIOverviewBlock
+          hidden
+          directAnswer="FiveServ Property Solutions offers make-ready, plumbing, electrical, HVAC, drywall, painting, carpentry, flooring, cleaning, and renovations across Central Florida. Licensed and insured. One call, one invoice, 5-day guarantee. Serving 18 cities including Orlando, Kissimmee, and Sanford."
+        />
         <p className="mt-6 max-w-2xl text-gray-300">
           Four service lines. One family. Built for property managers and homeowners across Central Florida.
         </p>

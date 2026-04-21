@@ -8,7 +8,7 @@ const NotFound = () => {
   return (
     <>
       <Seo title="Page Not Found" description="The page you're looking for doesn't exist. Call FiveServ Property Solutions." path="/404" noIndex />
-      <section className="bg-brand-black pt-32 pb-24">
+      <section className="bg-brand-black pt-stack pb-24">
         <div className="container text-center">
           <Link to="/" className="font-display text-4xl">
             <span className="text-brand-gold">F</span>

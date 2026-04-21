@@ -105,7 +105,7 @@ const HvacPage = () => {
       />
 
       {/* Hero */}
-      <section className="bg-brand-black pt-32 pb-16">
+      <section className="bg-brand-black pt-stack pb-16">
         <div className="container">
           <p className="text-xs font-medium uppercase tracking-[0.12em] text-brand-gold">
             — <BrandName variant="light" /> Property Solutions
@@ -140,7 +140,7 @@ const HvacPage = () => {
             </a>
           </div>
 
-          <AIOverviewBlock
+          <AIOverviewBlock hidden
             tone="dark"
             directAnswer="FiveServ Property Solutions provides licensed HVAC services for multifamily properties across Central Florida, critical under Florida law requiring landlords to maintain working air conditioning year-round."
             supportingFacts="Services include AC repair, unit replacement, filter maintenance, duct cleaning, and 24/7 emergency HVAC. Response within 2 hours. Serving Orlando and 17 more cities."

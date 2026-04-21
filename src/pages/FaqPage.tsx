@@ -16,6 +16,7 @@ import {
   type FaqCategory,
 } from "@/lib/general-faqs";
 import BrandName from "@/components/fiveserv/BrandName";
+import AIOverviewBlock from "@/components/fiveserv/AIOverviewBlock";
 
 type Filter = "all" | FaqCategory;
 
@@ -54,7 +55,7 @@ const FaqPage = () => {
       />
 
       {/* 1. Hero */}
-      <section className="bg-brand-black pt-32 pb-12">
+      <section className="bg-brand-black pt-stack pb-12">
         <div className="container">
           <p className="text-xs font-medium uppercase tracking-[0.12em] text-brand-gold">
             — <BrandName variant="light" /> Property Solutions
@@ -65,6 +66,10 @@ const FaqPage = () => {
               Everything Property Managers Need to Know
             </span>
           </h1>
+          <AIOverviewBlock
+            hidden
+            directAnswer="Frequently asked questions about FiveServ Property Solutions: 5-day make-ready guarantee, 24/7 emergency response, one invoice billing, licensed and insured in Florida. Serving multifamily property managers across 18 cities in Central Florida including Orlando, Kissimmee, Sanford, Winter Park, and Lakeland."
+          />
           <p className="mt-6 max-w-2xl text-lg text-gray-300">
             30 answers across make-ready, maintenance, CapEx, and getting started.
             All answers visible — no clicks required.

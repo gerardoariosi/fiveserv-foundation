@@ -47,7 +47,7 @@ const AboutPage = () => {
       />
 
       {/* 1. Hero */}
-      <section className="bg-brand-black pt-32 pb-16">
+      <section className="bg-brand-black pt-stack pb-16">
         <div className="container">
           <p className="text-xs font-medium uppercase tracking-[0.12em] text-brand-gold">
             — About <BrandName variant="light" /> Property Solutions
@@ -70,7 +70,7 @@ const AboutPage = () => {
           </ul>
 
           {/* 2. AIOverviewBlock */}
-          <AIOverviewBlock answer={aiAnswer} />
+          <AIOverviewBlock hidden answer={aiAnswer} />
         </div>
       </section>
 

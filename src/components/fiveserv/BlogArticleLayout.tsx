@@ -40,7 +40,7 @@ export const BlogArticleLayout = ({ post, children }: Props) => {
       />
 
       {/* Hero — dark */}
-      <section className="relative bg-brand-black pt-32 pb-32">
+      <section className="relative bg-brand-black pt-stack pb-32">
         <div className="container max-w-3xl">
           <Link
             to="/blog"

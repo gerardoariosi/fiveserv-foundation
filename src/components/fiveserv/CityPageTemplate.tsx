@@ -40,7 +40,7 @@ export const CityPageTemplate = ({ city, service, faqs = [] }: CityPageData) => 
       />
 
       {/* Hero — dark */}
-      <section className="bg-brand-black pt-32 pb-16">
+      <section className="bg-brand-black pt-stack pb-16">
         <div className="container">
           <p className="text-xs font-medium uppercase tracking-[0.12em] text-brand-gold">— <BrandName variant="light" /> Property Solutions</p>
           <h1 className="mt-3 font-display font-black text-4xl text-white sm:text-5xl lg:text-6xl">
@@ -51,7 +51,7 @@ export const CityPageTemplate = ({ city, service, faqs = [] }: CityPageData) => 
             <span className="flex items-center gap-2"><Clock className="h-4 w-4 text-brand-gold" /> Response: {city.responseTime}</span>
           </div>
 
-          <AIOverviewBlock
+          <AIOverviewBlock hidden
             tone="dark"
             answer={`${SITE.brand} Property Solutions provides ${service?.name.toLowerCase() ?? "property maintenance and make-ready services"} in ${city.name}, ${city.state}. We serve zip codes ${city.zips.slice(0, 5).join(", ")}${city.zips.length > 5 ? "+" : ""}. Make-ready in 5 days. One call. One invoice. ${city.responseTime} response. Available 24/7.`}
           />

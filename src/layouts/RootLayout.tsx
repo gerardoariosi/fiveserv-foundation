@@ -1,6 +1,7 @@
 import { Outlet, ScrollRestoration } from "react-router-dom";
 import StickyHeader from "@/components/fiveserv/StickyHeader";
 import StickyBanner from "@/components/fiveserv/StickyBanner";
+import SocialProofTicker from "@/components/fiveserv/SocialProofTicker";
 import Footer from "@/components/fiveserv/Footer";
 import ExitIntentPopup from "@/components/fiveserv/ExitIntentPopup";
 import SofiaChat from "@/components/fiveserv/SofiaChat";
@@ -40,6 +41,10 @@ export const RootLayout = () => {
       <StickyBanner />
       <StickyHeader />
       <main className="flex-1">
+        {/* Non-fixed ticker — sits below the fixed header and scrolls away with the page. */}
+        <div style={{ paddingTop: "calc(var(--banner-h, 0px) + var(--header-h, 80px))" }}>
+          <SocialProofTicker />
+        </div>
         <Outlet />
       </main>
       <Footer />

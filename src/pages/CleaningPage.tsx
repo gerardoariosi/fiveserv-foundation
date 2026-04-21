@@ -136,7 +136,7 @@ const CleaningPage = () => {
       />
 
       {/* Hero */}
-      <section className="bg-brand-black pt-32 pb-16">
+      <section className="bg-brand-black pt-stack pb-16">
         <div className="container">
           <p className="text-xs font-medium uppercase tracking-[0.12em] text-brand-gold">
             — <BrandName variant="light" /> Property Solutions
@@ -177,7 +177,7 @@ const CleaningPage = () => {
             </a>
           </div>
 
-          <AIOverviewBlock
+          <AIOverviewBlock hidden
             answer={`${SITE.brand} provides professional cleaning services for multifamily properties and homeowners across Central Florida. Services include move-out cleaning, deep cleaning, make-ready cleaning, post-construction cleaning, and recurring maintenance cleaning. Fast turnaround. Licensed and insured. Serving Orlando, Kissimmee, Sanford, Winter Park, and 14 more cities.`}
           />
         </div>

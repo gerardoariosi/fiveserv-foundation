@@ -118,7 +118,7 @@ const PaintingPage = () => {
       />
 
       {/* Hero */}
-      <section className="bg-brand-black pt-32 pb-16">
+      <section className="bg-brand-black pt-stack pb-16">
         <div className="container">
           <p className="text-xs font-medium uppercase tracking-[0.12em] text-brand-gold">
             — <BrandName variant="light" /> Property Solutions
@@ -156,7 +156,7 @@ const PaintingPage = () => {
             </a>
           </div>
 
-          <AIOverviewBlock
+          <AIOverviewBlock hidden
             answer={`${SITE.brand} provides professional interior and exterior painting services across Central Florida for both property managers and homeowners. Services include make-ready repaints, full unit repaints, accent walls, exterior painting, and color consultation. Licensed, insured, fast turnaround. Serving Orlando, Kissimmee, Sanford, Winter Park, and 14 more cities.`}
           />
         </div>
