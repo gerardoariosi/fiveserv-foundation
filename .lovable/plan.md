@@ -1,75 +1,111 @@
 
 
-## Audit Findings
+## Audit Report
 
-### ISSUE 1 — Ghost element below hero (CRITICAL)
-- **`HeroSection.tsx` lines 140–142** renders an `AIOverviewBlock` INSIDE the dark hero with default `tone="light"` → text uses `text-gray-700` against the `bg-brand-black/60` overlay. Result: nearly-invisible "ghost" text. Plus, `Index.tsx` lines 142–149 renders the *same* component again right after the hero. **Two AI Overview blocks exist back-to-back, one of them invisible.**
-- **Fix**: Remove the `AIOverviewBlock` from `HeroSection.tsx` entirely. Keep only the visible one in `Index.tsx`.
+### ISSUE 1 — Sticky Banner & Social Proof Ticker
 
-### ISSUE 2 — Off-brand colors
-- **`ProblemSection.tsx`**: 6 uses of `text-red-600` / `border-red-600` (subtext, headline accent, card border, icon, title). Off-palette.
-  - Fix: Replace red with `#1A1A1A` (text) and `#FFD700` (icon/border accent).
-- **`FiveServVsHandymanPage.tsx` line 166** & **`MakeReadyVsDIYPage.tsx` line 184**: `text-red-500` on the X icons.
-  - Fix: Use `text-gray-400` (neutral X) — keeps brand palette.
-- **`BlogArticleLayout.tsx` line 96**: `bg-gradient-to-br from-amber-50/80 to-white` on TL;DR card.
-  - Fix: Replace with solid `bg-[#F5F5F5]`.
-- `MaintenanceCityPage.tsx` line 88 gradient is a legit fade-to-black on a dark hero — keep (it's brand-black to brand-black, not decorative).
-- `BlogArticleLayout.tsx` line 87 dark image gradient overlay — keep (functional readability overlay).
+**Components involved**
+- `StickyBanner.tsx` — `position: fixed; top: 0; z-50; height: 32px (h-8)`, gold bar.
+- `StickyHeader.tsx` — `position: fixed; z-40`, offset via inline `style={{ top: "var(--banner-h, 0px)" }}`. Header body height = `h-20` (80px). The `SocialProofTicker` renders **inside** the header (line 104), adds ~36px more.
+- `SocialProofTicker.tsx` — not fixed; just a `div` with `py-2 px-3` (~36px tall). Sits under the nav row, also inside the fixed header.
 
-### ISSUE 3 — Typography inconsistency
-- `ProblemSection.tsx` headline uses red accent span. Standardize to `text-gray-900` per brand rules.
-- AIOverviewBlock label uses `text-gray-900` on light, but the hero ghost block forced `text-brand-gold` only when `tone="dark"` was passed (it wasn't). After removal, no further change needed.
+**Total fixed top stack**
+- Banner visible: 32px + 80px nav + ~36px ticker = **~148px**
+- Banner dismissed: 0 + 80 + 36 = **~116px**
 
-### ISSUE 4 — ExitIntentPopup spec mismatch
-- Spec says **1px** border, current is **2px solid #FFD700**. Spec says **40px desktop / 24px mobile padding**, current is `32px 28px`. Spec says **24px close X**, current is `size={20}`. Spec says **NO drop shadows** — currently OK.
-- Fix: border `1px`, padding `40px desktop / 24px mobile` (responsive via media query inline), close X `size={24}`.
+**Problem**
+- Page hero offsets only account for banner + 80px nav. They do NOT account for the ticker (~36px). Anywhere the ticker is shown the top of every hero gets clipped.
+  - `HeroSection.tsx` line 29–30: offset = `calc(var(--banner-h) + 5rem)` → ignores ticker (homepage hero loses ~36px from top).
+  - All pages using `pt-32` (8rem = 128px) for the dark hero: enough for banner (32) + nav (80) = 112, leaves only 16px breathing room — **with the ticker (36px) the ticker overlaps the eyebrow/H1**.
+  - Pages affected by `pt-32` clipping: `AboutPage`, `ContactPage` (uses `pt-32 sm:pt-40`), `ElectricalPage`, `RenovationsPage`, `NotFound`, `HvacPage`, `ServicesIndexPage`, `CitiesIndexPage`, `FlooringPage`, `CarpentryPage`, `MakeReadyPage`, `MaintenancePage`, `PlaceholderPage`, `BlogPage`, `PaintingPage`, `PlumbingPage`, `DrywallPage`, `CleaningPage`, `ResidentialPage`, `MaintenanceCityPage`, `ServiceCityPage`, `CityPageTemplate`, `TampaBayPage`, `FaqPage`, `FiveServVsHandymanPage`, `MakeReadyVsDIYPage`, `BlogArticlePage`, plus the homepage `HeroSection`.
 
-### ISSUE 5 — AI-content phrases
-- Search returned only legit uses (e.g. "best-in-class operators" in a critical FAQ answer, "leverage" as a noun in negotiation context). No corporate filler to remove. **No copy changes needed here.**
+**Proposed fix (single-source-of-truth)**
+1. Move `SocialProofTicker` OUT of `StickyHeader` and either (a) drop it, or (b) keep it but render it as a non-fixed element BELOW the fixed header in `RootLayout`, so it scrolls away with the page (cleanest fix — no offset math needed).
+2. Set a CSS variable for the full fixed-stack height in `StickyHeader.tsx`:
+   `document.documentElement.style.setProperty("--header-h", "80px")` and let `--banner-h` stay at 32/0. Combined offset `--stack-h = banner-h + header-h`.
+3. Replace `pt-32` everywhere with inline style `paddingTop: "calc(var(--banner-h,0px) + var(--header-h,80px) + 2rem)"` via a small `.pt-stack` utility class added in `index.css`.
+4. Update `HeroSection.tsx` to use the same `--stack-h` variable.
 
-### ISSUE 6 — Mobile / performance
-- Hero video has no `width`/`height` attrs — videos don't need them the same way images do (CLS handled by `min-height` on section). OK.
-- No images found without `loading="lazy"` issues in critical paths during this audit. Not addressing speculative perf in this pass to keep scope tight.
-
-### ISSUE 7 — Other popups/modals
-- `SofiaChat.tsx` — separate component, brand-aligned per prior pass. No change in this audit unless user requests.
+**Files to edit (offset)**: `src/index.css` (add `.pt-stack` utility), `src/components/fiveserv/StickyHeader.tsx` (set `--header-h`, remove ticker), `src/layouts/RootLayout.tsx` (mount ticker as non-fixed under header, optional), `src/components/fiveserv/HeroSection.tsx`, and the 27 pages listed above to swap `pt-32` → `pt-stack`.
 
 ---
 
-## Fixes — Single Pass
+### ISSUE 2 — AIOverviewBlock visibility
 
-1. **`src/components/fiveserv/HeroSection.tsx`**
-   - Remove `AIOverviewBlock` import and the `<AIOverviewBlock ... />` block at the bottom of the hero (lines 5, 140–142).
+**Component**: `AIOverviewBlock.tsx` already supports `hidden` prop (renders SR-only with `clip: rect(0,0,0,0)`, `aria-hidden`). Currently NO page passes `hidden`, so every block renders **visibly**.
 
-2. **`src/components/fiveserv/ProblemSection.tsx`**
-   - Replace all `text-red-600` / `border-red-600` with brand tokens:
-     - Headline accent span: `text-gray-900` (drops red, keeps emphasis via weight).
-     - Subtext "10+ days" → `text-gray-900 font-bold` (no red).
-     - Card: `border-l-4 border-brand-gold` instead of red.
-     - Icon: `text-brand-gold`.
-     - Card title `<h3>`: `text-gray-900`.
+**Pages where AIOverviewBlock IS visible (must add `hidden` prop)**
+| Page | File | Note |
+|---|---|---|
+| Homepage | `src/pages/Index.tsx` | visible block in white section |
+| /make-ready/ | `src/pages/MakeReadyPage.tsx` | visible |
+| /maintenance/ | `src/pages/MaintenancePage.tsx` | visible |
+| /renovations/ | `src/pages/RenovationsPage.tsx` | visible (tone=dark) |
+| /residential/ | `src/pages/ResidentialPage.tsx` | visible (tone=dark) |
+| /plumbing/ | `src/pages/PlumbingPage.tsx` | visible |
+| /electrical/ | `src/pages/ElectricalPage.tsx` | visible |
+| /hvac/ | `src/pages/HvacPage.tsx` | visible |
+| /carpentry/ | `src/pages/CarpentryPage.tsx` | visible |
+| /drywall/ | `src/pages/DrywallPage.tsx` | visible |
+| /painting/ | `src/pages/PaintingPage.tsx` | visible |
+| /flooring/ | `src/pages/FlooringPage.tsx` | visible |
+| /cleaning/ | `src/pages/CleaningPage.tsx` | visible |
+| /about/ | `src/pages/AboutPage.tsx` | visible |
+| All 18 city pages | `src/components/fiveserv/CityPageTemplate.tsx` | visible (tone=dark) |
+| All city × service pages | `src/pages/MaintenanceCityPage.tsx` | visible |
+| /fiveserv-vs-handyman-orlando/ | `src/pages/FiveServVsHandymanPage.tsx` | visible |
+| /make-ready-vs-diy-property-management/ | `src/pages/MakeReadyVsDIYPage.tsx` | visible |
 
-3. **`src/pages/FiveServVsHandymanPage.tsx`** — change `text-red-500` → `text-gray-400` on X icon (line 166).
+**Pages MISSING AIOverviewBlock (must add hidden block)**
+| Page | File | Proposed 40–60 word direct answer |
+|---|---|---|
+| /contact/ | `src/pages/ContactPage.tsx` | "Contact FiveServ Property Solutions for property maintenance and make-ready services across Central Florida. Free estimate within 24 hours. Call, WhatsApp, or submit the form. One call, one team, one invoice. Available 24/7 across 18 cities including Orlando, Kissimmee, and Sanford." |
+| /faq/ | `src/pages/FaqPage.tsx` | "Frequently asked questions about FiveServ Property Solutions: 5-day make-ready guarantee, 24/7 emergency response, one invoice billing, licensed and insured in Florida. Serving multifamily property managers across 18 cities in Central Florida including Orlando, Kissimmee, Sanford, Winter Park, and Lakeland." |
+| /services/ | `src/pages/ServicesIndexPage.tsx` | "FiveServ Property Solutions offers make-ready, plumbing, electrical, HVAC, drywall, painting, carpentry, flooring, cleaning, and renovations across Central Florida. Licensed and insured. One call, one invoice, 5-day guarantee. Serving 18 cities including Orlando, Kissimmee, and Sanford." |
+| /cities/ + /service-areas/ | `src/pages/CitiesIndexPage.tsx` | "FiveServ Property Solutions serves 18 cities across Central Florida including Orlando, Kissimmee, Sanford, Winter Park, Lakeland, Altamonte Springs, Apopka, Ocoee, Winter Garden, Clermont, and St. Cloud. 24/7 emergency response within 2 hours. 5-day make-ready guarantee." |
+| /blog/ | `src/pages/BlogPage.tsx` | "FiveServ Property Solutions blog covering make-ready, multifamily maintenance, CapEx renovations, and property management best practices in Central Florida. Written by operators serving 50+ communities and 300+ units across 18 cities including Orlando, Kissimmee, and Sanford." |
+| /tampa-bay/ | `src/pages/TampaBayPage.tsx` | "FiveServ Property Solutions is expanding to Tampa Bay in 2025. Same 5-day make-ready guarantee, 24/7 emergency response, one-invoice billing, and licensed multifamily maintenance — extending the Central Florida operation built across 18 cities and 300+ units." |
+| /service-cities/:city/:service | `src/pages/ServiceCityPage.tsx` | (already routed through generic template — verify; if no block, add hidden one mirroring `MaintenanceCityPage` copy.) |
+| /404 | `src/pages/NotFound.tsx` | optional — skip (noindex). |
+| /thank-you-* | both pages | skip (noindex post-conversion). |
+| /terms/ | `src/pages/TermsPage.tsx` | skip (legal). |
 
-4. **`src/pages/MakeReadyVsDIYPage.tsx`** — change `text-red-500` → `text-gray-400` on X icon (line 184).
+**Fix per page**: pass `hidden` prop to every existing `<AIOverviewBlock ... />` call, AND add new `<AIOverviewBlock hidden ... />` calls right after the `<h1>` on the 7 missing pages above.
 
-5. **`src/components/fiveserv/BlogArticleLayout.tsx`** — replace gradient TL;DR card bg `bg-gradient-to-br from-amber-50/80 to-white` with `bg-[#F5F5F5]` (line 96).
+---
 
-6. **`src/components/fiveserv/ExitIntentPopup.tsx`**
-   - Border: `2px solid #FFD700` → `1px solid #FFD700`.
-   - Padding: responsive — use `40px` on desktop, `24px` on mobile (track via `useState`+`matchMedia` already detects mobile via `isMobile()` helper; inline-style padding switched accordingly, computed once on open).
-   - Close X icon: `size={20}` → `size={24}`.
+## Implementation Plan (single pass once approved)
 
-### Out of scope (kept as-is)
-- All routing, forms, GHL integrations, Sofia logic, schemas, sitemap, content copy.
-- shadcn/ui internal files (`toast`, `toggle`, `calendar`, etc.) — these are library defaults, not user-facing brand surfaces in any meaningful way.
-- Functional gradients (image overlay on blog hero, hero-to-section fade on city page).
+1. **Restructure top stack**
+   - In `StickyHeader.tsx`: set `--header-h: 80px` on mount, remove `<SocialProofTicker />` from inside the fixed header.
+   - In `src/layouts/RootLayout.tsx`: render `<SocialProofTicker />` as a normal (non-fixed) section that scrolls with the page, placed just below where the fixed header would visually end (use `paddingTop: var(--stack-h)` wrapper or simply place it inside `<main>` above `<Outlet/>`).
+   - In `src/index.css`: add
+     ```css
+     .pt-stack { padding-top: calc(var(--banner-h, 0px) + var(--header-h, 80px) + 2rem); }
+     @media (min-width: 768px) { .pt-stack { padding-top: calc(var(--banner-h, 0px) + var(--header-h, 80px) + 3rem); } }
+     ```
+   - Update `HeroSection.tsx` lines 29–30 to use `--header-h` (drop hardcoded `5rem`).
+   - Swap `pt-32` → `pt-stack` in the 27 page files listed above.
 
-### Files touched (6)
+2. **Hide every existing AIOverviewBlock**
+   - Add `hidden` prop to every call site (18 pages/templates).
+   - Remove dark-tone visual styling concerns since hidden blocks render off-screen.
+
+3. **Add missing hidden AIOverviewBlocks** to the 7 pages listed (after each H1).
+
+### Files touched (final list)
+
+Top-stack fix (29):
+- `src/index.css`
+- `src/components/fiveserv/StickyHeader.tsx`
+- `src/layouts/RootLayout.tsx`
 - `src/components/fiveserv/HeroSection.tsx`
-- `src/components/fiveserv/ProblemSection.tsx`
-- `src/components/fiveserv/ExitIntentPopup.tsx`
-- `src/components/fiveserv/BlogArticleLayout.tsx`
-- `src/pages/FiveServVsHandymanPage.tsx`
-- `src/pages/MakeReadyVsDIYPage.tsx`
+- `src/components/fiveserv/CityPageTemplate.tsx`
+- `src/pages/AboutPage.tsx`, `ContactPage.tsx`, `ElectricalPage.tsx`, `RenovationsPage.tsx`, `NotFound.tsx`, `HvacPage.tsx`, `ServicesIndexPage.tsx`, `CitiesIndexPage.tsx`, `FlooringPage.tsx`, `CarpentryPage.tsx`, `MakeReadyPage.tsx`, `MaintenancePage.tsx`, `PlaceholderPage.tsx`, `BlogPage.tsx`, `PaintingPage.tsx`, `PlumbingPage.tsx`, `DrywallPage.tsx`, `CleaningPage.tsx`, `ResidentialPage.tsx`, `MaintenanceCityPage.tsx`, `ServiceCityPage.tsx`, `TampaBayPage.tsx`, `FaqPage.tsx`, `FiveServVsHandymanPage.tsx`, `MakeReadyVsDIYPage.tsx`, `BlogArticlePage.tsx`
+
+AIOverviewBlock `hidden` + missing additions (18 + 7 = up to 23 file edits, several overlap with above):
+- All AIOverviewBlock callers (18 pages/templates listed in Issue 2)
+- New blocks added in: `ContactPage`, `FaqPage`, `ServicesIndexPage`, `CitiesIndexPage`, `BlogPage`, `TampaBayPage`, `ServiceCityPage`
+
+No routing, schema, sitemap, or form logic touched.
 
