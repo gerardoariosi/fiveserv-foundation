@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
-import { X } from "lucide-react";
+import { ArrowRight, ShieldCheck, Clock, BadgeCheck, X } from "lucide-react";
 import { Link, useLocation } from "react-router-dom";
+import BrandName from "@/components/fiveserv/BrandName";
 
 const KEY = "exit_intent_shown";
 const SUPPRESSED_PATHS = ["/thank-you-b2b", "/thank-you-residential", "/contact"];
@@ -8,6 +9,8 @@ const SUPPRESSED_PATHS = ["/thank-you-b2b", "/thank-you-residential", "/contact"
 type Offer = {
   headline: string;
   body: string;
+  /** Short highlighted offer line shown in the gold-accent box. */
+  offerLine: string;
   ctaLabel: string;
   ctaHref: string;
 };
@@ -21,7 +24,8 @@ const getOffer = (pathname: string): Offer | null => {
     return {
       headline: "Before you go — grab your free checklist",
       body: "Our 40-point Make-Ready Checklist used by property managers across Central Florida.",
-      ctaLabel: "Download Free Checklist →",
+      offerLine: "Free download · 40-point Make-Ready Checklist",
+      ctaLabel: "Download free checklist",
       ctaHref: "/make-ready",
     };
   }
@@ -30,7 +34,8 @@ const getOffer = (pathname: string): Offer | null => {
     return {
       headline: "Before you go — get our Vendor Scorecard",
       body: "See exactly what to look for before you sign with any maintenance vendor.",
-      ctaLabel: "Get Free Vendor Scorecard →",
+      offerLine: "Free download · Vendor Scorecard",
+      ctaLabel: "Get free Vendor Scorecard",
       ctaHref: "/#lead-magnets",
     };
   }
@@ -40,7 +45,8 @@ const getOffer = (pathname: string): Offer | null => {
     return {
       headline: "Get a free quote before you go",
       body: "Our team covers your area and responds within 2 business hours.",
-      ctaLabel: "Get a Free Quote →",
+      offerLine: "Free quote · 2-hour response in your area",
+      ctaLabel: "Get a free quote",
       ctaHref: "/contact",
     };
   }
@@ -53,7 +59,8 @@ const getOffer = (pathname: string): Offer | null => {
     return {
       headline: "We offer free estimates — no commitment",
       body: "One call and our team handles everything. No surprises on the invoice.",
-      ctaLabel: "Get a Free Estimate →",
+      offerLine: "Free estimate · No commitment",
+      ctaLabel: "Get a free estimate",
       ctaHref: "/contact",
     };
   }
@@ -61,7 +68,8 @@ const getOffer = (pathname: string): Offer | null => {
   return {
     headline: "One call handles everything",
     body: "Make-ready in 5 days. Guaranteed in writing. One invoice. No excuses.",
-    ctaLabel: "Get a Free Quote →",
+    offerLine: "Free quote · 5-day make-ready guarantee",
+    ctaLabel: "Get a free quote",
     ctaHref: "/contact",
   };
 };
@@ -79,10 +87,6 @@ export const ExitIntentPopup = () => {
   const { pathname } = useLocation();
   const [open, setOpen] = useState(false);
   const [closing, setClosing] = useState(false);
-  const [mobile, setMobile] = useState(false);
-  const [hoverCta, setHoverCta] = useState(false);
-  const [hoverNoThanks, setHoverNoThanks] = useState(false);
-  const [hoverClose, setHoverClose] = useState(false);
   const offer = getOffer(pathname);
 
   useEffect(() => {
@@ -98,7 +102,6 @@ export const ExitIntentPopup = () => {
       if (sessionStorage.getItem(KEY) === "1") return;
       triggered = true;
       sessionStorage.setItem(KEY, "1");
-      setMobile(isMobileViewport());
       setOpen(true);
     };
 
@@ -147,104 +150,58 @@ export const ExitIntentPopup = () => {
 
   if (!offer || !open) return null;
 
-  const padding = mobile ? "28px" : "48px";
-  const headlineSize = mobile ? "22px" : "26px";
-
   return (
     <div
       role="dialog"
       aria-modal="true"
       aria-labelledby="exit-intent-headline"
       onClick={close}
-      style={{
-        position: "fixed",
-        inset: 0,
-        zIndex: 99999,
-        backgroundColor: "rgba(0,0,0,0.90)",
-        display: "flex",
-        alignItems: "center",
-        justifyContent: "center",
-        padding: "16px",
-        opacity: closing ? 0 : 1,
-        transition: closing ? "opacity 180ms ease-out" : "opacity 200ms ease-out",
-      }}
+      className={`fixed inset-0 z-[99999] flex items-center justify-center p-4 transition-opacity duration-200 ease-out ${
+        closing ? "opacity-0" : "opacity-100"
+      }`}
+      style={{ backgroundColor: "rgba(0,0,0,0.5)" }}
     >
       <style>{`
         @keyframes exitPopupIn {
-          from { transform: scale(0.92); opacity: 0; }
+          from { transform: scale(0.96); opacity: 0; }
           to { transform: scale(1); opacity: 1; }
         }
       `}</style>
 
       <div
         onClick={(e) => e.stopPropagation()}
+        className={`relative w-[90%] max-w-[480px] bg-white rounded-2xl p-8 sm:p-10 transition-all duration-200 ease-out ${
+          closing ? "opacity-0 scale-95" : "opacity-100 scale-100"
+        }`}
         style={{
-          position: "relative",
-          width: mobile ? "90vw" : "480px",
-          maxWidth: "480px",
-          backgroundColor: "#1A1A1A",
-          border: "1px solid #FFD700",
-          borderRadius: "12px",
-          padding,
-          paddingTop: `calc(${padding} + 2px)`,
-          color: "#FFFFFF",
-          boxShadow: "none",
-          overflow: "hidden",
-          transform: closing ? "scale(0.92)" : "scale(1)",
-          opacity: closing ? 0 : 1,
-          transition: closing
-            ? "transform 180ms ease-out, opacity 180ms ease-out"
-            : undefined,
-          animation: closing ? undefined : "exitPopupIn 250ms ease-out",
+          boxShadow: "0 20px 60px rgba(0,0,0,0.2)",
+          animation: closing ? undefined : "exitPopupIn 220ms ease-out",
         }}
       >
-        {/* Top gold accent line */}
-        <div
-          aria-hidden="true"
-          style={{
-            position: "absolute",
-            top: 0,
-            left: 0,
-            right: 0,
-            height: "2px",
-            backgroundColor: "#FFD700",
-          }}
-        />
-
         {/* Close button */}
         <button
           type="button"
           aria-label="Close"
           onClick={close}
-          onMouseEnter={() => setHoverClose(true)}
-          onMouseLeave={() => setHoverClose(false)}
-          style={{
-            position: "absolute",
-            top: "16px",
-            right: "16px",
-            background: "transparent",
-            border: "none",
-            color: "#FFFFFF",
-            cursor: "pointer",
-            padding: 0,
-            opacity: hoverClose ? 0.6 : 1,
-            transition: "opacity 150ms ease-out",
-            lineHeight: 0,
-          }}
+          className="absolute top-4 right-4 text-gray-400 hover:text-gray-700 transition-colors"
         >
           <X size={20} />
         </button>
 
+        {/* Eyebrow */}
+        <p className="text-[11px] font-bold uppercase tracking-[0.18em] text-brand-gold">
+          <BrandName variant="dark" /> · Property Solutions
+        </p>
+
         {/* Headline */}
         <h2
           id="exit-intent-headline"
-          className="font-display"
+          className="font-display mt-2 text-gray-900"
           style={{
-            color: "#FFFFFF",
-            fontSize: headlineSize,
+            fontSize: "24px",
             lineHeight: 1.2,
             fontWeight: 700,
-            margin: 0,
+            marginBottom: "8px",
             paddingRight: "32px",
           }}
         >
@@ -253,77 +210,75 @@ export const ExitIntentPopup = () => {
 
         {/* Body */}
         <p
+          className="text-gray-600"
           style={{
-            marginTop: "12px",
-            marginBottom: 0,
-            color: "#FFFFFF",
-            opacity: 0.8,
-            fontFamily: "Arial, sans-serif",
             fontSize: "15px",
             lineHeight: 1.6,
+            marginBottom: "24px",
           }}
         >
           {offer.body}
         </p>
 
+        {/* Gold accent offer box */}
+        <div
+          className="text-gray-800 font-medium text-sm"
+          style={{
+            borderLeft: "4px solid #FFD700",
+            backgroundColor: "#FFFBEA",
+            borderRadius: "0 8px 8px 0",
+            padding: "12px 16px",
+            marginBottom: "24px",
+          }}
+        >
+          {offer.offerLine}
+        </div>
+
+        {/* Primary CTA */}
+        <Link
+          to={offer.ctaHref}
+          onClick={close}
+          className="inline-flex w-full items-center justify-center gap-2 rounded-full bg-brand-gold px-8 py-3 text-[15px] font-semibold text-brand-black transition-colors duration-200 hover:bg-[#ECC900]"
+        >
+          {offer.ctaLabel}
+          <ArrowRight className="h-4 w-4" />
+        </Link>
+
+        {/* Secondary "no thanks" link */}
+        <button
+          type="button"
+          onClick={close}
+          className="mt-3 block w-full text-center text-[13px] text-gray-400 underline hover:text-gray-600 transition-colors"
+        >
+          No thanks
+        </button>
+
         {/* Divider */}
         <div
           aria-hidden="true"
           style={{
-            height: "1px",
-            backgroundColor: "#2D2D2D",
-            margin: "20px 0",
+            borderTop: "1px solid #F3F4F6",
+            margin: "20px 0 16px",
           }}
         />
 
-        {/* CTA button */}
-        <Link
-          to={offer.ctaHref}
-          onClick={close}
-          onMouseEnter={() => setHoverCta(true)}
-          onMouseLeave={() => setHoverCta(false)}
-          style={{
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "center",
-            backgroundColor: hoverCta ? "#E6C200" : "#FFD700",
-            color: "#1A1A1A",
-            fontWeight: 700,
-            height: "52px",
-            width: "100%",
-            borderRadius: "9999px",
-            textDecoration: "none",
-            fontFamily: "Arial, sans-serif",
-            fontSize: "15px",
-            transition: "background-color 150ms ease-out",
-            boxShadow: "none",
-          }}
-        >
-          {offer.ctaLabel}
-        </Link>
-
-        {/* No thanks */}
-        <button
-          type="button"
-          onClick={close}
-          onMouseEnter={() => setHoverNoThanks(true)}
-          onMouseLeave={() => setHoverNoThanks(false)}
-          style={{
-            display: "block",
-            margin: "16px auto 0",
-            background: "transparent",
-            border: "none",
-            color: "#FFFFFF",
-            opacity: 0.45,
-            fontSize: "13px",
-            fontFamily: "Arial, sans-serif",
-            cursor: "pointer",
-            padding: 0,
-            textDecoration: hoverNoThanks ? "underline" : "none",
-          }}
-        >
-          No thanks
-        </button>
+        {/* Trust badges */}
+        <div className="flex flex-wrap items-center justify-center gap-x-4 gap-y-2 text-[11px] text-gray-500">
+          <span className="inline-flex items-center gap-1.5">
+            <ShieldCheck className="h-3 w-3 text-brand-gold" />
+            Licensed &amp; Insured
+          </span>
+          <span aria-hidden="true" className="text-gray-300">·</span>
+          <span className="inline-flex items-center gap-1.5">
+            <Clock className="h-3 w-3 text-brand-gold" />
+            24/7 Available
+          </span>
+          <span aria-hidden="true" className="text-gray-300">·</span>
+          <span className="inline-flex items-center gap-1.5">
+            <BadgeCheck className="h-3 w-3 text-brand-gold" />
+            5-Day Guarantee
+          </span>
+        </div>
       </div>
     </div>
   );
