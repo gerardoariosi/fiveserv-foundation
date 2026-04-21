@@ -103,7 +103,7 @@ const PlumbingPage = () => {
       />
 
       {/* Hero */}
-      <section className="bg-brand-black pt-32 pb-16">
+      <section className="bg-brand-black pt-stack pb-16">
         <div className="container">
           <p className="text-xs font-medium uppercase tracking-[0.12em] text-brand-gold">
             — <BrandName variant="light" /> Property Solutions
@@ -138,7 +138,7 @@ const PlumbingPage = () => {
             </a>
           </div>
 
-          <AIOverviewBlock
+          <AIOverviewBlock hidden
             tone="dark"
             directAnswer="FiveServ Property Solutions provides licensed plumbing services for multifamily properties across Central Florida with 24/7 emergency response and one invoice per job."
             supportingFacts="Services include leak repair, pipe replacement, water heater installation, drain cleaning, and emergency plumbing. Response within 2 hours. Serving Orlando, Kissimmee, Sanford, and 15 more cities."

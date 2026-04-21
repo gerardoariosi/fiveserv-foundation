@@ -49,7 +49,7 @@ const BlogPage = () => {
       />
 
       {/* Hero */}
-      <section className="bg-brand-black pt-32 pb-12">
+      <section className="bg-brand-black pt-stack pb-12">
         <div className="container max-w-5xl">
           <p className="text-xs font-bold uppercase tracking-wider text-brand-gold">
             <span style={{ whiteSpace: "nowrap" }}>

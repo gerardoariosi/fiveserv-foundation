@@ -70,7 +70,7 @@ const MaintenanceCityPage = ({ citySlug: propSlug }: MaintenanceCityPageProps = 
       />
 
       {/* 1. Hero */}
-      <section className="relative isolate overflow-hidden bg-brand-black pt-32 pb-16">
+      <section className="relative isolate overflow-hidden bg-brand-black pt-stack pb-16">
         <img
           src={editorial.heroImage}
           alt={`${city.name}, ${city.state} skyline`}
@@ -127,7 +127,7 @@ const MaintenanceCityPage = ({ citySlug: propSlug }: MaintenanceCityPageProps = 
           </div>
 
           {/* 2. AIOverviewBlock */}
-          <AIOverviewBlock answer={aiAnswer} />
+          <AIOverviewBlock hidden answer={aiAnswer} />
         </div>
       </section>
 

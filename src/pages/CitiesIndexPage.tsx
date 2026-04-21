@@ -21,7 +21,7 @@ const CitiesIndexPage = ({ canonicalPath = "/cities" }: Props) => (
         { name: "Service Areas", url: `${SITE.url}${canonicalPath}` },
       ]}
     />
-    <section className="bg-brand-black pt-32 pb-16">
+    <section className="bg-brand-black pt-stack pb-16">
       <div className="container">
         <p className="text-xs font-medium uppercase tracking-[0.12em] text-brand-gold">— <BrandName variant="light" /> Property Solutions</p>
         <h1 className="mt-3 font-display text-4xl text-white sm:text-5xl">

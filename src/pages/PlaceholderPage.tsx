@@ -15,7 +15,7 @@ const PlaceholderPage = ({ title, description, path, heading }: PlaceholderPageP
   <>
     <Seo title={title} description={description} path={path} />
     <SchemaOrg breadcrumbs={[{ name: "Home", url: SITE.url }, { name: heading, url: `${SITE.url}${path}` }]} />
-    <section className="bg-brand-black pt-32 pb-24">
+    <section className="bg-brand-black pt-stack pb-24">
       <div className="container">
         <p className="text-sm font-bold uppercase tracking-wide text-brand-gold"><BrandName variant="light" /> Property Solutions</p>
         <h1 className="mt-3 font-display text-4xl text-brand-black sm:text-5xl">{heading}</h1>

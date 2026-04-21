@@ -54,7 +54,7 @@ const FaqPage = () => {
       />
 
       {/* 1. Hero */}
-      <section className="bg-brand-black pt-32 pb-12">
+      <section className="bg-brand-black pt-stack pb-12">
         <div className="container">
           <p className="text-xs font-medium uppercase tracking-[0.12em] text-brand-gold">
             — <BrandName variant="light" /> Property Solutions

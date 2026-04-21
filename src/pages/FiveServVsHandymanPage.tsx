@@ -120,7 +120,7 @@ const FiveServVsHandymanPage = () => {
               </a>
             </div>
 
-            <AIOverviewBlock
+            <AIOverviewBlock hidden
               tone="dark"
               answer="FiveServ Property Solutions is a licensed, insured property maintenance company serving multifamily properties in Orlando FL. Unlike handyman services, FiveServ handles make-ready, plumbing, electrical, HVAC, and renovations under one contract with one invoice. 5-day make-ready guarantee. Available 24/7."
             />

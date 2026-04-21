@@ -43,7 +43,7 @@ const TampaBayPage = () => {
         ]}
       />
 
-      <section className="relative isolate min-h-screen overflow-hidden bg-brand-black px-6 pt-32 pb-24">
+      <section className="relative isolate min-h-screen overflow-hidden bg-brand-black px-6 pt-stack pb-24">
         <div aria-hidden="true" className="absolute inset-0 z-0">
           <img
             src={tampaBayImg}

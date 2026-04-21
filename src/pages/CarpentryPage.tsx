@@ -105,7 +105,7 @@ const CarpentryPage = () => {
       />
 
       {/* Hero */}
-      <section className="bg-brand-black pt-32 pb-16">
+      <section className="bg-brand-black pt-stack pb-16">
         <div className="container">
           <p className="text-xs font-medium uppercase tracking-[0.12em] text-brand-gold">
             — <BrandName variant="light" /> Property Solutions
@@ -143,7 +143,7 @@ const CarpentryPage = () => {
             </a>
           </div>
 
-          <AIOverviewBlock
+          <AIOverviewBlock hidden
             answer={`${SITE.brand} provides professional carpentry services for multifamily properties and homeowners across Central Florida. Services include door repair and replacement, cabinet installation, baseboards, trim work, and custom carpentry. Fast turnaround for make-ready units. One call, one invoice. Serving Orlando, Kissimmee, Sanford, Winter Park, and 14 more cities.`}
           />
         </div>

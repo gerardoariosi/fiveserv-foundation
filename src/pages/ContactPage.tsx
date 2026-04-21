@@ -62,7 +62,7 @@ const ContactPage = () => {
       />
 
       <section className="bg-white min-h-[calc(100vh-4rem)]">
-        <div className="container max-w-3xl py-20 pt-32 sm:py-28 sm:pt-40">
+        <div className="container max-w-3xl pt-stack pb-20 sm:pb-28">
           <div className="text-center">
             <p className="text-xs font-medium uppercase tracking-[0.12em] text-brand-gold">
               — <BrandName variant="dark" /> Property Solutions
