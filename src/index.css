@@ -120,6 +120,16 @@
   .section-light       { @apply bg-white text-brand-black; }
   .section-light-gray  { @apply bg-brand-light text-brand-black; }
   .section-dark        { @apply bg-brand-black text-brand-white; }
+
+  /* Single-source-of-truth top padding that accounts for the fixed banner + header stack. */
+  .pt-stack {
+    padding-top: calc(var(--banner-h, 0px) + var(--header-h, 80px) + 2rem);
+  }
+  @media (min-width: 768px) {
+    .pt-stack {
+      padding-top: calc(var(--banner-h, 0px) + var(--header-h, 80px) + 3rem);
+    }
+  }
 }
 
 @layer utilities {

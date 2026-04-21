@@ -3,7 +3,6 @@ import { Link, NavLink } from "react-router-dom";
 import { Menu, Phone, X } from "lucide-react";
 import { SITE } from "@/lib/site-config";
 import Logo from "@/components/fiveserv/Logo";
-import SocialProofTicker from "@/components/fiveserv/SocialProofTicker";
 
 const NAV = [
   { to: "/", label: "Home" },
@@ -25,6 +24,8 @@ export const StickyHeader = () => {
   const [open, setOpen] = useState(false);
 
   useEffect(() => {
+    // Expose header height so .pt-stack utility can offset page content correctly.
+    document.documentElement.style.setProperty("--header-h", "80px");
     const onScroll = () => setScrolled(window.scrollY > 80);
     onScroll();
     window.addEventListener("scroll", onScroll, { passive: true });
@@ -100,8 +101,6 @@ export const StickyHeader = () => {
           </button>
         </div>
       </div>
-
-      <SocialProofTicker />
 
       {open && (
         <div className="md:hidden bg-white border-t border-gray-200">
