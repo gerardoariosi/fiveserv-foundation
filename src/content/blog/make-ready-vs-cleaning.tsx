@@ -2,7 +2,7 @@ import { renderBlocks, InternalLinkCluster, type Block } from "./_blocks";
 import BrandName from "@/components/fiveserv/BrandName";
 
 const blocks: Block[] = [
-  { type: "p", text: <><strong><BrandName variant="light" /> Property Solutions</strong> provides both unit cleaning and full make-ready service across Central Florida. The two are not the same — here's the clear difference.</> },
+  { type: "p", text: <><strong><BrandName variant="dark" /> Property Solutions</strong> provides both unit cleaning and full make-ready service across Central Florida. The two are not the same — here's the clear difference.</> },
   { type: "h2", text: "Cleaning" },
   { type: "p", text: "A deep clean covers appliances, bathrooms, floors, baseboards, vents, blinds. It's one step. Cost: $185–$325 per 1–2BR unit." },
   { type: "h2", text: "Make-ready" },

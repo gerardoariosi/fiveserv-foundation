@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import BrandName from "@/components/fiveserv/BrandName";
 
 const blocks: Block[] = [
-  { type: "p", text: <><strong><BrandName variant="light" /> Property Solutions</strong> is headquartered in Orlando and runs make-ready service across the entire Central Florida region from here. Here's exactly what to expect when you book a turn in Orlando.</> },
+  { type: "p", text: <><strong><BrandName variant="dark" /> Property Solutions</strong> is headquartered in Orlando and runs make-ready service across the entire Central Florida region from here. Here's exactly what to expect when you book a turn in Orlando.</> },
   { type: "h2", text: "Service area within Orlando" },
   { type: "ul", items: [
     "Downtown",

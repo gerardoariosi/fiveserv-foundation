@@ -2,7 +2,7 @@ import { renderBlocks, InternalLinkCluster, type Block } from "./_blocks";
 import BrandName from "@/components/fiveserv/BrandName";
 
 const blocks: Block[] = [
-  { type: "p", text: <><strong><BrandName variant="light" /> Property Solutions</strong> runs this 40-item make-ready checklist on every Central Florida unit turn. Free for property managers — copy it, adapt it, and standardize inspections across your portfolio.</> },
+  { type: "p", text: <><strong><BrandName variant="dark" /> Property Solutions</strong> runs this 40-item make-ready checklist on every Central Florida unit turn. Free for property managers — copy it, adapt it, and standardize inspections across your portfolio.</> },
   { type: "h2", text: "Cleaning (5 items)" },
   { type: "ol", items: [
     "Kitchen appliances inside and out",

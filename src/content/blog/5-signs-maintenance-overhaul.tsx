@@ -2,7 +2,7 @@ import { renderBlocks, InternalLinkCluster, type Block } from "./_blocks";
 import BrandName from "@/components/fiveserv/BrandName";
 
 const blocks: Block[] = [
-  { type: "p", text: <><strong><BrandName variant="light" /> Property Solutions</strong> audits Central Florida communities every month, and the warning signs of a maintenance program in distress are remarkably consistent. If 2+ of these apply to your community, it's time for an overhaul.</> },
+  { type: "p", text: <><strong><BrandName variant="dark" /> Property Solutions</strong> audits Central Florida communities every month, and the warning signs of a maintenance program in distress are remarkably consistent. If 2+ of these apply to your community, it's time for an overhaul.</> },
   { type: "h2", text: "1. Work-order backlog over 7 days" },
   { type: "p", text: "Standard non-emergency work orders should close within 3 business days. A backlog over 7 days means your routing, vendor capacity, or both are broken." },
   { type: "h2", text: "2. Make-ready time over 10 days" },

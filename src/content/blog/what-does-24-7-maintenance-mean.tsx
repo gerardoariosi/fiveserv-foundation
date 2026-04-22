@@ -2,7 +2,7 @@ import { renderBlocks, InternalLinkCluster, type Block } from "./_blocks";
 import BrandName from "@/components/fiveserv/BrandName";
 
 const blocks: Block[] = [
-  { type: "p", text: <><strong><BrandName variant="light" /> Property Solutions</strong> runs a real 24/7 line — live person, licensed trades on-call, 2-hour on-site response. Here's how to verify any vendor's 24/7 claim before you sign.</> },
+  { type: "p", text: <><strong><BrandName variant="dark" /> Property Solutions</strong> runs a real 24/7 line — live person, licensed trades on-call, 2-hour on-site response. Here's how to verify any vendor's 24/7 claim before you sign.</> },
   { type: "h2", text: "What 24/7 should mean" },
   { type: "ul", items: [
     "Live human answers within 3 rings — any hour, any day",

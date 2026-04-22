@@ -2,7 +2,7 @@ import { renderBlocks, InternalLinkCluster, type Block } from "./_blocks";
 import BrandName from "@/components/fiveserv/BrandName";
 
 const blocks: Block[] = [
-  { type: "p", text: <><strong><BrandName variant="light" /> Property Solutions</strong> runs scheduled inspection programs across Central Florida multifamily. Here's the standard frequency for each inspection type.</> },
+  { type: "p", text: <><strong><BrandName variant="dark" /> Property Solutions</strong> runs scheduled inspection programs across Central Florida multifamily. Here's the standard frequency for each inspection type.</> },
   { type: "h2", text: "Inspection schedule" },
   { type: "table", headers: ["Inspection", "Frequency", "Owner"], rows: [
     ["Common areas", "Monthly", "Onsite manager"],
