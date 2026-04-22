@@ -14,7 +14,7 @@ const VendorChaosBody = () => (
       invoices, too many missed handoffs. Here's the playbook to fix it.
     </p>
 
-    <h2 className="font-display text-2xl text-brand-white">What vendor chaos actually costs you</h2>
+    <h2 className="font-display text-2xl text-gray-900">What vendor chaos actually costs you</h2>
     <p>
       In a typical 200-unit Central Florida community we audit, we find:
     </p>
@@ -30,7 +30,7 @@ const VendorChaosBody = () => (
       coordination overhead — before the missed-trade incidents that actually delay rent.
     </p>
 
-    <h2 className="font-display text-2xl text-brand-white">Why portfolios accumulate vendors</h2>
+    <h2 className="font-display text-2xl text-gray-900">Why portfolios accumulate vendors</h2>
     <p>
       Most portfolios don't choose vendor chaos — they inherit it. A new community comes
       online, the prior PM had relationships, the regional likes "their guy" for HVAC, the
@@ -38,7 +38,7 @@ const VendorChaosBody = () => (
       nobody can tell you who owns the turn timeline.
     </p>
 
-    <h2 className="font-display text-2xl text-brand-white">The consolidation playbook</h2>
+    <h2 className="font-display text-2xl text-gray-900">The consolidation playbook</h2>
     <p>
       Here's the 90-day process we use to consolidate a portfolio without disrupting
       operations:
@@ -51,7 +51,7 @@ const VendorChaosBody = () => (
       <li><strong>Day 90+:</strong> Existing vendor relationships sunset naturally as their work dries up</li>
     </ol>
 
-    <h2 className="font-display text-2xl text-brand-white">What to verify before consolidating</h2>
+    <h2 className="font-display text-2xl text-gray-900">What to verify before consolidating</h2>
     <div className="overflow-x-auto rounded-lg border border-brand-gold/30">
       <table className="w-full text-sm">
         <thead className="bg-brand-gray/40">
@@ -60,7 +60,7 @@ const VendorChaosBody = () => (
             <th className="p-3 text-left text-gray-900">Why it matters</th>
           </tr>
         </thead>
-        <tbody className="divide-y divide-brand-gold/15 text-brand-white">
+        <tbody className="divide-y divide-gray-200 text-gray-700">
           <tr><td className="p-3">General liability $1M / $2M minimum</td><td className="p-3">Insurance industry standard for multifamily</td></tr>
           <tr><td className="p-3">Workers' comp on all crew</td><td className="p-3">Protects you from sub-of-sub claims</td></tr>
           <tr><td className="p-3">In-house painters &amp; cleaners</td><td className="p-3">Subbed work introduces the chaos you're solving</td></tr>
@@ -71,7 +71,7 @@ const VendorChaosBody = () => (
       </table>
     </div>
 
-    <h2 className="font-display text-2xl text-brand-white">Common objections from regionals</h2>
+    <h2 className="font-display text-2xl text-gray-900">Common objections from regionals</h2>
     <p>
       "What if the consolidated vendor goes down?" Real risk — mitigated by keeping one
       backup vendor warm in each trade. "What if pricing creeps up?" Re-bid every 18
@@ -80,7 +80,7 @@ const VendorChaosBody = () => (
       with you to the new vendor. The ones that don't were costing you money.
     </p>
 
-    <h2 className="font-display text-2xl text-brand-white">What <BrandName variant="light" /> actually consolidates</h2>
+    <h2 className="font-display text-2xl text-gray-900">What <BrandName variant="light" /> actually consolidates</h2>
     <p>
       We replace painters, cleaners, drywall, basic plumbing, basic electrical, HVAC
       filters, appliance repair, make-ready coordination, and CapEx project management

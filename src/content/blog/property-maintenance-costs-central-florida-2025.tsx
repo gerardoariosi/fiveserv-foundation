@@ -15,7 +15,7 @@ const PricingGuideBody = () => (
       Space Coast.
     </p>
 
-    <h2 className="font-display text-2xl text-brand-white">Hourly labor rates in Central Florida — 2025</h2>
+    <h2 className="font-display text-2xl text-gray-900">Hourly labor rates in Central Florida — 2025</h2>
     <div className="overflow-x-auto rounded-lg border border-brand-gold/30">
       <table className="w-full text-sm">
         <thead className="bg-brand-gray/40">
@@ -25,7 +25,7 @@ const PricingGuideBody = () => (
             <th className="p-3 text-left text-gray-900">Notes</th>
           </tr>
         </thead>
-        <tbody className="divide-y divide-brand-gold/15 text-brand-white">
+        <tbody className="divide-y divide-gray-200 text-gray-700">
           <tr><td className="p-3">General handyman</td><td className="p-3">$75 – $125 / hr</td><td className="p-3">1-hr minimum standard</td></tr>
           <tr><td className="p-3">Painter</td><td className="p-3">$55 – $85 / hr</td><td className="p-3">Crews quoted per unit, not hourly</td></tr>
           <tr><td className="p-3">Drywall</td><td className="p-3">$70 – $110 / hr</td><td className="p-3">Or per-patch flat rate</td></tr>
@@ -37,7 +37,7 @@ const PricingGuideBody = () => (
       </table>
     </div>
 
-    <h2 className="font-display text-2xl text-brand-white">Make-ready turn pricing</h2>
+    <h2 className="font-display text-2xl text-gray-900">Make-ready turn pricing</h2>
     <p>
       Most of the year, a "standard" make-ready in Orange, Osceola, Seminole, or Polk
       County will fall in these ranges:
@@ -51,7 +51,7 @@ const PricingGuideBody = () => (
       <li>LVP touch-up / board swap — $125 to $350</li>
     </ul>
 
-    <h2 className="font-display text-2xl text-brand-white">CapEx benchmarks</h2>
+    <h2 className="font-display text-2xl text-gray-900">CapEx benchmarks</h2>
     <div className="overflow-x-auto rounded-lg border border-brand-gold/30">
       <table className="w-full text-sm">
         <thead className="bg-brand-gray/40">
@@ -61,7 +61,7 @@ const PricingGuideBody = () => (
             <th className="p-3 text-left text-gray-900">Per unit (2BR)</th>
           </tr>
         </thead>
-        <tbody className="divide-y divide-brand-gold/15 text-brand-white">
+        <tbody className="divide-y divide-gray-200 text-gray-700">
           <tr><td className="p-3">Full LVP flooring</td><td className="p-3">$2,400 – $3,200</td><td className="p-3">$3,400 – $4,600</td></tr>
           <tr><td className="p-3">Cabinet reface</td><td className="p-3">$1,800 – $2,800</td><td className="p-3">$2,200 – $3,400</td></tr>
           <tr><td className="p-3">Cabinet replace</td><td className="p-3">$3,800 – $5,500</td><td className="p-3">$4,800 – $7,200</td></tr>
@@ -72,7 +72,7 @@ const PricingGuideBody = () => (
       </table>
     </div>
 
-    <h2 className="font-display text-2xl text-brand-white">Trip charges and zone surcharges</h2>
+    <h2 className="font-display text-2xl text-gray-900">Trip charges and zone surcharges</h2>
     <p>
       Trip charges are normal across Central Florida and reflect drive time. Most vendors
       waive them when total billable hours exceed 2 hours.
@@ -84,7 +84,7 @@ const PricingGuideBody = () => (
       <li><strong>After-hours / weekend:</strong> 1.5x billable rate, $95+ trip minimum</li>
     </ul>
 
-    <h2 className="font-display text-2xl text-brand-white">How to use these numbers in your budget</h2>
+    <h2 className="font-display text-2xl text-gray-900">How to use these numbers in your budget</h2>
     <p>
       For a 200-unit community, plan on roughly $185 – $245 per unit per year in
       reactive maintenance, plus your full make-ready cost on every turn. CapEx is
@@ -92,7 +92,7 @@ const PricingGuideBody = () => (
       (typically 7 years for cabinets, 10 for flooring, 15+ for appliances).
     </p>
 
-    <h2 className="font-display text-2xl text-brand-white">Get quoted scope, not estimates</h2>
+    <h2 className="font-display text-2xl text-gray-900">Get quoted scope, not estimates</h2>
     <p>
       Pricing only matters when it matches the actual scope of work. <BrandName variant="light" /> publishes
       flat rates for our most common scopes and quotes anything custom in writing before
