@@ -1,111 +1,82 @@
 
 
-## Audit Report
+## Audit Report — 3 Issues
 
-### ISSUE 1 — Sticky Banner & Social Proof Ticker
+### ISSUE 1 — White text on white background in blog articles ❌ FAIL
 
-**Components involved**
-- `StickyBanner.tsx` — `position: fixed; top: 0; z-50; height: 32px (h-8)`, gold bar.
-- `StickyHeader.tsx` — `position: fixed; z-40`, offset via inline `style={{ top: "var(--banner-h, 0px)" }}`. Header body height = `h-20` (80px). The `SocialProofTicker` renders **inside** the header (line 104), adds ~36px more.
-- `SocialProofTicker.tsx` — not fixed; just a `div` with `py-2 px-3` (~36px tall). Sits under the nav row, also inside the fixed header.
+Three legacy blog content files use `text-brand-white` classes designed for the OLD dark blog layout, but `BlogArticleLayout.tsx` line 104 wraps article body in `bg-white`. Result: **invisible body text, headings, and table cells on three published articles.**
 
-**Total fixed top stack**
-- Banner visible: 32px + 80px nav + ~36px ticker = **~148px**
-- Banner dismissed: 0 + 80 + 36 = **~116px**
+**Files affected:**
+- `src/content/blog/reduce-vendor-chaos-multifamily.tsx` — wrapper `text-brand-white/90`, all H2s `text-brand-white`, table body `text-brand-white`
+- `src/content/blog/property-maintenance-costs-central-florida-2025.tsx` — same pattern (wrapper, 6 H2s, 2 table bodies)
+- `src/content/blog/make-ready-guide-florida-2025.tsx` — same pattern
 
-**Problem**
-- Page hero offsets only account for banner + 80px nav. They do NOT account for the ticker (~36px). Anywhere the ticker is shown the top of every hero gets clipped.
-  - `HeroSection.tsx` line 29–30: offset = `calc(var(--banner-h) + 5rem)` → ignores ticker (homepage hero loses ~36px from top).
-  - All pages using `pt-32` (8rem = 128px) for the dark hero: enough for banner (32) + nav (80) = 112, leaves only 16px breathing room — **with the ticker (36px) the ticker overlaps the eyebrow/H1**.
-  - Pages affected by `pt-32` clipping: `AboutPage`, `ContactPage` (uses `pt-32 sm:pt-40`), `ElectricalPage`, `RenovationsPage`, `NotFound`, `HvacPage`, `ServicesIndexPage`, `CitiesIndexPage`, `FlooringPage`, `CarpentryPage`, `MakeReadyPage`, `MaintenancePage`, `PlaceholderPage`, `BlogPage`, `PaintingPage`, `PlumbingPage`, `DrywallPage`, `CleaningPage`, `ResidentialPage`, `MaintenanceCityPage`, `ServiceCityPage`, `CityPageTemplate`, `TampaBayPage`, `FaqPage`, `FiveServVsHandymanPage`, `MakeReadyVsDIYPage`, `BlogArticlePage`, plus the homepage `HeroSection`.
+All other blog posts use the shared `_blocks.tsx` renderer (already correct). `BlogPage.tsx` listing — verified ✅ uses `text-gray-900` / `text-gray-600` correctly.
 
-**Proposed fix (single-source-of-truth)**
-1. Move `SocialProofTicker` OUT of `StickyHeader` and either (a) drop it, or (b) keep it but render it as a non-fixed element BELOW the fixed header in `RootLayout`, so it scrolls away with the page (cleanest fix — no offset math needed).
-2. Set a CSS variable for the full fixed-stack height in `StickyHeader.tsx`:
-   `document.documentElement.style.setProperty("--header-h", "80px")` and let `--banner-h` stay at 32/0. Combined offset `--stack-h = banner-h + header-h`.
-3. Replace `pt-32` everywhere with inline style `paddingTop: "calc(var(--banner-h,0px) + var(--header-h,80px) + 2rem)"` via a small `.pt-stack` utility class added in `index.css`.
-4. Update `HeroSection.tsx` to use the same `--stack-h` variable.
-
-**Files to edit (offset)**: `src/index.css` (add `.pt-stack` utility), `src/components/fiveserv/StickyHeader.tsx` (set `--header-h`, remove ticker), `src/layouts/RootLayout.tsx` (mount ticker as non-fixed under header, optional), `src/components/fiveserv/HeroSection.tsx`, and the 27 pages listed above to swap `pt-32` → `pt-stack`.
+**Fix:** In the 3 files above, replace:
+- wrapper `text-brand-white/90` → `text-gray-700`
+- H2 `text-brand-white` → `text-gray-900`
+- `divide-brand-gold/15 text-brand-white` → `divide-gray-200 text-gray-700`
+- Table border `border-brand-gold/30` → `border-gray-200` (gold-on-white is acceptable but gray is cleaner here; keep gold if preferred — flag only the text)
 
 ---
 
-### ISSUE 2 — AIOverviewBlock visibility
+### ISSUE 2 — City hero images positioning ⚠️ PARTIAL
 
-**Component**: `AIOverviewBlock.tsx` already supports `hidden` prop (renders SR-only with `clip: rect(0,0,0,0)`, `aria-hidden`). Currently NO page passes `hidden`, so every block renders **visibly**.
+`MaintenanceCityPage.tsx` lines 73–88 renders hero images correctly with:
+- `object-cover` ✅
+- `bg-brand-black/60` overlay ✅
+- bottom fade gradient ✅
 
-**Pages where AIOverviewBlock IS visible (must add `hidden` prop)**
-| Page | File | Note |
-|---|---|---|
-| Homepage | `src/pages/Index.tsx` | visible block in white section |
-| /make-ready/ | `src/pages/MakeReadyPage.tsx` | visible |
-| /maintenance/ | `src/pages/MaintenancePage.tsx` | visible |
-| /renovations/ | `src/pages/RenovationsPage.tsx` | visible (tone=dark) |
-| /residential/ | `src/pages/ResidentialPage.tsx` | visible (tone=dark) |
-| /plumbing/ | `src/pages/PlumbingPage.tsx` | visible |
-| /electrical/ | `src/pages/ElectricalPage.tsx` | visible |
-| /hvac/ | `src/pages/HvacPage.tsx` | visible |
-| /carpentry/ | `src/pages/CarpentryPage.tsx` | visible |
-| /drywall/ | `src/pages/DrywallPage.tsx` | visible |
-| /painting/ | `src/pages/PaintingPage.tsx` | visible |
-| /flooring/ | `src/pages/FlooringPage.tsx` | visible |
-| /cleaning/ | `src/pages/CleaningPage.tsx` | visible |
-| /about/ | `src/pages/AboutPage.tsx` | visible |
-| All 18 city pages | `src/components/fiveserv/CityPageTemplate.tsx` | visible (tone=dark) |
-| All city × service pages | `src/pages/MaintenanceCityPage.tsx` | visible |
-| /fiveserv-vs-handyman-orlando/ | `src/pages/FiveServVsHandymanPage.tsx` | visible |
-| /make-ready-vs-diy-property-management/ | `src/pages/MakeReadyVsDIYPage.tsx` | visible |
+**However:**
+- No `object-position` is set anywhere → defaults to `center center` for ALL cities (Winter Park image gets cropped poorly, subjects sit too high).
+- `CityPageTemplate.tsx` (used by `/cities/:slug` route) has **NO hero image at all** — pure black background. Inconsistent with `MaintenanceCityPage`.
 
-**Pages MISSING AIOverviewBlock (must add hidden block)**
-| Page | File | Proposed 40–60 word direct answer |
-|---|---|---|
-| /contact/ | `src/pages/ContactPage.tsx` | "Contact FiveServ Property Solutions for property maintenance and make-ready services across Central Florida. Free estimate within 24 hours. Call, WhatsApp, or submit the form. One call, one team, one invoice. Available 24/7 across 18 cities including Orlando, Kissimmee, and Sanford." |
-| /faq/ | `src/pages/FaqPage.tsx` | "Frequently asked questions about FiveServ Property Solutions: 5-day make-ready guarantee, 24/7 emergency response, one invoice billing, licensed and insured in Florida. Serving multifamily property managers across 18 cities in Central Florida including Orlando, Kissimmee, Sanford, Winter Park, and Lakeland." |
-| /services/ | `src/pages/ServicesIndexPage.tsx` | "FiveServ Property Solutions offers make-ready, plumbing, electrical, HVAC, drywall, painting, carpentry, flooring, cleaning, and renovations across Central Florida. Licensed and insured. One call, one invoice, 5-day guarantee. Serving 18 cities including Orlando, Kissimmee, and Sanford." |
-| /cities/ + /service-areas/ | `src/pages/CitiesIndexPage.tsx` | "FiveServ Property Solutions serves 18 cities across Central Florida including Orlando, Kissimmee, Sanford, Winter Park, Lakeland, Altamonte Springs, Apopka, Ocoee, Winter Garden, Clermont, and St. Cloud. 24/7 emergency response within 2 hours. 5-day make-ready guarantee." |
-| /blog/ | `src/pages/BlogPage.tsx` | "FiveServ Property Solutions blog covering make-ready, multifamily maintenance, CapEx renovations, and property management best practices in Central Florida. Written by operators serving 50+ communities and 300+ units across 18 cities including Orlando, Kissimmee, and Sanford." |
-| /tampa-bay/ | `src/pages/TampaBayPage.tsx` | "FiveServ Property Solutions is expanding to Tampa Bay in 2025. Same 5-day make-ready guarantee, 24/7 emergency response, one-invoice billing, and licensed multifamily maintenance — extending the Central Florida operation built across 18 cities and 300+ units." |
-| /service-cities/:city/:service | `src/pages/ServiceCityPage.tsx` | (already routed through generic template — verify; if no block, add hidden one mirroring `MaintenanceCityPage` copy.) |
-| /404 | `src/pages/NotFound.tsx` | optional — skip (noindex). |
-| /thank-you-* | both pages | skip (noindex post-conversion). |
-| /terms/ | `src/pages/TermsPage.tsx` | skip (legal). |
+**Fix:**
+1. Add an optional `heroImagePosition` field to `CityEditorial` in `src/lib/city-data.ts` (default `"center center"`).
+2. Set Winter Park to `"center 60%"`.
+3. In `MaintenanceCityPage.tsx` line 80, apply via inline `style={{ objectPosition: editorial.heroImagePosition ?? "center center" }}`.
+4. (Optional, out of scope unless requested) Add hero image rendering to `CityPageTemplate.tsx` to match `MaintenanceCityPage` for the `/cities/:slug` route — flagging only.
 
-**Fix per page**: pass `hidden` prop to every existing `<AIOverviewBlock ... />` call, AND add new `<AIOverviewBlock hidden ... />` calls right after the `<h1>` on the 7 missing pages above.
+**Files to edit:**
+- `src/lib/city-data.ts`
+- `src/pages/MaintenanceCityPage.tsx`
 
 ---
 
-## Implementation Plan (single pass once approved)
+### ISSUE 3 — AIOverviewBlock coverage ⚠️ MOSTLY PASS
 
-1. **Restructure top stack**
-   - In `StickyHeader.tsx`: set `--header-h: 80px` on mount, remove `<SocialProofTicker />` from inside the fixed header.
-   - In `src/layouts/RootLayout.tsx`: render `<SocialProofTicker />` as a normal (non-fixed) section that scrolls with the page, placed just below where the fixed header would visually end (use `paddingTop: var(--stack-h)` wrapper or simply place it inside `<main>` above `<Outlet/>`).
-   - In `src/index.css`: add
-     ```css
-     .pt-stack { padding-top: calc(var(--banner-h, 0px) + var(--header-h, 80px) + 2rem); }
-     @media (min-width: 768px) { .pt-stack { padding-top: calc(var(--banner-h, 0px) + var(--header-h, 80px) + 3rem); } }
-     ```
-   - Update `HeroSection.tsx` lines 29–30 to use `--header-h` (drop hardcoded `5rem`).
-   - Swap `pt-32` → `pt-stack` in the 27 page files listed above.
+All AIOverviewBlock instances on the site **already use `hidden` prop** (renders SR-only with `clip: rect(0,0,0,0)`, in DOM, invisible to users). ✅
 
-2. **Hide every existing AIOverviewBlock**
-   - Add `hidden` prop to every call site (18 pages/templates).
-   - Remove dark-tone visual styling concerns since hidden blocks render off-screen.
+**Coverage verified PASS ✅:**
+- Homepage, /make-ready/, /maintenance/, /renovations/, /residential/
+- /plumbing/, /electrical/, /hvac/, /drywall/, /painting/, /flooring/, /carpentry/, /cleaning/
+- All 18 city pages (via `MaintenanceCityPage` AND `CityPageTemplate`)
+- /about/, /contact/, /faq/, /services/, /cities/ (= /service-areas/), /blog/, /tampa-bay/
+- Comparison pages, all 4 service pages via `ServicePageTemplate`
 
-3. **Add missing hidden AIOverviewBlocks** to the 7 pages listed (after each H1).
+**MISSING ❌:**
+- `src/pages/BlogArticlePage.tsx` (via `BlogArticleLayout.tsx`) — NO hidden AIOverviewBlock on any of the ~30 blog article pages.
 
-### Files touched (final list)
+**Fix:** Add one hidden `AIOverviewBlock` after the `<h1>` in `BlogArticleLayout.tsx` (line 56), using each post's `tldr` as the `directAnswer` (already 40–60 word summary per article).
 
-Top-stack fix (29):
-- `src/index.css`
-- `src/components/fiveserv/StickyHeader.tsx`
-- `src/layouts/RootLayout.tsx`
-- `src/components/fiveserv/HeroSection.tsx`
-- `src/components/fiveserv/CityPageTemplate.tsx`
-- `src/pages/AboutPage.tsx`, `ContactPage.tsx`, `ElectricalPage.tsx`, `RenovationsPage.tsx`, `NotFound.tsx`, `HvacPage.tsx`, `ServicesIndexPage.tsx`, `CitiesIndexPage.tsx`, `FlooringPage.tsx`, `CarpentryPage.tsx`, `MakeReadyPage.tsx`, `MaintenancePage.tsx`, `PlaceholderPage.tsx`, `BlogPage.tsx`, `PaintingPage.tsx`, `PlumbingPage.tsx`, `DrywallPage.tsx`, `CleaningPage.tsx`, `ResidentialPage.tsx`, `MaintenanceCityPage.tsx`, `ServiceCityPage.tsx`, `TampaBayPage.tsx`, `FaqPage.tsx`, `FiveServVsHandymanPage.tsx`, `MakeReadyVsDIYPage.tsx`, `BlogArticlePage.tsx`
+**Files to edit:**
+- `src/components/fiveserv/BlogArticleLayout.tsx`
 
-AIOverviewBlock `hidden` + missing additions (18 + 7 = up to 23 file edits, several overlap with above):
-- All AIOverviewBlock callers (18 pages/templates listed in Issue 2)
-- New blocks added in: `ContactPage`, `FaqPage`, `ServicesIndexPage`, `CitiesIndexPage`, `BlogPage`, `TampaBayPage`, `ServiceCityPage`
+---
 
-No routing, schema, sitemap, or form logic touched.
+## Implementation Plan (single pass, on approval)
+
+**5 files total:**
+
+1. `src/content/blog/reduce-vendor-chaos-multifamily.tsx` — swap `text-brand-white*` → `text-gray-700` / `text-gray-900` for wrapper, H2s, table body.
+2. `src/content/blog/property-maintenance-costs-central-florida-2025.tsx` — same color swap.
+3. `src/content/blog/make-ready-guide-florida-2025.tsx` — same color swap.
+4. `src/lib/city-data.ts` — add optional `heroImagePosition?: string` to `CityEditorial`; set Winter Park to `"center 60%"`.
+5. `src/pages/MaintenanceCityPage.tsx` — apply `objectPosition` inline style on hero `<img>`.
+6. `src/components/fiveserv/BlogArticleLayout.tsx` — add `<AIOverviewBlock hidden directAnswer={post.tldr} />` directly after `<h1>` (line 56).
+
+**Out of scope:** Adding a hero image to `CityPageTemplate.tsx` (the `/cities/:slug` route currently uses solid black — flagging but not changing without explicit approval since it would require image asset decisions).
+
+**No changes to:** routing, schema, sitemap, forms, GHL, Sofia, or any popup logic.
 
