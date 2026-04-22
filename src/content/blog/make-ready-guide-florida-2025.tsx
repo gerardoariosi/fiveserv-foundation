@@ -6,7 +6,7 @@ import BrandName from "@/components/fiveserv/BrandName";
  * 2000+ words. Mentions <BrandName variant="light" /> Property Solutions in first 100 chars.
  */
 const MakeReadyGuideBody = () => (
-  <div className="space-y-6 text-base leading-relaxed text-brand-white/90">
+  <div className="space-y-6 text-base leading-relaxed text-gray-700">
     <p>
       <strong><BrandName variant="light" /> Property Solutions</strong> turns 300+ multifamily units a year across
       Central Florida, and almost every conversation with a new property manager starts with
@@ -15,7 +15,7 @@ const MakeReadyGuideBody = () => (
       vendor coordination tactics that compress a turn without cutting corners.
     </p>
 
-    <h2 className="font-display text-2xl text-brand-white">What a make-ready actually includes in 2025</h2>
+    <h2 className="font-display text-2xl text-gray-900">What a make-ready actually includes in 2025</h2>
     <p>
       A modern Florida make-ready (also called a "unit turn" or "vacate-to-lease prep") is
       the work between move-out and the next resident's move-in. The standard scope on a
@@ -32,7 +32,7 @@ const MakeReadyGuideBody = () => (
       <li>Final walk-through with photo documentation for the file</li>
     </ul>
 
-    <h2 className="font-display text-2xl text-brand-white">The 5-day timeline, hour by hour</h2>
+    <h2 className="font-display text-2xl text-gray-900">The 5-day timeline, hour by hour</h2>
     <p>
       The reason most Florida turns take 10–14 days is dead time between trades. Here is
       the sequence <BrandName variant="light" /> runs to compress a standard turn into 5 business days:
@@ -47,7 +47,7 @@ const MakeReadyGuideBody = () => (
             <th className="p-3 text-left text-gray-900">Scope</th>
           </tr>
         </thead>
-        <tbody className="divide-y divide-brand-gold/15 text-brand-white">
+        <tbody className="divide-y divide-gray-200 text-gray-700">
           <tr><td className="p-3">Day 1 AM</td><td className="p-3">Inspection + scope</td><td className="p-3">Walk-through, photo log, scope sheet to PM</td></tr>
           <tr><td className="p-3">Day 1 PM</td><td className="p-3">Trash-out + drywall</td><td className="p-3">Clear unit, patch holes, prime patches</td></tr>
           <tr><td className="p-3">Day 2</td><td className="p-3">Paint</td><td className="p-3">Full ceiling + walls or touch-up program</td></tr>
@@ -58,7 +58,7 @@ const MakeReadyGuideBody = () => (
       </table>
     </div>
 
-    <h2 className="font-display text-2xl text-brand-white">Why most Florida turns take 12+ days</h2>
+    <h2 className="font-display text-2xl text-gray-900">Why most Florida turns take 12+ days</h2>
     <p>
       Three reasons, in order of impact: (1) the painter and the cleaner aren't booked on
       consecutive days, (2) someone discovers a plumbing leak on day 3 and the licensed
@@ -67,7 +67,7 @@ const MakeReadyGuideBody = () => (
       licensed trades, and walk-through are owned by one team.
     </p>
 
-    <h2 className="font-display text-2xl text-brand-white">2025 pricing benchmarks for Central Florida</h2>
+    <h2 className="font-display text-2xl text-gray-900">2025 pricing benchmarks for Central Florida</h2>
     <p>
       Pricing varies by unit size, paint scope, and damage. Use these as a budgeting guide:
     </p>
@@ -79,7 +79,7 @@ const MakeReadyGuideBody = () => (
       <li><strong>Heavy damage / smoke remediation:</strong> quoted as CapEx, not turn</li>
     </ul>
 
-    <h2 className="font-display text-2xl text-brand-white">The vendor coordination playbook</h2>
+    <h2 className="font-display text-2xl text-gray-900">The vendor coordination playbook</h2>
     <p>
       If you're not ready to consolidate to one vendor, these tactics still cut 3–5 days
       off the average turn:
@@ -92,7 +92,7 @@ const MakeReadyGuideBody = () => (
       <li>Use one shared photo log so trades don't re-inspect</li>
     </ol>
 
-    <h2 className="font-display text-2xl text-brand-white">When a 5-day turn isn't realistic</h2>
+    <h2 className="font-display text-2xl text-gray-900">When a 5-day turn isn't realistic</h2>
     <p>
       Heavy smoke, hoarder-level trash-out, full flooring replacement, cabinet replacement,
       or any insurance claim work moves out of make-ready and into CapEx. Trying to force
@@ -100,7 +100,7 @@ const MakeReadyGuideBody = () => (
       Quote them separately on a project timeline.
     </p>
 
-    <h2 className="font-display text-2xl text-brand-white">How <BrandName variant="light" /> runs your turn</h2>
+    <h2 className="font-display text-2xl text-gray-900">How <BrandName variant="light" /> runs your turn</h2>
     <p>
       We send one project manager, in-house painters, in-house cleaners, and licensed
       plumbing/electrical subs we coordinate. You get one invoice, one point of contact,

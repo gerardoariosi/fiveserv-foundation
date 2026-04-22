@@ -6,6 +6,7 @@ import { SITE, SERVICES, CITIES } from "@/lib/site-config";
 import type { BlogPost } from "@/lib/blog-data";
 import ContactCTA from "./ContactCTA";
 import BrandName from "@/components/fiveserv/BrandName";
+import AIOverviewBlock from "@/components/fiveserv/AIOverviewBlock";
 
 type Props = {
   post: BlogPost;
@@ -54,6 +55,7 @@ export const BlogArticleLayout = ({ post, children }: Props) => {
           <h1 className="mt-4 font-display text-4xl leading-tight text-brand-white sm:text-5xl">
             {post.title}
           </h1>
+          <AIOverviewBlock hidden directAnswer={post.tldr} />
           <div className="mt-4 h-1 w-16 rounded bg-brand-gold" aria-hidden="true" />
           <div className="mt-5 flex flex-wrap items-center gap-3 text-sm text-brand-gray-muted">
             <span className="text-brand-white"><BrandName /> Property Solutions</span>
