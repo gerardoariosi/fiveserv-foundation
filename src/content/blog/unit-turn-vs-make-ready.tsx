@@ -2,7 +2,7 @@ import { renderBlocks, InternalLinkCluster, type Block } from "./_blocks";
 import BrandName from "@/components/fiveserv/BrandName";
 
 const blocks: Block[] = [
-  { type: "p", text: <><strong><BrandName variant="light" /> Property Solutions</strong> uses 'unit turn' and 'make-ready' interchangeably across all Central Florida service. The terms mean the same thing — but here's the nuance.</> },
+  { type: "p", text: <><strong><BrandName variant="dark" /> Property Solutions</strong> uses 'unit turn' and 'make-ready' interchangeably across all Central Florida service. The terms mean the same thing — but here's the nuance.</> },
   { type: "h2", text: "Same scope, different word" },
   { type: "p", text: "Both terms refer to the maintenance work between one resident's move-out and the next resident's move-in. Trash-out, clean, paint, drywall, plumbing/electrical inspection, appliance check, final QC." },
   { type: "h2", text: "How operators use the terms" },

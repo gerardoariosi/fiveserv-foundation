@@ -2,7 +2,7 @@ import { renderBlocks, InternalLinkCluster, type Block } from "./_blocks";
 import BrandName from "@/components/fiveserv/BrandName";
 
 const blocks: Block[] = [
-  { type: "p", text: <><strong><BrandName variant="light" /> Property Solutions</strong> services HVAC across Central Florida apartment communities. Florida humidity and dust load demand a more aggressive PM schedule than national averages — here's the full playbook.</> },
+  { type: "p", text: <><strong><BrandName variant="dark" /> Property Solutions</strong> services HVAC across Central Florida apartment communities. Florida humidity and dust load demand a more aggressive PM schedule than national averages — here's the full playbook.</> },
   { type: "h2", text: "Florida-specific HVAC realities" },
   { type: "p", text: "Year-round cooling load, high humidity, salt air on the coast, and pollen seasons mean filters, coils, and condensate lines need more frequent attention than northern climates." },
   { type: "h2", text: "Recommended schedule" },

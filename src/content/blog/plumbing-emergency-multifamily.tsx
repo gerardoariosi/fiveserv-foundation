@@ -2,7 +2,7 @@ import { renderBlocks, InternalLinkCluster, type Block } from "./_blocks";
 import BrandName from "@/components/fiveserv/BrandName";
 
 const blocks: Block[] = [
-  { type: "p", text: <><strong><BrandName variant="light" /> Property Solutions</strong> runs a 24/7 emergency plumbing line for Central Florida multifamily. Here's the step-by-step response playbook every onsite team should know cold.</> },
+  { type: "p", text: <><strong><BrandName variant="dark" /> Property Solutions</strong> runs a 24/7 emergency plumbing line for Central Florida multifamily. Here's the step-by-step response playbook every onsite team should know cold.</> },
   { type: "h2", text: "Step 1 — Identify and shut off" },
   { type: "ul", items: [
     "Unit-level shutoff: under each sink, behind toilet, at water heater",

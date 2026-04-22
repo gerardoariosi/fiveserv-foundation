@@ -2,7 +2,7 @@ import { renderBlocks, InternalLinkCluster, type Block } from "./_blocks";
 import BrandName from "@/components/fiveserv/BrandName";
 
 const blocks: Block[] = [
-  { type: "p", text: <><strong><BrandName variant="light" /> Property Solutions</strong> integrates with the major multifamily PMS platforms. Here's the field set, SLA tier, and routing logic an effective maintenance request system requires.</> },
+  { type: "p", text: <><strong><BrandName variant="dark" /> Property Solutions</strong> integrates with the major multifamily PMS platforms. Here's the field set, SLA tier, and routing logic an effective maintenance request system requires.</> },
   { type: "h2", text: "Required fields" },
   { type: "ul", items: [
     "Unit number / building",

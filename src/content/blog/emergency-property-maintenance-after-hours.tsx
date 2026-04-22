@@ -2,7 +2,7 @@ import { renderBlocks, InternalLinkCluster, type Block } from "./_blocks";
 import BrandName from "@/components/fiveserv/BrandName";
 
 const blocks: Block[] = [
-  { type: "p", text: <><strong><BrandName variant="light" /> Property Solutions</strong> runs a 24/7 emergency line because after-hours property failures don't wait for business hours. Here's how to structure emergency response so it actually works.</> },
+  { type: "p", text: <><strong><BrandName variant="dark" /> Property Solutions</strong> runs a 24/7 emergency line because after-hours property failures don't wait for business hours. Here's how to structure emergency response so it actually works.</> },
   { type: "h2", text: "What counts as a true emergency" },
   { type: "ul", items: [
     "Active water intrusion or supply-line break",

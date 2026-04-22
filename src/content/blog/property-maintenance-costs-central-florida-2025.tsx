@@ -7,7 +7,7 @@ import BrandName from "@/components/fiveserv/BrandName";
 const PricingGuideBody = () => (
   <div className="space-y-6 text-base leading-relaxed text-gray-700">
     <p>
-      <strong><BrandName variant="light" /> Property Solutions</strong> publishes flat-rate pricing because
+      <strong><BrandName variant="dark" /> Property Solutions</strong> publishes flat-rate pricing because
       every property manager we've ever worked with has the same complaint: they can't
       build an accurate annual maintenance budget when every vendor quotes differently.
       This 2025 pricing guide gives you the actual numbers across hourly labor,
@@ -94,7 +94,7 @@ const PricingGuideBody = () => (
 
     <h2 className="font-display text-2xl text-gray-900">Get quoted scope, not estimates</h2>
     <p>
-      Pricing only matters when it matches the actual scope of work. <BrandName variant="light" /> publishes
+      Pricing only matters when it matches the actual scope of work. <BrandName variant="dark" /> publishes
       flat rates for our most common scopes and quotes anything custom in writing before
       work starts. Browse{" "}
       <Link to="/make-ready" className="text-gray-900 underline">make-ready</Link>,{" "}

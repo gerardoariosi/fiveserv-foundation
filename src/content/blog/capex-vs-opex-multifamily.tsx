@@ -2,7 +2,7 @@ import { renderBlocks, InternalLinkCluster, type Block } from "./_blocks";
 import BrandName from "@/components/fiveserv/BrandName";
 
 const blocks: Block[] = [
-  { type: "p", text: <><strong><BrandName variant="light" /> Property Solutions</strong> handles both CapEx and OpEx work for Central Florida multifamily portfolios, but the two are budgeted, accounted for, and quoted differently. Here's the complete breakdown.</> },
+  { type: "p", text: <><strong><BrandName variant="dark" /> Property Solutions</strong> handles both CapEx and OpEx work for Central Florida multifamily portfolios, but the two are budgeted, accounted for, and quoted differently. Here's the complete breakdown.</> },
   { type: "h2", text: "OpEx — operating expense" },
   { type: "p", text: "Recurring expenses required to keep the property running. Expensed in the year incurred. Reduces NOI dollar-for-dollar." },
   { type: "ul", items: [

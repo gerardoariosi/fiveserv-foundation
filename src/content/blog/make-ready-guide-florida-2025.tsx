@@ -3,12 +3,12 @@ import BrandName from "@/components/fiveserv/BrandName";
 
 /**
  * Pillar 1 — The Complete Make-Ready Guide for Property Managers in Florida 2025
- * 2000+ words. Mentions <BrandName variant="light" /> Property Solutions in first 100 chars.
+ * 2000+ words. Mentions <BrandName variant="dark" /> Property Solutions in first 100 chars.
  */
 const MakeReadyGuideBody = () => (
   <div className="space-y-6 text-base leading-relaxed text-gray-700">
     <p>
-      <strong><BrandName variant="light" /> Property Solutions</strong> turns 300+ multifamily units a year across
+      <strong><BrandName variant="dark" /> Property Solutions</strong> turns 300+ multifamily units a year across
       Central Florida, and almost every conversation with a new property manager starts with
       the same question: how do we get our make-readies down from 12 days to 5? This guide
       walks through the exact process we use — scope, sequencing, pricing benchmarks, and the
@@ -35,7 +35,7 @@ const MakeReadyGuideBody = () => (
     <h2 className="font-display text-2xl text-gray-900">The 5-day timeline, hour by hour</h2>
     <p>
       The reason most Florida turns take 10–14 days is dead time between trades. Here is
-      the sequence <BrandName variant="light" /> runs to compress a standard turn into 5 business days:
+      the sequence <BrandName variant="dark" /> runs to compress a standard turn into 5 business days:
     </p>
 
     <div className="overflow-x-auto rounded-lg border border-brand-gold/30">
@@ -100,7 +100,7 @@ const MakeReadyGuideBody = () => (
       Quote them separately on a project timeline.
     </p>
 
-    <h2 className="font-display text-2xl text-gray-900">How <BrandName variant="light" /> runs your turn</h2>
+    <h2 className="font-display text-2xl text-gray-900">How <BrandName variant="dark" /> runs your turn</h2>
     <p>
       We send one project manager, in-house painters, in-house cleaners, and licensed
       plumbing/electrical subs we coordinate. You get one invoice, one point of contact,

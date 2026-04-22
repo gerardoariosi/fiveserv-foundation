@@ -7,7 +7,7 @@ import BrandName from "@/components/fiveserv/BrandName";
 const VendorChaosBody = () => (
   <div className="space-y-6 text-base leading-relaxed text-gray-700">
     <p>
-      <strong><BrandName variant="light" /> Property Solutions</strong> works with multifamily operators across
+      <strong><BrandName variant="dark" /> Property Solutions</strong> works with multifamily operators across
       Central Florida who manage anywhere from one 80-unit community to portfolios of
       2,000+ doors. The single biggest operational drag we see — bigger than turn time,
       bigger than CapEx ROI — is vendor chaos: too many small specialty vendors, too many
@@ -80,7 +80,7 @@ const VendorChaosBody = () => (
       with you to the new vendor. The ones that don't were costing you money.
     </p>
 
-    <h2 className="font-display text-2xl text-gray-900">What <BrandName variant="light" /> actually consolidates</h2>
+    <h2 className="font-display text-2xl text-gray-900">What <BrandName variant="dark" /> actually consolidates</h2>
     <p>
       We replace painters, cleaners, drywall, basic plumbing, basic electrical, HVAC
       filters, appliance repair, make-ready coordination, and CapEx project management

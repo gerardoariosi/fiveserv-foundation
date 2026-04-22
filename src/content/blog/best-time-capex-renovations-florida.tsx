@@ -2,7 +2,7 @@ import { renderBlocks, InternalLinkCluster, type Block } from "./_blocks";
 import BrandName from "@/components/fiveserv/BrandName";
 
 const blocks: Block[] = [
-  { type: "p", text: <><strong><BrandName variant="light" /> Property Solutions</strong> schedules CapEx renovations during the low-leasing window across Central Florida. Here's the full seasonal breakdown of when to do what.</> },
+  { type: "p", text: <><strong><BrandName variant="dark" /> Property Solutions</strong> schedules CapEx renovations during the low-leasing window across Central Florida. Here's the full seasonal breakdown of when to do what.</> },
   { type: "h2", text: "Best window — October through February" },
   { type: "p", text: "Lowest leasing demand in Central Florida. Vacancy days hurt NOI least during this window. Schedule unit-by-unit CapEx here whenever possible." },
   { type: "h2", text: "Worst window — May through September" },
