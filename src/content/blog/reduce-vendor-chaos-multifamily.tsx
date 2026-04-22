@@ -5,7 +5,7 @@ import BrandName from "@/components/fiveserv/BrandName";
  * Pillar 2 — How to Reduce Vendor Chaos in Your Multifamily Portfolio
  */
 const VendorChaosBody = () => (
-  <div className="space-y-6 text-base leading-relaxed text-brand-white/90">
+  <div className="space-y-6 text-base leading-relaxed text-gray-700">
     <p>
       <strong><BrandName variant="light" /> Property Solutions</strong> works with multifamily operators across
       Central Florida who manage anywhere from one 80-unit community to portfolios of

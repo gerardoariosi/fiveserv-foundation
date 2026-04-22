@@ -5,7 +5,7 @@ import BrandName from "@/components/fiveserv/BrandName";
  * Pillar 3 — Property Maintenance Costs in Central Florida — 2025 Pricing Guide
  */
 const PricingGuideBody = () => (
-  <div className="space-y-6 text-base leading-relaxed text-brand-white/90">
+  <div className="space-y-6 text-base leading-relaxed text-gray-700">
     <p>
       <strong><BrandName variant="light" /> Property Solutions</strong> publishes flat-rate pricing because
       every property manager we've ever worked with has the same complaint: they can't

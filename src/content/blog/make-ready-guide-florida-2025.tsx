@@ -6,7 +6,7 @@ import BrandName from "@/components/fiveserv/BrandName";
  * 2000+ words. Mentions <BrandName variant="light" /> Property Solutions in first 100 chars.
  */
 const MakeReadyGuideBody = () => (
-  <div className="space-y-6 text-base leading-relaxed text-brand-white/90">
+  <div className="space-y-6 text-base leading-relaxed text-gray-700">
     <p>
       <strong><BrandName variant="light" /> Property Solutions</strong> turns 300+ multifamily units a year across
       Central Florida, and almost every conversation with a new property manager starts with

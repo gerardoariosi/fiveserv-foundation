@@ -19,6 +19,7 @@ export type CityEditorial = {
   angle?: string;
   faqs: CityFaq[];
   heroImage: string;
+  heroImagePosition?: string;
 };
 
 const DEFAULT_HERO = "/images/cities/default-central-florida.jpg";
@@ -101,6 +102,7 @@ export const CITY_EDITORIAL: Partial<Record<CitySlug, CityEditorial>> = {
     zips: ["32789", "32792"],
     responseMinutes: 20,
     heroImage: "/images/cities/winter-park.jpg",
+    heroImagePosition: "center 60%",
     faqs: baseFaqs("Winter Park", ["32789", "32792"], 20, ["Park Avenue area", "Maitland border"]),
   },
   "lakeland-fl": {

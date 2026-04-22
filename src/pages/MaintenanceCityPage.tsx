@@ -78,6 +78,7 @@ const MaintenanceCityPage = ({ citySlug: propSlug }: MaintenanceCityPageProps = 
           // @ts-expect-error fetchpriority is valid HTML
           fetchpriority="high"
           className="absolute inset-0 -z-10 h-full w-full object-cover"
+          style={{ objectPosition: editorial.heroImagePosition ?? "center center" }}
           onError={(e) => {
             (e.currentTarget as HTMLImageElement).style.display = "none";
           }}
