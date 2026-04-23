@@ -64,7 +64,7 @@ const SectionReveal = ({ children, className = "" }: { children: React.ReactNode
 
 const ResidentialPage = () => {
   const path = "/residential";
-  const title = "Home Maintenance Services Orlando FL | FiveServ Property Solutions";
+  const title = "Home Maintenance Orlando FL | FiveServ";
   const description =
     "Home maintenance services Orlando FL. FiveServ provides plumbing, electrical, painting, drywall, flooring, and general repairs for homeowners across Central Florida. Licensed. Insured. 24/7.";
   const service = SERVICES.find((s) => s.slug === "residential")!;

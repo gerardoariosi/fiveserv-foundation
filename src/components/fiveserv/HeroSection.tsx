@@ -97,11 +97,11 @@ export const HeroSection = ({
       <div className="relative z-10 flex items-center py-10 sm:py-14 lg:py-20" style={{ minHeight: heroVisibleHeight }}>
         <div ref={ref} className="container reveal">
           <h1 className="text-3xl text-brand-white sm:text-5xl lg:text-6xl leading-tight">
-            One call handles your entire make-ready —
-            <span className="block text-brand-gold italic">no vendor chaos. One invoice.</span>
+            Property Maintenance Central Florida —
+            <span className="block text-brand-gold italic">one call handles your entire make-ready.</span>
           </h1>
           <p className="mt-5 max-w-2xl text-base sm:text-lg lg:text-xl text-gray-300 leading-relaxed sm:leading-[1.75]">
-            Painting, cleaning, repairs, drywall, inspections. Our team. 5 business days. Guaranteed.
+            Painting, cleaning, repairs, drywall, inspections. No vendor chaos. One invoice. Our team. 5 business days. Guaranteed.
           </p>
 
           <div className="mt-7 flex flex-col sm:flex-row sm:flex-wrap gap-3">

@@ -51,7 +51,7 @@ const MaintenanceCityPage = ({ citySlug: propSlug }: MaintenanceCityPageProps = 
   if (!city || !editorial) return <NotFound />;
 
   const path = `/maintenance-${city.slug}`;
-  const title = `Property Maintenance ${city.name} ${city.state} | Make-Ready Services | ${SITE.brand}`;
+  const title = `Property Maintenance ${city.name} ${city.state} | ${SITE.brand}`;
   const description = `Property maintenance ${city.name} ${city.state}. ${SITE.brand} serves ZIP ${editorial.zips.join(", ")} and ${editorial.zones.slice(0, 3).join(", ")}. 5-day make-ready. One call. One invoice.`;
 
   const aiAnswer = `${SITE.brand} Property Solutions provides make-ready and maintenance services in ${city.name}, ${city.state}. We serve ZIP codes ${editorial.zips.join(", ")} and neighborhoods including ${editorial.zones.join(", ")}. We reach ${city.name} within ${editorial.responseMinutes} minutes from our Orlando base.`;
