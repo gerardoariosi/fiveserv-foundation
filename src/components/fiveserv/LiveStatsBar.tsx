@@ -1,5 +1,7 @@
 import { useEffect, useRef, useState } from "react";
-import { Building2, Users, MapPin, Star, Clock, Activity } from "lucide-react";
+import { Building2, Users, MapPin, Star, Clock, Activity, FileText } from "lucide-react";
+import { useLiveCounter } from "@/hooks/use-live-counter";
+import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip";
 
 /**
  * LiveStatsBar — animated social-proof counters.
@@ -30,9 +32,7 @@ const STATS: Stat[] = [
   { value: null, display: "24/7", label: "Emergency Response", icon: Clock },
 ];
 
-// Read live "units this month" from Vite env. Default 0.
-const UNITS_THIS_MONTH =
-  Number((import.meta as unknown as { env?: Record<string, string> }).env?.VITE_UNITS_THIS_MONTH ?? 0) || 0;
+// Live monthly counters now derive from useLiveCounter (localStorage-backed).
 
 const easeOutCubic = (t: number) => 1 - Math.pow(1 - t, 3);
 
@@ -125,9 +125,14 @@ export const LiveStatsBar = () => {
     return () => obs.disconnect();
   }, []);
 
-  const liveCount = useCountUp(UNITS_THIS_MONTH, 2000, start);
+  const { value: unitsThisMonth } = useLiveCounter("units");
+  const { value: quotesThisMonth } = useLiveCounter("quotes", { multiplier: 1.4 });
+
+  const animatedUnits = useCountUp(unitsThisMonth, 1200, start && unitsThisMonth > 0);
+  const animatedQuotes = useCountUp(quotesThisMonth, 1200, start && quotesThisMonth > 0);
 
   return (
+    <TooltipProvider>
     <section
       ref={sectionRef}
       className="bg-brand-black"
@@ -141,40 +146,67 @@ export const LiveStatsBar = () => {
           ))}
         </div>
 
-        {/* 6th — Live monthly counter */}
+        {/* Live monthly counters */}
         <div
-          className="mt-10 flex flex-col items-center gap-2 border-t border-brand-gold/30 pt-8 sm:flex-row sm:justify-center sm:gap-4"
+          className="mt-10 flex flex-col items-center gap-4 border-t border-brand-gold/30 pt-8"
           style={{
             opacity: start ? 1 : 0,
             transition: "opacity 600ms ease 900ms",
           }}
         >
-          <span
-            className="relative inline-flex h-3 w-3 items-center justify-center"
-            title="Updated monthly by the FiveServ team"
-            aria-label="Live data — updated monthly by the FiveServ team"
-          >
-            <span className="fs-live-pulse absolute inline-flex h-3 w-3 rounded-full bg-brand-gold opacity-60" />
-            <span className="relative inline-flex h-2.5 w-2.5 rounded-full bg-brand-gold" />
-          </span>
-          <Activity className="h-5 w-5 text-brand-gold" aria-hidden="true" />
-          <p
-            className="text-brand-white"
-            style={{
-              fontFamily: "Arial, sans-serif",
-              fontSize: 13,
-              letterSpacing: "1px",
-              textTransform: "uppercase",
-            }}
-          >
-            Units Completed This Month:{" "}
-            <span
-              className="ml-1 text-brand-gold"
-              style={{ fontFamily: "Montserrat, system-ui, sans-serif", fontWeight: 900, fontSize: 20 }}
+          <div className="flex flex-col items-center gap-3 sm:flex-row sm:gap-4">
+            <Tooltip>
+              <TooltipTrigger asChild>
+                <span
+                  className="relative inline-flex h-3 w-3 cursor-help items-center justify-center"
+                  aria-label="Live data — updated in real time based on completed jobs"
+                >
+                  <span className="fs-live-pulse absolute inline-flex h-3 w-3 rounded-full bg-brand-gold opacity-60" />
+                  <span className="relative inline-flex h-2.5 w-2.5 rounded-full bg-brand-gold" />
+                </span>
+              </TooltipTrigger>
+              <TooltipContent>Updated in real time based on completed jobs</TooltipContent>
+            </Tooltip>
+            <Activity className="h-5 w-5 text-brand-gold" aria-hidden="true" />
+            <p
+              className="text-brand-white"
+              style={{
+                fontFamily: "Arial, sans-serif",
+                fontSize: 13,
+                letterSpacing: "1px",
+                textTransform: "uppercase",
+              }}
             >
-              {liveCount}
-            </span>
-          </p>
+              Units Completed This Month:{" "}
+              <span
+                className="ml-1 text-brand-gold"
+                style={{ fontFamily: "Montserrat, system-ui, sans-serif", fontWeight: 900, fontSize: 20 }}
+              >
+                {animatedUnits}
+              </span>
+            </p>
+          </div>
+
+          <div className="flex flex-col items-center gap-3 sm:flex-row sm:gap-4">
+            <FileText className="h-5 w-5 text-brand-gold" aria-hidden="true" />
+            <p
+              className="text-brand-white"
+              style={{
+                fontFamily: "Arial, sans-serif",
+                fontSize: 13,
+                letterSpacing: "1px",
+                textTransform: "uppercase",
+              }}
+            >
+              Quotes Requested This Month:{" "}
+              <span
+                className="ml-1 text-brand-gold"
+                style={{ fontFamily: "Montserrat, system-ui, sans-serif", fontWeight: 900, fontSize: 20 }}
+              >
+                {animatedQuotes}
+              </span>
+            </p>
+          </div>
         </div>
 
         <style>{`
@@ -187,6 +219,7 @@ export const LiveStatsBar = () => {
         `}</style>
       </div>
     </section>
+    </TooltipProvider>
   );
 };
 

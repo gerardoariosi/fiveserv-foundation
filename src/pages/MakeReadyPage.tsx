@@ -59,7 +59,7 @@ const SectionReveal = ({ children, className = "" }: { children: React.ReactNode
 
 const MakeReadyPage = () => {
   const path = "/make-ready";
-  const title = "Make-Ready Services Central Florida | 5-Day Guarantee | FiveServ";
+  const title = "Make-Ready Services Orlando FL | 5-Day Guarantee | FiveServ";
   const description =
     "Make-ready services Orlando FL. FiveServ completes every unit turn in 5 business days, guaranteed. Painting, cleaning, repairs, drywall, inspection, rekeying. One call. One invoice.";
   const service = SERVICES.find((s) => s.slug === "make-ready")!;
@@ -88,7 +88,7 @@ const MakeReadyPage = () => {
             — <span style={{ whiteSpace: "nowrap" }}><span className="font-bold text-brand-gold">F</span><span className="text-white">iveServ</span></span> Property Solutions
           </p>
           <h1 className="mt-3 font-display font-black text-4xl text-white sm:text-5xl lg:text-6xl">
-            Make-Ready <span className="font-sans font-normal">&amp;</span> Unit Turn Services —
+            Make-Ready <span className="font-sans font-normal">&amp;</span> Unit Turn Services Orlando FL —
             <span className="block text-brand-gold">5-Day Guarantee</span>
           </h1>
           <p className="mt-6 max-w-2xl text-lg text-gray-300">

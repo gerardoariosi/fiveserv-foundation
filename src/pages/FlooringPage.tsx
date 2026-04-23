@@ -97,7 +97,7 @@ const SectionReveal = ({ children, className = "" }: { children: React.ReactNode
 
 const FlooringPage = () => {
   const path = "/flooring";
-  const title = "Flooring Services Central Florida | Installation & Replacement | FiveServ";
+  const title = "Flooring Services Central Florida | FiveServ";
   const description =
     "Professional flooring installation and replacement for property managers and homeowners across Central Florida. Vinyl plank, tile, carpet, hardwood. One call, one invoice. FiveServ Property Solutions.";
 
