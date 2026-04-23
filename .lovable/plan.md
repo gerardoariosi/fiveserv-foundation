@@ -1,82 +1,104 @@
 
 
-## Audit Report — 3 Issues
+## TASK 1 — Full SEO Audit Results
 
-### ISSUE 1 — White text on white background in blog articles ❌ FAIL
+### Meta Tags ✅ MOSTLY PASS
+- All 18 main pages use the shared `Seo` component → unique title, description, canonical, hreflang en-US/es, OG, Twitter ✅
+- **FAIL ❌** — Some titles exceed 60 chars:
+  - `MaintenanceCityPage`: `"Property Maintenance {City} FL | Make-Ready Services | FiveServ Property Solutions"` → ~80 chars
+  - `FlooringPage`: 76 chars
+  - `MakeReadyPage`: 66 chars
+  - `ResidentialPage`: 67 chars
+- All description lengths within 160 ✅
 
-Three legacy blog content files use `text-brand-white` classes designed for the OLD dark blog layout, but `BlogArticleLayout.tsx` line 104 wraps article body in `bg-white`. Result: **invisible body text, headings, and table cells on three published articles.**
+### Technical SEO
+- **FAIL ❌** `public/sitemap.xml` contains only **40 URLs** but `scripts/generate-sitemap.mjs` would produce **~107** (4 services × 18 cities + 18 cities + statics). Sitemap is stale — never regenerated after city × service routes were added.
+- ✅ `robots.txt` correct (`Allow: /`, `Disallow: /admin/`, AI crawlers allowed, sitemap declared)
+- ✅ `/thank-you-b2b` and `/thank-you-residential` use `noIndex` via `Seo`
+- ✅ Single H1 per page (audited via grep — every page has exactly one `<h1>`)
+- ⚠️ Alt-text spot-check OK on key components; deep audit not performed
+- ✅ No render-blocking external CSS
 
-**Files affected:**
-- `src/content/blog/reduce-vendor-chaos-multifamily.tsx` — wrapper `text-brand-white/90`, all H2s `text-brand-white`, table body `text-brand-white`
-- `src/content/blog/property-maintenance-costs-central-florida-2025.tsx` — same pattern (wrapper, 6 H2s, 2 table bodies)
-- `src/content/blog/make-ready-guide-florida-2025.tsx` — same pattern
+### Schemas ✅ PASS
+All 9 schemas implemented in `SchemaOrg.tsx`: Organization, LocalBusiness×18, Service×12, FAQPage, BreadcrumbList, HowTo (make-ready), BlogPosting, Person×5, AggregateRating placeholder. Verified attached on every relevant page.
 
-All other blog posts use the shared `_blocks.tsx` renderer (already correct). `BlogPage.tsx` listing — verified ✅ uses `text-gray-900` / `text-gray-600` correctly.
+### AEO ✅ PASS
+- `AIOverviewBlock` SR-only on every page ✅
+- `llms.txt` complete ✅
+- FAQs server-rendered in HTML (FaqAccordion + VisibleQA) ✅
 
-**Fix:** In the 3 files above, replace:
-- wrapper `text-brand-white/90` → `text-gray-700`
-- H2 `text-brand-white` → `text-gray-900`
-- `divide-brand-gold/15 text-brand-white` → `divide-gray-200 text-gray-700`
-- Table border `border-brand-gold/30` → `border-gray-200` (gold-on-white is acceptable but gray is cleaner here; keep gold if preferred — flag only the text)
+### Keyword targets in H1
+- ✅ Homepage hero H1: "One call handles your entire make-ready" — **does NOT contain "property maintenance Central Florida"** ❌
+- ✅ /make-ready/: "Make-Ready & Unit Turn Services — 5-Day Guarantee" — **missing "Orlando FL"** ❌
+- ✅ /maintenance/: "Property Maintenance Services… Central Florida" — PASS
+- ✅ /plumbing/: "Plumbing Services… Central Florida" — PASS
+- ✅ Each city page H1: "{City} {ST} Property Maintenance" — PASS
+
+### Failures to fix (Task 1)
+| File | Fix |
+|---|---|
+| `public/sitemap.xml` | Regenerate via `node scripts/generate-sitemap.mjs` to include all 107 URLs |
+| `src/pages/MaintenanceCityPage.tsx` line 54 | Shorten title to ≤60 chars: `Property Maintenance ${city.name} ${state} | FiveServ` |
+| `src/pages/FlooringPage.tsx` line 96 | Shorten to: `Flooring Services Central Florida | FiveServ` |
+| `src/pages/MakeReadyPage.tsx` line 62 | Shorten to: `Make-Ready Services Orlando FL | 5-Day Guarantee | FiveServ` (still 60) — also injects "Orlando FL" keyword |
+| `src/pages/ResidentialPage.tsx` line 67 | Shorten to: `Home Maintenance Orlando FL | FiveServ` |
+| `src/components/fiveserv/HeroSection.tsx` line 99 | Augment H1 with hidden keyword span OR change subhead to include "property maintenance Central Florida" naturally |
+| `src/pages/MakeReadyPage.tsx` H1 line 90–93 | Add "Orlando FL" inside H1 |
 
 ---
 
-### ISSUE 2 — City hero images positioning ⚠️ PARTIAL
+## TASK 2 — Live Counter Logic Plan
 
-`MaintenanceCityPage.tsx` lines 73–88 renders hero images correctly with:
-- `object-cover` ✅
-- `bg-brand-black/60` overlay ✅
-- bottom fade gradient ✅
+Refactor `src/components/fiveserv/LiveStatsBar.tsx` and create new hook `src/hooks/use-live-counter.ts`.
 
-**However:**
-- No `object-position` is set anywhere → defaults to `center center` for ALL cities (Winter Park image gets cropped poorly, subjects sit too high).
-- `CityPageTemplate.tsx` (used by `/cities/:slug` route) has **NO hero image at all** — pure black background. Inconsistent with `MaintenanceCityPage`.
+### New hook: `useLiveCounter(key, config)`
+Returns `{ value, isHydrated }` where `value` evolves realistically using `localStorage`.
 
-**Fix:**
-1. Add an optional `heroImagePosition` field to `CityEditorial` in `src/lib/city-data.ts` (default `"center center"`).
-2. Set Winter Park to `"center 60%"`.
-3. In `MaintenanceCityPage.tsx` line 80, apply via inline `style={{ objectPosition: editorial.heroImagePosition ?? "center center" }}`.
-4. (Optional, out of scope unless requested) Add hero image rendering to `CityPageTemplate.tsx` to match `MaintenanceCityPage` for the `/cities/:slug` route — flagging only.
+**Stored keys** (per counter):
+- `fiveserv_${key}_month` — e.g. `"2026-04"`
+- `fiveserv_${key}_count` — current integer
+- `fiveserv_${key}_last_update` — ISO timestamp
+- `fiveserv_${key}_seed` — random seed for that month (start value + daily rate), so values are stable across reloads on the same day
 
-**Files to edit:**
-- `src/lib/city-data.ts`
-- `src/pages/MaintenanceCityPage.tsx`
+**Logic on mount:**
+1. Read current month `YYYY-MM`. If stored month differs → reset:
+   - `startValue` = random 3–7
+   - `avgDailyRate` = random 0.6–0.9
+   - persist seed; count = `startValue`; lastUpdate = now
+2. Compute `expectedValue = round(startValue + dayOfMonth × avgDailyRate)`. Clamp to realistic range table:
+   - Day 1–7 → 3–10, 8–14 → 8–15, 15–21 → 13–20, 22–28 → 17–24, 29–31 → 20–28
+3. If stored count < expectedValue → set count = expectedValue, lastUpdate = now
+4. Schedule `setInterval` every 4–8 hours: if `now − lastUpdate ≥ 4h` and `count < monthly cap`, increment by 1 with smooth animation.
 
----
+**Quotes counter:** call `useLiveCounter("quotes", { multiplier: 1.4 })`. Internally derives from same units value × 1.4 (rounded), persisted under its own keys so values feel independent.
 
-### ISSUE 3 — AIOverviewBlock coverage ⚠️ MOSTLY PASS
+### LiveStatsBar.tsx changes
+- Replace `UNITS_THIS_MONTH = Number(env.VITE_UNITS_THIS_MONTH)` and current static `liveCount`.
+- Use `const { value: unitsThisMonth } = useLiveCounter("units", { ... })`.
+- Add a second live row "Quotes Requested This Month" using `useLiveCounter("quotes", { ... })`.
+- Tooltip on the gold pulsing dot → "Updated in real time based on completed jobs".
+- Smooth count-up transition between value changes via the existing `useCountUp` (animate from previous to new on increment).
+- SSR-safe: gate `localStorage` reads behind `useEffect` (already client-only since component is in client tree).
 
-All AIOverviewBlock instances on the site **already use `hidden` prop** (renders SR-only with `clip: rect(0,0,0,0)`, in DOM, invisible to users). ✅
-
-**Coverage verified PASS ✅:**
-- Homepage, /make-ready/, /maintenance/, /renovations/, /residential/
-- /plumbing/, /electrical/, /hvac/, /drywall/, /painting/, /flooring/, /carpentry/, /cleaning/
-- All 18 city pages (via `MaintenanceCityPage` AND `CityPageTemplate`)
-- /about/, /contact/, /faq/, /services/, /cities/ (= /service-areas/), /blog/, /tampa-bay/
-- Comparison pages, all 4 service pages via `ServicePageTemplate`
-
-**MISSING ❌:**
-- `src/pages/BlogArticlePage.tsx` (via `BlogArticleLayout.tsx`) — NO hidden AIOverviewBlock on any of the ~30 blog article pages.
-
-**Fix:** Add one hidden `AIOverviewBlock` after the `<h1>` in `BlogArticleLayout.tsx` (line 56), using each post's `tldr` as the `directAnswer` (already 40–60 word summary per article).
-
-**Files to edit:**
-- `src/components/fiveserv/BlogArticleLayout.tsx`
+### Files to be touched (Task 2)
+- `src/hooks/use-live-counter.ts` — NEW
+- `src/components/fiveserv/LiveStatsBar.tsx` — wire two live counters, add tooltip, add Quotes row
 
 ---
 
 ## Implementation Plan (single pass, on approval)
 
-**5 files total:**
+**Task 1 — SEO fixes (6 files):**
+1. Rewrite `public/sitemap.xml` (run sitemap generator output inline → all 107 URLs with current dates).
+2. Shorten title in `src/pages/MaintenanceCityPage.tsx`.
+3. Shorten title in `src/pages/FlooringPage.tsx`.
+4. Update title + H1 keyword in `src/pages/MakeReadyPage.tsx` (add "Orlando FL").
+5. Shorten title in `src/pages/ResidentialPage.tsx`.
+6. Augment `src/components/fiveserv/HeroSection.tsx` H1 to include "Property Maintenance Central Florida" keyword (subhead or visible secondary line).
 
-1. `src/content/blog/reduce-vendor-chaos-multifamily.tsx` — swap `text-brand-white*` → `text-gray-700` / `text-gray-900` for wrapper, H2s, table body.
-2. `src/content/blog/property-maintenance-costs-central-florida-2025.tsx` — same color swap.
-3. `src/content/blog/make-ready-guide-florida-2025.tsx` — same color swap.
-4. `src/lib/city-data.ts` — add optional `heroImagePosition?: string` to `CityEditorial`; set Winter Park to `"center 60%"`.
-5. `src/pages/MaintenanceCityPage.tsx` — apply `objectPosition` inline style on hero `<img>`.
-6. `src/components/fiveserv/BlogArticleLayout.tsx` — add `<AIOverviewBlock hidden directAnswer={post.tldr} />` directly after `<h1>` (line 56).
+**Task 2 — Live counter (2 files):**
+7. Create `src/hooks/use-live-counter.ts` with the stateful localStorage logic above.
+8. Refactor `src/components/fiveserv/LiveStatsBar.tsx` to consume two counters (units, quotes), add tooltip, smooth animation on increment.
 
-**Out of scope:** Adding a hero image to `CityPageTemplate.tsx` (the `/cities/:slug` route currently uses solid black — flagging but not changing without explicit approval since it would require image asset decisions).
-
-**No changes to:** routing, schema, sitemap, forms, GHL, Sofia, or any popup logic.
+**Out of scope:** image alt-text full audit, color-contrast pass, performance optimization, third counter beyond units + quotes. No routing, schema, or form logic touched.
 
