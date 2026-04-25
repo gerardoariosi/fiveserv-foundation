@@ -38,59 +38,105 @@ const TIER_1 = new Set<CitySlug>([
 
 // Custom gold pin with FS monogram
 const makeFsIcon = (tier1: boolean) => {
-  const size = tier1 ? 44 : 36;
+  const size = tier1 ? 48 : 38;
+  const fontSize = tier1 ? 13 : 11;
   const html = `
     <div style="
-      width:${size}px;height:${size}px;
-      background:#D4AF37;
-      border:2px solid #1a1a1a;
-      border-radius:50% 50% 50% 0;
-      transform:rotate(-45deg);
-      display:flex;align-items:center;justify-content:center;
-      box-shadow:0 4px 10px rgba(0,0,0,0.35);
+      position:relative;
+      width:${size}px;
+      height:${size}px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
     ">
-      <span style="
-        transform:rotate(45deg);
-        color:#1a1a1a;
-        font-weight:900;
-        font-size:${tier1 ? 14 : 12}px;
-        font-family:Georgia,serif;
-        letter-spacing:-0.5px;
-      ">FS</span>
+      <div style="
+        width:${size}px;
+        height:${size}px;
+        background:#1A1A1A;
+        border:2.5px solid #FFD700;
+        border-radius:50%;
+        display:flex;
+        align-items:center;
+        justify-content:center;
+        box-shadow:0 0 0 3px rgba(255,215,0,0.2), 0 4px 14px rgba(0,0,0,0.5);
+      ">
+        <span style="
+          color:#FFD700;
+          font-weight:900;
+          font-size:${fontSize}px;
+          font-family:Georgia,serif;
+          letter-spacing:-0.5px;
+          line-height:1;
+        ">FS</span>
+      </div>
+      <div style="
+        position:absolute;
+        bottom:-6px;
+        left:50%;
+        transform:translateX(-50%);
+        width:0;
+        height:0;
+        border-left:5px solid transparent;
+        border-right:5px solid transparent;
+        border-top:7px solid #FFD700;
+      "></div>
     </div>
   `;
   return L.divIcon({
     html,
     className: "fiveserv-pin",
-    iconSize: [size, size],
-    iconAnchor: [size / 2, size],
-    popupAnchor: [0, -size],
+    iconSize: [size, size + 6],
+    iconAnchor: [size / 2, size + 6],
+    popupAnchor: [0, -(size + 6)],
   });
 };
 
 const comingSoonIcon = L.divIcon({
   html: `
     <div style="
-      width:36px;height:36px;
-      background:transparent;
-      border:2px dashed #D4AF37;
-      border-radius:50% 50% 50% 0;
-      transform:rotate(-45deg);
-      display:flex;align-items:center;justify-content:center;
+      position:relative;
+      width:38px;
+      height:38px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
     ">
-      <span style="
-        transform:rotate(45deg);
-        color:#D4AF37;
-        font-weight:900;
-        font-size:11px;
-        font-family:Georgia,serif;
-      ">FS</span>
+      <div style="
+        width:38px;
+        height:38px;
+        background:transparent;
+        border:2.5px dashed #FFD700;
+        border-radius:50%;
+        display:flex;
+        align-items:center;
+        justify-content:center;
+        opacity:0.7;
+      ">
+        <span style="
+          color:#FFD700;
+          font-weight:900;
+          font-size:11px;
+          font-family:Georgia,serif;
+          letter-spacing:-0.5px;
+        ">FS</span>
+      </div>
+      <div style="
+        position:absolute;
+        bottom:-6px;
+        left:50%;
+        transform:translateX(-50%);
+        width:0;
+        height:0;
+        border-left:5px solid transparent;
+        border-right:5px solid transparent;
+        border-top:7px solid rgba(255,215,0,0.5);
+      "></div>
     </div>
   `,
   className: "fiveserv-pin-soon",
-  iconSize: [36, 36],
-  iconAnchor: [18, 36],
-  popupAnchor: [0, -36],
+  iconSize: [38, 44],
+  iconAnchor: [19, 44],
+  popupAnchor: [0, -44],
 });
 
 const ServiceAreaMap = () => (
