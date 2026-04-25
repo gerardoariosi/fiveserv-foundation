@@ -58,19 +58,14 @@ const ServicesIndexPage = () => (
         {SERVICES.map((s) => {
           const Icon = ICONS[s.slug] ?? Wrench;
           return (
-            <article key={s.slug} className="hover-card group rounded-lg border border-gray-100 bg-white shadow-sm p-8">
-              <div className="inline-flex h-12 w-12 items-center justify-center rounded-md bg-brand-gold/15 text-gray-900">
-                <Icon className="h-6 w-6" />
-              </div>
-              <h2 className="mt-6 font-display font-semibold text-2xl text-gray-900">{s.name}</h2>
-              <p className="mt-3 text-gray-700">{s.description}</p>
-              <Link
-                to={`/${s.slug}`}
-                className="mt-6 inline-flex items-center gap-2 font-bold text-gray-900 group-hover:text-gray-900 group-hover:underline"
-              >
-                {s.cta} <ArrowRight className="h-4 w-4" />
-              </Link>
-            </article>
+            <ServiceCard
+              key={s.slug}
+              icon={Icon}
+              title={s.name}
+              description={s.description}
+              href={`/${s.slug}`}
+              cta={s.cta}
+            />
           );
         })}
       </div>
