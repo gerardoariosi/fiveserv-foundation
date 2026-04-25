@@ -18,6 +18,7 @@ import TrustBar from "@/components/fiveserv/TrustBar";
 import VacancyCalculator from "@/components/fiveserv/VacancyCalculator";
 import { useReveal } from "@/hooks/use-fiveserv";
 import BrandName from "@/components/fiveserv/BrandName";
+import GuaranteeBadge from "@/components/fiveserv/GuaranteeBadge";
 
 const INCLUDED = [
   { icon: Paintbrush, title: "Paint touch-up or full repaint" },
@@ -87,10 +88,15 @@ const MakeReadyPage = () => {
           <p className="text-xs font-medium uppercase tracking-[0.12em] text-brand-gold">
             — <span style={{ whiteSpace: "nowrap" }}><span className="font-bold text-brand-gold">F</span><span className="text-white">iveServ</span></span> Property Solutions
           </p>
-          <h1 className="mt-3 font-display font-black text-4xl text-white sm:text-5xl lg:text-6xl">
-            Make-Ready <span className="font-sans font-normal">&amp;</span> Unit Turn Services Orlando FL —
-            <span className="block text-brand-gold">5-Day Guarantee</span>
-          </h1>
+          <div className="mt-3 flex flex-col-reverse items-start gap-6 lg:flex-row lg:items-center lg:justify-between lg:gap-10">
+            <h1 className="font-display font-black text-4xl text-white sm:text-5xl lg:text-6xl">
+              Make-Ready <span className="font-sans font-normal">&amp;</span> Unit Turn Services Orlando FL —
+              <span className="block text-brand-gold">5-Day Guarantee</span>
+            </h1>
+            <div className="shrink-0">
+              <GuaranteeBadge size="lg" />
+            </div>
+          </div>
           <p className="mt-6 max-w-2xl text-lg text-gray-300">
             Central Florida property managers trust <BrandName variant="light" /> for make-ready. One call. Our team. 5 business days. Guaranteed in writing.
           </p>
