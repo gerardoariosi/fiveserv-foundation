@@ -89,6 +89,30 @@ const ServicesGrid = () => {
             );
           })}
         </div>
+
+        <div className="mt-10 border-t border-gray-100 pt-8">
+          <p className="text-xs font-bold uppercase tracking-widest text-gray-500 mb-5">Also available</p>
+          <div className="flex flex-wrap gap-3">
+            {[
+              { slug: "plumbing", label: "Plumbing" },
+              { slug: "electrical", label: "Electrical" },
+              { slug: "hvac", label: "HVAC" },
+              { slug: "drywall", label: "Drywall" },
+              { slug: "painting", label: "Painting" },
+              { slug: "flooring", label: "Flooring" },
+              { slug: "carpentry", label: "Carpentry" },
+              { slug: "cleaning", label: "Cleaning" },
+            ].map((t) => (
+              <Link
+                key={t.slug}
+                to={`/${t.slug}`}
+                className="rounded-full border border-gray-200 px-4 py-2 text-sm text-gray-700 hover:border-brand-gold hover:text-gray-900 transition-colors"
+              >
+                {t.label}
+              </Link>
+            ))}
+          </div>
+        </div>
       </div>
     </section>
   );
