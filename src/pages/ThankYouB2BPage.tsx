@@ -52,7 +52,7 @@ export const ThankYouB2BPage = () => {
             rel="noopener noreferrer"
             className="text-sm font-medium text-gray-700 hover:text-brand-gold transition-colors underline underline-offset-2 decoration-brand-gold/40"
           >
-            Message us on WhatsApp — we reply fast
+            Explore our full list of services
           </a>
         </div>
         <Link
