@@ -11,7 +11,7 @@ export const FamilyStory = () => {
         <div className="grid gap-12 lg:grid-cols-2 lg:items-center">
           <div className="overflow-hidden rounded-2xl border border-gray-200 shadow-sm bg-white flex items-center justify-center aspect-[4/3]">
             <img
-              src="/images/logo FS .png"
+              src="/images/logo-fs.png"
               alt={`The ${SITE.brand} family — property maintenance Central Florida`}
               loading="lazy"
               decoding="async"
