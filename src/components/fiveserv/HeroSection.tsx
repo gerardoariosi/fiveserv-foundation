@@ -2,7 +2,7 @@ import { ArrowRight, Phone } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
 import { SITE } from "@/lib/site-config";
 import { useReveal } from "@/hooks/use-fiveserv";
-import GuaranteeBadge from "./GuaranteeBadge";
+
 
 const WhatsAppIcon = ({ className }: { className?: string }) => (
   <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" className={className}>
@@ -139,10 +139,6 @@ export const HeroSection = ({
           </ul>
         </div>
 
-        {/* Guarantee badge — desktop only, bottom-right overlap */}
-        <div className="pointer-events-none absolute bottom-8 right-8 hidden lg:block z-20">
-          <GuaranteeBadge size="md" />
-        </div>
       </div>
     </section>
   );
