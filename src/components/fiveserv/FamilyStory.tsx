@@ -9,14 +9,21 @@ export const FamilyStory = () => {
     <section className="bg-white">
       <div ref={ref} className="container reveal py-24 lg:py-32">
         <div className="grid gap-12 lg:grid-cols-2 lg:items-center">
-          <div className="overflow-hidden rounded-2xl border border-gray-200 shadow-sm">
+          <div className="relative overflow-hidden rounded-2xl border border-gray-200 shadow-sm">
             <img
               src="/images/family-fiveserv.jpg"
-              alt={`The ${SITE.brand} Venezuelan-American family — property maintenance Central Florida`}
+              alt={`The ${SITE.brand} family — property maintenance Central Florida`}
               loading="lazy"
               decoding="async"
               className="h-full w-full object-cover aspect-[4/3]"
             />
+            <div className="absolute bottom-4 left-4">
+              <img
+                src="/images/logo FS .png"
+                alt="FiveServ logo"
+                className="h-14 w-14 rounded-full object-cover shadow-lg ring-2 ring-white"
+              />
+            </div>
           </div>
 
           <div>
@@ -24,7 +31,7 @@ export const FamilyStory = () => {
               Built by a Family
             </p>
             <h2 className="text-gray-900 font-display font-bold text-4xl lg:text-5xl leading-tight">
-              A <span className="text-gray-900">Venezuelan-American Family</span> Trusted Across Central Florida.
+              A Family <span className="text-gray-900">Trusted Across</span> Central Florida.
             </h2>
             <p className="mt-6 text-lg text-gray-600 leading-relaxed">
               We started in maintenance — wrenches, ladders, late nights — and built something to last generations.
