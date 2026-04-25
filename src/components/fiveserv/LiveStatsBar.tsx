@@ -75,13 +75,13 @@ const StatCard = ({
         transition: `opacity 500ms ease ${index * 150}ms, transform 500ms ease ${index * 150}ms`,
       }}
     >
-      <Icon className="mx-auto h-8 w-8 text-brand-gold" aria-hidden="true" />
+      <Icon className="mx-auto h-6 w-6 text-brand-gold" aria-hidden="true" />
       <div
         className="mt-3 text-brand-gold"
         style={{
-          fontFamily: "Montserrat, system-ui, sans-serif",
+          fontFamily: "'Playfair Display', Georgia, serif",
           fontWeight: 900,
-          fontSize: "clamp(36px, 6vw, 56px)",
+          fontSize: "clamp(28px, 4vw, 44px)",
           lineHeight: 1,
         }}
       >
@@ -91,8 +91,8 @@ const StatCard = ({
         className="mt-3 text-brand-white"
         style={{
           fontFamily: "Arial, sans-serif",
-          fontSize: 13,
-          letterSpacing: "1px",
+          fontSize: 12,
+          letterSpacing: "0.5px",
           textTransform: "uppercase",
         }}
       >
@@ -135,11 +135,10 @@ export const LiveStatsBar = () => {
     <TooltipProvider>
     <section
       ref={sectionRef}
-      className="bg-brand-black"
-      style={{ borderTop: "2px solid #FFD700", borderBottom: "2px solid #FFD700" }}
+      className="bg-brand-black border-y border-brand-gold/20"
       aria-label="FiveServ live company stats"
     >
-      <div className="container" style={{ paddingTop: 48, paddingBottom: 48 }}>
+      <div className="container" style={{ paddingTop: 40, paddingBottom: 40 }}>
         <div className="grid grid-cols-2 gap-x-6 gap-y-10 md:grid-cols-3 lg:grid-cols-5">
           {STATS.map((s, i) => (
             <StatCard key={s.label} stat={s} index={i} start={start} />
@@ -148,7 +147,7 @@ export const LiveStatsBar = () => {
 
         {/* Live monthly counters */}
         <div
-          className="mt-10 flex flex-col items-center gap-4 border-t border-brand-gold/30 pt-8"
+          className="mt-10 flex flex-col items-center gap-4 border-t border-brand-gold/15 pt-8"
           style={{
             opacity: start ? 1 : 0,
             transition: "opacity 600ms ease 900ms",
@@ -172,7 +171,7 @@ export const LiveStatsBar = () => {
               className="text-brand-white"
               style={{
                 fontFamily: "Arial, sans-serif",
-                fontSize: 13,
+                fontSize: 11,
                 letterSpacing: "1px",
                 textTransform: "uppercase",
               }}
@@ -180,7 +179,7 @@ export const LiveStatsBar = () => {
               Units Completed This Month:{" "}
               <span
                 className="ml-1 text-brand-gold"
-                style={{ fontFamily: "Montserrat, system-ui, sans-serif", fontWeight: 900, fontSize: 20 }}
+                style={{ fontFamily: "'Playfair Display', Georgia, serif", fontWeight: 900, fontSize: 16 }}
               >
                 {animatedUnits}
               </span>
@@ -193,7 +192,7 @@ export const LiveStatsBar = () => {
               className="text-brand-white"
               style={{
                 fontFamily: "Arial, sans-serif",
-                fontSize: 13,
+                fontSize: 11,
                 letterSpacing: "1px",
                 textTransform: "uppercase",
               }}
@@ -201,7 +200,7 @@ export const LiveStatsBar = () => {
               Quotes Requested This Month:{" "}
               <span
                 className="ml-1 text-brand-gold"
-                style={{ fontFamily: "Montserrat, system-ui, sans-serif", fontWeight: 900, fontSize: 20 }}
+                style={{ fontFamily: "'Playfair Display', Georgia, serif", fontWeight: 900, fontSize: 16 }}
               >
                 {animatedQuotes}
               </span>
