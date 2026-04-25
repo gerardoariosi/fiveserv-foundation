@@ -47,27 +47,8 @@ const Slider = ({ label, min, max, step, value, display, onChange }: SliderProps
   return (
     <div>
       <div className="flex items-baseline justify-between gap-3">
-        <label
-          style={{
-            color: "rgba(255,255,255,0.7)",
-            fontFamily: "Arial, sans-serif",
-            fontSize: "13px",
-            letterSpacing: "0.02em",
-          }}
-        >
-          {label}
-        </label>
-        <span
-          className="font-display"
-          style={{
-            color: "#FFFFFF",
-            fontWeight: 600,
-            fontSize: "17px",
-            letterSpacing: "-0.01em",
-          }}
-        >
-          {display}
-        </span>
+        <label className="text-sm text-gray-700">{label}</label>
+        <span className="font-display text-lg font-bold text-gray-900">{display}</span>
       </div>
       <input
         type="range"
@@ -80,7 +61,7 @@ const Slider = ({ label, min, max, step, value, display, onChange }: SliderProps
         style={{
           width: "100%",
           marginTop: "12px",
-          background: `linear-gradient(to right, #FFD700 0%, #FFD700 ${pct}%, rgba(255,255,255,0.08) ${pct}%, rgba(255,255,255,0.08) 100%)`,
+          background: `linear-gradient(to right, #FFD700 0%, #FFD700 ${pct}%, #E5E7EB ${pct}%, #E5E7EB 100%)`,
         }}
       />
     </div>
@@ -108,7 +89,7 @@ export const VacancyCalculator = () => {
   const tweenedAnnual = useTween(annualSaved);
 
   return (
-    <section className="bg-white">
+    <section className="bg-gray-50">
       <div className="container py-20 sm:py-24">
         <div className="mx-auto" style={{ maxWidth: "640px" }}>
           {/* Header */}
@@ -151,14 +132,7 @@ export const VacancyCalculator = () => {
           </div>
 
           {/* Card */}
-          <div
-            style={{
-              background: "#0F0F0F",
-              borderRadius: "20px",
-              padding: "clamp(28px, 5vw, 44px)",
-              boxShadow: "0 30px 80px -20px rgba(0,0,0,0.35)",
-            }}
-          >
+          <div className="bg-white rounded-2xl shadow-card p-8 border border-gray-100">
             {/* Inputs */}
             <div style={{ display: "flex", flexDirection: "column", gap: "28px" }}>
               <Slider
@@ -190,35 +164,15 @@ export const VacancyCalculator = () => {
               />
             </div>
 
-            {/* Divider */}
-            <div
-              style={{
-                height: "1px",
-                background: "rgba(255,255,255,0.08)",
-                margin: "36px 0 32px",
-              }}
-            />
-
             {/* Results */}
-            <div style={{ display: "grid", gap: "24px" }}>
+            <div className="mt-9 border-t border-gray-100 pt-8 grid gap-6">
               <div>
-                <p
-                  style={{
-                    color: "rgba(255,255,255,0.55)",
-                    fontSize: "12px",
-                    letterSpacing: "0.12em",
-                    textTransform: "uppercase",
-                    fontFamily: "Arial, sans-serif",
-                  }}
-                >
+                <p className="text-xs font-bold uppercase tracking-widest text-gray-500">
                   Monthly vacancy loss
                 </p>
                 <p
-                  className="font-display"
+                  className="font-display text-5xl font-bold text-brand-black"
                   style={{
-                    color: "#FFFFFF",
-                    fontWeight: 800,
-                    fontSize: "clamp(40px, 8vw, 64px)",
                     lineHeight: 1,
                     letterSpacing: "-0.03em",
                     marginTop: "8px",
@@ -228,35 +182,11 @@ export const VacancyCalculator = () => {
                 </p>
               </div>
 
-              <div
-                style={{
-                  display: "flex",
-                  justifyContent: "space-between",
-                  alignItems: "baseline",
-                  paddingTop: "20px",
-                  borderTop: "1px solid rgba(255,255,255,0.08)",
-                }}
-              >
-                <p
-                  style={{
-                    color: "rgba(255,255,255,0.55)",
-                    fontSize: "12px",
-                    letterSpacing: "0.12em",
-                    textTransform: "uppercase",
-                    fontFamily: "Arial, sans-serif",
-                  }}
-                >
+              <div className="flex justify-between items-baseline pt-5 border-t border-gray-100">
+                <p className="text-xs font-bold uppercase tracking-widest text-gray-500">
                   You save annually
                 </p>
-                <p
-                  className="font-display"
-                  style={{
-                    color: "#FFD700",
-                    fontWeight: 800,
-                    fontSize: "clamp(22px, 3.5vw, 28px)",
-                    letterSpacing: "-0.01em",
-                  }}
-                >
+                <p className="font-display text-4xl font-bold text-brand-gold">
                   {fmt(tweenedAnnual)}
                 </p>
               </div>
@@ -266,10 +196,8 @@ export const VacancyCalculator = () => {
             <div style={{ marginTop: "36px", display: "flex", flexDirection: "column", gap: "10px" }}>
               <Link
                 to="/contact"
-                className="vc-cta-primary"
+                className="vc-cta-primary bg-brand-gold text-brand-black"
                 style={{
-                  background: "#FFD700",
-                  color: "#1A1A1A",
                   fontWeight: 700,
                   padding: "14px 28px",
                   borderRadius: "9999px",
@@ -285,13 +213,10 @@ export const VacancyCalculator = () => {
               </Link>
               <Link
                 to="/make-ready"
+                className="text-gray-500 hover:text-gray-900 text-center text-sm py-2"
                 style={{
-                  color: "rgba(255,255,255,0.6)",
-                  textAlign: "center",
-                  fontFamily: "Arial, sans-serif",
-                  fontSize: "13px",
                   textDecoration: "none",
-                  padding: "8px",
+                  fontFamily: "Arial, sans-serif",
                 }}
               >
                 See how we work →
@@ -328,11 +253,11 @@ export const VacancyCalculator = () => {
             appearance: none;
             width: 18px;
             height: 18px;
-            background: #FFFFFF;
+            background: #1A1A1A;
             border-radius: 9999px;
             cursor: pointer;
-            border: none;
-            box-shadow: 0 0 0 1px rgba(0,0,0,0.1), 0 4px 12px rgba(0,0,0,0.3);
+            border: 2px solid #FFD700;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.2);
             transition: transform 150ms ease;
           }
           .vc-slider::-webkit-slider-thumb:hover { transform: scale(1.15); }
@@ -340,11 +265,11 @@ export const VacancyCalculator = () => {
           .vc-slider::-moz-range-thumb {
             width: 18px;
             height: 18px;
-            background: #FFFFFF;
+            background: #1A1A1A;
             border-radius: 9999px;
             cursor: pointer;
-            border: none;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+            border: 2px solid #FFD700;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.2);
           }
           .vc-cta-primary:hover { transform: translateY(-1px); }
         `}</style>
