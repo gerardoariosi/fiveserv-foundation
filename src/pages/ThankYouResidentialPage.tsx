@@ -39,20 +39,29 @@ export const ThankYouResidentialPage = () => {
           We show up. We finish. We deliver.
         </p>
         <div className="mt-8 flex flex-col gap-3 text-left max-w-sm mx-auto">
-          <Link to="/residential" className="text-sm font-medium text-gray-700 hover:text-brand-gold transition-colors underline underline-offset-2 decoration-brand-gold/40">
-            See all our residential services
-          </Link>
-          <Link to="/make-ready" className="text-sm font-medium text-gray-700 hover:text-brand-gold transition-colors underline underline-offset-2 decoration-brand-gold/40">
-            Read what to expect on your first visit
-          </Link>
-          <a
-            href={`https://wa.me/${SITE.phone.replace(/[^\d]/g, "")}`}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-sm font-medium text-gray-700 hover:text-brand-gold transition-colors underline underline-offset-2 decoration-brand-gold/40"
-          >
-            Message us on WhatsApp — we reply fast
-          </a>
+          <div className="flex items-center gap-3">
+            <span className="flex-shrink-0 w-7 h-7 rounded-full bg-brand-gold flex items-center justify-center text-[11px] font-bold text-brand-black">01</span>
+            <Link to="/residential" className="text-sm font-medium text-gray-700 hover:text-brand-gold transition-colors underline underline-offset-2 decoration-brand-gold/40">
+              See all our residential services
+            </Link>
+          </div>
+          <div className="flex items-center gap-3">
+            <span className="flex-shrink-0 w-7 h-7 rounded-full bg-brand-gold flex items-center justify-center text-[11px] font-bold text-brand-black">02</span>
+            <Link to="/make-ready" className="text-sm font-medium text-gray-700 hover:text-brand-gold transition-colors underline underline-offset-2 decoration-brand-gold/40">
+              Read what to expect on your first visit
+            </Link>
+          </div>
+          <div className="flex items-center gap-3">
+            <span className="flex-shrink-0 w-7 h-7 rounded-full bg-brand-gold flex items-center justify-center text-[11px] font-bold text-brand-black">03</span>
+            <a
+              href={`https://wa.me/${SITE.phone.replace(/[^\d]/g, "")}`}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-sm font-medium text-gray-700 hover:text-brand-gold transition-colors underline underline-offset-2 decoration-brand-gold/40"
+            >
+              Message us on WhatsApp — we reply fast
+            </a>
+          </div>
         </div>
         <Link
           to="/residential"

@@ -40,20 +40,29 @@ export const ThankYouB2BPage = () => {
           One Call. One Team. Done.
         </p>
         <div className="mt-8 flex flex-col gap-3 text-left max-w-sm mx-auto">
-          <Link to="/service-areas" className="text-sm font-medium text-gray-700 hover:text-brand-gold transition-colors underline underline-offset-2 decoration-brand-gold/40">
-            See all cities we serve
-          </Link>
-          <Link to="/make-ready" className="text-sm font-medium text-gray-700 hover:text-brand-gold transition-colors underline underline-offset-2 decoration-brand-gold/40">
-            Read how our Make-Ready process works
-          </Link>
-          <a
-            href={`https://wa.me/${SITE.phone.replace(/[^\d]/g, "")}`}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-sm font-medium text-gray-700 hover:text-brand-gold transition-colors underline underline-offset-2 decoration-brand-gold/40"
-          >
-            Explore our full list of services
-          </a>
+          <div className="flex items-center gap-3">
+            <span className="flex-shrink-0 w-7 h-7 rounded-full bg-brand-gold flex items-center justify-center text-[11px] font-bold text-brand-black">01</span>
+            <Link to="/service-areas" className="text-sm font-medium text-gray-700 hover:text-brand-gold transition-colors underline underline-offset-2 decoration-brand-gold/40">
+              See all cities we serve
+            </Link>
+          </div>
+          <div className="flex items-center gap-3">
+            <span className="flex-shrink-0 w-7 h-7 rounded-full bg-brand-gold flex items-center justify-center text-[11px] font-bold text-brand-black">02</span>
+            <Link to="/make-ready" className="text-sm font-medium text-gray-700 hover:text-brand-gold transition-colors underline underline-offset-2 decoration-brand-gold/40">
+              Read how our Make-Ready process works
+            </Link>
+          </div>
+          <div className="flex items-center gap-3">
+            <span className="flex-shrink-0 w-7 h-7 rounded-full bg-brand-gold flex items-center justify-center text-[11px] font-bold text-brand-black">03</span>
+            <a
+              href={`https://wa.me/${SITE.phone.replace(/[^\d]/g, "")}`}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-sm font-medium text-gray-700 hover:text-brand-gold transition-colors underline underline-offset-2 decoration-brand-gold/40"
+            >
+              Explore our full list of services
+            </a>
+          </div>
         </div>
         <Link
           to="/make-ready"
