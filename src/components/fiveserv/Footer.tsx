@@ -16,7 +16,7 @@ export const Footer = () => {
                 Property Solutions
               </span>
             </Link>
-            <p className="mt-3 text-sm italic text-gray-400">Five Days. One Call. Done.</p>
+            <p className="mt-3 text-sm italic text-gray-400">One Call. One Team. Done.</p>
             <p className="mt-3 text-sm text-brand-white/80">
               Family-owned property maintenance company serving Central Florida.
             </p>

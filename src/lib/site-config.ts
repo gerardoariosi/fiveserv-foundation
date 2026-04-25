@@ -9,7 +9,7 @@ export const SITE = {
   name: env.VITE_COMPANY_NAME || "FiveServ Property Solutions",
   legal: env.VITE_COMPANY_LEGAL || "FiveServ Property Solutions LLC",
   brand: "FiveServ",
-  tagline: "Five Days. One Call. Done.",
+  tagline: "One Call. One Team. Done.",
   domain: env.VITE_DOMAIN || "fiveserv.net",
   url: `https://${env.VITE_DOMAIN || "fiveserv.net"}`,
   email: env.VITE_EMAIL || "info@fiveserv.net",
