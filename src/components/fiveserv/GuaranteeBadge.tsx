@@ -5,82 +5,93 @@ type Props = {
   className?: string;
 };
 
-const SIZE_PX: Record<Size, number> = {
+const sizeMap: Record<Size, number> = {
   sm: 80,
   md: 120,
   lg: 160,
 };
 
 /**
- * GuaranteeBadge — circular dark badge with gold border advertising the
- * 5-Day Make-Ready Guarantee. Pure presentation, no logic.
+ * GuaranteeBadge — premium gold medal seal style badge for the
+ * 5-Day Make-Ready Guarantee. Pure inline SVG.
  */
 export const GuaranteeBadge = ({ size = "md", className = "" }: Props) => {
-  const px = SIZE_PX[size];
-  // Scale typography proportionally to the chosen size.
-  const line1 = Math.round(px * 0.2);
-  const line2 = Math.round(px * 0.1);
-  const accent = Math.round(px * 0.07);
+  const s = sizeMap[size] ?? 120;
+  const cx = s / 2;
+  const cy = s / 2;
+  const r = s / 2 - 3;
+  const innerR = r - s * 0.07;
 
   return (
-    <div
+    <svg
+      width={s}
+      height={s}
+      viewBox={`0 0 ${s} ${s}`}
+      xmlns="http://www.w3.org/2000/svg"
       role="img"
       aria-label="5-Day Make-Ready Guarantee"
-      className={`inline-flex flex-col items-center justify-center rounded-full text-center select-none ${className}`}
-      style={{
-        width: px,
-        height: px,
-        backgroundColor: "#1A1A1A",
-        border: "3px solid #FFD700",
-        boxShadow:
-          "0 0 0 1px rgba(255,215,0,0.15), 0 0 24px rgba(255,215,0,0.35), 0 8px 24px rgba(0,0,0,0.35)",
-        padding: Math.round(px * 0.08),
-        lineHeight: 1.05,
-      }}
+      className={className}
     >
-      <span
-        style={{
-          color: "#FFD700",
-          fontWeight: 800,
-          fontSize: line1,
-          letterSpacing: "0.02em",
-        }}
-      >
-        5-DAY
-      </span>
-      <span
-        style={{
-          color: "#FFFFFF",
-          fontWeight: 700,
-          fontSize: line2,
-          letterSpacing: "0.08em",
-          marginTop: Math.round(px * 0.03),
-        }}
-      >
-        MAKE-READY
-      </span>
-      <span
-        style={{
-          color: "#FFFFFF",
-          fontWeight: 700,
-          fontSize: line2,
-          letterSpacing: "0.08em",
-        }}
-      >
-        GUARANTEE
-      </span>
-      <span
-        aria-hidden="true"
-        style={{
-          marginTop: Math.round(px * 0.04),
-          width: accent,
-          height: accent,
-          backgroundColor: "#FFD700",
-          transform: "rotate(45deg)",
-          boxShadow: "0 0 8px rgba(255,215,0,0.6)",
-        }}
-      />
-    </div>
+      {/* Outer gold ring */}
+      <circle cx={cx} cy={cy} r={r} fill="#1A1A1A" stroke="#FFD700" strokeWidth={s * 0.04} />
+      {/* Inner gold ring */}
+      <circle cx={cx} cy={cy} r={innerR} fill="none" stroke="#FFD700" strokeWidth={s * 0.015} strokeOpacity="0.5" />
+      {/* Stars top */}
+      {[-1, 0, 1].map((i) => (
+        <text
+          key={`top-${i}`}
+          x={cx + i * s * 0.13}
+          y={cy - s * 0.24}
+          textAnchor="middle"
+          fontSize={s * 0.09}
+          fill="#FFD700"
+        >★</text>
+      ))}
+      {/* 5-DAY large center */}
+      <text
+        x={cx}
+        y={cy - s * 0.04}
+        textAnchor="middle"
+        fontFamily="Georgia, serif"
+        fontWeight="900"
+        fontSize={s * 0.22}
+        fill="#FFD700"
+        letterSpacing="-1"
+      >5-DAY</text>
+      {/* MAKE-READY */}
+      <text
+        x={cx}
+        y={cy + s * 0.13}
+        textAnchor="middle"
+        fontFamily="Georgia, serif"
+        fontWeight="700"
+        fontSize={s * 0.1}
+        fill="#FFFFFF"
+        letterSpacing="1"
+      >MAKE-READY</text>
+      {/* GUARANTEE */}
+      <text
+        x={cx}
+        y={cy + s * 0.25}
+        textAnchor="middle"
+        fontFamily="Georgia, serif"
+        fontWeight="700"
+        fontSize={s * 0.09}
+        fill="#FFD700"
+        letterSpacing="2"
+      >GUARANTEE</text>
+      {/* Stars bottom */}
+      {[-1, 0, 1].map((i) => (
+        <text
+          key={`bot-${i}`}
+          x={cx + i * s * 0.13}
+          y={cy + s * 0.38}
+          textAnchor="middle"
+          fontSize={s * 0.09}
+          fill="#FFD700"
+        >★</text>
+      ))}
+    </svg>
   );
 };
 
