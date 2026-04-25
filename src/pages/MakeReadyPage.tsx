@@ -18,7 +18,7 @@ import TrustBar from "@/components/fiveserv/TrustBar";
 import VacancyCalculator from "@/components/fiveserv/VacancyCalculator";
 import { useReveal } from "@/hooks/use-fiveserv";
 import BrandName from "@/components/fiveserv/BrandName";
-import GuaranteeBadge from "@/components/fiveserv/GuaranteeBadge";
+
 
 const INCLUDED = [
   { icon: Paintbrush, title: "Paint touch-up or full repaint" },
@@ -93,9 +93,6 @@ const MakeReadyPage = () => {
               Make-Ready <span className="font-sans font-normal">&amp;</span> Unit Turn Services Orlando FL —
               <span className="block text-brand-gold">5-Day Guarantee</span>
             </h1>
-            <div className="shrink-0">
-              <GuaranteeBadge size="lg" />
-            </div>
           </div>
           <p className="mt-6 max-w-2xl text-lg text-gray-300">
             Central Florida property managers trust <BrandName variant="light" /> for make-ready. One call. Our team. 5 business days. Guaranteed in writing.
