@@ -17,13 +17,6 @@ export const FamilyStory = () => {
               decoding="async"
               className="w-64 h-64 object-contain m-auto"
             />
-            <div className="absolute bottom-4 left-4">
-              <img
-                src="/images/logo FS .png"
-                alt="FiveServ logo"
-                className="h-14 w-14 rounded-full object-cover shadow-lg ring-2 ring-white"
-              />
-            </div>
           </div>
 
           <div>
