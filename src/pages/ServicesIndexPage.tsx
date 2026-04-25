@@ -73,13 +73,7 @@ const ServicesIndexPage = () => (
     <section className="bg-gray-50 pb-24">
       <div className="container">
         <div className="pt-16 pb-12">
-          <p className="text-xs font-bold uppercase tracking-[0.12em] text-brand-gold">Trade Specialties</p>
-          <h2 className="mt-2 font-display text-3xl font-bold text-gray-900 sm:text-4xl">
-            Every Trade. One Team.
-          </h2>
-          <p className="mt-3 max-w-2xl text-gray-600">
-            Licensed specialists for every job your properties need — all under FiveServ coordination. One call, one invoice.
-          </p>
+          <p className="text-xs font-bold uppercase tracking-[0.12em] text-brand-gold">Our Specialties</p>
         </div>
         <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
           <ServiceCard icon={Droplets} title="Plumbing" description="Leaks, fixtures, water heaters. Emergency response 24/7." href="/plumbing" cta="Learn More" />
