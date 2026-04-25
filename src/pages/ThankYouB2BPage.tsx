@@ -19,34 +19,26 @@ export const ThankYouB2BPage = () => {
         path="/thank-you-b2b"
         noIndex
       />
-
       <main className="flex min-h-screen flex-col items-center justify-center bg-white px-6 py-12 text-center">
-        {/* Logo wordmark */}
-        <div className="mb-12 select-none">
-          <div className="font-display text-3xl tracking-tight sm:text-4xl">
-            <span className="text-brand-gold">F</span>
-            <span className="text-brand-black">iveServ</span>
+        <div className="mb-10">
+          <div className="font-display text-3xl tracking-tight text-brand-black sm:text-4xl">
+            <span className="text-brand-gold">F</span>iveServ
           </div>
-          <div className="mt-1 text-[10px] font-bold uppercase tracking-[0.35em] text-gray-500 sm:text-xs">
+          <div className="mt-1 text-[10px] font-bold uppercase tracking-[0.35em] text-gray-400 sm:text-xs">
             Property Solutions
           </div>
         </div>
-
-        {/* Headline */}
-        <h1 className="font-display text-4xl leading-tight text-brand-black sm:text-5xl md:text-6xl">
+        <h1 className="font-display text-4xl text-brand-black leading-tight sm:text-5xl">
           You're in good hands.
         </h1>
-
-        {/* Gold accent line */}
-        <div className="mx-auto mt-6 h-[2px] w-24 bg-brand-gold" aria-hidden="true" />
-
-        {/* Subtext */}
+        <div className="mx-auto mt-6 h-[2px] w-24 bg-brand-gold" />
         <p className="mt-8 max-w-xl text-base text-gray-600 sm:text-lg">
-          We received your request. A <BrandName variant="dark" /> team member will contact you within{" "}
+          We received your request. A FiveServ team member will contact you within{" "}
           <span className="font-bold text-brand-black">2 business hours</span>.
         </p>
-
-        {/* Next steps */}
+        <p className="mt-4 font-display italic text-brand-gold text-lg">
+          Five Days. One Call. Done.
+        </p>
         <div className="mt-8 flex flex-col gap-3 text-left max-w-sm mx-auto">
           {[
             { step: "01", text: "Check your email — confirmation on its way" },
@@ -59,39 +51,17 @@ export const ThankYouB2BPage = () => {
             </div>
           ))}
         </div>
-
-        {/* Tagline */}
-        <p className="mt-6 font-display italic text-brand-gold text-lg sm:text-xl">
-          One Call. One Team. Done.
-        </p>
-
-        {/* Primary CTA */}
         <Link
           to="/make-ready"
-          className="mt-10 inline-flex items-center justify-center rounded-full bg-brand-gold px-8 py-4 font-display text-base text-brand-black transition-colors hover:bg-brand-gold-hover sm:text-lg"
+          className="mt-10 inline-flex items-center justify-center rounded-full bg-brand-gold px-8 py-4 text-base font-bold text-brand-black hover:bg-brand-gold/90 transition-colors"
         >
           See How We Work →
         </Link>
-
-        {/* Phone CTA */}
-        <div className="mt-12">
-          <p className="text-sm text-gray-500">Prefer to talk now? Call us directly.</p>
-          <a
-            href={telHref}
-            className="mt-2 inline-block font-bold text-2xl text-brand-black hover:text-gray-700 sm:text-3xl"
-          >
+        <div className="mt-10">
+          <p className="text-sm text-gray-500">Prefer to talk now?</p>
+          <a href={telHref} className="mt-2 inline-block font-bold text-2xl text-brand-black hover:text-brand-gold transition-colors">
             {phone}
           </a>
-          <div>
-            <a
-              href={`https://wa.me/${SITE.phone.replace(/[^\d]/g, "")}`}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="mt-4 inline-flex items-center gap-2 rounded-full border border-gray-200 px-6 py-2 text-sm text-gray-700 hover:border-brand-gold hover:text-brand-black transition-colors"
-            >
-              WhatsApp Us
-            </a>
-          </div>
         </div>
       </main>
     </>
