@@ -73,7 +73,7 @@ const ServicesIndexPage = () => (
     <section className="bg-gray-50 pb-24">
       <div className="container">
         <div className="pt-16 pb-12">
-          <p className="text-xs font-bold uppercase tracking-[0.12em] text-brand-gold">Our Specialties</p>
+          <p className="font-display text-3xl font-bold uppercase tracking-wide text-gray-900 sm:text-4xl">Our Specialties</p>
         </div>
         <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
           <ServiceCard icon={Droplets} title="Plumbing" description="Leaks, fixtures, water heaters. Emergency response 24/7." href="/plumbing" cta="Learn More" />
