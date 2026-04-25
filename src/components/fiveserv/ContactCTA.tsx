@@ -2,6 +2,7 @@ import { Phone } from "lucide-react";
 import { SITE } from "@/lib/site-config";
 import GhlFormEmbed from "./GhlFormEmbed";
 import BrandName from "@/components/fiveserv/BrandName";
+import GuaranteeBadge from "./GuaranteeBadge";
 
 const WhatsAppIcon = ({ className }: { className?: string }) => (
   <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" className={className}>
@@ -54,8 +55,13 @@ export const ContactCTA = ({ variant = "b2b" }: Props) => {
           </span>
         </div>
 
+        {/* Guarantee badge — above the form */}
+        <div className="mt-10 flex justify-center">
+          <GuaranteeBadge size="sm" />
+        </div>
+
         {/* Form below — centered */}
-        <div className="mt-10 max-w-2xl mx-auto rounded-lg border border-brand-gray bg-white p-6">
+        <div className="mt-6 max-w-2xl mx-auto rounded-lg border border-brand-gray bg-white p-6">
           <GhlFormEmbed variant={variant} className="w-full" />
         </div>
       </div>
