@@ -132,7 +132,7 @@ export const VacancyCalculator = () => {
           </div>
 
           {/* Card */}
-          <div className="bg-white rounded-2xl shadow-card p-8 border border-gray-100">
+          <div className="bg-white rounded-2xl shadow-card p-8 border-2 border-brand-black">
             {/* Inputs */}
             <div style={{ display: "flex", flexDirection: "column", gap: "28px" }}>
               <Slider
@@ -186,7 +186,7 @@ export const VacancyCalculator = () => {
                 <p className="text-xs font-bold uppercase tracking-widest text-gray-500">
                   You save annually
                 </p>
-                <p className="font-display text-4xl font-bold text-brand-gold">
+                <p className="font-display text-4xl font-bold" style={{ color: "#16A34A" }}>
                   {fmt(tweenedAnnual)}
                 </p>
               </div>
