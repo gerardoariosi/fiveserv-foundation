@@ -1,10 +1,24 @@
 import { Link } from "react-router-dom";
-import { ArrowRight, Wrench, Hammer, Building2, Home } from "lucide-react";
+import {
+  ArrowRight,
+  Wrench,
+  Hammer,
+  Building2,
+  Home,
+  Droplets,
+  Zap,
+  Wind,
+  Square,
+  PaintBucket,
+  Layers,
+  Sparkles,
+} from "lucide-react";
 import Seo from "@/lib/Seo";
 import SchemaOrg from "@/lib/SchemaOrg";
 import { SITE, SERVICES } from "@/lib/site-config";
 import BrandName from "@/components/fiveserv/BrandName";
 import AIOverviewBlock from "@/components/fiveserv/AIOverviewBlock";
+import ServiceCard from "@/components/fiveserv/ServiceCard";
 
 const ICONS: Record<string, typeof Wrench> = {
   "make-ready": Hammer,
@@ -59,6 +73,29 @@ const ServicesIndexPage = () => (
             </article>
           );
         })}
+      </div>
+    </section>
+    <section className="bg-gray-50 pb-24">
+      <div className="container">
+        <div className="pt-16 pb-12">
+          <p className="text-xs font-bold uppercase tracking-[0.12em] text-brand-gold">Trade Specialties</p>
+          <h2 className="mt-2 font-display text-3xl font-bold text-gray-900 sm:text-4xl">
+            Every Trade. One Team.
+          </h2>
+          <p className="mt-3 max-w-2xl text-gray-600">
+            Licensed specialists for every job your properties need — all under FiveServ coordination. One call, one invoice.
+          </p>
+        </div>
+        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+          <ServiceCard icon={Droplets} title="Plumbing" description="Leaks, fixtures, water heaters. Emergency response 24/7." href="/plumbing" cta="Learn More" />
+          <ServiceCard icon={Zap} title="Electrical" description="Panels, outlets, lighting, and code compliance." href="/electrical" cta="Learn More" />
+          <ServiceCard icon={Wind} title="HVAC" description="AC repair, maintenance, and filter programs." href="/hvac" cta="Learn More" />
+          <ServiceCard icon={Square} title="Drywall" description="Patches, full replacements, texture matching." href="/drywall" cta="Learn More" />
+          <ServiceCard icon={PaintBucket} title="Painting" description="Interior units, common areas, same-day quotes." href="/painting" cta="Learn More" />
+          <ServiceCard icon={Layers} title="Flooring" description="LVP, tile, carpet removal and installation." href="/flooring" cta="Learn More" />
+          <ServiceCard icon={Hammer} title="Carpentry" description="Doors, trim, cabinets, custom repairs." href="/carpentry" cta="Learn More" />
+          <ServiceCard icon={Sparkles} title="Cleaning" description="Move-out clean, deep clean, inspection-ready." href="/cleaning" cta="Learn More" />
+        </div>
       </div>
     </section>
   </>
