@@ -28,6 +28,7 @@ import BlogArticlePage from "./pages/BlogArticlePage";
 import ThankYouB2BPage from "./pages/ThankYouB2BPage";
 import ThankYouResidentialPage from "./pages/ThankYouResidentialPage";
 import TermsPage from "./pages/TermsPage";
+import PrivacyPage from "./pages/PrivacyPage";
 import PlumbingPage from "./pages/PlumbingPage";
 import ElectricalPage from "./pages/ElectricalPage";
 import HvacPage from "./pages/HvacPage";
@@ -77,7 +78,7 @@ const router = createBrowserRouter([
       { path: "blog/:slug", element: <BlogArticlePage /> },
       { path: "contact", element: <ContactPage /> },
       { path: "faq", element: <FaqPage /> },
-      { path: "privacy", element: <PlaceholderPage title="Privacy Policy" description="FiveServ Property Solutions privacy policy." path="/privacy" heading="Privacy Policy" /> },
+      { path: "privacy", element: <PrivacyPage /> },
       { path: "terms", element: <TermsPage /> },
       
 
