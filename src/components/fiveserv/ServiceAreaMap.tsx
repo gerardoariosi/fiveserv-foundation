@@ -39,66 +39,65 @@ const TIER_1 = new Set<CitySlug>([
 // Custom gold pin with FS monogram
 const makeFsIcon = (tier1: boolean) => {
   const size = tier1 ? 48 : 38;
-  const imgSize = Math.round(size * 0.72);
+  const fs = tier1 ? 16 : 13;
   const html = `
-    <div style="position:relative;width:${size}px;height:${size + 6}px;">
-      <div style="
-        width:${size}px;height:${size}px;
-        background:#1A1A1A;
-        border:2.5px solid #FFD700;
-        border-radius:50%;
-        overflow:hidden;
-        display:flex;align-items:center;justify-content:center;
-        box-shadow:0 0 0 3px rgba(255,215,0,0.2),0 4px 14px rgba(0,0,0,0.5);
-      ">
-        <img src="/images/logo%20FS%20.png" width="${imgSize}" height="${imgSize}" style="object-fit:contain;" />
-      </div>
-      <div style="
-        position:absolute;bottom:0;left:50%;transform:translateX(-50%);
-        width:0;height:0;
-        border-left:5px solid transparent;
-        border-right:5px solid transparent;
-        border-top:7px solid #FFD700;
-      "></div>
-    </div>
+    <svg width="${size}" height="${size + 8}" viewBox="0 0 ${size} ${size + 8}" xmlns="http://www.w3.org/2000/svg">
+      <circle cx="${size / 2}" cy="${size / 2}" r="${size / 2 - 2}" fill="#FFD700" stroke="#1A1A1A" stroke-width="2.5"/>
+      <text
+        x="${size / 2}"
+        y="${size / 2 + fs * 0.38}"
+        text-anchor="middle"
+        font-family="Georgia, serif"
+        font-weight="900"
+        font-size="${fs}"
+        fill="#1A1A1A"
+        letter-spacing="-0.5"
+      >FS</text>
+      <polygon
+        points="${size / 2 - 5},${size - 1} ${size / 2 + 5},${size - 1} ${size / 2},${size + 7}"
+        fill="#FFD700"
+        stroke="#1A1A1A"
+        stroke-width="1.5"
+        stroke-linejoin="round"
+      />
+    </svg>
   `;
   return L.divIcon({
     html,
     className: "fiveserv-pin",
-    iconSize: [size, size + 6],
-    iconAnchor: [size / 2, size + 6],
-    popupAnchor: [0, -(size + 6)],
+    iconSize: [size, size + 8],
+    iconAnchor: [size / 2, size + 8],
+    popupAnchor: [0, -(size + 8)],
   });
 };
 
 const comingSoonIcon = L.divIcon({
   html: `
-    <div style="position:relative;width:38px;height:44px;">
-      <div style="
-        width:38px;height:38px;
-        background:#1A1A1A;
-        border:2.5px dashed #FFD700;
-        border-radius:50%;
-        overflow:hidden;
-        display:flex;align-items:center;justify-content:center;
-        opacity:0.55;
-        box-shadow:0 4px 14px rgba(0,0,0,0.4);
-      ">
-        <img src="/images/logo%20FS%20.png" width="27" height="27" style="object-fit:contain;" />
-      </div>
-      <div style="
-        position:absolute;bottom:0;left:50%;transform:translateX(-50%);
-        width:0;height:0;
-        border-left:5px solid transparent;
-        border-right:5px solid transparent;
-        border-top:7px solid rgba(255,215,0,0.4);
-      "></div>
-    </div>
+    <svg width="38" height="46" viewBox="0 0 38 46" xmlns="http://www.w3.org/2000/svg">
+      <circle cx="19" cy="19" r="17" fill="#FFD700" stroke="#1A1A1A" stroke-width="2" stroke-dasharray="4 3" opacity="0.6"/>
+      <text
+        x="19"
+        y="24"
+        text-anchor="middle"
+        font-family="Georgia, serif"
+        font-weight="900"
+        font-size="13"
+        fill="#1A1A1A"
+        letter-spacing="-0.5"
+      >FS</text>
+      <polygon
+        points="14,37 24,37 19,45"
+        fill="rgba(255,215,0,0.5)"
+        stroke="#1A1A1A"
+        stroke-width="1"
+        stroke-linejoin="round"
+      />
+    </svg>
   `,
   className: "fiveserv-pin-soon",
-  iconSize: [38, 44],
-  iconAnchor: [19, 44],
-  popupAnchor: [0, -44],
+  iconSize: [38, 46],
+  iconAnchor: [19, 46],
+  popupAnchor: [0, -46],
 });
 
 const ServiceAreaMap = () => (
