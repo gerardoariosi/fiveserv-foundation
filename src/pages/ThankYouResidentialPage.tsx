@@ -38,6 +38,22 @@ export const ThankYouResidentialPage = () => {
         <p className="mt-4 font-display italic text-brand-gold text-lg">
           We show up. We finish. We deliver.
         </p>
+        <div className="mt-8 flex flex-col gap-3 text-left max-w-sm mx-auto">
+          <Link to="/residential" className="text-sm font-medium text-gray-700 hover:text-brand-gold transition-colors underline underline-offset-2 decoration-brand-gold/40">
+            See all our residential services
+          </Link>
+          <Link to="/make-ready" className="text-sm font-medium text-gray-700 hover:text-brand-gold transition-colors underline underline-offset-2 decoration-brand-gold/40">
+            Read what to expect on your first visit
+          </Link>
+          <a
+            href={`https://wa.me/${SITE.phone.replace(/[^\d]/g, "")}`}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-sm font-medium text-gray-700 hover:text-brand-gold transition-colors underline underline-offset-2 decoration-brand-gold/40"
+          >
+            Message us on WhatsApp — we reply fast
+          </a>
+        </div>
         <Link
           to="/residential"
           className="mt-10 inline-flex items-center justify-center rounded-full bg-brand-gold px-8 py-4 text-base font-bold text-brand-black hover:bg-brand-gold/90 transition-colors"
