@@ -974,7 +974,7 @@ const SofiaChat = () => {
                 >
                   {lang === "es"
                     ? "Listo! Nuestro equipo te llama mañana. Una llamada. Un equipo. Sin excusas."
-                    : "Got it! Our team will call you tomorrow morning. Five Days. One Call. Done."}
+                    : "Got it! Our team will call you tomorrow morning. One Call. One Team. Done."}
                 </div>
               </div>
             )}

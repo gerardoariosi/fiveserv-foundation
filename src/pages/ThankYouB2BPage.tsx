@@ -37,7 +37,7 @@ export const ThankYouB2BPage = () => {
           <span className="font-bold text-brand-black">2 business hours</span>.
         </p>
         <p className="mt-4 font-display italic text-brand-gold text-lg">
-          Five Days. One Call. Done.
+          One Call. One Team. Done.
         </p>
         <div className="mt-8 flex flex-col gap-3 text-left max-w-sm mx-auto">
           <Link to="/service-areas" className="text-sm font-medium text-gray-700 hover:text-brand-gold transition-colors underline underline-offset-2 decoration-brand-gold/40">
