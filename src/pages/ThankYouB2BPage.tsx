@@ -40,16 +40,20 @@ export const ThankYouB2BPage = () => {
           Five Days. One Call. Done.
         </p>
         <div className="mt-8 flex flex-col gap-3 text-left max-w-sm mx-auto">
-          {[
-            { step: "01", text: "Check your email — confirmation on its way" },
-            { step: "02", text: "We call within 2 business hours" },
-            { step: "03", text: "We schedule a site visit or send a quote" },
-          ].map(({ step, text }) => (
-            <div key={step} className="flex items-start gap-3">
-              <span className="text-brand-gold font-bold text-sm mt-0.5">{step}</span>
-              <span className="text-sm text-gray-600">{text}</span>
-            </div>
-          ))}
+          <Link to="/service-areas" className="text-sm font-medium text-gray-700 hover:text-brand-gold transition-colors underline underline-offset-2 decoration-brand-gold/40">
+            See all cities we serve
+          </Link>
+          <Link to="/make-ready" className="text-sm font-medium text-gray-700 hover:text-brand-gold transition-colors underline underline-offset-2 decoration-brand-gold/40">
+            Read how our Make-Ready process works
+          </Link>
+          <a
+            href={`https://wa.me/${SITE.phone.replace(/[^\d]/g, "")}`}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-sm font-medium text-gray-700 hover:text-brand-gold transition-colors underline underline-offset-2 decoration-brand-gold/40"
+          >
+            Message us on WhatsApp — we reply fast
+          </a>
         </div>
         <Link
           to="/make-ready"
