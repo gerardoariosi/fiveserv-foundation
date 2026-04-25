@@ -39,43 +39,23 @@ const TIER_1 = new Set<CitySlug>([
 // Custom gold pin with FS monogram
 const makeFsIcon = (tier1: boolean) => {
   const size = tier1 ? 48 : 38;
-  const fontSize = tier1 ? 13 : 11;
+  const imgSize = Math.round(size * 0.72);
   const html = `
-    <div style="
-      position:relative;
-      width:${size}px;
-      height:${size}px;
-      display:flex;
-      align-items:center;
-      justify-content:center;
-    ">
+    <div style="position:relative;width:${size}px;height:${size + 6}px;">
       <div style="
-        width:${size}px;
-        height:${size}px;
+        width:${size}px;height:${size}px;
         background:#1A1A1A;
         border:2.5px solid #FFD700;
         border-radius:50%;
-        display:flex;
-        align-items:center;
-        justify-content:center;
-        box-shadow:0 0 0 3px rgba(255,215,0,0.2), 0 4px 14px rgba(0,0,0,0.5);
+        overflow:hidden;
+        display:flex;align-items:center;justify-content:center;
+        box-shadow:0 0 0 3px rgba(255,215,0,0.2),0 4px 14px rgba(0,0,0,0.5);
       ">
-        <span style="
-          color:#FFD700;
-          font-weight:900;
-          font-size:${fontSize}px;
-          font-family:Georgia,serif;
-          letter-spacing:-0.5px;
-          line-height:1;
-        ">FS</span>
+        <img src="/images/logo%20FS%20.png" width="${imgSize}" height="${imgSize}" style="object-fit:contain;" />
       </div>
       <div style="
-        position:absolute;
-        bottom:-6px;
-        left:50%;
-        transform:translateX(-50%);
-        width:0;
-        height:0;
+        position:absolute;bottom:0;left:50%;transform:translateX(-50%);
+        width:0;height:0;
         border-left:5px solid transparent;
         border-right:5px solid transparent;
         border-top:7px solid #FFD700;
@@ -93,43 +73,25 @@ const makeFsIcon = (tier1: boolean) => {
 
 const comingSoonIcon = L.divIcon({
   html: `
-    <div style="
-      position:relative;
-      width:38px;
-      height:38px;
-      display:flex;
-      align-items:center;
-      justify-content:center;
-    ">
+    <div style="position:relative;width:38px;height:44px;">
       <div style="
-        width:38px;
-        height:38px;
-        background:transparent;
+        width:38px;height:38px;
+        background:#1A1A1A;
         border:2.5px dashed #FFD700;
         border-radius:50%;
-        display:flex;
-        align-items:center;
-        justify-content:center;
-        opacity:0.7;
+        overflow:hidden;
+        display:flex;align-items:center;justify-content:center;
+        opacity:0.55;
+        box-shadow:0 4px 14px rgba(0,0,0,0.4);
       ">
-        <span style="
-          color:#FFD700;
-          font-weight:900;
-          font-size:11px;
-          font-family:Georgia,serif;
-          letter-spacing:-0.5px;
-        ">FS</span>
+        <img src="/images/logo%20FS%20.png" width="27" height="27" style="object-fit:contain;" />
       </div>
       <div style="
-        position:absolute;
-        bottom:-6px;
-        left:50%;
-        transform:translateX(-50%);
-        width:0;
-        height:0;
+        position:absolute;bottom:0;left:50%;transform:translateX(-50%);
+        width:0;height:0;
         border-left:5px solid transparent;
         border-right:5px solid transparent;
-        border-top:7px solid rgba(255,215,0,0.5);
+        border-top:7px solid rgba(255,215,0,0.4);
       "></div>
     </div>
   `,
