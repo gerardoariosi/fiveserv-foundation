@@ -53,7 +53,7 @@ export const SchemaOrg = ({
       alternateName: SITE.brand,
       url: SITE.url,
       logo: `${SITE.url}/images/logo-fs.png`,
-      image: `${SITE.url}/images/og-default.jpg`,
+      image: `${SITE.url}/og-default.png`,
       description:
         "Family-owned property maintenance company serving multifamily communities across Central Florida. Make-ready in 5 business days guaranteed. One call, one team, one invoice.",
       foundingLocation: "Orlando, Florida",

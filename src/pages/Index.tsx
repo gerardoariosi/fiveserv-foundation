@@ -130,7 +130,7 @@ const Index = () => {
 
   return (
     <>
-      <Seo title={title} description={description} path="/" ogImage={`${SITE.url}/images/og-default.jpg`} />
+      <Seo title={title} description={description} path="/" ogImage={`${SITE.url}/og-default.png`} />
       <SchemaOrg
         organization
         breadcrumbs={[{ name: "Home", url: SITE.url }]}
