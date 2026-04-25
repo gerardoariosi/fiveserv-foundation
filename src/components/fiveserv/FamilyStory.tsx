@@ -9,13 +9,13 @@ export const FamilyStory = () => {
     <section className="bg-white">
       <div ref={ref} className="container reveal py-24 lg:py-32">
         <div className="grid gap-12 lg:grid-cols-2 lg:items-center">
-          <div className="overflow-hidden rounded-2xl border border-gray-200 shadow-sm bg-brand-gold flex items-center justify-center aspect-[4/3]">
+          <div className="overflow-hidden rounded-2xl border border-gray-200 shadow-sm bg-white flex items-center justify-center aspect-[4/3]">
             <img
               src="/images/logo FS .png"
               alt={`The ${SITE.brand} family — property maintenance Central Florida`}
               loading="lazy"
               decoding="async"
-              className="w-40 h-40 object-contain m-auto"
+              className="w-64 h-64 object-contain m-auto"
             />
             <div className="absolute bottom-4 left-4">
               <img
