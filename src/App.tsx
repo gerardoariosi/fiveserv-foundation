@@ -4,6 +4,7 @@ import { HelmetProvider } from "react-helmet-async";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { Toaster } from "@/components/ui/toaster";
 import { TooltipProvider } from "@/components/ui/tooltip";
+import PageTransition from "@/components/fiveserv/PageTransition";
 
 import RootLayout from "./layouts/RootLayout";
 import Index from "./pages/Index";
@@ -126,8 +127,8 @@ const router = createBrowserRouter([
     ],
   },
   // Standalone routes (no header/footer) — distraction-free conversion pages
-  { path: "/thank-you-b2b", element: <ThankYouB2BPage /> },
-  { path: "/thank-you-residential", element: <ThankYouResidentialPage /> },
+  { path: "/thank-you-b2b", element: <PageTransition><ThankYouB2BPage /></PageTransition> },
+  { path: "/thank-you-residential", element: <PageTransition><ThankYouResidentialPage /></PageTransition> },
 ]);
 
 // Pre-computed list of all 72 service×city URLs — used by sitemap generation.
