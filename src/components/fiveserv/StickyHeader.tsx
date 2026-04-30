@@ -86,7 +86,7 @@ export const StickyHeader = () => {
           >
             <WhatsAppIcon className="h-5 w-5" />
           </a>
-          <Link to="/contact" className="cta-gold cta-pill btn-shimmer">
+          <Link to="/contact" className="cta-gold btn-shimmer cta-pill btn-shimmer">
             Get a free quote
           </Link>
         </div>
@@ -124,7 +124,7 @@ export const StickyHeader = () => {
             <a href={waHref} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-[#25D366] font-semibold">
               <WhatsAppIcon className="h-4 w-4" /> WhatsApp us
             </a>
-            <Link to="/contact" onClick={() => setOpen(false)} className="cta-gold cta-pill btn-shimmer text-center">
+            <Link to="/contact" onClick={() => setOpen(false)} className="cta-gold btn-shimmer cta-pill btn-shimmer text-center">
               Get a free quote
             </Link>
           </div>
