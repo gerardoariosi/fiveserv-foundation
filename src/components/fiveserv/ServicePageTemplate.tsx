@@ -67,7 +67,7 @@ export const ServicePageTemplate = ({ service, faqs = [] }: ServicePageData) => 
 
       {/* Cities — light gray */}
       <section className="bg-gray-50">
-        <div className="container py-24 lg:py-32">
+        <div className="container py-28 lg:py-32">
           <SectionHeading
             eyebrow="Service Areas"
             subtext="Pick your city for local response times and ZIP coverage."

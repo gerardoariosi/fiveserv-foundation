@@ -122,7 +122,7 @@ export const BlogArticleLayout = ({ post, children }: Props) => {
       </article>
 
       {/* Internal links — light gray */}
-      <section className="bg-gray-50 py-16">
+      <section className="bg-gray-50 py-20">
         <div className="container max-w-3xl">
           <p className="text-gray-900 text-xs font-medium uppercase tracking-[0.12em] mb-3">— Keep Reading</p>
           <h2 className="text-gray-900 font-display font-bold text-3xl lg:text-4xl">Related <BrandName variant="dark" /> resources</h2>
@@ -162,7 +162,7 @@ export const BlogArticleLayout = ({ post, children }: Props) => {
       </section>
 
       {/* FAQ mini — light */}
-      <section className="bg-white py-16">
+      <section className="bg-white py-20">
         <div className="container max-w-3xl">
           <p className="text-gray-900 text-xs font-medium uppercase tracking-[0.12em] mb-3">— FAQ</p>
           <h2 className="text-gray-900 font-display font-bold text-3xl lg:text-4xl">Frequently asked questions</h2>

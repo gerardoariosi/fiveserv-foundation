@@ -23,7 +23,7 @@ export const VisibleQA = ({
 }: Props) => {
   return (
     <section className="bg-white">
-      <div className="container py-20 lg:py-24">
+      <div className="container py-20 lg:py-28">
         <SectionHeading eyebrow={eyebrow}>{title}</SectionHeading>
         <div className="mx-auto mt-12 max-w-3xl space-y-8">
           {items.map((item, i) => (

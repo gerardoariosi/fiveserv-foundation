@@ -106,7 +106,7 @@ const BlogPage = () => {
       </section>
 
       {/* Grid */}
-      <section className="bg-white py-16">
+      <section className="bg-white py-20">
         <div className="container max-w-5xl">
           {visiblePosts.length === 0 ? (
             <p className="text-brand-gray-muted">More articles coming soon in this category.</p>

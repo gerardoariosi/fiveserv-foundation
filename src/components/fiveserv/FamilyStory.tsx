@@ -7,7 +7,7 @@ export const FamilyStory = () => {
   const ref = useReveal<HTMLDivElement>();
   return (
     <section className="bg-white">
-      <div ref={ref} className="container reveal py-24 lg:py-32">
+      <div ref={ref} className="container reveal py-28 lg:py-32">
         <div className="grid gap-12 lg:grid-cols-2 lg:items-center">
           <div className="overflow-hidden rounded-2xl border border-gray-200 shadow-sm bg-white flex items-center justify-center aspect-[4/3]">
             <img

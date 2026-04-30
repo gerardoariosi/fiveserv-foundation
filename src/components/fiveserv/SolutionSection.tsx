@@ -18,7 +18,7 @@ export const SolutionSection = () => {
   const ref = useReveal<HTMLDivElement>();
   return (
     <section id="solution" className="bg-white">
-      <div ref={ref} className="container reveal py-24 lg:py-32">
+      <div ref={ref} className="container reveal py-28 lg:py-32">
         <SectionHeading
           eyebrow="The Solution"
           subtext="One trusted partner that owns the entire turn — start to finish."

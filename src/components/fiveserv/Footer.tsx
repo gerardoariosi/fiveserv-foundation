@@ -6,7 +6,7 @@ import Logo from "@/components/fiveserv/Logo";
 export const Footer = () => {
   return (
     <footer className="bg-brand-black border-t-2 border-brand-gold">
-      <div className="container py-16">
+      <div className="container py-20">
         <div className="grid gap-12 md:grid-cols-2 lg:grid-cols-4">
           {/* Col 1: Brand */}
           <div>

@@ -75,7 +75,7 @@ export const CityPageTemplate = ({ city, service, faqs = [] }: CityPageData) => 
 
       {/* ZIPs — light gray */}
       <section className="bg-gray-50">
-        <div className="container py-24 lg:py-32">
+        <div className="container py-28 lg:py-32">
           <SectionHeading eyebrow="Coverage">
             ZIP Codes We Serve <span className="text-gray-900">in {city.name}</span>
           </SectionHeading>

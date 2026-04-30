@@ -102,7 +102,7 @@ const FaqPage = () => {
 
       {/* 3. FAQ groups */}
       <section className="bg-gray-50">
-        <div className="container py-16 space-y-12">
+        <div className="container py-20 space-y-12">
           {grouped.map((group) => (
             <div key={group.id}>
               <h2 className="font-display font-semibold text-2xl text-gray-900 sm:text-3xl">
@@ -147,7 +147,7 @@ const FaqPage = () => {
 
       {/* 4. CTA Final */}
       <section className="bg-brand-gold">
-        <div className="container py-16 text-center">
+        <div className="container py-20 text-center">
           <h2 className="font-display font-bold text-3xl text-gray-900 sm:text-4xl">
             Still have questions?
           </h2>

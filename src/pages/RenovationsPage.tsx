@@ -129,7 +129,7 @@ const RenovationsPage = () => {
 
       {/* 3. ROI Section */}
       <section className="bg-brand-gold">
-        <div className="container py-16">
+        <div className="container py-20">
           <SectionReveal className="grid gap-8 lg:grid-cols-[auto,1fr] lg:items-center">
             <div className="flex h-20 w-20 items-center justify-center rounded-full bg-brand-black text-brand-gold">
               <TrendingUp className="h-10 w-10" />
@@ -256,7 +256,7 @@ const RenovationsPage = () => {
 
       {/* Internal links */}
       <section className="bg-gray-50">
-        <div className="container py-16">
+        <div className="container py-20">
           <SectionReveal className="grid gap-10 md:grid-cols-2">
             <div>
               <h2 className="font-display font-semibold text-2xl text-gray-900">More from <BrandName variant="dark" /></h2>

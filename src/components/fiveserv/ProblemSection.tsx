@@ -24,7 +24,7 @@ export const ProblemSection = () => {
   const ref = useReveal<HTMLDivElement>();
   return (
     <section className="bg-gray-50">
-      <div ref={ref} className="container reveal py-24 lg:py-32">
+      <div ref={ref} className="container reveal py-28 lg:py-32">
         <SectionHeading
           eyebrow="The Problem"
           subtext={

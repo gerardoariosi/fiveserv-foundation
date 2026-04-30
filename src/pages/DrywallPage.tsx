@@ -330,7 +330,7 @@ const DrywallPage = () => {
 
       {/* Internal links */}
       <section className="bg-gray-50">
-        <div className="container py-16">
+        <div className="container py-20">
           <SectionReveal className="grid gap-10 md:grid-cols-2">
             <div>
               <h2 className="font-display font-semibold text-2xl text-gray-900">Related Services</h2>

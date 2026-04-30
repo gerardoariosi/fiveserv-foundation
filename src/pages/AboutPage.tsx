@@ -242,7 +242,7 @@ const AboutPage = () => {
 
       {/* 8. CTA Final */}
       <section className="bg-brand-gold">
-        <div className="container py-16 text-center">
+        <div className="container py-20 text-center">
           <SectionReveal>
             <h2 className="font-display font-bold text-3xl text-gray-900 sm:text-4xl">
               Work With Us
