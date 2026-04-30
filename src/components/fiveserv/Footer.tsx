@@ -5,8 +5,8 @@ import Logo from "@/components/fiveserv/Logo";
 
 export const Footer = () => {
   return (
-    <footer className="bg-brand-black border-t-2 border-brand-gold">
-      <div className="container py-20">
+    <footer className="bg-brand-black border-t-2 border-brand-gold/30">
+      <div className="container pt-20 pb-20">
         <div className="grid gap-12 md:grid-cols-2 lg:grid-cols-4">
           {/* Col 1: Brand */}
           <div>
@@ -112,7 +112,7 @@ export const Footer = () => {
 
       <div className="bg-black">
         <div className="container flex flex-col gap-3 py-4 text-xs text-brand-gray-muted md:flex-row md:items-center md:justify-between">
-          <p>© 2025 {SITE.legal}. All rights reserved.</p>
+          <p className="text-[11px] text-white/40">© 2025 {SITE.legal}. All rights reserved.</p>
           <p className="flex gap-4">
             <Link to="/privacy" className="hover:text-brand-gold">Privacy Policy</Link>
             <Link to="/terms" className="hover:text-brand-gold">Terms of Service</Link>
