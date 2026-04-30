@@ -146,12 +146,12 @@ const FaqPage = () => {
       </section>
 
       {/* 4. CTA Final */}
-      <section className="bg-brand-gold">
+      <section className="bg-gray-50 border-y border-brand-gold/20">
         <div className="container py-20 text-center">
-          <h2 className="font-display font-bold text-3xl text-gray-900 sm:text-4xl">
+          <h2 className="font-display font-bold text-3xl text-brand-black sm:text-4xl">
             Still have questions?
           </h2>
-          <p className="mt-3 text-lg text-gray-900/80">
+          <p className="mt-3 text-lg text-brand-black/80">
             Get a free quote in 24 hours — or call us right now.
           </p>
           <div className="mt-8 flex flex-wrap items-center justify-center gap-3">
@@ -163,7 +163,7 @@ const FaqPage = () => {
             </Link>
             <a
               href={`tel:${SITE.phone}`}
-              className="inline-flex items-center gap-2 rounded-md border-2 border-brand-black px-8 py-4 text-sm font-bold uppercase tracking-wide text-gray-900 hover:bg-brand-black hover:text-brand-gold"
+              className="inline-flex items-center gap-2 rounded-md border-2 border-brand-black px-8 py-4 text-sm font-bold uppercase tracking-wide text-brand-black hover:bg-brand-black hover:text-brand-gold"
             >
               <Phone className="h-4 w-4" /> {SITE.phone}
             </a>

@@ -190,17 +190,17 @@ const MaintenanceCityPage = ({ citySlug: propSlug }: MaintenanceCityPageProps = 
       </section>
 
       {/* 5. Response Time */}
-      <section className="bg-brand-gold">
+      <section className="bg-gray-50 border-y border-brand-gold/20">
         <div className="container py-14">
           <SectionReveal className="grid gap-6 lg:grid-cols-[auto,1fr,auto] lg:items-center">
             <div className="flex h-16 w-16 items-center justify-center rounded-full bg-brand-black text-brand-gold">
               <Clock className="h-8 w-8" />
             </div>
             <div>
-              <p className="text-xs font-bold uppercase tracking-wider text-gray-900/70">Response Time</p>
-              <h2 className="mt-1 font-display font-semibold text-2xl text-gray-900 sm:text-3xl">
+              <p className="text-xs font-bold uppercase tracking-wider text-brand-black/70">Response Time</p>
+              <h2 className="mt-1 font-display font-semibold text-2xl text-brand-black sm:text-3xl">
                 We typically reach {city.name} within{" "}
-                <span className="underline decoration-4 underline-offset-4">{editorial.responseMinutes} minutes</span>{" "}
+                <span className="text-brand-gold underline decoration-4 underline-offset-4">{editorial.responseMinutes} minutes</span>{" "}
                 from our Orlando base.
               </h2>
             </div>
