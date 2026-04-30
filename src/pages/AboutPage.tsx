@@ -176,16 +176,16 @@ const AboutPage = () => {
       </section>
 
       {/* 6. The FiveServ Promise — mini 5 pillars */}
-      <section className="bg-brand-gold">
+      <section className="bg-gray-50 border-y border-brand-gold/20">
         <div className="container py-20">
           <SectionReveal>
-            <h2 className="font-display font-bold text-3xl text-gray-900 sm:text-4xl">
-              The <BrandName variant="onGold" /> Promise
+            <h2 className="font-display font-bold text-3xl text-brand-black sm:text-4xl">
+              The <BrandName variant="dark" /> Promise
             </h2>
             <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-5">
               {PROMISE.map((p) => (
                 <div key={p.label} className="rounded-lg border-2 border-brand-black bg-brand-black p-6 text-center">
-                  <div className="font-display text-3xl text-brand-white">{p.label}</div>
+                  <div className="font-display text-3xl text-brand-gold">{p.label}</div>
                   <p className="mt-2 text-xs font-bold uppercase tracking-wider text-brand-white">{p.sub}</p>
                 </div>
               ))}
@@ -241,13 +241,13 @@ const AboutPage = () => {
       </section>
 
       {/* 8. CTA Final */}
-      <section className="bg-brand-gold">
+      <section className="bg-gray-50 border-y border-brand-gold/20">
         <div className="container py-20 text-center">
           <SectionReveal>
-            <h2 className="font-display font-bold text-3xl text-gray-900 sm:text-4xl">
+            <h2 className="font-display font-bold text-3xl text-brand-black sm:text-4xl">
               Work With Us
             </h2>
-            <p className="mt-3 text-lg text-gray-900/80">
+            <p className="mt-3 text-lg text-brand-black/80">
               One call. One team. One invoice. Get a free quote in 24 hours.
             </p>
             <Link
