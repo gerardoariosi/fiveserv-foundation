@@ -55,7 +55,7 @@ const ServicesIndexPage = () => (
     </section>
     <section className="bg-white pb-24">
       <div className="container grid gap-6 md:grid-cols-2">
-        {SERVICES.map((s) => {
+        {SERVICES.map((s, i) => {
           const Icon = ICONS[s.slug] ?? Wrench;
           return (
             <ServiceCard
@@ -65,6 +65,7 @@ const ServicesIndexPage = () => (
               description={s.description}
               href={`/${s.slug}`}
               cta={s.cta}
+              index={i}
             />
           );
         })}
@@ -76,14 +77,14 @@ const ServicesIndexPage = () => (
           <p className="font-display text-3xl font-bold uppercase tracking-wide text-gray-900 sm:text-4xl">Our Specialties</p>
         </div>
         <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-          <ServiceCard icon={Droplets} title="Plumbing" description="Leaks, fixtures, water heaters. Emergency response 24/7." href="/plumbing" cta="Learn More" />
-          <ServiceCard icon={Zap} title="Electrical" description="Panels, outlets, lighting, and code compliance." href="/electrical" cta="Learn More" />
-          <ServiceCard icon={Wind} title="HVAC" description="AC repair, maintenance, and filter programs." href="/hvac" cta="Learn More" />
-          <ServiceCard icon={Square} title="Drywall" description="Patches, full replacements, texture matching." href="/drywall" cta="Learn More" />
-          <ServiceCard icon={PaintBucket} title="Painting" description="Interior units, common areas, same-day quotes." href="/painting" cta="Learn More" />
-          <ServiceCard icon={Layers} title="Flooring" description="LVP, tile, carpet removal and installation." href="/flooring" cta="Learn More" />
-          <ServiceCard icon={Hammer} title="Carpentry" description="Doors, trim, cabinets, custom repairs." href="/carpentry" cta="Learn More" />
-          <ServiceCard icon={Sparkles} title="Cleaning" description="Move-out clean, deep clean, inspection-ready." href="/cleaning" cta="Learn More" />
+          <ServiceCard index={0} icon={Droplets} title="Plumbing" description="Leaks, fixtures, water heaters. Emergency response 24/7." href="/plumbing" cta="Learn More" />
+          <ServiceCard index={1} icon={Zap} title="Electrical" description="Panels, outlets, lighting, and code compliance." href="/electrical" cta="Learn More" />
+          <ServiceCard index={2} icon={Wind} title="HVAC" description="AC repair, maintenance, and filter programs." href="/hvac" cta="Learn More" />
+          <ServiceCard index={3} icon={Square} title="Drywall" description="Patches, full replacements, texture matching." href="/drywall" cta="Learn More" />
+          <ServiceCard index={4} icon={PaintBucket} title="Painting" description="Interior units, common areas, same-day quotes." href="/painting" cta="Learn More" />
+          <ServiceCard index={5} icon={Layers} title="Flooring" description="LVP, tile, carpet removal and installation." href="/flooring" cta="Learn More" />
+          <ServiceCard index={6} icon={Hammer} title="Carpentry" description="Doors, trim, cabinets, custom repairs." href="/carpentry" cta="Learn More" />
+          <ServiceCard index={7} icon={Sparkles} title="Cleaning" description="Move-out clean, deep clean, inspection-ready." href="/cleaning" cta="Learn More" />
         </div>
       </div>
     </section>
