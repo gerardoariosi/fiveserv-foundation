@@ -9,10 +9,6 @@ type Props = {
   align?: "left" | "center";
 };
 
-/**
- * SectionHeading — Servpro-style: gold eyebrow + bold gray-900 H2 (text-4xl/5xl) + optional gray subtext.
- * Defaults to centered. Pass `<span className="text-gray-900">…</span>` inside children for accents.
- */
 export const SectionHeading = ({
   eyebrow,
   children,
@@ -25,7 +21,7 @@ export const SectionHeading = ({
   return (
     <div
       ref={ref}
-      className={`max-w-3xl ${alignCls} ${className}`}
+      className={`max-w-3xl mb-6 ${alignCls} ${className}`}
       style={{
         opacity: visible ? 1 : 0,
         transform: visible ? "translateY(0)" : "translateY(20px)",
@@ -33,11 +29,11 @@ export const SectionHeading = ({
       }}
     >
       {eyebrow && (
-        <p className="text-gray-900 text-xs font-medium uppercase tracking-[0.12em] mb-3">
+        <p className="text-gray-900 text-[11px] font-bold uppercase tracking-[0.15em] mb-3">
           — {eyebrow}
         </p>
       )}
-      <h2 className="text-gray-900 text-4xl lg:text-5xl">
+      <h2 className="text-gray-900 text-4xl sm:text-5xl">
         {children}
       </h2>
       {subtext && (

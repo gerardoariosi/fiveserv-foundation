@@ -254,7 +254,7 @@ const ResidentialPage = () => {
 
       {/* Internal links */}
       <section className="bg-gray-50">
-        <div className="container py-16">
+        <div className="container py-20">
           <SectionReveal>
             <h2 className="font-display font-semibold text-2xl text-gray-900">More from <BrandName variant="dark" /></h2>
             <ul className="mt-4 grid gap-2 sm:grid-cols-2">

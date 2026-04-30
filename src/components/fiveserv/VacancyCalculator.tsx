@@ -90,7 +90,7 @@ export const VacancyCalculator = () => {
 
   return (
     <section className="bg-gray-50">
-      <div className="container py-20 sm:py-24">
+      <div className="container py-20 sm:py-28">
         <div className="mx-auto" style={{ maxWidth: "640px" }}>
           {/* Header */}
           <div className="text-center" style={{ marginBottom: "40px" }}>

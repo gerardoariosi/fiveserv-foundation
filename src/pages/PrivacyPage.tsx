@@ -46,7 +46,7 @@ export const PrivacyPage = () => {
       />
 
       <div className="bg-white text-[#1A1A1A]">
-        <article className="mx-auto max-w-3xl px-6 py-16 sm:py-20">
+        <article className="mx-auto max-w-3xl px-6 py-20 sm:py-20">
           <header className="mb-10">
             <p className="font-body text-sm uppercase tracking-[0.2em] text-[#1A1A1A]/60">
               Legal

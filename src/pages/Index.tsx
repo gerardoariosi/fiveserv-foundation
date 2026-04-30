@@ -59,7 +59,7 @@ const ServicesGrid = () => {
   const ref = useReveal<HTMLDivElement>();
   return (
     <section className="bg-white">
-      <div ref={ref} className="container reveal py-24 lg:py-32">
+      <div ref={ref} className="container reveal py-28 lg:py-32">
         <SectionHeading
           eyebrow="Our Services"
           subtext="Four core service lines. One team. One invoice. One point of accountability."
@@ -123,7 +123,7 @@ const TestimonialsSection = () => {
   const ref = useReveal<HTMLDivElement>();
   return (
     <section className="bg-gray-50">
-      <div ref={ref} className="container reveal py-24 lg:py-32">
+      <div ref={ref} className="container reveal py-28 lg:py-32">
         <SectionHeading
           eyebrow="Testimonials"
           subtext={<>Property managers across Central Florida trust <BrandName variant="dark" /> to handle every turn, every repair, every renovation.</>}
@@ -181,7 +181,7 @@ const Index = () => {
       <LiveStatsBar />
       <FamilyStory />
       <section className="bg-white">
-        <div className="container py-24 lg:py-32">
+        <div className="container py-28 lg:py-32">
           <BeforeAfterSlider />
         </div>
       </section>

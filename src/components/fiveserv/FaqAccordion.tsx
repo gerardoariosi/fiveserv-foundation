@@ -19,7 +19,7 @@ export const FaqAccordion = ({
 }: FaqAccordionProps) => {
   return (
     <section className="bg-white">
-      <div className="container py-24 lg:py-32">
+      <div className="container py-28 lg:py-32">
         <SectionHeading eyebrow={eyebrow}>{title}</SectionHeading>
         <Accordion type="single" collapsible className="mx-auto mt-12 max-w-3xl">
           {faqs.map((f, i) => (

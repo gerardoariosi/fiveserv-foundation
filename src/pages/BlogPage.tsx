@@ -50,23 +50,23 @@ const BlogPage = () => {
       />
 
       {/* Hero */}
-      <section className="bg-brand-black pt-stack pb-12">
+      <section className="bg-white border-b border-gray-100 pt-stack pb-12">
         <div className="container max-w-5xl">
           <p className="text-xs font-bold uppercase tracking-wider text-brand-gold">
             <span style={{ whiteSpace: "nowrap" }}>
               <span className="text-brand-gold font-bold">F</span>
-              <span className="text-brand-white">iveServ</span>
+              <span className="text-gray-600">iveServ</span>
             </span>{" "}
             Insights
           </p>
-          <h1 className="mt-4 font-display text-4xl text-white sm:text-5xl">
+          <h1 className="mt-4 font-display text-4xl text-brand-black sm:text-5xl">
             Property Management Maintenance Insights — Central Florida
           </h1>
           <AIOverviewBlock
             hidden
             directAnswer="FiveServ Property Solutions blog covering make-ready, multifamily maintenance, CapEx renovations, and property management best practices in Central Florida. Written by operators serving 50+ communities and 300+ units across 18 cities including Orlando, Kissimmee, and Sanford."
           />
-          <p className="mt-6 max-w-2xl text-lg text-gray-300">
+          <p className="mt-6 max-w-2xl text-lg text-gray-600">
             Make-ready playbooks, CapEx ROI breakdowns, maintenance benchmarks, and the
             on-the-ground guides we use to turn 300+ units a year across Orlando, Kissimmee,
             and the I-4 corridor.
@@ -106,7 +106,7 @@ const BlogPage = () => {
       </section>
 
       {/* Grid */}
-      <section className="bg-white py-16">
+      <section className="bg-white py-20">
         <div className="container max-w-5xl">
           {visiblePosts.length === 0 ? (
             <p className="text-brand-gray-muted">More articles coming soon in this category.</p>

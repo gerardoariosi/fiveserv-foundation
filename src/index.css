@@ -297,3 +297,9 @@
   left: 0;
   right: 0;
 }
+
+h1, h2, h3 { letter-spacing: -0.025em; }
+p { line-height: 1.75; }
+body { -webkit-font-smoothing: antialiased; }
+
+.rounded-full { transition: all 0.2s ease; }

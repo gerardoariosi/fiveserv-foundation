@@ -17,7 +17,7 @@ const StatItem = ({ value, suffix, label }: { value: number; suffix: string; lab
 export const StatsBar = () => {
   return (
     <section className="bg-brand-gray border-y border-brand-gray">
-      <div className="container py-16">
+      <div className="container py-20">
         <div className="grid grid-cols-2 gap-10 sm:grid-cols-3 lg:grid-cols-5">
           {STATS.map((s) => (
             <StatItem key={s.label} value={s.value} suffix={s.suffix} label={s.label} />

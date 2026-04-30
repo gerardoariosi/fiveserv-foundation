@@ -12,9 +12,6 @@ type ServiceCardProps = {
   index?: number;
 };
 
-/**
- * ServiceCard — premium look: white card, gold border on hover, dark icon badge with gold ring.
- */
 export const ServiceCard = ({ icon: Icon, title, description, href, cta, index = 0 }: ServiceCardProps) => {
   const { ref, visible } = useScrollReveal();
   const delay = index * 80;
@@ -28,7 +25,7 @@ export const ServiceCard = ({ icon: Icon, title, description, href, cta, index =
         transition: `opacity 0.5s ease ${delay}ms, transform 0.5s ease ${delay}ms`,
       }}
     >
-      <article className="group relative flex h-full flex-col overflow-hidden rounded-xl border border-gray-200 bg-white p-6 shadow-[0_4px_20px_rgba(0,0,0,0.08)] transition-all duration-300 hover:-translate-y-1 hover:border-brand-gold hover:shadow-[0_12px_36px_rgba(255,215,0,0.18)]">
+      <article className="group relative flex h-full flex-col overflow-hidden rounded-2xl border border-gray-100 bg-white p-6 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-md hover:border-brand-gold/40">
         <div className="relative inline-flex h-14 w-14 items-center justify-center transition-transform duration-300 group-hover:scale-105">
           <Icon className="h-7 w-7 text-brand-black" strokeWidth={1.75} />
         </div>

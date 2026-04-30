@@ -128,19 +128,19 @@ const RenovationsPage = () => {
       </section>
 
       {/* 3. ROI Section */}
-      <section className="bg-brand-gold">
-        <div className="container py-16">
+      <section className="bg-gray-50 border-y border-brand-gold/20">
+        <div className="container py-20">
           <SectionReveal className="grid gap-8 lg:grid-cols-[auto,1fr] lg:items-center">
             <div className="flex h-20 w-20 items-center justify-center rounded-full bg-brand-black text-brand-gold">
               <TrendingUp className="h-10 w-10" />
             </div>
             <div>
-              <p className="text-xs font-bold uppercase tracking-wider text-gray-900/70">The ROI</p>
-              <h2 className="mt-2 font-display font-bold text-3xl text-gray-900 sm:text-4xl lg:text-5xl">
+              <p className="text-xs font-bold uppercase tracking-wider text-brand-black/70">The ROI</p>
+              <h2 className="mt-2 font-display font-bold text-3xl text-brand-black sm:text-4xl lg:text-5xl">
                 Value-add renovations in Central Florida multifamily average a{" "}
-                <span className="underline decoration-4 underline-offset-4">15–20% rent increase</span>.
+                <span className="text-brand-gold underline decoration-4 underline-offset-4">15–20% rent increase</span>.
               </h2>
-              <p className="mt-4 max-w-3xl text-gray-900/80">
+              <p className="mt-4 max-w-3xl text-brand-black/80">
                 Payback periods of 18 to 36 months depending on scope. Every <BrandName variant="dark" /> renovation quote includes an
                 estimated ROI so you can underwrite the project before a hammer swings.
               </p>
@@ -256,7 +256,7 @@ const RenovationsPage = () => {
 
       {/* Internal links */}
       <section className="bg-gray-50">
-        <div className="container py-16">
+        <div className="container py-20">
           <SectionReveal className="grid gap-10 md:grid-cols-2">
             <div>
               <h2 className="font-display font-semibold text-2xl text-gray-900">More from <BrandName variant="dark" /></h2>

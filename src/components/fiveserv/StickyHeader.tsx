@@ -38,7 +38,7 @@ export const StickyHeader = () => {
     <header
       style={{ top: "var(--banner-h, 0px)" }}
       className={`fixed inset-x-0 z-40 bg-white border-b border-gray-200 transition-shadow duration-300 ${
-        scrolled ? "shadow-md" : "shadow-none"
+        scrolled ? "shadow-md backdrop-blur-sm" : "shadow-none"
       }`}
     >
       <div className="container flex h-20 items-center justify-between gap-4">
@@ -57,7 +57,7 @@ export const StickyHeader = () => {
               to={n.to}
               end={n.to === "/"}
               className={({ isActive }) =>
-                `nav-link-center nav-link-gold text-sm font-medium transition-colors hover:text-brand-gold ${
+                `nav-link-center nav-link-gold text-[13px] font-medium tracking-wide transition-colors duration-200 hover:text-brand-gold ${
                   isActive ? "text-brand-gold" : "text-gray-700"
                 }`
               }
