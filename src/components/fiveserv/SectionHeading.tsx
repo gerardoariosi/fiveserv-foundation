@@ -1,4 +1,5 @@
 import { ReactNode } from "react";
+import { useScrollReveal } from "@/hooks/useScrollReveal";
 
 type Props = {
   eyebrow?: string;
@@ -20,8 +21,17 @@ export const SectionHeading = ({
   align = "center",
 }: Props) => {
   const alignCls = align === "center" ? "text-center mx-auto" : "text-left";
+  const { ref, visible } = useScrollReveal();
   return (
-    <div className={`max-w-3xl ${alignCls} ${className}`}>
+    <div
+      ref={ref}
+      className={`max-w-3xl ${alignCls} ${className}`}
+      style={{
+        opacity: visible ? 1 : 0,
+        transform: visible ? "translateY(0)" : "translateY(20px)",
+        transition: "opacity 0.5s ease, transform 0.5s ease",
+      }}
+    >
       {eyebrow && (
         <p className="text-gray-900 text-xs font-medium uppercase tracking-[0.12em] mb-3">
           — {eyebrow}
