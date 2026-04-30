@@ -9,6 +9,22 @@ import ContactCTA from "./ContactCTA";
 import BrandName from "@/components/fiveserv/BrandName";
 import AIOverviewBlock from "@/components/fiveserv/AIOverviewBlock";
 
+const BlogImage = ({ src, alt, className, loading }: { src: string; alt: string; className?: string; loading?: "eager" | "lazy" }) => {
+  const [loaded, setLoaded] = useState(false);
+  return (
+    <div className={!loaded ? "img-skeleton" : ""}>
+      <img
+        src={src}
+        alt={alt}
+        className={className}
+        loading={loading}
+        onLoad={() => setLoaded(true)}
+        style={{ opacity: loaded ? 1 : 0, transition: "opacity 0.4s ease" }}
+      />
+    </div>
+  );
+};
+
 type Props = {
   post: BlogPost;
   children: React.ReactNode;
