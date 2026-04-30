@@ -272,3 +272,28 @@
     animation: skeleton-pulse 1.5s ease infinite;
   }
 }
+
+@keyframes pageFadeIn {
+  from { opacity: 0; transform: translateY(14px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.page-root {
+  animation: pageFadeIn 0.3s ease forwards;
+}
+
+.nav-link-gold {
+  position: relative;
+}
+.nav-link-gold::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 50%; right: 50%;
+  height: 2px;
+  background: #FFD700;
+  transition: left 0.25s ease, right 0.25s ease;
+}
+.nav-link-gold:hover::after {
+  left: 0;
+  right: 0;
+}
