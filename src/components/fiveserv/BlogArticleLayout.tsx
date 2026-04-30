@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { Link } from "react-router-dom";
 import { ArrowRight, Clock } from "lucide-react";
 import Seo from "@/lib/Seo";
@@ -80,12 +81,7 @@ export const BlogArticleLayout = ({ post, children }: Props) => {
         <section className="bg-white">
           <div className="container max-w-4xl -mt-24">
             <div className="relative overflow-hidden rounded-2xl shadow-2xl ring-1 ring-black/5">
-              <img
-                src={post.image}
-                alt={post.title}
-                className="aspect-[16/9] w-full object-cover"
-                loading="eager"
-              />
+              <BlogImage src={post.image} alt={post.title} className="aspect-[16/9] w-full object-cover" loading="eager" />
               <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent" />
             </div>
           </div>
