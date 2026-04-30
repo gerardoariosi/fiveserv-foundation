@@ -57,7 +57,7 @@ export const StickyHeader = () => {
               to={n.to}
               end={n.to === "/"}
               className={({ isActive }) =>
-                `nav-link-center text-sm font-medium transition-colors hover:text-brand-gold ${
+                `nav-link-center nav-link-gold text-sm font-medium transition-colors hover:text-brand-gold ${
                   isActive ? "text-brand-gold" : "text-gray-700"
                 }`
               }
