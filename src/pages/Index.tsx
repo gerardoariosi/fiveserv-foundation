@@ -84,6 +84,7 @@ const ServicesGrid = () => {
                   description={svc.description}
                   href={`/${svc.slug}`}
                   cta={m.cta}
+                  index={SERVICE_META.indexOf(m)}
                 />
               </div>
             );

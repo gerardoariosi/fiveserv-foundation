@@ -127,7 +127,7 @@ const DrywallPage = () => {
           </p>
 
           <div className="mt-8 flex flex-wrap gap-3">
-            <a href="#contact-form" className="cta-gold rounded-md px-6 py-3 text-sm font-bold uppercase tracking-wide">
+            <a href="#contact-form" className="cta-gold btn-shimmer rounded-md px-6 py-3 text-sm font-bold uppercase tracking-wide">
               Get a Drywall Quote
             </a>
             <a
@@ -170,7 +170,7 @@ const DrywallPage = () => {
               </div>
               <Link
                 to="/make-ready"
-                className="cta-gold mt-6 flex items-center justify-center gap-2 rounded-md px-6 py-4 text-base font-bold uppercase tracking-wide"
+                className="cta-gold btn-shimmer mt-6 flex items-center justify-center gap-2 rounded-md px-6 py-4 text-base font-bold uppercase tracking-wide"
               >
                 See the 5-Day Process
               </Link>
@@ -229,7 +229,7 @@ const DrywallPage = () => {
                 </div>
                 <Link
                   to="/make-ready"
-                  className="cta-gold flex items-center justify-center gap-2 rounded-md px-6 py-4 text-base font-bold uppercase tracking-wide whitespace-nowrap"
+                  className="cta-gold btn-shimmer flex items-center justify-center gap-2 rounded-md px-6 py-4 text-base font-bold uppercase tracking-wide whitespace-nowrap"
                 >
                   See Make-Ready
                 </Link>

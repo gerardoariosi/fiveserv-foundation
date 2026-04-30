@@ -109,7 +109,7 @@ export const HeroSection = ({
             <button
               type="button"
               onClick={scrollToForm}
-              className="cta-gold cta-pill w-full sm:w-auto justify-center"
+              className="cta-gold btn-shimmer cta-pill w-full sm:w-auto justify-center"
             >
               Get a free quote <ArrowRight className="ml-2 h-4 w-4" />
             </button>

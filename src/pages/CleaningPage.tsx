@@ -166,7 +166,7 @@ const CleaningPage = () => {
           </p>
 
           <div className="mt-8 flex flex-wrap gap-3">
-            <a href="#contact-form" className="cta-gold rounded-md px-6 py-3 text-sm font-bold uppercase tracking-wide">
+            <a href="#contact-form" className="cta-gold btn-shimmer rounded-md px-6 py-3 text-sm font-bold uppercase tracking-wide">
               Get a Cleaning Quote
             </a>
             <a
@@ -220,7 +220,7 @@ const CleaningPage = () => {
                 </ul>
                 <Link
                   to="/make-ready"
-                  className="cta-gold mt-6 inline-flex items-center gap-2 rounded-md px-6 py-3 text-sm font-bold uppercase tracking-wide"
+                  className="cta-gold btn-shimmer mt-6 inline-flex items-center gap-2 rounded-md px-6 py-3 text-sm font-bold uppercase tracking-wide"
                 >
                   Get a Make-Ready Cleaning Quote <ArrowRight className="h-4 w-4" />
                 </Link>
@@ -251,7 +251,7 @@ const CleaningPage = () => {
                 </ul>
                 <Link
                   to="/residential"
-                  className="cta-gold mt-6 inline-flex items-center gap-2 rounded-md px-6 py-3 text-sm font-bold uppercase tracking-wide"
+                  className="cta-gold btn-shimmer mt-6 inline-flex items-center gap-2 rounded-md px-6 py-3 text-sm font-bold uppercase tracking-wide"
                 >
                   Get a Home Cleaning Quote <ArrowRight className="h-4 w-4" />
                 </Link>
@@ -357,7 +357,7 @@ const CleaningPage = () => {
                 </div>
                 <Link
                   to="/make-ready"
-                  className="cta-gold flex items-center justify-center gap-2 rounded-md px-6 py-4 text-base font-bold uppercase tracking-wide whitespace-nowrap"
+                  className="cta-gold btn-shimmer flex items-center justify-center gap-2 rounded-md px-6 py-4 text-base font-bold uppercase tracking-wide whitespace-nowrap"
                 >
                   See Make-Ready
                 </Link>
@@ -438,7 +438,7 @@ const CleaningPage = () => {
                 </div>
                 <a
                   href="#contact-form"
-                  className="cta-gold flex items-center justify-center gap-2 rounded-md px-6 py-4 text-base font-bold uppercase tracking-wide whitespace-nowrap"
+                  className="cta-gold btn-shimmer flex items-center justify-center gap-2 rounded-md px-6 py-4 text-base font-bold uppercase tracking-wide whitespace-nowrap"
                 >
                   Get STR Cleaning
                 </a>
@@ -512,7 +512,7 @@ const CleaningPage = () => {
                 </div>
                 <Link
                   to="/contact?offer=cleaning-checklist"
-                  className="cta-gold flex items-center justify-center gap-2 rounded-md px-6 py-4 text-base font-bold uppercase tracking-wide whitespace-nowrap"
+                  className="cta-gold btn-shimmer flex items-center justify-center gap-2 rounded-md px-6 py-4 text-base font-bold uppercase tracking-wide whitespace-nowrap"
                 >
                   Get the Checklist
                 </Link>
@@ -582,7 +582,7 @@ const CleaningPage = () => {
               <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
                 <Link
                   to="/contact"
-                  className="cta-gold inline-flex items-center justify-center gap-2 rounded-md px-6 py-3 text-sm font-bold uppercase tracking-wide"
+                  className="cta-gold btn-shimmer inline-flex items-center justify-center gap-2 rounded-md px-6 py-3 text-sm font-bold uppercase tracking-wide"
                 >
                   <Building2 className="h-4 w-4" /> Get a Property Cleaning Quote
                 </Link>

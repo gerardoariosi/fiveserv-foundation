@@ -106,7 +106,7 @@ const ResidentialPage = () => {
           </div>
 
           <div className="mt-8 flex flex-wrap gap-3">
-            <a href="#contact-form" className="cta-gold rounded-md px-6 py-3 text-sm font-bold uppercase tracking-wide">
+            <a href="#contact-form" className="cta-gold btn-shimmer rounded-md px-6 py-3 text-sm font-bold uppercase tracking-wide">
               Get a Free Home Assessment
             </a>
             <a

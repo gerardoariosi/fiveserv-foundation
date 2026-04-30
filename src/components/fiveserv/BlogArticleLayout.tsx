@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { Link } from "react-router-dom";
 import { ArrowRight, Clock } from "lucide-react";
 import Seo from "@/lib/Seo";
@@ -7,6 +8,22 @@ import type { BlogPost } from "@/lib/blog-data";
 import ContactCTA from "./ContactCTA";
 import BrandName from "@/components/fiveserv/BrandName";
 import AIOverviewBlock from "@/components/fiveserv/AIOverviewBlock";
+
+const BlogImage = ({ src, alt, className, loading }: { src: string; alt: string; className?: string; loading?: "eager" | "lazy" }) => {
+  const [loaded, setLoaded] = useState(false);
+  return (
+    <div className={!loaded ? "img-skeleton" : ""}>
+      <img
+        src={src}
+        alt={alt}
+        className={className}
+        loading={loading}
+        onLoad={() => setLoaded(true)}
+        style={{ opacity: loaded ? 1 : 0, transition: "opacity 0.4s ease" }}
+      />
+    </div>
+  );
+};
 
 type Props = {
   post: BlogPost;
@@ -80,12 +97,7 @@ export const BlogArticleLayout = ({ post, children }: Props) => {
         <section className="bg-white">
           <div className="container max-w-4xl -mt-24">
             <div className="relative overflow-hidden rounded-2xl shadow-2xl ring-1 ring-black/5">
-              <img
-                src={post.image}
-                alt={post.title}
-                className="aspect-[16/9] w-full object-cover"
-                loading="eager"
-              />
+              <BlogImage src={post.image} alt={post.title} className="aspect-[16/9] w-full object-cover" loading="eager" />
               <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent" />
             </div>
           </div>

@@ -109,7 +109,7 @@ const FiveServVsHandymanPage = () => {
             </p>
 
             <div className="mt-8 flex flex-wrap gap-3">
-              <Link to="/contact" className="cta-gold cta-pill inline-flex items-center gap-2">
+              <Link to="/contact" className="cta-gold btn-shimmer cta-pill inline-flex items-center gap-2">
                 Get a Free Quote <ArrowRight className="h-4 w-4" />
               </Link>
               <a

@@ -7,6 +7,8 @@ import ExitIntentPopup from "@/components/fiveserv/ExitIntentPopup";
 import SofiaChat from "@/components/fiveserv/SofiaChat";
 import ScrollProgress from "@/components/fiveserv/ScrollProgress";
 import StickyMobileCTA from "@/components/fiveserv/StickyMobileCTA";
+import NavProgressBar from "@/components/fiveserv/NavProgressBar";
+import PageTransition from "@/components/fiveserv/PageTransition";
 import { Helmet } from "react-helmet-async";
 import { SITE } from "@/lib/site-config";
 
@@ -37,6 +39,7 @@ export const RootLayout = () => {
         )}
       </Helmet>
 
+      <NavProgressBar />
       <ScrollProgress />
       <StickyBanner />
       <StickyHeader />
@@ -45,7 +48,9 @@ export const RootLayout = () => {
         <div style={{ paddingTop: "calc(var(--banner-h, 0px) + var(--header-h, 80px))" }}>
           <SocialProofTicker />
         </div>
-        <Outlet />
+        <PageTransition>
+          <Outlet />
+        </PageTransition>
       </main>
       <Footer />
       <ExitIntentPopup />
