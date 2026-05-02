@@ -57,7 +57,6 @@ const makeFsIcon = (tier1: boolean) => {
         stroke="#1A1A1A"
         stroke-width="2"
       />
-      <circle cx="${cx}" cy="${cy}" r="${r * 0.4}" fill="white" />
       <text
         x="${cx}"
         y="${cy + fs * 0.37}"
@@ -65,7 +64,7 @@ const makeFsIcon = (tier1: boolean) => {
         font-family="Georgia, serif"
         font-weight="900"
         font-size="${fs}"
-        fill="#1A1A1A"
+        fill="#FFFFFF"
         letter-spacing="-0.5"
       >FS</text>
     </svg>
