@@ -104,7 +104,17 @@ const ElectricalPage = () => {
       />
 
       {/* Hero */}
-      <section className="bg-brand-black pt-stack pb-16">
+      <section className="relative bg-brand-black pt-stack pb-16 overflow-hidden">
+        <video
+          autoPlay
+          muted
+          loop
+          playsInline
+          className="absolute inset-0 w-full h-full object-cover"
+          src="/images/services/electrical.mp4"
+        />
+        <div className="absolute inset-0 bg-brand-black/80" />
+        <div className="relative z-10">
         <div className="container">
           <p className="text-xs font-medium uppercase tracking-[0.12em] text-brand-gold">
             — <BrandName variant="light" /> Property Solutions
