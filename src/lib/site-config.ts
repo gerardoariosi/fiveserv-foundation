@@ -13,7 +13,7 @@ export const SITE = {
   domain: env.VITE_DOMAIN || "fiveserv.net",
   url: `https://${env.VITE_DOMAIN || "fiveserv.net"}`,
   email: env.VITE_EMAIL || "info@fiveserv.net",
-  phone: env.VITE_PHONE || "[PHONE_NUMBER]",
+  phone: env.VITE_PHONE || "(407) 881-4942",
   baseCity: env.VITE_BASE_CITY || "Orlando",
   baseState: env.VITE_BASE_STATE || "FL",
   hours: "Available 24/7",
