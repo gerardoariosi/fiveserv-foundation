@@ -40,7 +40,7 @@ const ELECTRICAL_FAQS = [
   },
   {
     q: "Are your electricians licensed in Florida?",
-    a: `Yes. All electrical work is performed by Florida-licensed electrical contractors under ${SITE.brand} coordination. We handle dispatch, scope, scheduling, and one consolidated invoice. [LICENSES_AND_INSURANCE].`,
+    a: `Yes. All electrical work is performed by Florida-licensed electrical contractors under ${SITE.brand} coordination. We handle dispatch, scope, scheduling, and one consolidated invoice. FiveServ Property Solutions LLC is fully licensed and insured in the state of Florida.`,
   },
   {
     q: "How fast do you respond to an electrical emergency?",

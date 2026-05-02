@@ -159,7 +159,7 @@ const Index = () => {
       <SchemaOrg
         organization
         breadcrumbs={[{ name: "Home", url: SITE.url }]}
-        faqs={HOMEPAGE_FAQS}
+        faqs={[...HOMEPAGE_FAQS, ...VISIBLE_QA]}
         aggregateRating
       />
 
@@ -190,7 +190,7 @@ const Index = () => {
       {/* Cities grid — light gray */}
       <CityGrid />
 
-      <VisibleQA items={VISIBLE_QA} />
+      <VisibleQA items={VISIBLE_QA} emitSchema={false} />
       <FaqAccordion faqs={HOMEPAGE_FAQS} emitSchema={false} />
       <LeadMagnetSection />
       <ContactCTA />
