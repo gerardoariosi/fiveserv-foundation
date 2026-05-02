@@ -216,9 +216,9 @@ const AboutPage = () => {
 
             <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
               {[
-                { icon: ShieldCheck, label: "General Liability", value: "[LICENSES_AND_INSURANCE]" },
-                { icon: FileCheck2, label: "Workers' Compensation", value: "[LICENSES_AND_INSURANCE]" },
-                { icon: Award, label: "Florida Contractor License", value: "[LICENSES_AND_INSURANCE]" },
+                { icon: ShieldCheck, label: "General Liability", value: "FiveServ Property Solutions LLC is fully licensed and insured in the state of Florida" },
+                { icon: FileCheck2, label: "Workers' Compensation", value: "FiveServ Property Solutions LLC is fully licensed and insured in the state of Florida" },
+                { icon: Award, label: "Florida Contractor License", value: "FiveServ Property Solutions LLC is fully licensed and insured in the state of Florida" },
                 { icon: Users, label: "W-9 / Vendor Onboarding", value: "Available on request" },
               ].map((item) => {
                 const Icon = item.icon;

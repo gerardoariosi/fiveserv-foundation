@@ -43,7 +43,7 @@ const baseFaqs = (city: string, zips: string[], minutes: number, zones: string[]
   },
   {
     q: `Are you licensed and insured to work in ${city}, FL?`,
-    a: `Yes. ${SITE.brand} is fully licensed and insured in Florida. Plumbing, electrical, and HVAC work is performed by licensed contractors under our coordination. [LICENSES_AND_INSURANCE].`,
+    a: `Yes. ${SITE.brand} is fully licensed and insured in Florida. Plumbing, electrical, and HVAC work is performed by licensed contractors under our coordination. FiveServ Property Solutions LLC is fully licensed and insured in the state of Florida.`,
   },
 ];
 

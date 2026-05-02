@@ -41,7 +41,7 @@ const HVAC_FAQS = [
   },
   {
     q: "Are your HVAC technicians licensed in Florida?",
-    a: `Yes. All HVAC work is performed by Florida-licensed Class A or B mechanical contractors under ${SITE.brand} coordination. We handle dispatch, scope, scheduling, EPA-certified refrigerant work, and one consolidated invoice. [LICENSES_AND_INSURANCE].`,
+    a: `Yes. All HVAC work is performed by Florida-licensed Class A or B mechanical contractors under ${SITE.brand} coordination. We handle dispatch, scope, scheduling, EPA-certified refrigerant work, and one consolidated invoice. FiveServ Property Solutions LLC is fully licensed and insured in the state of Florida.`,
   },
   {
     q: "How fast do you respond to an AC emergency?",
