@@ -155,6 +155,7 @@ const ElectricalPage = () => {
             supportingFacts="Services include outlet repair, panel upgrades, lighting installation, wiring repair, and emergency electrical. Response within 2 hours across 18 cities in Central Florida."
           />
         </div>
+        </div>
       </section>
 
       {/* Problem section */}
