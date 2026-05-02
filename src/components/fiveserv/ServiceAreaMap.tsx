@@ -36,16 +36,31 @@ const TIER_1 = new Set<CitySlug>([
   "lakeland-fl",
 ]);
 
-// Custom gold pin with FS monogram
+// Custom gold teardrop pin with FS monogram
 const makeFsIcon = (tier1: boolean) => {
-  const size = tier1 ? 48 : 38;
-  const fs = tier1 ? 16 : 13;
+  const size = tier1 ? 52 : 40;
+  const pinW = size;
+  const pinH = Math.round(size * 1.4);
+  const cx = pinW / 2;
+  const cy = pinW / 2;
+  const r = pinW / 2 - 2;
+  const fs = tier1 ? 14 : 11;
   const html = `
-    <svg width="${size}" height="${size + 8}" viewBox="0 0 ${size} ${size + 8}" xmlns="http://www.w3.org/2000/svg">
-      <circle cx="${size / 2}" cy="${size / 2}" r="${size / 2 - 2}" fill="#FFD700" stroke="#1A1A1A" stroke-width="2.5"/>
+    <svg width="${pinW}" height="${pinH}" viewBox="0 0 ${pinW} ${pinH}" xmlns="http://www.w3.org/2000/svg">
+      <path
+        d="M${cx},${pinH - 2}
+           C${cx - 4},${cy + r + 4} ${2},${cy + r * 0.6}
+           ${2},${cy}
+           A${r},${r} 0 1,1 ${pinW - 2},${cy}
+           C${pinW - 2},${cy + r * 0.6} ${cx + 4},${cy + r + 4} ${cx},${pinH - 2}Z"
+        fill="#FFD700"
+        stroke="#1A1A1A"
+        stroke-width="2"
+      />
+      <circle cx="${cx}" cy="${cy}" r="${r * 0.4}" fill="white" />
       <text
-        x="${size / 2}"
-        y="${size / 2 + fs * 0.38}"
+        x="${cx}"
+        y="${cy + fs * 0.37}"
         text-anchor="middle"
         font-family="Georgia, serif"
         font-weight="900"
@@ -53,21 +68,14 @@ const makeFsIcon = (tier1: boolean) => {
         fill="#1A1A1A"
         letter-spacing="-0.5"
       >FS</text>
-      <polygon
-        points="${size / 2 - 5},${size - 1} ${size / 2 + 5},${size - 1} ${size / 2},${size + 7}"
-        fill="#FFD700"
-        stroke="#1A1A1A"
-        stroke-width="1.5"
-        stroke-linejoin="round"
-      />
     </svg>
   `;
   return L.divIcon({
     html,
     className: "fiveserv-pin",
-    iconSize: [size, size + 8],
-    iconAnchor: [size / 2, size + 8],
-    popupAnchor: [0, -(size + 8)],
+    iconSize: [pinW, pinH],
+    iconAnchor: [cx, pinH],
+    popupAnchor: [0, -pinH],
   });
 };
 
