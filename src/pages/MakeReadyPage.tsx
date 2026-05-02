@@ -83,7 +83,16 @@ const MakeReadyPage = () => {
       />
 
       {/* 1. Hero */}
-      <section className="bg-brand-black pt-stack pb-16">
+      <section
+        className="relative bg-brand-black pt-stack pb-16"
+        style={{
+          backgroundImage: 'url("/images/make-ready-unit.jpg")',
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+        }}
+      >
+        <div className="absolute inset-0 bg-brand-black/75" />
+        <div className="relative z-10">
         <div className="container">
           <p className="text-xs font-medium uppercase tracking-[0.12em] text-brand-gold">
             — <span style={{ whiteSpace: "nowrap" }}><span className="font-bold text-brand-gold">F</span><span className="text-white">iveServ</span></span> Property Solutions
@@ -125,6 +134,7 @@ const MakeReadyPage = () => {
             directAnswer="FiveServ Property Solutions completes every make-ready and unit turn in Central Florida in 5 business days, guaranteed in writing, including painting, cleaning, repairs, drywall, inspection, rekeying, and photo report."
             supportingFacts="Property managers across Orlando, Kissimmee, Sanford, and 15 more cities rely on FiveServ for consistent make-ready delivery under one invoice. 300+ units completed. No vendor coordination required."
           />
+        </div>
         </div>
       </section>
 
