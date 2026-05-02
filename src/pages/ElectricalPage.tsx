@@ -104,7 +104,17 @@ const ElectricalPage = () => {
       />
 
       {/* Hero */}
-      <section className="bg-brand-black pt-stack pb-16">
+      <section className="relative bg-brand-black pt-stack pb-16 overflow-hidden">
+        <video
+          autoPlay
+          muted
+          loop
+          playsInline
+          className="absolute inset-0 w-full h-full object-cover"
+          src="/images/services/electrical.mp4"
+        />
+        <div className="absolute inset-0 bg-brand-black/80" />
+        <div className="relative z-10">
         <div className="container">
           <p className="text-xs font-medium uppercase tracking-[0.12em] text-brand-gold">
             — <BrandName variant="light" /> Property Solutions
@@ -144,6 +154,7 @@ const ElectricalPage = () => {
             directAnswer="FiveServ Property Solutions provides licensed electrical services for multifamily properties across Central Florida with 24/7 emergency response and zero liability for property managers."
             supportingFacts="Services include outlet repair, panel upgrades, lighting installation, wiring repair, and emergency electrical. Response within 2 hours across 18 cities in Central Florida."
           />
+        </div>
         </div>
       </section>
 
