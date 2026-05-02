@@ -245,7 +245,7 @@ const MakeReadyPage = () => {
       <LeadMagnetSection variant="checklist" />
 
       {/* 8. FAQ — 8 questions */}
-      <VisibleQA items={VISIBLE_QA} />
+      <VisibleQA items={VISIBLE_QA} emitSchema={false} />
       <FaqAccordion faqs={MAKE_READY_FAQS} emitSchema={false} />
 
       {/* Internal links — services + cities (SEO requirement: 3+ services + 2+ cities) */}
