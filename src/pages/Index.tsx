@@ -159,7 +159,7 @@ const Index = () => {
       <SchemaOrg
         organization
         breadcrumbs={[{ name: "Home", url: SITE.url }]}
-        faqs={HOMEPAGE_FAQS}
+        faqs={[...HOMEPAGE_FAQS, ...VISIBLE_QA]}
         aggregateRating
       />
 
