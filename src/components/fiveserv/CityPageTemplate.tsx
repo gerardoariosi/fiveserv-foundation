@@ -42,7 +42,7 @@ export const CityPageTemplate = ({ city, service, faqs = [] }: CityPageData) => 
       {/* Hero — dark */}
       <section className="bg-brand-black pt-stack pb-16">
         <div className="container">
-          <p className="text-xs font-medium uppercase tracking-[0.12em] text-brand-gold">— <BrandName variant="light" /> Property Solutions</p>
+          <p className="uppercase tracking-[0.12em] text-brand-gold text-base font-bold">— <BrandName variant="light" /> Property Solutions</p>
           <h1 className="mt-3 font-display font-black text-4xl text-white sm:text-5xl lg:text-6xl">
             {service ? service.name : "Property Maintenance"} in <span className="text-brand-gold">{city.name}, {city.state}</span>
           </h1>
