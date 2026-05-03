@@ -29,7 +29,7 @@ export const SectionHeading = ({
       }}
     >
       {eyebrow && (
-        <p className="text-gray-900 text-[11px] font-bold uppercase tracking-[0.15em] mb-3">
+        <p className="text-gray-900 text-[13px] font-black uppercase tracking-[0.15em] mb-3">
           — {eyebrow}
         </p>
       )}
