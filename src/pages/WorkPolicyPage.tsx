@@ -2,9 +2,6 @@ import Seo from "@/lib/Seo";
 import { SITE } from "@/lib/site-config";
 import BrandName from "@/components/fiveserv/BrandName";
 
-/**
- * Work Policy — operational standards & field procedures.
- */
 const Section = ({ number, title, children }: { number: number; title: string; children: React.ReactNode }) => (
   <section className="py-8">
     <h2 className="font-display text-2xl text-[#1A1A1A] sm:text-3xl">
@@ -22,7 +19,7 @@ export const WorkPolicyPage = () => {
     <>
       <Seo
         title="Work Policy — FiveServ Property Solutions"
-        description="FiveServ Property Solutions operational standards and field procedures: work authorization, scheduling, quality control, safety, and invoicing."
+        description="FiveServ Property Solutions operational standards, field procedures, and service commitments for property managers across Central Florida."
         path="/work-policy"
       />
 
@@ -30,14 +27,14 @@ export const WorkPolicyPage = () => {
         <article className="mx-auto max-w-3xl px-6 py-20 sm:py-20">
           <header className="mb-10">
             <p className="font-body text-sm uppercase tracking-[0.2em] text-[#1A1A1A]/60">
-              Operational Standards &amp; Field Procedures — Version 1.0 — 2025
+              Operations
             </p>
             <h1 className="mt-3 font-display text-4xl text-[#1A1A1A] sm:text-5xl">
               Work Policy
             </h1>
             <div className="mt-6 h-[2px] w-24 bg-[#FFD700]" aria-hidden="true" />
             <p className="mt-6 font-body text-sm text-[#1A1A1A]/70">
-              Last updated: May 2025
+              Last updated: May 2026
             </p>
           </header>
 
@@ -52,10 +49,10 @@ export const WorkPolicyPage = () => {
 
           <Section number={2} title="Scheduling & Arrival">
             <p>
-              <BrandName variant="dark" /> commits to arriving within the scheduled service window. Standard windows:
-              Morning (8:00 AM – 12:00 PM) | Afternoon (12:00 PM – 5:00 PM) | Emergency (24/7). If <BrandName variant="dark" />
-              {" "}anticipates a delay exceeding 30 minutes, the Client will be notified before the scheduled arrival
-              time.
+              <BrandName variant="dark" /> commits to arriving within the scheduled service window communicated to the
+              Client. Standard windows: Morning (8:00 AM – 12:00 PM) | Afternoon (12:00 PM – 5:00 PM) | Emergency
+              (24/7). If <BrandName variant="dark" /> anticipates a delay exceeding 30 minutes, the Client will be
+              notified before the scheduled arrival time.
             </p>
           </Section>
 
@@ -63,17 +60,17 @@ export const WorkPolicyPage = () => {
             <p>
               Every make-ready follows a standardized checklist: full interior painting, cleaning, touch-up
               repairs, door hardware and lock re-keying, appliance inspection, HVAC filter replacement, and final
-              photo inspection report. Delivery: 5 business days guaranteed from confirmed start date for units in
-              standard condition.
+              photo inspection report. Delivery guaranteed in 5 business days from confirmed start date for units
+              in standard condition.
             </p>
           </Section>
 
           <Section number={4} title="Field Personnel Standards">
             <p>
-              All <BrandName variant="dark" /> team members must: wear <BrandName variant="dark" /> uniform while on site;
-              carry company identification; maintain a clean and professional work area; communicate respectfully
-              with all parties; never access areas outside the defined scope; report any pre-existing damage
-              before beginning work.
+              All <BrandName variant="dark" /> team members must: wear <BrandName variant="dark" /> uniform while on
+              site; carry company identification; maintain a clean and professional work area; communicate
+              respectfully with all parties; never access areas outside the defined scope; report any pre-existing
+              damage before beginning work.
             </p>
           </Section>
 
@@ -88,18 +85,18 @@ export const WorkPolicyPage = () => {
           <Section number={6} title="Safety & Site Conduct">
             <p>
               All team members follow applicable OSHA standards and Florida safety regulations. No alcohol or
-              illegal substances are permitted on any job site. All electrical, plumbing, HVAC, and structural
-              work is performed by licensed and insured subcontractors. Job sites must be left clean and secure at
-              the end of each workday.
+              illegal substances permitted on any job site. All electrical, plumbing, HVAC, and structural work is
+              performed by licensed and insured subcontractors. Job sites must be left clean and secure at the end
+              of each workday.
             </p>
           </Section>
 
           <Section number={7} title="Subcontractor Standards">
             <p>
-              Licensed subcontractors operate under <BrandName variant="dark" /> coordination and are held to the same
-              standards as direct employees. All subcontractors carry valid Florida licenses and general liability
-              insurance. Client receives a single consolidated invoice from <BrandName variant="dark" /> regardless of how
-              many trades were involved.
+              Licensed subcontractors operate under <BrandName variant="dark" /> coordination and are held to the
+              same standards as direct employees. All subcontractors carry valid Florida licenses and general
+              liability insurance. Client receives a single consolidated invoice from <BrandName variant="dark" />
+              {" "}regardless of how many trades were involved.
             </p>
           </Section>
 
@@ -121,9 +118,9 @@ export const WorkPolicyPage = () => {
 
           <Section number={10} title="Communication Standards">
             <p>
-              <BrandName variant="dark" /> responds to all Client communications within 2 business hours during standard
-              hours (8:00 AM – 6:00 PM Monday–Friday). Emergency communications are answered 24/7. Project updates
-              are provided proactively — Clients are not required to follow up on active work orders.
+              <BrandName variant="dark" /> responds to all Client communications within 2 business hours during
+              standard hours (8:00 AM – 6:00 PM Monday–Friday). Emergency communications answered 24/7. Project
+              updates are provided proactively — Clients are not required to follow up on active work orders.
             </p>
           </Section>
         </article>
