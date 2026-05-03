@@ -39,7 +39,7 @@ export const TermsPage = () => {
               Legal
             </p>
             <h1 className="mt-3 font-display text-4xl text-[#1A1A1A] sm:text-5xl">
-              Terms <span className="font-sans font-normal">&amp;</span> Conditions
+              Terms & Conditions
             </h1>
             <div className="mt-6 h-[2px] w-24 bg-[#FFD700]" aria-hidden="true" />
             <p className="mt-6 font-body text-sm text-[#1A1A1A]/70">
