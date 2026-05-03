@@ -11,10 +11,7 @@ export const Footer = () => {
           {/* Col 1: Brand */}
           <div>
             <Link to="/" className="flex flex-col items-center gap-1 text-center">
-              <Logo variant="light" imgClassName="h-10 w-auto object-contain mx-auto" />
-              <span className="text-[11px] font-bold uppercase tracking-[0.2em] text-gray-300">
-                Property Solutions
-              </span>
+              <Logo variant="light" imgClassName="h-12 w-auto object-contain mx-auto" />
             </Link>
             <p className="mt-3 text-sm italic text-gray-400">One Call. One Team. Done.</p>
             <p className="mt-3 text-sm text-brand-white/80">

@@ -25,7 +25,7 @@ export const Logo = ({
   if (!failed) {
     return (
       <img
-        src="/images/logo-fs.png?v=2"
+        src={variant === "light" ? "/images/logo-fs-white.png?v=2" : "/images/logo-fs.png?v=2"}
         alt="FiveServ"
         className={`${imgClassName} ${className}`}
         onError={() => setFailed(true)}
