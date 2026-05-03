@@ -104,20 +104,14 @@ export const Footer = () => {
         {/* NAP for Google */}
         <address className="mt-12 not-italic text-xs text-brand-gray-muted">
           {SITE.legal} | {SITE.baseCity}, {SITE.baseState} | {SITE.phone} | {SITE.domain}
-          <span className="mx-2 text-gray-500">|</span>
-          <Link to="/terms" className="text-gray-400 hover:text-brand-gold text-xs underline">Terms & Conditions</Link>
-          <span className="mx-2 text-gray-500">|</span>
-          <Link to="/work-policy" className="text-gray-400 hover:text-brand-gold text-xs underline">Work Policy</Link>
         </address>
-      </div>
 
-      <div className="bg-black">
-        <div className="container flex flex-col gap-3 py-4 text-xs text-brand-gray-muted md:flex-row md:items-center md:justify-between">
+        <div className="mt-6 flex flex-col gap-3 text-xs text-brand-gray-muted md:flex-row md:items-center md:justify-between">
           <p className="text-[11px] text-white/40">© 2025 {SITE.legal}. All rights reserved.</p>
-          <p className="flex gap-4">
-            <Link to="/privacy" className="hover:text-brand-gold">Privacy Policy</Link>
-            <Link to="/terms" className="hover:text-brand-gold">Terms of Service</Link>
-            <Link to="/work-policy" className="hover:text-brand-gold">Work Policy</Link>
+          <p className="flex flex-wrap gap-4">
+            <Link to="/privacy" className="hover:text-brand-gold underline">Privacy Policy</Link>
+            <Link to="/terms" className="hover:text-brand-gold underline">Terms of Service</Link>
+            <Link to="/work-policy" className="hover:text-brand-gold underline">Work Policy</Link>
           </p>
           <p>Licensed and Insured in Florida — FiveServ Group LLC is fully licensed and insured in the state of Florida</p>
         </div>
