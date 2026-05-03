@@ -104,6 +104,10 @@ export const Footer = () => {
         {/* NAP for Google */}
         <address className="mt-12 not-italic text-xs text-brand-gray-muted">
           {SITE.legal} | {SITE.baseCity}, {SITE.baseState} | {SITE.phone} | {SITE.domain}
+          <span className="mx-2 text-gray-500">|</span>
+          <Link to="/terms" className="text-gray-400 hover:text-brand-gold text-xs underline">Terms & Conditions</Link>
+          <span className="mx-2 text-gray-500">|</span>
+          <Link to="/work-policy" className="text-gray-400 hover:text-brand-gold text-xs underline">Work Policy</Link>
         </address>
       </div>
 
