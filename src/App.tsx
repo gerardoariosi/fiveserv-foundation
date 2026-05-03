@@ -29,6 +29,7 @@ import BlogArticlePage from "./pages/BlogArticlePage";
 import ThankYouB2BPage from "./pages/ThankYouB2BPage";
 import ThankYouResidentialPage from "./pages/ThankYouResidentialPage";
 import TermsPage from "./pages/TermsPage";
+import WorkPolicyPage from "./pages/WorkPolicyPage";
 import PrivacyPage from "./pages/PrivacyPage";
 import PlumbingPage from "./pages/PlumbingPage";
 import ElectricalPage from "./pages/ElectricalPage";
@@ -81,6 +82,7 @@ const router = createBrowserRouter([
       { path: "faq", element: <FaqPage /> },
       { path: "privacy", element: <PrivacyPage /> },
       { path: "terms", element: <TermsPage /> },
+      { path: "work-policy", element: <WorkPolicyPage /> },
       
 
       // City overview pages (18)
