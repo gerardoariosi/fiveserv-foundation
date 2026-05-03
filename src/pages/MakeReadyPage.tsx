@@ -99,7 +99,7 @@ const MakeReadyPage = () => {
           </p>
           <div className="mt-3 flex flex-col-reverse items-start gap-6 lg:flex-row lg:items-center lg:justify-between lg:gap-10">
             <h1 className="font-display font-black text-4xl text-white sm:text-5xl lg:text-6xl">
-              Make-Ready <span className="font-sans font-normal">&amp;</span> Unit Turn Services Orlando FL —
+              Make-Ready & Unit Turn Services Orlando FL —
               <span className="block text-brand-gold">5-Day Guarantee</span>
             </h1>
           </div>
