@@ -65,7 +65,7 @@ const ContactPage = () => {
       <section className="bg-white min-h-[calc(100vh-4rem)]">
         <div className="container max-w-3xl pt-stack pb-20 sm:pb-28">
           <div className="text-center">
-            <p className="text-xs font-medium uppercase tracking-[0.12em] text-brand-gold">
+            <p className="uppercase tracking-[0.12em] text-brand-gold text-base font-bold">
               — <BrandName variant="dark" /> Property Solutions
             </p>
             <h1 className="mt-4 font-display text-4xl text-gray-900 sm:text-5xl lg:text-6xl">

@@ -94,7 +94,7 @@ const MakeReadyPage = () => {
         <div className="absolute inset-0 bg-brand-black/75" />
         <div className="relative z-10">
         <div className="container">
-          <p className="text-xs font-medium uppercase tracking-[0.12em] text-brand-gold">
+          <p className="uppercase tracking-[0.12em] text-brand-gold text-base font-bold">
             — <span style={{ whiteSpace: "nowrap" }}><span className="font-bold text-brand-gold">F</span><span className="text-white">iveServ</span></span> Property Solutions
           </p>
           <div className="mt-3 flex flex-col-reverse items-start gap-6 lg:flex-row lg:items-center lg:justify-between lg:gap-10">

@@ -24,7 +24,7 @@ const CitiesIndexPage = ({ canonicalPath = "/cities" }: Props) => (
     />
     <section className="bg-white border-b border-gray-100 pt-stack pb-20">
       <div className="container">
-        <p className="text-xs font-medium uppercase tracking-[0.12em] text-brand-gold">— <BrandName variant="dark" /> Property Solutions</p>
+        <p className="uppercase tracking-[0.12em] text-brand-gold text-base font-bold">— <BrandName variant="dark" /> Property Solutions</p>
         <h1 className="mt-3 font-display text-4xl text-brand-black sm:text-5xl">
           18 Cities Across <span className="text-brand-gold">Central Florida</span>
         </h1>
