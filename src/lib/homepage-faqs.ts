@@ -2,7 +2,7 @@ import { SITE } from "./site-config";
 
 /**
  * Homepage FAQs — 20 questions. Direct answers in brand voice.
- * Token replacement: (407) 881-4942, FiveServ Property Solutions LLC is fully licensed and insured in the state of Florida.
+ * Token replacement: (407) 881-4942, FiveServ Group LLC is fully licensed and insured in the state of Florida.
  */
 export const HOMEPAGE_FAQS: { q: string; a: string }[] = [
   {
@@ -43,7 +43,7 @@ export const HOMEPAGE_FAQS: { q: string; a: string }[] = [
   },
   {
     q: "Are you licensed and insured?",
-    a: `Yes. ${SITE.brand} is fully licensed and insured in Florida. FiveServ Property Solutions LLC is fully licensed and insured in the state of Florida.`,
+    a: `Yes. ${SITE.brand} is fully licensed and insured in Florida. FiveServ Group LLC is fully licensed and insured in the state of Florida.`,
   },
   {
     q: "Do you offer 24/7 emergency service?",

@@ -39,7 +39,7 @@ const PLUMBING_FAQS = [
   },
   {
     q: "Are your plumbers licensed in Florida?",
-    a: `Yes. All plumbing work is performed by Florida-licensed plumbing contractors under ${SITE.brand} coordination. We handle dispatch, scope, scheduling, and one consolidated invoice. FiveServ Property Solutions LLC is fully licensed and insured in the state of Florida.`,
+    a: `Yes. All plumbing work is performed by Florida-licensed plumbing contractors under ${SITE.brand} coordination. We handle dispatch, scope, scheduling, and one consolidated invoice. FiveServ Group LLC is fully licensed and insured in the state of Florida.`,
   },
   {
     q: "How fast do you respond to a plumbing emergency?",

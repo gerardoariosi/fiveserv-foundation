@@ -7,7 +7,7 @@ const env = import.meta.env;
 
 export const SITE = {
   name: env.VITE_COMPANY_NAME || "FiveServ Property Solutions",
-  legal: env.VITE_COMPANY_LEGAL || "FiveServ Property Solutions LLC",
+  legal: env.VITE_COMPANY_LEGAL || "FiveServ Group LLC",
   brand: "FiveServ",
   tagline: "One Call. One Team. Done.",
   domain: env.VITE_DOMAIN || "fiveserv.net",

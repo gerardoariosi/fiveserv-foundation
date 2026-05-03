@@ -77,7 +77,7 @@ export const GENERAL_FAQS: GeneralFaq[] = [
   {
     category: "maintenance",
     q: "Are you licensed in Florida?",
-    a: "Yes — fully licensed and insured. FiveServ Property Solutions LLC is fully licensed and insured in the state of Florida",
+    a: "Yes — fully licensed and insured. FiveServ Group LLC is fully licensed and insured in the state of Florida",
   },
   {
     category: "maintenance",
@@ -166,7 +166,7 @@ export const GENERAL_FAQS: GeneralFaq[] = [
   {
     category: "getting-started",
     q: "Are you insured?",
-    a: "Yes — fully licensed and insured in Florida. FiveServ Property Solutions LLC is fully licensed and insured in the state of Florida",
+    a: "Yes — fully licensed and insured in Florida. FiveServ Group LLC is fully licensed and insured in the state of Florida",
   },
   {
     category: "getting-started",

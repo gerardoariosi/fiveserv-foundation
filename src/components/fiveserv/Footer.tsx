@@ -119,7 +119,7 @@ export const Footer = () => {
             <Link to="/terms" className="hover:text-brand-gold">Terms of Service</Link>
             <Link to="/work-policy" className="hover:text-brand-gold">Work Policy</Link>
           </p>
-          <p>Licensed and Insured in Florida — FiveServ Property Solutions LLC is fully licensed and insured in the state of Florida</p>
+          <p>Licensed and Insured in Florida — FiveServ Group LLC is fully licensed and insured in the state of Florida</p>
         </div>
       </div>
     </footer>

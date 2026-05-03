@@ -56,7 +56,7 @@ export const MAINTENANCE_FAQS: { q: string; a: string }[] = [
   },
   {
     q: "Are your technicians licensed and insured?",
-    a: `Yes. ${SITE.brand} is fully licensed and insured in Florida. Plumbing, electrical, and HVAC work is performed by licensed contractors under our coordination. FiveServ Property Solutions LLC is fully licensed and insured in the state of Florida.`,
+    a: `Yes. ${SITE.brand} is fully licensed and insured in Florida. Plumbing, electrical, and HVAC work is performed by licensed contractors under our coordination. FiveServ Group LLC is fully licensed and insured in the state of Florida.`,
   },
   {
     q: "Do you provide preventive maintenance plans?",
@@ -116,7 +116,7 @@ export const RESIDENTIAL_FAQS: { q: string; a: string }[] = [
   },
   {
     q: "Are you licensed and insured in Florida?",
-    a: `Yes. ${SITE.brand} is fully licensed and insured in Florida. Plumbing, electrical, and HVAC are performed by licensed contractors under our coordination. FiveServ Property Solutions LLC is fully licensed and insured in the state of Florida.`,
+    a: `Yes. ${SITE.brand} is fully licensed and insured in Florida. Plumbing, electrical, and HVAC are performed by licensed contractors under our coordination. FiveServ Group LLC is fully licensed and insured in the state of Florida.`,
   },
   {
     q: "How fast can you come out for a home repair?",
