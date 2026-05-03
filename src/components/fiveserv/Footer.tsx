@@ -101,19 +101,22 @@ export const Footer = () => {
           </div>
         </div>
 
-        {/* NAP for Google */}
-        <address className="mt-12 not-italic text-xs text-brand-gray-muted">
-          {SITE.legal} | {SITE.baseCity}, {SITE.baseState} | {SITE.phone} | {SITE.domain}
-        </address>
+        {/* Bottom area */}
+        <div className="mt-16 border-t border-white/10 pt-8 space-y-4 text-center md:text-left">
+          <nav className="flex flex-wrap justify-center gap-x-6 gap-y-2 text-xs md:justify-start">
+            <Link to="/privacy" className="text-white/60 hover:text-brand-gold">Privacy Policy</Link>
+            <Link to="/terms" className="text-white/60 hover:text-brand-gold">Terms of Service</Link>
+            <Link to="/work-policy" className="text-white/60 hover:text-brand-gold">Work Policy</Link>
+          </nav>
 
-        <div className="mt-6 flex flex-col gap-3 text-xs text-brand-gray-muted md:flex-row md:items-center md:justify-between">
-          <p className="text-[11px] text-white/40">© 2025 {SITE.legal}. All rights reserved.</p>
-          <p className="flex flex-wrap gap-4">
-            <Link to="/privacy" className="hover:text-brand-gold underline">Privacy Policy</Link>
-            <Link to="/terms" className="hover:text-brand-gold underline">Terms of Service</Link>
-            <Link to="/work-policy" className="hover:text-brand-gold underline">Work Policy</Link>
-          </p>
-          <p>Licensed and Insured in Florida — FiveServ Group LLC is fully licensed and insured in the state of Florida</p>
+          <address className="not-italic text-[11px] text-white/40">
+            {SITE.legal} · {SITE.baseCity}, {SITE.baseState} · {SITE.phone} · {SITE.domain}
+          </address>
+
+          <div className="flex flex-col gap-1 text-[11px] text-white/40 md:flex-row md:items-center md:justify-between">
+            <p>© 2025 {SITE.legal}. All rights reserved.</p>
+            <p>Licensed & Insured in Florida</p>
+          </div>
         </div>
       </div>
     </footer>
