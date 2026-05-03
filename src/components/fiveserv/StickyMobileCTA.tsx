@@ -29,7 +29,7 @@ export const StickyMobileCTA = () => {
     const apply = () => {
       const isMobile = window.innerWidth < 768;
       if (isMobile && visible) {
-        document.body.style.paddingBottom = "calc(64px + env(safe-area-inset-bottom))";
+        document.body.style.paddingBottom = "calc(140px + env(safe-area-inset-bottom))";
         document.documentElement.style.setProperty("--sofia-bottom-offset", "72px");
       } else {
         document.body.style.paddingBottom = "";
