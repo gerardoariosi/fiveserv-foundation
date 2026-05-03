@@ -88,7 +88,7 @@ const MaintenanceCityPage = ({ citySlug: propSlug }: MaintenanceCityPageProps = 
         {/* extra bottom fade so the section blends into next light section */}
         <div className="absolute inset-x-0 bottom-0 -z-10 h-32 bg-gradient-to-b from-transparent to-brand-black" aria-hidden />
         <div className="container">
-          <p className="text-xs font-medium uppercase tracking-[0.12em] text-brand-gold">
+          <p className="uppercase tracking-[0.12em] text-brand-gold text-base font-bold">
             — <BrandName variant="light" /> Property Solutions • {city.name}, {city.state}
           </p>
           <h1 className="mt-3 font-display font-black text-4xl text-white sm:text-5xl lg:text-6xl">
