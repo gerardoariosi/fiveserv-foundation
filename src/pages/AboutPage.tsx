@@ -143,31 +143,52 @@ const AboutPage = () => {
               Five family members. Real people behind every decision, every quote, every guarantee.
             </p>
 
-            <div className="mt-12 space-y-6">
-              {TEAM.map((member, i) => (
+            <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+              {[
+                { name: "Gerardo Rios", role: "Founder & CEO", initials: "GR" },
+                { name: "Gerardo Andrés Rios", role: "Client Relations & Systems Operations", initials: "GA" },
+                { name: "Mariel Iragorry", role: "Accounting & Administration", initials: "MI" },
+                { name: "Jose Rios", role: "Marketing & Growth", initials: "JR" },
+                { name: "Luis Mora", role: "Lead Technician", initials: "LM" },
+                { name: "Sofia", role: "AI Chat Assistant — Available 24/7 to answer all your questions about FiveServ", initials: "AI", isAI: true },
+              ].map((member) => (
                 <article
-                  key={member.name + i}
-                  className="grid gap-6 rounded-lg border border-gray-100 bg-white shadow-sm p-6 sm:grid-cols-[160px,1fr] sm:items-center"
+                  key={member.name}
+                  className="rounded-lg border border-gray-100 bg-white shadow-sm p-6 text-center"
                 >
-                  <div className="aspect-square w-40 overflow-hidden rounded-lg bg-brand-gray/50">
-                    <img
-                      src={member.photo}
-                      alt={`${member.name} — ${member.role} at ${SITE.brand}`}
-                      className="h-full w-full object-cover"
-                      loading="lazy"
-                      onError={(e) => {
-                        (e.currentTarget as HTMLImageElement).style.display = "none";
-                      }}
-                    />
-                  </div>
-                  <div>
-                    <h3 className="font-display font-semibold text-xl text-gray-900">{member.name}</h3>
-                    <p className="mt-1 text-xs font-medium uppercase tracking-[0.12em] text-gray-900">— {member.role}</p>
-                    <p className="mt-3 text-sm text-gray-700">
-                      {member.name} brings hands-on expertise to the <BrandName variant="dark" /> team, working directly with property
-                      managers across Central Florida. Personally accountable for every job that carries our family name.
-                    </p>
-                  </div>
+                  {member.isAI ? (
+                    <div className="h-24 w-24 rounded-full bg-brand-gold flex items-center justify-center mx-auto overflow-hidden">
+                      <img
+                        src="/images/sofia-avatar.jpg"
+                        alt="Sofia — AI Chat Assistant"
+                        className="h-full w-full object-cover"
+                        loading="lazy"
+                        onError={(e) => {
+                          const img = e.currentTarget as HTMLImageElement;
+                          img.style.display = "none";
+                          const fallback = img.nextElementSibling as HTMLElement | null;
+                          if (fallback) fallback.style.display = "flex";
+                        }}
+                      />
+                      <span
+                        className="text-brand-black font-bold text-2xl h-full w-full items-center justify-center"
+                        style={{ display: "none" }}
+                      >
+                        AI
+                      </span>
+                    </div>
+                  ) : (
+                    <div className="h-24 w-24 rounded-full bg-gray-100 flex items-center justify-center mx-auto">
+                      <span className="text-gray-800 font-bold text-2xl">{member.initials}</span>
+                    </div>
+                  )}
+                  <h3 className="mt-4 font-display font-semibold text-xl text-gray-900">{member.name}</h3>
+                  {member.isAI && (
+                    <span className="inline-block mt-1 px-2 py-0.5 rounded-full bg-brand-gold text-brand-black text-[10px] font-bold uppercase tracking-wider">
+                      AI Powered
+                    </span>
+                  )}
+                  <p className="mt-2 text-xs font-medium uppercase tracking-[0.12em] text-gray-900">— {member.role}</p>
                 </article>
               ))}
             </div>
