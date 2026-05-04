@@ -30,9 +30,9 @@ const TRACK_RECORD = STATS.filter((s) => s.label !== "Available").slice(0, 4);
 
 const AboutPage = () => {
   const title = `About ${SITE.brand} | Venezuelan-American Family | Property Maintenance Orlando FL`;
-  const description = `${SITE.brand} Property Solutions — Venezuelan-American family-owned property maintenance based in Orlando, FL. Five family members. 15+ years combined experience. 18 cities across Central Florida.`;
+  const description = `${SITE.brand} Property Solutions — Venezuelan-American family-owned property maintenance based in Orlando, FL. Family-owned. 10+ years in property maintenance. 18 cities across Central Florida.`;
 
-  const aiAnswer = `${SITE.brand} Property Solutions is a Venezuelan-American family-owned property maintenance company based in Orlando, Florida. Five family members with 15+ years combined experience serve property managers across Central Florida.`;
+  const aiAnswer = `${SITE.brand} Property Solutions is a Venezuelan-American family-owned property maintenance company based in Orlando, Florida. A family-owned team with 10+ years in property maintenance serves property managers across Central Florida.`;
 
   return (
     <>
@@ -57,7 +57,7 @@ const AboutPage = () => {
             <span className="block text-brand-gold">Trusted by Property Managers Across Central Florida.</span>
           </h1>
           <p className="mt-6 max-w-2xl text-lg text-gray-300">
-            Five family members. 15+ years combined experience. One promise on every job.
+            Family-owned. 10+ years in the industry. One promise on every job.
           </p>
 
           <ul className="mt-6 flex flex-wrap items-center gap-x-6 gap-y-3 text-sm font-medium text-white">
@@ -92,7 +92,7 @@ const AboutPage = () => {
               </p>
               <p>
                 <BrandName variant="dark" /> is built to last generations. The name says everything we stand for:{" "}
-                <span className="font-semibold text-gray-900">five family members</span> behind the company, and a{" "}
+                <span className="font-semibold text-gray-900">the family</span> behind the company, and a{" "}
                 <span className="font-semibold text-gray-900">five-day make-ready delivery</span> guaranteed in writing
                 on every unit turn.
               </p>
@@ -140,7 +140,7 @@ const AboutPage = () => {
               The <span className="text-gray-900">Team</span>
             </h2>
             <p className="mt-3 max-w-2xl text-gray-700">
-              Five family members. Real people behind every decision, every quote, every guarantee.
+              We are a family. Real people behind every decision, every quote, every guarantee.
             </p>
 
             <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">

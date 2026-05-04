@@ -4,7 +4,7 @@ import { useReveal } from "@/hooks/use-fiveserv";
 
 const PILLARS = [
   { number: "5", unit: "DAYS", description: "Every make-ready in 5 business days. Guaranteed in writing." },
-  { number: "5", unit: "PEOPLE", description: "Five family members with our name on every job." },
+  { number: "5", unit: "PEOPLE", description: "A family with our name on every job." },
   { number: "5", unit: "STARS", description: "Every property better than when we arrived." },
   { number: "1", unit: "CALL", description: "One number. Our team. Everything handled." },
   { number: "0", unit: "EXCUSES", description: "We show up. We finish. We deliver." },
