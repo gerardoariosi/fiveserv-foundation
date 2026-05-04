@@ -145,7 +145,7 @@ const ResidentialPage = () => {
                 <span className="text-gray-900">15+ years</span> of combined experience.
               </h2>
               <p className="mt-5 text-gray-700">
-                Five family members. One name on every invoice. We treat your home the way we'd treat our mother's —
+                A family behind every job. One name on every invoice. We treat your home the way we'd treat our mother's —
                 because some of us still do.
               </p>
               <p className="mt-4 text-gray-700">
