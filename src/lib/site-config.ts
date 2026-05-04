@@ -132,11 +132,11 @@ export const CITIES: {
 export const COMING_SOON_CITIES = [{ name: "Tampa Bay", state: "FL", slug: "tampa-bay-fl" }];
 
 export const TEAM = [
-  { name: "[NOMBRE_1]", role: "[ROL_1]", photo: "/images/team/team-member-1.jpg" },
-  { name: "[NOMBRE_2]", role: "[ROL_2]", photo: "/images/team/team-member-2.jpg" },
-  { name: "[NOMBRE_3]", role: "[ROL_3]", photo: "/images/team/team-member-3.jpg" },
-  { name: "[NOMBRE_4]", role: "[ROL_4]", photo: "/images/team/team-member-4.jpg" },
-  { name: "[NOMBRE_5]", role: "[ROL_5]", photo: "/images/team/team-member-5.jpg" },
+  { name: "Gerardo Rios", role: "Founder & CEO", photo: "/images/team/team-member-1.jpg" },
+  { name: "Gerardo Andrés Rios", role: "Client Relations & Systems Operations", photo: "/images/team/team-member-2.jpg" },
+  { name: "Mariel Iragorry", role: "Accounting & Administration", photo: "/images/team/team-member-3.jpg" },
+  { name: "Jose Rios", role: "Marketing & Growth", photo: "/images/team/team-member-4.jpg" },
+  { name: "Luis Mora", role: "Lead Technician", photo: "/images/team/team-member-5.jpg" },
 ];
 
 export const FIVE_PILLARS = [
