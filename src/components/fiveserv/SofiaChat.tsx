@@ -51,7 +51,7 @@ type CollectedData = {
 
 const PHONE = SITE.phone;
 const SS_KEY = "sofia.chat.v1";
-const SOFIA_AVATAR = "https://randomuser.me/api/portraits/women/44.jpg";
+const SOFIA_AVATAR = "/images/sofia-avatar.jpg";
 
 /**
  * Returns true if current time is within FiveServ business hours (Eastern Time).
