@@ -145,12 +145,12 @@ const AboutPage = () => {
 
             <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
               {[
-                { name: "Gerardo Rios", role: "Founder & CEO", initials: "GR" },
-                { name: "Gerardo Andrés Rios", role: "Client Relations & Systems Operations", initials: "GA" },
-                { name: "Mariel Iragorry", role: "Accounting & Administration", initials: "MI" },
-                { name: "Jose Rios", role: "Marketing & Growth", initials: "JR" },
-                { name: "Luis Mora", role: "Lead Technician", initials: "LM" },
-                { name: "Sofia", role: "AI Chat Assistant — Available 24/7 to answer all your questions about FiveServ", initials: "AI", isAI: true },
+                { name: "Gerardo Rios", role: "Founder & CEO", initials: "GR", description: "The vision behind FiveServ. Over 10 years in property maintenance, Gerardo built this company from the ground up with one goal: make property managers' lives easier." },
+                { name: "Gerardo Andrés Rios", role: "Client Relations & Systems Operations", initials: "GA", description: "The bridge between clients and operations. Gerardo Andrés manages client relationships, builds the systems that keep FiveServ running, and ensures every property manager gets results — not excuses." },
+                { name: "Mariel Iragorry", role: "Accounting & Administration", initials: "MI", description: "The backbone of FiveServ. Mariel keeps the finances clean, the administration tight, and makes sure every invoice, contract, and record is exactly where it needs to be." },
+                { name: "Jose Rios", role: "Marketing & Growth", initials: "JR", description: "The voice of FiveServ. Jose leads our marketing strategy and growth initiatives, making sure the right property managers find us at the right time." },
+                { name: "Luis Mora", role: "Lead Technician", initials: "LM", description: "The boots on the ground. Luis leads our field crew with precision and pride — every unit he touches gets delivered on time, on standard, and ready to rent." },
+                { name: "Sofia", role: "AI Chat Assistant — Available 24/7", initials: "AI", isAI: true, description: "Sofia is FiveServ's AI assistant, trained specifically on our services, processes, and market. Available 24/7 to answer questions, qualify leads, and connect property managers with our team instantly." },
               ].map((member) => (
                 <article
                   key={member.name}
@@ -189,6 +189,7 @@ const AboutPage = () => {
                     </span>
                   )}
                   <p className="mt-2 text-xs font-medium uppercase tracking-[0.12em] text-gray-900">— {member.role}</p>
+                  <p className="mt-3 text-sm text-gray-700">{member.description}</p>
                 </article>
               ))}
             </div>
