@@ -39,9 +39,9 @@ export const StickyHeader = () => {
   return (
     <header
       style={{ top: "var(--banner-h, 0px)" }}
-      className={`fixed inset-x-0 z-40 transition-all duration-300 ${
+      className={`fixed inset-x-0 z-40 transition-all duration-500 ${
         isHome && !scrolled
-          ? "bg-transparent border-b border-transparent shadow-none"
+          ? "bg-transparent border-b-0 shadow-none"
           : "bg-white border-b border-gray-200 shadow-md"
       }`}
     >
