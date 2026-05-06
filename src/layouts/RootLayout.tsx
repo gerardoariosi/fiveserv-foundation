@@ -20,6 +20,8 @@ export const RootLayout = () => {
   const ga4 = SITE.tracking.ga4;
   const gsc = SITE.tracking.gsc;
   const clarity = SITE.tracking.clarity;
+  const location = useLocation();
+  const isHome = location.pathname === "/";
 
   return (
     <div className="flex min-h-screen flex-col bg-white text-brand-black">
