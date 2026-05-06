@@ -39,8 +39,10 @@ export const StickyHeader = () => {
   return (
     <header
       style={{ top: "var(--banner-h, 0px)" }}
-      className={`fixed inset-x-0 z-40 bg-white border-b border-gray-200 transition-shadow duration-300 ${
-        scrolled ? "shadow-md backdrop-blur-sm" : "shadow-none"
+      className={`fixed inset-x-0 z-40 transition-all duration-300 ${
+        isHome && !scrolled
+          ? "bg-transparent border-b border-transparent shadow-none"
+          : "bg-white border-b border-gray-200 shadow-md"
       }`}
     >
       <div className="container flex h-20 items-center justify-between gap-4">
