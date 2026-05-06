@@ -146,7 +146,8 @@ export const LiveStatsBar = () => {
     <TooltipProvider>
     <section
       ref={sectionRef}
-      className={`border-y border-brand-gold/20 transition-colors duration-500 ${isHome && !scrolled ? "bg-transparent border-transparent" : "bg-brand-black"}`}
+      className={`fixed inset-x-0 z-30 border-y border-brand-gold/20 transition-all duration-300 ${isHome && !scrolled ? "bg-transparent border-transparent" : "bg-brand-black"}`}
+      style={{ top: "var(--header-h, 80px)" }}
       aria-label="FiveServ live company stats"
     >
       <div className={`container ${isHome && !scrolled ? "invisible" : "visible"}`} style={{ paddingTop: 40, paddingBottom: 40 }}>
