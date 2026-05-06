@@ -47,7 +47,7 @@ export const RootLayout = () => {
       <StickyHeader />
       <main className="flex-1">
         {/* Non-fixed ticker — sits below the fixed header and scrolls away with the page. */}
-        <div style={{ paddingTop: "calc(var(--banner-h, 0px) + var(--header-h, 80px))" }}>
+        <div style={{ paddingTop: isHome ? "var(--banner-h, 0px)" : "calc(var(--banner-h, 0px) + var(--header-h, 80px))" }}>
           <SocialProofTicker />
         </div>
         <PageTransition>
