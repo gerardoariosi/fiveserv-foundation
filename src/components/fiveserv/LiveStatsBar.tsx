@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from "react";
+import { useLocation } from "react-router-dom";
 import { Building2, Users, MapPin, Star, Clock, Activity, FileText } from "lucide-react";
 import { useLiveCounter } from "@/hooks/use-live-counter";
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip";
@@ -105,6 +106,15 @@ const StatCard = ({
 export const LiveStatsBar = () => {
   const sectionRef = useRef<HTMLDivElement>(null);
   const [start, setStart] = useState(false);
+  const location = useLocation();
+  const isHome = location.pathname === "/";
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 80);
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
 
   useEffect(() => {
     const el = sectionRef.current;
@@ -130,6 +140,8 @@ export const LiveStatsBar = () => {
 
   const animatedUnits = useCountUp(unitsThisMonth, 1200, start && unitsThisMonth > 0);
   const animatedQuotes = useCountUp(quotesThisMonth, 1200, start && quotesThisMonth > 0);
+
+  if (isHome && !scrolled) return null;
 
   return (
     <TooltipProvider>

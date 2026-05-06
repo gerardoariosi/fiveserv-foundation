@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Link, NavLink } from "react-router-dom";
+import { Link, NavLink, useLocation } from "react-router-dom";
 import { Menu, Phone, X } from "lucide-react";
 import { SITE } from "@/lib/site-config";
 import Logo from "@/components/fiveserv/Logo";
@@ -22,6 +22,8 @@ const WhatsAppIcon = ({ className }: { className?: string }) => (
 export const StickyHeader = () => {
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
+  const location = useLocation();
+  const isHome = location.pathname === "/";
 
   useEffect(() => {
     // Expose header height so .pt-stack utility can offset page content correctly.
@@ -37,8 +39,10 @@ export const StickyHeader = () => {
   return (
     <header
       style={{ top: "var(--banner-h, 0px)" }}
-      className={`fixed inset-x-0 z-40 bg-white border-b border-gray-200 transition-shadow duration-300 ${
-        scrolled ? "shadow-md backdrop-blur-sm" : "shadow-none"
+      className={`fixed inset-x-0 z-40 transition-all duration-300 ${
+        isHome && !scrolled
+          ? "bg-transparent border-b border-transparent shadow-none"
+          : "bg-white border-b border-gray-200 shadow-md"
       }`}
     >
       <div className="container flex h-20 items-center justify-between gap-4">
@@ -53,11 +57,11 @@ export const StickyHeader = () => {
               key={n.to}
               to={n.to}
               end={n.to === "/"}
-              className={({ isActive }) =>
-                `nav-link-center nav-link-gold text-[13px] font-medium tracking-wide transition-colors duration-200 hover:text-brand-gold ${
-                  isActive ? "text-brand-gold" : "text-gray-700"
-                }`
-              }
+              className={`text-sm font-medium transition-colors ${
+                isHome && !scrolled
+                  ? "text-white hover:text-brand-gold"
+                  : "text-gray-700 hover:text-brand-gold"
+              }`}
             >
               {n.label}
             </NavLink>
@@ -66,11 +70,11 @@ export const StickyHeader = () => {
 
         <div className="hidden items-center gap-4 md:flex">
           <div className="flex flex-col items-end leading-tight">
-            <a href={`tel:${SITE.phone}`} className="flex items-center gap-1.5 text-brand-black font-semibold">
+            <a href={`tel:${SITE.phone}`} className={`flex items-center gap-1.5 text-sm font-bold ${isHome && !scrolled ? "text-white" : "text-gray-900"}`}>
               <Phone className="h-4 w-4 text-brand-gold" />
               {SITE.phone}
             </a>
-            <span className="text-[13px] font-medium uppercase tracking-wider text-gray-700">
+            <span className={`text-[10px] font-bold uppercase tracking-wider ${isHome && !scrolled ? "text-white/70" : "text-gray-500"}`}>
               Available 24/7
             </span>
           </div>
