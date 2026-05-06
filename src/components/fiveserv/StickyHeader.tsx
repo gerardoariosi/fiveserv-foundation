@@ -70,11 +70,11 @@ export const StickyHeader = () => {
 
         <div className="hidden items-center gap-4 md:flex">
           <div className="flex flex-col items-end leading-tight">
-            <a href={`tel:${SITE.phone}`} className="flex items-center gap-1.5 text-brand-black font-semibold">
+            <a href={`tel:${SITE.phone}`} className={`flex items-center gap-1.5 text-sm font-bold ${isHome && !scrolled ? "text-white" : "text-gray-900"}`}>
               <Phone className="h-4 w-4 text-brand-gold" />
               {SITE.phone}
             </a>
-            <span className="text-[13px] font-medium uppercase tracking-wider text-gray-700">
+            <span className={`text-[10px] font-bold uppercase tracking-wider ${isHome && !scrolled ? "text-white/70" : "text-gray-500"}`}>
               Available 24/7
             </span>
           </div>
