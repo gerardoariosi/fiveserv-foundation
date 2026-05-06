@@ -163,6 +163,7 @@ const Index = () => {
         aggregateRating
       />
 
+      <LiveStatsBar />
       <HeroSection />
       <section className="bg-white">
         <div className="container pt-12">
