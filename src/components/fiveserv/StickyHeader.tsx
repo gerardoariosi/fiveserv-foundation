@@ -22,6 +22,8 @@ const WhatsAppIcon = ({ className }: { className?: string }) => (
 export const StickyHeader = () => {
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
+  const location = useLocation();
+  const isHome = location.pathname === "/";
 
   useEffect(() => {
     // Expose header height so .pt-stack utility can offset page content correctly.
