@@ -146,10 +146,10 @@ export const LiveStatsBar = () => {
     <TooltipProvider>
     <section
       ref={sectionRef}
-      className={`bg-brand-black border-y border-brand-gold/20 ${isHome && !scrolled ? "hidden" : ""}`}
+      className={`border-y border-brand-gold/20 transition-colors duration-500 ${isHome && !scrolled ? "bg-transparent border-transparent" : "bg-brand-black"}`}
       aria-label="FiveServ live company stats"
     >
-      <div className="container" style={{ paddingTop: 40, paddingBottom: 40 }}>
+      <div className={`container ${isHome && !scrolled ? "invisible" : "visible"}`} style={{ paddingTop: 40, paddingBottom: 40 }}>
         <div className="grid grid-cols-2 gap-x-6 gap-y-10 md:grid-cols-3 lg:grid-cols-5">
           {STATS.map((s, i) => (
             <StatCard key={s.label} stat={s} index={i} start={start} />
