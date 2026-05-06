@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from "react";
+import { useLocation } from "react-router-dom";
 import { Building2, Users, MapPin, Star, Clock, Activity, FileText } from "lucide-react";
 import { useLiveCounter } from "@/hooks/use-live-counter";
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip";
