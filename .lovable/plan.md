@@ -1,79 +1,35 @@
 ## Goal
 
-Restore correct page render order so `LiveStatsBar` sits naturally between the header and the hero, with no fixed positioning. On the homepage before scroll it should be transparent (invisible) so the hero video shows through. After scroll (or on any non-home route), it shows as the normal black bar.
+Hide the `LiveStatsBar` on the homepage until the user scrolls past ~90% of the viewport, using a CSS `hidden` class on the outer element instead of an early `return null`. This avoids any potential hooks-ordering concerns and guarantees the section is never visible at initial load on `/`.
 
-## Final render order on `/`
+## Change
 
-```text
-1. StickyBanner    (gold bar, fixed top)
-2. StickyHeader    (fixed below banner; transparent → white on scroll)
-3. SocialProofTicker (existing, in RootLayout)
-4. LiveStatsBar    (natural flow; transparent → black on scroll)
-5. HeroSection     (video starts here, natural flow)
-6. ...rest of page (TrustBar, ProblemSection, etc.)
-```
+**File:** `src/components/fiveserv/LiveStatsBar.tsx`
 
-## Changes
+1. Remove the existing early return:
+   ```tsx
+   if (isHome && !scrolled) return null;
+   ```
 
-### 1. `src/components/fiveserv/LiveStatsBar.tsx`
+2. Add a `hidden` class conditionally to the outermost `<section>` element (the one with `bg-brand-black border-y border-brand-gold/20`):
+   ```tsx
+   <section
+     ref={sectionRef}
+     className={`bg-brand-black border-y border-brand-gold/20 ${isHome && !scrolled ? "hidden" : ""}`}
+     aria-label="FiveServ live company stats"
+   >
+   ```
 
-Remove all fixed positioning added in the previous step. The `<section>` should be a normal block element.
+   Note: `TooltipProvider` is the actual outermost element but it doesn't render a DOM node, so applying `hidden` to the `<section>` is the correct hide point.
 
-- Remove `fixed inset-x-0 z-30` and the `style={{ top: "var(--header-h, 80px)" }}` from the outer `<section>`.
-- Apply transparency via opacity so the bar still occupies layout space (preventing the hero from jumping):
+## Why this works
 
-  ```tsx
-  <section
-    ref={sectionRef}
-    className={`w-full border-y transition-all duration-300 ${
-      isHome && !scrolled
-        ? "bg-transparent border-transparent opacity-0 pointer-events-none"
-        : "bg-brand-black border-brand-gold/20 opacity-100"
-    }`}
-    aria-label="FiveServ live company stats"
-  >
-  ```
+- Tailwind's `hidden` class applies `display: none`, fully removing the bar from layout (no overlap with the transparent header).
+- All hooks still run in stable order regardless of route or scroll position.
+- When the user scrolls past ~90vh, `scrolled` flips to `true`, the `hidden` class is removed, and the bar appears.
+- On non-home routes, `isHome` is `false`, so the bar always renders normally.
 
-- Restore the inner `container` to its original (no `invisible/visible` toggle needed — opacity on the parent handles visibility):
+## Out of scope
 
-  ```tsx
-  <div className="container" style={{ paddingTop: 40, paddingBottom: 40 }}>
-  ```
-
-`useLocation`, `isHome`, and the `scrolled` state + scroll listener are already in place — no changes needed there.
-
-### 2. `src/pages/Index.tsx`
-
-Move `<LiveStatsBar />` from line 181 (after `<FivePillars />`) to render immediately before `<HeroSection />` (which is in the `<section>` block around lines 165–174). Result:
-
-```tsx
-<LiveStatsBar />
-<section ...>  {/* hero wrapper */}
-  ...HeroSection...
-</section>
-<TrustBar />
-<ProblemSection />
-<SolutionSection />
-<ServicesGrid />
-<VacancyCalculator />
-<FivePillars />
-<FamilyStory />
-...
-```
-
-(Remove the duplicate `<LiveStatsBar />` from its old position so it only renders once.)
-
-### 3. `src/components/fiveserv/HeroSection.tsx`
-
-No changes. `heroTopOffset = "0px"` and `heroVisibleHeight = "calc(100svh - var(--banner-h, 0px))"` already let the hero flow naturally below whatever precedes it. No negative margins.
-
-## Files NOT changed
-
-- `StickyHeader.tsx` — left alone per the user's instruction
-- `StickyBanner.tsx` — left alone
-- `RootLayout.tsx` — left alone
-- `MakeReadyPage.tsx` and `AboutPage.tsx` — also import `LiveStatsBar` but render it deep in the page; leave their positions alone since `isHome` is `false` there and the bar always renders black.
-
-## Why opacity instead of `display:none` / `hidden`
-
-Using `opacity-0 pointer-events-none` keeps the bar's height in the layout, so when it transitions to opaque on scroll it doesn't shove the hero down or cause a content jump. The hero video shows through it naturally on first paint.
+- No changes to `StickyHeader.tsx`, `HeroSection.tsx`, `RootLayout.tsx`, or any other file.
+- No change to the scroll threshold (stays at `window.innerHeight * 0.9`).
