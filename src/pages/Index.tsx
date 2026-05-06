@@ -163,6 +163,7 @@ const Index = () => {
         aggregateRating
       />
 
+      <LiveStatsBar />
       <HeroSection />
       <section className="bg-white">
         <div className="container pt-12">
@@ -178,7 +179,6 @@ const Index = () => {
       <ServicesGrid />
       <VacancyCalculator />
       <FivePillars />
-      <LiveStatsBar />
       <FamilyStory />
       <section className="bg-white">
         <div className="container py-28 lg:py-32">
