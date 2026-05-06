@@ -106,6 +106,15 @@ const StatCard = ({
 export const LiveStatsBar = () => {
   const sectionRef = useRef<HTMLDivElement>(null);
   const [start, setStart] = useState(false);
+  const location = useLocation();
+  const isHome = location.pathname === "/";
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 80);
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
 
   useEffect(() => {
     const el = sectionRef.current;
