@@ -28,7 +28,7 @@ export const HeroSection = ({
   const ref = useReveal<HTMLDivElement>();
   const waHref = `https://wa.me/${SITE.phone.replace(/[^\d]/g, "")}`;
   // The non-fixed ticker pushes hero down naturally, so we only offset by banner + header.
-  const heroTopOffset = "calc(-1 * (var(--header-h, 80px)))";
+  const heroTopOffset = "0px";
   const heroVisibleHeight = "calc(100svh - var(--banner-h, 0px))";
 
   // Smooth loop: crossfade between two video elements near the end

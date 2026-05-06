@@ -1,4 +1,4 @@
-import { Outlet, ScrollRestoration } from "react-router-dom";
+import { Outlet, ScrollRestoration, useLocation } from "react-router-dom";
 import StickyHeader from "@/components/fiveserv/StickyHeader";
 import StickyBanner from "@/components/fiveserv/StickyBanner";
 import SocialProofTicker from "@/components/fiveserv/SocialProofTicker";
@@ -20,6 +20,8 @@ export const RootLayout = () => {
   const ga4 = SITE.tracking.ga4;
   const gsc = SITE.tracking.gsc;
   const clarity = SITE.tracking.clarity;
+  const location = useLocation();
+  const isHome = location.pathname === "/";
 
   return (
     <div className="flex min-h-screen flex-col bg-white text-brand-black">
@@ -45,7 +47,7 @@ export const RootLayout = () => {
       <StickyHeader />
       <main className="flex-1">
         {/* Non-fixed ticker — sits below the fixed header and scrolls away with the page. */}
-        <div style={{ paddingTop: "calc(var(--banner-h, 0px) + var(--header-h, 80px))" }}>
+        <div style={{ paddingTop: isHome ? "var(--banner-h, 0px)" : "calc(var(--banner-h, 0px) + var(--header-h, 80px))" }}>
           <SocialProofTicker />
         </div>
         <PageTransition>
