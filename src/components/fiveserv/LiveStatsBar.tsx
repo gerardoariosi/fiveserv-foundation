@@ -142,7 +142,9 @@ export const LiveStatsBar = () => {
   const animatedUnits = useCountUp(unitsThisMonth, 1200, start && unitsThisMonth > 0);
   const animatedQuotes = useCountUp(quotesThisMonth, 1200, start && quotesThisMonth > 0);
 
-  return (isHome && !scrolled) ? null : (
+  if (isHome && !scrolled) return null;
+
+  return (
     <TooltipProvider>
     <section
       ref={sectionRef}
