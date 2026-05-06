@@ -178,6 +178,7 @@ const Index = () => {
       <ServicesGrid />
       <VacancyCalculator />
       <FivePillars />
+      <LiveStatsBar />
       <FamilyStory />
       <section className="bg-white">
         <div className="container py-28 lg:py-32">
