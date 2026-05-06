@@ -1,4 +1,4 @@
-import { Outlet, ScrollRestoration } from "react-router-dom";
+import { Outlet, ScrollRestoration, useLocation } from "react-router-dom";
 import StickyHeader from "@/components/fiveserv/StickyHeader";
 import StickyBanner from "@/components/fiveserv/StickyBanner";
 import SocialProofTicker from "@/components/fiveserv/SocialProofTicker";
