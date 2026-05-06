@@ -142,13 +142,11 @@ export const LiveStatsBar = () => {
   const animatedUnits = useCountUp(unitsThisMonth, 1200, start && unitsThisMonth > 0);
   const animatedQuotes = useCountUp(quotesThisMonth, 1200, start && quotesThisMonth > 0);
 
-  if (isHome && !scrolled) return null;
-
   return (
     <TooltipProvider>
     <section
       ref={sectionRef}
-      className="bg-brand-black border-y border-brand-gold/20"
+      className={`bg-brand-black border-y border-brand-gold/20 ${isHome && !scrolled ? "hidden" : ""}`}
       aria-label="FiveServ live company stats"
     >
       <div className="container" style={{ paddingTop: 40, paddingBottom: 40 }}>
