@@ -57,11 +57,11 @@ export const StickyHeader = () => {
               key={n.to}
               to={n.to}
               end={n.to === "/"}
-              className={({ isActive }) =>
-                `nav-link-center nav-link-gold text-[13px] font-medium tracking-wide transition-colors duration-200 hover:text-brand-gold ${
-                  isActive ? "text-brand-gold" : "text-gray-700"
-                }`
-              }
+              className={`text-sm font-medium transition-colors ${
+                isHome && !scrolled
+                  ? "text-white hover:text-brand-gold"
+                  : "text-gray-700 hover:text-brand-gold"
+              }`}
             >
               {n.label}
             </NavLink>
