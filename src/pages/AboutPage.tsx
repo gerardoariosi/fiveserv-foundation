@@ -32,7 +32,7 @@ const TRACK_RECORD = STATS.filter((s) => s.label !== "Available").slice(0, 4);
 const AboutPage = () => {
   const [openMember, setOpenMember] = useState<string | null>(null);
   const TEAM_MEMBERS = [
-    { name: "Gerardo Rios", role: "Founder & CEO", initials: "GR", image: "/images/team/team-member-1.jpeg", description: "The vision behind FiveServ. Over 10 years in property maintenance, Gerardo built this company from the ground up with one goal: make property managers' lives easier." },
+    { name: "Gerardo Rios", role: "Founder & CEO", initials: "GR", image: "/images/team/team-member-1.jpeg", imgStyle: { objectPosition: "center 5%", transform: "scale(0.85)" }, description: "The vision behind FiveServ. Over 10 years in property maintenance, Gerardo built this company from the ground up with one goal: make property managers' lives easier." },
     { name: "Gerardo Andrés Rios", role: "Client Relations & Systems Operations", initials: "GA", image: "/images/team/team-member-2.jpeg", description: "The bridge between clients and operations. Gerardo Andrés manages client relationships, builds the systems that keep FiveServ running, and ensures every property manager gets results — not excuses." },
     { name: "Mariel Iragorry", role: "Accounting & Administration", initials: "MI", image: "/images/team/team-member-3.jpeg", description: "The backbone of FiveServ. Mariel keeps the finances clean, the administration tight, and makes sure every invoice, contract, and record is exactly where it needs to be." },
     { name: "Jose Rios", role: "Marketing & Growth", initials: "JR", image: "/images/team/team-member-4.jpeg", description: "The voice of FiveServ. Jose leads our marketing strategy and growth initiatives, making sure the right property managers find us at the right time." },
@@ -182,7 +182,7 @@ const AboutPage = () => {
                       </span>
                     </div>
                   ) : member.image ? (
-                    <img src={member.image} alt={member.name} className="h-24 w-24 rounded-full object-cover object-center mx-auto" style={{ objectPosition: "center 20%" }} loading="lazy" />
+                    <img src={member.image} alt={member.name} className="h-24 w-24 rounded-full object-cover object-center mx-auto" style={(member as any).imgStyle ?? { objectPosition: "center 20%" }} loading="lazy" />
                   ) : (
                     <div className="h-24 w-24 rounded-full bg-gray-100 flex items-center justify-center mx-auto">
                       <span className="text-gray-800 font-bold text-2xl">{member.initials}</span>
@@ -246,7 +246,7 @@ const AboutPage = () => {
                   </span>
                 </div>
               ) : activeMember.image ? (
-                <img src={activeMember.image} alt={activeMember.name} className="h-24 w-24 rounded-full object-cover object-center mx-auto" style={{ objectPosition: "center 20%" }} />
+                <img src={activeMember.image} alt={activeMember.name} className="h-24 w-24 rounded-full object-cover object-center mx-auto" style={(activeMember as any).imgStyle ?? { objectPosition: "center 20%" }} />
               ) : (
                 <div className="h-24 w-24 rounded-full bg-gray-100 flex items-center justify-center mx-auto">
                   <span className="text-gray-800 font-bold text-2xl">{activeMember.initials}</span>
