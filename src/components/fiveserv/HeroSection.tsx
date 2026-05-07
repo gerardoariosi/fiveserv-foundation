@@ -97,7 +97,7 @@ export const HeroSection = ({
 
       <div className="relative z-10 flex items-center py-10 sm:py-14 lg:py-20" style={{ minHeight: heroVisibleHeight }}>
         <div ref={ref} className="container reveal">
-          <h1 className="text-3xl text-brand-white sm:text-5xl lg:text-6xl leading-tight">
+          <h1 className="text-3xl text-brand-white sm:text-4xl lg:text-6xl leading-tight">
             Property Maintenance Central Florida —
             <span className="block text-brand-gold italic">one call handles your entire make-ready.</span>
           </h1>
@@ -105,7 +105,7 @@ export const HeroSection = ({
             Painting, cleaning, repairs, drywall, inspections. No vendor chaos. One invoice. Our team. 5 business days. Guaranteed.
           </p>
 
-          <div className="mt-7 flex flex-col sm:flex-row sm:flex-wrap gap-3">
+          <div className="mt-7 flex flex-col sm:flex-row gap-3 w-full sm:w-auto">
             <button
               type="button"
               onClick={scrollToForm}
@@ -129,7 +129,7 @@ export const HeroSection = ({
             </a>
           </div>
 
-          <ul className="mt-8 sm:mt-10 flex flex-wrap items-center gap-x-4 sm:gap-x-6 gap-y-2 sm:gap-y-3 text-xs sm:text-sm font-medium text-brand-white">
+          <ul className="mt-8 sm:mt-10 flex flex-wrap items-center gap-x-4 gap-y-2 text-xs sm:text-sm font-medium text-brand-white">
             {TRUST.map((t, i) => (
               <li key={t} className="flex items-center gap-2 sm:gap-3">
                 {i > 0 && <span aria-hidden className="text-brand-gold">|</span>}

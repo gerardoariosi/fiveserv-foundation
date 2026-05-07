@@ -32,7 +32,7 @@ export const SocialProofTicker = () => {
         fontFamily: "Arial, sans-serif",
         fontSize: "13px",
       }}
-      className={`fixed inset-x-0 z-30 h-10 transition-all duration-300 flex items-center justify-center gap-2 px-3 text-white ${
+      className={`fixed inset-x-0 z-30 h-10 transition-all duration-300 flex items-center justify-center gap-2 px-3 text-white pt-8 sm:pt-0 ${
         isHome && !scrolled ? "bg-transparent" : "bg-brand-black"
       }`}
     >
@@ -47,7 +47,7 @@ export const SocialProofTicker = () => {
           animation: "pulse 2s cubic-bezier(0.4,0,0.6,1) infinite",
         }}
       />
-      <span>
+      <span className="text-xs sm:text-sm">
         <span style={{ color: "#FFD700", fontWeight: 700 }}>{count}</span>{" "}
         property managers requested a quote today
       </span>
