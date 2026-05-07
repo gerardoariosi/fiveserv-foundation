@@ -164,7 +164,6 @@ const Index = () => {
       />
 
       <HeroSection />
-      <LiveStatsBar />
       <section className="bg-white">
         <div className="container pt-12">
           <AIOverviewBlock hidden
@@ -179,6 +178,7 @@ const Index = () => {
       <ServicesGrid />
       <VacancyCalculator />
       <FivePillars />
+      <LiveStatsBar />
       <FamilyStory />
       <section className="bg-white">
         <div className="container py-28 lg:py-32">
