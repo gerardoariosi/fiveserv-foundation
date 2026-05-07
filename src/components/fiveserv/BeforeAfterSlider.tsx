@@ -111,10 +111,8 @@ export const BeforeAfterSlider = ({
           setDragging(true);
           if (e.touches[0]) updateFromClientX(e.touches[0].clientX);
         }}
-        className="relative w-full select-none overflow-hidden rounded-xl border border-brand-gold focus:outline-none focus:ring-2 focus:ring-brand-gold/60"
+        className="relative w-full h-[400px] sm:h-[500px] lg:h-[600px] overflow-hidden rounded-2xl select-none border border-brand-gold focus:outline-none focus:ring-2 focus:ring-brand-gold/60"
         style={{
-          height: "min(400px, 56vw)",
-          minHeight: 280,
           cursor: dragging ? "grabbing" : "ew-resize",
           touchAction: "none",
         }}
