@@ -113,7 +113,7 @@ export const BeforeAfterSlider = ({
         }}
         className="relative w-full overflow-hidden rounded-2xl select-none border border-brand-gold focus:outline-none focus:ring-2 focus:ring-brand-gold/60"
         style={{
-          aspectRatio: "16/9",
+          aspectRatio: "4/3",
           cursor: dragging ? "grabbing" : "ew-resize",
           touchAction: "none",
         }}
