@@ -182,7 +182,7 @@ const AboutPage = () => {
                       </span>
                     </div>
                   ) : member.image ? (
-                    <img src={member.image} alt={member.name} className="h-24 w-24 rounded-full object-cover object-top mx-auto" loading="lazy" />
+                    <img src={member.image} alt={member.name} className="h-24 w-24 rounded-full object-cover object-center mx-auto" style={{ objectPosition: "center 20%" }} loading="lazy" />
                   ) : (
                     <div className="h-24 w-24 rounded-full bg-gray-100 flex items-center justify-center mx-auto">
                       <span className="text-gray-800 font-bold text-2xl">{member.initials}</span>
