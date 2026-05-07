@@ -30,6 +30,16 @@ const PROMISE = [
 const TRACK_RECORD = STATS.filter((s) => s.label !== "Available").slice(0, 4);
 
 const AboutPage = () => {
+  const [openMember, setOpenMember] = useState<string | null>(null);
+  const TEAM_MEMBERS = [
+    { name: "Gerardo Rios", role: "Founder & CEO", initials: "GR", description: "The vision behind FiveServ. Over 10 years in property maintenance, Gerardo built this company from the ground up with one goal: make property managers' lives easier." },
+    { name: "Gerardo Andrés Rios", role: "Client Relations & Systems Operations", initials: "GA", description: "The bridge between clients and operations. Gerardo Andrés manages client relationships, builds the systems that keep FiveServ running, and ensures every property manager gets results — not excuses." },
+    { name: "Mariel Iragorry", role: "Accounting & Administration", initials: "MI", description: "The backbone of FiveServ. Mariel keeps the finances clean, the administration tight, and makes sure every invoice, contract, and record is exactly where it needs to be." },
+    { name: "Jose Rios", role: "Marketing & Growth", initials: "JR", description: "The voice of FiveServ. Jose leads our marketing strategy and growth initiatives, making sure the right property managers find us at the right time." },
+    { name: "Luis Mora", role: "Lead Technician", initials: "LM", description: "The boots on the ground. Luis leads our field crew with precision and pride — every unit he touches gets delivered on time, on standard, and ready to rent." },
+    { name: "Sofia", role: "AI Chat Assistant — Available 24/7", initials: "AI", isAI: true, description: "Sofia is FiveServ's AI assistant, trained specifically on our services, processes, and market. Available 24/7 to answer questions, qualify leads, and connect property managers with our team instantly." },
+  ];
+  const activeMember = TEAM_MEMBERS.find((m) => m.name === openMember);
   const title = `About ${SITE.brand} | Venezuelan-American Family | Property Maintenance Orlando FL`;
   const description = `${SITE.brand} Property Solutions — Venezuelan-American family-owned property maintenance based in Orlando, FL. Family-owned. 10+ years in property maintenance. 18 cities across Central Florida.`;
 
