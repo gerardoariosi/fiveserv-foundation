@@ -195,7 +195,7 @@ const AboutPage = () => {
                   <p className="mt-2 text-xs font-medium uppercase tracking-[0.12em] text-gray-900">— {member.role}</p>
                   <button
                     onClick={() => setOpenMember(member.name)}
-                    className="mt-3 text-sm font-bold text-brand-gold hover:underline"
+                    className="mt-3 text-sm font-bold text-gray-700 hover:underline"
                   >
                     Meet {member.name.split(" ")[0]} →
                   </button>
