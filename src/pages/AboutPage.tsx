@@ -155,14 +155,7 @@ const AboutPage = () => {
             </p>
 
             <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-              {[
-                { name: "Gerardo Rios", role: "Founder & CEO", initials: "GR", description: "The vision behind FiveServ. Over 10 years in property maintenance, Gerardo built this company from the ground up with one goal: make property managers' lives easier." },
-                { name: "Gerardo Andrés Rios", role: "Client Relations & Systems Operations", initials: "GA", description: "The bridge between clients and operations. Gerardo Andrés manages client relationships, builds the systems that keep FiveServ running, and ensures every property manager gets results — not excuses." },
-                { name: "Mariel Iragorry", role: "Accounting & Administration", initials: "MI", description: "The backbone of FiveServ. Mariel keeps the finances clean, the administration tight, and makes sure every invoice, contract, and record is exactly where it needs to be." },
-                { name: "Jose Rios", role: "Marketing & Growth", initials: "JR", description: "The voice of FiveServ. Jose leads our marketing strategy and growth initiatives, making sure the right property managers find us at the right time." },
-                { name: "Luis Mora", role: "Lead Technician", initials: "LM", description: "The boots on the ground. Luis leads our field crew with precision and pride — every unit he touches gets delivered on time, on standard, and ready to rent." },
-                { name: "Sofia", role: "AI Chat Assistant — Available 24/7", initials: "AI", isAI: true, description: "Sofia is FiveServ's AI assistant, trained specifically on our services, processes, and market. Available 24/7 to answer questions, qualify leads, and connect property managers with our team instantly." },
-              ].map((member) => (
+              {TEAM_MEMBERS.map((member) => (
                 <article
                   key={member.name}
                   className="rounded-lg border border-gray-100 bg-white shadow-sm p-6 text-center"
@@ -200,13 +193,68 @@ const AboutPage = () => {
                     </span>
                   )}
                   <p className="mt-2 text-xs font-medium uppercase tracking-[0.12em] text-gray-900">— {member.role}</p>
-                  <p className="mt-3 text-sm text-gray-700">{member.description}</p>
+                  <button
+                    onClick={() => setOpenMember(member.name)}
+                    className="mt-3 text-sm font-bold text-brand-gold hover:underline"
+                  >
+                    Meet {member.name.split(" ")[0]} →
+                  </button>
                 </article>
               ))}
             </div>
           </SectionReveal>
         </div>
       </section>
+
+      {activeMember && (
+        <div
+          className="fixed inset-0 z-50 flex items-center justify-center bg-black/70 p-4"
+          onClick={() => setOpenMember(null)}
+        >
+          <div
+            className="relative bg-white rounded-2xl p-8 max-w-sm mx-auto shadow-xl w-full"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <button
+              onClick={() => setOpenMember(null)}
+              aria-label="Close"
+              className="absolute top-3 right-3 p-1 text-gray-500 hover:text-gray-900"
+            >
+              <X className="h-5 w-5" />
+            </button>
+            <div className="text-center">
+              {activeMember.isAI ? (
+                <div className="h-24 w-24 rounded-full bg-brand-gold flex items-center justify-center mx-auto overflow-hidden">
+                  <img
+                    src="/images/sofia-avatar.jpg"
+                    alt="Sofia"
+                    className="h-full w-full object-cover"
+                    onError={(e) => {
+                      const img = e.currentTarget as HTMLImageElement;
+                      img.style.display = "none";
+                      const fallback = img.nextElementSibling as HTMLElement | null;
+                      if (fallback) fallback.style.display = "flex";
+                    }}
+                  />
+                  <span
+                    className="text-brand-black font-bold text-2xl h-full w-full items-center justify-center"
+                    style={{ display: "none" }}
+                  >
+                    AI
+                  </span>
+                </div>
+              ) : (
+                <div className="h-24 w-24 rounded-full bg-gray-100 flex items-center justify-center mx-auto">
+                  <span className="text-gray-800 font-bold text-2xl">{activeMember.initials}</span>
+                </div>
+              )}
+              <h3 className="mt-4 font-display font-semibold text-xl text-gray-900">{activeMember.name}</h3>
+              <p className="mt-1 text-xs font-medium uppercase tracking-[0.12em] text-gray-900">— {activeMember.role}</p>
+              <p className="mt-4 text-sm text-gray-700">{activeMember.description}</p>
+            </div>
+          </div>
+        </div>
+      )}
 
       {/* 6. The FiveServ Promise — mini 5 pillars */}
       <section className="bg-gray-50 border-y border-brand-gold/20">
