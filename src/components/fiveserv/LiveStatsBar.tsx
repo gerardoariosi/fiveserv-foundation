@@ -1,5 +1,4 @@
 import { useEffect, useRef, useState } from "react";
-import { useLocation } from "react-router-dom";
 import { Building2, Users, MapPin, Star, Clock, Activity, FileText } from "lucide-react";
 import { useLiveCounter } from "@/hooks/use-live-counter";
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip";
@@ -106,16 +105,6 @@ const StatCard = ({
 export const LiveStatsBar = () => {
   const sectionRef = useRef<HTMLDivElement>(null);
   const [start, setStart] = useState(false);
-  const location = useLocation();
-  const isHome = location.pathname === "/";
-  const [scrolled, setScrolled] = useState(false);
-
-  useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > window.innerHeight * 0.9);
-    onScroll();
-    window.addEventListener("scroll", onScroll, { passive: true });
-    return () => window.removeEventListener("scroll", onScroll);
-  }, []);
 
   useEffect(() => {
     const el = sectionRef.current;
