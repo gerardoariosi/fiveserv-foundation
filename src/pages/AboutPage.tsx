@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
-import { ArrowRight, ShieldCheck, Award, FileCheck2, Users } from "lucide-react";
+import { useState } from "react";
+import { ArrowRight, ShieldCheck, Award, FileCheck2, Users, X } from "lucide-react";
 import Seo from "@/lib/Seo";
 import SchemaOrg from "@/lib/SchemaOrg";
 import { SITE, STATS, TEAM, FIVE_PILLARS } from "@/lib/site-config";
