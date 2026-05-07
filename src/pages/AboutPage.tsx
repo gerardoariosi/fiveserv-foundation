@@ -247,6 +247,10 @@ const AboutPage = () => {
                     AI
                   </span>
                 </div>
+              ) : activeMember.image ? (
+                <div className="h-24 w-24 rounded-full overflow-hidden mx-auto">
+                  <img src={activeMember.image} alt={activeMember.name} className="h-full w-full object-cover" />
+                </div>
               ) : (
                 <div className="h-24 w-24 rounded-full bg-gray-100 flex items-center justify-center mx-auto">
                   <span className="text-gray-800 font-bold text-2xl">{activeMember.initials}</span>
