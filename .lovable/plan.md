@@ -1,35 +1,58 @@
-## Goal
+## Audit findings (375×812 mobile)
 
-Hide the `LiveStatsBar` on the homepage until the user scrolls past ~90% of the viewport, using a CSS `hidden` class on the outer element instead of an early `return null`. This avoids any potential hooks-ordering concerns and guarantees the section is never visible at initial load on `/`.
+I navigated the preview at mobile width and captured the homepage top-to-bottom. Findings:
 
-## Change
+**Hero / SocialProofTicker (broken)**
+- The ticker bar overlaps the H1 "Property Maintenance Central Florida" — the text "5 property managers requested a quote today" sits on top of the title.
+- Root cause: the ticker is `position: fixed` at `top: var(--banner-h) + var(--header-h)` (≈112px) with height 40px. The hero starts at `marginTop: -(banner+8px)` and content uses `py-10`, which is not enough to clear the ticker on mobile. The recent `pt-8 sm:pt-0` on the ticker made the bar visually taller, worsening the collision.
+- Title size on mobile (`text-3xl`) is fine; the issue is vertical clearance, not font size.
 
-**File:** `src/components/fiveserv/LiveStatsBar.tsx`
+**Header (OK)**
+- Logo + gold phone + hamburger fit cleanly with `gap-3`. No overlap. Logo is `h-16` which is acceptable inside `h-20` header.
 
-1. Remove the existing early return:
-   ```tsx
-   if (isHome && !scrolled) return null;
-   ```
+**TrustBar (OK)**
+- Marquee scrolls; CTA line wraps to two centered lines on mobile as intended.
 
-2. Add a `hidden` class conditionally to the outermost `<section>` element (the one with `bg-brand-black border-y border-brand-gold/20`):
-   ```tsx
-   <section
-     ref={sectionRef}
-     className={`bg-brand-black border-y border-brand-gold/20 ${isHome && !scrolled ? "hidden" : ""}`}
-     aria-label="FiveServ live company stats"
-   >
-   ```
+**ServicesGrid (OK)**
+- `grid gap-8 md:grid-cols-2 lg:grid-cols-4` → 1 column on mobile. Correct.
 
-   Note: `TooltipProvider` is the actual outermost element but it doesn't render a DOM node, so applying `hidden` to the `<section>` is the correct hide point.
+**Stats / Pillars / Testimonials / CityGrid / FAQ / Footer**
+- Footer columns stack 1-col on mobile (`md:grid-cols-2 lg:grid-cols-4`). OK.
+- Cities footer list uses `grid-cols-2` which fits at 375px. OK.
+- StickyMobileCTA (Call / WhatsApp / Get Quote) renders correctly at the bottom and reserves body padding.
 
-## Why this works
+**Minor issues worth fixing**
+- StickyBanner truncates "5-DAY MAKE-READY GUARANTEE — CENTR..." on mobile. Acceptable but could be shortened.
+- Sofia chat bubble + StickyMobileCTA can crowd the bottom-right; already handled via `--sofia-bottom-offset`. No change needed.
 
-- Tailwind's `hidden` class applies `display: none`, fully removing the bar from layout (no overlap with the transparent header).
-- All hooks still run in stable order regardless of route or scroll position.
-- When the user scrolls past ~90vh, `scrolled` flips to `true`, the `hidden` class is removed, and the bar appears.
-- On non-home routes, `isHome` is `false`, so the bar always renders normally.
+## Fixes (mobile only — desktop untouched)
 
-## Out of scope
+### 1. `src/components/fiveserv/HeroSection.tsx`
+Add top padding on the hero content wrapper so the H1 clears the fixed ticker on mobile.
 
-- No changes to `StickyHeader.tsx`, `HeroSection.tsx`, `RootLayout.tsx`, or any other file.
-- No change to the scroll threshold (stays at `window.innerHeight * 0.9`).
+- Change the inner flex container's padding from `py-10 sm:py-14 lg:py-20` to `pt-32 pb-10 sm:py-14 lg:py-20`.
+  - 32 × 4px = 128px ≥ banner(32) + header(80) + ticker(40) clearance on mobile.
+- Keep all other classes as they are (title, buttons, stats bar were already adjusted in the previous turn).
+
+### 2. `src/components/fiveserv/SocialProofTicker.tsx`
+The `pt-8 sm:pt-0` added previously inflates the bar's effective height inconsistently. Replace with a clean fixed height on both breakpoints and rely on hero padding (above) for clearance.
+
+- Remove `pt-8 sm:pt-0` from the bar's className.
+- Keep `text-xs sm:text-sm` on the inner text span (already in place).
+- Result: ticker stays a clean 40px bar; hero content sits below it.
+
+### 3. `src/components/fiveserv/StickyBanner.tsx` (small polish)
+- Shorten mobile copy so it doesn't truncate awkwardly. Use a responsive split:
+  - Mobile (`sm:hidden`): "5-DAY GUARANTEE · 24/7 · ONE CALL"
+  - Desktop (`hidden sm:inline`): keep current full text.
+
+### Out of scope
+- No desktop layout changes.
+- No changes to ServicesGrid, TrustBar, Footer, CityGrid, FAQ, StickyMobileCTA, or Header — they render correctly on mobile.
+
+## Verification
+After edits I'll re-screenshot at 375×812 to confirm:
+- Ticker no longer overlaps the H1.
+- Hero buttons remain stacked full-width.
+- Stats row wraps cleanly.
+- Banner copy fits on one line without truncation.

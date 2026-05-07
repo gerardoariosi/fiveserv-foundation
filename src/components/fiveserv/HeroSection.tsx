@@ -95,7 +95,7 @@ export const HeroSection = ({
       {/* 60% black overlay over the video for readability */}
       <div className="absolute inset-0 bg-brand-black/60" />
 
-      <div className="relative z-10 flex items-center py-10 sm:py-14 lg:py-20" style={{ minHeight: heroVisibleHeight }}>
+      <div className="relative z-10 flex items-center pt-32 pb-10 sm:py-14 lg:py-20" style={{ minHeight: heroVisibleHeight }}>
         <div ref={ref} className="container reveal">
           <h1 className="text-3xl text-brand-white sm:text-4xl lg:text-6xl leading-tight">
             Property Maintenance Central Florida —
