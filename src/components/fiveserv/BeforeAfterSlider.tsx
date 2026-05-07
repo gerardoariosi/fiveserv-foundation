@@ -123,7 +123,7 @@ export const BeforeAfterSlider = ({
           alt="After FiveServ make-ready"
           onError={() => setAfterOk(false)}
           draggable={false}
-          className="pointer-events-none absolute inset-0 h-full w-full object-cover"
+          className="w-full h-full object-cover object-center pointer-events-none absolute inset-0"
         />
 
         {/* BEFORE (clipped from left to position%) */}
@@ -136,7 +136,7 @@ export const BeforeAfterSlider = ({
             alt="Before FiveServ make-ready"
             onError={() => setBeforeOk(false)}
             draggable={false}
-            className="absolute inset-0 h-full object-cover"
+            className="w-full h-full object-cover object-center absolute inset-0"
             style={{ width: containerRef.current?.offsetWidth ?? "100%", maxWidth: "none" }}
           />
         </div>
