@@ -32,7 +32,7 @@ export const SocialProofTicker = () => {
         fontFamily: "Arial, sans-serif",
         fontSize: "13px",
       }}
-      className={`fixed inset-x-0 z-30 h-10 transition-all duration-300 flex items-center justify-center gap-2 px-3 text-white pt-8 sm:pt-0 ${
+      className={`fixed inset-x-0 z-30 h-10 transition-all duration-300 flex items-center justify-center gap-2 px-3 text-white ${
         isHome && !scrolled ? "bg-transparent" : "bg-brand-black"
       }`}
     >

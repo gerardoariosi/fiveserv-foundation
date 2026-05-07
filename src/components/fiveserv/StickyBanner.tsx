@@ -24,7 +24,8 @@ export const StickyBanner = () => {
           to="/contact"
           className="flex-1 truncate text-center text-xs font-bold uppercase tracking-wide hover:underline"
         >
-          5-Day Make-Ready Guarantee — Central Florida 24/7 — One Call. One Invoice.
+          <span className="sm:hidden">5-Day Guarantee · 24/7 · One Call</span>
+          <span className="hidden sm:inline">5-Day Make-Ready Guarantee — Central Florida 24/7 — One Call. One Invoice.</span>
         </Link>
         <button
           aria-label="Dismiss banner"
