@@ -111,7 +111,7 @@ export const BeforeAfterSlider = ({
           setDragging(true);
           if (e.touches[0]) updateFromClientX(e.touches[0].clientX);
         }}
-        className="relative w-full h-[400px] sm:h-[500px] lg:h-[600px] overflow-hidden rounded-2xl select-none border border-brand-gold focus:outline-none focus:ring-2 focus:ring-brand-gold/60"
+        className="relative w-full aspect-[16/9] bg-gray-900 overflow-hidden rounded-2xl select-none border border-brand-gold focus:outline-none focus:ring-2 focus:ring-brand-gold/60"
         style={{
           cursor: dragging ? "grabbing" : "ew-resize",
           touchAction: "none",
@@ -123,7 +123,7 @@ export const BeforeAfterSlider = ({
           alt="After FiveServ make-ready"
           onError={() => setAfterOk(false)}
           draggable={false}
-          className="w-full h-full object-cover object-center pointer-events-none absolute inset-0"
+          className="absolute inset-0 w-full h-full object-contain object-center pointer-events-none"
         />
 
         {/* BEFORE (clipped from left to position%) */}
@@ -136,7 +136,7 @@ export const BeforeAfterSlider = ({
             alt="Before FiveServ make-ready"
             onError={() => setBeforeOk(false)}
             draggable={false}
-            className="w-full h-full object-cover object-center absolute inset-0"
+            className="absolute inset-0 w-full h-full object-contain object-center"
             style={{ width: containerRef.current?.offsetWidth ?? "100%", maxWidth: "none" }}
           />
         </div>
