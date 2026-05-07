@@ -246,7 +246,7 @@ const AboutPage = () => {
                   </span>
                 </div>
               ) : activeMember.image ? (
-                <img src={activeMember.image} alt={activeMember.name} className="h-24 w-24 rounded-full object-cover object-center mx-auto" style={{ objectPosition: "center 20%" }} />
+                <img src={activeMember.image} alt={activeMember.name} className="h-24 w-24 rounded-full object-cover object-center mx-auto" style={(activeMember as any).imgStyle ?? { objectPosition: "center 20%" }} />
               ) : (
                 <div className="h-24 w-24 rounded-full bg-gray-100 flex items-center justify-center mx-auto">
                   <span className="text-gray-800 font-bold text-2xl">{activeMember.initials}</span>
