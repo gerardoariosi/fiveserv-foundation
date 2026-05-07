@@ -146,7 +146,7 @@ export const LiveStatsBar = () => {
     <TooltipProvider>
     <section
       ref={sectionRef}
-      className={`fixed inset-x-0 z-30 border-y border-brand-gold/20 transition-all duration-300 ${isHome && !scrolled ? "bg-transparent border-transparent opacity-0 pointer-events-none" : "bg-brand-black opacity-100"}`}
+      className={`fixed inset-x-0 z-30 border-y transition-all duration-300 ${isHome && !scrolled ? "bg-transparent border-transparent" : "bg-brand-black border-brand-gold/20"}`}
       style={{ top: "calc(var(--banner-h, 32px) + var(--header-h, 80px))" }}
       aria-label="FiveServ live company stats"
     >
