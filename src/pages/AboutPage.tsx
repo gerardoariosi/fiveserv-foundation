@@ -292,7 +292,7 @@ const AboutPage = () => {
         <div className="container py-20">
           <SectionReveal>
             <h2 className="font-display font-bold text-3xl text-gray-900 sm:text-4xl">
-              Licenses & <span className="text-gray-900">Insurance</span>
+              Licenses <span style={{ fontFamily: "Inter, sans-serif" }}>&</span> <span className="text-gray-900">Insurance</span>
             </h2>
             <p className="mt-3 max-w-2xl text-gray-700">
               Fully licensed and insured to operate across Florida. Documentation available on request for
