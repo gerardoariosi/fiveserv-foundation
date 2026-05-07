@@ -32,10 +32,10 @@ const TRACK_RECORD = STATS.filter((s) => s.label !== "Available").slice(0, 4);
 const AboutPage = () => {
   const [openMember, setOpenMember] = useState<string | null>(null);
   const TEAM_MEMBERS = [
-    { name: "Gerardo Rios", role: "Founder & CEO", initials: "GR", description: "The vision behind FiveServ. Over 10 years in property maintenance, Gerardo built this company from the ground up with one goal: make property managers' lives easier." },
-    { name: "Gerardo Andrés Rios", role: "Client Relations & Systems Operations", initials: "GA", description: "The bridge between clients and operations. Gerardo Andrés manages client relationships, builds the systems that keep FiveServ running, and ensures every property manager gets results — not excuses." },
-    { name: "Mariel Iragorry", role: "Accounting & Administration", initials: "MI", description: "The backbone of FiveServ. Mariel keeps the finances clean, the administration tight, and makes sure every invoice, contract, and record is exactly where it needs to be." },
-    { name: "Jose Rios", role: "Marketing & Growth", initials: "JR", description: "The voice of FiveServ. Jose leads our marketing strategy and growth initiatives, making sure the right property managers find us at the right time." },
+    { name: "Gerardo Rios", role: "Founder & CEO", initials: "GR", image: "/images/team/team-member-1.jpeg", description: "The vision behind FiveServ. Over 10 years in property maintenance, Gerardo built this company from the ground up with one goal: make property managers' lives easier." },
+    { name: "Gerardo Andrés Rios", role: "Client Relations & Systems Operations", initials: "GA", image: "/images/team/team-member-2.jpeg", description: "The bridge between clients and operations. Gerardo Andrés manages client relationships, builds the systems that keep FiveServ running, and ensures every property manager gets results — not excuses." },
+    { name: "Mariel Iragorry", role: "Accounting & Administration", initials: "MI", image: "/images/team/team-member-3.jpeg", description: "The backbone of FiveServ. Mariel keeps the finances clean, the administration tight, and makes sure every invoice, contract, and record is exactly where it needs to be." },
+    { name: "Jose Rios", role: "Marketing & Growth", initials: "JR", image: "/images/team/team-member-4.jpeg", description: "The voice of FiveServ. Jose leads our marketing strategy and growth initiatives, making sure the right property managers find us at the right time." },
     { name: "Luis Mora", role: "Lead Technician", initials: "LM", description: "The boots on the ground. Luis leads our field crew with precision and pride — every unit he touches gets delivered on time, on standard, and ready to rent." },
     { name: "Sofia", role: "AI Chat Assistant — Available 24/7", initials: "AI", isAI: true, description: "Sofia is FiveServ's AI assistant, trained specifically on our services, processes, and market. Available 24/7 to answer questions, qualify leads, and connect property managers with our team instantly." },
   ];
@@ -181,6 +181,10 @@ const AboutPage = () => {
                         AI
                       </span>
                     </div>
+                  ) : member.image ? (
+                    <div className="h-24 w-24 rounded-full overflow-hidden mx-auto">
+                      <img src={member.image} alt={member.name} className="h-full w-full object-cover" loading="lazy" />
+                    </div>
                   ) : (
                     <div className="h-24 w-24 rounded-full bg-gray-100 flex items-center justify-center mx-auto">
                       <span className="text-gray-800 font-bold text-2xl">{member.initials}</span>
@@ -242,6 +246,10 @@ const AboutPage = () => {
                   >
                     AI
                   </span>
+                </div>
+              ) : activeMember.image ? (
+                <div className="h-24 w-24 rounded-full overflow-hidden mx-auto">
+                  <img src={activeMember.image} alt={activeMember.name} className="h-full w-full object-cover" />
                 </div>
               ) : (
                 <div className="h-24 w-24 rounded-full bg-gray-100 flex items-center justify-center mx-auto">
