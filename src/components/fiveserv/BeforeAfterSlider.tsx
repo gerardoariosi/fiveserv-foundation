@@ -121,7 +121,7 @@ export const BeforeAfterSlider = ({
         {/* AFTER (full background) */}
         <img
           src={afterImg}
-          alt="After FiveServ make-ready"
+          alt="After make-ready unit renovation completed by FiveServ Property Solutions Central Florida"
           onError={() => setAfterOk(false)}
           draggable={false}
           className="absolute inset-0 w-full h-full object-cover object-center pointer-events-none"
@@ -134,7 +134,7 @@ export const BeforeAfterSlider = ({
         >
           <img
             src={beforeImg}
-            alt="Before FiveServ make-ready"
+            alt="Before make-ready unit renovation by FiveServ Property Solutions Orlando Florida"
             onError={() => setBeforeOk(false)}
             draggable={false}
             className="absolute inset-0 w-full h-full object-cover object-center"

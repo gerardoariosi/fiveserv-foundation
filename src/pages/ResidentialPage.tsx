@@ -133,7 +133,7 @@ const ResidentialPage = () => {
             <div className="overflow-hidden rounded-xl border border-brand-gold/40">
               <img
                 src="/images/family-fiveserv.jpg"
-                alt={`The ${SITE.brand} Venezuelan-American family behind every home repair in Central Florida`}
+                alt="FiveServ residential maintenance service Orlando Florida"
                 loading="lazy"
                 className="h-full w-full object-cover"
               />

@@ -110,6 +110,7 @@ const ElectricalPage = () => {
           muted
           loop
           playsInline
+          aria-label="FiveServ electrical maintenance service video Orlando Florida"
           className="absolute inset-0 h-full w-full object-cover object-[center_30%] md:object-[center_18%] lg:object-[center_24%]"
           src="/images/services/electrical.mp4"
         />
