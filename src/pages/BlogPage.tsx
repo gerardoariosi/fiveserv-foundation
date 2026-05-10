@@ -122,7 +122,7 @@ const BlogPage = () => {
                     {post.image ? (
                       <img
                         src={post.image}
-                        alt={post.title}
+                        alt={`${post.title} — FiveServ Property Solutions blog post — property maintenance Central Florida`}
                         loading="lazy"
                         className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
                       />

@@ -73,7 +73,7 @@ const MaintenanceCityPage = ({ citySlug: propSlug }: MaintenanceCityPageProps = 
       <section className="relative isolate overflow-hidden bg-brand-black pt-stack pb-16">
         <img
           src={editorial.heroImage}
-          alt={`${city.name}, ${city.state} skyline`}
+          alt={`FiveServ property maintenance service ${city.name} Florida`}
           loading="eager"
           // @ts-expect-error fetchpriority is valid HTML
           fetchpriority="high"

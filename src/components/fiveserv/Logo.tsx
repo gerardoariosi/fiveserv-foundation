@@ -26,7 +26,7 @@ export const Logo = ({
     return (
       <img
         src={variant === "light" ? "/images/logo-fs-white.png?v=2" : "/images/logo-fs.png?v=2"}
-        alt="FiveServ"
+        alt="FiveServ Property Solutions logo — property maintenance company Orlando Florida"
         className={`${imgClassName} ${className}`}
         onError={() => setFailed(true)}
       />
