@@ -40,6 +40,8 @@ export const BlogArticleLayout = ({ post, children }: Props) => {
         title={post.metaTitle}
         description={post.metaDescription}
         path={`/blog/${post.slug}`}
+        ogType="article"
+        ogImage={post.image ? `${SITE.url}${post.image}` : undefined}
       />
       <SchemaOrg
         breadcrumbs={[

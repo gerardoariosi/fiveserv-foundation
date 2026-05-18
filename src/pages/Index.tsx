@@ -149,7 +149,7 @@ const TestimonialsSection = () => {
 };
 
 const Index = () => {
-  const title = "FiveServ | Make-Ready in 5 Days | Central Florida Property Maintenance";
+  const title = "FiveServ | Make-Ready in 5 Days | Central FL";
   const description =
     "Family-owned property maintenance. Make-ready in 5 business days, guaranteed. One call. One team. One invoice. Serving Central Florida 24/7. fiveserv.net";
 

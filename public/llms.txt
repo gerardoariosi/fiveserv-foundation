@@ -2,6 +2,20 @@
 > Family-owned property maintenance. Central Florida. fiveserv.net
 > Make-ready in 5 business days, guaranteed. One call. One invoice.
 
+## Pages
+- [Home](/): Family-owned property maintenance and make-ready in Central Florida.
+- [About](/about): Venezuelan-American family-owned company, 10+ years experience.
+- [Services](/services): All FiveServ property maintenance services overview.
+- [Make-Ready](/make-ready): 5-day make-ready and unit turn services, guaranteed.
+- [Maintenance](/maintenance): 24/7 multifamily property maintenance and repairs.
+- [Renovations](/renovations): CapEx and renovation services to grow NOI.
+- [Residential](/residential): Home maintenance for Central Florida homeowners.
+- [Cities](/cities): 18 Central Florida cities served by FiveServ.
+- [Blog](/blog): Property maintenance insights, playbooks, and pricing data.
+- [Contact](/contact): Get a quote or schedule service.
+- [FiveServ vs Handyman](/fiveserv-vs-handyman-orlando/): Why a maintenance company beats a handyman for PMs.
+- [Make-Ready vs DIY](/make-ready-vs-diy-property-management/): When to outsource make-ready vs handle in-house.
+
 ## Services
 - Make-Ready and Unit Turns: 5-day guarantee, painting, cleaning, repairs, inspection
 - Maintenance and Repairs: 24/7 emergency, plumbing, electrical, HVAC, drywall
