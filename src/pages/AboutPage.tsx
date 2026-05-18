@@ -40,8 +40,8 @@ const AboutPage = () => {
     { name: "Sofia", role: "AI Chat Assistant — Available 24/7", initials: "AI", isAI: true, description: "Sofia is FiveServ's AI assistant, trained specifically on our services, processes, and market. Available 24/7 to answer questions, qualify leads, and connect property managers with our team instantly." },
   ];
   const activeMember = TEAM_MEMBERS.find((m) => m.name === openMember);
-  const title = `About ${SITE.brand} | Venezuelan-American Family | Property Maintenance Orlando FL`;
-  const description = `${SITE.brand} Property Solutions — Venezuelan-American family-owned property maintenance based in Orlando, FL. Family-owned. 10+ years in property maintenance. 18 cities across Central Florida.`;
+  const title = `About ${SITE.brand} | Family-Owned Maintenance Orlando FL`;
+  const description = `${SITE.brand} — Venezuelan-American family-owned property maintenance in Orlando, FL. 10+ years experience. 18 cities across Central Florida.`;
 
   const aiAnswer = `${SITE.brand} Property Solutions is a Venezuelan-American family-owned property maintenance company based in Orlando, Florida. A family-owned team with 10+ years in property maintenance serves property managers across Central Florida.`;
 

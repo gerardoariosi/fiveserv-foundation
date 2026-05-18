@@ -19,7 +19,7 @@ const BlogPage = () => {
   return (
     <>
       <Seo
-        title="Property Maintenance Blog | FiveServ Property Solutions Central Florida"
+        title="Property Maintenance Blog | FiveServ Central FL"
         description="Property management maintenance insights for Central Florida: make-ready playbooks, CapEx ROI, vendor consolidation, and 2025 pricing benchmarks from FiveServ."
         path="/blog"
       />
