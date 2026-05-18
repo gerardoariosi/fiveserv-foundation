@@ -29,15 +29,15 @@ export const SectionHeading = ({
       }}
     >
       {eyebrow && (
-        <p className="text-gray-900 text-[13px] font-black uppercase tracking-[0.15em] mb-3">
+        <p className="text-gray-900 text-[13px] font-black uppercase tracking-[0.15em] mb-4">
           — {eyebrow}
         </p>
       )}
-      <h2 className="text-gray-900 text-4xl sm:text-5xl">
+      <h2 className="font-display font-bold text-gray-900 text-4xl lg:text-5xl leading-[1.1]">
         {children}
       </h2>
       {subtext && (
-        <p className="mt-4 text-lg leading-[1.75] text-gray-700">{subtext}</p>
+        <p className={`mt-5 text-lg leading-[1.75] text-gray-600 max-w-2xl ${align === "center" ? "mx-auto" : ""}`}>{subtext}</p>
       )}
     </div>
   );

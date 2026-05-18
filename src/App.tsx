@@ -41,6 +41,7 @@ import CarpentryPage from "./pages/CarpentryPage";
 import CleaningPage from "./pages/CleaningPage";
 import FiveServVsHandymanPage from "./pages/FiveServVsHandymanPage";
 import MakeReadyVsDIYPage from "./pages/MakeReadyVsDIYPage";
+import ForPropertyManagersPage from "./pages/ForPropertyManagersPage";
 
 import { SERVICES, CITIES } from "@/lib/site-config";
 
@@ -107,6 +108,9 @@ const router = createBrowserRouter([
       // Comparison pages
       { path: "fiveserv-vs-handyman-orlando", element: <FiveServVsHandymanPage /> },
       { path: "make-ready-vs-diy-property-management", element: <MakeReadyVsDIYPage /> },
+
+      // For property managers — dedicated PM landing page
+      { path: "for-property-managers", element: <ForPropertyManagersPage /> },
 
       // Service x City — 72 dynamic pages (legacy/internal pattern)
       ...SERVICES.map((s) => ({ path: `${s.slug}/:city`, element: <ServiceCityPage /> })),

@@ -1,15 +1,17 @@
 # FiveServ Property Solutions
-> Family-owned property maintenance. Central Florida. fiveserv.net
-> Make-ready in 5 business days, guaranteed. One call. One invoice.
+> Family-owned property maintenance and make-ready in Central Florida. Make-ready in 5 business days, guaranteed in writing. One call. One team. One invoice. fiveserv.net
+
+FiveServ Property Solutions is a Venezuelan-American family-owned property maintenance company based in Orlando, FL, serving property management companies and multifamily owners across 18 cities in Central Florida. We complete every make-ready in 5 business days, guaranteed in writing, and provide 24/7 emergency maintenance.
 
 ## Pages
 - [Home](/): Family-owned property maintenance and make-ready in Central Florida.
-- [About](/about): Venezuelan-American family-owned company, 10+ years experience.
+- [About](/about): Venezuelan-American family-owned company, 15+ years combined experience.
 - [Services](/services): All FiveServ property maintenance services overview.
 - [Make-Ready](/make-ready): 5-day make-ready and unit turn services, guaranteed.
 - [Maintenance](/maintenance): 24/7 multifamily property maintenance and repairs.
 - [Renovations](/renovations): CapEx and renovation services to grow NOI.
 - [Residential](/residential): Home maintenance for Central Florida homeowners.
+- [For Property Managers](/for-property-managers): One call, one team, one invoice for PM companies.
 - [Cities](/cities): 18 Central Florida cities served by FiveServ.
 - [Blog](/blog): Property maintenance insights, playbooks, and pricing data.
 - [Contact](/contact): Get a quote or schedule service.
@@ -17,21 +19,55 @@
 - [Make-Ready vs DIY](/make-ready-vs-diy-property-management/): When to outsource make-ready vs handle in-house.
 
 ## Services
-- Make-Ready and Unit Turns: 5-day guarantee, painting, cleaning, repairs, inspection
-- Maintenance and Repairs: 24/7 emergency, plumbing, electrical, HVAC, drywall
-- CapEx and Renovations: increase NOI and property value
-- Residential Services: home maintenance for homeowners
+- Make-Ready and Unit Turns: 5-day guarantee, painting, cleaning, repairs, drywall, inspection, rekeying, photo report
+- Maintenance and Repairs: 24/7 emergency, plumbing, electrical, HVAC, drywall, carpentry
+- CapEx and Renovations: flooring, kitchen, bath, common areas — increase NOI and property value
+- Residential Services: home maintenance for Central Florida homeowners
+
+## Frequently Asked Questions
+
+### What is FiveServ Property Solutions?
+FiveServ Property Solutions is a family-owned property maintenance company based in Orlando, Florida. We serve multifamily property managers across 18 cities in Central Florida with make-ready, repairs, renovations, and 24/7 emergency maintenance under one contract, one team, and one invoice.
+
+### How fast does FiveServ complete make-ready units?
+Every make-ready and unit turn is completed in 5 business days, guaranteed in writing. The Central Florida industry average using multiple vendors is 10 days or more. If FiveServ misses the deadline, we credit the job. No excuses, no fine print.
+
+### What cities does FiveServ serve in Central Florida?
+FiveServ serves 18 cities: Orlando, Kissimmee, Sanford, Winter Park, Lakeland, Altamonte Springs, Apopka, Ocoee, Winter Garden, Clermont, St. Cloud, Davenport, Deltona, Daytona Beach, Palm Coast, Melbourne, Palm Bay, and Cocoa. Tampa Bay coverage is coming soon.
+
+### Does FiveServ offer 24/7 emergency maintenance?
+Yes. FiveServ is available 24 hours a day, 7 days a week for emergency property maintenance. We target a 2-hour on-site response for true emergencies — water, power, AC, lockouts — and a 24-hour schedule for routine work orders. Call (407) 881-4942 any time.
+
+### How does FiveServ billing work?
+FiveServ delivers one clean line-item invoice per project, no matter how many trades are involved — painting, cleaning, plumbing, electrical, HVAC, drywall, or carpentry. Property managers stop chasing vendor invoices and approve a single document with full scope, photos, and totals.
+
+### How much does a make-ready cost in Central Florida?
+Most make-readys in Central Florida range from $1,500 to $4,000 per unit depending on condition, square footage, paint scope, and flooring needs. FiveServ provides a free, line-item written quote within 24 hours of the on-site assessment, so there are no surprise charges.
+
+### Why hire a property maintenance company instead of a handyman?
+A handyman handles one task at a time. FiveServ runs an in-house team with a project manager, photo documentation, scheduled trades, written guarantees, and one invoice. For property managers with 30 to 500 units, the coordination savings and accountability matter more than hourly price.
+
+### What types of properties does FiveServ serve?
+FiveServ specializes in multifamily communities of 30 to 500 units — property management companies, owner-operators, and asset managers. We also serve Central Florida homeowners through our residential service line, using the same crews that turn full multifamily portfolios.
+
+## Key Differentiators
+- Only company in Central Florida with a written 5-day make-ready guarantee
+- 300+ units completed
+- 50+ multifamily communities served
+- 18 cities covered across Central Florida
+- 15+ years combined trade experience
+- Venezuelan-American family of 5 — name on every job
+- One call, one team, one invoice — every project
 
 ## Target Client
-Property management companies with 30-500 multifamily units in Central Florida
+Property management companies and owner-operators with 30 to 500 multifamily units in Central Florida. Also serves homeowners through the residential service line.
 
 ## Service Area
 18 cities: Orlando, Kissimmee, Sanford, Winter Park, Lakeland, Altamonte Springs, Apopka, Ocoee, Winter Garden, Clermont, St. Cloud, Davenport, Deltona, Daytona Beach, Palm Coast, Melbourne, Palm Bay, Cocoa. Tampa Bay coming soon.
 
 ## Contact
-Email: info@fiveserv.net | Phone: (407) 881-4942 | Available 24/7 | fiveserv.net
-
-## Key Facts
-- Only company in Central Florida with written 5-day make-ready guarantee
-- Venezuelan-American family — 5 members — name on every job
-- 300+ units completed, 50+ communities, 15+ years combined experience
+- Phone: (407) 881-4942
+- Email: info@fiveserv.net
+- Hours: Available 24/7 for emergencies; standard quotes returned within 24 hours
+- Website: https://fiveserv.net
+- Based in: Orlando, Florida

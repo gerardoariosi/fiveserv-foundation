@@ -6,7 +6,7 @@ import Logo from "@/components/fiveserv/Logo";
 export const Footer = () => {
   return (
     <footer className="bg-brand-black border-t-2 border-brand-gold/30">
-      <div className="container pt-20 pb-20">
+      <div className="container py-16">
         <div className="grid gap-12 md:grid-cols-2 lg:grid-cols-4">
           {/* Col 1: Brand */}
           <div>
@@ -33,7 +33,7 @@ export const Footer = () => {
 
           {/* Col 2: Services */}
           <div>
-            <h2 className="text-xs font-bold uppercase tracking-widest text-brand-gold">Services</h2>
+            <h2 className="text-sm font-black uppercase tracking-widest text-brand-gold">Services</h2>
             <ul className="mt-4 space-y-2 text-sm">
               {SERVICES.map((s) => (
                 <li key={s.slug}>
@@ -57,7 +57,7 @@ export const Footer = () => {
 
           {/* Col 3: Cities */}
           <div>
-            <h2 className="text-xs font-bold uppercase tracking-widest text-brand-gold">Service Areas</h2>
+            <h2 className="text-sm font-black uppercase tracking-widest text-brand-gold">Service Areas</h2>
             <ul className="mt-4 grid grid-cols-2 gap-x-4 gap-y-2 text-sm">
               {CITIES.map((c) => (
                 <li key={c.slug}>
@@ -76,7 +76,7 @@ export const Footer = () => {
 
           {/* Col 4: Contact */}
           <div>
-            <h2 className="text-xs font-bold uppercase tracking-widest text-brand-gold">Contact</h2>
+            <h2 className="text-sm font-black uppercase tracking-widest text-brand-gold">Contact</h2>
             <ul className="mt-4 space-y-3 text-sm">
               <li>
                 <a href={`tel:${SITE.phone}`} className="flex items-center gap-2 text-brand-gold font-bold">
@@ -101,8 +101,11 @@ export const Footer = () => {
           </div>
         </div>
 
+        {/* Gold hairline divider */}
+        <div className="my-12 h-px bg-brand-gold/20" />
+
         {/* Bottom area */}
-        <div className="mt-16 border-t border-white/10 pt-8 space-y-4 text-center md:text-left">
+        <div className="pt-2 space-y-4 text-center md:text-left">
           <nav className="flex flex-wrap justify-center gap-x-6 gap-y-2 text-xs md:justify-start">
             <Link to="/privacy" className="text-white/60 hover:text-brand-gold">Privacy Policy</Link>
             <Link to="/terms" className="text-white/60 hover:text-brand-gold">Terms of Service</Link>
