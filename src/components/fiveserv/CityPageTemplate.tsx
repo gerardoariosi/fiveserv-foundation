@@ -39,11 +39,11 @@ export const CityPageTemplate = ({ city, service, faqs = [] }: CityPageData) => 
         faqs={faqs}
       />
 
-      {/* Hero — dark */}
-      <section className="bg-brand-black pt-stack pb-16">
+      {/* Hero — dark with gradient overlay */}
+      <section className="relative bg-gradient-to-b from-brand-black via-brand-black to-brand-black/70 pt-32 pb-24">
         <div className="container">
           <p className="uppercase tracking-[0.12em] text-brand-gold text-base font-bold">— <BrandName variant="light" /> Property Solutions</p>
-          <h1 className="mt-3 font-display font-black text-4xl text-white sm:text-5xl lg:text-6xl">
+          <h1 className="mt-3 font-display font-black text-4xl text-white lg:text-6xl leading-[1.05]">
             {service ? service.name : "Property Maintenance"} in <span className="text-brand-gold">{city.name}, {city.state}</span>
           </h1>
           <div className="mt-6 flex flex-wrap gap-6 text-sm text-gray-300">

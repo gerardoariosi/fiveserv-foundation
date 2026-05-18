@@ -26,13 +26,13 @@ export const ServiceCard = ({ icon: Icon, title, description, href, cta, index =
       }}
     >
       <Link to={href} className="block h-full">
-      <article className="group relative flex h-full flex-col overflow-hidden rounded-2xl border border-gray-100 bg-white p-6 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-md hover:border-brand-gold/40 cursor-pointer">
+      <article className="group relative flex h-full flex-col overflow-hidden rounded-2xl border border-gray-100 border-t-2 border-t-transparent bg-white p-8 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:border-t-brand-gold hover:border-gray-100 cursor-pointer">
         <div className="relative inline-flex h-14 w-14 items-center justify-center transition-transform duration-300 group-hover:scale-105">
           <Icon className="h-7 w-7 text-brand-black" strokeWidth={1.75} />
         </div>
-        <h3 className="mt-5 font-display text-xl font-bold text-brand-black">{title}</h3>
-        <p className="mt-2 flex-1 text-sm leading-relaxed text-gray-700">{description}</p>
-        <div className="mt-5 inline-flex items-center gap-2 text-sm font-bold text-brand-black transition-colors group-hover:text-brand-gold">
+        <h3 className="mt-5 font-display text-xl font-bold leading-tight text-brand-black">{title}</h3>
+        <p className="mt-3 flex-1 text-sm leading-relaxed text-gray-700">{description}</p>
+        <div className="mt-6 inline-flex items-center gap-2 text-sm font-bold text-brand-black transition-colors group-hover:text-brand-gold">
           {cta} <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
         </div>
       </article>

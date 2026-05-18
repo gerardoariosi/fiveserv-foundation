@@ -34,12 +34,12 @@ export const ServicePageTemplate = ({ service, faqs = [] }: ServicePageData) => 
         faqs={faqs}
       />
 
-      {/* Hero — dark */}
-      <section className="bg-brand-black pt-stack pb-16">
+      {/* Hero — dark with gradient overlay */}
+      <section className="relative bg-gradient-to-b from-brand-black via-brand-black to-brand-black/70 pt-32 pb-24">
         <div className="container">
           <p className="text-xs font-medium uppercase tracking-[0.12em] text-brand-white">— <BrandName /> Property Solutions</p>
-          <h1 className="mt-3 font-display font-black text-4xl text-white sm:text-5xl lg:text-6xl">{service.name}</h1>
-          <p className="mt-4 max-w-2xl text-lg text-gray-300">{service.description}</p>
+          <h1 className="mt-3 font-display font-black text-4xl text-white lg:text-6xl leading-[1.05]">{service.name}</h1>
+          <p className="mt-6 max-w-2xl text-lg text-gray-300">{service.description}</p>
 
           <AIOverviewBlock hidden
             tone="dark"
