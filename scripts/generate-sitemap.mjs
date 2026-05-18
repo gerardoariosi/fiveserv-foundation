@@ -24,6 +24,7 @@ const STATIC = [
   { path: "/terms", priority: 0.3 },
   { path: "/fiveserv-vs-handyman-orlando/", priority: 0.8 },
   { path: "/make-ready-vs-diy-property-management/", priority: 0.8 },
+  { path: "/for-property-managers", priority: 0.9 },
 ];
 
 const urls = [

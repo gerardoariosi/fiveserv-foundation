@@ -6,6 +6,26 @@ import { SITE } from "./site-config";
  */
 export const HOMEPAGE_FAQS: { q: string; a: string }[] = [
   {
+    q: "What is FiveServ Property Solutions?",
+    a: `${SITE.brand} Property Solutions is a Venezuelan-American family-owned property maintenance company based in Orlando, FL. We serve multifamily property managers across 18 cities in Central Florida with make-ready, repairs, renovations, and 24/7 emergency maintenance under one contract.`,
+  },
+  {
+    q: "How fast does FiveServ complete make-ready units?",
+    a: `${SITE.brand} completes every make-ready and unit turn in 5 business days, guaranteed in writing. The industry average using multiple vendors is 10+ days. If we miss the deadline, we credit the job. No excuses.`,
+  },
+  {
+    q: "What cities does FiveServ serve in Central Florida?",
+    a: `${SITE.brand} serves 18 cities: Orlando, Kissimmee, Sanford, Winter Park, Lakeland, Altamonte Springs, Apopka, Ocoee, Winter Garden, Clermont, St. Cloud, Davenport, Deltona, Daytona Beach, Palm Coast, Melbourne, Palm Bay, and Cocoa. Tampa Bay is coming soon.`,
+  },
+  {
+    q: "Does FiveServ offer 24/7 emergency maintenance?",
+    a: `Yes. ${SITE.brand} is available 24/7 for emergency property maintenance with a 2-hour on-site response target for water, power, AC, and lockout emergencies. Routine work orders are scheduled within 24 hours. Call ${SITE.phone}.`,
+  },
+  {
+    q: "How does FiveServ billing work?",
+    a: `${SITE.brand} delivers one clean line-item invoice per project, regardless of how many trades are involved — painting, cleaning, plumbing, electrical, HVAC, drywall, or carpentry. One scope, one document, one approval.`,
+  },
+  {
     q: "What is a make-ready and what does it include?",
     a: `A make-ready prepares a vacant unit for a new tenant. At ${SITE.brand} every make-ready includes painting, deep cleaning, minor repairs, drywall, inspection, rekeying, and a photo report. One call. 5 business days.`,
   },

@@ -7,6 +7,7 @@ import Logo from "@/components/fiveserv/Logo";
 const NAV = [
   { to: "/", label: "Home" },
   { to: "/services", label: "Services" },
+  { to: "/for-property-managers", label: "For PMs" },
   { to: "/cities", label: "Cities" },
   { to: "/about", label: "About" },
   { to: "/blog", label: "Blog" },
