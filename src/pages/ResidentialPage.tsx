@@ -142,25 +142,26 @@ const ResidentialPage = () => {
           <SectionReveal className="grid gap-10 lg:grid-cols-2 lg:items-center">
             <div className="overflow-hidden rounded-xl border border-brand-gold/40">
               <img
-                src="/images/family-fiveserv.jpg"
-                alt="FiveServ residential maintenance service Orlando Florida"
+                src="/images/about-hero.jpg"
+                alt="FiveServ Venezuelan-American family-owned property maintenance Orlando Florida"
                 loading="lazy"
                 className="h-full w-full object-cover"
               />
             </div>
             <div>
-              <p className="text-xs font-bold uppercase tracking-wider text-gray-900">Built by a Family</p>
+              <p className="text-xs font-bold uppercase tracking-wider text-gray-900">Our Story</p>
               <h2 className="mt-3 font-display font-bold text-3xl text-gray-900 sm:text-4xl">
                 A <span className="text-gray-900">Venezuelan-American family</span> with{" "}
                 <span className="text-gray-900">15+ years</span> of combined experience.
               </h2>
               <p className="mt-5 text-gray-700">
-                A family behind every job. One name on every invoice. We treat your home the way we'd treat our mother's —
-                because some of us still do.
+                We are a Venezuelan-American family. We started in property maintenance because we believed
+                the multifamily industry deserved better — faster turns, clearer communication, one accountable
+                team instead of a chain of subcontractors and excuses.
               </p>
               <p className="mt-4 text-gray-700">
-                <BrandName variant="dark" /> started in maintenance and grew through referrals from homeowners and property managers
-                across Central Florida. Same crews. Same standards. Whether it's one room or a 200-unit community.
+                <BrandName variant="dark" /> is built to last generations. The name says everything we stand for:
+                the family behind the company, and a five-day make-ready delivery guaranteed in writing on every unit turn.
               </p>
               <Link
                 to="/about"
