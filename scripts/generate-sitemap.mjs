@@ -25,6 +25,7 @@ const STATIC = [
   { path: "/fiveserv-vs-handyman-orlando/", priority: 0.8 },
   { path: "/make-ready-vs-diy-property-management/", priority: 0.8 },
   { path: "/for-property-managers", priority: 0.9 },
+  { path: "/reviews", priority: 0.7 },
 ];
 
 const urls = [
