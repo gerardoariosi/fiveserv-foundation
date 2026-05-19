@@ -18,6 +18,7 @@ import AIOverviewBlock from "@/components/fiveserv/AIOverviewBlock";
 import SectionHeading from "@/components/fiveserv/SectionHeading";
 import GhlFormEmbed from "@/components/fiveserv/GhlFormEmbed";
 import BrandName from "@/components/fiveserv/BrandName";
+import BrandsBar from "@/components/fiveserv/BrandsBar";
 
 const PROBLEMS = [
   {
