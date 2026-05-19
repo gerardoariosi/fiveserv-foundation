@@ -104,7 +104,16 @@ const ForPropertyManagersPage = () => {
       />
 
       {/* HERO */}
-      <section className="relative bg-gradient-to-b from-brand-black via-brand-black to-brand-black/70 pt-32 pb-24">
+      <section
+        className="relative bg-brand-black pt-32 pb-24"
+        style={{
+          backgroundImage: 'url("/images/partners-hero.jpg")',
+          backgroundSize: 'cover',
+          backgroundPosition: 'center top',
+        }}
+      >
+        <div className="absolute inset-0 bg-brand-black/70" />
+        <div className="relative z-10">
         <div className="container">
           <p className="uppercase tracking-[0.12em] text-brand-gold text-base font-bold">
             — For Property Managers
@@ -140,6 +149,7 @@ const ForPropertyManagersPage = () => {
               <Phone className="h-5 w-5" /> Call Now
             </a>
           </div>
+        </div>
         </div>
       </section>
 
