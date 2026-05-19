@@ -18,6 +18,7 @@ import AIOverviewBlock from "@/components/fiveserv/AIOverviewBlock";
 import SectionHeading from "@/components/fiveserv/SectionHeading";
 import GhlFormEmbed from "@/components/fiveserv/GhlFormEmbed";
 import BrandName from "@/components/fiveserv/BrandName";
+import BrandsBar from "@/components/fiveserv/BrandsBar";
 
 const PROBLEMS = [
   {
@@ -254,6 +255,8 @@ const ForPropertyManagersPage = () => {
           </div>
         </div>
       </section>
+
+      <BrandsBar />
 
       {/* CTA + FORM */}
       <section className="bg-brand-black">
