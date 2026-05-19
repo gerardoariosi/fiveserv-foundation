@@ -174,6 +174,7 @@ const Index = () => {
         </div>
       </section>
       <TrustBar />
+      <BrandsBar />
       <ProblemSection />
       <SolutionSection />
       <ServicesGrid />
