@@ -113,6 +113,9 @@ const router = createBrowserRouter([
       // For property managers — dedicated PM landing page
       { path: "for-property-managers", element: <ForPropertyManagersPage /> },
 
+      // Reviews — SEO/AEO page (not in nav)
+      { path: "reviews", element: <ReviewsPage /> },
+
       // Service x City — 72 dynamic pages (legacy/internal pattern)
       ...SERVICES.map((s) => ({ path: `${s.slug}/:city`, element: <ServiceCityPage /> })),
 
