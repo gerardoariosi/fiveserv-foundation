@@ -42,6 +42,7 @@ import CleaningPage from "./pages/CleaningPage";
 import FiveServVsHandymanPage from "./pages/FiveServVsHandymanPage";
 import MakeReadyVsDIYPage from "./pages/MakeReadyVsDIYPage";
 import ForPropertyManagersPage from "./pages/ForPropertyManagersPage";
+import ReviewsPage from "./pages/ReviewsPage";
 
 import { SERVICES, CITIES } from "@/lib/site-config";
 
