@@ -256,6 +256,8 @@ const ForPropertyManagersPage = () => {
         </div>
       </section>
 
+      <BrandsBar />
+
       {/* CTA + FORM */}
       <section className="bg-brand-black">
         <div className="container py-24 lg:py-28">
