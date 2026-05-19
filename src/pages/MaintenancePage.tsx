@@ -61,7 +61,16 @@ const MaintenancePage = () => {
       />
 
       {/* Hero */}
-      <section className="bg-brand-black pt-stack pb-16">
+      <section
+        className="relative bg-brand-black pt-stack pb-16"
+        style={{
+          backgroundImage: 'url("/images/truck-hero.jpg")',
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+        }}
+      >
+        <div className="absolute inset-0 bg-brand-black/75" />
+        <div className="relative z-10">
         <div className="container">
           <p className="uppercase tracking-[0.12em] text-brand-gold text-base font-bold">
             — <BrandName variant="light" /> Property Solutions
@@ -100,6 +109,7 @@ const MaintenancePage = () => {
             directAnswer="FiveServ Property Solutions provides 24/7 property maintenance for multifamily communities across Central Florida, handling plumbing, electrical, HVAC, drywall, carpentry, and painting under one invoice."
             supportingFacts="Emergency response within 2 hours across 18 cities. All specialized work performed by Florida-licensed contractors under FiveServ coordination. One call handles all repairs."
           />
+        </div>
         </div>
       </section>
 

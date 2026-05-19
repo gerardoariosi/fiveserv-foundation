@@ -83,7 +83,16 @@ const ResidentialPage = () => {
       />
 
       {/* 1. Hero */}
-      <section className="bg-brand-black pt-stack pb-16">
+      <section
+        className="relative bg-brand-black pt-stack pb-16"
+        style={{
+          backgroundImage: 'url("/images/truck-hero.jpg")',
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+        }}
+      >
+        <div className="absolute inset-0 bg-brand-black/75" />
+        <div className="relative z-10">
         <div className="container">
           <p className="uppercase tracking-[0.12em] text-brand-gold text-base font-bold">
             — <BrandName variant="light" /> Property Solutions
@@ -123,6 +132,7 @@ const ResidentialPage = () => {
             directAnswer="FiveServ Property Solutions provides professional home maintenance and repair services for homeowners across Central Florida, including plumbing, electrical, painting, drywall, flooring, and general repairs."
             supportingFacts="Licensed and insured in Florida. Available 24/7 for emergencies. Free estimate before any work begins. Serving 18 cities across Central Florida."
           />
+        </div>
         </div>
       </section>
 
