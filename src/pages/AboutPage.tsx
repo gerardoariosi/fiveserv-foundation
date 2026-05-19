@@ -58,30 +58,40 @@ const AboutPage = () => {
       />
 
       {/* 1. Hero */}
-      <section className="bg-brand-black pt-stack pb-16">
-        <div className="container">
-          <p className="uppercase tracking-[0.12em] text-brand-gold text-base font-bold">
-            — About <BrandName variant="light" /> Property Solutions
-          </p>
-          <h1 className="mt-3 max-w-4xl font-display font-black text-4xl text-white sm:text-5xl lg:text-6xl">
-            Built by a Family.{" "}
-            <span className="block text-brand-gold">Trusted by Property Managers Across Central Florida.</span>
-          </h1>
-          <p className="mt-6 max-w-2xl text-lg text-gray-300">
-            Family-owned. 10+ years in the industry. One promise on every job.
-          </p>
+      <section
+        className="relative bg-brand-black pt-stack pb-16"
+        style={{
+          backgroundImage: 'url("/images/about-hero.jpg")',
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+        }}
+      >
+        <div className="absolute inset-0 bg-brand-black/70" />
+        <div className="relative z-10">
+          <div className="container">
+            <p className="uppercase tracking-[0.12em] text-brand-gold text-base font-bold">
+              — About <BrandName variant="light" /> Property Solutions
+            </p>
+            <h1 className="mt-3 max-w-4xl font-display font-black text-4xl text-white sm:text-5xl lg:text-6xl">
+              Built by a Family.{" "}
+              <span className="block text-brand-gold">Trusted by Property Managers Across Central Florida.</span>
+            </h1>
+            <p className="mt-6 max-w-2xl text-lg text-gray-300">
+              Family-owned. 10+ years in the industry. One promise on every job.
+            </p>
 
-          <ul className="mt-6 flex flex-wrap items-center gap-x-6 gap-y-3 text-sm font-medium text-white">
-            {["Venezuelan-American Family", "Licensed & Insured", "5-Day Guarantee", "18 Cities Served"].map((t, i) => (
-              <li key={t} className="flex items-center gap-3">
-                {i > 0 && <span aria-hidden className="text-brand-gold">|</span>}
-                <span>{t}</span>
-              </li>
-            ))}
-          </ul>
+            <ul className="mt-6 flex flex-wrap items-center gap-x-6 gap-y-3 text-sm font-medium text-white">
+              {["Venezuelan-American Family", "Licensed & Insured", "5-Day Guarantee", "18 Cities Served"].map((t, i) => (
+                <li key={t} className="flex items-center gap-3">
+                  {i > 0 && <span aria-hidden className="text-brand-gold">|</span>}
+                  <span>{t}</span>
+                </li>
+              ))}
+            </ul>
 
-          {/* 2. AIOverviewBlock */}
-          <AIOverviewBlock hidden answer={aiAnswer} />
+            {/* 2. AIOverviewBlock */}
+            <AIOverviewBlock hidden answer={aiAnswer} />
+          </div>
         </div>
       </section>
 
