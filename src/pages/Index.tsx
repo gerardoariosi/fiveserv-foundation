@@ -26,6 +26,7 @@ import BeforeAfterSlider from "@/components/fiveserv/BeforeAfterSlider";
 import TrustBar from "@/components/fiveserv/TrustBar";
 import { useReveal } from "@/hooks/use-fiveserv";
 import BrandName from "@/components/fiveserv/BrandName";
+import BrandsBar from "@/components/fiveserv/BrandsBar";
 
 const SERVICE_META = [
   { slug: "make-ready", icon: Key, badge: "5-Day Guarantee", cta: "Learn More" },
