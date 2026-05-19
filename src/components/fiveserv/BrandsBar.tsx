@@ -1,14 +1,3 @@
-const BRANDS = [
-  "Sherwin-Williams",
-  "Benjamin Moore",
-  "Home Depot Pro",
-  "Lowe's Pro",
-  "DEWALT",
-  "Milwaukee",
-  "Moen",
-  "Carrier",
-];
-
 const BrandsBar = () => {
   return (
     <>
@@ -17,15 +6,14 @@ const BrandsBar = () => {
           <p className="text-center text-xs font-bold uppercase tracking-widest text-gray-400">
             Materials & Tools We Trust
           </p>
-          <div className="mt-6 flex flex-wrap items-center justify-center gap-8">
-            {BRANDS.map((brand) => (
-              <span
-                key={brand}
-                className="text-sm font-black uppercase tracking-wide text-gray-300 transition-colors duration-200 hover:text-gray-600"
-              >
-                {brand}
-              </span>
-            ))}
+          <div className="relative mt-6 overflow-hidden">
+            <div className="flex animate-marquee whitespace-nowrap gap-16 items-center hover:[animation-play-state:paused]">
+              {["Sherwin-Williams", "Benjamin Moore", "Home Depot Pro", "Lowe's Pro", "DEWALT", "Milwaukee", "Moen", "Carrier", "Sherwin-Williams", "Benjamin Moore", "Home Depot Pro", "Lowe's Pro", "DEWALT", "Milwaukee", "Moen", "Carrier"].map((brand, i) => (
+                <span key={i} className="text-gray-300 font-black uppercase text-sm tracking-widest flex-shrink-0">
+                  {brand}
+                </span>
+              ))}
+            </div>
           </div>
         </div>
       </section>
