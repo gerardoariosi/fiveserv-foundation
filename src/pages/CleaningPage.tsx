@@ -111,7 +111,7 @@ const SectionReveal = ({ children, className = "" }: { children: React.ReactNode
 
 const CleaningPage = () => {
   const path = "/cleaning";
-  const title = "Cleaning Services Central Florida | Move-Out & Deep Clean | FiveServ";
+  const title = "Cleaning Services Central Florida | FiveServ";
   const description =
     "Professional move-out cleaning and deep cleaning for property managers and homeowners across Central Florida. Make-ready cleaning, deep cleans, post-construction cleaning. One call, one invoice. FiveServ Property Solutions.";
 
