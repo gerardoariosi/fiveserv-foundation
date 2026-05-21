@@ -151,11 +151,11 @@ const ResidentialPage = () => {
             <div>
               <p className="text-xs font-bold uppercase tracking-wider text-gray-900">Our Story</p>
               <h2 className="mt-3 font-display font-bold text-3xl text-gray-900 sm:text-4xl">
-                A <span className="text-gray-900">Venezuelan-American family</span> with{" "}
+                A <span className="text-gray-900">family</span> with{" "}
                 <span className="text-gray-900">15+ years</span> of combined experience.
               </h2>
               <p className="mt-5 text-gray-700">
-                We are a Venezuelan-American family. We started in property maintenance because we believed
+                We are a family. We started in property maintenance because we believed
                 the multifamily industry deserved better — faster turns, clearer communication, one accountable
                 team instead of a chain of subcontractors and excuses.
               </p>
