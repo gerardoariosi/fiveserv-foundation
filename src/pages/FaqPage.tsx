@@ -23,7 +23,7 @@ type Filter = "all" | FaqCategory;
 const FaqPage = () => {
   const [filter, setFilter] = useState<Filter>("all");
 
-  const title = `Property Maintenance FAQ | ${SITE.brand} Property Solutions Central Florida`;
+  const title = `Property Maintenance FAQ | ${SITE.brand} Central Florida`;
   const description = `Property maintenance FAQ — everything property managers need to know. Make-ready, maintenance, CapEx, and getting started with ${SITE.brand} across Central Florida.`;
 
   const visible = useMemo(

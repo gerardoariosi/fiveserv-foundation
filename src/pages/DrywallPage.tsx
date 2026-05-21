@@ -78,9 +78,9 @@ const SectionReveal = ({ children, className = "" }: { children: React.ReactNode
 
 const DrywallPage = () => {
   const path = "/drywall";
-  const title = "Drywall Repair Services Central Florida | FiveServ Property Solutions";
+  const title = "Drywall Repair Central Florida | FiveServ";
   const description =
-    "Professional drywall repair for multifamily properties across Central Florida. Holes, cracks, water damage, full replacements. One call, one invoice. FiveServ Property Solutions.";
+    "Professional drywall repair for multifamily properties across Central Florida. Holes, cracks, water damage, full replacements. One call, one invoice.";
 
   return (
     <>

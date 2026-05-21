@@ -80,7 +80,7 @@ const SectionReveal = ({ children, className = "" }: { children: React.ReactNode
 
 const HvacPage = () => {
   const path = "/hvac";
-  const title = "HVAC Services Central Florida | Licensed & Insured | FiveServ";
+  const title = "HVAC Services Central Florida | FiveServ";
   const description =
     "Licensed HVAC services for multifamily properties across Central Florida. Emergency response 24/7. One call, one invoice. FiveServ Property Solutions.";
 
