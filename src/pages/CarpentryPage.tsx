@@ -80,7 +80,7 @@ const SectionReveal = ({ children, className = "" }: { children: React.ReactNode
 
 const CarpentryPage = () => {
   const path = "/carpentry";
-  const title = "Carpentry Services Central Florida | Doors, Cabinets & Trim | FiveServ";
+  const title = "Carpentry Services Central Florida | FiveServ";
   const description =
     "Professional carpentry services for property managers and homeowners across Central Florida. Door repair, cabinet installation, trim work, and custom carpentry. One call, one invoice. FiveServ Property Solutions.";
 
