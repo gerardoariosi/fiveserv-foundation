@@ -78,7 +78,7 @@ const SectionReveal = ({ children, className = "" }: { children: React.ReactNode
 
 const PlumbingPage = () => {
   const path = "/plumbing";
-  const title = "Plumbing Services Central Florida | Licensed & Insured | FiveServ";
+  const title = "Plumbing Services Central Florida | FiveServ";
   const description =
     "Licensed plumbing services for multifamily properties across Central Florida. Emergency response 24/7. One call, one invoice. FiveServ Property Solutions.";
 
