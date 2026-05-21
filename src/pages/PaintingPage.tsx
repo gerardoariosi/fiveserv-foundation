@@ -93,7 +93,7 @@ const SectionReveal = ({ children, className = "" }: { children: React.ReactNode
 
 const PaintingPage = () => {
   const path = "/painting";
-  const title = "Painting Services Central Florida | Interior & Exterior | FiveServ";
+  const title = "Painting Services Central Florida | FiveServ";
   const description =
     "Professional interior and exterior painting for property managers and homeowners across Central Florida. Make-ready painting, full repaints, accent walls. Licensed, insured. FiveServ Property Solutions.";
 
