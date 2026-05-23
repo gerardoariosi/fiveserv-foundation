@@ -98,11 +98,11 @@ export const HeroSection = ({
       <div className="relative z-10 flex items-center pt-32 pb-10 sm:py-14 lg:py-20" style={{ minHeight: heroVisibleHeight }}>
         <div ref={ref} className="container reveal">
           <h1 className="text-3xl text-brand-white sm:text-4xl lg:text-6xl leading-tight">
-            Property Maintenance Central Florida —
-            <span className="block text-brand-gold italic">one call handles your entire make-ready.</span>
+            Property Maintenance & Home Repairs —
+            <span className="block text-brand-gold italic">one call. one team. one invoice.</span>
           </h1>
           <p className="mt-5 max-w-2xl text-base sm:text-lg lg:text-xl text-gray-300 leading-relaxed sm:leading-[1.75]">
-            Painting, cleaning, repairs, drywall, inspections. No vendor chaos. One invoice. Our team. 5 business days. Guaranteed.
+            Painting, plumbing, electrical, HVAC, drywall, flooring, make-ready, and renovations. Property managers and homeowners across Central Florida — one team handles it all. No vendor chaos. No surprises on the invoice.
           </p>
 
           <div className="mt-7 flex flex-col sm:flex-row gap-3 w-full sm:w-auto">
