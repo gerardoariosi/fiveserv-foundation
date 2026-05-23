@@ -136,6 +136,9 @@ const TestimonialsSection = () => {
             <TestimonialCard key={i} {...t} />
           ))}
         </div>
+        <p className="text-center text-xs text-gray-400 mt-6 italic">
+          Testimonials collected directly from clients via email and phone.
+        </p>
         <div className="mt-12 text-center">
           <Link
             to="/contact"
