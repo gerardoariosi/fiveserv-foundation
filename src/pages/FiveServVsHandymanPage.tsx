@@ -233,6 +233,9 @@ const FiveServVsHandymanPage = () => {
               <TestimonialCard key={t.name} {...t} />
             ))}
           </div>
+          <p className="text-center text-xs text-gray-400 mt-6 italic">
+            Testimonials collected directly from clients via email and phone.
+          </p>
         </div>
       </section>
 
