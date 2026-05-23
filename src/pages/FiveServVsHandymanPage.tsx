@@ -48,25 +48,22 @@ const FAQS = [
 
 const TESTIMONIALS = [
   {
-    quote:
-      "We tried two handymen before FiveServ. Now every turn is on time, one invoice, no chasing. Game changer for our portfolio.",
-    name: "[TESTIMONIAL_1]",
-    title: "Regional Property Manager",
-    company: "Multifamily Group, Orlando",
+    quote: "I have 3 rental homes in Winter Park and used to deal with a different contractor for every single thing. FiveServ came in, fixed a plumbing issue, repainted two rooms, and had the unit ready for my next tenant faster than I expected. One invoice for everything. I didn't even know that was possible.",
+    name: "Jennifer W.",
+    title: "Investment Property Owner",
+    company: "Winter Park, FL",
   },
   {
-    quote:
-      "5 days. Every time. Painted, cleaned, repaired, photo report — done. We don't even check anymore, we just hand over the keys.",
-    name: "[TESTIMONIAL_2]",
-    title: "Asset Manager",
-    company: "Central FL Communities",
+    quote: "Had a pipe burst on a Sunday evening. I honestly didn't expect anyone to pick up but FiveServ answered and had someone at my house within a couple hours. Fixed the leak, assessed the water damage, and followed up the next day to check on everything. Really appreciated the response.",
+    name: "Ana S.",
+    title: "Residential Homeowner",
+    company: "Sanford, FL",
   },
   {
-    quote:
-      "The difference is accountability. With handymen, no one owned the result. With FiveServ, one call and the whole unit is handled.",
-    name: "[TESTIMONIAL_3]",
-    title: "Director of Operations",
-    company: "Orlando PM Co.",
+    quote: "We oversee maintenance for several multifamily properties and FiveServ has become our main vendor for unit turns and repairs. What sets them apart is they actually communicate. You don't have to chase them down. Work gets done, you get one invoice, no surprises. That's rare in this business.",
+    name: "Marcus T.",
+    title: "Director of Maintenance",
+    company: "Altamonte Springs, FL",
   },
 ];
 
