@@ -158,7 +158,7 @@ const PaintingPage = () => {
 
           <AIOverviewBlock hidden
             directAnswer="FiveServ Property Solutions is a licensed painting contractor in Orlando, FL providing interior and exterior painting for property managers and homeowners across Central Florida — including full unit repaints, make-ready painting, exterior painting, accent walls, and color consultation."
-            supportingFacts="Serves property management companies with multifamily portfolios and residential homeowners. 15+ years combined experience. Painting coordinated inside the 5-day make-ready window when needed. Licensed and insured. One call, one team, one invoice. Serving Orlando, Kissimmee, Sanford, Winter Park, Lakeland, Altamonte Springs, Apopka, Ocoee, Winter Garden, Clermont, St. Cloud, Davenport, Daytona Beach, Palm Coast, Melbourne, Palm Bay, and Cocoa, FL."
+            supportingFacts="Serves property management companies with multifamily portfolios and residential homeowners. 15+ years combined experience. Painting coordinated inside the 5-day make-ready window when needed. Licensed and insured. One call, one team, one invoice. Serving Orlando, Kissimmee, Sanford, Winter Park, Lakeland, Altamonte Springs, Apopka, Ocoee, Winter Garden, Clermont, St. Cloud, Davenport, Deltona, Daytona Beach, Palm Coast, Melbourne, Palm Bay, and Cocoa, FL."
           />
         </div>
       </section>
