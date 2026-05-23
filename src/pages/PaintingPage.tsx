@@ -93,9 +93,9 @@ const SectionReveal = ({ children, className = "" }: { children: React.ReactNode
 
 const PaintingPage = () => {
   const path = "/painting";
-  const title = "Painting Services Central Florida | FiveServ";
+  const title = "Painting Contractor Orlando FL | Interior & Exterior Painting | FiveServ";
   const description =
-    "Professional interior and exterior painting for property managers and homeowners across Central Florida. Make-ready painting, full repaints, accent walls. Licensed, insured. FiveServ Property Solutions.";
+    "Licensed painting contractor serving property managers and homeowners across Central Florida. Interior painting, exterior painting, full unit repaints, make-ready touch-ups, and accent walls. Fast turnaround. One call, one invoice. FiveServ Property Solutions — serving Orlando, Kissimmee, Sanford, Winter Park, Lakeland, Altamonte Springs, Apopka, Ocoee, Winter Garden, Clermont, St. Cloud, Davenport, Deltona, Daytona Beach, Palm Coast, Melbourne, Palm Bay, and Cocoa.";
 
   return (
     <>
