@@ -97,9 +97,9 @@ export const HeroSection = ({
 
       <div className="relative z-10 flex items-center pt-32 pb-10 sm:py-14 lg:py-20" style={{ minHeight: heroVisibleHeight }}>
         <div ref={ref} className="container reveal">
-          <h1 className="font-sans font-black text-3xl text-brand-white sm:text-4xl lg:text-6xl leading-tight tracking-tight">
+          <h1 className="text-3xl text-brand-white sm:text-4xl lg:text-6xl leading-tight">
             Property Maintenance & Home Repairs —
-            <span className="block text-brand-gold">Five Days. One Call. Done.</span>
+            <span className="block text-brand-gold italic">Five Days. One Call. Done.</span>
           </h1>
           <p className="mt-5 max-w-2xl text-base sm:text-lg lg:text-xl text-gray-300 leading-relaxed sm:leading-[1.75]">
             Painting, plumbing, electrical, HVAC, drywall, flooring, make-ready, and renovations. Property managers and homeowners across Central Florida — one team handles it all. No vendor chaos. No surprises on the invoice.
