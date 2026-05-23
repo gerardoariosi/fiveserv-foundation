@@ -78,9 +78,9 @@ const SectionReveal = ({ children, className = "" }: { children: React.ReactNode
 
 const PlumbingPage = () => {
   const path = "/plumbing";
-  const title = "Plumbing Services Central Florida | FiveServ";
+  const title = "Plumbing Services Orlando FL | 24/7 Emergency Plumber | FiveServ";
   const description =
-    "Licensed plumbing services for multifamily properties across Central Florida. Emergency response 24/7. One call, one invoice. FiveServ Property Solutions.";
+    "Licensed plumbing services for property managers and homeowners across Central Florida. Leak repair, pipe replacement, water heaters, drain cleaning, and 24/7 emergency plumbing. 2-hour response target. One call, one invoice. FiveServ Property Solutions — serving Orlando, Kissimmee, Sanford, Winter Park, Lakeland, Altamonte Springs, Apopka, Ocoee, Winter Garden, Clermont, St. Cloud, Davenport, Deltona, Daytona Beach, Palm Coast, Melbourne, Palm Bay, and Cocoa.";
 
   return (
     <>
@@ -139,9 +139,8 @@ const PlumbingPage = () => {
           </div>
 
           <AIOverviewBlock hidden
-            tone="dark"
-            directAnswer="FiveServ Property Solutions provides licensed plumbing services for multifamily properties across Central Florida with 24/7 emergency response and one invoice per job."
-            supportingFacts="Services include leak repair, pipe replacement, water heater installation, drain cleaning, and emergency plumbing. Response within 2 hours. Serving Orlando, Kissimmee, Sanford, and 15 more cities."
+            directAnswer="FiveServ Property Solutions provides licensed plumbing services for property managers and homeowners across Central Florida — including leak repair, pipe replacement, water heater installation, drain cleaning, toilet and fixture repair, and 24/7 emergency plumbing response."
+            supportingFacts="Serves multifamily property managers and residential homeowners. 15+ years combined experience. Licensed plumbing contractors under FiveServ coordination. 24/7 emergency availability — 2-hour on-site response target for burst pipes, sewer backups, and no-water calls. One call, one invoice. Serving Orlando, Kissimmee, Sanford, Winter Park, Lakeland, Altamonte Springs, Apopka, Ocoee, Winter Garden, Clermont, St. Cloud, Davenport, Deltona, Daytona Beach, Palm Coast, Melbourne, Palm Bay, and Cocoa, FL."
           />
         </div>
       </section>
