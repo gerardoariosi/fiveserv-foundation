@@ -244,10 +244,10 @@ const TestimonialsSection = () => {
             Testimonials collected directly from clients via email and phone.
           </p>
           <Link
-            to="/reviews"
+            to="/contact"
             className="inline-block rounded-lg bg-brand-black px-8 py-4 text-sm font-bold uppercase tracking-wide text-white transition-colors hover:bg-gray-800"
           >
-            Read All Reviews →
+            Join 50+ Property Managers Who Trust <BrandName variant="light" />
           </Link>
         </div>
       </div>
