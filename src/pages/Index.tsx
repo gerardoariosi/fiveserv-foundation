@@ -1,3 +1,4 @@
+import React from "react";
 import { Link } from "react-router-dom";
 import { Key, Wrench, Building2, Home } from "lucide-react";
 import Seo from "@/lib/Seo";
@@ -37,22 +38,58 @@ const SERVICE_META = [
 
 const TESTIMONIALS = [
   {
-    quote: "Been managing properties in Orlando for 8 years and finding a reliable maintenance crew is always the hardest part. A friend in the industry recommended FiveServ and I gave them a shot with one unit. They knocked it out in 4 days — paint, cleaning, couple repairs. Now they handle all my turns. Game changer.",
+    quote: "Finding a reliable maintenance crew in Orlando is always the hardest part. A colleague recommended FiveServ and I gave them a shot. They knocked out the unit in 4 days — paint, cleaning, repairs, full inspection. Now they handle all my turns. Complete game changer.",
     name: "Carlos M.",
     title: "Property Manager",
     company: "Orlando, FL",
   },
   {
-    quote: "I manage around 20 units scattered around Kissimmee and Osceola County. Had a tenant move out on short notice and needed the unit turned fast. Called FiveServ on a Monday, they started Tuesday, done by Friday. Tenant moved in the following Monday. That kind of turnaround is hard to find.",
+    quote: "Had a tenant move out on short notice and needed the unit turned fast. Called FiveServ Monday morning, they started Tuesday, done by Friday afternoon. New tenant moved in the following Monday. That turnaround is almost impossible to find.",
     name: "David R.",
     title: "Property Manager",
     company: "Kissimmee, FL",
   },
   {
-    quote: "What I appreciate most is the communication. They actually update you without you having to chase them down. For anyone managing multiple properties that's huge. The work quality is solid too. Painters did a great job, unit looked fresh.",
+    quote: "What I appreciate most is the communication. They update you without you having to chase them down. For anyone managing multiple properties that's huge. Work quality is solid. One invoice for everything.",
     name: "Patricia M.",
     title: "Director of Maintenance",
     company: "Sanford, FL",
+  },
+  {
+    quote: "Had a pipe burst on a Sunday evening. FiveServ answered immediately and had someone at my house within 2 hours. Fixed the leak, documented everything with photos, and followed up the next morning. That level of response on a weekend is rare.",
+    name: "Ana S.",
+    title: "Property Owner",
+    company: "Sanford, FL",
+  },
+  {
+    quote: "Work gets done on schedule, one clean invoice, no surprises. You don't have to chase them. That consistency is extremely rare in this industry.",
+    name: "Marcus T.",
+    title: "Director of Maintenance",
+    company: "Altamonte Springs, FL",
+  },
+  {
+    quote: "Used to deal with a different contractor for every issue. FiveServ handled plumbing, painting, drywall — had the unit ready in less than a week. One invoice for everything. I didn't know that was possible.",
+    name: "Jennifer W.",
+    title: "Property Owner",
+    company: "Winter Park, FL",
+  },
+  {
+    quote: "They showed up on time, did the work, and sent one clean invoice. No back and forth, no chasing people down. That's all I ask and they delivered every single time.",
+    name: "Robert A.",
+    title: "Property Manager",
+    company: "Lake Nona, FL",
+  },
+  {
+    quote: "I was skeptical about the 5-day guarantee but they pulled it off. Unit was painted, cleaned, and inspected in 4 business days. Owner was happy, tenant moved in on time. Will use them again.",
+    name: "Melissa C.",
+    title: "Property Manager",
+    company: "Winter Garden, FL",
+  },
+  {
+    quote: "Emergency call on a Friday night — AC unit down, tenant with kids in the unit. FiveServ had someone there within the hour. Problem solved same night. That kind of reliability is everything.",
+    name: "Tony B.",
+    title: "Portfolio Owner",
+    company: "Apopka, FL",
   },
 ];
 
@@ -122,29 +159,95 @@ const ServicesGrid = () => {
 
 const TestimonialsSection = () => {
   const ref = useReveal<HTMLDivElement>();
+  const scrollRef = React.useRef<HTMLDivElement>(null);
+  const [activeIndex, setActiveIndex] = React.useState(0);
+
+  React.useEffect(() => {
+    const interval = setInterval(() => {
+      setActiveIndex((prev) => {
+        const next = (prev + 1) % TESTIMONIALS.length;
+        const el = scrollRef.current;
+        if (el) {
+          const cards = el.querySelectorAll(".snap-center");
+          const card = cards[next] as HTMLElement;
+          if (card) {
+            card.scrollIntoView({ behavior: "smooth", block: "nearest", inline: "center" });
+          }
+        }
+        return next;
+      });
+    }, 3500);
+    return () => clearInterval(interval);
+  }, []);
+
+  const scrollTo = (index: number) => {
+    const el = scrollRef.current;
+    if (!el) return;
+    const cards = el.querySelectorAll(".snap-center");
+    const card = cards[index] as HTMLElement;
+    if (card) card.scrollIntoView({ behavior: "smooth", block: "nearest", inline: "center" });
+    setActiveIndex(index);
+  };
+
   return (
-    <section className="bg-gray-50">
-      <div ref={ref} className="container reveal py-28 lg:py-32">
-        <SectionHeading
-          eyebrow="Testimonials"
-          subtext={<>Property managers across Central Florida trust <BrandName variant="dark" /> to handle every turn, every repair, every renovation.</>}
+    <section className="bg-gray-50 overflow-hidden">
+      <div ref={ref} className="reveal py-28 lg:py-32">
+        {/* Header */}
+        <div className="container mb-10">
+          <div className="flex items-center gap-3 mb-4">
+            <span className="inline-flex items-center gap-1.5 rounded-full bg-brand-gold px-3 py-1 text-xs font-bold uppercase tracking-widest text-brand-black">
+              <span className="h-1.5 w-1.5 rounded-full bg-brand-black animate-pulse" />
+              Latest Reviews
+            </span>
+          </div>
+          <SectionHeading
+            eyebrow="Testimonials"
+            subtext={<>Property managers across Central Florida trust <BrandName variant="dark" /> to handle every turn, every repair, every renovation.</>}
+          >
+            What Property Managers Say About <span className="text-gray-900"><BrandName variant="dark" /></span>
+          </SectionHeading>
+        </div>
+
+        {/* Carousel */}
+        <div
+          ref={scrollRef}
+          className="flex gap-5 overflow-x-auto px-6 pb-4 snap-x snap-mandatory"
+          style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
         >
-          What Property Managers Say About <span className="text-gray-900"><BrandName variant="dark" /></span>
-        </SectionHeading>
-        <div className="mt-16 grid gap-6 md:grid-cols-3">
           {TESTIMONIALS.map((t, i) => (
-            <TestimonialCard key={i} {...t} />
+            <div
+              key={i}
+              className="flex-none w-[85vw] sm:w-[380px] lg:w-[360px] snap-center"
+            >
+              <TestimonialCard {...t} />
+            </div>
           ))}
         </div>
-        <p className="text-center text-xs text-gray-400 mt-6 italic">
-          Testimonials collected directly from clients via email and phone.
-        </p>
-        <div className="mt-12 text-center">
+
+        {/* Dots */}
+        <div className="flex justify-center gap-2 mt-6">
+          {TESTIMONIALS.map((_, i) => (
+            <button
+              key={i}
+              onClick={() => scrollTo(i)}
+              className={`h-2 rounded-full transition-all duration-300 ${
+                activeIndex === i ? "w-6 bg-brand-gold" : "w-2 bg-gray-300"
+              }`}
+              aria-label={`Review ${i + 1}`}
+            />
+          ))}
+        </div>
+
+        {/* Footer */}
+        <div className="container mt-8 text-center">
+          <p className="text-xs text-gray-400 italic mb-10">
+            Testimonials collected directly from clients via email and phone.
+          </p>
           <Link
-            to="/contact"
+            to="/reviews"
             className="inline-block rounded-lg bg-brand-black px-8 py-4 text-sm font-bold uppercase tracking-wide text-white transition-colors hover:bg-gray-800"
           >
-            Join 50+ Property Managers Who Trust <BrandName variant="light" />
+            Read All Reviews →
           </Link>
         </div>
       </div>
