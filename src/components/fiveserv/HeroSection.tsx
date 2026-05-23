@@ -97,15 +97,15 @@ export const HeroSection = ({
 
       <div className="relative z-10 flex items-center pt-32 pb-10 sm:py-14 lg:py-20" style={{ minHeight: heroVisibleHeight }}>
         <div ref={ref} className="container reveal">
-          <h1 className="text-3xl text-brand-white sm:text-4xl lg:text-6xl leading-tight">
-            Property Maintenance Central Florida —
+          <h1 className="text-3xl text-brand-white sm:text-4xl lg:text-6xl leading-tight text-center">
+            Property Maintenance Central Florida
             <span className="block text-brand-gold italic">Five Days. One Call. Done.</span>
           </h1>
-          <p className="mt-5 max-w-2xl text-base sm:text-lg lg:text-xl text-gray-300 leading-relaxed sm:leading-[1.75]">
+          <p className="mt-5 max-w-2xl text-base sm:text-lg lg:text-xl text-gray-300 leading-relaxed sm:leading-[1.75] text-center mx-auto">
             Painting, plumbing, electrical, HVAC, drywall, flooring, make-ready, and renovations. Property managers and homeowners across Central Florida — one team handles it all. No vendor chaos. No surprises on the invoice.
           </p>
 
-          <div className="mt-7 flex flex-col sm:flex-row gap-3 w-full sm:w-auto">
+          <div className="mt-7 flex flex-col sm:flex-row gap-3 w-full sm:w-auto justify-center">
             <button
               type="button"
               onClick={scrollToForm}
@@ -129,7 +129,7 @@ export const HeroSection = ({
             </a>
           </div>
 
-          <ul className="mt-8 sm:mt-10 flex flex-wrap items-center gap-x-4 gap-y-2 text-xs sm:text-sm font-medium text-brand-white">
+          <ul className="mt-8 sm:mt-10 flex flex-wrap items-center justify-center gap-x-4 gap-y-2 text-xs sm:text-sm font-medium text-brand-white">
             {TRUST.map((t, i) => (
               <li key={t} className="flex items-center gap-2 sm:gap-3">
                 {i > 0 && <span aria-hidden className="text-brand-gold">|</span>}
