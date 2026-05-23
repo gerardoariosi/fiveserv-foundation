@@ -176,7 +176,9 @@ const TestimonialsSection = () => {
           const cards = el.querySelectorAll(".snap-center");
           const card = cards[next] as HTMLElement;
           if (card) {
-            card.scrollIntoView({ behavior: "smooth", block: "nearest", inline: "center" });
+            const containerLeft = el.getBoundingClientRect().left;
+            const cardLeft = card.getBoundingClientRect().left;
+            el.scrollLeft += cardLeft - containerLeft;
           }
         }
         return next;
