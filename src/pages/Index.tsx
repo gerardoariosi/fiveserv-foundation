@@ -192,7 +192,11 @@ const TestimonialsSection = () => {
     if (!el) return;
     const cards = el.querySelectorAll(".snap-center");
     const card = cards[index] as HTMLElement;
-    if (card) card.scrollIntoView({ behavior: "smooth", block: "nearest", inline: "center" });
+    if (card) {
+      const containerLeft = el.getBoundingClientRect().left;
+      const cardLeft = card.getBoundingClientRect().left;
+      el.scrollBy({ left: cardLeft - containerLeft, behavior: "smooth" });
+    }
     setActiveIndex(index);
   };
 
