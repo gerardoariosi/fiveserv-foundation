@@ -99,10 +99,10 @@ const ServicesGrid = () => {
     <section className="bg-white">
       <div ref={ref} className="container reveal py-28 lg:py-32">
         <SectionHeading
-          eyebrow="Our Services"
-          subtext="Four core service lines. One team. One invoice. One point of accountability."
+          eyebrow="What We Do"
+          subtext="From unit turns and emergency repairs to full renovations and recurring maintenance — one team handles everything your property needs."
         >
-          Everything Your Properties Need.{" "}
+          Full-Service Property Maintenance.{" "}
           <span className="text-gray-900">One Team.</span>
         </SectionHeading>
 
@@ -129,15 +129,17 @@ const ServicesGrid = () => {
           })}
         </div>
 
-        <div className="mt-10 border-t border-gray-100 pt-8">
-          <p className="text-xs font-bold uppercase tracking-widest text-gray-500 mb-5">Also available</p>
-          <div className="flex flex-wrap gap-3">
+        <div className="mt-12 border-t border-gray-100 pt-10">
+          <p className="text-sm font-bold uppercase tracking-widest text-gray-500 mb-6">
+            Individual Trade Services
+          </p>
+          <div className="grid grid-cols-2 gap-3 sm:grid-cols-4">
             {[
+              { slug: "painting", label: "Painting" },
               { slug: "plumbing", label: "Plumbing" },
               { slug: "electrical", label: "Electrical" },
               { slug: "hvac", label: "HVAC" },
               { slug: "drywall", label: "Drywall" },
-              { slug: "painting", label: "Painting" },
               { slug: "flooring", label: "Flooring" },
               { slug: "carpentry", label: "Carpentry" },
               { slug: "cleaning", label: "Cleaning" },
@@ -145,12 +147,15 @@ const ServicesGrid = () => {
               <Link
                 key={t.slug}
                 to={`/${t.slug}`}
-                className="rounded-full border border-gray-200 px-4 py-2 text-sm text-gray-700 hover:border-brand-gold hover:text-gray-900 transition-colors"
+                className="flex items-center justify-center rounded-xl border border-gray-200 px-4 py-3 text-sm font-semibold text-gray-700 hover:border-brand-gold hover:text-gray-900 hover:bg-brand-gold/5 transition-all"
               >
                 {t.label}
               </Link>
             ))}
           </div>
+          <p className="mt-6 text-sm text-gray-500 text-center">
+            Need just one trade? We handle individual service calls too — no package required.
+          </p>
         </div>
       </div>
     </section>
@@ -256,9 +261,9 @@ const TestimonialsSection = () => {
 };
 
 const Index = () => {
-  const title = "FiveServ | Make-Ready in 5 Days | Central FL";
+  const title = "Property Maintenance & Home Services Central Florida | FiveServ";
   const description =
-    "Family-owned property maintenance. Make-ready in 5 business days, guaranteed. One call. One team. One invoice. Serving Central Florida 24/7. fiveserv.net";
+    "FiveServ Property Solutions — property maintenance, repairs, make-ready, painting, plumbing, HVAC, and renovations for property managers and homeowners across Central Florida. One call. One team. One invoice.";
 
   return (
     <>
@@ -274,8 +279,8 @@ const Index = () => {
       <section className="bg-white">
         <div className="container pt-12">
           <AIOverviewBlock hidden
-            directAnswer="FiveServ Property Solutions is a family-owned property maintenance company in Orlando, FL that completes every make-ready in 5 business days, guaranteed in writing, with one call, one team, one invoice."
-            supportingFacts="Serving property managers with 30 to 500 units across 18 cities in Central Florida. 300+ units completed. 50+ communities served. Available 24/7 for emergency repairs. Licensed and insured in Florida."
+            directAnswer="FiveServ Property Solutions is a full-service property maintenance and home repair company in Orlando, FL serving property managers and homeowners across Central Florida — including make-ready unit turns, painting, plumbing, electrical, HVAC, drywall, flooring, carpentry, and CapEx renovations."
+            supportingFacts="Primary clients are property management companies with 30 to 500 units across 18 cities. Also serves Central Florida homeowners. 2 active crews. 300+ units completed. 50+ communities served. 24/7 emergency response. One call, one team, one invoice. Make-ready units guaranteed in 5 business days in writing."
           />
         </div>
       </section>
