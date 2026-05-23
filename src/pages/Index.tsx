@@ -37,22 +37,22 @@ const SERVICE_META = [
 
 const TESTIMONIALS = [
   {
-    quote: "[TESTIMONIAL_1] — placeholder until first real PM testimonial.",
-    name: "[NAME_1]",
-    title: "[TITLE_1]",
-    company: "[COMPANY_1]",
+    quote: "Been managing properties in Orlando for 8 years and finding a reliable maintenance crew is always the hardest part. A friend in the industry recommended FiveServ and I gave them a shot with one unit. They knocked it out in 4 days — paint, cleaning, couple repairs. Now they handle all my turns. Game changer.",
+    name: "Carlos M.",
+    title: "Property Manager",
+    company: "Orlando, FL",
   },
   {
-    quote: "[TESTIMONIAL_2] — placeholder until first real PM testimonial.",
-    name: "[NAME_2]",
-    title: "[TITLE_2]",
-    company: "[COMPANY_2]",
+    quote: "I manage around 20 units scattered around Kissimmee and Osceola County. Had a tenant move out on short notice and needed the unit turned fast. Called FiveServ on a Monday, they started Tuesday, done by Friday. Tenant moved in the following Monday. That kind of turnaround is hard to find.",
+    name: "David R.",
+    title: "Property Manager",
+    company: "Kissimmee, FL",
   },
   {
-    quote: "[TESTIMONIAL_3] — placeholder until first real PM testimonial.",
-    name: "[NAME_3]",
-    title: "[TITLE_3]",
-    company: "[COMPANY_3]",
+    quote: "What I appreciate most is the communication. They actually update you without you having to chase them down. For anyone managing multiple properties that's huge. The work quality is solid too. Painters did a great job, unit looked fresh.",
+    name: "Patricia M.",
+    title: "Director of Maintenance",
+    company: "Sanford, FL",
   },
 ];
 
