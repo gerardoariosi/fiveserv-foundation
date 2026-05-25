@@ -271,7 +271,7 @@ const ForPropertyManagersPage = () => {
       </section>
 
       {/* WHY FIVESERV */}
-      <section className="bg-gray-50">
+      <section className="bg-white">
         <div className="container py-24 lg:py-28">
           <SectionHeading
             eyebrow="Why Choose Us"
