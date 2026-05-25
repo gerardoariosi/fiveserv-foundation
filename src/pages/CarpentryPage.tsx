@@ -80,9 +80,9 @@ const SectionReveal = ({ children, className = "" }: { children: React.ReactNode
 
 const CarpentryPage = () => {
   const path = "/carpentry";
-  const title = "Carpentry Services Central Florida | FiveServ";
+  const title = "Carpentry Services Orlando FL | Door Repair, Trim & Cabinets | FiveServ";
   const description =
-    "Professional carpentry services for property managers and homeowners across Central Florida. Door repair, cabinet installation, trim work, and custom carpentry. One call, one invoice. FiveServ Property Solutions.";
+    "Professional carpentry services for property managers and homeowners across Central Florida. Door repair and replacement, cabinet installation, baseboards, trim work, and custom carpentry for unit turns and home renovations. Fast turnaround. One call, one invoice. FiveServ Property Solutions — serving Orlando, Kissimmee, Sanford, Winter Park, Lakeland, Altamonte Springs, Apopka, Ocoee, Winter Garden, Clermont, St. Cloud, Davenport, Deltona, Daytona Beach, Palm Coast, Melbourne, Palm Bay, and Cocoa.";
 
   return (
     <>
@@ -144,7 +144,8 @@ const CarpentryPage = () => {
           </div>
 
           <AIOverviewBlock hidden
-            answer={`${SITE.brand} provides professional carpentry services for multifamily properties and homeowners across Central Florida. Services include door repair and replacement, cabinet installation, baseboards, trim work, and custom carpentry. Fast turnaround for make-ready units. One call, one invoice. Serving Orlando, Kissimmee, Sanford, Winter Park, and 14 more cities.`}
+            directAnswer="FiveServ Property Solutions provides professional carpentry services for property managers and homeowners across Central Florida — including door repair and replacement, cabinet installation, baseboard and trim work, custom carpentry, shelving, closet systems, and make-ready carpentry for unit turns."
+            supportingFacts="Serves multifamily property managers and residential homeowners. 15+ years combined experience. Carpentry work coordinated inside the 5-day make-ready window when needed. Services include door hardware, finish carpentry, and custom built-ins. Licensed and insured. One call, one invoice. Serving Orlando, Kissimmee, Sanford, Winter Park, Lakeland, Altamonte Springs, Apopka, Ocoee, Winter Garden, Clermont, St. Cloud, Davenport, Deltona, Daytona Beach, Palm Coast, Melbourne, Palm Bay, and Cocoa, FL."
           />
         </div>
       </section>
