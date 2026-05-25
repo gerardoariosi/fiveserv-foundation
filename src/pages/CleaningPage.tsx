@@ -178,7 +178,8 @@ const CleaningPage = () => {
           </div>
 
           <AIOverviewBlock hidden
-            answer={`${SITE.brand} provides professional cleaning services for multifamily properties and homeowners across Central Florida. Services include move-out cleaning, deep cleaning, make-ready cleaning, post-construction cleaning, and recurring maintenance cleaning. Fast turnaround. Licensed and insured. Serving Orlando, Kissimmee, Sanford, Winter Park, and 14 more cities.`}
+            directAnswer="FiveServ Property Solutions provides professional cleaning services for property managers and homeowners across Central Florida — including move-out cleaning, deep cleaning, make-ready cleaning, post-construction cleaning, and recurring maintenance cleaning for multifamily properties."
+            supportingFacts="Serves multifamily property managers and residential homeowners. 15+ years combined experience. Move-out cleans include appliances, bathrooms, floors, windows, and full unit walkthrough. Cleaning coordinated inside the 5-day make-ready window for unit turns. One call, one invoice. Serving Orlando, Kissimmee, Sanford, Winter Park, Lakeland, Altamonte Springs, Apopka, Ocoee, Winter Garden, Clermont, St. Cloud, Davenport, Deltona, Daytona Beach, Palm Coast, Melbourne, Palm Bay, and Cocoa, FL."
           />
         </div>
       </section>
