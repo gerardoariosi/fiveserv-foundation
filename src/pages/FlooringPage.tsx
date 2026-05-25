@@ -24,6 +24,7 @@ import { SITE, CITIES } from "@/lib/site-config";
 import AIOverviewBlock from "@/components/fiveserv/AIOverviewBlock";
 import StatsBar from "@/components/fiveserv/StatsBar";
 import FaqAccordion from "@/components/fiveserv/FaqAccordion";
+import { FLOORING_FAQS } from "@/lib/service-faqs";
 import ContactCTA from "@/components/fiveserv/ContactCTA";
 import { useReveal } from "@/hooks/use-fiveserv";
 import BrandName from "@/components/fiveserv/BrandName";
@@ -43,48 +44,6 @@ const PROCESS = [
   { icon: Camera, name: "Photo Report", text: "Unit ready, photos delivered. PMs get portfolio-ready documentation. Homeowners get peace of mind." },
 ];
 
-const FLOORING_FAQS = [
-  {
-    q: "What flooring types do you install in rental properties?",
-    a: `Luxury vinyl plank (LVP) is our most-recommended floor for multifamily rentals. We also install ceramic and porcelain tile, carpet, hardwood and engineered wood, plus full removal, subfloor repair, and prep on every job.`,
-  },
-  {
-    q: "What is the best flooring for rental apartments in Florida?",
-    a: `Luxury vinyl plank (LVP) is the #1 choice for Florida rentals — waterproof, scratch-resistant, easy to clean, easy to replace plank-by-plank, and presents like wood. ${SITE.brand} recommends LVP for nearly every unit turn unless an owner spec calls for tile or carpet.`,
-  },
-  {
-    q: "How long does flooring installation take?",
-    a: `A typical 1- or 2-bedroom apartment in LVP runs 1–2 business days including removal and subfloor prep. Tile runs 2–4 days with mortar and grout cure time. Whole-home installs typically run 3–5 days depending on square footage and material.`,
-  },
-  {
-    q: "Does flooring replacement increase rental value?",
-    a: `Yes. New flooring is one of the highest-ROI upgrades in multifamily — Central Florida operators typically see 10–15% rent uplift on units that move from old carpet or worn vinyl to fresh LVP, plus faster lease-up and lower turn cost on the next move-out.`,
-  },
-  {
-    q: "Do you handle flooring removal and disposal?",
-    a: `Yes. ${SITE.brand} handles full tear-out of any existing flooring — carpet and pad, glued or click-lock vinyl, tile, hardwood — plus dump fees and disposal. One invoice covers removal and install.`,
-  },
-  {
-    q: "Can you install flooring in occupied units?",
-    a: `Yes — for homeowner jobs and PM repair work. We coordinate furniture moving, work room-by-room when needed, and protect the rest of the home during install. For full unit turns we strongly recommend installing during the make-ready window when the unit is vacant.`,
-  },
-  {
-    q: "Do you install flooring for homeowners?",
-    a: `Yes. ${SITE.brand} installs flooring for homeowners across Central Florida — full-home replacements, single-room upgrades, and refresh projects. The same crews that handle multifamily portfolios, with material and color consultation included.`,
-  },
-  {
-    q: "How much does flooring installation cost in Central Florida?",
-    a: `Pricing depends on material grade, square footage, removal scope, and subfloor condition. LVP typically runs the most cost-effective per square foot installed; tile is highest. We quote line-item before any work starts so material, install, removal, and prep are all transparent.`,
-  },
-  {
-    q: "Do you repair subfloor before installation?",
-    a: `Yes — and we always check first. Soft spots, water damage, height mismatches, and old adhesive all get addressed before new flooring goes down. Skipping subfloor prep is the #1 cause of failed flooring installs.`,
-  },
-  {
-    q: "What cities do you serve for flooring services?",
-    a: `We provide flooring across all 18 Central Florida cities we cover: Orlando, Kissimmee, Sanford, Winter Park, Lakeland, Altamonte Springs, Apopka, Ocoee, Winter Garden, Clermont, St. Cloud, Davenport, Deltona, Daytona Beach, Palm Coast, Melbourne, Palm Bay, and Cocoa.`,
-  },
-];
 
 const SectionReveal = ({ children, className = "" }: { children: React.ReactNode; className?: string }) => {
   const ref = useReveal<HTMLDivElement>();
@@ -414,7 +373,7 @@ const FlooringPage = () => {
       </section>
 
       {/* FAQ */}
-      <FaqAccordion faqs={FLOORING_FAQS} emitSchema={false} />
+      <FaqAccordion title="Flooring Questions — Answered" faqs={FLOORING_FAQS} emitSchema={false} />
 
       {/* Internal links */}
       <section className="bg-gray-50">

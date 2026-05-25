@@ -19,6 +19,7 @@ import { SITE, CITIES } from "@/lib/site-config";
 import AIOverviewBlock from "@/components/fiveserv/AIOverviewBlock";
 import StatsBar from "@/components/fiveserv/StatsBar";
 import FaqAccordion from "@/components/fiveserv/FaqAccordion";
+import { DRYWALL_FAQS } from "@/lib/service-faqs";
 import ContactCTA from "@/components/fiveserv/ContactCTA";
 import { useReveal } from "@/hooks/use-fiveserv";
 import BrandName from "@/components/fiveserv/BrandName";
@@ -32,40 +33,6 @@ const SERVICES_GRID = [
   { icon: Key, title: "Make-Ready Drywall Prep", desc: "Walk every wall and ceiling. Repair, prime, prep — included in every make-ready turn." },
 ];
 
-const DRYWALL_FAQS = [
-  {
-    q: "What types of drywall damage do you repair?",
-    a: `Everything you'd see in a multifamily turn or repair call: doorknob holes, fist holes, anchor blowouts, settling cracks, corner bead damage, ceiling cracks, water-stained ceilings, full water-damaged sections, popped fasteners, and full sheet or ceiling replacements.`,
-  },
-  {
-    q: "Can you match existing wall texture?",
-    a: `Yes. ${SITE.brand} matches smooth, orange peel, knockdown, and popcorn textures so repairs are invisible after paint. Texture matching is part of every make-ready and standalone drywall repair we run.`,
-  },
-  {
-    q: "How fast can you complete drywall repairs?",
-    a: `Standard patches and texture matching are typically completed in 1–2 business days including dry time. Larger water-damage assemblies and full panel replacements run 2–5 days depending on scope and paint coordination.`,
-  },
-  {
-    q: "Is drywall included in your make-ready service?",
-    a: `Yes. Every ${SITE.brand} make-ready includes a full drywall inspection and standard repair scope — no separate contractor, no separate invoice, no scheduling conflicts. Drywall, paint, cleaning, and final inspection are coordinated as one workflow.`,
-  },
-  {
-    q: "Do you handle water damage drywall repair?",
-    a: `Yes. We cut out compromised drywall, dry the cavity, address the source if needed (coordinated with our plumbing and HVAC teams), then replace, tape, finish, prime, and prep for paint. Documented for insurance when required.`,
-  },
-  {
-    q: "How do I get a drywall repair quote?",
-    a: `Call ${SITE.phone}, email ${SITE.email}, or fill out the form on this page. Same-day assessment in the Orlando metro core. Line-item quote before any work begins — no surprise charges.`,
-  },
-  {
-    q: "Do you provide one invoice for drywall work?",
-    a: `Yes. ${SITE.brand} sends one consolidated invoice — no surprise charges, no per-trade billing. Line-itemed by unit, building, or work order so your accounting team can code it cleanly.`,
-  },
-  {
-    q: "What cities do you serve for drywall repair?",
-    a: `We provide drywall repair across all 18 Central Florida cities we cover: Orlando, Kissimmee, Sanford, Winter Park, Lakeland, Altamonte Springs, Apopka, Ocoee, Winter Garden, Clermont, St. Cloud, Davenport, Deltona, Daytona Beach, Palm Coast, Melbourne, Palm Bay, and Cocoa.`,
-  },
-];
 
 const SectionReveal = ({ children, className = "" }: { children: React.ReactNode; className?: string }) => {
   const ref = useReveal<HTMLDivElement>();
@@ -331,7 +298,7 @@ const DrywallPage = () => {
       </section>
 
       {/* FAQ */}
-      <FaqAccordion faqs={DRYWALL_FAQS} emitSchema={false} />
+      <FaqAccordion title="Drywall Questions — Answered" faqs={DRYWALL_FAQS} emitSchema={false} />
 
       {/* Internal links */}
       <section className="bg-gray-50">
