@@ -240,8 +240,38 @@ const ForPropertyManagersPage = () => {
         </div>
       </section>
 
-      {/* WHY FIVESERV */}
+      {/* CAPACITY */}
       <section className="bg-white">
+        <div className="container py-24 lg:py-28">
+          <SectionHeading
+            eyebrow="Built to Scale"
+            subtext="Property managers with 30 to 500 units trust FiveServ because we have the capacity to handle volume without breaking down."
+          >
+            Real Capacity. Real Crews. Real Results.
+          </SectionHeading>
+
+          <div className="mt-16 grid gap-8 md:grid-cols-2 lg:grid-cols-4">
+            {[
+              { stat: "2+", label: "Active Crews", sub: "Ready to mobilize across 18 cities" },
+              { stat: "5–10", label: "Units Per Week", sub: "Simultaneous make-readies handled" },
+              { stat: "300+", label: "Units Completed", sub: "Across Central Florida portfolios" },
+              { stat: "15+", label: "Years Experience", sub: "Combined trade experience in Florida" },
+            ].map((item) => (
+              <div key={item.label} className="flex flex-col items-center justify-center rounded-2xl bg-brand-black p-8 text-center">
+                <p className="font-display text-5xl font-black text-brand-gold">{item.stat}</p>
+                <p className="mt-3 text-base font-bold text-white">{item.label}</p>
+                <p className="mt-2 text-sm text-gray-400">{item.sub}</p>
+              </div>
+            ))}
+          </div>
+          <p className="mt-10 text-center text-sm text-gray-500">
+            Need more volume? We scale crews on demand for peak seasons and large portfolios.
+          </p>
+        </div>
+      </section>
+
+      {/* WHY FIVESERV */}
+      <section className="bg-gray-50">
         <div className="container py-24 lg:py-28">
           <SectionHeading
             eyebrow="Why Choose Us"
@@ -263,6 +293,57 @@ const ForPropertyManagersPage = () => {
               </div>
             ))}
           </div>
+        </div>
+      </section>
+
+      {/* OLD WAY VS FIVESERV */}
+      <section className="bg-gray-50">
+        <div className="container py-24 lg:py-28">
+          <SectionHeading
+            eyebrow="The Honest Comparison"
+            subtext="Most property managers are still running maintenance the old way. Here is what that looks like versus working with FiveServ."
+          >
+            The Old Way vs <BrandName variant="dark" />
+          </SectionHeading>
+          <div className="mt-16 overflow-x-auto rounded-2xl border border-gray-100 shadow-sm">
+            <table className="w-full text-sm">
+              <thead>
+                <tr className="bg-brand-black text-white">
+                  <th className="p-5 text-left font-display font-bold text-base"></th>
+                  <th className="p-5 text-left font-display font-bold text-base text-gray-400">The Old Way</th>
+                  <th className="p-5 text-left font-display font-bold text-base text-brand-gold">FiveServ</th>
+                </tr>
+              </thead>
+              <tbody className="divide-y divide-gray-100 bg-white">
+                {[
+                  ["Vendors per property", "4 to 8 different contractors", "1 — FiveServ handles everything"],
+                  ["Invoices per job", "One per trade, per visit", "One clean invoice, always"],
+                  ["Who coordinates the work", "You do — calls, follow-ups, scheduling", "We do — you just approve the quote"],
+                  ["Make-ready timeline", "10 to 14 days on average", "5 business days for standard units"],
+                  ["Emergency response", "Depends on which vendor picks up", "2-hour target, 24 hours a day, 7 days a week"],
+                  ["Accountability when something goes wrong", "Everyone points fingers", "One call to us — we make it right"],
+                  ["Reporting to property owners", "Multiple vendor summaries", "One report, one invoice, easy to forward"],
+                  ["Scaling across a portfolio", "More units means more vendor chaos", "Same system works at 30 or 500 units"],
+                  ["Written service guarantee", "Rarely", "Yes — always in writing"],
+                  ["Licensed and insured", "Varies by vendor", "Yes — FiveServ Group LLC, fully licensed and insured in Florida"],
+                ].map(([feature, oldWay, fiveserv]) => (
+                  <tr key={feature} className="even:bg-gray-50/60 hover:bg-amber-50/30 transition-colors">
+                    <td className="p-5 font-semibold text-brand-black align-top">{feature}</td>
+                    <td className="p-5 text-gray-500 align-top">{oldWay}</td>
+                    <td className="p-5 text-gray-900 font-medium align-top">
+                      <span className="flex items-start gap-2">
+                        <CheckCircle2 className="h-4 w-4 text-brand-gold mt-0.5 flex-shrink-0" />
+                        {fiveserv}
+                      </span>
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+          <p className="mt-8 text-center text-sm text-gray-500">
+            Ready to switch to a better system? Call us or fill out the form below.
+          </p>
         </div>
       </section>
 
