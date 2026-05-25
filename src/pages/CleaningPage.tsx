@@ -111,9 +111,9 @@ const SectionReveal = ({ children, className = "" }: { children: React.ReactNode
 
 const CleaningPage = () => {
   const path = "/cleaning";
-  const title = "Cleaning Services Central Florida | FiveServ";
+  const title = "Cleaning Services Orlando FL | Move-Out & Deep Cleaning | FiveServ";
   const description =
-    "Professional move-out cleaning and deep cleaning for property managers and homeowners across Central Florida. Make-ready cleaning, deep cleans, post-construction cleaning. One call, one invoice. FiveServ Property Solutions.";
+    "Professional cleaning services for property managers and homeowners across Central Florida. Move-out cleaning, deep cleaning, make-ready cleaning, post-construction cleaning, and recurring maintenance cleaning. Fast turnaround for unit turns. One call, one invoice. FiveServ Property Solutions — serving Orlando, Kissimmee, Sanford, Winter Park, Lakeland, Altamonte Springs, Apopka, Ocoee, Winter Garden, Clermont, St. Cloud, Davenport, Deltona, Daytona Beach, Palm Coast, Melbourne, Palm Bay, and Cocoa.";
 
   return (
     <>
