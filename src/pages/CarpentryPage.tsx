@@ -80,9 +80,9 @@ const SectionReveal = ({ children, className = "" }: { children: React.ReactNode
 
 const CarpentryPage = () => {
   const path = "/carpentry";
-  const title = "Carpentry Services Central Florida | FiveServ";
+  const title = "Carpentry Services Orlando FL | Door Repair, Trim & Cabinets | FiveServ";
   const description =
-    "Professional carpentry services for property managers and homeowners across Central Florida. Door repair, cabinet installation, trim work, and custom carpentry. One call, one invoice. FiveServ Property Solutions.";
+    "Professional carpentry services for property managers and homeowners across Central Florida. Door repair and replacement, cabinet installation, baseboards, trim work, and custom carpentry for unit turns and home renovations. Fast turnaround. One call, one invoice. FiveServ Property Solutions — serving Orlando, Kissimmee, Sanford, Winter Park, Lakeland, Altamonte Springs, Apopka, Ocoee, Winter Garden, Clermont, St. Cloud, Davenport, Deltona, Daytona Beach, Palm Coast, Melbourne, Palm Bay, and Cocoa.";
 
   return (
     <>
