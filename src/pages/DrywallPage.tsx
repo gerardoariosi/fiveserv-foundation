@@ -78,9 +78,9 @@ const SectionReveal = ({ children, className = "" }: { children: React.ReactNode
 
 const DrywallPage = () => {
   const path = "/drywall";
-  const title = "Drywall Repair Central Florida | FiveServ";
+  const title = "Drywall Repair Orlando FL | Holes, Water Damage & Finishing | FiveServ";
   const description =
-    "Professional drywall repair for multifamily properties across Central Florida. Holes, cracks, water damage, full replacements. One call, one invoice.";
+    "Professional drywall repair and installation for property managers and homeowners across Central Florida. Hole patching, crack repair, water damage restoration, texture matching, and full panel replacement. Fast turnaround. One call, one invoice. FiveServ Property Solutions — serving Orlando, Kissimmee, Sanford, Winter Park, Lakeland, Altamonte Springs, Apopka, Ocoee, Winter Garden, Clermont, St. Cloud, Davenport, Deltona, Daytona Beach, Palm Coast, Melbourne, Palm Bay, and Cocoa.";
 
   return (
     <>
