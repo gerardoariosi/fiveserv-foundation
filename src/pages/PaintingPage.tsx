@@ -20,6 +20,7 @@ import { SITE, CITIES } from "@/lib/site-config";
 import AIOverviewBlock from "@/components/fiveserv/AIOverviewBlock";
 import StatsBar from "@/components/fiveserv/StatsBar";
 import FaqAccordion from "@/components/fiveserv/FaqAccordion";
+import { PAINTING_FAQS } from "@/lib/service-faqs";
 import ContactCTA from "@/components/fiveserv/ContactCTA";
 import { useReveal } from "@/hooks/use-fiveserv";
 import BrandName from "@/components/fiveserv/BrandName";
@@ -39,48 +40,6 @@ const PROCESS = [
   { icon: Camera, name: "Photo Report", text: "Unit ready, photos delivered. PMs get a portfolio-ready report. Homeowners get peace of mind." },
 ];
 
-const PAINTING_FAQS = [
-  {
-    q: "Do you paint rental units for property managers?",
-    a: `Yes — multifamily painting is core ${SITE.brand} work. Make-ready repaints, full unit repaints, hallways, common areas, exteriors. Consistent color standards across your portfolio, one point of contact, one invoice.`,
-  },
-  {
-    q: "Is painting included in your make-ready service?",
-    a: `Yes. Every ${SITE.brand} make-ready includes painting — touch-up or full repaint depending on the unit's condition — coordinated with drywall, cleaning, and final inspection. No separate painter, no separate invoice, no scheduling conflicts.`,
-  },
-  {
-    q: "What paint brands do you use?",
-    a: `${SITE.brand} uses Sherwin-Williams premium paints by default — durable, washable, tenant-proof finishes that hold up to multifamily wear. Other brands available on request for owner-spec jobs.`,
-  },
-  {
-    q: "How long does a full unit repaint take?",
-    a: `A standard 1- or 2-bedroom unit repaint runs 1–2 business days inside our make-ready workflow (drywall first, paint second, cleaning third). Larger 3-bedroom or townhome units run 2–3 days. Standalone repaints with no drywall scope are typically faster.`,
-  },
-  {
-    q: "Do you offer exterior painting for apartment complexes?",
-    a: `Yes. Building exteriors, breezeways, stairwells, soffits, fascia, doors, hallways, trim. We handle prep (pressure wash, scrape, prime), full coats, and the documentation owners and asset managers need for capital reporting.`,
-  },
-  {
-    q: "Can you match existing paint colors?",
-    a: `Yes. We pull color matches from existing walls or from owner-spec sheets. For PM portfolios with a standard palette, we maintain the spec across every turn so units stay consistent.`,
-  },
-  {
-    q: "Do you paint homes for homeowners?",
-    a: `Yes. ${SITE.brand} works directly with homeowners — interior rooms, full home repaints, accent walls, exteriors. The same crews that turn 500-unit communities, now at your home. Color consultation included.`,
-  },
-  {
-    q: "How much does interior painting cost in Central Florida?",
-    a: `Pricing depends on square footage, ceiling height, prep work, paint grade, and trim/door count. For a typical Central Florida 1-bedroom rental repaint, expect a flat per-unit rate that covers walls, ceilings, and standard prep. We quote line-item before any work starts.`,
-  },
-  {
-    q: "Do you offer color consultation?",
-    a: `Yes — included on every job. Homeowners get a personalized palette walk-through. PMs get tenant-proof color recommendations and portfolio palette options that hold up over multiple turns.`,
-  },
-  {
-    q: "What cities do you serve for painting services?",
-    a: `We provide painting across all 18 Central Florida cities we cover: Orlando, Kissimmee, Sanford, Winter Park, Lakeland, Altamonte Springs, Apopka, Ocoee, Winter Garden, Clermont, St. Cloud, Davenport, Deltona, Daytona Beach, Palm Coast, Melbourne, Palm Bay, and Cocoa.`,
-  },
-];
 
 const SectionReveal = ({ children, className = "" }: { children: React.ReactNode; className?: string }) => {
   const ref = useReveal<HTMLDivElement>();
@@ -409,7 +368,7 @@ const PaintingPage = () => {
       </section>
 
       {/* FAQ */}
-      <FaqAccordion faqs={PAINTING_FAQS} emitSchema={false} />
+      <FaqAccordion title="Painting Questions — Answered" faqs={PAINTING_FAQS} emitSchema={false} />
 
       {/* Internal links */}
       <section className="bg-gray-50">

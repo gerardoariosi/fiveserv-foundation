@@ -22,6 +22,7 @@ import { SITE, CITIES } from "@/lib/site-config";
 import AIOverviewBlock from "@/components/fiveserv/AIOverviewBlock";
 import StatsBar from "@/components/fiveserv/StatsBar";
 import FaqAccordion from "@/components/fiveserv/FaqAccordion";
+import { CLEANING_FAQS } from "@/lib/service-faqs";
 import ContactCTA from "@/components/fiveserv/ContactCTA";
 import { useReveal } from "@/hooks/use-fiveserv";
 import BrandName from "@/components/fiveserv/BrandName";
@@ -57,48 +58,6 @@ const RESIDENTIAL_CHECKLIST = [
   "Optional: laundry and organizing",
 ];
 
-const CLEANING_FAQS = [
-  {
-    q: "Is cleaning included in your make-ready service?",
-    a: `Yes. Every ${SITE.brand} make-ready includes a full move-out deep clean — no separate cleaning vendor, no second invoice, no scheduling conflict. Cleaning runs as the final step after drywall and paint, inside the 5-day make-ready window, with a photo report on completion.`,
-  },
-  {
-    q: "What does a move-out cleaning include?",
-    a: `Our 40-point move-out clean covers the full kitchen and appliances (inside the oven, fridge, microwave, dishwasher), bathrooms scrubbed and sanitized, all floors mopped and vacuumed, baseboards, blinds, window sills, inside cabinets and drawers, walls spot-cleaned, trash removal, and a photo report on completion.`,
-  },
-  {
-    q: "How long does a move-out cleaning take?",
-    a: `A standard 1- or 2-bedroom unit move-out clean runs 3–5 hours. Larger 3-bedroom and townhome units run 5–8 hours. Inside the make-ready workflow, cleaning is scheduled as the final pass after drywall and paint so the unit is delivered turn-key.`,
-  },
-  {
-    q: "Do you offer deep cleaning for homeowners?",
-    a: `Yes. ${SITE.brand} works directly with Central Florida homeowners on whole-home deep cleans, move-in / move-out cleans, post-renovation cleans, and recurring weekly or bi-weekly service. Same crews that turn 500-unit communities, now at your home.`,
-  },
-  {
-    q: "Do you clean Airbnb and short-term rentals?",
-    a: `Yes. Central Florida is one of the largest Airbnb markets in the US, and we provide fast back-to-back turn cleaning for short-term rental hosts — linen reset, restock check, photo report, and same-day service available between bookings.`,
-  },
-  {
-    q: "How fast can you schedule a cleaning?",
-    a: `Same-day or next-day service is typically available across the Orlando metro core, and within 24–48 hours across the rest of the 18-city service area. Make-ready cleans are scheduled inside the 5-day make-ready window automatically.`,
-  },
-  {
-    q: "Do you provide a cleaning checklist?",
-    a: `Yes. Every move-out clean follows a 40-point checklist, available as a free download on this page. Property managers receive a photo report on completion that documents every checklist item — verifiable, portfolio-ready proof of work.`,
-  },
-  {
-    q: "Do you offer recurring cleaning services?",
-    a: `Yes — weekly, bi-weekly, and monthly recurring service for homeowners and short-term rental hosts. Same crew, same checklist, consistent standard. One invoice on a schedule that works for you.`,
-  },
-  {
-    q: "How much does move-out cleaning cost in Central Florida?",
-    a: `Pricing depends on unit size, condition, and scope (standard move-out vs. post-construction). For a typical Central Florida 1-bedroom move-out clean inside the make-ready workflow, expect a flat per-unit rate. We quote line-item before any work starts.`,
-  },
-  {
-    q: "What cities do you serve for cleaning services?",
-    a: `We provide cleaning services across all 18 Central Florida cities we cover: Orlando, Kissimmee, Sanford, Winter Park, Lakeland, Altamonte Springs, Apopka, Ocoee, Winter Garden, Clermont, St. Cloud, Davenport, Deltona, Daytona Beach, Palm Coast, Melbourne, Palm Bay, and Cocoa.`,
-  },
-];
 
 const SectionReveal = ({ children, className = "" }: { children: React.ReactNode; className?: string }) => {
   const ref = useReveal<HTMLDivElement>();
@@ -487,7 +446,7 @@ const CleaningPage = () => {
       </section>
 
       {/* FAQ */}
-      <FaqAccordion faqs={CLEANING_FAQS} emitSchema={false} />
+      <FaqAccordion title="Cleaning Questions — Answered" faqs={CLEANING_FAQS} emitSchema={false} />
 
       {/* Lead Magnet — 40-point checklist */}
       <section className="bg-gray-50">

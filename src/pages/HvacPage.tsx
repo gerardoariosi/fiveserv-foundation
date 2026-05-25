@@ -21,6 +21,7 @@ import { SITE, CITIES } from "@/lib/site-config";
 import AIOverviewBlock from "@/components/fiveserv/AIOverviewBlock";
 import StatsBar from "@/components/fiveserv/StatsBar";
 import FaqAccordion from "@/components/fiveserv/FaqAccordion";
+import { HVAC_FAQS } from "@/lib/service-faqs";
 import ContactCTA from "@/components/fiveserv/ContactCTA";
 import { useReveal } from "@/hooks/use-fiveserv";
 import BrandName from "@/components/fiveserv/BrandName";
@@ -34,40 +35,6 @@ const SERVICES_GRID = [
   { icon: AlertTriangle, title: "Emergency HVAC 24/7", desc: "No cool in Florida heat is an emergency. We answer. We move. 2-hour response." },
 ];
 
-const HVAC_FAQS = [
-  {
-    q: "Do you offer emergency HVAC services in Florida?",
-    a: `Yes. ${SITE.brand} answers the phone 24/7 — no cool, no heat, water from the air handler, breaker tripping the AC. Real human, day or night, weekends and holidays. On-site response within 2 hours across the Orlando metro core.`,
-  },
-  {
-    q: "Are your HVAC technicians licensed in Florida?",
-    a: `Yes. All HVAC work is performed by Florida-licensed Class A or B mechanical contractors under ${SITE.brand} coordination. We handle dispatch, scope, scheduling, EPA-certified refrigerant work, and one consolidated invoice. FiveServ Group LLC is fully licensed and insured in the state of Florida.`,
-  },
-  {
-    q: "How fast do you respond to an AC emergency?",
-    a: `2-hour on-site response 24/7 across the Orlando metro core (Orlando, Kissimmee, Winter Park, Altamonte Springs, Apopka, Ocoee, Winter Garden). Outer-ring cities respond within 4 hours for true emergencies.`,
-  },
-  {
-    q: "Is a landlord required to provide AC in Florida?",
-    a: `Florida Statute 83.51 requires landlords to maintain habitable conditions, and most local codes plus virtually every Florida lease treat working air conditioning as a required habitability standard. Failure to repair AC promptly can trigger lease violations, rent withholding, and code enforcement. ${SITE.brand} keeps your portfolio compliant.`,
-  },
-  {
-    q: "What HVAC services do you offer for apartments?",
-    a: `AC repair and diagnostics, full unit replacement, condenser and air handler swaps, mini-splits, filter and coil maintenance programs, duct cleaning and repair, thermostat installation (standard, programmable, smart), and 24/7 emergency HVAC.`,
-  },
-  {
-    q: "How do I submit an HVAC work order?",
-    a: `Call ${SITE.phone}, email ${SITE.email}, or fill out the contact form on this page. PM clients can submit batch work orders in a single email — we triage by urgency (no-cool calls jump the queue) and confirm scheduling within 24 hours.`,
-  },
-  {
-    q: "Do you handle HVAC for multiple properties?",
-    a: `Yes. ${SITE.brand} runs portfolio-wide HVAC programs — quarterly filter changes, preventive maintenance, on-call repair, and capital replacements — across single buildings up to 500-unit communities in Central Florida. One point of contact, one invoice cycle.`,
-  },
-  {
-    q: "What cities do you serve for HVAC services?",
-    a: `We provide HVAC services across all 18 Central Florida cities we cover: Orlando, Kissimmee, Sanford, Winter Park, Lakeland, Altamonte Springs, Apopka, Ocoee, Winter Garden, Clermont, St. Cloud, Davenport, Deltona, Daytona Beach, Palm Coast, Melbourne, Palm Bay, and Cocoa.`,
-  },
-];
 
 const SectionReveal = ({ children, className = "" }: { children: React.ReactNode; className?: string }) => {
   const ref = useReveal<HTMLDivElement>();
@@ -329,7 +296,7 @@ const HvacPage = () => {
       </section>
 
       {/* FAQ */}
-      <FaqAccordion faqs={HVAC_FAQS} emitSchema={false} />
+      <FaqAccordion title="HVAC Questions — Answered" faqs={HVAC_FAQS} emitSchema={false} />
 
       {/* Internal links */}
       <section className="bg-gray-50">

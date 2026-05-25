@@ -21,6 +21,7 @@ import { SITE, CITIES } from "@/lib/site-config";
 import AIOverviewBlock from "@/components/fiveserv/AIOverviewBlock";
 import StatsBar from "@/components/fiveserv/StatsBar";
 import FaqAccordion from "@/components/fiveserv/FaqAccordion";
+import { CARPENTRY_FAQS } from "@/lib/service-faqs";
 import ContactCTA from "@/components/fiveserv/ContactCTA";
 import { useReveal } from "@/hooks/use-fiveserv";
 import BrandName from "@/components/fiveserv/BrandName";
@@ -34,40 +35,6 @@ const SERVICES_GRID = [
   { icon: Hammer, title: "Custom Carpentry", desc: "Built-ins, decks, fence repair, accent walls, board-and-batten. One-off owner-spec jobs." },
 ];
 
-const CARPENTRY_FAQS = [
-  {
-    q: "What carpentry services do you offer for rental properties?",
-    a: `${SITE.brand} handles all interior carpentry on multifamily units — door repair and replacement, cabinet repair, baseboard and trim work, shelving, and punch-list custom work. Coordinated with drywall and paint so the unit comes back as one finished package, not piecemeal.`,
-  },
-  {
-    q: "Is carpentry included in your make-ready service?",
-    a: `Yes. Damaged doors, broken cabinets, and missing trim are the most common punch-list items on unit turns, so carpentry is part of every make-ready assessment. No separate carpenter, no separate invoice — it moves with drywall, paint, and cleaning inside the 5-day window.`,
-  },
-  {
-    q: "Can you replace apartment doors?",
-    a: `Yes — interior doors, closet doors, exterior doors, and frames. We match existing door size, style, and hardware so the replacement is invisible. Includes hinges, latch, strike plate, and weatherstripping where applicable.`,
-  },
-  {
-    q: "Do you repair kitchen cabinets in rental units?",
-    a: `Yes. Re-hang doors, replace hinges and pulls, fix drawer slides, repair or swap damaged faces, and re-secure cabinet boxes. For cabinets past repair, we install replacements that match the existing kitchen so the unit stays consistent.`,
-  },
-  {
-    q: "How fast can you complete carpentry repairs?",
-    a: `Most punch-list carpentry — door swaps, trim sections, cabinet hardware — is completed in a single visit. Larger scopes like full cabinet replacement or full unit re-trim run inside the make-ready window alongside drywall and paint.`,
-  },
-  {
-    q: "Do you offer carpentry services for homeowners?",
-    a: `Yes. ${SITE.brand} works directly with Central Florida homeowners on door replacement, custom cabinet installs, trim and molding, shelving and storage solutions, deck and fence repair, and one-off custom carpentry. Same crews that handle multifamily portfolios.`,
-  },
-  {
-    q: "How do I get a carpentry quote?",
-    a: `Send the request through our quote form or call ${SITE.phone}. We schedule an on-site assessment, walk the scope, and return a clear line-itemed quote — labor, materials, and timeline — before any work starts.`,
-  },
-  {
-    q: "What cities do you serve for carpentry services?",
-    a: `We provide carpentry across all 18 Central Florida cities we cover: Orlando, Kissimmee, Sanford, Winter Park, Lakeland, Altamonte Springs, Apopka, Ocoee, Winter Garden, Clermont, St. Cloud, Davenport, Deltona, Daytona Beach, Palm Coast, Melbourne, Palm Bay, and Cocoa.`,
-  },
-];
 
 const SectionReveal = ({ children, className = "" }: { children: React.ReactNode; className?: string }) => {
   const ref = useReveal<HTMLDivElement>();
@@ -373,7 +340,7 @@ const CarpentryPage = () => {
       </section>
 
       {/* FAQ */}
-      <FaqAccordion faqs={CARPENTRY_FAQS} emitSchema={false} />
+      <FaqAccordion title="Carpentry Questions — Answered" faqs={CARPENTRY_FAQS} emitSchema={false} />
 
       {/* Internal links */}
       <section className="bg-gray-50">

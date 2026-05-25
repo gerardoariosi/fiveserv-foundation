@@ -20,6 +20,7 @@ import { SITE, CITIES } from "@/lib/site-config";
 import AIOverviewBlock from "@/components/fiveserv/AIOverviewBlock";
 import StatsBar from "@/components/fiveserv/StatsBar";
 import FaqAccordion from "@/components/fiveserv/FaqAccordion";
+import { ELECTRICAL_FAQS } from "@/lib/service-faqs";
 import ContactCTA from "@/components/fiveserv/ContactCTA";
 import { useReveal } from "@/hooks/use-fiveserv";
 import BrandName from "@/components/fiveserv/BrandName";
@@ -33,40 +34,6 @@ const SERVICES_GRID = [
   { icon: AlertTriangle, title: "Emergency Electrical 24/7", desc: "No power, sparking outlets, burning smell, breaker won't reset. We answer. We move." },
 ];
 
-const ELECTRICAL_FAQS = [
-  {
-    q: "Do you offer emergency electrical services?",
-    a: `Yes. ${SITE.brand} answers the phone 24/7 — no power, sparking outlets, burning smell, breaker that won't reset. Real human, day or night, weekends and holidays. On-site response within 2 hours across the Orlando metro core.`,
-  },
-  {
-    q: "Are your electricians licensed in Florida?",
-    a: `Yes. All electrical work is performed by Florida-licensed electrical contractors under ${SITE.brand} coordination. We handle dispatch, scope, scheduling, and one consolidated invoice. FiveServ Group LLC is fully licensed and insured in the state of Florida.`,
-  },
-  {
-    q: "How fast do you respond to an electrical emergency?",
-    a: `2-hour on-site response 24/7 across the Orlando metro core (Orlando, Kissimmee, Winter Park, Altamonte Springs, Apopka, Ocoee, Winter Garden). Outer-ring cities respond within 4 hours for true emergencies.`,
-  },
-  {
-    q: "Do you handle electrical work for multifamily properties?",
-    a: `Yes — multifamily is our core business. ${SITE.brand} works with property managers across single buildings up to 500-unit communities in Central Florida. One point of contact, one invoice cycle, zero vendor chasing.`,
-  },
-  {
-    q: "What electrical services do you offer?",
-    a: `Outlet and switch repair, panel upgrades and breakers, lighting installation, wiring repair and replacement, ceiling fan installation, EV charger setup, code corrections, and 24/7 emergency electrical.`,
-  },
-  {
-    q: "How do I submit an electrical work order?",
-    a: `Call ${SITE.phone}, email ${SITE.email}, or fill out the contact form on this page. PM clients can submit batch work orders in a single email — we triage by urgency and confirm scheduling within 24 hours.`,
-  },
-  {
-    q: "Do you provide one invoice for electrical work?",
-    a: `Yes. ${SITE.brand} sends one consolidated invoice — no surprise charges, no per-trade billing. Line-itemed by unit, building, or work order so your accounting team can code it cleanly.`,
-  },
-  {
-    q: "What cities do you serve for electrical services?",
-    a: `We provide electrical services across all 18 Central Florida cities we cover: Orlando, Kissimmee, Sanford, Winter Park, Lakeland, Altamonte Springs, Apopka, Ocoee, Winter Garden, Clermont, St. Cloud, Davenport, Deltona, Daytona Beach, Palm Coast, Melbourne, Palm Bay, and Cocoa.`,
-  },
-];
 
 const SectionReveal = ({ children, className = "" }: { children: React.ReactNode; className?: string }) => {
   const ref = useReveal<HTMLDivElement>();
@@ -341,7 +308,7 @@ const ElectricalPage = () => {
       </section>
 
       {/* FAQ */}
-      <FaqAccordion faqs={ELECTRICAL_FAQS} emitSchema={false} />
+      <FaqAccordion title="Electrical Questions — Answered" faqs={ELECTRICAL_FAQS} emitSchema={false} />
 
       {/* Internal links */}
       <section className="bg-gray-50">
