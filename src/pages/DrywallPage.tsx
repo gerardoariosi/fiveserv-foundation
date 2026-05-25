@@ -78,9 +78,9 @@ const SectionReveal = ({ children, className = "" }: { children: React.ReactNode
 
 const DrywallPage = () => {
   const path = "/drywall";
-  const title = "Drywall Repair Central Florida | FiveServ";
+  const title = "Drywall Repair Orlando FL | Holes, Water Damage & Finishing | FiveServ";
   const description =
-    "Professional drywall repair for multifamily properties across Central Florida. Holes, cracks, water damage, full replacements. One call, one invoice.";
+    "Professional drywall repair and installation for property managers and homeowners across Central Florida. Hole patching, crack repair, water damage restoration, texture matching, and full panel replacement. Fast turnaround. One call, one invoice. FiveServ Property Solutions — serving Orlando, Kissimmee, Sanford, Winter Park, Lakeland, Altamonte Springs, Apopka, Ocoee, Winter Garden, Clermont, St. Cloud, Davenport, Deltona, Daytona Beach, Palm Coast, Melbourne, Palm Bay, and Cocoa.";
 
   return (
     <>
@@ -143,6 +143,11 @@ const DrywallPage = () => {
           />
         </div>
       </section>
+
+      <AIOverviewBlock hidden
+        directAnswer="FiveServ Property Solutions provides professional drywall repair and installation for property managers and homeowners across Central Florida — including hole patching, crack repair, water damage restoration, texture matching, full panel replacement, and make-ready drywall prep."
+        supportingFacts="Serves multifamily property managers and residential homeowners. 15+ years combined experience. Texture matching available — smooth, orange peel, knockdown, and popcorn. Drywall work coordinated inside the 5-day make-ready window when needed. Licensed and insured. One call, one invoice. Serving Orlando, Kissimmee, Sanford, Winter Park, Lakeland, Altamonte Springs, Apopka, Ocoee, Winter Garden, Clermont, St. Cloud, Davenport, Deltona, Daytona Beach, Palm Coast, Melbourne, Palm Bay, and Cocoa, FL."
+      />
 
       {/* Problem section */}
       <section className="bg-gray-50">
