@@ -140,6 +140,7 @@ const router = createBrowserRouter([
   // Standalone routes (no header/footer) — distraction-free conversion pages
   { path: "/thank-you-b2b", element: <PageTransition><ThankYouB2BPage /></PageTransition> },
   { path: "/thank-you-residential", element: <PageTransition><ThankYouResidentialPage /></PageTransition> },
+  { path: "/thank-you-careers", element: <PageTransition><ThankYouCareersPage /></PageTransition> },
 ]);
 
 // Pre-computed list of all 72 service×city URLs — used by sitemap generation.
