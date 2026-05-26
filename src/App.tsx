@@ -118,6 +118,9 @@ const router = createBrowserRouter([
       // Reviews — SEO/AEO page (not in nav)
       { path: "reviews", element: <ReviewsPage /> },
 
+      // Careers
+      { path: "careers", element: <CareersPage /> },
+
       // Service x City — 72 dynamic pages (legacy/internal pattern)
       ...SERVICES.map((s) => ({ path: `${s.slug}/:city`, element: <ServiceCityPage /> })),
 
