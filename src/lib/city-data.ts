@@ -86,7 +86,7 @@ export const CITY_EDITORIAL: Partial<Record<CitySlug, CityEditorial>> = {
       ...extendedFaqs("Kissimmee", ["US-192 corridor", "Poinciana", "Celebration adjacent"]),
       {
         q: "Do you have Spanish-speaking technicians for Kissimmee residents?",
-        a: `Yes. ${SITE.brand} is a family — our entire team is bilingual English and Spanish. Residents and on-site staff in Kissimmee get clear communication every time.`,
+        a: `Yes. ${SITE.brand} has a fully bilingual team — English and Spanish. Residents and on-site staff in Kissimmee get clear communication every time.`,
       },
     ],
   },
