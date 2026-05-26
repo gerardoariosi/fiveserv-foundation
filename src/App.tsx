@@ -28,6 +28,7 @@ import BlogPage from "./pages/BlogPage";
 import BlogArticlePage from "./pages/BlogArticlePage";
 import ThankYouB2BPage from "./pages/ThankYouB2BPage";
 import ThankYouResidentialPage from "./pages/ThankYouResidentialPage";
+import ThankYouCareersPage from "./pages/ThankYouCareersPage";
 import TermsPage from "./pages/TermsPage";
 import WorkPolicyPage from "./pages/WorkPolicyPage";
 import PrivacyPage from "./pages/PrivacyPage";
