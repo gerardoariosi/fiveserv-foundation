@@ -1,11 +1,11 @@
 # FiveServ Property Solutions
 > Family-owned property maintenance and make-ready in Central Florida. Make-ready in 5 business days, guaranteed in writing. One call. One team. One invoice. fiveserv.net
 
-FiveServ Property Solutions is a Venezuelan-American family-owned property maintenance company based in Orlando, FL, serving property management companies and multifamily owners across 18 cities in Central Florida. We complete every make-ready in 5 business days, guaranteed in writing, and provide 24/7 emergency maintenance.
+FiveServ Property Solutions is a family-owned property maintenance company based in Orlando, FL, serving property management companies and multifamily owners across 18 cities in Central Florida. We complete every make-ready in 5 business days, guaranteed in writing, and provide 24/7 emergency maintenance.
 
 ## Pages
 - [Home](/): Family-owned property maintenance and make-ready in Central Florida.
-- [About](/about): Venezuelan-American family-owned company, 15+ years combined experience.
+- [About](/about): family-owned company, 15+ years combined experience.
 - [Services](/services): All FiveServ property maintenance services overview.
 - [Make-Ready](/make-ready): 5-day make-ready and unit turn services, guaranteed.
 - [Maintenance](/maintenance): 24/7 multifamily property maintenance and repairs.
@@ -56,7 +56,7 @@ FiveServ specializes in multifamily communities of 30 to 500 units — property 
 - 50+ multifamily communities served
 - 18 cities covered across Central Florida
 - 15+ years combined trade experience
-- Venezuelan-American family of 5 — name on every job
+- family of 5 — name on every job
 - One call, one team, one invoice — every project
 
 ## Target Client

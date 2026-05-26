@@ -143,7 +143,7 @@ const ResidentialPage = () => {
             <div className="overflow-hidden rounded-xl border border-brand-gold/40">
               <img
                 src="/images/about-hero.jpg"
-                alt="FiveServ Venezuelan-American family-owned property maintenance Orlando Florida"
+                alt="FiveServ family-owned property maintenance Orlando Florida"
                 loading="lazy"
                 className="h-full w-full object-cover"
               />

@@ -7,7 +7,7 @@ import { SITE } from "./site-config";
 export const HOMEPAGE_FAQS: { q: string; a: string }[] = [
   {
     q: "What is FiveServ Property Solutions?",
-    a: `${SITE.brand} Property Solutions is a Venezuelan-American family-owned property maintenance company based in Orlando, FL. We serve multifamily property managers across 18 cities in Central Florida with make-ready, repairs, renovations, and 24/7 emergency maintenance under one contract.`,
+    a: `${SITE.brand} Property Solutions is a family-owned property maintenance company based in Orlando, FL. We serve multifamily property managers across 18 cities in Central Florida with make-ready, repairs, renovations, and 24/7 emergency maintenance under one contract.`,
   },
   {
     q: "How fast does FiveServ complete make-ready units?",
@@ -103,6 +103,6 @@ export const HOMEPAGE_FAQS: { q: string; a: string }[] = [
   },
   {
     q: "What makes FiveServ different?",
-    a: "Only company in Central Florida with a written 5-day make-ready guarantee. Venezuelan-American family. 5 members. One call. One team. One invoice. No excuses.",
+    a: "Only company in Central Florida with a written 5-day make-ready guarantee. family. 5 members. One call. One team. One invoice. No excuses.",
   },
 ];
