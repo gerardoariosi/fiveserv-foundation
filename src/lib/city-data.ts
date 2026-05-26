@@ -80,13 +80,13 @@ export const CITY_EDITORIAL: Partial<Record<CitySlug, CityEditorial>> = {
     zips: ["34741", "34743", "34744"],
     responseMinutes: 35,
     heroImage: "/images/cities/kissimmee.jpg",
-    angle: `Kissimmee has one of Central Florida's largest Hispanic communities. ${SITE.brand} is a Venezuelan-American family business with a fully bilingual team — English and Spanish — which is a real advantage in this market for both residents and on-site staff. We know the US-192 corridor, the Celebration-adjacent communities, and the Poinciana market.`,
+    angle: `Kissimmee has one of Central Florida's largest Hispanic communities. ${SITE.brand} is a family business with a fully bilingual team — English and Spanish — which is a real advantage in this market for both residents and on-site staff. We know the US-192 corridor, the Celebration-adjacent communities, and the Poinciana market.`,
     faqs: [
       ...baseFaqs("Kissimmee", ["34741", "34743", "34744"], 35, ["US-192 corridor", "Celebration adjacent", "Poinciana"]),
       ...extendedFaqs("Kissimmee", ["US-192 corridor", "Poinciana", "Celebration adjacent"]),
       {
         q: "Do you have Spanish-speaking technicians for Kissimmee residents?",
-        a: `Yes. ${SITE.brand} is a Venezuelan-American family — our entire team is bilingual English and Spanish. Residents and on-site staff in Kissimmee get clear communication every time.`,
+        a: `Yes. ${SITE.brand} is a family — our entire team is bilingual English and Spanish. Residents and on-site staff in Kissimmee get clear communication every time.`,
       },
     ],
   },

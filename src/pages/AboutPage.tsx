@@ -41,9 +41,9 @@ const AboutPage = () => {
   ];
   const activeMember = TEAM_MEMBERS.find((m) => m.name === openMember);
   const title = `About ${SITE.brand} | Family-Owned Maintenance Orlando FL`;
-  const description = `${SITE.brand} — Venezuelan-American family-owned property maintenance in Orlando, FL. 10+ years experience. 18 cities across Central Florida.`;
+  const description = `${SITE.brand} — family-owned property maintenance in Orlando, FL. 10+ years experience. 18 cities across Central Florida.`;
 
-  const aiAnswer = `${SITE.brand} Property Solutions is a Venezuelan-American family-owned property maintenance company based in Orlando, Florida. A family-owned team with 10+ years in property maintenance serves property managers across Central Florida.`;
+  const aiAnswer = `${SITE.brand} Property Solutions is a family-owned property maintenance company based in Orlando, Florida. A family-owned team with 10+ years in property maintenance serves property managers across Central Florida.`;
 
   return (
     <>
@@ -81,7 +81,7 @@ const AboutPage = () => {
             </p>
 
             <ul className="mt-6 flex flex-wrap items-center gap-x-6 gap-y-3 text-sm font-medium text-white">
-              {["Venezuelan-American Family", "Licensed & Insured", "5-Day Guarantee", "18 Cities Served"].map((t, i) => (
+              {["Family-Owned", "Licensed & Insured", "5-Day Guarantee", "18 Cities Served"].map((t, i) => (
                 <li key={t} className="flex items-center gap-3">
                   {i > 0 && <span aria-hidden className="text-brand-gold">|</span>}
                   <span>{t}</span>
@@ -107,7 +107,7 @@ const AboutPage = () => {
             </h2>
             <div className="space-y-4 text-gray-700">
               <p>
-                We are a Venezuelan-American family. We started in property maintenance because we believed
+                We are a family. We started in property maintenance because we believed
                 the multifamily industry deserved better — faster turns, clearer communication, one accountable
                 team instead of a chain of subcontractors and excuses.
               </p>

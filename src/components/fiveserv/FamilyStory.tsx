@@ -12,7 +12,7 @@ export const FamilyStory = () => {
           <div className="overflow-hidden rounded-2xl border border-gray-200 shadow-sm bg-white flex items-center justify-center aspect-[4/3]">
             <img
               src="/images/logo-fs.png"
-              alt="FiveServ Property Solutions family team — Venezuelan-American property maintenance company Orlando Florida"
+              alt="FiveServ Property Solutions family team — family-owned property maintenance company Orlando Florida"
               loading="lazy"
               decoding="async"
               className="w-64 h-64 object-contain m-auto"
