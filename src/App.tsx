@@ -44,6 +44,7 @@ import FiveServVsHandymanPage from "./pages/FiveServVsHandymanPage";
 import MakeReadyVsDIYPage from "./pages/MakeReadyVsDIYPage";
 import ForPropertyManagersPage from "./pages/ForPropertyManagersPage";
 import ReviewsPage from "./pages/ReviewsPage";
+import CareersPage from "./pages/CareersPage";
 
 import { SERVICES, CITIES } from "@/lib/site-config";
 
@@ -116,6 +117,9 @@ const router = createBrowserRouter([
 
       // Reviews — SEO/AEO page (not in nav)
       { path: "reviews", element: <ReviewsPage /> },
+
+      // Careers
+      { path: "careers", element: <CareersPage /> },
 
       // Service x City — 72 dynamic pages (legacy/internal pattern)
       ...SERVICES.map((s) => ({ path: `${s.slug}/:city`, element: <ServiceCityPage /> })),

@@ -7,7 +7,7 @@
  * `formId` / `name` / `height` for one-offs.
  */
 
-type Variant = "b2b" | "b2c" | "checklist" | "scorecard";
+type Variant = "b2b" | "b2c" | "checklist" | "scorecard" | "careers";
 
 const FORMS: Record<
   Variant,
@@ -36,6 +36,12 @@ const FORMS: Record<
     name: "Lead Magnet Vendor Scorecard",
     height: 626,
     title: "Lead Magnet Vendor Scorecard",
+  },
+  careers: {
+    id: "IJEymPuYgnwlp3rjlAbJ",
+    name: "Careers Application",
+    height: 820,
+    title: "Careers Application",
   },
 };
 
