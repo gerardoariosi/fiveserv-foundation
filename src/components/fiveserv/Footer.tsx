@@ -107,6 +107,7 @@ export const Footer = () => {
         {/* Bottom area */}
         <div className="pt-2 space-y-4 text-center md:text-left">
           <nav className="flex flex-wrap justify-center gap-x-6 gap-y-2 text-xs md:justify-start">
+            <Link to="/careers" className="text-white/60 hover:text-brand-gold">Careers</Link>
             <Link to="/privacy" className="text-white/60 hover:text-brand-gold">Privacy Policy</Link>
             <Link to="/terms" className="text-white/60 hover:text-brand-gold">Terms of Service</Link>
             <Link to="/work-policy" className="text-white/60 hover:text-brand-gold">Work Policy</Link>
