@@ -144,7 +144,10 @@ const ResidentialPage = () => {
               <img
                 src="/images/about-hero.jpg"
                 alt="FiveServ family-owned property maintenance Orlando Florida"
+                width={1200}
+                height={800}
                 loading="lazy"
+                decoding="async"
                 className="h-full w-full object-cover"
               />
             </div>
