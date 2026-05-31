@@ -1,3 +1,4 @@
+import { lazy, Suspense } from "react";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import { HelmetProvider } from "react-helmet-async";
@@ -7,44 +8,55 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 import PageTransition from "@/components/fiveserv/PageTransition";
 
 import RootLayout from "./layouts/RootLayout";
+// Homepage stays eagerly imported so it ships in the initial bundle (LCP).
 import Index from "./pages/Index";
-import NotFound from "./pages/NotFound";
-import ServicePage from "./pages/ServicePage";
-import CityPage from "./pages/CityPage";
-import ServiceCityPage from "./pages/ServiceCityPage";
-import PlaceholderPage from "./pages/PlaceholderPage";
-import MakeReadyPage from "./pages/MakeReadyPage";
-import MaintenancePage from "./pages/MaintenancePage";
-import RenovationsPage from "./pages/RenovationsPage";
-import ResidentialPage from "./pages/ResidentialPage";
-import MaintenanceCityPage from "./pages/MaintenanceCityPage";
-import TampaBayPage from "./pages/TampaBayPage";
-import ContactPage from "./pages/ContactPage";
-import AboutPage from "./pages/AboutPage";
-import FaqPage from "./pages/FaqPage";
-import ServicesIndexPage from "./pages/ServicesIndexPage";
-import CitiesIndexPage from "./pages/CitiesIndexPage";
-import BlogPage from "./pages/BlogPage";
-import BlogArticlePage from "./pages/BlogArticlePage";
-import ThankYouB2BPage from "./pages/ThankYouB2BPage";
-import ThankYouResidentialPage from "./pages/ThankYouResidentialPage";
-import ThankYouCareersPage from "./pages/ThankYouCareersPage";
-import TermsPage from "./pages/TermsPage";
-import WorkPolicyPage from "./pages/WorkPolicyPage";
-import PrivacyPage from "./pages/PrivacyPage";
-import PlumbingPage from "./pages/PlumbingPage";
-import ElectricalPage from "./pages/ElectricalPage";
-import HvacPage from "./pages/HvacPage";
-import DrywallPage from "./pages/DrywallPage";
-import PaintingPage from "./pages/PaintingPage";
-import FlooringPage from "./pages/FlooringPage";
-import CarpentryPage from "./pages/CarpentryPage";
-import CleaningPage from "./pages/CleaningPage";
-import FiveServVsHandymanPage from "./pages/FiveServVsHandymanPage";
-import MakeReadyVsDIYPage from "./pages/MakeReadyVsDIYPage";
-import ForPropertyManagersPage from "./pages/ForPropertyManagersPage";
-import ReviewsPage from "./pages/ReviewsPage";
-import CareersPage from "./pages/CareersPage";
+
+// All other pages are code-split via React.lazy to shrink the initial JS bundle.
+const NotFound = lazy(() => import("./pages/NotFound"));
+const ServicePage = lazy(() => import("./pages/ServicePage"));
+const CityPage = lazy(() => import("./pages/CityPage"));
+const ServiceCityPage = lazy(() => import("./pages/ServiceCityPage"));
+const PlaceholderPage = lazy(() => import("./pages/PlaceholderPage"));
+const MakeReadyPage = lazy(() => import("./pages/MakeReadyPage"));
+const MaintenancePage = lazy(() => import("./pages/MaintenancePage"));
+const RenovationsPage = lazy(() => import("./pages/RenovationsPage"));
+const ResidentialPage = lazy(() => import("./pages/ResidentialPage"));
+const MaintenanceCityPage = lazy(() => import("./pages/MaintenanceCityPage"));
+const TampaBayPage = lazy(() => import("./pages/TampaBayPage"));
+const ContactPage = lazy(() => import("./pages/ContactPage"));
+const AboutPage = lazy(() => import("./pages/AboutPage"));
+const FaqPage = lazy(() => import("./pages/FaqPage"));
+const ServicesIndexPage = lazy(() => import("./pages/ServicesIndexPage"));
+const CitiesIndexPage = lazy(() => import("./pages/CitiesIndexPage"));
+const BlogPage = lazy(() => import("./pages/BlogPage"));
+const BlogArticlePage = lazy(() => import("./pages/BlogArticlePage"));
+const ThankYouB2BPage = lazy(() => import("./pages/ThankYouB2BPage"));
+const ThankYouResidentialPage = lazy(() => import("./pages/ThankYouResidentialPage"));
+const ThankYouCareersPage = lazy(() => import("./pages/ThankYouCareersPage"));
+const TermsPage = lazy(() => import("./pages/TermsPage"));
+const WorkPolicyPage = lazy(() => import("./pages/WorkPolicyPage"));
+const PrivacyPage = lazy(() => import("./pages/PrivacyPage"));
+const PlumbingPage = lazy(() => import("./pages/PlumbingPage"));
+const ElectricalPage = lazy(() => import("./pages/ElectricalPage"));
+const HvacPage = lazy(() => import("./pages/HvacPage"));
+const DrywallPage = lazy(() => import("./pages/DrywallPage"));
+const PaintingPage = lazy(() => import("./pages/PaintingPage"));
+const FlooringPage = lazy(() => import("./pages/FlooringPage"));
+const CarpentryPage = lazy(() => import("./pages/CarpentryPage"));
+const CleaningPage = lazy(() => import("./pages/CleaningPage"));
+const FiveServVsHandymanPage = lazy(() => import("./pages/FiveServVsHandymanPage"));
+const MakeReadyVsDIYPage = lazy(() => import("./pages/MakeReadyVsDIYPage"));
+const ForPropertyManagersPage = lazy(() => import("./pages/ForPropertyManagersPage"));
+const ReviewsPage = lazy(() => import("./pages/ReviewsPage"));
+const CareersPage = lazy(() => import("./pages/CareersPage"));
+
+const RouteFallback = () => (
+  <div className="min-h-screen w-full bg-background" aria-hidden="true" />
+);
+
+const withSuspense = (node: React.ReactNode) => (
+  <Suspense fallback={<RouteFallback />}>{node}</Suspense>
+);
 
 import { SERVICES, CITIES } from "@/lib/site-config";
 
@@ -76,53 +88,53 @@ const router = createBrowserRouter([
       { index: true, element: <Index /> },
 
       // Top-level placeholders
-      { path: "services", element: <ServicesIndexPage /> },
-      { path: "cities", element: <CitiesIndexPage canonicalPath="/cities" /> },
-      { path: "service-areas", element: <CitiesIndexPage canonicalPath="/service-areas" /> },
-      { path: "about", element: <AboutPage /> },
-      { path: "blog", element: <BlogPage /> },
-      { path: "blog/:slug", element: <BlogArticlePage /> },
-      { path: "contact", element: <ContactPage /> },
-      { path: "faq", element: <FaqPage /> },
-      { path: "privacy", element: <PrivacyPage /> },
-      { path: "terms", element: <TermsPage /> },
-      { path: "work-policy", element: <WorkPolicyPage /> },
+      { path: "services", element: withSuspense(<ServicesIndexPage />) },
+      { path: "cities", element: withSuspense(<CitiesIndexPage canonicalPath="/cities" />) },
+      { path: "service-areas", element: withSuspense(<CitiesIndexPage canonicalPath="/service-areas" />) },
+      { path: "about", element: withSuspense(<AboutPage />) },
+      { path: "blog", element: withSuspense(<BlogPage />) },
+      { path: "blog/:slug", element: withSuspense(<BlogArticlePage />) },
+      { path: "contact", element: withSuspense(<ContactPage />) },
+      { path: "faq", element: withSuspense(<FaqPage />) },
+      { path: "privacy", element: withSuspense(<PrivacyPage />) },
+      { path: "terms", element: withSuspense(<TermsPage />) },
+      { path: "work-policy", element: withSuspense(<WorkPolicyPage />) },
       
 
       // City overview pages (18)
-      { path: "cities/:city", element: <CityPage /> },
+      { path: "cities/:city", element: withSuspense(<CityPage />) },
 
       // Service pages (4) — dedicated pages for make-ready & maintenance, generic template for the rest
-      { path: "make-ready", element: <MakeReadyPage /> },
-      { path: "maintenance", element: <MaintenancePage /> },
-      { path: "renovations", element: <RenovationsPage /> },
-      { path: "residential", element: <ResidentialPage /> },
+      { path: "make-ready", element: withSuspense(<MakeReadyPage />) },
+      { path: "maintenance", element: withSuspense(<MaintenancePage />) },
+      { path: "renovations", element: withSuspense(<RenovationsPage />) },
+      { path: "residential", element: withSuspense(<ResidentialPage />) },
 
       // Trade pages
-      { path: "plumbing", element: <PlumbingPage /> },
-      { path: "electrical", element: <ElectricalPage /> },
-      { path: "hvac", element: <HvacPage /> },
-      { path: "drywall", element: <DrywallPage /> },
-      { path: "painting", element: <PaintingPage /> },
-      { path: "flooring", element: <FlooringPage /> },
-      { path: "carpentry", element: <CarpentryPage /> },
-      { path: "cleaning", element: <CleaningPage /> },
+      { path: "plumbing", element: withSuspense(<PlumbingPage />) },
+      { path: "electrical", element: withSuspense(<ElectricalPage />) },
+      { path: "hvac", element: withSuspense(<HvacPage />) },
+      { path: "drywall", element: withSuspense(<DrywallPage />) },
+      { path: "painting", element: withSuspense(<PaintingPage />) },
+      { path: "flooring", element: withSuspense(<FlooringPage />) },
+      { path: "carpentry", element: withSuspense(<CarpentryPage />) },
+      { path: "cleaning", element: withSuspense(<CleaningPage />) },
 
       // Comparison pages
-      { path: "fiveserv-vs-handyman-orlando", element: <FiveServVsHandymanPage /> },
-      { path: "make-ready-vs-diy-property-management", element: <MakeReadyVsDIYPage /> },
+      { path: "fiveserv-vs-handyman-orlando", element: withSuspense(<FiveServVsHandymanPage />) },
+      { path: "make-ready-vs-diy-property-management", element: withSuspense(<MakeReadyVsDIYPage />) },
 
       // For property managers — dedicated PM landing page
-      { path: "for-property-managers", element: <ForPropertyManagersPage /> },
+      { path: "for-property-managers", element: withSuspense(<ForPropertyManagersPage />) },
 
       // Reviews — SEO/AEO page (not in nav)
-      { path: "reviews", element: <ReviewsPage /> },
+      { path: "reviews", element: withSuspense(<ReviewsPage />) },
 
       // Careers
-      { path: "careers", element: <CareersPage /> },
+      { path: "careers", element: withSuspense(<CareersPage />) },
 
       // Service x City — 72 dynamic pages (legacy/internal pattern)
-      ...SERVICES.map((s) => ({ path: `${s.slug}/:city`, element: <ServiceCityPage /> })),
+      ...SERVICES.map((s) => ({ path: `${s.slug}/:city`, element: withSuspense(<ServiceCityPage />) })),
 
       // City pages (18) — flat URL: /maintenance-orlando-fl, /maintenance-kissimmee-fl, etc.
       // React Router v6 cannot match params embedded in partial path segments
@@ -131,20 +143,20 @@ const router = createBrowserRouter([
       // still reads ":city" via useParams, which we provide by parsing the URL.
       ...CITIES.map((c) => ({
         path: `maintenance-${c.slug}`,
-        element: <MaintenanceCityPage citySlug={c.slug} />,
+        element: withSuspense(<MaintenanceCityPage citySlug={c.slug} />),
       })),
 
       // Tampa Bay coming soon
-      { path: "tampa-bay-fl", element: <TampaBayPage /> },
+      { path: "tampa-bay-fl", element: withSuspense(<TampaBayPage />) },
 
       // Catch-all
-      { path: "*", element: <NotFound /> },
+      { path: "*", element: withSuspense(<NotFound />) },
     ],
   },
   // Standalone routes (no header/footer) — distraction-free conversion pages
-  { path: "/thank-you-b2b", element: <PageTransition><ThankYouB2BPage /></PageTransition> },
-  { path: "/thank-you-residential", element: <PageTransition><ThankYouResidentialPage /></PageTransition> },
-  { path: "/thank-you-careers", element: <PageTransition><ThankYouCareersPage /></PageTransition> },
+  { path: "/thank-you-b2b", element: withSuspense(<PageTransition><ThankYouB2BPage /></PageTransition>) },
+  { path: "/thank-you-residential", element: withSuspense(<PageTransition><ThankYouResidentialPage /></PageTransition>) },
+  { path: "/thank-you-careers", element: withSuspense(<PageTransition><ThankYouCareersPage /></PageTransition>) },
 ]);
 
 // Pre-computed list of all 72 service×city URLs — used by sitemap generation.
