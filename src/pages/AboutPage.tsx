@@ -246,6 +246,7 @@ const AboutPage = () => {
                     width={96}
                     height={96}
                     className="h-full w-full object-cover"
+                    loading="lazy"
                     decoding="async"
                     onError={(e) => {
                       const img = e.currentTarget as HTMLImageElement;
