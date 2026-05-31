@@ -23,6 +23,7 @@ import VisibleQA from "@/components/fiveserv/VisibleQA";
 import { VISIBLE_QA } from "@/lib/visible-qa";
 import LeadMagnetSection from "@/components/fiveserv/LeadMagnetSection";
 import ContactCTA from "@/components/fiveserv/ContactCTA";
+import LazyVisible from "@/components/fiveserv/LazyVisible";
 import BeforeAfterSlider from "@/components/fiveserv/BeforeAfterSlider";
 import TrustBar from "@/components/fiveserv/TrustBar";
 import { useReveal } from "@/hooks/use-fiveserv";
@@ -270,8 +271,12 @@ const Index = () => {
 
       <VisibleQA items={VISIBLE_QA} emitSchema={false} />
       <FaqAccordion faqs={HOMEPAGE_FAQS} emitSchema={false} />
-      <LeadMagnetSection />
-      <ContactCTA />
+      <LazyVisible minHeight={600}>
+        <LeadMagnetSection />
+      </LazyVisible>
+      <LazyVisible minHeight={600}>
+        <ContactCTA />
+      </LazyVisible>
     </>
   );
 };
