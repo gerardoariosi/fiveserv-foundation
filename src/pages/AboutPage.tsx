@@ -175,8 +175,11 @@ const AboutPage = () => {
                       <img
                         src="/images/sofia-avatar.jpg"
                         alt="Sofia — AI Chat Assistant — Available 24/7 at FiveServ Property Solutions Orlando Florida"
+                        width={96}
+                        height={96}
                         className="h-full w-full object-cover"
                         loading="lazy"
+                        decoding="async"
                         onError={(e) => {
                           const img = e.currentTarget as HTMLImageElement;
                           img.style.display = "none";
