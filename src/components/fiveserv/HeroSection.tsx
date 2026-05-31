@@ -23,10 +23,16 @@ type HeroProps = {
 
 export const HeroSection = ({
   videoSrc = "/images/hero-team-working.mp4",
-  posterSrc,
+  posterSrc = "/images/hero-poster.jpg",
 }: HeroProps) => {
   const ref = useReveal<HTMLDivElement>();
   const waHref = `https://wa.me/${SITE.phone.replace(/[^\d]/g, "")}`;
+  const [shouldLoadVideo, setShouldLoadVideo] = useState(false);
+
+  useEffect(() => {
+    const timer = setTimeout(() => setShouldLoadVideo(true), 2000);
+    return () => clearTimeout(timer);
+  }, []);
   // Hero fills the full viewport, starting at the very top behind the transparent header + ticker.
   const heroTopOffset = "calc(-1 * (var(--banner-h, 0px) + 8px))";
   const heroVisibleHeight = "100vh";
