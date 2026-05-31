@@ -971,7 +971,7 @@ const SofiaChat = () => {
                 className="flex justify-start gap-2"
                 style={{ animation: "sofia-fade-in 300ms ease" }}
               >
-                <img src={SOFIA_AVATAR} alt="" aria-hidden className="h-6 w-6 flex-shrink-0 rounded-full object-cover self-end" />
+                <img src={SOFIA_AVATAR} alt="" aria-hidden width={24} height={24} loading="lazy" decoding="async" className="h-6 w-6 flex-shrink-0 rounded-full object-cover self-end" />
                 <div
                   className="px-3 py-2"
                   style={{
