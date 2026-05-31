@@ -23,6 +23,7 @@ import VisibleQA from "@/components/fiveserv/VisibleQA";
 import { VISIBLE_QA } from "@/lib/visible-qa";
 import LeadMagnetSection from "@/components/fiveserv/LeadMagnetSection";
 import ContactCTA from "@/components/fiveserv/ContactCTA";
+import LazyVisible from "@/components/fiveserv/LazyVisible";
 import BeforeAfterSlider from "@/components/fiveserv/BeforeAfterSlider";
 import TrustBar from "@/components/fiveserv/TrustBar";
 import { useReveal } from "@/hooks/use-fiveserv";
