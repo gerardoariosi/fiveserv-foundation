@@ -88,53 +88,53 @@ const router = createBrowserRouter([
       { index: true, element: <Index /> },
 
       // Top-level placeholders
-      { path: "services", element: <ServicesIndexPage /> },
-      { path: "cities", element: <CitiesIndexPage canonicalPath="/cities" /> },
-      { path: "service-areas", element: <CitiesIndexPage canonicalPath="/service-areas" /> },
-      { path: "about", element: <AboutPage /> },
-      { path: "blog", element: <BlogPage /> },
-      { path: "blog/:slug", element: <BlogArticlePage /> },
-      { path: "contact", element: <ContactPage /> },
-      { path: "faq", element: <FaqPage /> },
-      { path: "privacy", element: <PrivacyPage /> },
-      { path: "terms", element: <TermsPage /> },
-      { path: "work-policy", element: <WorkPolicyPage /> },
+      { path: "services", element: withSuspense(<ServicesIndexPage />) },
+      { path: "cities", element: withSuspense(<CitiesIndexPage canonicalPath="/cities" />) },
+      { path: "service-areas", element: withSuspense(<CitiesIndexPage canonicalPath="/service-areas" />) },
+      { path: "about", element: withSuspense(<AboutPage />) },
+      { path: "blog", element: withSuspense(<BlogPage />) },
+      { path: "blog/:slug", element: withSuspense(<BlogArticlePage />) },
+      { path: "contact", element: withSuspense(<ContactPage />) },
+      { path: "faq", element: withSuspense(<FaqPage />) },
+      { path: "privacy", element: withSuspense(<PrivacyPage />) },
+      { path: "terms", element: withSuspense(<TermsPage />) },
+      { path: "work-policy", element: withSuspense(<WorkPolicyPage />) },
       
 
       // City overview pages (18)
-      { path: "cities/:city", element: <CityPage /> },
+      { path: "cities/:city", element: withSuspense(<CityPage />) },
 
       // Service pages (4) — dedicated pages for make-ready & maintenance, generic template for the rest
-      { path: "make-ready", element: <MakeReadyPage /> },
-      { path: "maintenance", element: <MaintenancePage /> },
-      { path: "renovations", element: <RenovationsPage /> },
-      { path: "residential", element: <ResidentialPage /> },
+      { path: "make-ready", element: withSuspense(<MakeReadyPage />) },
+      { path: "maintenance", element: withSuspense(<MaintenancePage />) },
+      { path: "renovations", element: withSuspense(<RenovationsPage />) },
+      { path: "residential", element: withSuspense(<ResidentialPage />) },
 
       // Trade pages
-      { path: "plumbing", element: <PlumbingPage /> },
-      { path: "electrical", element: <ElectricalPage /> },
-      { path: "hvac", element: <HvacPage /> },
-      { path: "drywall", element: <DrywallPage /> },
-      { path: "painting", element: <PaintingPage /> },
-      { path: "flooring", element: <FlooringPage /> },
-      { path: "carpentry", element: <CarpentryPage /> },
-      { path: "cleaning", element: <CleaningPage /> },
+      { path: "plumbing", element: withSuspense(<PlumbingPage />) },
+      { path: "electrical", element: withSuspense(<ElectricalPage />) },
+      { path: "hvac", element: withSuspense(<HvacPage />) },
+      { path: "drywall", element: withSuspense(<DrywallPage />) },
+      { path: "painting", element: withSuspense(<PaintingPage />) },
+      { path: "flooring", element: withSuspense(<FlooringPage />) },
+      { path: "carpentry", element: withSuspense(<CarpentryPage />) },
+      { path: "cleaning", element: withSuspense(<CleaningPage />) },
 
       // Comparison pages
-      { path: "fiveserv-vs-handyman-orlando", element: <FiveServVsHandymanPage /> },
-      { path: "make-ready-vs-diy-property-management", element: <MakeReadyVsDIYPage /> },
+      { path: "fiveserv-vs-handyman-orlando", element: withSuspense(<FiveServVsHandymanPage />) },
+      { path: "make-ready-vs-diy-property-management", element: withSuspense(<MakeReadyVsDIYPage />) },
 
       // For property managers — dedicated PM landing page
-      { path: "for-property-managers", element: <ForPropertyManagersPage /> },
+      { path: "for-property-managers", element: withSuspense(<ForPropertyManagersPage />) },
 
       // Reviews — SEO/AEO page (not in nav)
-      { path: "reviews", element: <ReviewsPage /> },
+      { path: "reviews", element: withSuspense(<ReviewsPage />) },
 
       // Careers
-      { path: "careers", element: <CareersPage /> },
+      { path: "careers", element: withSuspense(<CareersPage />) },
 
       // Service x City — 72 dynamic pages (legacy/internal pattern)
-      ...SERVICES.map((s) => ({ path: `${s.slug}/:city`, element: <ServiceCityPage /> })),
+      ...SERVICES.map((s) => ({ path: `${s.slug}/:city`, element: withSuspense(<ServiceCityPage />) })),
 
       // City pages (18) — flat URL: /maintenance-orlando-fl, /maintenance-kissimmee-fl, etc.
       // React Router v6 cannot match params embedded in partial path segments
@@ -143,20 +143,20 @@ const router = createBrowserRouter([
       // still reads ":city" via useParams, which we provide by parsing the URL.
       ...CITIES.map((c) => ({
         path: `maintenance-${c.slug}`,
-        element: <MaintenanceCityPage citySlug={c.slug} />,
+        element: withSuspense(<MaintenanceCityPage citySlug={c.slug} />),
       })),
 
       // Tampa Bay coming soon
-      { path: "tampa-bay-fl", element: <TampaBayPage /> },
+      { path: "tampa-bay-fl", element: withSuspense(<TampaBayPage />) },
 
       // Catch-all
-      { path: "*", element: <NotFound /> },
+      { path: "*", element: withSuspense(<NotFound />) },
     ],
   },
   // Standalone routes (no header/footer) — distraction-free conversion pages
-  { path: "/thank-you-b2b", element: <PageTransition><ThankYouB2BPage /></PageTransition> },
-  { path: "/thank-you-residential", element: <PageTransition><ThankYouResidentialPage /></PageTransition> },
-  { path: "/thank-you-careers", element: <PageTransition><ThankYouCareersPage /></PageTransition> },
+  { path: "/thank-you-b2b", element: withSuspense(<PageTransition><ThankYouB2BPage /></PageTransition>) },
+  { path: "/thank-you-residential", element: withSuspense(<PageTransition><ThankYouResidentialPage /></PageTransition>) },
+  { path: "/thank-you-careers", element: withSuspense(<PageTransition><ThankYouCareersPage /></PageTransition>) },
 ]);
 
 // Pre-computed list of all 72 service×city URLs — used by sitemap generation.
