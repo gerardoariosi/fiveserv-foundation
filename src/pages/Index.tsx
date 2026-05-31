@@ -271,8 +271,12 @@ const Index = () => {
 
       <VisibleQA items={VISIBLE_QA} emitSchema={false} />
       <FaqAccordion faqs={HOMEPAGE_FAQS} emitSchema={false} />
-      <LeadMagnetSection />
-      <ContactCTA />
+      <LazyVisible minHeight={600}>
+        <LeadMagnetSection />
+      </LazyVisible>
+      <LazyVisible minHeight={600}>
+        <ContactCTA />
+      </LazyVisible>
     </>
   );
 };
