@@ -29,6 +29,9 @@ export const Logo = ({
         alt="FiveServ Property Solutions logo — property maintenance company Orlando Florida"
         width={160}
         height={40}
+        loading="eager"
+        // @ts-expect-error fetchpriority is valid HTML
+        fetchpriority="high"
         decoding="async"
         className={`${imgClassName} ${className}`}
         onError={() => setFailed(true)}
