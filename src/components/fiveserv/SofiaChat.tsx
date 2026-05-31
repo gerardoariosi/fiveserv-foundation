@@ -878,6 +878,10 @@ const SofiaChat = () => {
                   src={SOFIA_AVATAR}
                   alt=""
                   aria-hidden
+                  width={24}
+                  height={24}
+                  loading="lazy"
+                  decoding="async"
                   className="h-6 w-6 flex-shrink-0 rounded-full object-cover self-end"
                 />
                 <div
