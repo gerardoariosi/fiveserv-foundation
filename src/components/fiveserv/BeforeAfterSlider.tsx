@@ -19,8 +19,8 @@ type BeforeAfterSliderProps = {
  * Falls back to solid-color SVG placeholders when image src is missing or fails to load.
  */
 export const BeforeAfterSlider = ({
-  beforeSrc = "/images/before-after/before-unit.jpg",
-  afterSrc = "/images/before-after/after-unit.jpg",
+  beforeSrc = "/images/before-after/before-unit.webp",
+  afterSrc = "/images/before-after/after-unit.webp",
   beforeLabel = "BEFORE",
   afterLabel = "AFTER",
   caption = "Every unit delivered in 5 business days. Guaranteed in writing.",
