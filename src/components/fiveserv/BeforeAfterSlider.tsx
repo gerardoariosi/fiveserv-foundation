@@ -122,8 +122,8 @@ export const BeforeAfterSlider = ({
         <img
           src={afterImg}
           alt="After make-ready unit renovation completed by FiveServ Property Solutions Central Florida"
-          width={1600}
-          height={900}
+          width={650}
+          height={363}
           loading="lazy"
           decoding="async"
           onError={() => setAfterOk(false)}
