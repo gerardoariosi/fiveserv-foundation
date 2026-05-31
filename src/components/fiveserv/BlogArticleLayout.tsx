@@ -9,15 +9,18 @@ import ContactCTA from "./ContactCTA";
 import BrandName from "@/components/fiveserv/BrandName";
 import AIOverviewBlock from "@/components/fiveserv/AIOverviewBlock";
 
-const BlogImage = ({ src, alt, className, loading }: { src: string; alt: string; className?: string; loading?: "eager" | "lazy" }) => {
+const BlogImage = ({ src, alt, className, loading, width = 1200, height = 675 }: { src: string; alt: string; className?: string; loading?: "eager" | "lazy"; width?: number; height?: number }) => {
   const [loaded, setLoaded] = useState(false);
   return (
     <div className={!loaded ? "img-skeleton" : ""}>
       <img
         src={src}
         alt={alt}
+        width={width}
+        height={height}
         className={className}
         loading={loading}
+        decoding="async"
         onLoad={() => setLoaded(true)}
         style={{ opacity: loaded ? 1 : 0, transition: "opacity 0.4s ease" }}
       />
