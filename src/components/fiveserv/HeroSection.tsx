@@ -77,6 +77,8 @@ export const HeroSection = ({
         playsInline
         preload="auto"
         poster={posterSrc}
+        // @ts-expect-error fetchpriority is valid HTML
+        fetchpriority="high"
         className="absolute inset-0 h-full w-full object-cover object-[center_30%] md:object-[center_18%] lg:object-[center_24%] transition-opacity duration-1000 ease-in-out"
         style={{ opacity: activeVideo === "A" ? 1 : 0 }}
       >
