@@ -49,7 +49,7 @@ export const StickyHeader = () => {
       <div className="container flex h-20 items-center justify-between gap-4">
         {/* FS Logo (image fallback shows wordmark itself) */}
         <Link to="/" className="flex items-center gap-2" aria-label="FiveServ home">
-          <Logo variant="dark" imgClassName="h-16 w-auto object-contain" />
+          <Logo variant={isHome && !scrolled ? "light" : "dark"} imgClassName="h-16 w-auto object-contain" />
         </Link>
 
         <nav className="hidden items-center gap-5 md:flex">
