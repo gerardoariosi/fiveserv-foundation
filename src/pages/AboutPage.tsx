@@ -175,8 +175,11 @@ const AboutPage = () => {
                       <img
                         src="/images/sofia-avatar.jpg"
                         alt="Sofia — AI Chat Assistant — Available 24/7 at FiveServ Property Solutions Orlando Florida"
+                        width={96}
+                        height={96}
                         className="h-full w-full object-cover"
                         loading="lazy"
+                        decoding="async"
                         onError={(e) => {
                           const img = e.currentTarget as HTMLImageElement;
                           img.style.display = "none";
@@ -192,7 +195,7 @@ const AboutPage = () => {
                       </span>
                     </div>
                   ) : member.image ? (
-                    <img src={member.image} alt={`${member.name} — ${member.role} at FiveServ Property Solutions Orlando Florida`} className="h-24 w-24 rounded-full object-cover object-center mx-auto" style={(member as any).imgStyle ?? { objectPosition: "center 20%" }} loading="lazy" />
+                    <img src={member.image} alt={`${member.name} — ${member.role} at FiveServ Property Solutions Orlando Florida`} width={96} height={96} className="h-24 w-24 rounded-full object-cover object-center mx-auto" style={(member as any).imgStyle ?? { objectPosition: "center 20%" }} loading="lazy" decoding="async" />
                   ) : (
                     <div className="h-24 w-24 rounded-full bg-gray-100 flex items-center justify-center mx-auto">
                       <span className="text-gray-800 font-bold text-2xl">{member.initials}</span>
@@ -240,7 +243,10 @@ const AboutPage = () => {
                   <img
                     src="/images/sofia-avatar.jpg"
                     alt="Sofia — AI Chat Assistant — Available 24/7 at FiveServ Property Solutions Orlando Florida"
+                    width={96}
+                    height={96}
                     className="h-full w-full object-cover"
+                    decoding="async"
                     onError={(e) => {
                       const img = e.currentTarget as HTMLImageElement;
                       img.style.display = "none";
@@ -256,7 +262,7 @@ const AboutPage = () => {
                   </span>
                 </div>
               ) : activeMember.image ? (
-                <img src={activeMember.image} alt={`${activeMember.name} — ${activeMember.role} at FiveServ Property Solutions Orlando Florida`} className="h-24 w-24 rounded-full object-cover object-center mx-auto" style={(activeMember as any).imgStyle ?? { objectPosition: "center 20%" }} />
+                <img src={activeMember.image} alt={`${activeMember.name} — ${activeMember.role} at FiveServ Property Solutions Orlando Florida`} width={96} height={96} className="h-24 w-24 rounded-full object-cover object-center mx-auto" style={(activeMember as any).imgStyle ?? { objectPosition: "center 20%" }} decoding="async" />
               ) : (
                 <div className="h-24 w-24 rounded-full bg-gray-100 flex items-center justify-center mx-auto">
                   <span className="text-gray-800 font-bold text-2xl">{activeMember.initials}</span>

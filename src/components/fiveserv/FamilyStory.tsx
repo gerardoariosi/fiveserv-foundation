@@ -13,6 +13,8 @@ export const FamilyStory = () => {
             <img
               src="/images/logo-fs.png"
               alt="FiveServ Property Solutions family team — family-owned property maintenance company Orlando Florida"
+              width={256}
+              height={256}
               loading="lazy"
               decoding="async"
               className="w-64 h-64 object-contain m-auto"

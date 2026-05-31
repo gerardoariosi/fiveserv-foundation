@@ -49,8 +49,11 @@ const TampaBayPage = () => {
           <img
             src={tampaBayImg}
             alt="FiveServ property maintenance Tampa Bay Florida"
+            width={1920}
+            height={1080}
             className="h-full w-full object-cover object-center"
             loading="eager"
+            decoding="async"
             fetchPriority="high"
           />
           <div className="absolute inset-0 bg-brand-black/70" />

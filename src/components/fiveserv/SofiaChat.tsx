@@ -740,7 +740,10 @@ const SofiaChat = () => {
             <img
               src={SOFIA_AVATAR}
               alt="Sofia"
+              width={40}
+              height={40}
               loading="lazy"
+              decoding="async"
               className="h-10 w-10 rounded-full object-cover"
               style={{ border: "2px solid #FFD700" }}
             />
@@ -796,6 +799,10 @@ const SofiaChat = () => {
                       src={SOFIA_AVATAR}
                       alt=""
                       aria-hidden
+                      width={24}
+                      height={24}
+                      loading="lazy"
+                      decoding="async"
                       className="h-6 w-6 flex-shrink-0 rounded-full object-cover self-end"
                     />
                   )}
@@ -871,6 +878,10 @@ const SofiaChat = () => {
                   src={SOFIA_AVATAR}
                   alt=""
                   aria-hidden
+                  width={24}
+                  height={24}
+                  loading="lazy"
+                  decoding="async"
                   className="h-6 w-6 flex-shrink-0 rounded-full object-cover self-end"
                 />
                 <div
@@ -960,7 +971,7 @@ const SofiaChat = () => {
                 className="flex justify-start gap-2"
                 style={{ animation: "sofia-fade-in 300ms ease" }}
               >
-                <img src={SOFIA_AVATAR} alt="" aria-hidden className="h-6 w-6 flex-shrink-0 rounded-full object-cover self-end" />
+                <img src={SOFIA_AVATAR} alt="" aria-hidden width={24} height={24} loading="lazy" decoding="async" className="h-6 w-6 flex-shrink-0 rounded-full object-cover self-end" />
                 <div
                   className="px-3 py-2"
                   style={{

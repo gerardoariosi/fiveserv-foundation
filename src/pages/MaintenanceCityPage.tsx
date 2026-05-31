@@ -74,7 +74,10 @@ const MaintenanceCityPage = ({ citySlug: propSlug }: MaintenanceCityPageProps = 
         <img
           src={editorial.heroImage}
           alt={`FiveServ property maintenance service ${city.name} Florida`}
+          width={1920}
+          height={1080}
           loading="eager"
+          decoding="async"
           // @ts-expect-error fetchpriority is valid HTML
           fetchpriority="high"
           className="absolute inset-0 -z-10 h-full w-full object-cover"

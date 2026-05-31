@@ -22,6 +22,8 @@ export const TestimonialCard = ({ quote, name, title, company, photo }: Testimon
           <img
             src={photo}
             alt={name}
+            width={48}
+            height={48}
             loading="lazy"
             decoding="async"
             className="h-12 w-12 rounded-full object-cover"
