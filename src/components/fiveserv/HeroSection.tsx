@@ -1,5 +1,4 @@
 import { ArrowRight, Phone } from "lucide-react";
-import { useEffect, useRef, useState } from "react";
 import { SITE } from "@/lib/site-config";
 import { useReveal } from "@/hooks/use-fiveserv";
 
@@ -17,91 +16,34 @@ const scrollToForm = () => {
 };
 
 type HeroProps = {
-  videoSrc?: string;
-  posterSrc?: string;
+  imageSrc?: string;
 };
 
 export const HeroSection = ({
-  videoSrc = "/images/hero-team-working.mp4",
-  posterSrc = "/images/hero-poster.jpg",
+  imageSrc = "/images/orlando.jpg",
 }: HeroProps) => {
   const ref = useReveal<HTMLDivElement>();
   const waHref = `https://wa.me/${SITE.phone.replace(/[^\d]/g, "")}`;
-  const [shouldLoadVideo, setShouldLoadVideo] = useState(false);
-
-  useEffect(() => {
-    const timer = setTimeout(() => setShouldLoadVideo(true), 2000);
-    return () => clearTimeout(timer);
-  }, []);
-  // Hero fills the full viewport, starting at the very top behind the transparent header + ticker.
   const heroTopOffset = "calc(-1 * (var(--banner-h, 0px) + 8px))";
-  const heroVisibleHeight = "100vh";
-
-  // Smooth loop: crossfade between two video elements near the end
-  const videoARef = useRef<HTMLVideoElement>(null);
-  const videoBRef = useRef<HTMLVideoElement>(null);
-  const [activeVideo, setActiveVideo] = useState<"A" | "B">("A");
-  const FADE_DURATION = 1.2; // seconds before end to start crossfade
-
-  useEffect(() => {
-    const videoA = videoARef.current;
-    const videoB = videoBRef.current;
-    if (!videoA || !videoB) return;
-
-    const handleTimeUpdate = (e: Event) => {
-      const video = e.target as HTMLVideoElement;
-      if (!video.duration || isNaN(video.duration)) return;
-      const timeLeft = video.duration - video.currentTime;
-      const isVideoA = video === videoA;
-      const currentlyActive = isVideoA ? "A" : "B";
-
-      if (timeLeft <= FADE_DURATION && activeVideo === currentlyActive) {
-        const other = isVideoA ? videoB : videoA;
-        other.currentTime = 0;
-        other.play().catch(() => {});
-        setActiveVideo(isVideoA ? "B" : "A");
-      }
-    };
-
-    videoA.addEventListener("timeupdate", handleTimeUpdate);
-    videoB.addEventListener("timeupdate", handleTimeUpdate);
-    return () => {
-      videoA.removeEventListener("timeupdate", handleTimeUpdate);
-      videoB.removeEventListener("timeupdate", handleTimeUpdate);
-    };
-  }, [activeVideo]);
+  const heroVisibleHeight = "85vh";
 
   return (
     <section
       className="relative isolate w-full overflow-hidden bg-brand-black"
       style={{ marginTop: heroTopOffset, minHeight: heroVisibleHeight }}
     >
-      <video
-        ref={videoARef}
-        autoPlay
-        muted
-        playsInline
-        preload="auto"
-        poster={posterSrc}
+      <img
+        src={imageSrc}
+        alt="Orlando, Florida skyline"
+        width={1600}
+        height={900}
         // @ts-expect-error fetchpriority is valid HTML
         fetchpriority="high"
-        className="absolute inset-0 h-full w-full object-cover object-[center_30%] md:object-[center_18%] lg:object-[center_24%] transition-opacity duration-1000 ease-in-out"
-        style={{ opacity: activeVideo === "A" ? 1 : 0 }}
-      >
-        <source src={videoSrc} type="video/mp4" />
-      </video>
-      <video
-        ref={videoBRef}
-        muted
-        playsInline
-        preload="auto"
-        className="absolute inset-0 h-full w-full object-cover object-[center_30%] md:object-[center_18%] lg:object-[center_24%] transition-opacity duration-1000 ease-in-out"
-        style={{ opacity: activeVideo === "B" ? 1 : 0 }}
-      >
-        <source src={videoSrc} type="video/mp4" />
-      </video>
-      {/* 60% black overlay over the video for readability */}
-      <div className="absolute inset-0 bg-brand-black/60" />
+        decoding="async"
+        className="absolute inset-0 h-full w-full object-cover bg-center"
+      />
+      {/* Dark overlay over the image for readability */}
+      <div className="absolute inset-0 bg-brand-black/70" />
 
       <div className="relative z-10 flex items-center pt-32 pb-10 sm:py-14 lg:py-20" style={{ minHeight: heroVisibleHeight }}>
         <div ref={ref} className="container reveal">
