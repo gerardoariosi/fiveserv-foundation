@@ -1,3 +1,4 @@
+import { lazy, Suspense } from "react";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import { HelmetProvider } from "react-helmet-async";
@@ -7,44 +8,55 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 import PageTransition from "@/components/fiveserv/PageTransition";
 
 import RootLayout from "./layouts/RootLayout";
+// Homepage stays eagerly imported so it ships in the initial bundle (LCP).
 import Index from "./pages/Index";
-import NotFound from "./pages/NotFound";
-import ServicePage from "./pages/ServicePage";
-import CityPage from "./pages/CityPage";
-import ServiceCityPage from "./pages/ServiceCityPage";
-import PlaceholderPage from "./pages/PlaceholderPage";
-import MakeReadyPage from "./pages/MakeReadyPage";
-import MaintenancePage from "./pages/MaintenancePage";
-import RenovationsPage from "./pages/RenovationsPage";
-import ResidentialPage from "./pages/ResidentialPage";
-import MaintenanceCityPage from "./pages/MaintenanceCityPage";
-import TampaBayPage from "./pages/TampaBayPage";
-import ContactPage from "./pages/ContactPage";
-import AboutPage from "./pages/AboutPage";
-import FaqPage from "./pages/FaqPage";
-import ServicesIndexPage from "./pages/ServicesIndexPage";
-import CitiesIndexPage from "./pages/CitiesIndexPage";
-import BlogPage from "./pages/BlogPage";
-import BlogArticlePage from "./pages/BlogArticlePage";
-import ThankYouB2BPage from "./pages/ThankYouB2BPage";
-import ThankYouResidentialPage from "./pages/ThankYouResidentialPage";
-import ThankYouCareersPage from "./pages/ThankYouCareersPage";
-import TermsPage from "./pages/TermsPage";
-import WorkPolicyPage from "./pages/WorkPolicyPage";
-import PrivacyPage from "./pages/PrivacyPage";
-import PlumbingPage from "./pages/PlumbingPage";
-import ElectricalPage from "./pages/ElectricalPage";
-import HvacPage from "./pages/HvacPage";
-import DrywallPage from "./pages/DrywallPage";
-import PaintingPage from "./pages/PaintingPage";
-import FlooringPage from "./pages/FlooringPage";
-import CarpentryPage from "./pages/CarpentryPage";
-import CleaningPage from "./pages/CleaningPage";
-import FiveServVsHandymanPage from "./pages/FiveServVsHandymanPage";
-import MakeReadyVsDIYPage from "./pages/MakeReadyVsDIYPage";
-import ForPropertyManagersPage from "./pages/ForPropertyManagersPage";
-import ReviewsPage from "./pages/ReviewsPage";
-import CareersPage from "./pages/CareersPage";
+
+// All other pages are code-split via React.lazy to shrink the initial JS bundle.
+const NotFound = lazy(() => import("./pages/NotFound"));
+const ServicePage = lazy(() => import("./pages/ServicePage"));
+const CityPage = lazy(() => import("./pages/CityPage"));
+const ServiceCityPage = lazy(() => import("./pages/ServiceCityPage"));
+const PlaceholderPage = lazy(() => import("./pages/PlaceholderPage"));
+const MakeReadyPage = lazy(() => import("./pages/MakeReadyPage"));
+const MaintenancePage = lazy(() => import("./pages/MaintenancePage"));
+const RenovationsPage = lazy(() => import("./pages/RenovationsPage"));
+const ResidentialPage = lazy(() => import("./pages/ResidentialPage"));
+const MaintenanceCityPage = lazy(() => import("./pages/MaintenanceCityPage"));
+const TampaBayPage = lazy(() => import("./pages/TampaBayPage"));
+const ContactPage = lazy(() => import("./pages/ContactPage"));
+const AboutPage = lazy(() => import("./pages/AboutPage"));
+const FaqPage = lazy(() => import("./pages/FaqPage"));
+const ServicesIndexPage = lazy(() => import("./pages/ServicesIndexPage"));
+const CitiesIndexPage = lazy(() => import("./pages/CitiesIndexPage"));
+const BlogPage = lazy(() => import("./pages/BlogPage"));
+const BlogArticlePage = lazy(() => import("./pages/BlogArticlePage"));
+const ThankYouB2BPage = lazy(() => import("./pages/ThankYouB2BPage"));
+const ThankYouResidentialPage = lazy(() => import("./pages/ThankYouResidentialPage"));
+const ThankYouCareersPage = lazy(() => import("./pages/ThankYouCareersPage"));
+const TermsPage = lazy(() => import("./pages/TermsPage"));
+const WorkPolicyPage = lazy(() => import("./pages/WorkPolicyPage"));
+const PrivacyPage = lazy(() => import("./pages/PrivacyPage"));
+const PlumbingPage = lazy(() => import("./pages/PlumbingPage"));
+const ElectricalPage = lazy(() => import("./pages/ElectricalPage"));
+const HvacPage = lazy(() => import("./pages/HvacPage"));
+const DrywallPage = lazy(() => import("./pages/DrywallPage"));
+const PaintingPage = lazy(() => import("./pages/PaintingPage"));
+const FlooringPage = lazy(() => import("./pages/FlooringPage"));
+const CarpentryPage = lazy(() => import("./pages/CarpentryPage"));
+const CleaningPage = lazy(() => import("./pages/CleaningPage"));
+const FiveServVsHandymanPage = lazy(() => import("./pages/FiveServVsHandymanPage"));
+const MakeReadyVsDIYPage = lazy(() => import("./pages/MakeReadyVsDIYPage"));
+const ForPropertyManagersPage = lazy(() => import("./pages/ForPropertyManagersPage"));
+const ReviewsPage = lazy(() => import("./pages/ReviewsPage"));
+const CareersPage = lazy(() => import("./pages/CareersPage"));
+
+const RouteFallback = () => (
+  <div className="min-h-screen w-full bg-background" aria-hidden="true" />
+);
+
+const withSuspense = (node: React.ReactNode) => (
+  <Suspense fallback={<RouteFallback />}>{node}</Suspense>
+);
 
 import { SERVICES, CITIES } from "@/lib/site-config";
 
