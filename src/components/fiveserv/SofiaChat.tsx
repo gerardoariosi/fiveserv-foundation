@@ -740,7 +740,10 @@ const SofiaChat = () => {
             <img
               src={SOFIA_AVATAR}
               alt="Sofia"
+              width={40}
+              height={40}
               loading="lazy"
+              decoding="async"
               className="h-10 w-10 rounded-full object-cover"
               style={{ border: "2px solid #FFD700" }}
             />
