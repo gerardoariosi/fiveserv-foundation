@@ -25,7 +25,7 @@ export const Logo = ({
   if (!failed) {
     return (
       <img
-        src={variant === "light" ? "/images/logo-fs-white.webp" : "/images/logo-fs.png?v=2"}
+        src={variant === "light" ? "/images/logo-fs-white.webp" : "/images/logo-fs.webp?v=2"}
         alt="FiveServ Property Solutions logo — property maintenance company Orlando Florida"
         width={160}
         height={40}
