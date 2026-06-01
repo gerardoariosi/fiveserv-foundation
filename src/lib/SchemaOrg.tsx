@@ -52,7 +52,7 @@ export const SchemaOrg = ({
       legalName: SITE.legal,
       alternateName: SITE.brand,
       url: SITE.url,
-      logo: `${SITE.url}/images/logo-fs.png`,
+      logo: `${SITE.url}/images/logo-fs.webp`,
       image: `${SITE.url}/og-default.png`,
       description:
         "Full-service property maintenance company in Orlando, FL serving property managers and homeowners across Central Florida. Services include painting, plumbing, electrical, HVAC, drywall, flooring, carpentry, cleaning, make-ready unit turns, and CapEx renovations. One call, one team, one invoice.",
