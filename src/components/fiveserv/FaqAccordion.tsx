@@ -19,16 +19,16 @@ export const FaqAccordion = ({
 }: FaqAccordionProps) => {
   return (
     <section className="bg-white">
-      <div className="container py-28 lg:py-32">
+      <div className="container" style={{ paddingTop: 80, paddingBottom: 80 }}>
         <SectionHeading eyebrow={eyebrow}>{title}</SectionHeading>
         <Accordion type="single" collapsible className="mx-auto mt-12 max-w-3xl">
           {faqs.map((f, i) => (
             <AccordionItem
               key={i}
               value={`item-${i}`}
-              className="border-b border-gray-100 px-1 transition-colors data-[state=open]:border-brand-gold"
+              className="border-b border-[#E5E7EB] px-1 transition-colors"
             >
-              <AccordionTrigger className="text-left text-lg font-bold text-gray-900 hover:text-gray-900 [&>svg]:text-gray-900">
+              <AccordionTrigger className="text-left text-lg font-bold text-gray-900 hover:text-gray-900 [&>svg]:text-brand-gold">
                 {f.q}
               </AccordionTrigger>
               <AccordionContent className="pt-3 text-base leading-relaxed text-gray-600">{f.a}</AccordionContent>
