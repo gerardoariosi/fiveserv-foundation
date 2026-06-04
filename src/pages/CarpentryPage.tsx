@@ -1,55 +1,16 @@
-import { Link } from "react-router-dom";
-import {
-  Phone,
-  Hammer,
-  Home,
-  Building2,
-  DoorOpen,
-  Ruler,
-  Layers,
-  Boxes,
-  Key,
-  ShieldCheck,
-  ArrowRight,
-  MapPin,
-  CheckCircle2,
-  Wrench,
-} from "lucide-react";
+import { Hammer, Paintbrush, Layers, Wrench, Sparkles } from "lucide-react";
 import Seo from "@/lib/Seo";
 import SchemaOrg from "@/lib/SchemaOrg";
-import { SITE, CITIES } from "@/lib/site-config";
-import AIOverviewBlock from "@/components/fiveserv/AIOverviewBlock";
-import StatsBar from "@/components/fiveserv/StatsBar";
-import FaqAccordion from "@/components/fiveserv/FaqAccordion";
+import { SITE, SERVICES } from "@/lib/site-config";
 import { CARPENTRY_FAQS } from "@/lib/service-faqs";
-import ContactCTA from "@/components/fiveserv/ContactCTA";
-import { useReveal } from "@/hooks/use-fiveserv";
-import BrandName from "@/components/fiveserv/BrandName";
-
-const SERVICES_GRID = [
-  { icon: DoorOpen, title: "Door Repair & Replacement", desc: "Interior doors, exterior doors, closet doors, hardware, frames, weatherstripping." },
-  { icon: Boxes, title: "Cabinet Installation & Repair", desc: "Kitchen and bath cabinets. Replace doors, drawers, hinges, hardware. Full installs on turnover." },
-  { icon: Ruler, title: "Baseboard & Trim Work", desc: "Baseboards, shoe molding, casing. Replace damaged sections or full unit re-trim." },
-  { icon: Layers, title: "Window Trim & Molding", desc: "Window casing, sills, crown molding, chair rail. Match existing profiles." },
-  { icon: Boxes, title: "Shelving & Storage", desc: "Closet systems, pantry shelving, garage storage, built-ins. Floating and bracketed." },
-  { icon: Hammer, title: "Custom Carpentry", desc: "Built-ins, decks, fence repair, accent walls, board-and-batten. One-off owner-spec jobs." },
-];
-
-
-const SectionReveal = ({ children, className = "" }: { children: React.ReactNode; className?: string }) => {
-  const ref = useReveal<HTMLDivElement>();
-  return (
-    <div ref={ref} className={`reveal ${className}`}>
-      {children}
-    </div>
-  );
-};
+import ServicePageLayout from "@/components/fiveserv/ServicePageLayout";
 
 const CarpentryPage = () => {
   const path = "/carpentry";
   const title = "Carpentry Services Orlando FL | Door Repair, Trim & Cabinets | FiveServ";
   const description =
-    "Professional carpentry services for property managers and homeowners across Central Florida. Door repair and replacement, cabinet installation, baseboards, trim work, and custom carpentry for unit turns and home renovations. Fast turnaround. One call, one invoice. FiveServ Property Solutions — serving Orlando, Kissimmee, Sanford, Winter Park, Lakeland, Altamonte Springs, Apopka, Ocoee, Winter Garden, Clermont, St. Cloud, Davenport, Deltona, Daytona Beach, Palm Coast, Melbourne, Palm Bay, and Cocoa.";
+    "Carpentry in Orlando FL. Doors, trim, baseboard, cabinets and finish carpentry. Apartment turns, homes and commercial properties.";
+  const service = SERVICES.find((s) => s.slug === "maintenance")!;
 
   return (
     <>
@@ -57,374 +18,50 @@ const CarpentryPage = () => {
       <SchemaOrg
         breadcrumbs={[
           { name: "Home", url: SITE.url },
-          { name: "Services", url: `${SITE.url}/services` },
+          { name: "Specialties", url: `${SITE.url}/services` },
           { name: "Carpentry", url: `${SITE.url}${path}` },
         ]}
-        service={{
-          slug: "maintenance",
-          name: "Carpentry Services",
-          short: "Doors, cabinets, trim, custom — multifamily and residential.",
-          description:
-            "Professional carpentry services for property managers and homeowners across Central Florida. Door repair and replacement, cabinet installation, baseboards, trim work, and custom carpentry.",
-          cta: "Get a Carpentry Quote",
-        }}
+        service={service}
         faqs={CARPENTRY_FAQS}
       />
-
-      {/* Hero */}
-      <section className="bg-brand-black pt-stack pb-16">
-        <div className="container">
-          <p className="uppercase tracking-[0.12em] text-brand-gold text-base font-bold">
-            — <BrandName variant="light" /> Property Solutions
-          </p>
-          <h1 className="mt-3 font-display font-black text-4xl text-white sm:text-5xl lg:text-6xl">
-            Carpentry Services for Properties and Homes —
-            <span className="block text-brand-gold">Central Florida</span>
-          </h1>
-
-          <div className="mt-6 flex flex-wrap gap-3">
-            <span className="inline-flex items-center gap-2 rounded-full border border-brand-gold/60 bg-brand-gold/10 px-4 py-1.5 text-xs font-bold uppercase tracking-wider text-brand-gold">
-              <Building2 className="h-3.5 w-3.5" /> Property Managers
-            </span>
-            <span className="inline-flex items-center gap-2 rounded-full border border-brand-gold/60 bg-brand-gold/10 px-4 py-1.5 text-xs font-bold uppercase tracking-wider text-brand-gold">
-              <Home className="h-3.5 w-3.5" /> Homeowners
-            </span>
-            <span className="inline-flex items-center gap-2 rounded-full border border-brand-gold/60 bg-brand-gold/10 px-4 py-1.5 text-xs font-bold uppercase tracking-wider text-brand-gold">
-              <Key className="h-3.5 w-3.5" /> Make-Ready Specialist
-            </span>
-          </div>
-
-          <p className="mt-6 max-w-2xl text-lg text-gray-300">
-            Doors. Cabinets. Trim. Shelving. Custom builds. One call.
-          </p>
-
-          <div className="mt-8 flex flex-wrap gap-3">
-            <a href="#contact-form" className="cta-gold btn-shimmer rounded-md px-6 py-3 text-sm font-bold uppercase tracking-wide">
-              Get a Carpentry Quote
-            </a>
-            <a
-              href={`tel:${SITE.phone}`}
-              className="flex items-center gap-2 rounded-md border-2 border-brand-white px-6 py-3 text-sm font-bold uppercase tracking-wide text-white hover:bg-brand-white hover:text-brand-black transition-colors"
-            >
-              <Phone className="h-4 w-4" /> Call {SITE.phone}
-            </a>
-          </div>
-
-          <AIOverviewBlock hidden
-            directAnswer="FiveServ Property Solutions provides professional carpentry services for property managers and homeowners across Central Florida — including door repair and replacement, cabinet installation, baseboard and trim work, custom carpentry, shelving, closet systems, and make-ready carpentry for unit turns."
-            supportingFacts="Serves multifamily property managers and residential homeowners. 15+ years combined experience. Carpentry work coordinated inside the 5-day make-ready window when needed. Services include door hardware, finish carpentry, and custom built-ins. Licensed and insured. One call, one invoice. Serving Orlando, Kissimmee, Sanford, Winter Park, Lakeland, Altamonte Springs, Apopka, Ocoee, Winter Garden, Clermont, St. Cloud, Davenport, Deltona, Daytona Beach, Palm Coast, Melbourne, Palm Bay, and Cocoa, FL."
-          />
-        </div>
-      </section>
-
-      {/* TWO-AUDIENCE SPLIT */}
-      <section className="bg-gray-50">
-        <div className="container py-20">
-          <SectionReveal>
-            <h2 className="font-display font-bold text-3xl text-gray-900 sm:text-4xl">
-              One Carpentry Team. <span className="text-gray-900">Two Audiences.</span>
-            </h2>
-            <p className="mt-3 max-w-2xl text-gray-700">
-              The same crews that punch-list 500-unit communities also build for Central Florida homes. Pick your path.
-            </p>
-
-            <div className="mt-12 grid gap-6 lg:grid-cols-2">
-              {/* B2B */}
-              <article className="rounded-xl border-2 border-brand-gold bg-white shadow-md p-8">
-                <span className="inline-flex items-center gap-2 rounded-full bg-brand-gold px-3 py-1 text-xs font-bold uppercase tracking-wider text-gray-900">
-                  <Building2 className="h-3.5 w-3.5" /> Property Managers
-                </span>
-                <h3 className="mt-4 font-display font-semibold text-2xl text-gray-900">
-                  Multifamily & Portfolio Carpentry
-                </h3>
-                <ul className="mt-5 space-y-2 text-gray-700">
-                  {[
-                    "Door repair and replacement on unit turns",
-                    "Cabinet repair and installation",
-                    "Baseboard and trim repair",
-                    "Included in make-ready process",
-                    "One invoice per property",
-                  ].map((t) => (
-                    <li key={t} className="flex items-start gap-3">
-                      <CheckCircle2 className="mt-0.5 h-5 w-5 flex-shrink-0 text-gray-900" />
-                      <span>{t}</span>
-                    </li>
-                  ))}
-                </ul>
-                <Link
-                  to="/make-ready"
-                  className="cta-gold btn-shimmer mt-6 inline-flex items-center gap-2 rounded-md px-6 py-3 text-sm font-bold uppercase tracking-wide"
-                >
-                  Get a Property Carpentry Quote <ArrowRight className="h-4 w-4" />
-                </Link>
-              </article>
-
-              {/* B2C */}
-              <article className="rounded-xl border-2 border-brand-gold bg-white shadow-md p-8">
-                <span className="inline-flex items-center gap-2 rounded-full bg-brand-gold px-3 py-1 text-xs font-bold uppercase tracking-wider text-gray-900">
-                  <Home className="h-3.5 w-3.5" /> Homeowners
-                </span>
-                <h3 className="mt-4 font-display font-semibold text-2xl text-gray-900">
-                  Home & Residential Carpentry
-                </h3>
-                <ul className="mt-5 space-y-2 text-gray-700">
-                  {[
-                    "Custom cabinet installation",
-                    "Door replacement and hardware",
-                    "Trim and molding installation",
-                    "Shelving and storage solutions",
-                    "Deck and fence repair",
-                  ].map((t) => (
-                    <li key={t} className="flex items-start gap-3">
-                      <CheckCircle2 className="mt-0.5 h-5 w-5 flex-shrink-0 text-gray-900" />
-                      <span>{t}</span>
-                    </li>
-                  ))}
-                </ul>
-                <Link
-                  to="/residential"
-                  className="cta-gold btn-shimmer mt-6 inline-flex items-center gap-2 rounded-md px-6 py-3 text-sm font-bold uppercase tracking-wide"
-                >
-                  Get a Home Carpentry Quote <ArrowRight className="h-4 w-4" />
-                </Link>
-              </article>
-            </div>
-          </SectionReveal>
-        </div>
-      </section>
-
-      {/* Services Grid */}
-      <section className="bg-white">
-        <div className="container py-20">
-          <SectionReveal>
-            <h2 className="font-display font-bold text-3xl text-gray-900 sm:text-4xl">
-              Carpentry Services <span className="text-gray-900">We Handle</span>
-            </h2>
-            <p className="mt-3 max-w-2xl text-gray-700">
-              Six core service lines. In-house crews. Coordinated with drywall, paint, and final inspection.
-            </p>
-
-            <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-              {SERVICES_GRID.map((s) => (
-                <article key={s.title} className="hover-card rounded-lg border border-gray-100 bg-white shadow-sm p-6">
-                  <span className="flex h-12 w-12 items-center justify-center rounded-md bg-brand-gold/15 text-gray-900">
-                    <s.icon className="h-6 w-6" />
-                  </span>
-                  <h3 className="mt-5 font-display font-semibold text-xl text-gray-900">{s.title}</h3>
-                  <p className="mt-2 text-gray-700">{s.desc}</p>
-                </article>
-              ))}
-            </div>
-          </SectionReveal>
-        </div>
-      </section>
-
-      {/* Make-Ready Connection */}
-      <section className="bg-gray-50">
-        <div className="container py-20">
-          <SectionReveal>
-            <div className="rounded-xl border-2 border-brand-gold bg-white shadow-md p-8 sm:p-12">
-              <div className="grid gap-8 lg:grid-cols-[auto,1fr,auto] lg:items-center">
-                <div className="flex h-16 w-16 items-center justify-center rounded-full bg-brand-gold/15 text-gray-900">
-                  <Key className="h-8 w-8" />
-                </div>
-                <div>
-                  <span className="inline-block rounded-full bg-brand-gold px-3 py-1 text-xs font-bold uppercase tracking-wider text-gray-900">
-                    Make-Ready Included
-                  </span>
-                  <h2 className="mt-3 font-display font-bold text-3xl text-gray-900 sm:text-4xl">
-                    Damaged doors, broken cabinets, missing trim —{" "}
-                    <span className="text-gray-900">caught on every assessment</span>
-                  </h2>
-                  <p className="mt-3 text-gray-700">
-                    These are the most common punch-list items on a unit turn, and the ones most often missed by
-                    single-trade vendors. <BrandName variant="dark" /> carpentry is included in every make-ready assessment so
-                    nothing slips through to the resident walk.
-                  </p>
-                </div>
-                <Link
-                  to="/make-ready"
-                  className="cta-gold btn-shimmer flex items-center justify-center gap-2 rounded-md px-6 py-4 text-base font-bold uppercase tracking-wide whitespace-nowrap"
-                >
-                  See Make-Ready
-                </Link>
-              </div>
-            </div>
-          </SectionReveal>
-        </div>
-      </section>
-
-      {/* Quality / Match Section */}
-      <section className="bg-white">
-        <div className="container py-20">
-          <SectionReveal className="grid gap-10 lg:grid-cols-2 lg:items-center">
-            <div className="rounded-xl border border-gray-100 bg-white shadow-sm p-8">
-              <Wrench className="h-12 w-12 text-gray-900" />
-              <p className="mt-6 font-display font-semibold text-2xl text-gray-900">
-                <span className="text-gray-900">Invisible repairs</span> that pass inspection
-              </p>
-              <p className="mt-3 text-gray-700">
-                Same wood species. Same paint color. Same hardware style. Same trim profile. Carpentry that
-                disappears into the existing unit instead of standing out as a patch job.
-              </p>
-            </div>
-            <div>
-              <p className="text-xs font-medium uppercase tracking-[0.12em] text-gray-900">— Quality Spec</p>
-              <h2 className="mt-3 font-display font-bold text-3xl text-gray-900 sm:text-4xl">
-                Carpentry that{" "}
-                <span className="text-gray-900">matches the rest of the unit</span>
-              </h2>
-              <p className="mt-4 text-gray-700">
-                A door that doesn't match the others on the floor, trim with a different profile, hardware in the
-                wrong finish — these are the punch-list rejections that cost a make-ready an extra day. We finish
-                every carpentry repair to match what's already there.
-              </p>
-              <ul className="mt-6 space-y-2 text-gray-700">
-                <li className="flex items-start gap-3">
-                  <ShieldCheck className="mt-0.5 h-5 w-5 flex-shrink-0 text-gray-900" />
-                  Wood species and grain matched
-                </li>
-                <li className="flex items-start gap-3">
-                  <ShieldCheck className="mt-0.5 h-5 w-5 flex-shrink-0 text-gray-900" />
-                  Paint color matched and recorded for portfolio
-                </li>
-                <li className="flex items-start gap-3">
-                  <ShieldCheck className="mt-0.5 h-5 w-5 flex-shrink-0 text-gray-900" />
-                  Hardware finish matched (brushed nickel, bronze, brass, matte black)
-                </li>
-                <li className="flex items-start gap-3">
-                  <ShieldCheck className="mt-0.5 h-5 w-5 flex-shrink-0 text-gray-900" />
-                  Trim profiles matched — no mixed casing or baseboard
-                </li>
-              </ul>
-            </div>
-          </SectionReveal>
-        </div>
-      </section>
-
-      <StatsBar />
-
-      {/* Coverage — all 18 cities */}
-      <section className="bg-white">
-        <div className="container py-20">
-          <SectionReveal>
-            <h2 className="font-display font-bold text-3xl text-gray-900 sm:text-4xl">
-              Carpentry Coverage —{" "}
-              <span className="text-gray-900">18 Cities Across Central Florida</span>
-            </h2>
-            <p className="mt-3 max-w-2xl text-gray-700">
-              Same-day assessment across the Orlando metro core. Within 24 hours across the rest of the region.
-            </p>
-
-            <div className="mt-10 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
-              {CITIES.map((c) => (
-                <Link
-                  key={c.slug}
-                  to={`/maintenance-${c.slug}`}
-                  className="hover-card group flex items-center justify-between rounded-md border border-gray-100 bg-white shadow-sm px-4 py-3"
-                >
-                  <span className="flex items-center gap-3">
-                    <MapPin className="h-4 w-4 text-gray-900" />
-                    <span className="font-semibold text-gray-900">
-                      Carpentry {c.name}, {c.state}
-                    </span>
-                  </span>
-                  <span className="text-xs font-bold uppercase tracking-wide text-gray-700">
-                    {c.responseTime}
-                  </span>
-                </Link>
-              ))}
-            </div>
-          </SectionReveal>
-        </div>
-      </section>
-
-      {/* FAQ */}
-      <FaqAccordion title="Carpentry Questions — Answered" faqs={CARPENTRY_FAQS} emitSchema={false} />
-
-      {/* Internal links */}
-      <section className="bg-gray-50">
-        <div className="container py-20">
-          <SectionReveal className="grid gap-10 md:grid-cols-2">
-            <div>
-              <h2 className="font-display font-semibold text-2xl text-gray-900">Related Services</h2>
-              <ul className="mt-4 space-y-2">
-                {[
-                  { to: "/make-ready", label: "Make-Ready & Unit Turns" },
-                  { to: "/drywall", label: "Drywall Repair" },
-                  { to: "/painting", label: "Painting Services" },
-                  { to: "/maintenance", label: "Property Maintenance" },
-                  { to: "/residential", label: "Residential Services" },
-                ].map((l) => (
-                  <li key={l.to}>
-                    <Link to={l.to} className="inline-flex items-center gap-2 text-gray-900 hover:text-gray-900 hover:underline">
-                      <ArrowRight className="h-4 w-4" /> {l.label}
-                    </Link>
-                  </li>
-                ))}
-                <li>
-                  <Link to="/contact" className="inline-flex items-center gap-2 text-gray-900 hover:text-gray-900 hover:underline">
-                    <ArrowRight className="h-4 w-4" /> Contact us
-                  </Link>
-                </li>
-              </ul>
-            </div>
-            <div>
-              <h2 className="font-display font-semibold text-2xl text-gray-900">Carpentry in your city</h2>
-              <ul className="mt-4 space-y-2">
-                {[
-                  { slug: "orlando-fl", name: "Orlando" },
-                  { slug: "kissimmee-fl", name: "Kissimmee" },
-                ].map((c) => (
-                  <li key={c.slug}>
-                    <Link to={`/maintenance-${c.slug}`} className="inline-flex items-center gap-2 text-gray-900 hover:text-gray-900 hover:underline">
-                      <ArrowRight className="h-4 w-4" /> Carpentry in {c.name}, FL
-                    </Link>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          </SectionReveal>
-        </div>
-      </section>
-
-      {/* Final CTA — TWO buttons side by side */}
-      <section id="contact-form" className="bg-brand-black">
-        <div className="container py-20">
-          <SectionReveal>
-            <div className="rounded-xl border-2 border-brand-gold bg-white border border-gray-100 shadow-sm p-8 sm:p-12 text-center">
-              <h2 className="font-display font-bold text-3xl text-gray-900 sm:text-4xl">
-                Ready for a <span className="text-gray-900">carpentry quote?</span>
-              </h2>
-              <p className="mt-3 text-gray-300">
-                Pick the path that fits. PM portfolios on the left. Homes on the right.
-              </p>
-              <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
-                <Link
-                  to="/contact"
-                  className="cta-gold btn-shimmer inline-flex items-center justify-center gap-2 rounded-md px-6 py-3 text-sm font-bold uppercase tracking-wide"
-                >
-                  <Building2 className="h-4 w-4" /> Get a Property Carpentry Quote
-                </Link>
-                <Link
-                  to="/residential"
-                  className="inline-flex items-center justify-center gap-2 rounded-md border-2 border-brand-gold px-6 py-3 text-sm font-bold uppercase tracking-wide text-gray-900 hover:bg-brand-gold hover:text-gray-900 transition-colors"
-                >
-                  <Home className="h-4 w-4" /> Get a Home Carpentry Quote
-                </Link>
-              </div>
-              <p className="mt-6 text-sm text-gray-400">
-                Or call us directly:{" "}
-                <a href={`tel:${SITE.phone}`} className="font-bold text-gray-900 hover:underline">
-                  {SITE.phone}
-                </a>
-              </p>
-            </div>
-          </SectionReveal>
-        </div>
-      </section>
-
-      <ContactCTA />
+      <ServicePageLayout
+        config={{
+          category: "Carpentry Specialty",
+          h1: "Carpentry — Doors, Trim, Cabinets & Finish Work",
+          description: "Door repair and replacement, baseboard, casing, cabinet repair and finish carpentry. Clean cuts, clean caulk lines.",
+          heroImage: "/images/services/carpentry.jpg",
+          offer: { title: "Get a Carpentry Quote", desc: "Free assessment. Written scope. Quality finish work, every time." },
+          intro: {
+            h2: "Carpentry that fits — and stays fit.",
+            body: "Doors that close on the first try, trim with mitred corners that don't open in two seasons, and cabinet repairs that don't look repaired. We do interior carpentry from a single door rehang up to full trim packages on renovations.",
+            emphasis: "Tight tolerances. Clean caulk. No call-backs.",
+          },
+          ourServices: [
+            { name: "Drywall", href: "/drywall", icon: Hammer },
+            { name: "Painting", href: "/painting", icon: Paintbrush },
+            { name: "Flooring", href: "/flooring", icon: Layers },
+            { name: "Maintenance", href: "/maintenance", icon: Wrench },
+            { name: "Cleaning", href: "/cleaning", icon: Sparkles },
+          ],
+          subServices: [
+            { name: "Door Repair & Replace", desc: "Interior, exterior, sliding and pocket doors. Hung, planed and adjusted.", href: "/carpentry" },
+            { name: "Trim & Baseboard", desc: "Casing, baseboard, crown, chair rail — mitred, nailed, caulked, paint-ready.", href: "/carpentry" },
+            { name: "Cabinet Repair", desc: "Hinges, soft-close, drawer slides, panel repair, full cabinet rehang.", href: "/carpentry" },
+            { name: "Finish Carpentry", desc: "Built-ins, shelving, accent walls, paneling and detail work for renovations.", href: "/renovations" },
+          ],
+          checklist: [
+            "Door rehang & replace",
+            "Baseboard & trim install",
+            "Casing & crown molding",
+            "Cabinet repair",
+            "Cabinet hardware install",
+            "Built-ins & shelving",
+            "Caulk & paint-ready finish",
+            "Clean cuts, no call-backs",
+          ],
+          faqs: CARPENTRY_FAQS,
+        }}
+      />
     </>
   );
 };

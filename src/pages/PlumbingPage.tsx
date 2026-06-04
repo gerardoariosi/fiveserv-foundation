@@ -1,53 +1,16 @@
-import { Link } from "react-router-dom";
-import {
-  Phone,
-  Droplets,
-  Wrench,
-  Flame,
-  ShieldCheck,
-  Clock,
-  AlertTriangle,
-  ArrowRight,
-  MapPin,
-  Siren,
-  ToiletIcon,
-  PipetteIcon,
-} from "lucide-react";
+import { Droplets, Wind, Zap, Hammer, Wrench } from "lucide-react";
 import Seo from "@/lib/Seo";
 import SchemaOrg from "@/lib/SchemaOrg";
-import { SITE, CITIES } from "@/lib/site-config";
-import AIOverviewBlock from "@/components/fiveserv/AIOverviewBlock";
-import StatsBar from "@/components/fiveserv/StatsBar";
-import FaqAccordion from "@/components/fiveserv/FaqAccordion";
+import { SITE, SERVICES } from "@/lib/site-config";
 import { PLUMBING_FAQS } from "@/lib/service-faqs";
-import ContactCTA from "@/components/fiveserv/ContactCTA";
-import { useReveal } from "@/hooks/use-fiveserv";
-import BrandName from "@/components/fiveserv/BrandName";
-
-const SERVICES_GRID = [
-  { icon: Droplets, title: "Leak Detection & Repair", desc: "Pinhole leaks, slab leaks, supply lines, fixtures. Found fast, fixed clean." },
-  { icon: Wrench, title: "Pipe Replacement & Repair", desc: "Copper, PEX, PVC, cast iron. Repipes and section repairs for multifamily and homes." },
-  { icon: Flame, title: "Water Heater Installation", desc: "Tank and tankless. Same-day swaps when stock allows. Electric and gas." },
-  { icon: PipetteIcon, title: "Drain Cleaning & Unclogging", desc: "Sinks, tubs, mainlines. Cabling and hydro-jetting for serious blockages." },
-  { icon: ToiletIcon, title: "Toilet & Fixture Repair", desc: "Running toilets, faulty flappers, faucets, shower valves, garbage disposals." },
-  { icon: AlertTriangle, title: "Emergency Plumbing 24/7", desc: "Burst pipes, sewer backups, no-water calls. We answer. We move. 2-hour response." },
-];
-
-
-const SectionReveal = ({ children, className = "" }: { children: React.ReactNode; className?: string }) => {
-  const ref = useReveal<HTMLDivElement>();
-  return (
-    <div ref={ref} className={`reveal ${className}`}>
-      {children}
-    </div>
-  );
-};
+import ServicePageLayout from "@/components/fiveserv/ServicePageLayout";
 
 const PlumbingPage = () => {
   const path = "/plumbing";
   const title = "Plumbing Services Orlando FL | 24/7 Emergency Plumber | FiveServ";
   const description =
-    "Licensed plumbing services for property managers and homeowners across Central Florida. Leak repair, pipe replacement, water heaters, drain cleaning, and 24/7 emergency plumbing. 2-hour response target. One call, one invoice. FiveServ Property Solutions — serving Orlando, Kissimmee, Sanford, Winter Park, Lakeland, Altamonte Springs, Apopka, Ocoee, Winter Garden, Clermont, St. Cloud, Davenport, Deltona, Daytona Beach, Palm Coast, Melbourne, Palm Bay, and Cocoa.";
+    "24/7 plumbing service in Orlando FL. Leaks, drains, water heaters, fixtures, repipes. Licensed plumbers, photo-documented, one invoice.";
+  const service = SERVICES.find((s) => s.slug === "maintenance")!;
 
   return (
     <>
@@ -55,292 +18,50 @@ const PlumbingPage = () => {
       <SchemaOrg
         breadcrumbs={[
           { name: "Home", url: SITE.url },
-          { name: "Services", url: `${SITE.url}/services` },
+          { name: "Specialties", url: `${SITE.url}/services` },
           { name: "Plumbing", url: `${SITE.url}${path}` },
         ]}
-        service={{
-          slug: "maintenance",
-          name: "Plumbing Services",
-          short: "Licensed plumbing for multifamily and residential.",
-          description:
-            "Licensed plumbing services for multifamily properties and homes across Central Florida. Leak repairs, pipe replacement, water heater installation, drain cleaning, and 24/7 emergency response.",
-          cta: "Get a Plumbing Quote",
-        }}
+        service={service}
         faqs={PLUMBING_FAQS}
       />
-
-      {/* Hero */}
-      <section className="bg-brand-black pt-stack pb-16">
-        <div className="container">
-          <p className="uppercase tracking-[0.12em] text-brand-gold text-base font-bold">
-            — <BrandName variant="light" /> Property Solutions
-          </p>
-          <h1 className="mt-3 font-display font-black text-4xl text-white sm:text-5xl lg:text-6xl">
-            Plumbing Services for Property Managers in
-            <span className="block text-brand-gold">Central Florida</span>
-          </h1>
-
-          <div className="mt-6 flex flex-wrap gap-3">
-            <span className="inline-flex items-center gap-2 rounded-full border border-brand-gold/60 bg-brand-gold/10 px-4 py-1.5 text-xs font-bold uppercase tracking-wider text-brand-gold">
-              <ShieldCheck className="h-3.5 w-3.5" /> Licensed & Insured
-            </span>
-            <span className="inline-flex items-center gap-2 rounded-full border border-brand-gold/60 bg-brand-gold/10 px-4 py-1.5 text-xs font-bold uppercase tracking-wider text-brand-gold">
-              <AlertTriangle className="h-3.5 w-3.5" /> 24/7 Emergency
-            </span>
-          </div>
-
-          <p className="mt-6 max-w-2xl text-lg text-gray-300">
-            Leaks. Pipes. Water heaters. Drains. Emergencies. One call. We answer.
-          </p>
-
-          <div className="mt-8 flex flex-wrap gap-3">
-            <a href="#contact-form" className="cta-gold btn-shimmer rounded-md px-6 py-3 text-sm font-bold uppercase tracking-wide">
-              Get a Plumbing Quote
-            </a>
-            <a
-              href={`tel:${SITE.phone}`}
-              className="flex items-center gap-2 rounded-md border-2 border-brand-white px-6 py-3 text-sm font-bold uppercase tracking-wide text-white hover:bg-brand-white hover:text-brand-black transition-colors"
-            >
-              <Phone className="h-4 w-4" /> Call {SITE.phone}
-            </a>
-          </div>
-
-          <AIOverviewBlock hidden
-            directAnswer="FiveServ Property Solutions provides licensed plumbing services for property managers and homeowners across Central Florida — including leak repair, pipe replacement, water heater installation, drain cleaning, toilet and fixture repair, and 24/7 emergency plumbing response."
-            supportingFacts="Serves multifamily property managers and residential homeowners. 15+ years combined experience. Licensed plumbing contractors under FiveServ coordination. 24/7 emergency availability — 2-hour on-site response target for burst pipes, sewer backups, and no-water calls. One call, one invoice. Serving Orlando, Kissimmee, Sanford, Winter Park, Lakeland, Altamonte Springs, Apopka, Ocoee, Winter Garden, Clermont, St. Cloud, Davenport, Deltona, Daytona Beach, Palm Coast, Melbourne, Palm Bay, and Cocoa, FL."
-          />
-        </div>
-      </section>
-
-      {/* Problem section */}
-      <section className="bg-gray-50">
-        <div className="container py-20">
-          <SectionReveal className="grid gap-10 lg:grid-cols-2 lg:items-center">
-            <div>
-              <p className="text-xs font-medium uppercase tracking-[0.12em] text-gray-900">— The Real Cost of Delay</p>
-              <h2 className="mt-3 font-display font-bold text-3xl text-gray-900 sm:text-4xl">
-                A 4-hour delay on a leak is a{" "}
-                <span className="text-gray-900">$10,000 claim</span>
-              </h2>
-              <p className="mt-4 text-gray-700">
-                Property managers lose thousands in water damage from delayed plumbing response. Drywall, flooring,
-                cabinets, downstairs units. Insurance claims, displaced residents, lost rent. <BrandName variant="dark" /> responds
-                within 2 hours — before the damage compounds.
-              </p>
-            </div>
-            <div className="rounded-xl border-2 border-brand-gold bg-white shadow-md p-8">
-              <div className="flex items-center gap-4">
-                <Siren className="h-10 w-10 text-gray-900" />
-                <div>
-                  <p className="font-display font-semibold text-2xl text-gray-900">2-Hour Response</p>
-                  <p className="text-sm text-gray-600">Across the Orlando metro core, 24/7</p>
-                </div>
-              </div>
-              <a
-                href={`tel:${SITE.phone}`}
-                className="cta-gold btn-shimmer mt-6 flex items-center justify-center gap-2 rounded-md px-6 py-4 text-base font-bold uppercase tracking-wide"
-              >
-                <Phone className="h-5 w-5" /> Call {SITE.phone}
-              </a>
-            </div>
-          </SectionReveal>
-        </div>
-      </section>
-
-      {/* Services Grid */}
-      <section className="bg-white">
-        <div className="container py-20">
-          <SectionReveal>
-            <h2 className="font-display font-bold text-3xl text-gray-900 sm:text-4xl">
-              Plumbing Services <span className="text-gray-900">We Handle</span>
-            </h2>
-            <p className="mt-3 max-w-2xl text-gray-700">
-              Six core service lines. In-house coordination. Florida-licensed plumbers on every job.
-            </p>
-
-            <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-              {SERVICES_GRID.map((s) => (
-                <article key={s.title} className="hover-card rounded-lg border border-gray-100 bg-white shadow-sm p-6">
-                  <span className="flex h-12 w-12 items-center justify-center rounded-md bg-brand-gold/15 text-gray-900">
-                    <s.icon className="h-6 w-6" />
-                  </span>
-                  <h3 className="mt-5 font-display font-semibold text-xl text-gray-900">{s.title}</h3>
-                  <p className="mt-2 text-gray-700">{s.desc}</p>
-                </article>
-              ))}
-            </div>
-          </SectionReveal>
-        </div>
-      </section>
-
-      {/* Response Time section */}
-      <section className="bg-gray-50">
-        <div className="container py-20">
-          <SectionReveal>
-            <div className="rounded-xl border-2 border-brand-gold bg-white shadow-md p-8 sm:p-12">
-              <div className="grid gap-8 lg:grid-cols-[auto,1fr,auto] lg:items-center">
-                <div className="flex h-16 w-16 items-center justify-center rounded-full bg-brand-gold/15 text-gray-900">
-                  <Clock className="h-8 w-8" />
-                </div>
-                <div>
-                  <span className="inline-block rounded-full bg-brand-gold px-3 py-1 text-xs font-bold uppercase tracking-wider text-gray-900">
-                    Response Time
-                  </span>
-                  <h2 className="mt-3 font-display font-bold text-3xl text-gray-900 sm:text-4xl">
-                    Emergency plumbing response within{" "}
-                    <span className="text-gray-900">2 hours</span> across Central Florida
-                  </h2>
-                  <p className="mt-3 text-gray-700">
-                    24/7 dispatch. Real human answers the phone. Truck rolling within minutes for water emergencies in
-                    Orlando, Kissimmee, Winter Park, Altamonte Springs, Apopka, Ocoee, and Winter Garden.
-                  </p>
-                </div>
-                <a
-                  href={`tel:${SITE.phone}`}
-                  className="cta-gold btn-shimmer flex items-center justify-center gap-2 rounded-md px-6 py-4 text-base font-bold uppercase tracking-wide whitespace-nowrap"
-                >
-                  <Phone className="h-5 w-5" /> {SITE.phone}
-                </a>
-              </div>
-            </div>
-          </SectionReveal>
-        </div>
-      </section>
-
-      {/* Why Licensed Matters */}
-      <section className="bg-white">
-        <div className="container py-20">
-          <SectionReveal className="grid gap-10 lg:grid-cols-2 lg:items-center">
-            <div className="rounded-xl border border-gray-100 bg-white shadow-sm p-8">
-              <ShieldCheck className="h-12 w-12 text-gray-900" />
-              <p className="mt-6 font-display font-semibold text-2xl text-gray-900">
-                One invoice. <span className="text-gray-900">Full accountability.</span>
-              </p>
-              <p className="mt-3 text-gray-700">
-                You don't chase the plumber. You don't track the license. You don't reconcile three vendors. <BrandName variant="dark" />{" "}
-                does it. You get one invoice and one accountable team.
-              </p>
-            </div>
-            <div>
-              <p className="text-xs font-medium uppercase tracking-[0.12em] text-gray-900">— Why Licensed Matters</p>
-              <h2 className="mt-3 font-display font-bold text-3xl text-gray-900 sm:text-4xl">
-                All plumbing performed by{" "}
-                <span className="text-gray-900">Florida-licensed contractors</span>
-              </h2>
-              <p className="mt-4 text-gray-700">
-                In Florida, plumbing work above a low threshold legally requires a licensed plumbing contractor.
-                Insurance carriers require it for claims. <BrandName variant="dark" /> coordinates licensed plumbers on every job —
-                you get the protection of licensed work plus the simplicity of a single point of contact.
-              </p>
-              <ul className="mt-6 space-y-2 text-gray-700">
-                <li className="flex items-start gap-3">
-                  <ShieldCheck className="mt-0.5 h-5 w-5 flex-shrink-0 text-gray-900" />
-                  Licensed plumbing contractors on every job
-                </li>
-                <li className="flex items-start gap-3">
-                  <ShieldCheck className="mt-0.5 h-5 w-5 flex-shrink-0 text-gray-900" />
-                  Pulled permits when required by code
-                </li>
-                <li className="flex items-start gap-3">
-                  <ShieldCheck className="mt-0.5 h-5 w-5 flex-shrink-0 text-gray-900" />
-                  Insurance-claim-ready documentation
-                </li>
-                <li className="flex items-start gap-3">
-                  <ShieldCheck className="mt-0.5 h-5 w-5 flex-shrink-0 text-gray-900" />
-                  One consolidated invoice — coded by unit
-                </li>
-              </ul>
-            </div>
-          </SectionReveal>
-        </div>
-      </section>
-
-      <StatsBar />
-
-      {/* Coverage — all 18 cities */}
-      <section className="bg-white">
-        <div className="container py-20">
-          <SectionReveal>
-            <h2 className="font-display font-bold text-3xl text-gray-900 sm:text-4xl">
-              Plumbing Coverage —{" "}
-              <span className="text-gray-900">18 Cities Across Central Florida</span>
-            </h2>
-            <p className="mt-3 max-w-2xl text-gray-700">
-              Same-day response across the Orlando metro core. Within 24 hours across the rest of the region.
-            </p>
-
-            <div className="mt-10 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
-              {CITIES.map((c) => (
-                <Link
-                  key={c.slug}
-                  to={`/maintenance-${c.slug}`}
-                  className="hover-card group flex items-center justify-between rounded-md border border-gray-100 bg-white shadow-sm px-4 py-3"
-                >
-                  <span className="flex items-center gap-3">
-                    <MapPin className="h-4 w-4 text-gray-900" />
-                    <span className="font-semibold text-gray-900">
-                      Plumbing {c.name}, {c.state}
-                    </span>
-                  </span>
-                  <span className="text-xs font-bold uppercase tracking-wide text-gray-700">
-                    {c.responseTime}
-                  </span>
-                </Link>
-              ))}
-            </div>
-          </SectionReveal>
-        </div>
-      </section>
-
-      {/* FAQ */}
-      <FaqAccordion title="Plumbing Questions — Answered" faqs={PLUMBING_FAQS} emitSchema={false} />
-
-      {/* Internal links */}
-      <section className="bg-gray-50">
-        <div className="container py-20">
-          <SectionReveal className="grid gap-10 md:grid-cols-2">
-            <div>
-              <h2 className="font-display font-semibold text-2xl text-gray-900">Related Services</h2>
-              <ul className="mt-4 space-y-2">
-                {[
-                  { to: "/maintenance", label: "Property Maintenance" },
-                  { to: "/make-ready", label: "Make-Ready & Unit Turns" },
-                  { to: "/electrical", label: "Electrical Services" },
-                  { to: "/hvac", label: "HVAC Services" },
-                ].map((l) => (
-                  <li key={l.to}>
-                    <Link to={l.to} className="inline-flex items-center gap-2 text-gray-900 hover:text-gray-900 hover:underline">
-                      <ArrowRight className="h-4 w-4" /> {l.label}
-                    </Link>
-                  </li>
-                ))}
-                <li>
-                  <Link to="/contact" className="inline-flex items-center gap-2 text-gray-900 hover:text-gray-900 hover:underline">
-                    <ArrowRight className="h-4 w-4" /> Contact us
-                  </Link>
-                </li>
-              </ul>
-            </div>
-            <div>
-              <h2 className="font-display font-semibold text-2xl text-gray-900">Plumbing in your city</h2>
-              <ul className="mt-4 space-y-2">
-                {[
-                  { slug: "orlando-fl", name: "Orlando" },
-                  { slug: "kissimmee-fl", name: "Kissimmee" },
-                ].map((c) => (
-                  <li key={c.slug}>
-                    <Link to={`/maintenance-${c.slug}`} className="inline-flex items-center gap-2 text-gray-900 hover:text-gray-900 hover:underline">
-                      <ArrowRight className="h-4 w-4" /> Plumbing in {c.name}, FL
-                    </Link>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          </SectionReveal>
-        </div>
-      </section>
-
-      <ContactCTA />
+      <ServicePageLayout
+        config={{
+          category: "Plumbing Specialty",
+          h1: "Plumbing Services — 24/7 Emergency Response",
+          description: "Leaks, drains, water heaters, fixtures, repipes. Licensed plumbers on call around the clock.",
+          heroImage: "/images/services/plumbing.jpg",
+          offer: { title: "Plumbing Emergency?", desc: "Dispatched in under 2 hours across the Orlando metro. Day or night." },
+          intro: {
+            h2: "When water moves, minutes matter.",
+            body: "We diagnose first, quote second, fix third. Burst pipes, slab leaks, no-hot-water calls, blocked mainlines — handled by licensed plumbers, not handymen guessing. Documented with photos and tested before we leave.",
+            emphasis: "Real plumbers. Real licensing. Real accountability.",
+          },
+          ourServices: [
+            { name: "HVAC", href: "/hvac", icon: Wind },
+            { name: "Electrical", href: "/electrical", icon: Zap },
+            { name: "Drywall", href: "/drywall", icon: Hammer },
+            { name: "Maintenance", href: "/maintenance", icon: Wrench },
+            { name: "Make-Ready", href: "/make-ready", icon: Droplets },
+          ],
+          subServices: [
+            { name: "Emergency Leak Repair", desc: "Burst pipes, slab leaks, under-sink and behind-wall water damage stopped fast.", href: "/plumbing" },
+            { name: "Drain Cleaning", desc: "Kitchen, bath, laundry, and mainline drains snaked and cleared.", href: "/plumbing" },
+            { name: "Water Heater Service", desc: "Repair and replacement of tank and tankless systems. Same-day options.", href: "/plumbing" },
+            { name: "Fixture Install", desc: "Faucets, toilets, garbage disposals, hose bibs, supply lines and valves.", href: "/plumbing" },
+          ],
+          checklist: [
+            "24/7 emergency dispatch",
+            "Licensed plumbers",
+            "Leak detection & repair",
+            "Drain cleaning & snaking",
+            "Water heater repair & replacement",
+            "Toilet, faucet & fixture install",
+            "Repipes & supply line work",
+            "Photo documentation",
+          ],
+          faqs: PLUMBING_FAQS,
+        }}
+      />
     </>
   );
 };

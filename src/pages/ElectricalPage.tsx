@@ -1,54 +1,16 @@
-import { Link } from "react-router-dom";
-import {
-  Phone,
-  Zap,
-  Plug,
-  Lightbulb,
-  Cable,
-  Fan,
-  ShieldCheck,
-  Clock,
-  AlertTriangle,
-  ArrowRight,
-  MapPin,
-  Siren,
-  Power,
-} from "lucide-react";
+import { Zap, Droplets, Wind, Hammer, Wrench } from "lucide-react";
 import Seo from "@/lib/Seo";
 import SchemaOrg from "@/lib/SchemaOrg";
-import { SITE, CITIES } from "@/lib/site-config";
-import AIOverviewBlock from "@/components/fiveserv/AIOverviewBlock";
-import StatsBar from "@/components/fiveserv/StatsBar";
-import FaqAccordion from "@/components/fiveserv/FaqAccordion";
+import { SITE, SERVICES } from "@/lib/site-config";
 import { ELECTRICAL_FAQS } from "@/lib/service-faqs";
-import ContactCTA from "@/components/fiveserv/ContactCTA";
-import { useReveal } from "@/hooks/use-fiveserv";
-import BrandName from "@/components/fiveserv/BrandName";
-
-const SERVICES_GRID = [
-  { icon: Plug, title: "Outlet & Switch Repair", desc: "Dead outlets, GFCI failures, scorched switches, USB outlets, smart switches." },
-  { icon: Power, title: "Panel Upgrades & Breakers", desc: "Tripping breakers, panel swaps, sub-panels, code corrections, capacity upgrades." },
-  { icon: Lightbulb, title: "Lighting Installation", desc: "Hallways, common areas, exterior, parking lots, recessed, fixtures, dimmers." },
-  { icon: Cable, title: "Wiring Repair & Replacement", desc: "Failed runs, aluminum repair, knob-and-tube remediation, new circuits, rewires." },
-  { icon: Fan, title: "Ceiling Fan Installation", desc: "Bedrooms, living rooms, patios. New box, mount, wire, balance, test." },
-  { icon: AlertTriangle, title: "Emergency Electrical 24/7", desc: "No power, sparking outlets, burning smell, breaker won't reset. We answer. We move." },
-];
-
-
-const SectionReveal = ({ children, className = "" }: { children: React.ReactNode; className?: string }) => {
-  const ref = useReveal<HTMLDivElement>();
-  return (
-    <div ref={ref} className={`reveal ${className}`}>
-      {children}
-    </div>
-  );
-};
+import ServicePageLayout from "@/components/fiveserv/ServicePageLayout";
 
 const ElectricalPage = () => {
   const path = "/electrical";
   const title = "Electrician Orlando FL | Licensed Electrical Services | FiveServ";
   const description =
-    "Licensed electrical services for property managers and homeowners across Central Florida. Outlet repair, panel upgrades, lighting installation, wiring repair, ceiling fans, and 24/7 emergency electrical. 2-hour response target. One call, one invoice. FiveServ Property Solutions — serving Orlando, Kissimmee, Sanford, Winter Park, Lakeland, Altamonte Springs, Apopka, Ocoee, Winter Garden, Clermont, St. Cloud, Davenport, Deltona, Daytona Beach, Palm Coast, Melbourne, Palm Bay, and Cocoa.";
+    "Licensed electricians in Orlando FL. Outlets, panels, lighting, ceiling fans, EV chargers, emergency calls. Photo-documented, one invoice.";
+  const service = SERVICES.find((s) => s.slug === "maintenance")!;
 
   return (
     <>
@@ -56,306 +18,50 @@ const ElectricalPage = () => {
       <SchemaOrg
         breadcrumbs={[
           { name: "Home", url: SITE.url },
-          { name: "Services", url: `${SITE.url}/services` },
+          { name: "Specialties", url: `${SITE.url}/services` },
           { name: "Electrical", url: `${SITE.url}${path}` },
         ]}
-        service={{
-          slug: "maintenance",
-          name: "Electrical Services",
-          short: "Licensed electrical for multifamily and residential.",
-          description:
-            "Licensed electrical services for multifamily properties and homes across Central Florida. Outlet repair, panel upgrades, lighting installation, wiring repair, and 24/7 emergency response.",
-          cta: "Get an Electrical Quote",
-        }}
+        service={service}
         faqs={ELECTRICAL_FAQS}
       />
-
-      {/* Hero */}
-      <section className="relative bg-brand-black pt-stack pb-16 overflow-hidden">
-        <video
-          autoPlay
-          muted
-          loop
-          playsInline
-          aria-label="FiveServ electrical maintenance service video Orlando Florida"
-          className="absolute inset-0 h-full w-full object-cover object-[center_30%] md:object-[center_18%] lg:object-[center_24%]"
-          src="/images/services/electrical.mp4"
-        />
-        <div className="absolute inset-0 bg-brand-black/80" />
-        <div className="relative z-10">
-        <div className="container">
-          <p className="uppercase tracking-[0.12em] text-brand-gold text-base font-bold">
-            — <BrandName variant="light" /> Property Solutions
-          </p>
-          <h1 className="mt-3 font-display font-black text-4xl text-white sm:text-5xl lg:text-6xl">
-            Electrical Services for Property Managers in
-            <span className="block text-brand-gold">Central Florida</span>
-          </h1>
-
-          <div className="mt-6 flex flex-wrap gap-3">
-            <span className="inline-flex items-center gap-2 rounded-full border border-brand-gold/60 bg-brand-gold/10 px-4 py-1.5 text-xs font-bold uppercase tracking-wider text-brand-gold">
-              <ShieldCheck className="h-3.5 w-3.5" /> Licensed & Insured
-            </span>
-            <span className="inline-flex items-center gap-2 rounded-full border border-brand-gold/60 bg-brand-gold/10 px-4 py-1.5 text-xs font-bold uppercase tracking-wider text-brand-gold">
-              <AlertTriangle className="h-3.5 w-3.5" /> 24/7 Emergency
-            </span>
-          </div>
-
-          <p className="mt-6 max-w-2xl text-lg text-gray-300">
-            Outlets. Panels. Lighting. Wiring. Emergencies. One call. We answer.
-          </p>
-
-          <div className="mt-8 flex flex-wrap gap-3">
-            <a href="#contact-form" className="cta-gold btn-shimmer rounded-md px-6 py-3 text-sm font-bold uppercase tracking-wide">
-              Get an Electrical Quote
-            </a>
-            <a
-              href={`tel:${SITE.phone}`}
-              className="flex items-center gap-2 rounded-md border-2 border-brand-white px-6 py-3 text-sm font-bold uppercase tracking-wide text-white hover:bg-brand-white hover:text-brand-black transition-colors"
-            >
-              <Phone className="h-4 w-4" /> Call {SITE.phone}
-            </a>
-          </div>
-
-          <AIOverviewBlock hidden
-            directAnswer="FiveServ Property Solutions provides licensed electrical services for property managers and homeowners across Central Florida — including outlet and switch repair, panel upgrades, lighting installation, ceiling fan installation, wiring repair, and 24/7 emergency electrical response."
-            supportingFacts="Serves multifamily property managers and residential homeowners. 15+ years combined experience. Licensed electricians under FiveServ coordination — zero liability exposure for property managers. 24/7 emergency availability — 2-hour on-site response target. One call, one invoice. Serving Orlando, Kissimmee, Sanford, Winter Park, Lakeland, Altamonte Springs, Apopka, Ocoee, Winter Garden, Clermont, St. Cloud, Davenport, Deltona, Daytona Beach, Palm Coast, Melbourne, Palm Bay, and Cocoa, FL."
-          />
-        </div>
-        </div>
-      </section>
-
-      {/* Problem section */}
-      <section className="bg-gray-50">
-        <div className="container py-20">
-          <SectionReveal className="grid gap-10 lg:grid-cols-2 lg:items-center">
-            <div>
-              <p className="text-xs font-medium uppercase tracking-[0.12em] text-gray-900">— Liability & Safety</p>
-              <h2 className="mt-3 font-display font-bold text-3xl text-gray-900 sm:text-4xl">
-                A failed outlet is a{" "}
-                <span className="text-gray-900">fire risk and a lawsuit</span>
-              </h2>
-              <p className="mt-4 text-gray-700">
-                Electrical issues in rental properties create real liability and safety risks. Sparking outlets,
-                overloaded panels, failed wiring — every hour of delay raises the stakes for residents and the
-                portfolio. <BrandName variant="dark" />'s licensed electricians respond within 2 hours, with documentation insurance
-                carriers accept.
-              </p>
-            </div>
-            <div className="rounded-xl border-2 border-brand-gold bg-white shadow-md p-8">
-              <div className="flex items-center gap-4">
-                <Siren className="h-10 w-10 text-gray-900" />
-                <div>
-                  <p className="font-display font-semibold text-2xl text-gray-900">2-Hour Response</p>
-                  <p className="text-sm text-gray-600">Across the Orlando metro core, 24/7</p>
-                </div>
-              </div>
-              <a
-                href={`tel:${SITE.phone}`}
-                className="cta-gold btn-shimmer mt-6 flex items-center justify-center gap-2 rounded-md px-6 py-4 text-base font-bold uppercase tracking-wide"
-              >
-                <Phone className="h-5 w-5" /> Call {SITE.phone}
-              </a>
-            </div>
-          </SectionReveal>
-        </div>
-      </section>
-
-      {/* Services Grid */}
-      <section className="bg-white">
-        <div className="container py-20">
-          <SectionReveal>
-            <h2 className="font-display font-bold text-3xl text-gray-900 sm:text-4xl">
-              Electrical Services <span className="text-gray-900">We Handle</span>
-            </h2>
-            <p className="mt-3 max-w-2xl text-gray-700">
-              Six core service lines. In-house coordination. Florida-licensed electricians on every job.
-            </p>
-
-            <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-              {SERVICES_GRID.map((s) => (
-                <article key={s.title} className="hover-card rounded-lg border border-gray-100 bg-white shadow-sm p-6">
-                  <span className="flex h-12 w-12 items-center justify-center rounded-md bg-brand-gold/15 text-gray-900">
-                    <s.icon className="h-6 w-6" />
-                  </span>
-                  <h3 className="mt-5 font-display font-semibold text-xl text-gray-900">{s.title}</h3>
-                  <p className="mt-2 text-gray-700">{s.desc}</p>
-                </article>
-              ))}
-            </div>
-          </SectionReveal>
-        </div>
-      </section>
-
-      {/* Response Time section */}
-      <section className="bg-gray-50">
-        <div className="container py-20">
-          <SectionReveal>
-            <div className="rounded-xl border-2 border-brand-gold bg-white shadow-md p-8 sm:p-12">
-              <div className="grid gap-8 lg:grid-cols-[auto,1fr,auto] lg:items-center">
-                <div className="flex h-16 w-16 items-center justify-center rounded-full bg-brand-gold/15 text-gray-900">
-                  <Clock className="h-8 w-8" />
-                </div>
-                <div>
-                  <span className="inline-block rounded-full bg-brand-gold px-3 py-1 text-xs font-bold uppercase tracking-wider text-gray-900">
-                    Response Time
-                  </span>
-                  <h2 className="mt-3 font-display font-bold text-3xl text-gray-900 sm:text-4xl">
-                    Emergency electrical response within{" "}
-                    <span className="text-gray-900">2 hours</span> across Central Florida
-                  </h2>
-                  <p className="mt-3 text-gray-700">
-                    24/7 dispatch. Real human answers the phone. Truck rolling within minutes for power emergencies in
-                    Orlando, Kissimmee, Winter Park, Altamonte Springs, Apopka, Ocoee, and Winter Garden.
-                  </p>
-                </div>
-                <a
-                  href={`tel:${SITE.phone}`}
-                  className="cta-gold btn-shimmer flex items-center justify-center gap-2 rounded-md px-6 py-4 text-base font-bold uppercase tracking-wide whitespace-nowrap"
-                >
-                  <Phone className="h-5 w-5" /> {SITE.phone}
-                </a>
-              </div>
-            </div>
-          </SectionReveal>
-        </div>
-      </section>
-
-      {/* Why Licensed Matters */}
-      <section className="bg-white">
-        <div className="container py-20">
-          <SectionReveal className="grid gap-10 lg:grid-cols-2 lg:items-center">
-            <div className="rounded-xl border border-gray-100 bg-white shadow-sm p-8">
-              <ShieldCheck className="h-12 w-12 text-gray-900" />
-              <p className="mt-6 font-display font-semibold text-2xl text-gray-900">
-                One invoice. <span className="text-gray-900">Zero liability.</span>
-              </p>
-              <p className="mt-3 text-gray-700">
-                You don't track the electrician's license. You don't pull the permit. You don't carry the risk.
-                {" "}<BrandName variant="dark" /> does it all — you get one invoice and full accountability.
-              </p>
-            </div>
-            <div>
-              <p className="text-xs font-medium uppercase tracking-[0.12em] text-gray-900">— Why Licensed Matters</p>
-              <h2 className="mt-3 font-display font-bold text-3xl text-gray-900 sm:text-4xl">
-                All electrical performed by{" "}
-                <span className="text-gray-900">Florida-licensed contractors</span>
-              </h2>
-              <p className="mt-4 text-gray-700">
-                In Florida, electrical work above a low threshold legally requires a licensed electrical contractor.
-                Insurance carriers require it for fire and liability claims. <BrandName variant="dark" /> coordinates licensed
-                electricians on every job — you get the protection of licensed work plus the simplicity of a single
-                point of contact.
-              </p>
-              <ul className="mt-6 space-y-2 text-gray-700">
-                <li className="flex items-start gap-3">
-                  <ShieldCheck className="mt-0.5 h-5 w-5 flex-shrink-0 text-gray-900" />
-                  Licensed electrical contractors on every job
-                </li>
-                <li className="flex items-start gap-3">
-                  <ShieldCheck className="mt-0.5 h-5 w-5 flex-shrink-0 text-gray-900" />
-                  Pulled permits when required by code
-                </li>
-                <li className="flex items-start gap-3">
-                  <ShieldCheck className="mt-0.5 h-5 w-5 flex-shrink-0 text-gray-900" />
-                  Insurance- and liability-claim-ready documentation
-                </li>
-                <li className="flex items-start gap-3">
-                  <ShieldCheck className="mt-0.5 h-5 w-5 flex-shrink-0 text-gray-900" />
-                  One consolidated invoice — coded by unit
-                </li>
-              </ul>
-            </div>
-          </SectionReveal>
-        </div>
-      </section>
-
-      <StatsBar />
-
-      {/* Coverage — all 18 cities */}
-      <section className="bg-white">
-        <div className="container py-20">
-          <SectionReveal>
-            <h2 className="font-display font-bold text-3xl text-gray-900 sm:text-4xl">
-              Electrical Coverage —{" "}
-              <span className="text-gray-900">18 Cities Across Central Florida</span>
-            </h2>
-            <p className="mt-3 max-w-2xl text-gray-700">
-              Same-day response across the Orlando metro core. Within 24 hours across the rest of the region.
-            </p>
-
-            <div className="mt-10 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
-              {CITIES.map((c) => (
-                <Link
-                  key={c.slug}
-                  to={`/maintenance-${c.slug}`}
-                  className="hover-card group flex items-center justify-between rounded-md border border-gray-100 bg-white shadow-sm px-4 py-3"
-                >
-                  <span className="flex items-center gap-3">
-                    <Zap className="h-4 w-4 text-gray-900" />
-                    <span className="font-semibold text-gray-900">
-                      Electrical {c.name}, {c.state}
-                    </span>
-                  </span>
-                  <span className="text-xs font-bold uppercase tracking-wide text-gray-700">
-                    {c.responseTime}
-                  </span>
-                </Link>
-              ))}
-            </div>
-          </SectionReveal>
-        </div>
-      </section>
-
-      {/* FAQ */}
-      <FaqAccordion title="Electrical Questions — Answered" faqs={ELECTRICAL_FAQS} emitSchema={false} />
-
-      {/* Internal links */}
-      <section className="bg-gray-50">
-        <div className="container py-20">
-          <SectionReveal className="grid gap-10 md:grid-cols-2">
-            <div>
-              <h2 className="font-display font-semibold text-2xl text-gray-900">Related Services</h2>
-              <ul className="mt-4 space-y-2">
-                {[
-                  { to: "/maintenance", label: "Property Maintenance" },
-                  { to: "/make-ready", label: "Make-Ready & Unit Turns" },
-                  { to: "/plumbing", label: "Plumbing Services" },
-                  { to: "/hvac", label: "HVAC Services" },
-                ].map((l) => (
-                  <li key={l.to}>
-                    <Link to={l.to} className="inline-flex items-center gap-2 text-gray-900 hover:text-gray-900 hover:underline">
-                      <ArrowRight className="h-4 w-4" /> {l.label}
-                    </Link>
-                  </li>
-                ))}
-                <li>
-                  <Link to="/contact" className="inline-flex items-center gap-2 text-gray-900 hover:text-gray-900 hover:underline">
-                    <ArrowRight className="h-4 w-4" /> Contact us
-                  </Link>
-                </li>
-              </ul>
-            </div>
-            <div>
-              <h2 className="font-display font-semibold text-2xl text-gray-900">Electrical in your city</h2>
-              <ul className="mt-4 space-y-2">
-                {[
-                  { slug: "orlando-fl", name: "Orlando" },
-                  { slug: "kissimmee-fl", name: "Kissimmee" },
-                ].map((c) => (
-                  <li key={c.slug}>
-                    <Link to={`/maintenance-${c.slug}`} className="inline-flex items-center gap-2 text-gray-900 hover:text-gray-900 hover:underline">
-                      <ArrowRight className="h-4 w-4" /> Electrical in {c.name}, FL
-                    </Link>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          </SectionReveal>
-        </div>
-      </section>
-
-      <ContactCTA />
+      <ServicePageLayout
+        config={{
+          category: "Electrical Specialty",
+          h1: "Electrical Services — Licensed Electricians",
+          description: "Outlets, switches, lighting, panels, ceiling fans, EV chargers. Code-compliant work, documented and tested.",
+          heroImage: "/images/services/electrical.jpg",
+          offer: { title: "Power Problem?", desc: "Same-day diagnostics across the Orlando metro. 24/7 emergency line." },
+          intro: {
+            h2: "Electrical work that passes inspection — the first time.",
+            body: "From a flickering outlet to a full panel swap, our licensed electricians work to code, label every breaker, and test every circuit before they leave. No shortcuts. No drywall mess we don't repair.",
+            emphasis: "Licensed. Insured. Permit-ready.",
+          },
+          ourServices: [
+            { name: "Plumbing", href: "/plumbing", icon: Droplets },
+            { name: "HVAC", href: "/hvac", icon: Wind },
+            { name: "Drywall", href: "/drywall", icon: Hammer },
+            { name: "Maintenance", href: "/maintenance", icon: Wrench },
+            { name: "Make-Ready", href: "/make-ready", icon: Zap },
+          ],
+          subServices: [
+            { name: "Outlet & Switch Repair", desc: "Replace, add, or upgrade outlets, switches and dimmers throughout the property.", href: "/electrical" },
+            { name: "Lighting & Ceiling Fans", desc: "Interior, exterior, can lights, vanity lights and fan installation.", href: "/electrical" },
+            { name: "Panel & Breaker Work", desc: "Breaker replacement, sub-panels, full panel upgrades. Permit-ready.", href: "/electrical" },
+            { name: "Emergency Electrical", desc: "No power, tripping breakers, burning smells, exposed wiring — dispatched 24/7.", href: "/electrical" },
+          ],
+          checklist: [
+            "Licensed electricians",
+            "Outlet & switch repair",
+            "Lighting & ceiling fans",
+            "Breaker & panel work",
+            "EV charger install",
+            "Code-compliant wiring",
+            "24/7 emergency dispatch",
+            "Photo documentation",
+          ],
+          faqs: ELECTRICAL_FAQS,
+        }}
+      />
     </>
   );
 };

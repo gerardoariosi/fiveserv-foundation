@@ -1,64 +1,16 @@
-import { Link } from "react-router-dom";
-import {
-  Phone,
-  LayoutGrid,
-  Grid3x3,
-  Square,
-  Trees,
-  Trash2,
-  Wrench,
-  TrendingUp,
-  Building2,
-  Home,
-  ShieldCheck,
-  ArrowRight,
-  MapPin,
-  Camera,
-  ClipboardList,
-  CheckCircle2,
-  Droplets,
-} from "lucide-react";
+import { Layers, Paintbrush, Hammer, Sparkles, Wrench } from "lucide-react";
 import Seo from "@/lib/Seo";
 import SchemaOrg from "@/lib/SchemaOrg";
-import { SITE, CITIES } from "@/lib/site-config";
-import AIOverviewBlock from "@/components/fiveserv/AIOverviewBlock";
-import StatsBar from "@/components/fiveserv/StatsBar";
-import FaqAccordion from "@/components/fiveserv/FaqAccordion";
+import { SITE, SERVICES } from "@/lib/site-config";
 import { FLOORING_FAQS } from "@/lib/service-faqs";
-import ContactCTA from "@/components/fiveserv/ContactCTA";
-import { useReveal } from "@/hooks/use-fiveserv";
-import BrandName from "@/components/fiveserv/BrandName";
-
-const FLOORING_TYPES = [
-  { icon: LayoutGrid, title: "Luxury Vinyl Plank (LVP)", desc: "Waterproof, scratch-resistant, the #1 multifamily floor. Wood and stone looks, click-lock or glue-down." },
-  { icon: Grid3x3, title: "Ceramic & Porcelain Tile", desc: "Bathrooms, kitchens, entryways. Mortar-set, grouted, sealed. Wall tile available." },
-  { icon: Square, title: "Carpet Installation", desc: "Bedrooms, common areas, stairs. Pad, tack strip, stretched and seamed clean." },
-  { icon: Trees, title: "Hardwood & Engineered Wood", desc: "Solid hardwood and engineered planks. Refinishing on existing floors when condition allows." },
-  { icon: Trash2, title: "Flooring Removal & Disposal", desc: "Tear-out of any existing floor — carpet, tile, glued vinyl, hardwood. Hauled and disposed." },
-  { icon: Wrench, title: "Subfloor Repair & Prep", desc: "Soft spots, water damage, leveling, moisture barriers. Done right before any new floor goes in." },
-];
-
-const PROCESS = [
-  { icon: ClipboardList, name: "Assessment & Quote", text: "Free walk-through. Material selection. Line-itemed quote covering material, install, removal, and prep." },
-  { icon: Wrench, name: "Professional Installation", text: "Clean, fast, in-house crews. Furniture moved when needed. Daily site cleanup." },
-  { icon: Camera, name: "Photo Report", text: "Unit ready, photos delivered. PMs get portfolio-ready documentation. Homeowners get peace of mind." },
-];
-
-
-const SectionReveal = ({ children, className = "" }: { children: React.ReactNode; className?: string }) => {
-  const ref = useReveal<HTMLDivElement>();
-  return (
-    <div ref={ref} className={`reveal ${className}`}>
-      {children}
-    </div>
-  );
-};
+import ServicePageLayout from "@/components/fiveserv/ServicePageLayout";
 
 const FlooringPage = () => {
   const path = "/flooring";
   const title = "Flooring Installation Orlando FL | LVP, Tile & Carpet | FiveServ";
   const description =
-    "Professional flooring installation and replacement for property managers and homeowners across Central Florida. Luxury vinyl plank, ceramic tile, carpet, hardwood, and subfloor repair. Fast turnaround for unit turns and renovations. One call, one invoice. FiveServ Property Solutions — serving Orlando, Kissimmee, Sanford, Winter Park, Lakeland, Altamonte Springs, Apopka, Ocoee, Winter Garden, Clermont, St. Cloud, Davenport, Deltona, Daytona Beach, Palm Coast, Melbourne, Palm Bay, and Cocoa.";
+    "Flooring installation in Orlando FL. LVP, tile, laminate and carpet. Apartment turns, homes and commercial spaces. One invoice.";
+  const service = SERVICES.find((s) => s.slug === "maintenance")!;
 
   return (
     <>
@@ -66,397 +18,50 @@ const FlooringPage = () => {
       <SchemaOrg
         breadcrumbs={[
           { name: "Home", url: SITE.url },
-          { name: "Services", url: `${SITE.url}/services` },
+          { name: "Specialties", url: `${SITE.url}/services` },
           { name: "Flooring", url: `${SITE.url}${path}` },
         ]}
-        service={{
-          slug: "renovations",
-          name: "Flooring Services",
-          short: "LVP, tile, carpet, hardwood — multifamily and residential.",
-          description:
-            "Professional flooring installation and replacement for multifamily properties and homeowners across Central Florida. Luxury vinyl plank, tile, carpet, hardwood. Removal and subfloor prep included.",
-          cta: "Get a Flooring Quote",
-        }}
+        service={service}
         faqs={FLOORING_FAQS}
       />
-
-      {/* Hero */}
-      <section className="bg-brand-black pt-stack pb-16">
-        <div className="container">
-          <p className="uppercase tracking-[0.12em] text-brand-gold text-base font-bold">
-            — <BrandName variant="light" /> Property Solutions
-          </p>
-          <h1 className="mt-3 font-display font-black text-4xl text-white sm:text-5xl lg:text-6xl">
-            Flooring Services for Properties and Homes in
-            <span className="block text-brand-gold">Central Florida</span>
-          </h1>
-
-          <div className="mt-6 flex flex-wrap gap-3">
-            <span className="inline-flex items-center gap-2 rounded-full border border-brand-gold/60 bg-brand-gold/10 px-4 py-1.5 text-xs font-bold uppercase tracking-wider text-brand-gold">
-              <Building2 className="h-3.5 w-3.5" /> Property Managers
-            </span>
-            <span className="inline-flex items-center gap-2 rounded-full border border-brand-gold/60 bg-brand-gold/10 px-4 py-1.5 text-xs font-bold uppercase tracking-wider text-brand-gold">
-              <Home className="h-3.5 w-3.5" /> Homeowners
-            </span>
-            <span className="inline-flex items-center gap-2 rounded-full border border-brand-gold/60 bg-brand-gold/10 px-4 py-1.5 text-xs font-bold uppercase tracking-wider text-brand-gold">
-              <TrendingUp className="h-3.5 w-3.5" /> CapEx Specialist
-            </span>
-          </div>
-
-          <p className="mt-6 max-w-2xl text-lg text-gray-300">
-            Vinyl plank. Tile. Carpet. Hardwood. Removal, subfloor prep, install. One invoice.
-          </p>
-
-          <div className="mt-8 flex flex-wrap gap-3">
-            <a href="#contact-form" className="cta-gold btn-shimmer rounded-md px-6 py-3 text-sm font-bold uppercase tracking-wide">
-              Get a Flooring Quote
-            </a>
-            <a
-              href={`tel:${SITE.phone}`}
-              className="flex items-center gap-2 rounded-md border-2 border-brand-white px-6 py-3 text-sm font-bold uppercase tracking-wide text-white hover:bg-brand-white hover:text-brand-black transition-colors"
-            >
-              <Phone className="h-4 w-4" /> Call {SITE.phone}
-            </a>
-          </div>
-
-        </div>
-      </section>
-
-      <AIOverviewBlock hidden
-        directAnswer="FiveServ Property Solutions provides professional flooring installation and replacement for property managers and homeowners across Central Florida — including luxury vinyl plank, ceramic and porcelain tile, carpet, hardwood, engineered wood, subfloor repair, and full flooring removal and disposal."
-        supportingFacts="Serves multifamily property managers and residential homeowners. 15+ years combined experience. LVP is the most requested floor for multifamily unit turns — waterproof, scratch-resistant, fast install. Subfloor repair and moisture barriers handled before any new floor goes down. One call, one invoice. Serving Orlando, Kissimmee, Sanford, Winter Park, Lakeland, Altamonte Springs, Apopka, Ocoee, Winter Garden, Clermont, St. Cloud, Davenport, Deltona, Daytona Beach, Palm Coast, Melbourne, Palm Bay, and Cocoa, FL."
+      <ServicePageLayout
+        config={{
+          category: "Flooring Specialty",
+          h1: "Flooring Installation — LVP, Tile, Laminate & Carpet",
+          description: "Single rooms, whole units, full properties. Material allowances clear up front, install clean and on schedule.",
+          heroImage: "/images/services/flooring.jpg",
+          offer: { title: "Get a Flooring Quote", desc: "Free on-site measure, material samples, and a written quote." },
+          intro: {
+            h2: "Flooring that looks installed — not just laid down.",
+            body: "Straight cuts at transitions, baseboards reinstalled or replaced, edges scribed cleanly to walls, and the whole space cleaned before we leave. We carry LVP, tile, laminate, and carpet, with material allowances that fit your property class.",
+            emphasis: "Apartment turns or homes. Same crew, same standard.",
+          },
+          ourServices: [
+            { name: "Painting", href: "/painting", icon: Paintbrush },
+            { name: "Drywall", href: "/drywall", icon: Hammer },
+            { name: "Cleaning", href: "/cleaning", icon: Sparkles },
+            { name: "Maintenance", href: "/maintenance", icon: Wrench },
+            { name: "Make-Ready", href: "/make-ready", icon: Layers },
+          ],
+          subServices: [
+            { name: "Luxury Vinyl Plank (LVP)", desc: "Waterproof, scratch-resistant, fast install. Our most-requested apartment finish.", href: "/flooring" },
+            { name: "Tile Install", desc: "Bathroom, kitchen, entry. Straight lines, clean grout, finished trim.", href: "/flooring" },
+            { name: "Carpet Replacement", desc: "Pad, stretch and finish. Apartment turns and homes.", href: "/flooring" },
+            { name: "Laminate & Engineered", desc: "Click-lock laminate and engineered hardwood for residential and amenity spaces.", href: "/flooring" },
+          ],
+          checklist: [
+            "Free on-site measure",
+            "Material samples & allowances",
+            "LVP installation",
+            "Tile installation",
+            "Carpet replacement",
+            "Laminate & engineered wood",
+            "Baseboard & transition install",
+            "Job site cleaned on completion",
+          ],
+          faqs: FLOORING_FAQS,
+        }}
       />
-
-      {/* TWO-AUDIENCE SPLIT */}
-      <section className="bg-gray-50">
-        <div className="container py-20">
-          <SectionReveal>
-            <h2 className="font-display font-bold text-3xl text-gray-900 sm:text-4xl">
-              One Flooring Team. <span className="text-gray-900">Two Audiences.</span>
-            </h2>
-            <p className="mt-3 max-w-2xl text-gray-700">
-              The same crews installing 50-unit LVP rollouts also handle whole-home installs. Pick your path.
-            </p>
-
-            <div className="mt-12 grid gap-6 lg:grid-cols-2">
-              {/* B2B */}
-              <article className="rounded-xl border-2 border-brand-gold bg-white shadow-md p-8">
-                <span className="inline-flex items-center gap-2 rounded-full bg-brand-gold px-3 py-1 text-xs font-bold uppercase tracking-wider text-gray-900">
-                  <Building2 className="h-3.5 w-3.5" /> Property Managers
-                </span>
-                <h3 className="mt-4 font-display font-semibold text-2xl text-gray-900">
-                  Multifamily & Portfolio Flooring
-                </h3>
-                <ul className="mt-5 space-y-2 text-gray-700">
-                  {[
-                    "Flooring replacement on unit turns",
-                    "Portfolio-wide flooring upgrades",
-                    "LVP — most durable for rentals",
-                    "Increases rental value 10–15%",
-                    "Included in CapEx renovation packages",
-                  ].map((t) => (
-                    <li key={t} className="flex items-start gap-3">
-                      <CheckCircle2 className="mt-0.5 h-5 w-5 flex-shrink-0 text-gray-900" />
-                      <span>{t}</span>
-                    </li>
-                  ))}
-                </ul>
-                <Link
-                  to="/renovations"
-                  className="cta-gold btn-shimmer mt-6 inline-flex items-center gap-2 rounded-md px-6 py-3 text-sm font-bold uppercase tracking-wide"
-                >
-                  Get a Property Flooring Quote <ArrowRight className="h-4 w-4" />
-                </Link>
-              </article>
-
-              {/* B2C */}
-              <article className="rounded-xl border-2 border-brand-gold bg-white shadow-md p-8">
-                <span className="inline-flex items-center gap-2 rounded-full bg-brand-gold px-3 py-1 text-xs font-bold uppercase tracking-wider text-gray-900">
-                  <Home className="h-3.5 w-3.5" /> Homeowners
-                </span>
-                <h3 className="mt-4 font-display font-semibold text-2xl text-gray-900">
-                  Home & Residential Flooring
-                </h3>
-                <ul className="mt-5 space-y-2 text-gray-700">
-                  {[
-                    "Full home flooring replacement",
-                    "Room-by-room installation",
-                    "Wide selection of materials",
-                    "Color and style consultation",
-                    "Clean install with furniture moving",
-                  ].map((t) => (
-                    <li key={t} className="flex items-start gap-3">
-                      <CheckCircle2 className="mt-0.5 h-5 w-5 flex-shrink-0 text-gray-900" />
-                      <span>{t}</span>
-                    </li>
-                  ))}
-                </ul>
-                <Link
-                  to="/residential"
-                  className="cta-gold btn-shimmer mt-6 inline-flex items-center gap-2 rounded-md px-6 py-3 text-sm font-bold uppercase tracking-wide"
-                >
-                  Get a Home Flooring Quote <ArrowRight className="h-4 w-4" />
-                </Link>
-              </article>
-            </div>
-          </SectionReveal>
-        </div>
-      </section>
-
-      {/* Flooring Types Grid */}
-      <section className="bg-white">
-        <div className="container py-20">
-          <SectionReveal>
-            <h2 className="font-display font-bold text-3xl text-gray-900 sm:text-4xl">
-              Flooring Types <span className="text-gray-900">We Install</span>
-            </h2>
-            <p className="mt-3 max-w-2xl text-gray-700">
-              Every major material. Removal and subfloor prep coordinated under one workflow.
-            </p>
-
-            <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-              {FLOORING_TYPES.map((s) => (
-                <article key={s.title} className="hover-card rounded-lg border border-gray-100 bg-white shadow-sm p-6">
-                  <span className="flex h-12 w-12 items-center justify-center rounded-md bg-brand-gold/15 text-gray-900">
-                    <s.icon className="h-6 w-6" />
-                  </span>
-                  <h3 className="mt-5 font-display font-semibold text-xl text-gray-900">{s.title}</h3>
-                  <p className="mt-2 text-gray-700">{s.desc}</p>
-                </article>
-              ))}
-            </div>
-          </SectionReveal>
-        </div>
-      </section>
-
-      {/* Why LVP for Rentals */}
-      <section className="bg-gray-50">
-        <div className="container py-20">
-          <SectionReveal className="grid gap-10 lg:grid-cols-2 lg:items-center">
-            <div className="rounded-xl border border-gray-100 bg-white shadow-sm p-8">
-              <Droplets className="h-12 w-12 text-gray-900" />
-              <p className="mt-6 font-display font-semibold text-2xl text-gray-900">
-                <span className="text-gray-900">LVP</span> — the #1 rental floor in Florida
-              </p>
-              <p className="mt-3 text-gray-700">
-                Waterproof. Scratch-resistant. Tenant-proof. Replaceable plank-by-plank. Presents like wood, costs less,
-                outlasts carpet by 4–5 turns.
-              </p>
-            </div>
-            <div>
-              <p className="text-xs font-medium uppercase tracking-[0.12em] text-gray-900">— Why LVP for Rentals</p>
-              <h2 className="mt-3 font-display font-bold text-3xl text-gray-900 sm:text-4xl">
-                Luxury vinyl plank is the{" "}
-                <span className="text-gray-900">#1 choice for rental properties</span> in Florida
-              </h2>
-              <p className="mt-4 text-gray-700">
-                Florida humidity destroys hardwood. Florida tenants destroy carpet. LVP holds up to both — plus
-                kitchens, bathrooms, pets, and water leaks. <BrandName variant="dark" /> recommends LVP for every unit turn unless
-                an owner spec calls for something else.
-              </p>
-              <ul className="mt-6 space-y-2 text-gray-700">
-                <li className="flex items-start gap-3">
-                  <ShieldCheck className="mt-0.5 h-5 w-5 flex-shrink-0 text-gray-900" />
-                  Waterproof — survives leaks and mop water
-                </li>
-                <li className="flex items-start gap-3">
-                  <ShieldCheck className="mt-0.5 h-5 w-5 flex-shrink-0 text-gray-900" />
-                  Scratch- and dent-resistant — pet- and tenant-proof
-                </li>
-                <li className="flex items-start gap-3">
-                  <ShieldCheck className="mt-0.5 h-5 w-5 flex-shrink-0 text-gray-900" />
-                  Plank-level replaceability — no full tear-out for a damaged spot
-                </li>
-                <li className="flex items-start gap-3">
-                  <ShieldCheck className="mt-0.5 h-5 w-5 flex-shrink-0 text-gray-900" />
-                  Presents like premium hardwood at a fraction of the cost
-                </li>
-              </ul>
-            </div>
-          </SectionReveal>
-        </div>
-      </section>
-
-      {/* ROI section */}
-      <section className="bg-white">
-        <div className="container py-20">
-          <SectionReveal>
-            <div className="rounded-xl border-2 border-brand-gold bg-white shadow-md p-8 sm:p-12">
-              <div className="grid gap-8 lg:grid-cols-[auto,1fr,auto] lg:items-center">
-                <div className="flex h-16 w-16 items-center justify-center rounded-full bg-brand-gold/15 text-gray-900">
-                  <TrendingUp className="h-8 w-8" />
-                </div>
-                <div>
-                  <span className="inline-block rounded-full bg-brand-gold px-3 py-1 text-xs font-bold uppercase tracking-wider text-gray-900">
-                    Highest-ROI Upgrade
-                  </span>
-                  <h2 className="mt-3 font-display font-bold text-3xl text-gray-900 sm:text-4xl">
-                    Flooring upgrades average{" "}
-                    <span className="text-gray-900">10–15% rent increase</span> in Central Florida multifamily
-                  </h2>
-                  <p className="mt-3 text-gray-700">
-                    One of the highest-ROI capital improvements in property management. Faster lease-up, premium
-                    pricing, lower turn cost on the next move-out.
-                  </p>
-                </div>
-                <Link
-                  to="/renovations"
-                  className="cta-gold btn-shimmer flex items-center justify-center gap-2 rounded-md px-6 py-4 text-base font-bold uppercase tracking-wide whitespace-nowrap"
-                >
-                  See CapEx & Renovations
-                </Link>
-              </div>
-            </div>
-          </SectionReveal>
-        </div>
-      </section>
-
-      {/* Process — 3 steps */}
-      <section className="bg-gray-50">
-        <div className="container py-20">
-          <SectionReveal>
-            <h2 className="font-display font-bold text-3xl text-gray-900 sm:text-4xl">
-              Our 3-Step <span className="text-gray-900">Flooring Process</span>
-            </h2>
-
-            <div className="mt-12 grid gap-6 md:grid-cols-3">
-              {PROCESS.map((p, i) => (
-                <article key={p.name} className="rounded-lg border border-gray-100 bg-white shadow-sm p-6">
-                  <span className="inline-flex h-10 w-10 items-center justify-center rounded-full bg-brand-gold text-base font-semibold text-gray-900">
-                    {i + 1}
-                  </span>
-                  <p.icon className="mt-4 h-8 w-8 text-gray-900" />
-                  <h3 className="mt-3 font-display font-semibold text-xl text-gray-900">{p.name}</h3>
-                  <p className="mt-2 text-gray-700">{p.text}</p>
-                </article>
-              ))}
-            </div>
-          </SectionReveal>
-        </div>
-      </section>
-
-      <StatsBar />
-
-      {/* Coverage — all 18 cities */}
-      <section className="bg-white">
-        <div className="container py-20">
-          <SectionReveal>
-            <h2 className="font-display font-bold text-3xl text-gray-900 sm:text-4xl">
-              Flooring Coverage —{" "}
-              <span className="text-gray-900">18 Cities Across Central Florida</span>
-            </h2>
-            <p className="mt-3 max-w-2xl text-gray-700">
-              Same-day assessment across the Orlando metro core. Within 24 hours across the rest of the region.
-            </p>
-
-            <div className="mt-10 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
-              {CITIES.map((c) => (
-                <Link
-                  key={c.slug}
-                  to={`/maintenance-${c.slug}`}
-                  className="hover-card group flex items-center justify-between rounded-md border border-gray-100 bg-white shadow-sm px-4 py-3"
-                >
-                  <span className="flex items-center gap-3">
-                    <MapPin className="h-4 w-4 text-gray-900" />
-                    <span className="font-semibold text-gray-900">
-                      Flooring {c.name}, {c.state}
-                    </span>
-                  </span>
-                  <span className="text-xs font-bold uppercase tracking-wide text-gray-700">
-                    {c.responseTime}
-                  </span>
-                </Link>
-              ))}
-            </div>
-          </SectionReveal>
-        </div>
-      </section>
-
-      {/* FAQ */}
-      <FaqAccordion title="Flooring Questions — Answered" faqs={FLOORING_FAQS} emitSchema={false} />
-
-      {/* Internal links */}
-      <section className="bg-gray-50">
-        <div className="container py-20">
-          <SectionReveal className="grid gap-10 md:grid-cols-2">
-            <div>
-              <h2 className="font-display font-semibold text-2xl text-gray-900">Related Services</h2>
-              <ul className="mt-4 space-y-2">
-                {[
-                  { to: "/renovations", label: "CapEx & Renovations" },
-                  { to: "/make-ready", label: "Make-Ready & Unit Turns" },
-                  { to: "/maintenance", label: "Property Maintenance" },
-                  { to: "/residential", label: "Residential Services" },
-                ].map((l) => (
-                  <li key={l.to}>
-                    <Link to={l.to} className="inline-flex items-center gap-2 text-gray-900 hover:text-gray-900 hover:underline">
-                      <ArrowRight className="h-4 w-4" /> {l.label}
-                    </Link>
-                  </li>
-                ))}
-                <li>
-                  <Link to="/contact" className="inline-flex items-center gap-2 text-gray-900 hover:text-gray-900 hover:underline">
-                    <ArrowRight className="h-4 w-4" /> Contact us
-                  </Link>
-                </li>
-              </ul>
-            </div>
-            <div>
-              <h2 className="font-display font-semibold text-2xl text-gray-900">Flooring in your city</h2>
-              <ul className="mt-4 space-y-2">
-                {[
-                  { slug: "orlando-fl", name: "Orlando" },
-                  { slug: "kissimmee-fl", name: "Kissimmee" },
-                ].map((c) => (
-                  <li key={c.slug}>
-                    <Link to={`/maintenance-${c.slug}`} className="inline-flex items-center gap-2 text-gray-900 hover:text-gray-900 hover:underline">
-                      <ArrowRight className="h-4 w-4" /> Flooring in {c.name}, FL
-                    </Link>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          </SectionReveal>
-        </div>
-      </section>
-
-      {/* Final CTA — TWO buttons side by side */}
-      <section id="contact-form" className="bg-brand-black">
-        <div className="container py-20">
-          <SectionReveal>
-            <div className="rounded-xl border-2 border-brand-gold bg-white border border-gray-100 shadow-sm p-8 sm:p-12 text-center">
-              <h2 className="font-display font-bold text-3xl text-gray-900 sm:text-4xl">
-                Ready for a <span className="text-gray-900">flooring quote?</span>
-              </h2>
-              <p className="mt-3 text-gray-300">
-                Pick the path that fits. PM portfolios on the left. Homes on the right.
-              </p>
-              <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
-                <Link
-                  to="/contact"
-                  className="cta-gold btn-shimmer inline-flex items-center justify-center gap-2 rounded-md px-6 py-3 text-sm font-bold uppercase tracking-wide"
-                >
-                  <Building2 className="h-4 w-4" /> Get a Property Flooring Quote
-                </Link>
-                <Link
-                  to="/residential"
-                  className="inline-flex items-center justify-center gap-2 rounded-md border-2 border-brand-gold px-6 py-3 text-sm font-bold uppercase tracking-wide text-gray-900 hover:bg-brand-gold hover:text-gray-900 transition-colors"
-                >
-                  <Home className="h-4 w-4" /> Get a Home Flooring Quote
-                </Link>
-              </div>
-              <p className="mt-6 text-sm text-gray-400">
-                Or call us directly:{" "}
-                <a href={`tel:${SITE.phone}`} className="font-bold text-gray-900 hover:underline">
-                  {SITE.phone}
-                </a>
-              </p>
-            </div>
-          </SectionReveal>
-        </div>
-      </section>
-
-      <ContactCTA variant="b2c" />
     </>
   );
 };
