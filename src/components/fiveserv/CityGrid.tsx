@@ -45,10 +45,12 @@ const tierIconSize = (tier: 1 | 2 | 3) => (tier === 1 ? 28 : tier === 2 ? 24 : 2
 export const CityGrid = () => {
   const ref = useReveal<HTMLDivElement>();
   return (
-    <section className="bg-gray-50">
-      <div ref={ref} className="container reveal py-28 lg:py-32">
+    <section style={{ backgroundColor: "#FAFAF8" }}>
+      <div ref={ref} className="container reveal" style={{ paddingTop: 80, paddingBottom: 80 }}>
+        <p className="text-center font-bold uppercase mb-3" style={{ color: "#FFD700", letterSpacing: "0.15em", fontSize: 11 }}>
+          — Service Areas
+        </p>
         <SectionHeading
-          eyebrow="Service Areas"
           subtext="From Orlando to the Space Coast — we cover it all"
         >
           Serving 18 Cities Across <span className="text-gray-900">Central Florida</span>
