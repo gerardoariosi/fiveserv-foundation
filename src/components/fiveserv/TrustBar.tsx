@@ -18,7 +18,11 @@ const TrustBar = () => {
   return (
     <section
       aria-label="Trusted by property managers across Central Florida"
-      className="bg-white border-y border-gray-100"
+      style={{
+        backgroundColor: "#FAFAF8",
+        borderTop: "1px solid rgba(255,215,0,0.3)",
+        borderBottom: "1px solid rgba(255,215,0,0.3)",
+      }}
     >
       <div className="container py-6">
         <p className="text-[11px] uppercase tracking-[0.15em] text-gray-400">
