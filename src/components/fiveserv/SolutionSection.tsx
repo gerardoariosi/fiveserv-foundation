@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import { Check, X } from "lucide-react";
 import { useReveal } from "@/hooks/use-fiveserv";
-import SectionHeading from "./SectionHeading";
+
 import BrandName from "@/components/fiveserv/BrandName";
 
 import type { ReactNode } from "react";
