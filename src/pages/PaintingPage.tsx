@@ -1,60 +1,16 @@
-import { Link } from "react-router-dom";
-import {
-  Phone,
-  Paintbrush,
-  Home,
-  Building2,
-  Palette,
-  Sparkles,
-  Key,
-  ShieldCheck,
-  ArrowRight,
-  MapPin,
-  Camera,
-  ClipboardList,
-  CheckCircle2,
-} from "lucide-react";
+import { Paintbrush, Hammer, Layers, Sparkles, Wrench } from "lucide-react";
 import Seo from "@/lib/Seo";
 import SchemaOrg from "@/lib/SchemaOrg";
-import { SITE, CITIES } from "@/lib/site-config";
-import AIOverviewBlock from "@/components/fiveserv/AIOverviewBlock";
-import StatsBar from "@/components/fiveserv/StatsBar";
-import FaqAccordion from "@/components/fiveserv/FaqAccordion";
+import { SITE, SERVICES } from "@/lib/site-config";
 import { PAINTING_FAQS } from "@/lib/service-faqs";
-import ContactCTA from "@/components/fiveserv/ContactCTA";
-import { useReveal } from "@/hooks/use-fiveserv";
-import BrandName from "@/components/fiveserv/BrandName";
-
-const SERVICES_GRID = [
-  { icon: Paintbrush, title: "Interior Room Painting", desc: "Bedrooms, living rooms, kitchens, bathrooms. Walls, ceilings, trim, doors." },
-  { icon: Home, title: "Full Unit / Home Repaint", desc: "Whole-unit and whole-home repaints. Coordinated with drywall and cleaning." },
-  { icon: Key, title: "Make-Ready Painting", desc: "Touch-up or full repaint between tenants. Inside the 5-day make-ready window." },
-  { icon: Building2, title: "Exterior Painting", desc: "Apartment complexes, common areas, hallways, breezeways, single-family exteriors." },
-  { icon: Sparkles, title: "Accent & Feature Walls", desc: "Color, pattern, board-and-batten, paneled looks. Designed to sell or to lease." },
-  { icon: Palette, title: "Color Consultation", desc: "Tenant-proof palettes for rentals. Personalized palettes for homeowners. Included." },
-];
-
-const PROCESS = [
-  { icon: ClipboardList, name: "Assessment & Quote", text: "Walk the space. Color selection. Clear, line-itemed quote before any work begins." },
-  { icon: Paintbrush, name: "We Paint — Clean & Fast", text: "Professional crews. Drop cloths, masking, primer, two coats. No mess left behind." },
-  { icon: Camera, name: "Photo Report", text: "Unit ready, photos delivered. PMs get a portfolio-ready report. Homeowners get peace of mind." },
-];
-
-
-const SectionReveal = ({ children, className = "" }: { children: React.ReactNode; className?: string }) => {
-  const ref = useReveal<HTMLDivElement>();
-  return (
-    <div ref={ref} className={`reveal ${className}`}>
-      {children}
-    </div>
-  );
-};
+import ServicePageLayout from "@/components/fiveserv/ServicePageLayout";
 
 const PaintingPage = () => {
   const path = "/painting";
   const title = "Painting Contractor Orlando FL | Interior & Exterior Painting | FiveServ";
   const description =
-    "Licensed painting contractor serving property managers and homeowners across Central Florida. Interior painting, exterior painting, full unit repaints, make-ready touch-ups, and accent walls. Fast turnaround. One call, one invoice. FiveServ Property Solutions — serving Orlando, Kissimmee, Sanford, Winter Park, Lakeland, Altamonte Springs, Apopka, Ocoee, Winter Garden, Clermont, St. Cloud, Davenport, Deltona, Daytona Beach, Palm Coast, Melbourne, Palm Bay, and Cocoa.";
+    "Professional painting in Orlando FL. Interior, exterior, apartment turns, commercial repaints. Sherwin-Williams quality, photo-documented, one invoice.";
+  const service = SERVICES.find((s) => s.slug === "maintenance")!;
 
   return (
     <>
@@ -62,396 +18,50 @@ const PaintingPage = () => {
       <SchemaOrg
         breadcrumbs={[
           { name: "Home", url: SITE.url },
-          { name: "Services", url: `${SITE.url}/services` },
+          { name: "Specialties", url: `${SITE.url}/services` },
           { name: "Painting", url: `${SITE.url}${path}` },
         ]}
-        service={{
-          slug: "maintenance",
-          name: "Painting Services",
-          short: "Interior & exterior — multifamily and residential.",
-          description:
-            "Professional interior and exterior painting for property managers and homeowners across Central Florida. Make-ready painting, full unit repaints, accent walls, exterior painting, and color consultation.",
-          cta: "Get a Painting Quote",
-        }}
+        service={service}
         faqs={PAINTING_FAQS}
       />
-
-      {/* Hero */}
-      <section className="bg-brand-black pt-stack pb-16">
-        <div className="container">
-          <p className="uppercase tracking-[0.12em] text-brand-gold text-base font-bold">
-            — <BrandName variant="light" /> Property Solutions
-          </p>
-          <h1 className="mt-3 font-display font-black text-4xl text-white sm:text-5xl lg:text-6xl">
-            Professional Painting Services in Central Florida —
-            <span className="block text-brand-gold">Properties & Homes</span>
-          </h1>
-
-          <div className="mt-6 flex flex-wrap gap-3">
-            <span className="inline-flex items-center gap-2 rounded-full border border-brand-gold/60 bg-brand-gold/10 px-4 py-1.5 text-xs font-bold uppercase tracking-wider text-brand-gold">
-              <Building2 className="h-3.5 w-3.5" /> Property Managers
-            </span>
-            <span className="inline-flex items-center gap-2 rounded-full border border-brand-gold/60 bg-brand-gold/10 px-4 py-1.5 text-xs font-bold uppercase tracking-wider text-brand-gold">
-              <Home className="h-3.5 w-3.5" /> Homeowners
-            </span>
-            <span className="inline-flex items-center gap-2 rounded-full border border-brand-gold/60 bg-brand-gold/10 px-4 py-1.5 text-xs font-bold uppercase tracking-wider text-brand-gold">
-              <Key className="h-3.5 w-3.5" /> Make-Ready Specialist
-            </span>
-          </div>
-
-          <p className="mt-6 max-w-2xl text-lg text-gray-300">
-            Interior. Exterior. Make-ready. Accent walls. Sherwin-Williams. One call.
-          </p>
-
-          <div className="mt-8 flex flex-wrap gap-3">
-            <a href="#contact-form" className="cta-gold btn-shimmer rounded-md px-6 py-3 text-sm font-bold uppercase tracking-wide">
-              Get a Painting Quote
-            </a>
-            <a
-              href={`tel:${SITE.phone}`}
-              className="flex items-center gap-2 rounded-md border-2 border-brand-white px-6 py-3 text-sm font-bold uppercase tracking-wide text-white hover:bg-brand-white hover:text-brand-black transition-colors"
-            >
-              <Phone className="h-4 w-4" /> Call {SITE.phone}
-            </a>
-          </div>
-
-          <AIOverviewBlock hidden
-            directAnswer="FiveServ Property Solutions is a licensed painting contractor in Orlando, FL providing interior and exterior painting for property managers and homeowners across Central Florida — including full unit repaints, make-ready painting, exterior painting, accent walls, and color consultation."
-            supportingFacts="Serves property management companies with multifamily portfolios and residential homeowners. 15+ years combined experience. Painting coordinated inside the 5-day make-ready window when needed. Licensed and insured. One call, one team, one invoice. Serving Orlando, Kissimmee, Sanford, Winter Park, Lakeland, Altamonte Springs, Apopka, Ocoee, Winter Garden, Clermont, St. Cloud, Davenport, Deltona, Daytona Beach, Palm Coast, Melbourne, Palm Bay, and Cocoa, FL."
-          />
-        </div>
-      </section>
-
-      {/* TWO-AUDIENCE SPLIT */}
-      <section className="bg-gray-50">
-        <div className="container py-20">
-          <SectionReveal>
-            <h2 className="font-display font-bold text-3xl text-gray-900 sm:text-4xl">
-              One Painting Team. <span className="text-gray-900">Two Audiences.</span>
-            </h2>
-            <p className="mt-3 max-w-2xl text-gray-700">
-              The same painters who turn 500-unit communities also paint Central Florida homes. Pick your path.
-            </p>
-
-            <div className="mt-12 grid gap-6 lg:grid-cols-2">
-              {/* B2B */}
-              <article className="rounded-xl border-2 border-brand-gold bg-white shadow-md p-8">
-                <span className="inline-flex items-center gap-2 rounded-full bg-brand-gold px-3 py-1 text-xs font-bold uppercase tracking-wider text-gray-900">
-                  <Building2 className="h-3.5 w-3.5" /> Property Managers
-                </span>
-                <h3 className="mt-4 font-display font-semibold text-2xl text-gray-900">
-                  Multifamily & Portfolio Painting
-                </h3>
-                <ul className="mt-5 space-y-2 text-gray-700">
-                  {[
-                    "Make-ready painting between tenants",
-                    "Full unit repaints on turnover",
-                    "Consistent color standards across portfolio",
-                    "Included in 5-day make-ready guarantee",
-                    "One invoice per property",
-                  ].map((t) => (
-                    <li key={t} className="flex items-start gap-3">
-                      <CheckCircle2 className="mt-0.5 h-5 w-5 flex-shrink-0 text-gray-900" />
-                      <span>{t}</span>
-                    </li>
-                  ))}
-                </ul>
-                <Link
-                  to="/make-ready"
-                  className="cta-gold btn-shimmer mt-6 inline-flex items-center gap-2 rounded-md px-6 py-3 text-sm font-bold uppercase tracking-wide"
-                >
-                  Get a Make-Ready Painting Quote <ArrowRight className="h-4 w-4" />
-                </Link>
-              </article>
-
-              {/* B2C */}
-              <article className="rounded-xl border-2 border-brand-gold bg-white shadow-md p-8">
-                <span className="inline-flex items-center gap-2 rounded-full bg-brand-gold px-3 py-1 text-xs font-bold uppercase tracking-wider text-gray-900">
-                  <Home className="h-3.5 w-3.5" /> Homeowners
-                </span>
-                <h3 className="mt-4 font-display font-semibold text-2xl text-gray-900">
-                  Home & Residential Painting
-                </h3>
-                <ul className="mt-5 space-y-2 text-gray-700">
-                  {[
-                    "Interior room painting",
-                    "Full home repaints",
-                    "Accent walls and feature walls",
-                    "Exterior painting",
-                    "Color consultation included",
-                  ].map((t) => (
-                    <li key={t} className="flex items-start gap-3">
-                      <CheckCircle2 className="mt-0.5 h-5 w-5 flex-shrink-0 text-gray-900" />
-                      <span>{t}</span>
-                    </li>
-                  ))}
-                </ul>
-                <Link
-                  to="/residential"
-                  className="cta-gold btn-shimmer mt-6 inline-flex items-center gap-2 rounded-md px-6 py-3 text-sm font-bold uppercase tracking-wide"
-                >
-                  Get a Home Painting Quote <ArrowRight className="h-4 w-4" />
-                </Link>
-              </article>
-            </div>
-          </SectionReveal>
-        </div>
-      </section>
-
-      {/* Services Grid */}
-      <section className="bg-white">
-        <div className="container py-20">
-          <SectionReveal>
-            <h2 className="font-display font-bold text-3xl text-gray-900 sm:text-4xl">
-              Painting Services <span className="text-gray-900">We Handle</span>
-            </h2>
-            <p className="mt-3 max-w-2xl text-gray-700">
-              Six core service lines. In-house crews. Coordinated with drywall, cleaning, and final inspection.
-            </p>
-
-            <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-              {SERVICES_GRID.map((s) => (
-                <article key={s.title} className="hover-card rounded-lg border border-gray-100 bg-white shadow-sm p-6">
-                  <span className="flex h-12 w-12 items-center justify-center rounded-md bg-brand-gold/15 text-gray-900">
-                    <s.icon className="h-6 w-6" />
-                  </span>
-                  <h3 className="mt-5 font-display font-semibold text-xl text-gray-900">{s.title}</h3>
-                  <p className="mt-2 text-gray-700">{s.desc}</p>
-                </article>
-              ))}
-            </div>
-          </SectionReveal>
-        </div>
-      </section>
-
-      {/* Sherwin-Williams */}
-      <section className="bg-gray-50">
-        <div className="container py-20">
-          <SectionReveal className="grid gap-10 lg:grid-cols-2 lg:items-center">
-            <div className="rounded-xl border border-gray-100 bg-white shadow-sm p-8">
-              <Palette className="h-12 w-12 text-gray-900" />
-              <p className="mt-6 font-display font-semibold text-2xl text-gray-900">
-                <span className="text-gray-900">Sherwin-Williams</span> premium paints
-              </p>
-              <p className="mt-3 text-gray-700">
-                Durable. Washable. Tenant-proof. The grade of paint that holds up across multiple turns and stays
-                looking new in real-world rentals.
-              </p>
-            </div>
-            <div>
-              <p className="text-xs font-medium uppercase tracking-[0.12em] text-gray-900">— Paint Spec</p>
-              <h2 className="mt-3 font-display font-bold text-3xl text-gray-900 sm:text-4xl">
-                The right paint{" "}
-                <span className="text-gray-900">cuts your turn cost over time</span>
-              </h2>
-              <p className="mt-4 text-gray-700">
-                Cheap paint shows scuffs in 6 months and needs full repaints every turn. Sherwin-Williams premium
-                lines wash clean, hold color, and let us touch-up instead of fully repaint on most turns — which
-                compounds into real savings across a portfolio.
-              </p>
-              <ul className="mt-6 space-y-2 text-gray-700">
-                <li className="flex items-start gap-3">
-                  <ShieldCheck className="mt-0.5 h-5 w-5 flex-shrink-0 text-gray-900" />
-                  Washable, scrubbable wall finishes
-                </li>
-                <li className="flex items-start gap-3">
-                  <ShieldCheck className="mt-0.5 h-5 w-5 flex-shrink-0 text-gray-900" />
-                  Recommended tenant-proof palettes available on request
-                </li>
-                <li className="flex items-start gap-3">
-                  <ShieldCheck className="mt-0.5 h-5 w-5 flex-shrink-0 text-gray-900" />
-                  Owner-spec brands honored on request
-                </li>
-                <li className="flex items-start gap-3">
-                  <ShieldCheck className="mt-0.5 h-5 w-5 flex-shrink-0 text-gray-900" />
-                  Color matched and recorded for portfolio consistency
-                </li>
-              </ul>
-            </div>
-          </SectionReveal>
-        </div>
-      </section>
-
-      {/* Make-Ready Connection */}
-      <section className="bg-white">
-        <div className="container py-20">
-          <SectionReveal>
-            <div className="rounded-xl border-2 border-brand-gold bg-white shadow-md p-8 sm:p-12">
-              <div className="grid gap-8 lg:grid-cols-[auto,1fr,auto] lg:items-center">
-                <div className="flex h-16 w-16 items-center justify-center rounded-full bg-brand-gold/15 text-gray-900">
-                  <Key className="h-8 w-8" />
-                </div>
-                <div>
-                  <span className="inline-block rounded-full bg-brand-gold px-3 py-1 text-xs font-bold uppercase tracking-wider text-gray-900">
-                    Make-Ready Included
-                  </span>
-                  <h2 className="mt-3 font-display font-bold text-3xl text-gray-900 sm:text-4xl">
-                    Every <BrandName variant="dark" /> make-ready includes{" "}
-                    <span className="text-gray-900">painting</span>
-                  </h2>
-                  <p className="mt-3 text-gray-700">
-                    Touch-up or full repaint depending on unit condition. No separate painter, no separate invoice, no
-                    scheduling conflicts. Drywall, paint, and cleaning move as one workflow inside the 5-day window.
-                  </p>
-                </div>
-                <Link
-                  to="/make-ready"
-                  className="cta-gold btn-shimmer flex items-center justify-center gap-2 rounded-md px-6 py-4 text-base font-bold uppercase tracking-wide whitespace-nowrap"
-                >
-                  See Make-Ready
-                </Link>
-              </div>
-            </div>
-          </SectionReveal>
-        </div>
-      </section>
-
-      {/* Process — 3 steps */}
-      <section className="bg-gray-50">
-        <div className="container py-20">
-          <SectionReveal>
-            <h2 className="font-display font-bold text-3xl text-gray-900 sm:text-4xl">
-              Our 3-Step <span className="text-gray-900">Painting Process</span>
-            </h2>
-
-            <div className="mt-12 grid gap-6 md:grid-cols-3">
-              {PROCESS.map((p, i) => (
-                <article key={p.name} className="rounded-lg border border-gray-100 bg-white shadow-sm p-6">
-                  <span className="inline-flex h-10 w-10 items-center justify-center rounded-full bg-brand-gold text-base font-semibold text-gray-900">
-                    {i + 1}
-                  </span>
-                  <p.icon className="mt-4 h-8 w-8 text-gray-900" />
-                  <h3 className="mt-3 font-display font-semibold text-xl text-gray-900">{p.name}</h3>
-                  <p className="mt-2 text-gray-700">{p.text}</p>
-                </article>
-              ))}
-            </div>
-          </SectionReveal>
-        </div>
-      </section>
-
-      <StatsBar />
-
-      {/* Coverage — all 18 cities */}
-      <section className="bg-white">
-        <div className="container py-20">
-          <SectionReveal>
-            <h2 className="font-display font-bold text-3xl text-gray-900 sm:text-4xl">
-              Painting Coverage —{" "}
-              <span className="text-gray-900">18 Cities Across Central Florida</span>
-            </h2>
-            <p className="mt-3 max-w-2xl text-gray-700">
-              Same-day assessment across the Orlando metro core. Within 24 hours across the rest of the region.
-            </p>
-
-            <div className="mt-10 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
-              {CITIES.map((c) => (
-                <Link
-                  key={c.slug}
-                  to={`/maintenance-${c.slug}`}
-                  className="hover-card group flex items-center justify-between rounded-md border border-gray-100 bg-white shadow-sm px-4 py-3"
-                >
-                  <span className="flex items-center gap-3">
-                    <MapPin className="h-4 w-4 text-gray-900" />
-                    <span className="font-semibold text-gray-900">
-                      Painting {c.name}, {c.state}
-                    </span>
-                  </span>
-                  <span className="text-xs font-bold uppercase tracking-wide text-gray-700">
-                    {c.responseTime}
-                  </span>
-                </Link>
-              ))}
-            </div>
-          </SectionReveal>
-        </div>
-      </section>
-
-      {/* FAQ */}
-      <FaqAccordion title="Painting Questions — Answered" faqs={PAINTING_FAQS} emitSchema={false} />
-
-      {/* Internal links */}
-      <section className="bg-gray-50">
-        <div className="container py-20">
-          <SectionReveal className="grid gap-10 md:grid-cols-2">
-            <div>
-              <h2 className="font-display font-semibold text-2xl text-gray-900">Related Services</h2>
-              <ul className="mt-4 space-y-2">
-                {[
-                  { to: "/make-ready", label: "Make-Ready & Unit Turns" },
-                  { to: "/drywall", label: "Drywall Repair" },
-                  { to: "/maintenance", label: "Property Maintenance" },
-                  { to: "/residential", label: "Residential Services" },
-                ].map((l) => (
-                  <li key={l.to}>
-                    <Link to={l.to} className="inline-flex items-center gap-2 text-gray-900 hover:text-gray-900 hover:underline">
-                      <ArrowRight className="h-4 w-4" /> {l.label}
-                    </Link>
-                  </li>
-                ))}
-                <li>
-                  <Link to="/contact" className="inline-flex items-center gap-2 text-gray-900 hover:text-gray-900 hover:underline">
-                    <ArrowRight className="h-4 w-4" /> Contact us
-                  </Link>
-                </li>
-              </ul>
-            </div>
-            <div>
-              <h2 className="font-display font-semibold text-2xl text-gray-900">Painting in your city</h2>
-              <ul className="mt-4 space-y-2">
-                {[
-                  { slug: "orlando-fl", name: "Orlando" },
-                  { slug: "kissimmee-fl", name: "Kissimmee" },
-                ].map((c) => (
-                  <li key={c.slug}>
-                    <Link to={`/maintenance-${c.slug}`} className="inline-flex items-center gap-2 text-gray-900 hover:text-gray-900 hover:underline">
-                      <ArrowRight className="h-4 w-4" /> Painting in {c.name}, FL
-                    </Link>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          </SectionReveal>
-        </div>
-      </section>
-
-      {/* Final CTA — TWO buttons side by side */}
-      <section id="contact-form" className="bg-brand-black">
-        <div className="container py-20">
-          <SectionReveal>
-            <div className="rounded-xl border-2 border-brand-gold bg-white border border-gray-100 shadow-sm p-8 sm:p-12 text-center">
-              <h2 className="font-display font-bold text-3xl text-gray-900 sm:text-4xl">
-                Ready for a <span className="text-gray-900">painting quote?</span>
-              </h2>
-              <p className="mt-3 text-gray-300">
-                Pick the path that fits. PM portfolios on the left. Homes on the right.
-              </p>
-              <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
-                <Link
-                  to="/contact"
-                  className="cta-gold btn-shimmer inline-flex items-center justify-center gap-2 rounded-md px-6 py-3 text-sm font-bold uppercase tracking-wide"
-                >
-                  <Building2 className="h-4 w-4" /> Get a Property Painting Quote
-                </Link>
-                <Link
-                  to="/residential"
-                  className="inline-flex items-center justify-center gap-2 rounded-md border-2 border-brand-gold px-6 py-3 text-sm font-bold uppercase tracking-wide text-gray-900 hover:bg-brand-gold hover:text-gray-900 transition-colors"
-                >
-                  <Home className="h-4 w-4" /> Get a Home Painting Quote
-                </Link>
-              </div>
-              <p className="mt-6 text-sm text-gray-400">
-                Or call us directly:{" "}
-                <a href={`tel:${SITE.phone}`} className="font-bold text-gray-900 hover:underline">
-                  {SITE.phone}
-                </a>
-              </p>
-            </div>
-          </SectionReveal>
-        </div>
-      </section>
-
-      <ContactCTA variant="b2c" />
+      <ServicePageLayout
+        config={{
+          category: "Painting Specialty",
+          h1: "Painting Contractor — Interior, Exterior & Apartment Turns",
+          description: "Crisp lines, even coats, and a clean job site. We repaint single rooms, full units, common areas, and exteriors.",
+          heroImage: "/images/services/painting.jpg",
+          offer: { title: "Get a Painting Quote", desc: "Free on-site measure. Color and finish recommendations included." },
+          intro: {
+            h2: "Painting that holds up — and looks like it.",
+            body: "We use Sherwin-Williams paint and finishes built for Florida humidity. Walls patched, edges taped, trim cut cleanly, and the site cleaned before we leave. Every project gets before-and-after photos.",
+            emphasis: "Same painters every time. No subcontracted no-shows.",
+          },
+          ourServices: [
+            { name: "Drywall", href: "/drywall", icon: Hammer },
+            { name: "Flooring", href: "/flooring", icon: Layers },
+            { name: "Cleaning", href: "/cleaning", icon: Sparkles },
+            { name: "Carpentry", href: "/carpentry", icon: Hammer },
+            { name: "Maintenance", href: "/maintenance", icon: Wrench },
+          ],
+          subServices: [
+            { name: "Interior Painting", desc: "Walls, ceilings, trim, doors, accent walls. Single room or whole property.", href: "/painting" },
+            { name: "Exterior Painting", desc: "Stucco, siding, trim, doors and shutters. Florida-grade product.", href: "/painting" },
+            { name: "Apartment Turn Painting", desc: "Full unit repaints integrated with our 5-day make-ready process.", href: "/make-ready" },
+            { name: "Commercial Repaints", desc: "Leasing offices, common areas, hallways, clubhouses, fitness rooms.", href: "/renovations" },
+          ],
+          checklist: [
+            "Sherwin-Williams paint",
+            "Wall prep & patching included",
+            "Clean lines on trim & ceilings",
+            "Drop cloths & masking on every job",
+            "Daily clean-up of the work area",
+            "Color consultation if needed",
+            "Interior & exterior",
+            "Before-and-after photos",
+          ],
+          faqs: PAINTING_FAQS,
+        }}
+      />
     </>
   );
 };

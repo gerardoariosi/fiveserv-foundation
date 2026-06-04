@@ -1,50 +1,15 @@
-import { Link } from "react-router-dom";
-import { Phone, Wrench, Droplets, Zap, Wind, Hammer, Paintbrush, ClipboardList, ShieldCheck, Clock, AlertTriangle, ArrowRight, Siren, MapPin } from "lucide-react";
+import { Droplets, Zap, Wind, Hammer, Wrench, Paintbrush } from "lucide-react";
 import Seo from "@/lib/Seo";
 import SchemaOrg from "@/lib/SchemaOrg";
-import { SITE, SERVICES, CITIES } from "@/lib/site-config";
+import { SITE, SERVICES } from "@/lib/site-config";
 import { MAINTENANCE_FAQS } from "@/lib/service-faqs";
-import AIOverviewBlock from "@/components/fiveserv/AIOverviewBlock";
-import SolutionSection from "@/components/fiveserv/SolutionSection";
-import StatsBar from "@/components/fiveserv/StatsBar";
-import FaqAccordion from "@/components/fiveserv/FaqAccordion";
-import VisibleQA from "@/components/fiveserv/VisibleQA";
-import { VISIBLE_QA } from "@/lib/visible-qa";
-import LeadMagnetSection from "@/components/fiveserv/LeadMagnetSection";
-import ContactCTA from "@/components/fiveserv/ContactCTA";
-import { useReveal } from "@/hooks/use-fiveserv";
-import BrandName from "@/components/fiveserv/BrandName";
-import VacancyCalculator from "@/components/fiveserv/VacancyCalculator";
-
-const TRADES = [
-  { icon: Droplets, title: "Plumbing", desc: "Leaks, drains, water heaters, fixtures." },
-  { icon: Zap, title: "Electrical", desc: "Outlets, breakers, lighting, ceiling fans." },
-  { icon: Wind, title: "HVAC", desc: "AC repair, filter changes, thermostats, no-cool calls." },
-  { icon: Hammer, title: `Drywall & Carpentry`, desc: "Holes, doors, trim, cabinetry." },
-  { icon: Paintbrush, title: `Painting & Touch-Ups`, desc: "Hallways, units, common areas." },
-  { icon: ClipboardList, title: "General Work Orders", desc: "Whatever's on the resident portal — done." },
-];
-
-const RESPONSE = [
-  { icon: AlertTriangle, badge: "EMERGENCY", title: "2-Hour On-Site", body: "24/7 — water, power, AC, lockouts. Call and we move." },
-  { icon: Clock, badge: "ROUTINE", title: "24-Hour Schedule", body: "Standard work orders scheduled within 1 business day." },
-  { icon: ShieldCheck, badge: "PREVENTIVE", title: "Quarterly Plans", body: "Catch problems before residents call." },
-];
-
-const SectionReveal = ({ children, className = "" }: { children: React.ReactNode; className?: string }) => {
-  const ref = useReveal<HTMLDivElement>();
-  return (
-    <div ref={ref} className={`reveal ${className}`}>
-      {children}
-    </div>
-  );
-};
+import ServicePageLayout from "@/components/fiveserv/ServicePageLayout";
 
 const MaintenancePage = () => {
   const path = "/maintenance";
   const title = "Property Maintenance Central Florida | 24/7 Emergency | FiveServ";
   const description =
-    "Property maintenance Central Florida. FiveServ handles plumbing, electrical, HVAC, drywall, and 24/7 emergency work orders for multifamily property managers. 2-hour emergency response.";
+    "24/7 property maintenance for multifamily and commercial properties across Central Florida. Plumbing, electrical, HVAC, drywall — one call, one team, one invoice.";
   const service = SERVICES.find((s) => s.slug === "maintenance")!;
 
   return (
@@ -59,247 +24,44 @@ const MaintenancePage = () => {
         service={service}
         faqs={MAINTENANCE_FAQS}
       />
-
-      {/* Hero */}
-      <section
-        className="relative bg-brand-black pt-stack pb-16"
-        style={{
-          backgroundImage: 'url("/images/truck-hero.jpg")',
-          backgroundSize: 'cover',
-          backgroundPosition: 'center',
+      <ServicePageLayout
+        config={{
+          category: "24/7 Property Service",
+          h1: "Property Maintenance & Repairs — 24/7 Response",
+          description: "Plumbing, electrical, HVAC, drywall. We answer the phone. We show up. We finish. Same crew on every job.",
+          heroImage: "/images/maintenance-repair.jpg",
+          offer: { title: "Need It Fixed Now?", desc: "Emergency response across the Orlando metro in under 2 hours. Available 24/7." },
+          intro: {
+            h2: "One call replaces your whole vendor list.",
+            body: "We are the only number you call for plumbing, electrical, HVAC, drywall, painting and general repairs. No coordinating four trades. No chasing invoices. No excuses when something falls through the cracks.",
+            emphasis: "One team. One invoice. One accountable contact.",
+          },
+          ourServices: [
+            { name: "Plumbing", href: "/plumbing", icon: Droplets },
+            { name: "Electrical", href: "/electrical", icon: Zap },
+            { name: "HVAC", href: "/hvac", icon: Wind },
+            { name: "Drywall", href: "/drywall", icon: Hammer },
+            { name: "Painting", href: "/painting", icon: Paintbrush },
+          ],
+          subServices: [
+            { name: "Emergency Plumbing", desc: "Leaks, burst pipes, water heaters, blocked drains. Dispatched 24/7.", href: "/plumbing" },
+            { name: "Electrical Repairs", desc: "Outlets, breakers, panels, lighting. Licensed electricians on the team.", href: "/electrical" },
+            { name: "HVAC Service", desc: "AC repair, replacement, preventive maintenance. Critical in Florida.", href: "/hvac" },
+            { name: "Drywall & Patching", desc: "Holes, water damage, full-sheet replacement, finishing and paint-ready.", href: "/drywall" },
+          ],
+          checklist: [
+            "24/7 emergency dispatch",
+            "Licensed plumbers & electricians",
+            "HVAC certified technicians",
+            "Drywall repair & finishing",
+            "Painting & touch-up",
+            "General handyman repairs",
+            "Photo documentation of every job",
+            "One invoice across all trades",
+          ],
+          faqs: MAINTENANCE_FAQS,
         }}
-      >
-        <div className="absolute inset-0 bg-brand-black/75" />
-        <div className="relative z-10">
-        <div className="container">
-          <p className="uppercase tracking-[0.12em] text-brand-gold text-base font-bold">
-            — <BrandName variant="light" /> Property Solutions
-          </p>
-          <h1 className="mt-3 font-display font-black text-4xl text-white sm:text-5xl lg:text-6xl">
-            Property Maintenance Services for Property Managers in
-            <span className="block text-brand-gold">Central Florida</span>
-          </h1>
-          <p className="mt-6 max-w-2xl text-lg text-gray-300">
-            Plumbing. Electrical. HVAC. Drywall. 24/7 emergencies. One call. We answer.
-          </p>
-
-          <ul className="mt-8 flex flex-wrap items-center gap-x-6 gap-y-3 text-sm font-bold text-brand-black">
-            {["24/7 Emergency", "2-Hour Response", "Licensed & Insured", "Portfolio-Ready", "One Invoice"].map((t, i) => (
-              <li key={t} className="flex items-center gap-3">
-                {i > 0 && <span aria-hidden className="text-brand-gold">|</span>}
-                <span className="text-brand-white">{t}</span>
-              </li>
-            ))}
-          </ul>
-
-          <div className="mt-8 flex flex-wrap gap-3">
-            <a href="#contact-form" className="cta-gold btn-shimmer rounded-md px-6 py-3 text-sm font-bold uppercase tracking-wide">
-              Get a Maintenance Quote
-            </a>
-            <a
-              href={`tel:${SITE.phone}`}
-              className="flex items-center gap-2 rounded-md border-2 border-brand-white px-6 py-3 text-sm font-bold uppercase tracking-wide text-white hover:bg-brand-white hover:text-brand-black transition-colors"
-            >
-              <Phone className="h-4 w-4" /> Call {SITE.phone}
-            </a>
-          </div>
-
-          <AIOverviewBlock hidden
-            tone="dark"
-            directAnswer="FiveServ Property Solutions provides 24/7 property maintenance for multifamily communities across Central Florida, handling plumbing, electrical, HVAC, drywall, carpentry, and painting under one invoice."
-            supportingFacts="Emergency response within 2 hours across 18 cities. All specialized work performed by Florida-licensed contractors under FiveServ coordination. One call handles all repairs."
-          />
-        </div>
-        </div>
-      </section>
-
-      {/* Problem / Solution */}
-      <SolutionSection />
-
-      {/* What We Handle — trades */}
-      <section className="bg-gray-50">
-        <div className="container py-20">
-          <SectionReveal>
-            <h2 className="font-display font-bold text-3xl text-gray-900 sm:text-4xl">
-              What We <span className="text-gray-900">Handle</span>
-            </h2>
-            <p className="mt-3 max-w-2xl text-gray-700">
-              Every trade. One call. In-house team plus licensed contractors under our coordination.
-            </p>
-
-            <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-              {TRADES.map((t) => (
-                <article key={t.title} className="hover-card rounded-lg border border-gray-100 bg-white shadow-sm p-6">
-                  <span className="flex h-12 w-12 items-center justify-center rounded-md bg-brand-gold/15 text-gray-900">
-                    <t.icon className="h-6 w-6" />
-                  </span>
-                  <h3 className="mt-5 font-display font-semibold text-xl text-gray-900" dangerouslySetInnerHTML={{ __html: t.title }} />
-                  <p className="mt-2 text-gray-700">{t.desc}</p>
-                </article>
-              ))}
-            </div>
-          </SectionReveal>
-        </div>
-      </section>
-
-      <VacancyCalculator />
-
-      {/* Response Tiers */}
-      <section className="bg-white">
-        <div className="container py-20">
-          <SectionReveal>
-            <h2 className="font-display font-bold text-3xl text-gray-900 sm:text-4xl">
-              Response <span className="text-gray-900">Times</span>
-            </h2>
-
-            <div className="mt-12 grid gap-6 md:grid-cols-3">
-              {RESPONSE.map((r) => (
-                <article key={r.title} className="hover-card rounded-lg border-2 border-brand-gold bg-white border border-gray-100 shadow-sm p-6">
-                  <span className="inline-block rounded-full bg-brand-gold px-3 py-1 text-xs font-bold uppercase tracking-wider text-gray-900">
-                    {r.badge}
-                  </span>
-                  <r.icon className="mt-4 h-10 w-10 text-gray-900" />
-                  <h3 className="mt-3 font-display font-semibold text-2xl text-gray-900">{r.title}</h3>
-                  <p className="mt-2 text-gray-700">{r.body}</p>
-                </article>
-              ))}
-            </div>
-          </SectionReveal>
-        </div>
-      </section>
-
-      {/* Emergencies 24/7 — dedicated section */}
-      <section className="bg-gray-50">
-        <div className="container py-20">
-          <SectionReveal>
-            <div className="rounded-xl border-2 border-brand-gold bg-white shadow-md p-8 sm:p-12">
-              <div className="grid gap-8 lg:grid-cols-[auto,1fr,auto] lg:items-center">
-                <div className="flex h-16 w-16 items-center justify-center rounded-full bg-brand-gold/15 text-gray-900">
-                  <Siren className="h-8 w-8" />
-                </div>
-                <div>
-                  <span className="inline-block rounded-full bg-brand-gold px-3 py-1 text-xs font-bold uppercase tracking-wider text-gray-900">
-                    Emergencies 24/7
-                  </span>
-                  <h2 className="mt-3 font-display font-bold text-3xl text-gray-900 sm:text-4xl">
-                    Water leak. No power. No AC.{" "}
-                    <span className="text-gray-900">Call now.</span>
-                  </h2>
-                  <p className="mt-3 text-gray-700">
-                    On-site within 2 hours across our Orlando metro core. <BrandName variant="dark" /> answers the phone — day,
-                    night, weekends, holidays. No answering service. No callbacks.
-                  </p>
-                </div>
-                <a
-                  href={`tel:${SITE.phone}`}
-                  className="cta-gold btn-shimmer flex items-center justify-center gap-2 rounded-md px-6 py-4 text-base font-bold uppercase tracking-wide whitespace-nowrap"
-                >
-                  <Phone className="h-5 w-5" /> {SITE.phone}
-                </a>
-              </div>
-            </div>
-          </SectionReveal>
-        </div>
-      </section>
-
-      <StatsBar />
-
-      {/* Cities Coverage — all 18 with response times */}
-      <section className="bg-white">
-        <div className="container py-20">
-          <SectionReveal>
-            <h2 className="font-display font-bold text-3xl text-gray-900 sm:text-4xl">
-              Maintenance Coverage —{" "}
-              <span className="text-gray-900">18 Cities Across Central Florida</span>
-            </h2>
-            <p className="mt-3 max-w-2xl text-gray-700">
-              Same-day response in our Orlando metro core. Within 24 hours across the rest of the region.
-            </p>
-
-            <div className="mt-10 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
-              {CITIES.map((c) => (
-                <Link
-                  key={c.slug}
-                  to={`/maintenance-${c.slug}`}
-                  className="hover-card group flex items-center justify-between rounded-md border border-gray-100 bg-white shadow-sm px-4 py-3"
-                >
-                  <span className="flex items-center gap-3">
-                    <MapPin className="h-4 w-4 text-gray-900" />
-                    <span className="font-semibold text-gray-900">
-                      Maintenance {c.name}, {c.state}
-                    </span>
-                  </span>
-                  <span className="text-xs font-bold uppercase tracking-wide text-gray-700">
-                    {c.responseTime}
-                  </span>
-                </Link>
-              ))}
-            </div>
-          </SectionReveal>
-        </div>
-      </section>
-
-      {/* Lead Magnet */}
-      <LeadMagnetSection variant="scorecard" />
-
-      {/* FAQ */}
-      <VisibleQA items={VISIBLE_QA} emitSchema={false} />
-      <FaqAccordion faqs={MAINTENANCE_FAQS} emitSchema={false} />
-
-      {/* Internal links */}
-      <section className="bg-gray-50">
-        <div className="container py-20">
-          <SectionReveal className="grid gap-10 md:grid-cols-2">
-            <div>
-              <h2 className="font-display font-semibold text-2xl text-gray-900">More from <BrandName variant="dark" /></h2>
-              <ul className="mt-4 space-y-2">
-                {(["make-ready", "renovations", "residential"] as const).map((slug) => {
-                  const s = SERVICES.find((x) => x.slug === slug)!;
-                  return (
-                    <li key={slug}>
-                      <Link to={`/${slug}`} className="inline-flex items-center gap-2 text-gray-900 hover:text-gray-900 hover:underline">
-                        <ArrowRight className="h-4 w-4" /> {s.name}
-                      </Link>
-                    </li>
-                  );
-                })}
-                <li>
-                  <Link to="/contact" className="inline-flex items-center gap-2 text-gray-900 hover:text-gray-900 hover:underline">
-                    <ArrowRight className="h-4 w-4" /> Contact us
-                  </Link>
-                </li>
-              </ul>
-            </div>
-            <div>
-              <h2 className="font-display font-semibold text-2xl text-gray-900">Maintenance in your city</h2>
-              <ul className="mt-4 space-y-2">
-                {(["orlando-fl", "kissimmee-fl", "sanford-fl"] as const).map((slug) => {
-                  const name = slug.replace("-fl", "").split("-").map((w) => w[0].toUpperCase() + w.slice(1)).join(" ");
-                  return (
-                    <li key={slug}>
-                      <Link to={`/maintenance-${slug}`} className="inline-flex items-center gap-2 text-gray-900 hover:text-gray-900 hover:underline">
-                        <ArrowRight className="h-4 w-4" /> Maintenance in {name}, FL
-                      </Link>
-                    </li>
-                  );
-                })}
-                <li>
-                  <Link to="/fiveserv-vs-handyman-orlando" className="inline-flex items-center gap-2 text-gray-900 hover:text-gray-900 hover:underline">
-                    <ArrowRight className="h-4 w-4" /> <BrandName variant="dark" /> vs Handyman in Orlando
-                  </Link>
-                </li>
-                <li>
-                  <Link to="/make-ready-vs-diy-property-management" className="inline-flex items-center gap-2 text-gray-900 hover:text-gray-900 hover:underline">
-                    <ArrowRight className="h-4 w-4" /> Make-Ready In-House vs <BrandName variant="dark" />
-                  </Link>
-                </li>
-              </ul>
-            </div>
-          </SectionReveal>
-        </div>
-      </section>
-
-      <ContactCTA />
+      />
     </>
   );
 };
