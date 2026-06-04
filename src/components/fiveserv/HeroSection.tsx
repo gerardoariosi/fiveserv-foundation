@@ -43,9 +43,19 @@ export const HeroSection = ({
         className="absolute inset-0 h-full w-full object-cover bg-center"
       />
       {/* Dark overlay over the image for readability */}
-      <div className="absolute inset-0 bg-brand-black/70" />
+      <div className="absolute inset-0" style={{ background: "rgba(0,0,0,0.6)" }} />
+      {/* Gold dot grid pattern overlay */}
+      <div
+        className="absolute inset-0 pointer-events-none"
+        style={{
+          backgroundImage:
+            "radial-gradient(circle, rgba(255,215,0,0.15) 1px, transparent 1px)",
+          backgroundSize: "28px 28px",
+          opacity: 0.4,
+        }}
+      />
 
-      <div className="relative z-10 flex items-center pt-64 pb-10 sm:pt-56 lg:pt-48" style={{ minHeight: heroVisibleHeight }}>
+      <div className="relative z-10 flex items-center pb-10" style={{ minHeight: heroVisibleHeight, paddingTop: 140 }}>
         <div ref={ref} className="container reveal">
           <h1 className="text-3xl text-brand-white sm:text-4xl lg:text-6xl leading-tight">
             Property Maintenance Central Florida
@@ -79,10 +89,10 @@ export const HeroSection = ({
             </a>
           </div>
 
-          <ul className="mt-8 sm:mt-10 flex flex-wrap items-center gap-x-4 gap-y-2 text-xs sm:text-sm font-medium text-brand-white">
+          <ul className="mt-8 sm:mt-10 flex flex-wrap items-center gap-x-5 gap-y-2 text-xs sm:text-sm font-medium text-brand-white">
             {TRUST.map((t, i) => (
-              <li key={t} className="flex items-center gap-2 sm:gap-3">
-                {i > 0 && <span aria-hidden className="text-brand-gold">|</span>}
+              <li key={t} className="flex items-center gap-3 sm:gap-4">
+                {i > 0 && <span aria-hidden className="h-4 w-px bg-brand-gold/70" />}
                 <span>{t}</span>
               </li>
             ))}

@@ -23,10 +23,12 @@ const PAINS = [
 export const ProblemSection = () => {
   const ref = useReveal<HTMLDivElement>();
   return (
-    <section className="bg-gray-50">
-      <div ref={ref} className="container reveal py-28 lg:py-32">
+    <section style={{ backgroundColor: "#FAFAF8" }}>
+      <div ref={ref} className="container reveal py-20 lg:py-20" style={{ paddingTop: 80, paddingBottom: 80 }}>
+        <p className="text-center font-bold uppercase mb-3" style={{ color: "#FFD700", letterSpacing: "0.15em", fontSize: 11 }}>
+          — The Problem
+        </p>
         <SectionHeading
-          eyebrow="The Problem"
           subtext={
             <>
               The average make-ready takes <span className="font-bold text-gray-900">10+ days</span> when you coordinate vendors yourself.
@@ -43,9 +45,14 @@ export const ProblemSection = () => {
             return (
               <article
                 key={p.title}
-                className="rounded-2xl border-l-4 border-brand-gold bg-white p-6 shadow-sm transition-shadow hover:shadow-md"
+                className="bg-white p-6 transition-all duration-300 hover:-translate-y-0.5"
+                style={{
+                  borderLeft: "3px solid #FFD700",
+                  borderRadius: "0 8px 8px 0",
+                  boxShadow: "0 2px 12px rgba(0,0,0,0.06)",
+                }}
               >
-                <Icon className="h-8 w-8 text-brand-gold" strokeWidth={2.25} />
+                <Icon className="h-8 w-8" style={{ color: "#FFD700" }} strokeWidth={2.25} />
                 <h3 className="mt-4 font-display text-xl font-bold text-gray-900">{p.title}</h3>
                 <p className="mt-2 text-sm leading-relaxed text-gray-700">{p.description}</p>
               </article>
