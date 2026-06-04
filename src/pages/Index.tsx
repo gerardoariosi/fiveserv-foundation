@@ -40,20 +40,14 @@ const dotGridDark: React.CSSProperties = {
   backgroundSize: "28px 28px",
 };
 
-const Eyebrow = ({ children, light = false }: { children: React.ReactNode; light?: boolean }) => (
+const SectionLabel = ({ children }: { children: React.ReactNode }) => (
   <p
     className="text-center font-bold uppercase mb-3"
-    style={{
-      color: "#FFD700",
-      letterSpacing: "0.15em",
-      fontSize: 11,
-    }}
+    style={{ color: "#FFD700", letterSpacing: "0.15em", fontSize: 11 }}
   >
     {children}
   </p>
 );
-// suppress unused
-void Eyebrow;
 
 const SectionLabel = ({ children }: { children: React.ReactNode }) => (
   <p
