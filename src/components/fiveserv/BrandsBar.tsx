@@ -1,7 +1,7 @@
 const BrandsBar = () => {
   return (
     <>
-      <section className="border-t border-b border-gray-100 bg-white py-12">
+      <section className="py-12" style={{ backgroundColor: "#FAFAF8", borderTop: "1px solid rgba(255,215,0,0.3)", borderBottom: "1px solid rgba(0,0,0,0.05)" }}>
         <div className="container">
           <p className="text-center text-xs font-bold uppercase tracking-widest text-gray-400">
             Materials & Tools We Trust
