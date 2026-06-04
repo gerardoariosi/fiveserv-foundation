@@ -49,15 +49,6 @@ const SectionLabel = ({ children }: { children: React.ReactNode }) => (
   </p>
 );
 
-const SectionLabel = ({ children }: { children: React.ReactNode }) => (
-  <p
-    className="text-center font-bold uppercase mb-3"
-    style={{ color: "#FFD700", letterSpacing: "0.15em", fontSize: 11 }}
-  >
-    {children}
-  </p>
-);
-
 /* ------------------------------------------------------------------ */
 /* Services grid — dark + dot grid                                     */
 /* ------------------------------------------------------------------ */
