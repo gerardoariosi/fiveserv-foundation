@@ -1,17 +1,33 @@
 import { useEffect, useState } from "react";
 import { Link, NavLink, useLocation } from "react-router-dom";
-import { Menu, Phone, X } from "lucide-react";
+import { CheckCircle2, ChevronDown, ChevronRight, Clock, Menu, Phone, Tag, X } from "lucide-react";
 import { SITE } from "@/lib/site-config";
 import Logo from "@/components/fiveserv/Logo";
 
-const NAV = [
-  { to: "/", label: "Home" },
-  { to: "/services", label: "Services" },
-  { to: "/for-property-managers", label: "Partners" },
-  { to: "/cities", label: "Cities" },
-  { to: "/about", label: "About" },
-  { to: "/blog", label: "Blog" },
-  { to: "/contact", label: "Contact" },
+const SERVICES_MAIN = [
+  { to: "/make-ready", label: "Make-Ready & Unit Turns" },
+  { to: "/maintenance", label: "Maintenance & Repairs" },
+  { to: "/renovations", label: "CapEx & Renovations" },
+  { to: "/residential", label: "Residential Services" },
+];
+
+const SERVICES_ESPECIALIDADES = [
+  { to: "/painting", label: "Painting" },
+  { to: "/plumbing", label: "Plumbing" },
+  { to: "/electrical", label: "Electrical" },
+  { to: "/hvac", label: "HVAC" },
+  { to: "/drywall", label: "Drywall" },
+  { to: "/flooring", label: "Flooring" },
+  { to: "/carpentry", label: "Carpentry" },
+  { to: "/cleaning", label: "Cleaning" },
+];
+
+const CITIES_FEATURED = [
+  { to: "/maintenance-orlando-fl", label: "Orlando" },
+  { to: "/maintenance-kissimmee-fl", label: "Kissimmee" },
+  { to: "/maintenance-sanford-fl", label: "Sanford" },
+  { to: "/maintenance-winter-park-fl", label: "Winter Park" },
+  { to: "/maintenance-lakeland-fl", label: "Lakeland" },
 ];
 
 const WhatsAppIcon = ({ className }: { className?: string }) => (
@@ -20,117 +36,270 @@ const WhatsAppIcon = ({ className }: { className?: string }) => (
   </svg>
 );
 
+const navItemBase =
+  "uppercase tracking-[0.05em] text-[13px] font-semibold transition-colors";
+
 export const StickyHeader = () => {
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
+  const [mobileServicesOpen, setMobileServicesOpen] = useState(false);
+  const [mobileCitiesOpen, setMobileCitiesOpen] = useState(false);
   const location = useLocation();
-  const isHome = location.pathname === "/";
 
   useEffect(() => {
-    // Expose header height so .pt-stack utility can offset page content correctly.
-    document.documentElement.style.setProperty("--header-h", "80px");
+    const updateHeight = () => {
+      const h = scrolled ? 120 : 160;
+      document.documentElement.style.setProperty("--header-h", `${h}px`);
+    };
+    updateHeight();
     const onScroll = () => setScrolled(window.scrollY > 80);
     onScroll();
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
-  }, []);
+  }, [scrolled]);
+
+  // Close mobile menu on route change
+  useEffect(() => {
+    setOpen(false);
+    setMobileServicesOpen(false);
+    setMobileCitiesOpen(false);
+  }, [location.pathname]);
 
   const waHref = `https://wa.me/${SITE.phone.replace(/[^\d]/g, "")}`;
+
+  const navLinkCls = ({ isActive }: { isActive: boolean }) =>
+    `${navItemBase} ${isActive ? "text-brand-gold" : "text-[#1A1A1A] hover:text-brand-gold"}`;
 
   return (
     <header
       style={{ top: "var(--banner-h, 0px)" }}
-      className={`fixed inset-x-0 z-40 transition-all duration-500 ${
-        isHome && !scrolled
-          ? "bg-transparent border-b-0 shadow-none"
-          : "bg-white border-b border-gray-200 shadow-md"
+      className={`fixed inset-x-0 z-40 transition-all duration-300 ${
+        scrolled ? "shadow-[0_2px_12px_rgba(0,0,0,0.1)]" : ""
       }`}
     >
-      <div className="container flex h-20 items-center justify-between gap-4">
-        {/* FS Logo (image fallback shows wordmark itself) */}
-        <Link to="/" className="flex items-center gap-2" aria-label="FiveServ home">
-          <Logo variant={isHome && !scrolled ? "light" : "dark"} imgClassName="h-16 w-auto object-contain" />
-        </Link>
-
-        <nav className="hidden items-center gap-5 md:flex">
-          {NAV.map((n) => (
-            <NavLink
-              key={n.to}
-              to={n.to}
-              end={n.to === "/"}
-              className={({ isActive }) =>
-                `text-sm font-medium transition-colors ${
-                  isHome && !scrolled
-                    ? isActive ? "text-brand-gold" : "text-white hover:text-brand-gold"
-                    : isActive ? "text-brand-gold" : "text-gray-700 hover:text-brand-gold"
-                }`
-              }
+      {/* LEVEL 1 — Announcement bar */}
+      <div
+        className={`hidden md:block bg-[#1A1A1A] overflow-hidden transition-all duration-300 ${
+          scrolled ? "h-0" : "h-10"
+        }`}
+      >
+        <div className="container h-10 flex items-center justify-center">
+          <div className="flex items-center divide-x divide-white/15 text-[12px] font-medium text-white">
+            <div className="flex items-center gap-2 px-5">
+              <CheckCircle2 className="text-brand-gold" size={14} />
+              <span>300+ Units Completed — Central Florida</span>
+            </div>
+            <Link
+              to="/contact"
+              className="flex items-center gap-2 px-5 hover:text-brand-gold transition-colors"
             >
-              {n.label}
-            </NavLink>
-          ))}
-        </nav>
-
-        <div className="hidden items-center gap-4 md:flex">
-          <div className="flex flex-col items-end leading-tight">
-            <a href={`tel:${SITE.phone}`} className={`flex items-center gap-1.5 text-sm font-bold ${isHome && !scrolled ? "text-white" : "text-gray-900"}`}>
-              <Phone className="h-4 w-4 text-brand-gold" />
-              {SITE.phone}
-            </a>
-            <span className={`text-[10px] font-bold uppercase tracking-wider ${isHome && !scrolled ? "text-white/70" : "text-gray-500"}`}>
-              Available 24/7
-            </span>
+              <Tag className="text-brand-gold" size={14} />
+              <span>Free Quote in 24 Hours</span>
+            </Link>
+            <div className="flex items-center gap-2 px-5">
+              <Clock className="text-brand-gold" size={14} />
+              <span>24/7 Emergency Response</span>
+            </div>
           </div>
-          <a
-            href={waHref}
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="WhatsApp FiveServ"
-            className="flex h-9 w-9 items-center justify-center rounded-full bg-[#25D366] text-white hover:opacity-90 transition-opacity"
-          >
-            <WhatsAppIcon className="h-5 w-5" />
-          </a>
-          <Link to="/contact" className="cta-gold btn-shimmer cta-pill btn-shimmer">
-            Get a free quote
-          </Link>
-        </div>
-
-        {/* Mobile: gold phone always clickable + hamburger */}
-        <div className="flex items-center gap-3 md:hidden">
-          <a href={`tel:${SITE.phone}`} aria-label="Call FiveServ" className="text-brand-black">
-            <Phone className="h-6 w-6 text-brand-gold" />
-          </a>
-          <button aria-label="Toggle menu" className="text-gray-900" onClick={() => setOpen((s) => !s)}>
-            {open ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
-          </button>
         </div>
       </div>
 
-      {open && (
-        <div className="md:hidden bg-white border-t border-gray-200">
-          <div className="container flex flex-col gap-4 py-6">
-            {NAV.map((n) => (
-              <NavLink
-                key={n.to}
-                to={n.to}
-                end={n.to === "/"}
-                onClick={() => setOpen(false)}
-                className={({ isActive }) =>
-                  `text-base font-medium ${isActive ? "text-brand-gold" : "text-gray-700"}`
-                }
-              >
-                {n.label}
-              </NavLink>
-            ))}
-            <a href={`tel:${SITE.phone}`} className="text-brand-black font-semibold">
-              📞 {SITE.phone} <span className="text-[13px] text-gray-700">· Available 24/7</span>
+      {/* LEVEL 2 — Logo + CTA bar */}
+      <div className="bg-white border-b border-gray-100">
+        <div className="container flex items-center justify-between h-[70px] gap-4">
+          <Link to="/" className="flex items-center gap-2" aria-label="FiveServ home">
+            <Logo variant="dark" imgClassName="h-14 w-auto object-contain" />
+          </Link>
+
+          <div className="hidden md:flex items-center gap-5">
+            <a
+              href={`tel:${SITE.phone}`}
+              className="flex items-center gap-2 text-[15px] font-bold text-[#1A1A1A] hover:text-brand-gold transition-colors"
+            >
+              <Phone className="h-4 w-4 text-brand-gold" />
+              {SITE.phone}
             </a>
-            <a href={waHref} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-[#25D366] font-semibold">
-              <WhatsAppIcon className="h-4 w-4" /> WhatsApp us
+            <a
+              href={waHref}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="WhatsApp FiveServ"
+              className="flex h-9 w-9 items-center justify-center rounded-full bg-[#25D366] text-white hover:opacity-90 transition-opacity"
+            >
+              <WhatsAppIcon className="h-5 w-5" />
             </a>
-            <Link to="/contact" onClick={() => setOpen(false)} className="cta-gold btn-shimmer cta-pill btn-shimmer text-center">
-              Get a free quote
+            <Link
+              to="/contact"
+              className="bg-[#FFD700] text-[#1A1A1A] font-bold rounded-[4px] px-6 py-[10px] hover:brightness-95 transition-all"
+            >
+              Request a Quote →
             </Link>
+          </div>
+
+          {/* Mobile: phone + hamburger */}
+          <div className="flex items-center gap-3 md:hidden">
+            <a href={`tel:${SITE.phone}`} aria-label="Call FiveServ">
+              <Phone className="h-6 w-6 text-brand-gold" />
+            </a>
+            <button
+              aria-label="Toggle menu"
+              className="text-brand-gold"
+              onClick={() => setOpen((s) => !s)}
+            >
+              {open ? <X className="h-7 w-7" /> : <Menu className="h-7 w-7" />}
+            </button>
+          </div>
+        </div>
+      </div>
+
+      {/* LEVEL 3 — Navigation bar */}
+      <nav className="hidden md:block bg-[#F9FAFB] border-b border-[#E5E7EB]">
+        <div className="container h-[50px] flex items-center justify-center gap-8">
+          <NavLink to="/" end className={navLinkCls}>
+            Home
+          </NavLink>
+
+          {/* Services with dropdown */}
+          <div className="relative group h-full flex items-center">
+            <button className={`${navItemBase} text-[#1A1A1A] group-hover:text-brand-gold flex items-center gap-1`}>
+              Services <ChevronDown size={14} />
+            </button>
+            <div className="absolute left-0 top-full w-[280px] invisible opacity-0 translate-y-1 group-hover:visible group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-150 bg-[#1A1A1A] border-t-2 border-brand-gold rounded-b-lg shadow-[0_8px_24px_rgba(0,0,0,0.15)] py-4 z-50">
+              {SERVICES_MAIN.map((s) => (
+                <Link
+                  key={s.to}
+                  to={s.to}
+                  className="block px-6 py-[10px] text-[14px] text-white hover:bg-[#FFD700] hover:text-[#1A1A1A] transition-colors"
+                >
+                  {s.label}
+                </Link>
+              ))}
+              <div className="h-px bg-brand-gold/60 my-2 mx-6" />
+              {/* Especialidades nested */}
+              <div className="relative group/esp">
+                <button className="w-full flex items-center justify-between px-6 py-[10px] text-[14px] text-white hover:bg-[#FFD700] hover:text-[#1A1A1A] transition-colors">
+                  <span>Especialidades</span>
+                  <ChevronRight size={14} />
+                </button>
+                <div className="absolute left-full top-0 w-[220px] invisible opacity-0 group-hover/esp:visible group-hover/esp:opacity-100 transition-all duration-150 bg-[#1A1A1A] border-t-2 border-brand-gold rounded-lg shadow-[0_8px_24px_rgba(0,0,0,0.15)] py-4 ml-1">
+                  {SERVICES_ESPECIALIDADES.map((s) => (
+                    <Link
+                      key={s.to}
+                      to={s.to}
+                      className="block px-6 py-[10px] text-[14px] text-white hover:bg-[#FFD700] hover:text-[#1A1A1A] transition-colors"
+                    >
+                      {s.label}
+                    </Link>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <NavLink to="/for-property-managers" className={navLinkCls}>
+            Partners
+          </NavLink>
+
+          {/* Cities dropdown */}
+          <div className="relative group h-full flex items-center">
+            <button className={`${navItemBase} text-[#1A1A1A] group-hover:text-brand-gold flex items-center gap-1`}>
+              Cities <ChevronDown size={14} />
+            </button>
+            <div className="absolute left-0 top-full w-[240px] invisible opacity-0 translate-y-1 group-hover:visible group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-150 bg-[#1A1A1A] border-t-2 border-brand-gold rounded-b-lg shadow-[0_8px_24px_rgba(0,0,0,0.15)] py-4 z-50">
+              {CITIES_FEATURED.map((c) => (
+                <Link
+                  key={c.to}
+                  to={c.to}
+                  className="block px-6 py-[10px] text-[14px] text-white hover:bg-[#FFD700] hover:text-[#1A1A1A] transition-colors"
+                >
+                  {c.label}
+                </Link>
+              ))}
+              <div className="h-px bg-brand-gold/60 my-2 mx-6" />
+              <Link
+                to="/cities"
+                className="block px-6 py-[10px] text-[14px] text-brand-gold font-bold hover:bg-[#FFD700] hover:text-[#1A1A1A] transition-colors"
+              >
+                View All Cities →
+              </Link>
+            </div>
+          </div>
+
+          <NavLink to="/about" className={navLinkCls}>About</NavLink>
+          <NavLink to="/blog" className={navLinkCls}>Blog</NavLink>
+          <NavLink to="/contact" className={navLinkCls}>Contact</NavLink>
+        </div>
+      </nav>
+
+      {/* Mobile drawer */}
+      {open && (
+        <div className="md:hidden fixed inset-0 top-[70px] bg-[#1A1A1A] overflow-y-auto animate-in slide-in-from-right duration-200">
+          <div className="container flex flex-col py-6 gap-1">
+            <Link to="/" className="py-3 text-white font-semibold uppercase tracking-wider text-sm hover:text-brand-gold">Home</Link>
+
+            <button
+              onClick={() => setMobileServicesOpen((s) => !s)}
+              className="flex items-center justify-between py-3 text-white font-semibold uppercase tracking-wider text-sm"
+            >
+              <span>Services</span>
+              <ChevronDown className={`transition-transform ${mobileServicesOpen ? "rotate-180" : ""}`} size={16} />
+            </button>
+            {mobileServicesOpen && (
+              <div className="pl-4 border-l border-brand-gold/40 ml-1 flex flex-col gap-1 pb-2">
+                {SERVICES_MAIN.map((s) => (
+                  <Link key={s.to} to={s.to} className="py-2 text-white/90 text-[14px] hover:text-brand-gold">
+                    {s.label}
+                  </Link>
+                ))}
+                <div className="h-px bg-brand-gold/40 my-2" />
+                <span className="text-brand-gold text-xs uppercase tracking-wider py-1">Especialidades</span>
+                {SERVICES_ESPECIALIDADES.map((s) => (
+                  <Link key={s.to} to={s.to} className="py-2 text-white/90 text-[14px] hover:text-brand-gold">
+                    {s.label}
+                  </Link>
+                ))}
+              </div>
+            )}
+
+            <Link to="/for-property-managers" className="py-3 text-white font-semibold uppercase tracking-wider text-sm hover:text-brand-gold">Partners</Link>
+
+            <button
+              onClick={() => setMobileCitiesOpen((s) => !s)}
+              className="flex items-center justify-between py-3 text-white font-semibold uppercase tracking-wider text-sm"
+            >
+              <span>Cities</span>
+              <ChevronDown className={`transition-transform ${mobileCitiesOpen ? "rotate-180" : ""}`} size={16} />
+            </button>
+            {mobileCitiesOpen && (
+              <div className="pl-4 border-l border-brand-gold/40 ml-1 flex flex-col gap-1 pb-2">
+                {CITIES_FEATURED.map((c) => (
+                  <Link key={c.to} to={c.to} className="py-2 text-white/90 text-[14px] hover:text-brand-gold">
+                    {c.label}
+                  </Link>
+                ))}
+                <div className="h-px bg-brand-gold/40 my-2" />
+                <Link to="/cities" className="py-2 text-brand-gold text-[14px] font-bold">View All Cities →</Link>
+              </div>
+            )}
+
+            <Link to="/about" className="py-3 text-white font-semibold uppercase tracking-wider text-sm hover:text-brand-gold">About</Link>
+            <Link to="/blog" className="py-3 text-white font-semibold uppercase tracking-wider text-sm hover:text-brand-gold">Blog</Link>
+            <Link to="/contact" className="py-3 text-white font-semibold uppercase tracking-wider text-sm hover:text-brand-gold">Contact</Link>
+
+            <div className="mt-6 flex flex-col gap-3 pt-6 border-t border-white/10">
+              <a href={`tel:${SITE.phone}`} className="flex items-center gap-2 text-white font-bold">
+                <Phone className="h-5 w-5 text-brand-gold" /> {SITE.phone}
+              </a>
+              <a href={waHref} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-[#25D366] font-semibold">
+                <WhatsAppIcon className="h-5 w-5" /> WhatsApp us
+              </a>
+              <Link
+                to="/contact"
+                className="bg-[#FFD700] text-[#1A1A1A] font-bold rounded-[4px] px-6 py-3 text-center"
+              >
+                Request a Quote →
+              </Link>
+            </div>
           </div>
         </div>
       )}
