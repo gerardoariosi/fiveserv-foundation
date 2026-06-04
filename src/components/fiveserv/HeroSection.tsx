@@ -89,10 +89,10 @@ export const HeroSection = ({
             </a>
           </div>
 
-          <ul className="mt-8 sm:mt-10 flex flex-wrap items-center gap-x-4 gap-y-2 text-xs sm:text-sm font-medium text-brand-white">
+          <ul className="mt-8 sm:mt-10 flex flex-wrap items-center gap-x-5 gap-y-2 text-xs sm:text-sm font-medium text-brand-white">
             {TRUST.map((t, i) => (
-              <li key={t} className="flex items-center gap-2 sm:gap-3">
-                {i > 0 && <span aria-hidden className="text-brand-gold">|</span>}
+              <li key={t} className="flex items-center gap-3 sm:gap-4">
+                {i > 0 && <span aria-hidden className="h-4 w-px bg-brand-gold/70" />}
                 <span>{t}</span>
               </li>
             ))}
