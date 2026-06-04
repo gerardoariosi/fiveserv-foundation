@@ -43,9 +43,19 @@ export const HeroSection = ({
         className="absolute inset-0 h-full w-full object-cover bg-center"
       />
       {/* Dark overlay over the image for readability */}
-      <div className="absolute inset-0 bg-brand-black/70" />
+      <div className="absolute inset-0" style={{ background: "rgba(0,0,0,0.6)" }} />
+      {/* Gold dot grid pattern overlay */}
+      <div
+        className="absolute inset-0 pointer-events-none"
+        style={{
+          backgroundImage:
+            "radial-gradient(circle, rgba(255,215,0,0.15) 1px, transparent 1px)",
+          backgroundSize: "28px 28px",
+          opacity: 0.4,
+        }}
+      />
 
-      <div className="relative z-10 flex items-center pt-64 pb-10 sm:pt-56 lg:pt-48" style={{ minHeight: heroVisibleHeight }}>
+      <div className="relative z-10 flex items-center pb-10" style={{ minHeight: heroVisibleHeight, paddingTop: 140 }}>
         <div ref={ref} className="container reveal">
           <h1 className="text-3xl text-brand-white sm:text-4xl lg:text-6xl leading-tight">
             Property Maintenance Central Florida
