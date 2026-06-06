@@ -29,7 +29,6 @@ const ResidentialPage = () => {
           category: "Homeowner Services",
           h1: "Home Repairs & Renovations — One Trusted Team",
           description: "The same crews that turn 500-unit communities — now at your home. One call. One team. One invoice.",
-          heroImage: "/images/residential-service.jpg",
           offer: { title: "Free Home Assessment", desc: "We come out, look at the project, and quote it in writing. No pressure." },
           intro: {
             h2: "Your home deserves the same team that runs apartments.",

@@ -31,7 +31,6 @@ const MakeReadyPage = () => {
           category: "Multifamily Service",
           h1: "Make-Ready & Unit Turn Services — 5-Day Guarantee",
           description: "Central Florida property managers trust FiveServ for make-ready. One call. Our team. 5 business days. Guaranteed in writing.",
-          heroImage: "/images/make-ready-unit.jpg",
           offer: { title: "Lock In Your 5-Day Turn", desc: "Free on-site assessment within 24 hours. Written quote before any work starts." },
           intro: {
             h2: "Every unit, rent-ready in 5 business days.",
