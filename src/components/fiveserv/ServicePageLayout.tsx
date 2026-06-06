@@ -158,7 +158,7 @@ export const ServicePageLayout = ({ config }: { config: ServiceLayoutConfig }) =
                 className="relative rounded-lg p-6"
                 style={{
                   background: "#1A1A1A",
-                  border: "2px dashed rgba(255,215,0,0.6)",
+                  border: "2px solid #FFD700",
                   ...DOT_GRID_CARD,
                 }}
               >
