@@ -11,7 +11,6 @@ const MaintenancePage = () => {
   const description =
     "24/7 property maintenance for multifamily and commercial properties across Central Florida. Plumbing, electrical, HVAC, drywall — one call, one team, one invoice.";
   const service = SERVICES.find((s) => s.slug === "maintenance")!;
-          heroImage: "/images/maintenance-repair.jpg",
 
   return (
     <>
