@@ -37,7 +37,7 @@ const dotGridDark: React.CSSProperties = {
   backgroundColor: "#1A1A1A",
   backgroundImage:
     'url("data:image/svg+xml,%3Csvg width=%2728%27 height=%2728%27 viewBox=%270 0 28 28%27 xmlns=%27http://www.w3.org/2000/svg%27%3E%3Cg fill=%27rgba(255,215,0,0.18)%27%3E%3Cpath d=%27M7 3 Q7.6 6.4 10 7 Q7.6 7.6 7 11 Q6.4 7.6 4 7 Q6.4 6.4 7 3 Z%27/%3E%3Cpath d=%27M21 17 Q21.6 20.4 24 21 Q21.6 21.6 21 25 Q20.4 21.6 18 21 Q20.4 20.4 21 17 Z%27/%3E%3C/g%3E%3C/svg%3E")',
-  backgroundSize: "28px 28px",
+  backgroundSize: "48px 48px",
 };
 
 const SectionLabel = ({ children }: { children: React.ReactNode }) => (
