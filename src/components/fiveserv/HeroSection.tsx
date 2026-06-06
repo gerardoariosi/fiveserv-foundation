@@ -40,20 +40,11 @@ export const HeroSection = ({
         // @ts-expect-error fetchpriority is valid HTML
         fetchpriority="high"
         decoding="async"
-        className="absolute inset-0 h-full w-full object-cover bg-center"
+        className="absolute inset-0 h-full w-full object-cover"
+        style={{ objectPosition: "center 65%" }}
       />
       {/* Dark overlay over the image for readability */}
       <div className="absolute inset-0" style={{ background: "rgba(0,0,0,0.6)" }} />
-      {/* Gold dot grid pattern overlay */}
-      <div
-        className="absolute inset-0 pointer-events-none"
-        style={{
-          backgroundImage:
-            'url("data:image/svg+xml,%3Csvg width=%2728%27 height=%2728%27 viewBox=%270 0 28 28%27 xmlns=%27http://www.w3.org/2000/svg%27%3E%3Cg fill=%27rgba(255,215,0,0.18)%27%3E%3Cpath d=%27M7 3 Q7.6 6.4 10 7 Q7.6 7.6 7 11 Q6.4 7.6 4 7 Q6.4 6.4 7 3 Z%27/%3E%3Cpath d=%27M21 17 Q21.6 20.4 24 21 Q21.6 21.6 21 25 Q20.4 21.6 18 21 Q20.4 20.4 21 17 Z%27/%3E%3C/g%3E%3C/svg%3E")',
-          backgroundSize: "28px 28px",
-          opacity: 0.4,
-        }}
-      />
 
       <div className="relative z-10 flex items-center pb-10" style={{ minHeight: heroVisibleHeight, paddingTop: 140 }}>
         <div ref={ref} className="container reveal">
