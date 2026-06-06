@@ -29,7 +29,6 @@ const FlooringPage = () => {
           category: "Flooring Specialty",
           h1: "Flooring Installation — LVP, Tile, Laminate & Carpet",
           description: "Single rooms, whole units, full properties. Material allowances clear up front, install clean and on schedule.",
-          heroImage: "/images/services/flooring.jpg",
           offer: { title: "Get a Flooring Quote", desc: "Free on-site measure, material samples, and a written quote." },
           intro: {
             h2: "Flooring that looks installed — not just laid down.",

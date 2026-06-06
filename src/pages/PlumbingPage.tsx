@@ -29,7 +29,6 @@ const PlumbingPage = () => {
           category: "Plumbing Specialty",
           h1: "Plumbing Services — 24/7 Emergency Response",
           description: "Leaks, drains, water heaters, fixtures, repipes. Licensed plumbers on call around the clock.",
-          heroImage: "/images/services/plumbing.jpg",
           offer: { title: "Plumbing Emergency?", desc: "Dispatched in under 2 hours across the Orlando metro. Day or night." },
           intro: {
             h2: "When water moves, minutes matter.",

@@ -29,7 +29,6 @@ const CleaningPage = () => {
           category: "Cleaning Specialty",
           h1: "Cleaning Services — Move-Out, Make-Ready & Deep Clean",
           description: "Apartment turns, post-construction, homes and commercial spaces. Photo report on every cleaning.",
-          heroImage: "/images/services/cleaning.jpg",
           offer: { title: "Book a Clean", desc: "Free walk-through. Written quote. Photo-documented finish." },
           intro: {
             h2: "A clean that holds up to inspection.",
