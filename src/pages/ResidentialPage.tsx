@@ -4,6 +4,7 @@ import SchemaOrg from "@/lib/SchemaOrg";
 import { SITE, SERVICES } from "@/lib/site-config";
 import { RESIDENTIAL_FAQS } from "@/lib/service-faqs";
 import ServicePageLayout from "@/components/fiveserv/ServicePageLayout";
+import truckResidential from "@/assets/truck-residential.jpeg.asset.json";
 
 const ResidentialPage = () => {
   const path = "/residential";
