@@ -29,7 +29,7 @@ const MaintenancePage = () => {
           category: "24/7 Property Service",
           h1: "Property Maintenance & Repairs — 24/7 Response",
           description: "Plumbing, electrical, HVAC, drywall. We answer the phone. We show up. We finish. Same crew on every job.",
-          heroImage: "/images/maintenance-repair.jpg",
+          
           offer: { title: "Need It Fixed Now?", desc: "Emergency response across the Orlando metro in under 2 hours. Available 24/7." },
           intro: {
             h2: "One call replaces your whole vendor list.",
