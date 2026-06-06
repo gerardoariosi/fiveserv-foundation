@@ -116,7 +116,7 @@ export const ServicePageLayout = ({ config }: { config: ServiceLayoutConfig }) =
         className="relative w-full"
         style={{ minHeight: 480, background: "#1A1A1A" }}
       >
-        {config.heroImage ? (
+        {config.heroImage && (
           <>
             <div
               className="absolute inset-0"
@@ -128,8 +128,6 @@ export const ServicePageLayout = ({ config }: { config: ServiceLayoutConfig }) =
             />
             <div className="absolute inset-0" style={{ background: "rgba(0,0,0,0.65)" }} />
           </>
-        ) : (
-          <div className="absolute inset-0" style={DOT_GRID_DARK} />
         )}
         <div className="relative z-10 container py-24 lg:py-28">
           <div className="grid gap-10 lg:grid-cols-5 lg:items-center">

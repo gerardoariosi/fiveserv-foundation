@@ -29,6 +29,7 @@ const RenovationsPage = () => {
           category: "CapEx & Renovations",
           h1: "Renovations Built to Lift NOI",
           description: "CapEx projects that move the numbers. Built for property managers who track returns, not promises.",
+          heroImage: "/images/renovation-project.jpg",
           offer: { title: "Plan Your CapEx Project", desc: "Free walk-through, line-item scope, and projected uplift. No pressure." },
           intro: {
             h2: "Renovations with a return.",
