@@ -4,6 +4,7 @@ import SchemaOrg from "@/lib/SchemaOrg";
 import { SITE, SERVICES } from "@/lib/site-config";
 import { MAINTENANCE_FAQS } from "@/lib/service-faqs";
 import ServicePageLayout from "@/components/fiveserv/ServicePageLayout";
+import truckResidential from "@/assets/truck-residential.jpeg.asset.json";
 
 const MaintenancePage = () => {
   const path = "/maintenance";
@@ -29,7 +30,7 @@ const MaintenancePage = () => {
           category: "24/7 Property Service",
           h1: "Property Maintenance & Repairs — 24/7 Response",
           description: "Plumbing, electrical, HVAC, drywall. We answer the phone. We show up. We finish. Same crew on every job.",
-          
+          heroImage: truckResidential.url,
           offer: { title: "Need It Fixed Now?", desc: "Emergency response across the Orlando metro in under 2 hours. Available 24/7." },
           intro: {
             h2: "One call replaces your whole vendor list.",
