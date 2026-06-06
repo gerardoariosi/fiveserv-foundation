@@ -29,7 +29,6 @@ const CarpentryPage = () => {
           category: "Carpentry Specialty",
           h1: "Carpentry — Doors, Trim, Cabinets & Finish Work",
           description: "Door repair and replacement, baseboard, casing, cabinet repair and finish carpentry. Clean cuts, clean caulk lines.",
-          heroImage: "/images/services/carpentry.jpg",
           offer: { title: "Get a Carpentry Quote", desc: "Free assessment. Written scope. Quality finish work, every time." },
           intro: {
             h2: "Carpentry that fits — and stays fit.",

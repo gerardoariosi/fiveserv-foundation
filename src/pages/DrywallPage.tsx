@@ -29,7 +29,6 @@ const DrywallPage = () => {
           category: "Drywall Specialty",
           h1: "Drywall Repair & Finishing — Paint-Ready Turnover",
           description: "Holes, water damage, popcorn ceiling fixes, full-sheet replacement. Taped, mudded, sanded, and ready for paint.",
-          heroImage: "/images/services/drywall.jpg",
           offer: { title: "Drywall Damage?", desc: "Free assessment. Quoted in writing. Paint-ready when we leave." },
           intro: {
             h2: "Drywall you can't tell was repaired.",

@@ -29,7 +29,6 @@ const PaintingPage = () => {
           category: "Painting Specialty",
           h1: "Painting Contractor — Interior, Exterior & Apartment Turns",
           description: "Crisp lines, even coats, and a clean job site. We repaint single rooms, full units, common areas, and exteriors.",
-          heroImage: "/images/services/painting.jpg",
           offer: { title: "Get a Painting Quote", desc: "Free on-site measure. Color and finish recommendations included." },
           intro: {
             h2: "Painting that holds up — and looks like it.",

@@ -29,7 +29,6 @@ const HvacPage = () => {
           category: "HVAC Specialty",
           h1: "HVAC Services — AC Repair, Replacement & PM",
           description: "AC down in Florida is an emergency. Same-day diagnostics, written quotes, and crews that finish the job.",
-          heroImage: "/images/services/hvac.jpg",
           offer: { title: "AC Out?", desc: "Same-day dispatch across the Orlando metro. 24/7 emergency response." },
           intro: {
             h2: "Florida AC service that actually shows up.",

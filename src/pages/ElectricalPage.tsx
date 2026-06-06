@@ -29,7 +29,6 @@ const ElectricalPage = () => {
           category: "Electrical Specialty",
           h1: "Electrical Services — Licensed Electricians",
           description: "Outlets, switches, lighting, panels, ceiling fans, EV chargers. Code-compliant work, documented and tested.",
-          heroImage: "/images/services/electrical.jpg",
           offer: { title: "Power Problem?", desc: "Same-day diagnostics across the Orlando metro. 24/7 emergency line." },
           intro: {
             h2: "Electrical work that passes inspection — the first time.",
