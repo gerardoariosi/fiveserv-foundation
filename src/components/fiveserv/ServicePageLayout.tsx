@@ -23,7 +23,7 @@ export type ServiceLayoutConfig = {
   category: string;
   h1: string;
   description: string;
-  heroImage: string;
+  heroImage?: string;
   offer: { title: string; desc: string };
   intro: { h2: string; body: string; emphasis?: string };
   ourServices: { name: string; href: string; icon: LucideIcon }[];
