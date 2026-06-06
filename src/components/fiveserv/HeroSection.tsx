@@ -24,13 +24,12 @@ export const HeroSection = ({
 }: HeroProps) => {
   const ref = useReveal<HTMLDivElement>();
   const waHref = `https://wa.me/${SITE.phone.replace(/[^\d]/g, "")}`;
-  const heroTopOffset = "calc(-1 * (var(--banner-h, 0px) + 8px))";
   const heroVisibleHeight = "85vh";
 
   return (
     <section
       className="relative isolate w-full overflow-hidden bg-brand-black"
-      style={{ marginTop: heroTopOffset, minHeight: heroVisibleHeight }}
+      style={{ minHeight: heroVisibleHeight }}
     >
       <img
         src={imageSrc}
