@@ -11,6 +11,10 @@ const SERVICES_MAIN = [
   { to: "/residential", label: "Residential Services" },
 ];
 
+const SERVICES_REMODELING = [
+  { to: "/bathroom-remodel", label: "Bathroom Remodel" },
+];
+
 const SERVICES_ESPECIALIDADES = [
   { to: "/painting", label: "Painting" },
   { to: "/plumbing", label: "Plumbing" },
@@ -175,6 +179,19 @@ export const StickyHeader = () => {
                 </Link>
               ))}
               <div className="h-px bg-brand-gold/60 my-2 mx-6" />
+              <p className="px-6 py-1 text-[11px] font-bold uppercase tracking-[0.15em] text-brand-gold/80">
+                Remodeling
+              </p>
+              {SERVICES_REMODELING.map((s) => (
+                <Link
+                  key={s.to}
+                  to={s.to}
+                  className="block px-6 py-[10px] text-[14px] text-white hover:bg-[#FFD700] hover:text-[#1A1A1A] transition-colors"
+                >
+                  {s.label}
+                </Link>
+              ))}
+              <div className="h-px bg-brand-gold/60 my-2 mx-6" />
               {/* Especialidades nested */}
               <div className="relative group/esp">
                 <button className="w-full flex items-center justify-between px-6 py-[10px] text-[14px] text-white hover:bg-[#FFD700] hover:text-[#1A1A1A] transition-colors">
@@ -247,6 +264,13 @@ export const StickyHeader = () => {
             {mobileServicesOpen && (
               <div className="pl-4 border-l border-brand-gold/40 ml-1 flex flex-col gap-1 pb-2">
                 {SERVICES_MAIN.map((s) => (
+                  <Link key={s.to} to={s.to} className="py-2 text-white/90 text-[14px] hover:text-brand-gold">
+                    {s.label}
+                  </Link>
+                ))}
+                <div className="h-px bg-brand-gold/40 my-2" />
+                <span className="text-brand-gold text-xs uppercase tracking-wider py-1">Remodeling</span>
+                {SERVICES_REMODELING.map((s) => (
                   <Link key={s.to} to={s.to} className="py-2 text-white/90 text-[14px] hover:text-brand-gold">
                     {s.label}
                   </Link>

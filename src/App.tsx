@@ -21,6 +21,7 @@ const MakeReadyPage = lazy(() => import("./pages/MakeReadyPage"));
 const MaintenancePage = lazy(() => import("./pages/MaintenancePage"));
 const RenovationsPage = lazy(() => import("./pages/RenovationsPage"));
 const ResidentialPage = lazy(() => import("./pages/ResidentialPage"));
+const BathroomRemodelPage = lazy(() => import("./pages/BathroomRemodelPage"));
 const MaintenanceCityPage = lazy(() => import("./pages/MaintenanceCityPage"));
 const TampaBayPage = lazy(() => import("./pages/TampaBayPage"));
 const ContactPage = lazy(() => import("./pages/ContactPage"));
@@ -109,6 +110,7 @@ const router = createBrowserRouter([
       { path: "maintenance", element: withSuspense(<MaintenancePage />) },
       { path: "renovations", element: withSuspense(<RenovationsPage />) },
       { path: "residential", element: withSuspense(<ResidentialPage />) },
+      { path: "bathroom-remodel", element: withSuspense(<BathroomRemodelPage />) },
 
       // Trade pages
       { path: "plumbing", element: withSuspense(<PlumbingPage />) },
