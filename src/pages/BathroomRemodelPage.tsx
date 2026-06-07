@@ -431,18 +431,6 @@ const BathroomRemodelPage = () => {
                 </p>
               ))}
             </div>
-            <p className="mt-6 text-center text-gray-500">
-              and 13 more cities across Central Florida
-            </p>
-            <div className="mt-8 text-center">
-              <Link
-                to="/cities"
-                className="inline-flex items-center gap-2 rounded-md px-6 py-3 text-sm font-bold uppercase tracking-wide"
-                style={{ background: "#1A1A1A", color: "#FFFFFF" }}
-              >
-                View All Cities
-              </Link>
-            </div>
           </Reveal>
         </div>
       </section>
