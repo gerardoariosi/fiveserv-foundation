@@ -95,6 +95,19 @@ const CITIES = [
   "Winter Park FL",
   "Lakeland FL",
   "Sanford FL",
+  "Altamonte Springs FL",
+  "Apopka FL",
+  "Ocoee FL",
+  "Winter Garden FL",
+  "Clermont FL",
+  "St. Cloud FL",
+  "Davenport FL",
+  "Deltona FL",
+  "Daytona Beach FL",
+  "Palm Coast FL",
+  "Melbourne FL",
+  "Palm Bay FL",
+  "Cocoa FL",
 ];
 
 const scrollToQuote = () => {
