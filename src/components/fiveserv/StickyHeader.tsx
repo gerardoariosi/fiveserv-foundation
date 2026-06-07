@@ -11,6 +11,10 @@ const SERVICES_MAIN = [
   { to: "/residential", label: "Residential Services" },
 ];
 
+const SERVICES_REMODELING = [
+  { to: "/bathroom-remodel", label: "Bathroom Remodel" },
+];
+
 const SERVICES_ESPECIALIDADES = [
   { to: "/painting", label: "Painting" },
   { to: "/plumbing", label: "Plumbing" },
