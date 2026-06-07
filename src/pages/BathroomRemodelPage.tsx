@@ -95,6 +95,19 @@ const CITIES = [
   "Winter Park FL",
   "Lakeland FL",
   "Sanford FL",
+  "Altamonte Springs FL",
+  "Apopka FL",
+  "Ocoee FL",
+  "Winter Garden FL",
+  "Clermont FL",
+  "St. Cloud FL",
+  "Davenport FL",
+  "Deltona FL",
+  "Daytona Beach FL",
+  "Palm Coast FL",
+  "Melbourne FL",
+  "Palm Bay FL",
+  "Cocoa FL",
 ];
 
 const scrollToQuote = () => {
@@ -417,18 +430,6 @@ const BathroomRemodelPage = () => {
                   <span style={{ color: "#1A1A1A" }}>in {c}</span>
                 </p>
               ))}
-            </div>
-            <p className="mt-6 text-center text-gray-500">
-              and 13 more cities across Central Florida
-            </p>
-            <div className="mt-8 text-center">
-              <Link
-                to="/cities"
-                className="inline-flex items-center gap-2 rounded-md px-6 py-3 text-sm font-bold uppercase tracking-wide"
-                style={{ background: "#1A1A1A", color: "#FFFFFF" }}
-              >
-                View All Cities
-              </Link>
             </div>
           </Reveal>
         </div>
