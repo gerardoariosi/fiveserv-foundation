@@ -179,6 +179,19 @@ export const StickyHeader = () => {
                 </Link>
               ))}
               <div className="h-px bg-brand-gold/60 my-2 mx-6" />
+              <p className="px-6 py-1 text-[11px] font-bold uppercase tracking-[0.15em] text-brand-gold/80">
+                Remodeling
+              </p>
+              {SERVICES_REMODELING.map((s) => (
+                <Link
+                  key={s.to}
+                  to={s.to}
+                  className="block px-6 py-[10px] text-[14px] text-white hover:bg-[#FFD700] hover:text-[#1A1A1A] transition-colors"
+                >
+                  {s.label}
+                </Link>
+              ))}
+              <div className="h-px bg-brand-gold/60 my-2 mx-6" />
               {/* Especialidades nested */}
               <div className="relative group/esp">
                 <button className="w-full flex items-center justify-between px-6 py-[10px] text-[14px] text-white hover:bg-[#FFD700] hover:text-[#1A1A1A] transition-colors">
