@@ -21,6 +21,7 @@ const MakeReadyPage = lazy(() => import("./pages/MakeReadyPage"));
 const MaintenancePage = lazy(() => import("./pages/MaintenancePage"));
 const RenovationsPage = lazy(() => import("./pages/RenovationsPage"));
 const ResidentialPage = lazy(() => import("./pages/ResidentialPage"));
+const BathroomRemodelPage = lazy(() => import("./pages/BathroomRemodelPage"));
 const MaintenanceCityPage = lazy(() => import("./pages/MaintenanceCityPage"));
 const TampaBayPage = lazy(() => import("./pages/TampaBayPage"));
 const ContactPage = lazy(() => import("./pages/ContactPage"));
