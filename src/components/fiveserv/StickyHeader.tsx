@@ -269,6 +269,13 @@ export const StickyHeader = () => {
                   </Link>
                 ))}
                 <div className="h-px bg-brand-gold/40 my-2" />
+                <span className="text-brand-gold text-xs uppercase tracking-wider py-1">Remodeling</span>
+                {SERVICES_REMODELING.map((s) => (
+                  <Link key={s.to} to={s.to} className="py-2 text-white/90 text-[14px] hover:text-brand-gold">
+                    {s.label}
+                  </Link>
+                ))}
+                <div className="h-px bg-brand-gold/40 my-2" />
                 <span className="text-brand-gold text-xs uppercase tracking-wider py-1">Especialidades</span>
                 {SERVICES_ESPECIALIDADES.map((s) => (
                   <Link key={s.to} to={s.to} className="py-2 text-white/90 text-[14px] hover:text-brand-gold">
