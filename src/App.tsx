@@ -110,6 +110,7 @@ const router = createBrowserRouter([
       { path: "maintenance", element: withSuspense(<MaintenancePage />) },
       { path: "renovations", element: withSuspense(<RenovationsPage />) },
       { path: "residential", element: withSuspense(<ResidentialPage />) },
+      { path: "bathroom-remodel", element: withSuspense(<BathroomRemodelPage />) },
 
       // Trade pages
       { path: "plumbing", element: withSuspense(<PlumbingPage />) },
