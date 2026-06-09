@@ -225,7 +225,7 @@ export const SchemaOrg = ({
       "@type": "AggregateRating",
       itemReviewed: { "@type": "Organization", name: SITE.legal },
       ratingValue: "5.0",
-      reviewCount: "1",
+      reviewCount: "4",
       bestRating: "5",
       worstRating: "1",
       // [PLACEHOLDER] — replace with real reviews from Google Business Profile
