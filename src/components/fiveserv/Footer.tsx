@@ -34,6 +34,9 @@ export const Footer = () => {
               <a href={SITE.social.linkedin} target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" className="text-brand-white hover:text-brand-gold">
                 <Linkedin className="h-5 w-5" />
               </a>
+              <a href={SITE.social.yelp} target="_blank" rel="noopener noreferrer" aria-label="Yelp" className="text-brand-white hover:text-brand-gold">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="h-5 w-5"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm-1-13h2v6h-2zm0 8h2v2h-2z"/></svg>
+              </a>
             </div>
             <p className="mt-3 text-xs text-brand-gray-muted">{SITE.social.handle} on all platforms</p>
           </div>
