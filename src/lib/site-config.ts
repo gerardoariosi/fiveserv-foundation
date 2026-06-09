@@ -18,9 +18,10 @@ export const SITE = {
   baseState: env.VITE_BASE_STATE || "FL",
   hours: "Available 24/7",
   social: {
-    instagram: "https://instagram.com/FiveServ",
+    instagram: "https://www.instagram.com/fiveservps/",
     facebook: "https://facebook.com/FiveServ",
-    linkedin: "https://linkedin.com/company/FiveServ",
+    linkedin: "https://www.linkedin.com/company/fiveserv-property-solutions/",
+    yelp: "https://www.yelp.com/biz/fiveserv-property-solutions-orlando",
     handle: "@FiveServ",
   },
   tracking: {
