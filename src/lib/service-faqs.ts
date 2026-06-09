@@ -2,174 +2,62 @@ import { SITE } from "./site-config";
 
 /** Make-Ready page FAQs — 8 questions */
 export const MAKE_READY_FAQS: { q: string; a: string }[] = [
-  {
-    q: "What is included in a FiveServ make-ready?",
-    a: `Every ${SITE.brand} make-ready includes paint touch-up or full repaint, deep cleaning, minor repairs, drywall repairs, move-out inspection, rekeying, photo report, and flooring assessment. One call. One invoice.`,
-  },
-  {
-    q: "How long does a make-ready take?",
-    a: `5 business days, guaranteed in writing. The industry average with multiple vendors is 10 or more days. ${SITE.brand} runs one in-house team across every trade.`,
-  },
-  {
-    q: "What is the 5-day guarantee?",
-    a: "Every make-ready is guaranteed in writing to be complete in 5 business days from start. If we miss the deadline, we make it right at our cost. No excuses.",
-  },
-  {
-    q: "Do you work on occupied units?",
-    a: `Yes. ${SITE.brand} handles in-place repairs, painting, and turnover prep around resident schedules. We coordinate notice and access with your office.`,
-  },
-  {
-    q: "What if damage is found during the inspection?",
-    a: "We document everything with photos before we touch the unit. You get a clear repair quote within 24 hours. You decide what's in scope. No surprises on the invoice.",
-  },
-  {
-    q: "How do I get a quote?",
-    a: `Call ${SITE.phone} or fill out the form. Free assessment within 24 hours. Line-item quote before any work begins.`,
-  },
-  {
-    q: "Do you provide a photo report?",
-    a: "Yes. Every make-ready includes before-and-after photo documentation delivered with the invoice. Use it for your asset reports and resident move-in records.",
-  },
-  {
-    q: "What cities do you serve for make-ready?",
-    a: "18 cities across Central Florida — Orlando, Kissimmee, Sanford, Winter Park, Lakeland, and 13 more. Tampa Bay coming soon.",
-  },
+  { q: "Best make-ready company in Orlando Florida?", a: "FiveServ is a full-service make-ready company serving property managers across 18 cities in Central Florida. Painting, cleaning, drywall, repairs, flooring assessment, and photo documentation — all under one crew with one call. 5-day target on standard units in average condition. 300+ units completed. Free quote within 24 hours." },
+  { q: "How much does a make-ready cost in Orlando FL?", a: "Most make-readies in Central Florida run between $1,500 and $4,000 depending on unit condition, square footage, and scope of work. A light turn with paint touch-up, cleaning, and minor repairs lands closer to $1,500. A unit needing full repaint, drywall, flooring, and deep cleaning runs higher. FiveServ gives you a free line-item quote within 24 hours — clear and itemized before we touch anything." },
+  { q: "How long does a make-ready take in Central Florida?", a: "FiveServ targets 5 business days for standard units in average condition across Central Florida. The industry average using multiple vendors is 10 to 14 days. For units with extensive damage, major flooring issues, or unusual size we provide an honest timeline at the assessment upfront. Every vacant day costs money and we move as fast as the property allows." },
+  { q: "What is included in a make-ready for rental properties?", a: "A complete make-ready includes interior painting, deep cleaning, drywall repair, minor plumbing and electrical fixes, flooring assessment and repair, rekeying, and a full before-and-after photo report. FiveServ handles all of it under one crew — no separate painters, cleaners, and repair teams. One call, one coordinated process, one invoice." },
+  { q: "Make-ready checklist for property managers in Florida?", a: "A thorough make-ready checklist covers: full unit inspection, interior repaint or touch-up, drywall repair, deep clean of all surfaces, kitchen and bathroom fixture check, flooring inspection and repair, window and door function, HVAC filter replacement, plumbing check, rekeying, and photo documentation. FiveServ executes this entire checklist on every unit with one crew in one coordinated sequence." },
+  { q: "How to reduce vacancy days in Orlando multifamily properties?", a: "The fastest way to reduce vacancy days is to replace multiple vendors with one coordinated crew. When painters, cleaners, and repair crews are scheduled separately, trades wait on each other and days pile up. FiveServ sequences every trade inside one 5-day window — painting before cleaning, repairs before inspection — so nothing waits on anyone." },
+  { q: "Best unit turn company in Central Florida?", a: "FiveServ handles unit turns for property management companies across 18 cities in Central Florida. Multiple simultaneous turns per week, consistent quality across every unit, one invoice per job. Property managers with 30 to 500 units rely on us as their primary turnover partner because we eliminate the coordination problem entirely." },
+  { q: "Make-ready services near me Orlando FL?", a: "FiveServ provides make-ready and unit turn services across 18 cities in Central Florida — Orlando, Kissimmee, Sanford, Winter Park, Lakeland, Altamonte Springs, Apopka, Ocoee, Winter Garden, Clermont, St. Cloud, Davenport, Deltona, Daytona Beach, Palm Coast, Melbourne, Palm Bay, and Cocoa. Free quote within 24 hours. 5-day target on standard units." },
 ];
 
 /** Maintenance page FAQs — 8 questions */
 export const MAINTENANCE_FAQS: { q: string; a: string }[] = [
-  {
-    q: "What property maintenance services do you offer?",
-    a: `${SITE.brand} handles plumbing, electrical, HVAC, drywall, carpentry, painting, appliance repair, and general work-order response across multifamily properties in Central Florida.`,
-  },
-  {
-    q: "Do you offer 24/7 emergency maintenance?",
-    a: `Yes. Available 24/7 for emergencies. Call ${SITE.phone} any time. On-site response within 2 hours for emergencies in our core service area.`,
-  },
-  {
-    q: "How fast do you respond to work orders?",
-    a: "Routine work orders are scheduled within 24 hours. Emergency calls — water leaks, no power, no AC, lockouts — get a 2-hour on-site response.",
-  },
-  {
-    q: "Can you handle a portfolio of properties?",
-    a: `Yes. ${SITE.brand} runs ongoing maintenance partnerships with property management companies across multiple properties. One point of contact. One invoice cycle.`,
-  },
-  {
-    q: "Are your technicians licensed and insured?",
-    a: `Yes. ${SITE.brand} is fully licensed and insured in Florida. Plumbing, electrical, and HVAC work is performed by licensed contractors under our coordination. FiveServ Group LLC is fully licensed and insured in the state of Florida.`,
-  },
-  {
-    q: "Do you provide preventive maintenance plans?",
-    a: "Yes. Quarterly HVAC, plumbing inspections, common-area checks, exterior walks. Catch problems before residents call. Reduce work-order volume.",
-  },
-  {
-    q: "How do you bill for maintenance work?",
-    a: "Per-job line-item invoicing or monthly retainer for ongoing portfolios. Both are fully itemized. No hidden fees. No surprises.",
-  },
-  {
-    q: "What cities do you cover for maintenance?",
-    a: "All 18 Central Florida cities we serve, with same-day response in our Orlando metro core and within-24-hours coverage for outer cities.",
-  },
+  { q: "Best property maintenance company in Orlando Florida?", a: "FiveServ serves property management companies across 18 cities in Central Florida as their primary maintenance vendor — plumbing, electrical, HVAC, drywall, painting, carpentry, and general repairs all under one roof. 24/7 emergency response, 2-hour on-site target for emergencies, one invoice per job. One call replaces a vendor list of six." },
+  { q: "Emergency maintenance service in Orlando FL 24/7?", a: "Yes. FiveServ provides 24/7 emergency maintenance across Central Florida. Burst pipe, no AC, electrical issue, lockout — we answer every call around the clock. Our target is 2 hours on-site for true emergencies in our Orlando metro core. A real person picks up. No voicemail, no answering service, no waiting until Monday." },
+  { q: "Property maintenance for property managers in Central Florida?", a: "FiveServ is built specifically for property managers. We run ongoing maintenance partnerships with PM companies across Central Florida as their single vendor for routine work orders, emergency calls, and unit turns. One point of contact, one invoice cycle, consistent response times across every property in your portfolio." },
+  { q: "Best maintenance vendor for apartment buildings in Orlando?", a: "The best maintenance vendor for apartment buildings in Orlando is one that handles every trade, responds fast, and documents every job. FiveServ manages maintenance for multifamily communities across 18 cities in Central Florida. Routine repairs, emergency response, and unit turns — all under one contract with photo documentation on every completed work order." },
+  { q: "How to find a reliable maintenance company for rental properties in Florida?", a: "Look for a company that is licensed and insured in Florida, handles multiple trades under one roof, offers 24/7 emergency response, and has verifiable reviews from other property managers. Check that they document work with photos and invoice clearly without surprise charges. FiveServ was built specifically to solve this problem for property managers across Central Florida." },
+  { q: "What does a property maintenance company do in Florida?", a: "A full-service property maintenance company in Florida handles routine repairs, emergency response, plumbing, electrical, HVAC, drywall, painting, carpentry, appliance repair, and unit turns — all under one management point. FiveServ handles all of this for property managers and homeowners across 18 cities in Central Florida. You call once, we handle everything." },
+  { q: "Property maintenance company near me Central Florida?", a: "FiveServ covers 18 cities across Central Florida — Orlando, Kissimmee, Sanford, Winter Park, Lakeland, Altamonte Springs, Apopka, Ocoee, Winter Garden, Clermont, St. Cloud, Davenport, Deltona, Daytona Beach, Palm Coast, Melbourne, Palm Bay, and Cocoa. 24/7 availability, 2-hour emergency response target, free quote within 24 hours." },
+  { q: "How much does property maintenance cost for rental properties in Florida?", a: "Property maintenance costs for rental properties in Florida depend on portfolio size, service level, and what trades are needed. FiveServ delivers a custom quote based on your specific property needs — no generic packages that don't fit your portfolio. Contact us for a free assessment within 24 hours." },
 ];
 
 /** Renovations / CapEx page FAQs — 8 questions */
 export const RENOVATIONS_FAQS: { q: string; a: string }[] = [
-  {
-    q: "What is CapEx and what does FiveServ handle?",
-    a: `CapEx — capital expenditures — are the larger projects that increase property value and rental income. ${SITE.brand} manages flooring replacement, kitchen and bathroom upgrades, full unit rehabs, common-area improvements, and exterior projects. One contract. One project manager. One invoice.`,
-  },
-  {
-    q: "How do you quote a renovation project?",
-    a: "Free on-site assessment within 24 hours. We deliver a clear, line-item quote within 3 business days — broken out by trade, materials, and labor. You see exactly what you're paying for. No change-order surprises.",
-  },
-  {
-    q: "What is the typical timeline for a renovation?",
-    a: "Single unit rehab: 2 to 3 weeks. Common-area improvements: 1 to 4 weeks depending on scope. Full portfolio rollouts: scheduled in phases to minimize resident impact and vacancy loss.",
-  },
-  {
-    q: "Do you handle permits and inspections?",
-    a: `Yes. ${SITE.brand} pulls all required Florida permits and coordinates municipal inspections. Plumbing, electrical, and HVAC work is performed by licensed contractors under our supervision. You don't chase the city — we do.`,
-  },
-  {
-    q: "What kind of ROI can I expect on value-add renovations?",
-    a: "Value-add renovations in Central Florida multifamily average a 15 to 20 percent rent increase per unit, with payback periods of 18 to 36 months depending on scope. We provide an estimated ROI in every project quote.",
-  },
-  {
-    q: "Do you work with direct property owners or only PM companies?",
-    a: `Both. ${SITE.brand} partners with property management companies on portfolio rollouts and works directly with owners on single assets, small portfolios, and individual unit rehabs.`,
-  },
-  {
-    q: "What types of renovation projects do you take on?",
-    a: "Flooring replacement, kitchen upgrades, bathroom renovations, full unit rehabs, common-area improvements (clubhouses, hallways, fitness centers), and exterior improvements (paint, landscaping coordination, signage).",
-  },
-  {
-    q: "Who manages the project day to day?",
-    a: `${SITE.brand} assigns one project manager to every renovation. They are your single point of contact from quote to final walk-through. Daily progress photos. Weekly written updates. No chasing five subs.`,
-  },
+  { q: "Best renovation contractor in Orlando Florida?", a: "FiveServ handles CapEx and value-add renovations for property managers and homeowners across 18 cities in Central Florida. Full unit rehabs, kitchen and bathroom updates, flooring replacements, and common-area renovations — all managed under one project manager with one contract and one invoice. No coordinating five different subcontractors across a 3-week project." },
+  { q: "Best CapEx renovation company for property managers in Orlando?", a: "FiveServ manages CapEx renovation projects for property management companies across Central Florida. Flooring replacements, kitchen refreshes, bathroom updates, full unit rehabs, and common-area improvements — designed to increase NOI and justify higher rents. One project manager, daily progress photos, and a detailed timeline delivered at quote stage." },
+  { q: "Kitchen remodel contractor in Orlando Florida?", a: "FiveServ handles kitchen renovations for property managers and homeowners across Central Florida. Cabinet updates, countertop replacement, flooring, painting, fixture upgrades, and full kitchen gut renovations. One crew, one project manager, one invoice. Free on-site quote within 24 hours across 18 cities in Central Florida." },
+  { q: "How long does apartment renovation take in Central Florida?", a: "A single unit rehab in Central Florida typically takes 2 to 3 weeks depending on scope. Cosmetic refreshes run faster. Full gut renovations take longer. Common-area projects run 1 to 4 weeks. FiveServ provides a detailed timeline at quote stage and schedules portfolio rollouts in phases to minimize vacancy impact across your properties." },
+  { q: "Apartment renovation cost in Central Florida?", a: "Apartment renovation costs in Central Florida depend entirely on scope — a cosmetic refresh with new flooring and paint runs far less than a full gut rehab with new kitchen and bathroom. FiveServ delivers a free line-item quote broken out by trade, materials, and labor within 24 hours. You see exactly what you are paying for before any work begins. No change-order surprises." },
+  { q: "What renovations increase rental income in Orlando Florida?", a: "The renovations with the highest ROI in Central Florida multifamily are flooring replacement, bathroom updates, kitchen refreshes, and exterior improvements. Value-add projects in the Orlando market typically produce a 15 to 20 percent rent increase per unit. FiveServ includes an estimated ROI breakdown in every CapEx quote so you can present the numbers to property owners before approving the project." },
+  { q: "Best home renovation company in Orlando FL?", a: "FiveServ handles home renovations for homeowners across 18 cities in Central Florida. Bathroom remodels, kitchen updates, flooring replacement, interior painting, drywall, and carpentry — all managed by one project manager with one crew from start to finish. Licensed, insured, family-owned since 2016. Free on-site quote within 24 hours." },
+  { q: "Renovation company near me Central Florida?", a: "FiveServ covers 18 cities across Central Florida — Orlando, Kissimmee, Winter Park, Sanford, Lakeland, Altamonte Springs, Apopka, Ocoee, Winter Garden, Clermont, St. Cloud, Davenport, Deltona, Daytona Beach, Palm Coast, Melbourne, Palm Bay, and Cocoa. Free on-site quote within 24 hours. One project manager on every job from assessment to completion." },
 ];
 
 /** Residential page FAQs — 8 questions */
 export const RESIDENTIAL_FAQS: { q: string; a: string }[] = [
-  {
-    q: "What home repairs does FiveServ handle?",
-    a: `${SITE.brand} handles plumbing, electrical, interior painting, drywall, flooring, carpentry, and general home repairs across Central Florida. The same in-house crews that turn 500-unit communities — at your home.`,
-  },
-  {
-    q: "Are you licensed and insured in Florida?",
-    a: `Yes. ${SITE.brand} is fully licensed and insured in Florida. Plumbing, electrical, and HVAC are performed by licensed contractors under our coordination. FiveServ Group LLC is fully licensed and insured in the state of Florida.`,
-  },
-  {
-    q: "How fast can you come out for a home repair?",
-    a: "Routine home repairs are scheduled within 24 to 48 hours. Emergency calls — water leaks, no power, no AC, lockouts — get a 2-hour response across the Orlando metro core.",
-  },
-  {
-    q: "Do you offer 24/7 emergency repair for homeowners?",
-    a: `Yes. ${SITE.brand} answers the phone 24/7 for emergencies — water, power, AC, lockouts. Call ${SITE.phone} any time. No answering service.`,
-  },
-  {
-    q: "How do I get a quote for home repair work?",
-    a: `Call ${SITE.phone} or fill out the form. Free on-site assessment within 24 to 48 hours. Clear, line-item quote before any work begins. No surprises on the invoice.`,
-  },
-  {
-    q: "What areas do you serve for residential work?",
-    a: "All 18 Central Florida cities — Orlando, Kissimmee, Sanford, Winter Park, Lakeland, and 13 more. Same-day response in our Orlando metro core, within 24 hours across the rest of the region.",
-  },
-  {
-    q: "Is there a minimum job size?",
-    a: `No minimum. ${SITE.brand} handles single repairs through full home renovations. From a leaky faucet to a kitchen remodel — same crew, same standards, one invoice.`,
-  },
-  {
-    q: "Do you also handle renovations for homeowners?",
-    a: "Yes. Beyond repairs, we handle interior painting, flooring replacement, bathroom and kitchen upgrades, drywall, and full-room remodels for homeowners. One project manager. One invoice on completion.",
-  },
+  { q: "Best handyman in Orlando Florida?", a: "FiveServ brings the same professional crew that maintains 500-unit apartment communities directly to homeowners across Central Florida. Licensed, insured, and experienced across multiple trades — plumbing fixtures, electrical outlets, drywall, painting, flooring, carpentry, and general repairs. One call, one crew, one invoice. Not a solo guy with a truck — a professional team with a real system." },
+  { q: "How much does a handyman cost in Orlando Florida?", a: "Most handyman jobs in Orlando start from $150 with the majority of repairs averaging between $150 and $400 depending on the task and time required. Larger projects like flooring, bathroom remodels, or full room renovations are quoted separately. FiveServ gives you a free on-site quote within 24 to 48 hours so you know the exact price before any work begins." },
+  { q: "Best home repair company in Central Florida?", a: "FiveServ is a family-owned home repair and maintenance company serving homeowners across 18 cities in Central Florida since 2016. The same licensed crews that maintain hundreds of apartment units bring that same professional standard to your home. Plumbing, electrical, drywall, painting, flooring, carpentry — one call handles it all." },
+  { q: "Best home maintenance company in Orlando Florida?", a: "The best home maintenance company in Orlando is one that handles multiple trades, responds fast, and invoices clearly. FiveServ serves homeowners across Central Florida with a full maintenance crew — routine repairs, seasonal maintenance, and emergency calls all handled by the same team. No building a new vendor list for every problem." },
+  { q: "How fast can I get a handyman in Orlando?", a: "Routine home repairs in Orlando are scheduled within 24 to 48 hours. Emergency situations — water leak, no power, no AC — get a 2-hour on-site response across the Orlando metro core. FiveServ answers 24 hours a day, 7 days a week. A real person picks up every call." },
+  { q: "What can a handyman fix in Orlando Florida?", a: "A professional handyman in Orlando can handle leaky faucets, running toilets, outlet and switch repair, ceiling fan installation, drywall patching, door and cabinet repair, trim and baseboard installation, interior painting, minor flooring repair, caulking, weatherstripping, and general home maintenance. FiveServ covers all of these and more across Central Florida." },
+  { q: "Do you need a license to do handyman work in Florida?", a: "In Florida, plumbing, electrical, HVAC, and structural work require licensed contractors regardless of job size. FiveServ is fully licensed and insured in Florida — all specialty trade work is performed by licensed contractors under our direct coordination. You are always protected on every job." },
+  { q: "Best residential contractor near me Central Florida?", a: "FiveServ serves homeowners across 18 cities in Central Florida — Orlando, Kissimmee, Winter Park, Sanford, Lakeland, Altamonte Springs, Winter Garden, Clermont, and more. Licensed, insured, family-owned since 2016. Same crew every visit, photo documentation on every job, one clean invoice. Free quote within 24 hours." },
 ];
 
 /** Painting page FAQs */
 export const PAINTING_FAQS: { q: string; a: string }[] = [
-  {
-    q: "How much does interior painting cost for a rental unit in Orlando?",
-    a: "Interior painting for a standard apartment unit in Central Florida typically runs between 400 and 1,200 dollars depending on size, condition, and number of rooms. Full repaints with primer and two coats run higher. FiveServ gives you a free line-item quote within 24 hours. No guessing.",
-  },
-  {
-    q: "How long does it take to paint an apartment unit?",
-    a: "A standard 2-bedroom unit takes 1 to 2 days with a proper crew. We coordinate painting as part of the make-ready sequence so it does not slow down the overall turn. Most units are painted, dried, and ready for the next trade within 48 hours.",
-  },
-  {
-    q: "Do you offer exterior painting for multifamily properties in Central Florida?",
-    a: "Yes, exterior painting for apartment buildings, townhomes, and rental homes across 18 cities. We work around tenant schedules and coordinate with HOA requirements when applicable. Free quote within 24 hours.",
-  },
-  {
-    q: "What paint brands and finishes do you use for rental properties?",
-    a: "We use professional-grade paints built for rental durability, washable and scrubbable finishes that hold up between tenants. We will match existing colors or help you pick the right finish for the surface. Flat for ceilings, eggshell for walls, semi-gloss for trim and bathrooms.",
-  },
-  {
-    q: "Can you paint just one room or do you require a full unit?",
-    a: "One room, one wall, full unit, whatever you need. No minimum. Property managers call us for touch-ups between tenants and full repaints after long-term tenants. Homeowners call us for single rooms or full interior refreshes. We handle both.",
-  },
-  {
-    q: "Do you handle painting for homeowners in Orlando and Central Florida?",
-    a: "Yes, the same crew that turns apartment units paints homes across Central Florida. Interior, exterior, accent walls, cabinet painting, trim work. Licensed, insured, and on time. One call, one invoice.",
-  },
+  { q: "What is the best painting company in Orlando Florida?", a: "FiveServ is a full-service painting contractor serving property managers and homeowners across 18 cities in Central Florida. Interior painting, exterior painting, full unit repaints, color changes, and touch-ups between tenants. Same painters every job — no subcontracted no-shows. Free quote within 24 hours." },
+  { q: "How much does interior painting cost in Orlando FL?", a: "Interior painting costs in Orlando depend on the size of the unit, the condition of the walls, and whether you need a full repaint, color change, or touch-up. Every job is different and every quote is free. FiveServ responds within 24 hours with a clear line-item price before any work begins. No surprises on the invoice." },
+  { q: "Best painting contractor for rental properties in Central Florida?", a: "The best painting contractor for rental properties in Central Florida is one that works on tight timelines, coordinates inside the unit turn, and delivers consistent results across every unit. FiveServ paints hundreds of rental units per year across 18 cities in Central Florida — the same crew every time, coordinated with cleaning and repairs so the turn stays on schedule." },
+  { q: "Best exterior painting company in Orlando Florida?", a: "FiveServ handles exterior painting for multifamily communities, single-family homes, and commercial properties across Central Florida. Pressure washing, surface prep, premium-grade exterior paint, and clean execution. Same crew start to finish. Free on-site quote within 24 hours across 18 cities in Central Florida." },
+  { q: "How long does it take to paint an apartment in Orlando?", a: "A standard apartment unit repaint in Orlando typically takes 1 to 2 days depending on size, number of rooms, and whether there is a color change. Touch-ups run faster. FiveServ coordinates painting inside the make-ready window so it finishes before cleaning begins and the unit stays on schedule." },
+  { q: "Best interior painting contractor near me Central Florida?", a: "FiveServ serves 18 cities across Central Florida — Orlando, Kissimmee, Winter Park, Sanford, Lakeland, Altamonte Springs, and 12 more. Licensed, insured, and on-time. Whether you manage a 200-unit portfolio or own a single home, same crew, same standards, same clean invoice. Free quote within 24 hours." },
+  { q: "Do I need to move furniture for interior painting in Orlando?", a: "For rental units and vacant apartments, no furniture is typically involved. For occupied homes, FiveServ moves light furniture away from walls and covers everything before painting begins. Heavy furniture should be cleared beforehand. We protect floors, trim, and fixtures — the space comes back clean every time." },
+  { q: "What paint is best for rental properties in Florida?", a: "Flat or eggshell finish for ceilings and low-traffic walls. Satin or semi-gloss for kitchens, bathrooms, doors, and trim — easier to clean and holds up better between tenants. In Florida's humidity, mold-resistant paint is recommended for bathrooms. FiveServ uses professional-grade paint on every rental unit across Central Florida for maximum durability between turns." },
 ];
 
 /** Plumbing page FAQs */
@@ -258,30 +146,14 @@ export const DRYWALL_FAQS: { q: string; a: string }[] = [
 
 /** Flooring page FAQs */
 export const FLOORING_FAQS: { q: string; a: string }[] = [
-  {
-    q: "What is the best flooring for rental properties in Florida?",
-    a: "Luxury vinyl plank is the best option for most rentals in Central Florida. It is waterproof, scratch-resistant, holds up between tenants, looks great, and installs fast. We have installed LVP in hundreds of units across Orlando, Kissimmee, and the rest of Central Florida. It is the clear choice for multifamily.",
-  },
-  {
-    q: "How much does flooring installation cost in Orlando Florida?",
-    a: "LVP installation in Central Florida typically runs 3 to 6 dollars per square foot installed, materials and labor included. Ceramic tile runs higher. Carpet is cheaper upfront but costs more long-term in rental properties. FiveServ gives you a free quote with full breakdown before any work begins.",
-  },
-  {
-    q: "Do you remove and dispose of old flooring?",
-    a: "Yes, full removal and disposal is included. We pull the old floor, inspect the subfloor, handle any subfloor repairs needed, and install the new material. No extra charges for haul-away.",
-  },
-  {
-    q: "Do you offer flooring for multifamily portfolio replacements in Central Florida?",
-    a: "Yes, portfolio-wide flooring replacements are something we handle regularly. We schedule across multiple units or properties, minimize vacancy disruption, and deliver consistent quality across every unit. One contact, one invoice per property.",
-  },
-  {
-    q: "What flooring materials do you install in Central Florida?",
-    a: "Luxury vinyl plank, ceramic and porcelain tile, carpet, hardwood, and engineered wood. We help property managers and homeowners pick the right material for their budget and timeline. LVP for rentals, tile for kitchens and bathrooms, whatever the unit needs.",
-  },
-  {
-    q: "Do you handle flooring for homeowners in Orlando and Central Florida?",
-    a: "Yes, same crew, same quality. Full room installs, kitchen and bathroom tile, hardwood installation, carpet replacement. Free quote within 24 hours. We handle it from removal to final cleanup.",
-  },
+  { q: "Best flooring company in Orlando Florida?", a: "FiveServ installs luxury vinyl plank, ceramic and porcelain tile, laminate, vinyl, and carpet across 18 cities in Central Florida. Full removal and disposal of old flooring included on every job. We serve property managers on portfolio-wide replacements and homeowners on full-room installs — better pricing than Home Depot and Lowe's with better quality installation and personal attention on every job." },
+  { q: "Best LVP flooring installer in Central Florida?", a: "FiveServ has installed luxury vinyl plank in hundreds of units across Central Florida. LVP is the top choice for rental properties — waterproof, scratch-resistant, easy to clean, and fast to install. We carry and install top-performing LVP products at better pricing than big box stores. Free quote within 24 hours across 18 cities." },
+  { q: "LVP vs tile for rental properties in Florida?", a: "Both are excellent choices for Florida rentals. LVP installs faster, is warmer underfoot, and handles high-traffic areas well. Tile is harder, more heat-resistant, and ideal for bathrooms, kitchens, and outdoor-adjacent spaces. For living areas and bedrooms in rental units across Central Florida, LVP is the most popular choice. For wet areas, porcelain tile wins. FiveServ installs both." },
+  { q: "How much does flooring installation cost in Orlando FL?", a: "Flooring installation cost in Orlando depends on the material, square footage, subfloor condition, and whether old flooring needs removal. FiveServ offers better pricing than Home Depot, Lowe's, and large national installers — with better quality and personal attention on every job. Free on-site quote within 24 hours. You know the number before we touch anything." },
+  { q: "How long does flooring installation take in Orlando?", a: "A standard room or apartment unit flooring installation in Orlando typically takes 1 to 2 days depending on square footage and material. Larger spaces or projects requiring subfloor repair take longer. FiveServ gives you an accurate timeline at quote stage — no showing up and stretching a one-day job into three." },
+  { q: "Do you remove old flooring before installation in Central Florida?", a: "Yes. Full removal and disposal of old flooring is included on every FiveServ flooring job across Central Florida. Old carpet, tile, LVP, or laminate — we pull it, haul it, and prep the subfloor before anything new goes down. If the subfloor needs repair we handle that too before installation begins." },
+  { q: "Best flooring for Florida homes and rentals?", a: "For Florida's climate, waterproof flooring is essential. Luxury vinyl plank is the top choice for living areas and bedrooms — waterproof, scratch-resistant, and durable. Porcelain tile is best for bathrooms, kitchens, and laundry areas. Carpet is still popular in bedrooms for homeowners. Hardwood needs climate control to avoid warping in Florida humidity." },
+  { q: "Best flooring contractor near me Orlando Central Florida?", a: "FiveServ serves 18 cities across Central Florida — Orlando, Kissimmee, Winter Park, Lakeland, Sanford, Altamonte Springs, Apopka, and more. Licensed, insured, and experienced on both residential and multifamily projects. Same crew start to finish, no subcontractors, one clean invoice. Free quote within 24 hours." },
 ];
 
 /** Carpentry page FAQs */
@@ -342,28 +214,12 @@ export const ELECTRICAL_FAQS: { q: string; a: string }[] = [
 
 /** Cleaning page FAQs */
 export const CLEANING_FAQS: { q: string; a: string }[] = [
-  {
-    q: "Do you offer move-out cleaning for rental units in Orlando?",
-    a: "Yes, move-out cleaning is one of our core services for property managers across Central Florida. Full unit deep clean including appliances, bathrooms, kitchen, floors, windows, closets, and all surfaces. We coordinate cleaning inside the make-ready sequence so painting finishes before we clean, not the other way around.",
-  },
-  {
-    q: "What does a make-ready cleaning include?",
-    a: "Everything. Refrigerator and oven cleaning inside and out, bathroom scrub, floor cleaning, baseboard wipe-down, window cleaning, closet cleaning, and a full unit walkthrough. We document with photos. You get back a unit that looks and smells like nobody lived there.",
-  },
-  {
-    q: "How much does move-out cleaning cost in Central Florida?",
-    a: "Move-out cleaning in Central Florida typically runs 150 to 350 dollars for a standard apartment unit depending on size and condition. Units left in poor condition run higher. FiveServ quotes it upfront so you know the number before we start.",
-  },
-  {
-    q: "Do you offer post-construction cleaning in Orlando?",
-    a: "Yes, post-construction cleaning after renovations, remodels, and make-readies. Dust, debris, paint overspray, construction residue. We clear it all out and leave the unit move-in ready.",
-  },
-  {
-    q: "Can you coordinate cleaning with painting and repairs as part of a make-ready?",
-    a: "That is exactly how we do it. FiveServ runs painting, repairs, drywall, and cleaning as a coordinated sequence, not separate vendors showing up in the wrong order. Cleaning always comes after painting. The unit comes out right.",
-  },
-  {
-    q: "Do you offer cleaning services for homeowners in Central Florida?",
-    a: "Yes, deep cleaning, post-renovation cleanup, and move-in and move-out cleaning for homeowners across 18 cities. Same crew, same standards. Call us or fill out the form and we will get you a quote within 24 hours.",
-  },
+  { q: "Best move-out cleaning service in Orlando Florida?", a: "FiveServ provides professional move-out cleaning for rental properties and homeowners across 18 cities in Central Florida. Deep cleaning of every surface — kitchens, bathrooms, floors, baseboards, appliances, windows, and closets — delivered spotless with photo documentation. Starting from $99 depending on unit size and condition. Coordinated inside the make-ready process so cleaning happens after painting and repairs are done." },
+  { q: "How much does move-out cleaning cost in Orlando FL?", a: "Move-out cleaning in Orlando starts from $99 depending on unit size and condition. Larger units or units in poor condition run higher. FiveServ gives you a clear price before we start — no surprises on the invoice. For property managers, cleaning is coordinated inside the make-ready sequence so you get one price for the entire turn." },
+  { q: "Best apartment cleaning service in Central Florida?", a: "FiveServ provides move-out and deep cleaning for apartment units and multifamily properties across 18 cities in Central Florida. Every clean is photo-documented, delivered after painting and repairs are complete, and invoiced as part of the full make-ready or as a standalone service. Consistent results across every unit, every time." },
+  { q: "Move-out cleaning checklist Orlando FL?", a: "A complete move-out clean covers: kitchen deep clean including appliances inside and out, bathroom scrub including grout and fixtures, all floors swept and mopped, baseboards and door frames wiped, windows and sills cleaned, closets cleared and wiped, light fixtures dusted, and trash removed. FiveServ executes this full checklist on every job with before-and-after photos delivered at completion." },
+  { q: "Deep cleaning service near me Orlando FL?", a: "FiveServ provides deep cleaning services for homeowners and property managers across 18 cities in Central Florida — Orlando, Kissimmee, Winter Park, Sanford, Lakeland, Altamonte Springs, and more. Move-out cleaning, post-construction cleaning, and full deep cleans for occupied and vacant properties. Starting from $99. Free quote within 24 hours." },
+  { q: "Best post-construction cleaning in Orlando Florida?", a: "Post-construction cleaning requires removing dust, debris, adhesive residue, paint overspray, and construction materials from every surface before a space is usable. FiveServ handles post-construction cleaning for renovation projects and new installations across Central Florida — coordinated directly after the build phase so the space is ready to photograph, show, or occupy immediately." },
+  { q: "How long does move-out cleaning take in Orlando?", a: "A standard apartment move-out clean in Orlando typically takes 2 to 4 hours depending on unit size and condition. Units that have not been cleaned during tenancy or have significant buildup take longer. FiveServ gives you an accurate time estimate at quote stage. For property managers, cleaning is scheduled inside the make-ready window so it never holds up the turn." },
+  { q: "Professional cleaning for rental properties in Central Florida?", a: "FiveServ provides professional cleaning for rental properties, apartment buildings, and multifamily communities across 18 cities in Central Florida. Move-out cleaning, deep cleaning between tenants, and post-renovation cleaning — all with photo documentation. Coordinated with painting and repairs inside the make-ready sequence. One invoice covers the entire turn." },
 ];
