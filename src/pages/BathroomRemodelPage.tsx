@@ -22,8 +22,8 @@ import { SITE } from "@/lib/site-config";
 
 const DOT_GRID_CARD = {
   backgroundImage:
-    'url("data:image/svg+xml,%3Csvg width=%2760%27 height=%2760%27 xmlns=%27http://www.w3.org/2000/svg%27%3E%3Cg fill=%27rgba(255,215,0,0.18)%27%3E%3Cpath d=%27M20 6 Q22 18 34 20 Q22 22 20 34 Q18 22 6 20 Q18 18 20 6 Z%27/%3E%3Cpath d=%27M48 40 Q49 47 55 48 Q49 49 48 55 Q47 49 41 48 Q47 47 48 40 Z%27/%3E%3C/g%3E%3C/svg%3E")',
-  backgroundSize: "60px 60px",
+    'url("data:image/svg+xml,%3Csvg width=%2750%27 height=%2750%27 xmlns=%27http://www.w3.org/2000/svg%27%3E%3Cg fill=%27rgba(255,255,255,0.10)%27%3E%3Cpath d=%27M25 4 Q26 24 46 25 Q26 26 25 46 Q24 26 4 25 Q24 24 25 4 Z%27/%3E%3Cpath d=%27M25 10 Q26 24 40 25 Q26 26 25 40 Q24 26 10 25 Q24 24 25 10 Z%27 transform=%27rotate(45 25 25)%27/%3E%3C/g%3E%3C/svg%3E")',
+  backgroundSize: "50px 50px",
 };
 
 const Reveal = ({ children, className = "" }: { children: ReactNode; className?: string }) => {
