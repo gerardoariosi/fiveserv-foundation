@@ -21,8 +21,8 @@ export const SolutionSection = () => {
       id="solution"
       style={{
         backgroundColor: "#1A1A1A",
-        backgroundImage: 'url("data:image/svg+xml,%3Csvg width=%2780%27 height=%2780%27 xmlns=%27http://www.w3.org/2000/svg%27%3E%3Cg fill=%27rgba(255,215,0,0.18)%27%3E%3Cpath d=%27M40 6 L44 36 L74 40 L44 44 L40 74 L36 44 L6 40 L36 36 Z%27/%3E%3Cpath d=%27M40 16 L43 37 L64 40 L43 43 L40 64 L37 43 L16 40 L37 37 Z%27 transform=%27rotate(45 40 40)%27/%3E%3C/g%3E%3C/svg%3E")',
-        backgroundSize: "80px 80px",
+        backgroundImage: 'url("data:image/svg+xml,%3Csvg width=%2760%27 height=%2760%27 xmlns=%27http://www.w3.org/2000/svg%27%3E%3Cg fill=%27rgba(255,215,0,0.18)%27%3E%3Cpath d=%27M20 6 Q22 18 34 20 Q22 22 20 34 Q18 22 6 20 Q18 18 20 6 Z%27/%3E%3Cpath d=%27M48 40 Q49 47 55 48 Q49 49 48 55 Q47 49 41 48 Q47 47 48 40 Z%27/%3E%3C/g%3E%3C/svg%3E")',
+        backgroundSize: "60px 60px",
       }}
     >
       <div ref={ref} className="container reveal" style={{ paddingTop: 80, paddingBottom: 80 }}>
