@@ -80,8 +80,8 @@ export const LeadMagnetSection = ({ variant = "both" }: Props) => {
               key={c.title}
               className="flex flex-col rounded-lg border border-gray-100 bg-white p-6 shadow-card"
               style={{
-                backgroundImage: 'url("data:image/svg+xml,%3Csvg width=%2728%27 height=%2728%27 viewBox=%270 0 28 28%27 xmlns=%27http://www.w3.org/2000/svg%27%3E%3Cg fill=%27rgba(255%2C215%2C0%2C0.18)%27%3E%3Cpath d=%27M7 3 Q7.6 6.4 10 7 Q7.6 7.6 7 11 Q6.4 7.6 4 7 Q6.4 6.4 7 3 Z%27/%3E%3Cpath d=%27M21 17 Q21.6 20.4 24 21 Q21.6 21.6 21 25 Q20.4 21.6 18 21 Q20.4 20.4 21 17 Z%27/%3E%3C/g%3E%3C/svg%3E")',
-                backgroundSize: "48px 48px",
+                backgroundImage: 'url("data:image/svg+xml,%3Csvg width=%2780%27 height=%2780%27 xmlns=%27http://www.w3.org/2000/svg%27%3E%3Cg fill=%27rgba(255,215,0,0.18)%27%3E%3Cpath d=%27M40 6 L44 36 L74 40 L44 44 L40 74 L36 44 L6 40 L36 36 Z%27/%3E%3Cpath d=%27M40 16 L43 37 L64 40 L43 43 L40 64 L37 43 L16 40 L37 37 Z%27 transform=%27rotate(45 40 40)%27/%3E%3C/g%3E%3C/svg%3E")',
+                backgroundSize: "80px 80px",
               }}
             >
               <c.icon className="h-8 w-8 text-brand-gold" strokeWidth={1.5} />
