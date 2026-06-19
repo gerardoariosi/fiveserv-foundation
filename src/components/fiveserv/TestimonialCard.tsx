@@ -21,7 +21,7 @@ export const TestimonialCard = ({ quote, name, title, company, photo }: Testimon
         {photo ? (
           <img
             src={photo}
-            alt={name}
+            alt={`${name} — ${title} at ${company} — FiveServ Property Solutions client testimonial`}
             width={48}
             height={48}
             loading="lazy"
