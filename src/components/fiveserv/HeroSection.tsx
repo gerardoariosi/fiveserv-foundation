@@ -1,6 +1,7 @@
 import { ArrowRight, Phone } from "lucide-react";
 import { SITE } from "@/lib/site-config";
 import { useReveal } from "@/hooks/use-fiveserv";
+import orlandoHero from "@/assets/orlando-hero.png.asset.json";
 
 
 const WhatsAppIcon = ({ className }: { className?: string }) => (
@@ -20,7 +21,7 @@ type HeroProps = {
 };
 
 export const HeroSection = ({
-  imageSrc = "/images/orlando.webp",
+  imageSrc = orlandoHero.url,
 }: HeroProps) => {
   const ref = useReveal<HTMLDivElement>();
   const waHref = `https://wa.me/${SITE.phone.replace(/[^\d]/g, "")}`;
