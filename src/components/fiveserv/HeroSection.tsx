@@ -21,7 +21,7 @@ type HeroProps = {
 };
 
 export const HeroSection = ({
-  imageSrc = "/images/orlando.webp",
+  imageSrc = orlandoHero.url,
 }: HeroProps) => {
   const ref = useReveal<HTMLDivElement>();
   const waHref = `https://wa.me/${SITE.phone.replace(/[^\d]/g, "")}`;
