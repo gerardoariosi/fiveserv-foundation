@@ -40,12 +40,12 @@ export const HeroSection = ({
         fetchpriority="high"
         decoding="async"
         className="absolute inset-0 h-full w-full object-cover"
-        style={{ objectPosition: "center 65%" }}
+        style={{ objectPosition: "center 58%" }}
       />
       {/* Dark overlay over the image for readability */}
       <div className="absolute inset-0" style={{ background: "rgba(0,0,0,0.6)" }} />
 
-      <div className="relative z-10 flex items-center pb-10" style={{ minHeight: heroVisibleHeight, paddingTop: 'calc(var(--banner-h, 0px) + var(--header-h, 160px))' }}>
+      <div className="relative z-10 flex items-center pb-10 pt-12 sm:pt-16 lg:pt-20" style={{ minHeight: heroVisibleHeight }}>
         <div ref={ref} className="container reveal">
           <h1 className="text-3xl text-brand-white sm:text-4xl lg:text-6xl leading-tight">
             Property Maintenance Central Florida
