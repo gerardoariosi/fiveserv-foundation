@@ -1,6 +1,7 @@
 import { ArrowRight, Phone } from "lucide-react";
 import { SITE } from "@/lib/site-config";
 import { useReveal } from "@/hooks/use-fiveserv";
+import orlandoHero from "@/assets/orlando-hero.png.asset.json";
 
 
 const WhatsAppIcon = ({ className }: { className?: string }) => (
