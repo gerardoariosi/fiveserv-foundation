@@ -90,9 +90,6 @@ export const HeroSection = ({ imageSrc = "/images/orlando.webp" }: HeroProps) =>
             </div>
           </div>
         </div>
-
-        {/* Stat strip — rendered as the visual base of the hero on dark bg */}
-        <HeroStatStrip />
       </div>
     </section>
   );
