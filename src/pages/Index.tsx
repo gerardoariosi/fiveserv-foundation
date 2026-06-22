@@ -129,12 +129,11 @@ const ServicesGrid = () => {
 
         <div className="mt-14 grid gap-6 md:grid-cols-2 lg:grid-cols-4">
           {SERVICE_META.map((m) => {
-            const svc = SERVICES.find((s) => s.slug === m.slug)!;
             const Icon = m.icon;
             return (
               <Link
-                to={`/${svc.slug}`}
-                key={svc.slug}
+                to={m.href}
+                key={m.slug}
                 className="group relative block p-6 transition-all duration-300 hover:-translate-y-1"
                 style={{
                   background: "rgba(255,255,255,0.05)",
@@ -159,8 +158,8 @@ const ServicesGrid = () => {
                   </span>
                 )}
                 <Icon className="h-8 w-8" style={{ color: "#FFD700" }} strokeWidth={2} />
-                <h3 className="mt-4 font-display text-lg font-bold text-white">{svc.name}</h3>
-                <p className="mt-2 text-sm leading-relaxed text-gray-400">{svc.description}</p>
+                <h3 className="mt-4 font-display text-lg font-bold text-white">{m.name}</h3>
+                <p className="mt-2 text-sm leading-relaxed text-gray-400">{m.description}</p>
                 <span className="mt-4 inline-flex items-center gap-1 text-xs font-bold uppercase tracking-wider text-brand-gold">
                   Learn more
                   <ArrowRight className="h-3.5 w-3.5 transition-transform group-hover:translate-x-1" />
