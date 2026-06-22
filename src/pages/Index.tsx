@@ -1,9 +1,9 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { ArrowRight, Building2, Home, Key, Phone, Quote, Wrench } from "lucide-react";
+import { ArrowRight, Building2, Home, Phone, Quote, Wrench } from "lucide-react";
 import Seo from "@/lib/Seo";
 import SchemaOrg from "@/lib/SchemaOrg";
-import { SITE, SERVICES } from "@/lib/site-config";
+import { SITE } from "@/lib/site-config";
 import { HOMEPAGE_FAQS } from "@/lib/homepage-faqs";
 
 import AIOverviewBlock from "@/components/fiveserv/AIOverviewBlock";
