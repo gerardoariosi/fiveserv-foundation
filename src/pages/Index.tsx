@@ -8,6 +8,7 @@ import { HOMEPAGE_FAQS } from "@/lib/homepage-faqs";
 
 import AIOverviewBlock from "@/components/fiveserv/AIOverviewBlock";
 import HeroSection from "@/components/fiveserv/HeroSection";
+import HeroStatStrip from "@/components/fiveserv/HeroStatStrip";
 import ProblemSection from "@/components/fiveserv/ProblemSection";
 import SolutionSection from "@/components/fiveserv/SolutionSection";
 import FivePillars from "@/components/fiveserv/FivePillars";
@@ -350,6 +351,7 @@ const Index = () => {
       />
 
       <HeroSection />
+      <HeroStatStrip />
 
       <section className="bg-white">
         <div className="container pt-12">
