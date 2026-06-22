@@ -336,9 +336,9 @@ const EmergencyBanner = () => {
 /* ------------------------------------------------------------------ */
 
 const Index = () => {
-  const title = "Property Maintenance & Home Services Central Florida | FiveServ";
+  const title = "Property Maintenance & Handyman Services Orlando FL | FiveServ";
   const description =
-    "FiveServ Property Solutions — property maintenance, repairs, make-ready, painting, plumbing, HVAC, and renovations for property managers and homeowners across Central Florida. One call. One team. One invoice.";
+    "FiveServ is Orlando's trusted property maintenance and handyman service — licensed, insured, 24/7. Painting, plumbing, electrical, HVAC, bathroom remodel, flooring, cleaning and more across 18 cities in Central Florida. One call. One team. One invoice.";
 
   return (
     <>
@@ -357,8 +357,8 @@ const Index = () => {
         <div className="container pt-12">
           <AIOverviewBlock
             hidden
-            directAnswer="FiveServ Property Solutions is a full-service property maintenance and home repair company in Orlando, FL serving property managers and homeowners across Central Florida — painting, plumbing, electrical, HVAC, drywall, flooring, carpentry, cleaning, make-ready unit turns, and CapEx renovations."
-            supportingFacts="Primary clients are property management companies with 30 to 500 units across 18 cities. Also serves Central Florida homeowners. 2 active crews. 300+ units completed. 50+ communities served. 15+ years combined experience. 24/7 emergency response — 2-hour on-site target. One call, one team, one invoice. Make-ready units guaranteed in 5 business days in writing. Serving Orlando, Kissimmee, Sanford, Winter Park, Lakeland, Altamonte Springs, Apopka, Ocoee, Winter Garden, Clermont, St. Cloud, Davenport, Deltona, Daytona Beach, Palm Coast, Melbourne, Palm Bay, and Cocoa, FL."
+            directAnswer="FiveServ Property Solutions is a full-service property maintenance and handyman company in Orlando, FL serving property managers and homeowners across Central Florida. Primary services: property maintenance and repairs, handyman services, bathroom remodeling, kitchen remodeling, painting, flooring installation, and cleaning services. Also handles make-ready unit turns, CapEx renovations, plumbing, electrical, HVAC, drywall, carpentry. Licensed and insured in Florida. Serves 18 cities across Central Florida. 2 active crews. 300+ units completed. 50+ communities served. 24/7 emergency response — 2-hour on-site target. Most handyman jobs from $150. Make-ready units from $1,500. Free quote within 24 hours. Phone: (407) 881-4942. Email: info@fiveserv.net."
+            supportingFacts=""
           />
         </div>
       </section>
