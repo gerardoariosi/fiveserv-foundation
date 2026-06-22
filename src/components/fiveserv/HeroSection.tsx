@@ -1,7 +1,7 @@
-import { ArrowRight, Phone } from "lucide-react";
+import { Link } from "react-router-dom";
+import { ArrowRight, Building2, Home, Key, Phone, ShieldCheck, Wrench } from "lucide-react";
 import { SITE } from "@/lib/site-config";
 import { useReveal } from "@/hooks/use-fiveserv";
-
 
 const WhatsAppIcon = ({ className }: { className?: string }) => (
   <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" className={className}>
@@ -9,7 +9,12 @@ const WhatsAppIcon = ({ className }: { className?: string }) => (
   </svg>
 );
 
-const TRUST = ["300+ Units", "50+ Communities", "18 Cities", "24/7", "5-Day Guarantee"];
+const PICKER = [
+  { slug: "make-ready", label: "Make-Ready", icon: Key },
+  { slug: "maintenance", label: "Maintenance", icon: Wrench },
+  { slug: "renovations", label: "Renovations", icon: Building2 },
+  { slug: "residential", label: "Residential", icon: Home },
+] as const;
 
 const scrollToForm = () => {
   document.getElementById("contact-form")?.scrollIntoView({ behavior: "smooth", block: "start" });
@@ -19,12 +24,10 @@ type HeroProps = {
   imageSrc?: string;
 };
 
-export const HeroSection = ({
-  imageSrc = "/images/orlando.webp",
-}: HeroProps) => {
+export const HeroSection = ({ imageSrc = "/images/orlando.webp" }: HeroProps) => {
   const ref = useReveal<HTMLDivElement>();
   const waHref = `https://wa.me/${SITE.phone.replace(/[^\d]/g, "")}`;
-  const heroVisibleHeight = "85vh";
+  const heroVisibleHeight = "88vh";
 
   return (
     <section
@@ -33,7 +36,7 @@ export const HeroSection = ({
     >
       <img
         src={imageSrc}
-        alt="Orlando, Florida skyline"
+        alt="Orlando, Florida skyline — FiveServ Property Solutions service area"
         width={1600}
         height={900}
         // @ts-expect-error fetchpriority is valid HTML
@@ -42,53 +45,118 @@ export const HeroSection = ({
         className="absolute inset-0 h-full w-full object-cover"
         style={{ objectPosition: "center 58%" }}
       />
-      {/* Dark overlay over the image for readability */}
-      <div className="absolute inset-0" style={{ background: "rgba(0,0,0,0.6)" }} />
+      <div className="absolute inset-0" style={{ background: "rgba(0,0,0,0.65)" }} />
 
-      <div className="relative z-10 flex items-center pb-10 pt-12 sm:pt-16 lg:pt-20" style={{ minHeight: heroVisibleHeight }}>
+      <div
+        className="relative z-10 flex items-center pb-12 pt-12 sm:pt-16 lg:pt-20"
+        style={{ minHeight: heroVisibleHeight }}
+      >
         <div ref={ref} className="container reveal">
-          <h1 className="text-3xl text-brand-white sm:text-4xl lg:text-6xl leading-tight">
-            Property Maintenance Central Florida
-            <span className="block text-brand-gold italic">One Call. One Team. Done.</span>
-          </h1>
-          <p className="mt-5 max-w-2xl text-base sm:text-lg lg:text-xl text-gray-300 leading-relaxed sm:leading-[1.75]">
-            Painting, plumbing, electrical, HVAC, drywall, flooring, make-ready, and renovations. Property managers and homeowners across Central Florida — one team handles it all. No vendor chaos. No surprises on the invoice.
-          </p>
+          <div className="grid gap-10 lg:grid-cols-12 lg:gap-12 items-center">
+            {/* Left: headline + CTAs */}
+            <div className="lg:col-span-7">
+              {/* Gold guarantee pill */}
+              <span
+                className="inline-flex items-center gap-2 rounded-full px-3.5 py-1.5 text-[11px] font-bold uppercase tracking-wider"
+                style={{
+                  backgroundColor: "rgba(255,215,0,0.15)",
+                  color: "#FFD700",
+                  border: "1px solid rgba(255,215,0,0.5)",
+                }}
+              >
+                <ShieldCheck className="h-3.5 w-3.5" />
+                5-Day Make-Ready Guarantee — In Writing
+              </span>
 
-          <div className="mt-7 flex flex-col sm:flex-row gap-3 w-full sm:w-auto">
-            <button
-              type="button"
-              onClick={scrollToForm}
-              className="cta-gold btn-shimmer cta-pill w-full sm:w-auto justify-center"
-            >
-              Get a free quote <ArrowRight className="ml-2 h-4 w-4" />
-            </button>
-            <a
-              href={`tel:${SITE.phone}`}
-              className="inline-flex items-center justify-center gap-2 rounded-full border-2 border-brand-white px-6 sm:px-8 py-3 text-sm font-semibold text-brand-white hover:bg-brand-white hover:text-brand-black transition-colors w-full sm:w-auto"
-            >
-              <Phone className="h-4 w-4" /> Call now
-            </a>
-            <a
-              href={waHref}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center justify-center gap-2 rounded-full bg-[#25D366] px-6 sm:px-8 py-3 text-sm font-semibold text-white hover:opacity-90 transition-opacity w-full sm:w-auto"
-            >
-              <WhatsAppIcon className="h-4 w-4" /> WhatsApp us
-            </a>
+              <h1 className="mt-5 text-3xl text-brand-white sm:text-4xl lg:text-6xl leading-tight">
+                Property Maintenance Central Florida
+                <span className="block text-brand-gold italic">One Call. One Team. Done.</span>
+              </h1>
+              <p className="mt-5 max-w-2xl text-base sm:text-lg text-gray-300 leading-relaxed">
+                Painting, plumbing, electrical, HVAC, drywall, flooring, make-ready, and renovations. Property managers and homeowners across Central Florida — one team handles it all. No vendor chaos. No surprises on the invoice.
+              </p>
+
+              <div className="mt-7 flex flex-col sm:flex-row gap-3 w-full sm:w-auto">
+                <button
+                  type="button"
+                  onClick={scrollToForm}
+                  className="cta-gold btn-shimmer cta-pill w-full sm:w-auto justify-center"
+                >
+                  Get a free quote <ArrowRight className="ml-2 h-4 w-4" />
+                </button>
+                <a
+                  href={`tel:${SITE.phone}`}
+                  className="inline-flex items-center justify-center gap-2 rounded-full border-2 border-brand-white px-6 sm:px-8 py-3 text-sm font-semibold text-brand-white hover:bg-brand-white hover:text-brand-black transition-colors w-full sm:w-auto"
+                >
+                  <Phone className="h-4 w-4" /> Call now
+                </a>
+                <a
+                  href={waHref}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center justify-center gap-2 rounded-full bg-[#25D366] px-6 sm:px-8 py-3 text-sm font-semibold text-white hover:opacity-90 transition-opacity w-full sm:w-auto"
+                >
+                  <WhatsAppIcon className="h-4 w-4" /> WhatsApp us
+                </a>
+              </div>
+            </div>
+
+            {/* Right: service-picker card */}
+            <div className="lg:col-span-5">
+              <div
+                className="rounded-2xl p-5 sm:p-6 backdrop-blur-sm"
+                style={{
+                  background: "rgba(26,26,26,0.85)",
+                  border: "1px solid rgba(255,215,0,0.35)",
+                  boxShadow: "0 20px 50px rgba(0,0,0,0.45)",
+                }}
+              >
+                <p
+                  className="text-[11px] font-bold uppercase tracking-[0.15em] mb-4"
+                  style={{ color: "#FFD700" }}
+                >
+                  Choose Your Service
+                </p>
+                <div className="grid grid-cols-2 gap-3">
+                  {PICKER.map((p) => {
+                    const Icon = p.icon;
+                    return (
+                      <Link
+                        key={p.slug}
+                        to={`/${p.slug}`}
+                        className="group flex items-center justify-between gap-3 rounded-xl px-4 py-3.5 text-sm font-semibold text-brand-white transition-all hover:-translate-y-0.5"
+                        style={{
+                          background: "rgba(255,255,255,0.05)",
+                          border: "1px solid rgba(255,215,0,0.2)",
+                        }}
+                        onMouseEnter={(e) => {
+                          e.currentTarget.style.background = "rgba(255,215,0,0.12)";
+                          e.currentTarget.style.borderColor = "rgba(255,215,0,0.7)";
+                        }}
+                        onMouseLeave={(e) => {
+                          e.currentTarget.style.background = "rgba(255,255,255,0.05)";
+                          e.currentTarget.style.borderColor = "rgba(255,215,0,0.2)";
+                        }}
+                      >
+                        <span className="flex items-center gap-2.5">
+                          <Icon className="h-5 w-5 text-brand-gold" strokeWidth={2} />
+                          {p.label}
+                        </span>
+                        <ArrowRight className="h-4 w-4 text-brand-gold transition-transform group-hover:translate-x-0.5" />
+                      </Link>
+                    );
+                  })}
+                </div>
+                <Link
+                  to="/services"
+                  className="mt-4 flex items-center justify-center gap-1.5 text-xs font-bold uppercase tracking-wider text-brand-gold hover:underline"
+                >
+                  View all services <ArrowRight className="h-3.5 w-3.5" />
+                </Link>
+              </div>
+            </div>
           </div>
-
-          <ul className="mt-8 sm:mt-10 flex flex-wrap items-center gap-x-5 gap-y-2 text-xs sm:text-sm font-medium text-brand-white">
-            {TRUST.map((t, i) => (
-              <li key={t} className="flex items-center gap-3 sm:gap-4">
-                {i > 0 && <span aria-hidden className="h-4 w-px bg-brand-gold/70" />}
-                <span>{t}</span>
-              </li>
-            ))}
-          </ul>
         </div>
-
       </div>
     </section>
   );
