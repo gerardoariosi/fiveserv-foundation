@@ -10,10 +10,10 @@ const WhatsAppIcon = ({ className }: { className?: string }) => (
 );
 
 const PICKER = [
-  { slug: "make-ready", label: "Make-Ready", icon: Key },
-  { slug: "maintenance", label: "Maintenance", icon: Wrench },
+  { slug: "maintenance", label: "Property Maintenance", icon: Wrench },
+  { slug: "handyman-orlando", label: "Handyman", icon: Home },
   { slug: "renovations", label: "Renovations", icon: Building2 },
-  { slug: "residential", label: "Residential", icon: Home },
+  { slug: "residential", label: "Residential", icon: Key },
 ] as const;
 
 const scrollToForm = () => {
@@ -55,7 +55,7 @@ export const HeroSection = ({ imageSrc = "/images/orlando.webp" }: HeroProps) =>
           <div className="grid gap-10 lg:grid-cols-12 lg:gap-12 items-center">
             {/* Left: headline + CTAs */}
             <div className="lg:col-span-7">
-              {/* Gold guarantee pill */}
+              {/* Trust pill */}
               <span
                 className="inline-flex items-center gap-2 rounded-full px-3.5 py-1.5 text-[11px] font-bold uppercase tracking-wider"
                 style={{
@@ -65,8 +65,16 @@ export const HeroSection = ({ imageSrc = "/images/orlando.webp" }: HeroProps) =>
                 }}
               >
                 <ShieldCheck className="h-3.5 w-3.5" />
-                5-Day Make-Ready Guarantee — In Writing
+                Licensed & Insured · 18 Cities · 24/7
               </span>
+
+              <h1 className="mt-5 text-3xl text-brand-white sm:text-4xl lg:text-6xl leading-tight">
+                Property Maintenance Central Florida
+                <span className="block text-brand-gold italic">One Call. Every Trade. Done.</span>
+              </h1>
+              <p className="mt-5 max-w-2xl text-base sm:text-lg text-gray-300 leading-relaxed">
+                Property maintenance, handyman services, bathroom remodels, painting, flooring, and cleaning across Central Florida. Property managers and homeowners — one team handles it all. No vendor chaos. No surprises on the invoice.
+              </p>
 
               <h1 className="mt-5 text-3xl text-brand-white sm:text-4xl lg:text-6xl leading-tight">
                 Property Maintenance Central Florida
