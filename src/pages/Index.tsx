@@ -336,9 +336,9 @@ const EmergencyBanner = () => {
 /* ------------------------------------------------------------------ */
 
 const Index = () => {
-  const title = "Property Maintenance & Home Services Central Florida | FiveServ";
+  const title = "Property Maintenance & Handyman Services Orlando FL | FiveServ";
   const description =
-    "FiveServ Property Solutions — property maintenance, repairs, make-ready, painting, plumbing, HVAC, and renovations for property managers and homeowners across Central Florida. One call. One team. One invoice.";
+    "FiveServ is Orlando's trusted property maintenance and handyman service — licensed, insured, 24/7. Painting, plumbing, electrical, HVAC, bathroom remodel, flooring, cleaning and more across 18 cities in Central Florida. One call. One team. One invoice.";
 
   return (
     <>
