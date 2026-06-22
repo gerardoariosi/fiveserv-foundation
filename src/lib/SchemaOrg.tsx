@@ -55,7 +55,7 @@ export const SchemaOrg = ({
       logo: `${SITE.url}/images/logo-fs.webp`,
       image: `${SITE.url}/og-default.png`,
       description:
-        "Full-service property maintenance and handyman company in Orlando, FL. Services include property maintenance and repairs, handyman services, bathroom remodeling, kitchen remodeling, interior and exterior painting, flooring installation, cleaning services, make-ready unit turns, plumbing, electrical, HVAC, drywall, carpentry, and CapEx renovations. One call, one team, one invoice.",
+        "Full-service property maintenance and handyman company in Orlando, FL serving property managers and homeowners across Central Florida. Services include property maintenance and repairs, handyman services, bathroom remodeling, kitchen remodeling, interior and exterior painting, flooring installation, cleaning services, make-ready unit turns, plumbing, electrical, HVAC, drywall, carpentry, and CapEx renovations. One call, one team, one invoice.",
       foundingLocation: "Orlando, Florida",
       slogan: "One Call. One Team. Done.",
       email: SITE.email,

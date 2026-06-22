@@ -128,7 +128,7 @@ export const Footer = () => {
           </address>
 
           <div className="flex flex-col gap-1 text-[11px] text-white/40 md:flex-row md:items-center md:justify-between">
-            <p>© 2025 {SITE.legal}. All rights reserved.</p>
+            <p>© 2026 {SITE.legal}. All rights reserved.</p>
             <p>Licensed & Insured in Florida</p>
           </div>
         </div>
