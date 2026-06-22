@@ -81,32 +81,7 @@ export const StickyHeader = () => {
         scrolled ? "shadow-[0_2px_12px_rgba(0,0,0,0.1)]" : ""
       }`}
     >
-      {/* LEVEL 1 — Announcement bar */}
-      <div
-        className={`hidden md:block bg-[#1A1A1A] overflow-hidden transition-all duration-300 ${
-          scrolled ? "h-0" : "h-10"
-        }`}
-      >
-        <div className="container h-10 flex items-center justify-center">
-          <div className="flex items-center divide-x divide-white/15 text-[12px] font-medium text-white">
-            <div className="flex items-center gap-2 px-5">
-              <CheckCircle2 className="text-brand-gold" size={14} />
-              <span>300+ Units Completed — Central Florida</span>
-            </div>
-            <Link
-              to="/contact"
-              className="flex items-center gap-2 px-5 hover:text-brand-gold transition-colors"
-            >
-              <Tag className="text-brand-gold" size={14} />
-              <span>Free Quote in 24 Hours</span>
-            </Link>
-            <div className="flex items-center gap-2 px-5">
-              <Clock className="text-brand-gold" size={14} />
-              <span>24/7 Emergency Response</span>
-            </div>
-          </div>
-        </div>
-      </div>
+      {/* LEVEL 1 — Announcement bar removed (duplicate of StickyBanner above) */}
 
       {/* LEVEL 2 — Logo + CTA bar */}
       <div className="bg-white border-b border-gray-100">
