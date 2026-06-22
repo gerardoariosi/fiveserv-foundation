@@ -31,11 +31,11 @@ export const ProblemSection = () => {
         <SectionHeading
           subtext={
             <>
-              The average make-ready takes <span className="font-bold text-gray-900">10+ days</span> when you coordinate vendors yourself.
+              The average repair or project takes <span className="font-bold text-gray-900">10+ days</span> when you coordinate vendors yourself.
             </>
           }
         >
-          Managing a Make-Ready Shouldn't Require{" "}
+          Managing Your Property Shouldn't Require{" "}
           <span className="text-gray-900">5 Different Vendors.</span>
         </SectionHeading>
 
