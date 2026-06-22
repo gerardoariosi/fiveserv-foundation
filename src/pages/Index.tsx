@@ -351,6 +351,7 @@ const Index = () => {
       />
 
       <HeroSection />
+      <HeroStatStrip />
 
       <section className="bg-white">
         <div className="container pt-12">
