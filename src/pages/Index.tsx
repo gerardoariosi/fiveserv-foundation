@@ -67,13 +67,42 @@ const SectionLabel = ({ children }: { children: React.ReactNode }) => (
 /* ------------------------------------------------------------------ */
 
 const SERVICE_META = [
-  { slug: "make-ready", icon: Key, badge: "5-Day Guarantee" },
-  { slug: "maintenance", icon: Wrench, badge: "24/7" },
-  { slug: "renovations", icon: Building2, badge: undefined },
-  { slug: "residential", icon: Home, badge: undefined },
+  {
+    slug: "maintenance",
+    href: "/maintenance",
+    icon: Wrench,
+    badge: "24/7",
+    name: "Property Maintenance and Repairs",
+    description: "Ongoing maintenance, emergency repairs, and turnkey property care for managers and owners.",
+  },
+  {
+    slug: "handyman-orlando",
+    href: "/handyman-orlando",
+    icon: Wrench,
+    badge: undefined,
+    name: "Handyman Services",
+    description: "Skilled handymen for repairs, installations, and small projects across Orlando and Central Florida.",
+  },
+  {
+    slug: "renovations",
+    href: "/renovations",
+    icon: Building2,
+    badge: undefined,
+    name: "CapEx and Renovations",
+    description: "Full renovations, value-add upgrades, and capital improvements managed end-to-end.",
+  },
+  {
+    slug: "residential",
+    href: "/residential",
+    icon: Home,
+    badge: undefined,
+    name: "Residential Services",
+    description: "Home repairs, maintenance, and improvements for Central Florida homeowners.",
+  },
 ] as const;
 
 const TRADES = [
+  { slug: "make-ready", label: "Make-Ready" },
   { slug: "painting", label: "Painting" },
   { slug: "plumbing", label: "Plumbing" },
   { slug: "electrical", label: "Electrical" },
