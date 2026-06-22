@@ -1,7 +1,6 @@
 import { ArrowRight, Phone, ShieldCheck } from "lucide-react";
 import { SITE } from "@/lib/site-config";
 import { useReveal } from "@/hooks/use-fiveserv";
-import HeroStatStrip from "@/components/fiveserv/HeroStatStrip";
 
 const WhatsAppIcon = ({ className }: { className?: string }) => (
   <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" className={className}>
@@ -59,7 +58,7 @@ export const HeroSection = ({ imageSrc = "/images/orlando.webp" }: HeroProps) =>
 
               <h1 className="mt-5 text-3xl text-brand-white sm:text-4xl lg:text-6xl leading-tight">
                 Property Maintenance Central Florida
-                <span className="block text-brand-gold italic">One Call. Every Trade. Done.</span>
+                <span className="block text-brand-gold italic">One Call. One Team. Done.</span>
               </h1>
               <p className="mt-5 max-w-2xl text-base sm:text-lg text-gray-300 leading-relaxed">
                 Property maintenance, handyman services, bathroom remodels, painting, flooring, and cleaning across Central Florida. Property managers and homeowners — one team handles it all. No vendor chaos. No surprises on the invoice.
@@ -91,9 +90,6 @@ export const HeroSection = ({ imageSrc = "/images/orlando.webp" }: HeroProps) =>
             </div>
           </div>
         </div>
-
-        {/* Stat strip — rendered as the visual base of the hero on dark bg */}
-        <HeroStatStrip />
       </div>
     </section>
   );
