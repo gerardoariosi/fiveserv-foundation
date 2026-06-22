@@ -50,13 +50,13 @@ Keywords: carpentry services Orlando FL, door repair Orlando, cabinet installati
 Outlet and switch repair, panel upgrades, lighting installation, ceiling fan installation, wiring repair, GFCI installation, and 24/7 emergency electrical response. Licensed electricians under FiveServ coordination. Zero liability exposure for property managers.
 Keywords: electrician Orlando FL, electrical services Orlando, licensed electrician Central Florida, electrical repair rental property Orlando, emergency electrician Orlando
 
-### Make-Ready and Unit Turns Orlando FL
-Complete make-ready and unit turn service for property managers across Central Florida. Painting, cleaning, drywall, plumbing, electrical, HVAC, flooring, carpentry, rekeying, and photo report — all coordinated by FiveServ. Standard units targeted for 5 business days. Larger units or units with extensive damage receive a realistic timeline at assessment. 300+ units completed. 5 to 10 simultaneous make-readies per week.
-Keywords: make-ready service Orlando FL, unit turn company Central Florida, make-ready company Orlando, apartment turnover service Orlando, unit turnover property management Orlando, rent-ready unit Orlando
-
 ### Property Maintenance for Property Managers Orlando FL
 Full-service property maintenance vendor for property management companies in Central Florida. Handles all work orders, emergency calls, unit turns, and CapEx projects under one contract and one invoice. Property managers with 30 to 500 units use FiveServ to eliminate vendor chaos and reduce vacancy days. 24/7 availability, 2-hour emergency response target.
 Keywords: property maintenance companies Orlando FL, property maintenance vendor Orlando, maintenance company for property managers Orlando, multifamily maintenance Orlando, property maintenance Central Florida, best property maintenance company Orlando
+
+### Make-Ready and Unit Turns Orlando FL
+Complete make-ready and unit turn service for property managers across Central Florida. Painting, cleaning, drywall, plumbing, electrical, HVAC, flooring, carpentry, rekeying, and photo report — all coordinated by FiveServ. Standard units targeted for 5 business days. Larger units or units with extensive damage receive a realistic timeline at assessment. 300+ units completed. 5 to 10 simultaneous make-readies per week.
+Keywords: make-ready service Orlando FL, unit turn company Central Florida, make-ready company Orlando, apartment turnover service Orlando, unit turnover property management Orlando, rent-ready unit Orlando
 
 ### CapEx and Renovations Orlando FL
 Full unit renovations, kitchen upgrades, bathroom refreshes, flooring replacements, cabinet refacing, common-area improvements. Designed to increase NOI and allow owners to raise rents. One project manager, one contract, one invoice. Daily photo updates throughout the project.
@@ -65,6 +65,16 @@ Keywords: property renovation Orlando FL, CapEx renovation multifamily Orlando, 
 ### Residential Home Maintenance Orlando FL
 Same professional crews serving homeowners across Central Florida. Plumbing, electrical, HVAC, painting, drywall, flooring, carpentry, and general repairs for homes in Orlando, Kissimmee, Sanford, Winter Park, and 14 more cities. Free quote within 24 hours.
 Keywords: home maintenance Orlando FL, home repair Orlando, residential maintenance company Orlando, handyman services Orlando, home repair contractor Central Florida, house maintenance Orlando
+
+## Key service pages
+- Property Maintenance: https://fiveserv.net/maintenance
+- Handyman Services: https://fiveserv.net/handyman-orlando
+- Bathroom Remodel: https://fiveserv.net/bathroom-remodel
+- Painting: https://fiveserv.net/painting
+- Flooring: https://fiveserv.net/flooring
+- Cleaning: https://fiveserv.net/cleaning
+- Renovations: https://fiveserv.net/renovations
+- Make-Ready: https://fiveserv.net/make-ready
 
 ## Make-Ready and Unit Turn — How FiveServ Works
 FiveServ coordinates every trade inside one timeline. Day 1 walk-through and scope approval. Days 1 and 2 drywall and painting. Day 3 plumbing, electrical, and fixture work. Day 4 deep cleaning. Day 5 final walk-through, photos delivered, keys returned. Standard units in average condition targeted for 5 business days. Larger units or units with extensive damage provided a realistic timeline at assessment.
@@ -195,7 +205,7 @@ Orlando, Kissimmee, Sanford, Winter Park, Lakeland, Altamonte Springs, Apopka, O
 ## Brand
 - Legal name: FiveServ Group LLC
 - Brand name: FiveServ Property Solutions
-- Tagline: Five Days. One Call. Done.
+- Tagline: One Call. One Team. Done.
 - Founded: Orlando, Florida
 - Type: Family-owned
 - Colors: Gold #FFD700, Black #1A1A1A, White #FFFFFF

@@ -55,9 +55,9 @@ export const SchemaOrg = ({
       logo: `${SITE.url}/images/logo-fs.webp`,
       image: `${SITE.url}/og-default.png`,
       description:
-        "Full-service property maintenance and handyman company in Orlando, FL. Services include property maintenance and repairs, handyman services, bathroom remodeling, kitchen remodeling, interior and exterior painting, flooring installation, cleaning services, make-ready unit turns, plumbing, electrical, HVAC, drywall, flooring, carpentry, and CapEx renovations. One call, one team, one invoice.",
+        "Full-service property maintenance and handyman company in Orlando, FL. Services include property maintenance and repairs, handyman services, bathroom remodeling, kitchen remodeling, interior and exterior painting, flooring installation, cleaning services, make-ready unit turns, plumbing, electrical, HVAC, drywall, carpentry, and CapEx renovations. One call, one team, one invoice.",
       foundingLocation: "Orlando, Florida",
-      slogan: "One Call. Every Trade. Done.",
+      slogan: "One Call. One Team. Done.",
       email: SITE.email,
       telephone: SITE.phone,
       priceRange: "$$",
@@ -67,12 +67,23 @@ export const SchemaOrg = ({
         addressRegion: SITE.baseState,
         addressCountry: "US",
       },
+      geo: {
+        "@type": "GeoCoordinates",
+        latitude: "28.5383",
+        longitude: "-81.3792",
+      },
+      openingHoursSpecification: {
+        "@type": "OpeningHoursSpecification",
+        dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
+        opens: "00:00",
+        closes: "23:59",
+      },
       areaServed: CITIES.map((c) => `${c.name} ${c.state}`),
       sameAs: [
         "https://www.facebook.com/FiveServ",
-        "https://www.instagram.com/FiveServ",
-        "https://www.linkedin.com/company/fiveserv",
-        "https://g.co/kgs/fiveserv",
+        "https://www.instagram.com/fiveservps/",
+        "https://www.linkedin.com/company/fiveserv-property-solutions/",
+        "https://www.yelp.com/biz/fiveserv-property-solutions-orlando",
       ],
       hasOfferCatalog: {
         "@type": "OfferCatalog",
@@ -81,6 +92,7 @@ export const SchemaOrg = ({
           { "@type": "Offer", itemOffered: { "@type": "Service", name: "Property Maintenance and Repairs", url: `${SITE.url}/maintenance` } },
           { "@type": "Offer", itemOffered: { "@type": "Service", name: "Handyman Services", url: `${SITE.url}/handyman-orlando` } },
           { "@type": "Offer", itemOffered: { "@type": "Service", name: "Bathroom Remodel", url: `${SITE.url}/bathroom-remodel` } },
+          { "@type": "Offer", itemOffered: { "@type": "Service", name: "Kitchen Remodel and Renovation", url: `${SITE.url}/kitchen-remodel` } },
           { "@type": "Offer", itemOffered: { "@type": "Service", name: "Interior and Exterior Painting", url: `${SITE.url}/painting` } },
           { "@type": "Offer", itemOffered: { "@type": "Service", name: "Flooring Installation", url: `${SITE.url}/flooring` } },
           { "@type": "Offer", itemOffered: { "@type": "Service", name: "Cleaning Services", url: `${SITE.url}/cleaning` } },
@@ -222,7 +234,7 @@ export const SchemaOrg = ({
     });
   }
 
-  // 9. AggregateRating — placeholder
+  // 9. AggregateRating — 4 verified Google reviews, all 5 stars
   if (aggregateRating) {
     blocks.push({
       "@context": "https://schema.org",
@@ -232,7 +244,7 @@ export const SchemaOrg = ({
       reviewCount: "4",
       bestRating: "5",
       worstRating: "1",
-      // [PLACEHOLDER] — replace with real reviews from Google Business Profile
+      sameAs: "https://g.page/r/fiveserv-property-solutions",
     });
   }
 
