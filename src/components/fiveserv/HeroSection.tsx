@@ -1,7 +1,6 @@
 import { ArrowRight, Phone, ShieldCheck } from "lucide-react";
 import { SITE } from "@/lib/site-config";
 import { useReveal } from "@/hooks/use-fiveserv";
-import HeroStatStrip from "@/components/fiveserv/HeroStatStrip";
 
 const WhatsAppIcon = ({ className }: { className?: string }) => (
   <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" className={className}>
