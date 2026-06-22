@@ -1,4 +1,4 @@
-import { SITE } from "./site-config";
+
 
 export const HOMEPAGE_FAQS: { q: string; a: string }[] = [
 
@@ -13,6 +13,3 @@ export const HOMEPAGE_FAQS: { q: string; a: string }[] = [
   { q: "What cities do you serve in Central Florida?", a: "FiveServ serves Orlando, Kissimmee, Sanford, Winter Park, Lakeland, Altamonte Springs, Apopka, Ocoee, Winter Garden, Clermont, St. Cloud, Davenport, Deltona, Daytona Beach, Palm Coast, Melbourne, Palm Bay, Cocoa, and the Tampa Bay area. If you manage properties or own a home anywhere in Central Florida, we cover you." },
 
 ];
-
-// Retain SITE import for downstream callers that may still reference it via this module.
-void SITE;
