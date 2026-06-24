@@ -52,14 +52,20 @@ export const StickyHeader = () => {
 
   useEffect(() => {
     const updateHeight = () => {
-      const h = scrolled ? 120 : 160;
+      const isMobile = window.matchMedia("(max-width: 767px)").matches;
+      // Mobile only renders Level 2 (~70px). Desktop adds Level 3 nav (~50px).
+      const h = isMobile ? 70 : scrolled ? 120 : 160;
       document.documentElement.style.setProperty("--header-h", `${h}px`);
     };
     updateHeight();
     const onScroll = () => setScrolled(window.scrollY > 80);
     onScroll();
     window.addEventListener("scroll", onScroll, { passive: true });
-    return () => window.removeEventListener("scroll", onScroll);
+    window.addEventListener("resize", updateHeight);
+    return () => {
+      window.removeEventListener("scroll", onScroll);
+      window.removeEventListener("resize", updateHeight);
+    };
   }, [scrolled]);
 
   // Close mobile menu on route change
