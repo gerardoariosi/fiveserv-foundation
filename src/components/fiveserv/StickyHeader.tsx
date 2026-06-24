@@ -115,14 +115,18 @@ export const StickyHeader = () => {
             </Link>
           </div>
 
-          {/* Mobile: phone + hamburger */}
-          <div className="flex items-center gap-3 md:hidden">
-            <a href={`tel:${SITE.phone}`} aria-label="Call FiveServ">
+          {/* Mobile: phone + hamburger — 44x44 tap targets */}
+          <div className="flex items-center gap-1 md:hidden">
+            <a
+              href={`tel:${SITE.phone}`}
+              aria-label="Call FiveServ"
+              className="inline-flex h-11 w-11 items-center justify-center rounded-md"
+            >
               <Phone className="h-6 w-6 text-brand-gold" />
             </a>
             <button
               aria-label="Toggle menu"
-              className="text-brand-gold"
+              className="inline-flex h-11 w-11 items-center justify-center rounded-md text-brand-gold"
               onClick={() => setOpen((s) => !s)}
             >
               {open ? <X className="h-7 w-7" /> : <Menu className="h-7 w-7" />}

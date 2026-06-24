@@ -81,7 +81,8 @@ const queryClient = new QueryClient();
  * Total dynamic targets: 4 + 18 + 72 = 94 deep URLs from a handful of route patterns.
  * The 72 service×city pages are the "generateStaticParams" equivalent.
  */
-const router = createBrowserRouter([
+const router = createBrowserRouter(
+  [
   {
     path: "/",
     element: <RootLayout />,
