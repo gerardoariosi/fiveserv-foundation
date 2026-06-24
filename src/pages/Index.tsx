@@ -36,6 +36,7 @@ import ContactCTA from "@/components/fiveserv/ContactCTA";
 import LazyVisible from "@/components/fiveserv/LazyVisible";
 import BeforeAfterSlider from "@/components/fiveserv/BeforeAfterSlider";
 import TrustBar from "@/components/fiveserv/TrustBar";
+import TrustStrip from "@/components/fiveserv/shared/TrustStrip";
 import { useReveal } from "@/hooks/use-fiveserv";
 import BrandName from "@/components/fiveserv/BrandName";
 import BrandsBar from "@/components/fiveserv/BrandsBar";
