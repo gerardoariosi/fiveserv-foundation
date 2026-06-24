@@ -1,11 +1,18 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import { Clock, DollarSign, Star, X } from "lucide-react";
+import { ChevronRight, Clock, DollarSign, Star, X } from "lucide-react";
+import { SITE } from "@/lib/site-config";
 
 const KEY = "fiveserv-banner-dismissed";
 const EVT = "fiveserv:banner-toggle";
-const HEIGHT = "36px";
+const HEIGHT_DESKTOP = "40px";
+const HEIGHT_MOBILE = "36px";
 
+/**
+ * StickyBanner — Stan's-style 3-segment announcement bar.
+ * Brand black + gold accents. Three equally-split segments separated by gold dividers,
+ * each clickable with a chevron. Mobile shows only the first segment + 24/7.
+ */
 export const StickyBanner = () => {
   const [visible, setVisible] = useState(false);
 
@@ -13,51 +20,82 @@ export const StickyBanner = () => {
     if (typeof window === "undefined") return;
     const isVisible = sessionStorage.getItem(KEY) !== "1";
     setVisible(isVisible);
-    document.documentElement.style.setProperty("--banner-h", isVisible ? HEIGHT : "0px");
+    const isMobile = window.matchMedia("(max-width: 640px)").matches;
+    document.documentElement.style.setProperty(
+      "--banner-h",
+      isVisible ? (isMobile ? HEIGHT_MOBILE : HEIGHT_DESKTOP) : "0px",
+    );
+
+    const updateHeight = () => {
+      const m = window.matchMedia("(max-width: 640px)").matches;
+      const v = sessionStorage.getItem(KEY) !== "1";
+      document.documentElement.style.setProperty(
+        "--banner-h",
+        v ? (m ? HEIGHT_MOBILE : HEIGHT_DESKTOP) : "0px",
+      );
+    };
+    window.addEventListener("resize", updateHeight);
+    return () => window.removeEventListener("resize", updateHeight);
   }, []);
 
   if (!visible) return null;
 
-  const items = [
-    { icon: Star, text: "50+ Property Managers Trust Us", short: "50+ PMs Trust Us" },
-    { icon: DollarSign, text: "Free Quote — Same Day Response", short: "Same-Day Quote" },
-    { icon: Clock, text: "24/7 Emergency Service", short: "24/7 Emergency" },
-  ];
-
   return (
     <div
       className="fixed inset-x-0 top-0 z-50 bg-brand-black text-brand-white"
-      style={{ height: HEIGHT, borderBottom: "1px solid rgba(255,215,0,0.25)" }}
+      style={{
+        borderBottom: "1px solid rgba(255,215,0,0.35)",
+        boxShadow: "0 1px 0 rgba(0,0,0,0.2)",
+      }}
     >
-      <div className="container flex h-full items-center gap-2">
-        <Link
-          to="/contact"
-          aria-label="Free quote — trusted by 50+ property managers, 24/7 emergency service"
-          className="flex flex-1 items-center justify-center gap-2 sm:gap-6 text-[11px] font-semibold uppercase tracking-wide overflow-hidden whitespace-nowrap"
-        >
-          {items.map((it, i) => {
-            const Icon = it.icon;
-            return (
-              <span
-                key={it.text}
-                className={`items-center gap-1.5 whitespace-nowrap ${i === 0 ? "flex" : "hidden sm:flex"}`}
-              >
-                {i > 0 && (
-                  <span aria-hidden className="h-3 w-px bg-brand-gold/40 hidden sm:inline-block mr-3" />
-                )}
-                <Icon className="h-3.5 w-3.5 text-brand-gold shrink-0" strokeWidth={2.5} />
-                <span className="hidden sm:inline">{it.text}</span>
-                <span className="sm:hidden">{it.short}</span>
-              </span>
-            );
-          })}
-          {/* Mobile-only condensed dual highlight */}
-          <span className="flex items-center gap-1.5 sm:hidden whitespace-nowrap">
-            <span aria-hidden className="h-3 w-px bg-brand-gold/40" />
-            <Clock className="h-3.5 w-3.5 text-brand-gold shrink-0" strokeWidth={2.5} />
-            <span>24/7</span>
-          </span>
-        </Link>
+      <div className="container flex h-9 sm:h-10 items-center">
+        <div className="flex flex-1 items-stretch text-[11px] sm:text-[12px] font-semibold tracking-wide">
+          {/* Segment 1 — Reviews */}
+          <Link
+            to="/reviews"
+            className="group flex flex-1 items-center justify-center gap-2 px-2 hover:text-brand-gold transition-colors"
+            aria-label="Read our reviews from 50+ property managers"
+          >
+            <span className="flex items-center gap-0.5" aria-hidden>
+              {Array.from({ length: 5 }).map((_, i) => (
+                <Star key={i} className="h-3 w-3 sm:h-3.5 sm:w-3.5 fill-brand-gold text-brand-gold" />
+              ))}
+            </span>
+            <span className="whitespace-nowrap">
+              <span className="hidden sm:inline">Trusted by 50+ Property Managers</span>
+              <span className="sm:hidden">50+ PMs Trust Us</span>
+            </span>
+            <ChevronRight className="h-3 w-3 sm:h-3.5 sm:w-3.5 opacity-70 group-hover:translate-x-0.5 transition-transform" />
+          </Link>
+
+          {/* Divider */}
+          <span aria-hidden className="hidden sm:block w-px bg-brand-gold/30 my-1.5" />
+
+          {/* Segment 2 — Free quote */}
+          <Link
+            to="/contact"
+            className="group hidden sm:flex flex-1 items-center justify-center gap-2 px-2 hover:text-brand-gold transition-colors"
+            aria-label="Get a free quote — same day response"
+          >
+            <DollarSign className="h-3.5 w-3.5 text-brand-gold shrink-0" strokeWidth={2.5} />
+            <span className="whitespace-nowrap">Free Quote — Same Day Response</span>
+            <ChevronRight className="h-3.5 w-3.5 opacity-70 group-hover:translate-x-0.5 transition-transform" />
+          </Link>
+
+          {/* Divider */}
+          <span aria-hidden className="block w-px bg-brand-gold/30 my-1.5" />
+
+          {/* Segment 3 — 24/7 */}
+          <a
+            href={`tel:${SITE.phone}`}
+            className="group flex flex-1 items-center justify-center gap-2 px-2 hover:text-brand-gold transition-colors"
+            aria-label="Call us — 24/7 emergency service"
+          >
+            <Clock className="h-3 w-3 sm:h-3.5 sm:w-3.5 text-brand-gold shrink-0" strokeWidth={2.5} />
+            <span className="whitespace-nowrap">24/7 Emergency Service</span>
+          </a>
+        </div>
+
         <button
           aria-label="Dismiss banner"
           onClick={() => {
@@ -66,9 +104,9 @@ export const StickyBanner = () => {
             window.dispatchEvent(new CustomEvent(EVT));
             setVisible(false);
           }}
-          className="shrink-0 inline-flex h-9 w-9 items-center justify-center text-brand-white/70 hover:text-brand-gold transition-colors -mr-2"
+          className="shrink-0 inline-flex h-9 w-8 items-center justify-center text-brand-white/60 hover:text-brand-gold transition-colors -mr-2"
         >
-          <X className="h-4 w-4" />
+          <X className="h-3.5 w-3.5" />
         </button>
       </div>
     </div>
