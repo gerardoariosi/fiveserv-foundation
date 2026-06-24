@@ -56,11 +56,11 @@ export const WorkPolicyPage = () => {
             </p>
           </Section>
 
-          <Section number={3} title="Make-Ready Standards">
+          <Section number={3} title="Make-Ready & Written Guarantee">
             <p>
               Every make-ready follows a standardized checklist: full interior painting, cleaning, touch-up
               repairs, door hardware and lock re-keying, appliance inspection, HVAC filter replacement, and final
-              photo inspection report. Delivery guaranteed in 5 business days from confirmed start date for units
+              photo inspection report. All jobs include a written work guarantee. Most units are completed within 5–7 business days from confirmed start date for units
               in standard condition.
             </p>
           </Section>

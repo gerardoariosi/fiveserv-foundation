@@ -3,7 +3,7 @@ const STATS = [
   { value: "50+", label: "Communities" },
   { value: "18", label: "Cities Served" },
   { value: "24/7", label: "Emergency Response" },
-  { value: "5-Day", label: "Make-Ready Guarantee" },
+  { value: "Written", label: "Work Guarantee" },
 ];
 
 export const HeroStatStrip = () => {

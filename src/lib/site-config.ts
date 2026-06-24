@@ -51,10 +51,10 @@ export const SERVICES: {
   {
     slug: "make-ready",
     name: "Make-Ready / Unit Turns",
-    short: "5-day guarantee. Painting, cleaning, repairs, inspection.",
+    short: "Written guarantee on every job. Painting, cleaning, repairs, inspection.",
     description:
-      "Your unit ready in 5 days. Painting, cleaning, repairs, and final inspection. One invoice. No surprises.",
-    cta: "Get Your 5-Day Make-Ready",
+      "Most make-readys and turnovers completed in 5–7 business days. Painting, cleaning, repairs, and final inspection. One invoice. No surprises.",
+    cta: "Get Your Written Work Guarantee",
   },
   {
     slug: "maintenance",
@@ -143,7 +143,7 @@ export const TEAM = [
 export const FIVE_PILLARS = [
   { number: 1, title: "We Show Up", description: "On time. Every time. No excuses." },
   { number: 2, title: "We Quote Fast", description: "Quote in 24 hours. Start in 48." },
-  { number: 3, title: "We Finish in 5 Days", description: "Make-ready guaranteed in 5 business days." },
+  { number: 3, title: "Written Work Guarantee", description: "Every job comes with a written guarantee. No excuses." },
   { number: 4, title: "We Send One Invoice", description: "One call. One invoice. No surprises." },
   { number: 5, title: "We Stand Behind It", description: "Family name on every job." },
 ];

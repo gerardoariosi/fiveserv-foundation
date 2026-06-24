@@ -30,7 +30,7 @@ const CitiesIndexPage = ({ canonicalPath = "/cities" }: Props) => (
         </h1>
         <AIOverviewBlock
           hidden
-          directAnswer="FiveServ Property Solutions serves 18 cities across Central Florida including Orlando, Kissimmee, Sanford, Winter Park, Lakeland, Altamonte Springs, Apopka, Ocoee, Winter Garden, Clermont, and St. Cloud. 24/7 emergency response within 2 hours. 5-day make-ready guarantee."
+          directAnswer="FiveServ Property Solutions serves 18 cities across Central Florida including Orlando, Kissimmee, Sanford, Winter Park, Lakeland, Altamonte Springs, Apopka, Ocoee, Winter Garden, Clermont, and St. Cloud. 24/7 emergency response within 2 hours. 5–7 business day make-ready turnaround estimate."
         />
         <p className="mt-6 max-w-2xl text-gray-600">
           Same-day or 24-hour response across Orlando metro, Polk, Volusia, Flagler, and Brevard counties. Tampa Bay launching soon.

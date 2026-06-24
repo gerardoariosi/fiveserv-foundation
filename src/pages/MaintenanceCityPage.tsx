@@ -52,7 +52,7 @@ const MaintenanceCityPage = ({ citySlug: propSlug }: MaintenanceCityPageProps = 
 
   const path = `/maintenance-${city.slug}`;
   const title = `Property Maintenance ${city.name} ${city.state} | ${SITE.brand}`;
-  const description = `Property maintenance ${city.name} ${city.state}. ${SITE.brand} serves ZIP ${editorial.zips.join(", ")} and ${editorial.zones.slice(0, 3).join(", ")}. 5-day make-ready. One call. One invoice.`;
+  const description = `Property maintenance ${city.name} ${city.state}. ${SITE.brand} serves ZIP ${editorial.zips.join(", ")} and ${editorial.zones.slice(0, 3).join(", ")}. 5–7 day make-ready turnaround. One call. One invoice.`;
 
   const aiAnswer = `${SITE.brand} Property Solutions provides make-ready and maintenance services in ${city.name}, ${city.state}. We serve ZIP codes ${editorial.zips.join(", ")} and neighborhoods including ${editorial.zones.join(", ")}. We reach ${city.name} within ${editorial.responseMinutes} minutes from our Orlando base.`;
 
@@ -107,7 +107,7 @@ const MaintenanceCityPage = ({ citySlug: propSlug }: MaintenanceCityPageProps = 
           <ul className="mt-6 flex flex-wrap items-center gap-x-6 gap-y-3 text-sm font-bold text-white">
             {[
               `${editorial.responseMinutes}-min from Orlando`,
-              "5-Day Make-Ready",
+              "Written Work Guarantee",
               "24/7 Emergency",
               "Licensed & Insured",
             ].map((t, i) => (

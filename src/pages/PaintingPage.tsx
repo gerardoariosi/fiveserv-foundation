@@ -47,7 +47,7 @@ const PaintingPage = () => {
           subServices: [
             { name: "Interior Painting", desc: "Walls, ceilings, trim, doors, accent walls. Single room or whole property.", href: "/painting" },
             { name: "Exterior Painting", desc: "Stucco, siding, trim, doors and shutters. Florida-grade product.", href: "/painting" },
-            { name: "Apartment Turn Painting", desc: "Full unit repaints integrated with our 5-day make-ready process.", href: "/make-ready" },
+            { name: "Apartment Turn Painting", desc: "Full unit repaints integrated with our 5–7 business day make-ready process.", href: "/make-ready" },
             { name: "Commercial Repaints", desc: "Leasing offices, common areas, hallways, clubhouses, fitness rooms.", href: "/renovations" },
           ],
           checklist: [

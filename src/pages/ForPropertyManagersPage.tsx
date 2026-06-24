@@ -53,7 +53,7 @@ const SERVICES_PM = [
     icon: Key,
     title: "Make-Ready & Unit Turns",
     body:
-      "Guaranteed in 5 business days. Our team handles painting, cleaning, repairs, and inspections.",
+      "Written work guarantee. We complete most make-readys and turnovers in 5–7 business days.",
     href: "/make-ready",
   },
   {
@@ -79,7 +79,7 @@ const SERVICES_PM = [
 ];
 
 const TRUST = [
-  "5-Day Guarantee",
+  "Written Work Guarantee",
   "24/7 Available",
   "18 Cities",
   "One Invoice Always",
@@ -132,7 +132,7 @@ const ForPropertyManagersPage = () => {
             hidden
             tone="dark"
             directAnswer="FiveServ Property Solutions is the single-vendor property maintenance partner for property management companies in Central Florida — handling make-ready unit turns, repairs, CapEx, and 24/7 emergency response under one contract and one invoice. Property managers with 30 to 500 units use FiveServ to eliminate vendor chaos, reduce vacancy days, and simplify maintenance operations across their entire portfolio."
-            supportingFacts="2 active crews handling 5 to 10 simultaneous make-readies per week. 300+ units completed across 50+ communities. 18 cities served in Central Florida. 5-day make-ready for standard units, guaranteed in writing. 2-hour emergency response target. 15+ years combined experience. One invoice per job. Serving Orlando, Kissimmee, Sanford, Winter Park, Lakeland, Altamonte Springs, Apopka, Ocoee, Winter Garden, Clermont, St. Cloud, Davenport, Deltona, Daytona Beach, Palm Coast, Melbourne, Palm Bay, and Cocoa, FL."
+            supportingFacts="2 active crews handling 5 to 10 simultaneous make-readies per week. 300+ units completed across 50+ communities. 18 cities served in Central Florida. Most make-readys completed in 5–7 business days. Written work guarantee on every job. 2-hour emergency response target. 15+ years combined experience. One invoice per job. Serving Orlando, Kissimmee, Sanford, Winter Park, Lakeland, Altamonte Springs, Apopka, Ocoee, Winter Garden, Clermont, St. Cloud, Davenport, Deltona, Daytona Beach, Palm Coast, Melbourne, Palm Bay, and Cocoa, FL."
           />
 
           <div className="mt-10 flex flex-wrap gap-4">
@@ -319,12 +319,12 @@ const ForPropertyManagersPage = () => {
                   ["Vendors per property", "4 to 8 different contractors", "1 — FiveServ handles everything"],
                   ["Invoices per job", "One per trade, per visit", "One clean invoice, always"],
                   ["Who coordinates the work", "You do — calls, follow-ups, scheduling", "We do — you just approve the quote"],
-                  ["Make-ready timeline", "10 to 14 days on average", "5 business days for standard units"],
+                  ["Make-ready timeline", "10 to 14 days on average", "5–7 business days (estimated)"],
                   ["Emergency response", "Depends on which vendor picks up", "2-hour target, 24 hours a day, 7 days a week"],
                   ["Accountability when something goes wrong", "Everyone points fingers", "One call to us — we make it right"],
                   ["Reporting to property owners", "Multiple vendor summaries", "One report, one invoice, easy to forward"],
                   ["Scaling across a portfolio", "More units means more vendor chaos", "Same system works at 30 or 500 units"],
-                  ["Written service guarantee", "Rarely", "Yes — always in writing"],
+                  ["Written work guarantee", "Rarely", "Yes — always in writing"],
                   ["Licensed and insured", "Varies by vendor", "Yes — FiveServ Group LLC, fully licensed and insured in Florida"],
                 ].map(([feature, oldWay, fiveserv]) => (
                   <tr key={feature} className="even:bg-gray-50/60 hover:bg-amber-50/30 transition-colors">

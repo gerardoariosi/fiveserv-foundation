@@ -3,7 +3,7 @@ import { ArrowRight } from "lucide-react";
 import { useReveal } from "@/hooks/use-fiveserv";
 
 const PILLARS = [
-  { number: "5", unit: "DAYS", description: "Every make-ready in 5 business days. Guaranteed in writing." },
+  { number: "5–7", unit: "DAYS", description: "We complete most make-readys in 5–7 business days. Guaranteed in writing." },
   { number: "5", unit: "PEOPLE", description: "A family with our name on every job." },
   { number: "5", unit: "STARS", description: "Every property better than when we arrived." },
   { number: "1", unit: "CALL", description: "One number. Our team. Everything handled." },
@@ -51,7 +51,7 @@ export const FivePillars = () => {
             className="inline-flex items-center gap-2 rounded-lg px-8 py-4 text-sm font-bold uppercase tracking-wide transition-all"
             style={{ backgroundColor: "#FFD700", color: "#1A1A1A" }}
           >
-            Get Your 5-Day Make-Ready <ArrowRight className="h-4 w-4" />
+            Get Your Written Work Guarantee <ArrowRight className="h-4 w-4" />
           </Link>
         </div>
       </div>

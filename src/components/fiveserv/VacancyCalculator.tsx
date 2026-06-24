@@ -70,7 +70,7 @@ const Slider = ({ label, min, max, step, value, display, onChange }: SliderProps
 
 /**
  * VacancyCalculator — minimal, premium ROI calculator showing vacancy losses
- * vs FiveServ's 5-day make-ready guarantee.
+ * vs FiveServ.s 5–7 day make-ready estimate.
  */
 export const VacancyCalculator = () => {
   const [units, setUnits] = useState(50);
@@ -234,7 +234,7 @@ export const VacancyCalculator = () => {
               textAlign: "center",
             }}
           >
-            Estimates based on average turnover. FiveServ guarantees 5-day make-ready delivery in writing.
+            Estimates based on average turnover. FiveServ provides a written guarantee on every job and completes most in 5–7 business days.
           </p>
         </div>
 

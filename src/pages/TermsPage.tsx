@@ -73,13 +73,13 @@ export const TermsPage = () => {
             </p>
           </Section>
 
-          <Section number={4} title="Make-Ready Guarantee">
+          <Section number={4} title="Written Work Guarantee">
             <p>
-              <BrandName variant="dark" /> guarantees delivery of standard make-ready units within 5 business days from
+              <BrandName variant="dark" /> guarantees quality workmanship on all jobs. Most standard make-ready units are completed within 5–7 business days from
               the confirmed start date, provided that: (a) the unit is fully vacant and accessible at the agreed
               start time; (b) the scope of work has been agreed upon in writing; (c) no additional scope is added
               after work begins without a signed change order; and (d) all required materials and access are
-              available. The 5-day guarantee does not apply to units requiring extensive renovation, structural
+              available. This estimated turnaround time does not apply to units requiring extensive renovation, structural
               repairs, or permits.
             </p>
           </Section>
