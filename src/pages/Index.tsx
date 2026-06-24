@@ -392,6 +392,7 @@ const Index = () => {
       />
 
       <HeroSection />
+      <HeroStatStrip />
       <HeroServicePicker />
 
       <section className="bg-white">
