@@ -1,25 +1,43 @@
 import { Link } from "react-router-dom";
-import { Phone, ArrowRight } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import { SITE, CITIES, type ServiceSlug } from "@/lib/site-config";
 import Seo from "@/lib/Seo";
 import SchemaOrg from "@/lib/SchemaOrg";
 import AIOverviewBlock from "./AIOverviewBlock";
-import StatsBar from "./StatsBar";
 import FaqAccordion from "./FaqAccordion";
 import LeadMagnetSection from "./LeadMagnetSection";
-import SectionHeading from "./SectionHeading";
-import BrandName from "@/components/fiveserv/BrandName";
+import PageHero from "./shared/PageHero";
+import TrustStrip from "./shared/TrustStrip";
+import RelatedServicesPills from "./shared/RelatedServicesPills";
+import PageCTA from "./shared/PageCTA";
 
 export type ServicePageData = {
   service: { slug: ServiceSlug; name: string; short: string; description: string; cta: string };
   faqs?: { q: string; a: string }[];
 };
 
-/** Template for 4 service pages */
+// Map service slugs to hero images we have on disk.
+const SERVICE_IMAGE: Record<string, string> = {
+  maintenance: "/images/maintenance-repair.jpg",
+  painting: "/images/services/painting.jpg",
+  flooring: "/images/services/flooring.jpg",
+  cleaning: "/images/services/cleaning.jpg",
+  electrical: "/images/services/electrical.jpg",
+  plumbing: "/images/services/plumbing.jpg",
+  hvac: "/images/services/hvac.jpg",
+  drywall: "/images/services/drywall.jpg",
+  carpentry: "/images/services/carpentry.jpg",
+  "make-ready": "/images/make-ready-unit.jpg",
+  renovations: "/images/renovation-project.jpg",
+  residential: "/images/residential-service.jpg",
+};
+
+/** Template for all standard service pages — Stan's-style cream + photo hero. */
 export const ServicePageTemplate = ({ service, faqs = [] }: ServicePageData) => {
   const path = `/${service.slug}`;
   const title = `${service.name} | ${SITE.brand} Property Solutions`;
   const description = `${service.description} Serving Central Florida. Call ${SITE.phone}.`;
+  const heroImage = SERVICE_IMAGE[service.slug] ?? "/images/orlando.webp";
 
   return (
     <>
@@ -34,63 +52,58 @@ export const ServicePageTemplate = ({ service, faqs = [] }: ServicePageData) => 
         faqs={faqs}
       />
 
-      {/* Hero — dark with gradient overlay */}
-      <section className="relative bg-gradient-to-b from-brand-black via-brand-black to-brand-black/70 pt-32 pb-24">
-        <div className="container">
-          <p className="text-xs font-medium uppercase tracking-[0.12em] text-brand-white">— <BrandName /> Property Solutions</p>
-          <h1 className="mt-3 font-display font-black text-4xl text-white lg:text-6xl leading-[1.05]">{service.name}</h1>
-          <p className="mt-6 max-w-2xl text-lg text-gray-300">{service.description}</p>
+      <PageHero
+        image={heroImage}
+        imageAlt={`${service.name} by ${SITE.brand} in Central Florida`}
+        eyebrow="Licensed · Insured · 24/7"
+        title={service.name}
+        subtitle={service.description}
+        primaryCTA={{ label: service.cta, to: "/contact" }}
+      />
 
-          <AIOverviewBlock hidden
-            tone="dark"
-            answer={`${service.description} ${SITE.brand} serves 18 cities in Central Florida. ${SITE.hours}. Call ${SITE.phone} or request a free quote online.`}
-          />
+      <TrustStrip />
 
-          <div className="mt-10 flex flex-wrap gap-4">
-            <Link
-              to="/contact"
-              className="rounded-lg bg-brand-gold px-8 py-4 text-sm font-bold uppercase tracking-wide text-brand-black transition-colors hover:bg-yellow-400"
-            >
-              {service.cta}
-            </Link>
-            <a
-              href={`tel:${SITE.phone}`}
-              className="flex items-center gap-2 rounded-lg border-2 border-brand-gold px-8 py-4 text-sm font-bold uppercase tracking-wide text-gray-900 transition-colors hover:bg-brand-gold hover:text-brand-black"
-            >
-              <Phone className="h-4 w-4" /> Call {SITE.phone}
-            </a>
+      <AIOverviewBlock
+        hidden
+        tone="dark"
+        answer={`${service.description} ${SITE.brand} serves 18 cities in Central Florida. ${SITE.hours}. Call ${SITE.phone} or request a free quote online.`}
+      />
+
+      {/* Cities served — cream card grid */}
+      <section className="bg-white">
+        <div className="container py-20 sm:py-24">
+          <div className="text-center max-w-2xl mx-auto">
+            <p className="text-[11px] font-bold uppercase tracking-[0.18em] text-brand-black/55">
+              Service Areas
+            </p>
+            <h2 className="mt-2 font-display text-3xl sm:text-4xl font-bold text-brand-black">
+              {service.name} in your city
+            </h2>
+            <p className="mt-3 text-base text-brand-black/65">
+              Pick your city for local response times and ZIP coverage.
+            </p>
           </div>
-        </div>
-      </section>
-
-      <StatsBar />
-
-      {/* Cities — light gray */}
-      <section className="bg-gray-50">
-        <div className="container py-28 lg:py-32">
-          <SectionHeading
-            eyebrow="Service Areas"
-            subtext="Pick your city for local response times and ZIP coverage."
-          >
-            {service.name} <span className="text-gray-900">in your city</span>
-          </SectionHeading>
-          <div className="mt-16 grid gap-3 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
+          <div className="mt-12 grid gap-3 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 max-w-6xl mx-auto">
             {CITIES.map((c) => (
               <Link
                 key={c.slug}
                 to={`/${service.slug}/${c.slug}`}
-                className="flex items-center justify-between rounded-xl border border-gray-200 bg-white px-4 py-3 text-sm font-bold text-gray-900 transition-all hover:border-brand-gold hover:bg-brand-gold/5"
+                className="group flex items-center justify-between rounded-full bg-[#FAF8F3] border border-black/5 px-5 py-3 text-sm font-semibold text-brand-black transition-all hover:-translate-y-0.5 hover:border-brand-gold hover:bg-white"
               >
-                {c.name}, {c.state}
-                <ArrowRight className="h-4 w-4 text-gray-900" />
+                {c.name}
+                <ArrowRight className="h-4 w-4 text-brand-black/40 group-hover:text-brand-gold group-hover:translate-x-0.5 transition-all" />
               </Link>
             ))}
           </div>
         </div>
       </section>
 
+      <RelatedServicesPills excludeSlug={service.slug} />
+
       <LeadMagnetSection />
       {faqs.length > 0 && <FaqAccordion faqs={faqs} emitSchema={false} />}
+
+      <PageCTA />
     </>
   );
 };
