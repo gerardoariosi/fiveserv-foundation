@@ -12,7 +12,7 @@ import HeroServicePicker from "@/components/fiveserv/HeroServicePicker";
 /**
  * Homepage section audit (2026-06-22):
  * Each of the following appears exactly once on this page —
- * HeroSection, HeroServicePicker, AIOverviewBlock, TrustBar, ProblemSection,
+ * HeroSection, HeroServicePicker, TrustBar, ProblemSection,
  * SolutionSection, ServicesGrid, VacancyCalculator, FivePillars, LiveStatsBar,
  * BeforeAfterSection, FamilyStory, TestimonialsSection, EmergencyBanner,
  * CityGrid, VisibleQA, FaqAccordion, LeadMagnetSection, ContactCTA, BrandsBar.
