@@ -8,7 +8,7 @@ import type { ReactNode } from "react";
 
 const ROWS: [string, ReactNode][] = [
   ["5+ vendors to coordinate", <>1 call to <BrandName variant="dark" /></>],
-  ["10+ days average turnaround", "5 business days guaranteed"],
+  ["10+ days average turnaround", "5–7 days (Guaranteed in writing)"],
   ["Multiple invoices per unit", "One clean invoice"],
   ["You chase every vendor", "We handle everything"],
   ["No accountability", "We own the result"],

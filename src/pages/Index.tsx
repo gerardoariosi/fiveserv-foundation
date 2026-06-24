@@ -216,7 +216,7 @@ const TESTIMONIALS = [
   { quote: "Work gets done on schedule, one clean invoice, no surprises. You don't have to chase them. That consistency is extremely rare in this industry.", name: "Marcus T.", title: "Director of Maintenance", company: "Altamonte Springs, FL" },
   { quote: "Used to deal with a different contractor for every issue. FiveServ handled plumbing, painting, drywall — had the unit ready in less than a week. One invoice for everything. I didn't know that was possible.", name: "Jennifer W.", title: "Property Owner", company: "Winter Park, FL" },
   { quote: "They showed up on time, did the work, and sent one clean invoice. No back and forth, no chasing people down. That's all I ask and they delivered every single time.", name: "Robert A.", title: "Property Manager", company: "Lake Nona, FL" },
-  { quote: "I was skeptical about the 5-day guarantee but they pulled it off. Unit was painted, cleaned, and inspected in 4 business days. Owner was happy, tenant moved in on time. Will use them again.", name: "Melissa C.", title: "Property Manager", company: "Winter Garden, FL" },
+  { quote: "I was skeptical about the turnaround but they pulled it off. Unit was painted, cleaned, and inspected in 4 business days. Owner was happy, tenant moved in on time. Will use them again.", name: "Melissa C.", title: "Property Manager", company: "Winter Garden, FL" },
   { quote: "Emergency call on a Friday night — AC unit down, tenant with kids in the unit. FiveServ had someone there within the hour. Problem solved same night. That kind of reliability is everything.", name: "Tony B.", title: "Portfolio Owner", company: "Apopka, FL" },
 ];
 

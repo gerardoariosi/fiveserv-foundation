@@ -67,8 +67,8 @@ const getOffer = (pathname: string): Offer | null => {
 
   return {
     headline: "One call handles everything",
-    body: "Make-ready in 5 days. Guaranteed in writing. One invoice. No excuses.",
-    offerLine: "Free quote · 5-day make-ready guarantee",
+    body: "Most make-readys in 5–7 days. Written guarantee on every job. One invoice. No excuses.",
+    offerLine: "Free quote · Written work guarantee",
     ctaLabel: "Get a free quote",
     ctaHref: "/contact",
   };
@@ -276,7 +276,7 @@ export const ExitIntentPopup = () => {
           <span aria-hidden="true" className="text-gray-300">·</span>
           <span className="inline-flex items-center gap-1.5">
             <BadgeCheck className="h-3 w-3 text-brand-gold" />
-            5-Day Guarantee
+            Written Guarantee
           </span>
         </div>
       </div>

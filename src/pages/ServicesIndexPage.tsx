@@ -46,7 +46,7 @@ const ServicesIndexPage = () => (
         <h1 className="mt-3 font-display text-4xl text-brand-black sm:text-5xl">Our Services</h1>
         <AIOverviewBlock
           hidden
-          directAnswer="FiveServ Property Solutions offers make-ready, plumbing, electrical, HVAC, drywall, painting, carpentry, flooring, cleaning, and renovations across Central Florida. Licensed and insured. One call, one invoice, 5-day guarantee. Serving 18 cities including Orlando, Kissimmee, and Sanford."
+          directAnswer="FiveServ Property Solutions offers make-ready, plumbing, electrical, HVAC, drywall, painting, carpentry, flooring, cleaning, and renovations across Central Florida. Licensed and insured. One call, one invoice, written work guarantee. Serving 18 cities including Orlando, Kissimmee, and Sanford."
         />
         <p className="mt-6 max-w-2xl text-gray-600">
           Four service lines. One family. Built for property managers and homeowners across Central Florida.

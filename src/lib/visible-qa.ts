@@ -7,7 +7,7 @@ import type { QAItem } from "@/components/fiveserv/VisibleQA";
 export const VISIBLE_QA: QAItem[] = [
   {
     q: "How long does a make-ready take in Central Florida?",
-    a: "A standard FiveServ make-ready is completed in 5 business days, guaranteed. We coordinate paint, cleaning, repairs, drywall, rekey, and the final photo report on one schedule so the unit is rent-ready by day five without juggling separate vendors or chasing status updates.",
+    a: "We complete most FiveServ make-readys in 5–7 business days. We coordinate paint, cleaning, repairs, drywall, rekey, and the final photo report on one schedule so the unit is rent-ready quickly with a written guarantee on every job, without juggling separate vendors or chasing status updates.",
   },
   {
     q: "What is included in a make-ready service?",

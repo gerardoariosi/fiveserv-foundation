@@ -45,7 +45,7 @@ const CleaningPage = () => {
             { name: "Make-Ready", href: "/make-ready", icon: Sparkles },
           ],
           subServices: [
-            { name: "Move-Out / Make-Ready Clean", desc: "Full unit deep clean integrated with our 5-day make-ready turn.", href: "/make-ready" },
+            { name: "Move-Out / Make-Ready Clean", desc: "Full unit deep clean integrated with our 5–7 business day make-ready turn.", href: "/make-ready" },
             { name: "Post-Construction Clean", desc: "Dust, debris, residue and final detail after renovation work.", href: "/cleaning" },
             { name: "Deep Cleaning", desc: "Whole-property reset. Appliances, baseboards, vents, windows, fixtures.", href: "/cleaning" },
             { name: "Recurring Service", desc: "Common areas, leasing offices and clubhouses on a recurring schedule.", href: "/cleaning" },

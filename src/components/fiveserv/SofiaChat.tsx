@@ -251,8 +251,8 @@ const faqResponse = (input: string, lang: Lang): Message[] | null => {
     return [
       mkSofia(
         lang === "es"
-          ? "Cada make-ready garantizado por escrito en 5 dias habiles. Sin excusas."
-          : "Every make-ready is guaranteed in writing in 5 business days. No excuses.",
+          ? "Garantía por escrito en cada trabajo. Completamos la mayoría en 5–7 días hábiles."
+          : "Written guarantee on every job. Most make-readys completed in 5–7 business days.",
       ),
     ];
   }
@@ -298,8 +298,8 @@ const faqResponse = (input: string, lang: Lang): Message[] | null => {
     return [
       mkSofia(
         lang === "es"
-          ? "5 dias habiles garantizado. Pintura, limpieza, reparaciones, drywall, re-keying, reporte fotografico."
-          : "5 business days guaranteed in writing. Painting, cleaning, repairs, drywall, rekeying, photo report.",
+          ? "Completamos la mayoría en 5–7 días hábiles. Garantía por escrito en pintura, limpieza, reparaciones y más."
+          : "Most completed in 5–7 business days. Written guarantee on painting, cleaning, repairs, and more.",
         { ctas: [{ kind: "link", label: lang === "es" ? "Más Info" : "Learn More", href: "/make-ready" }] },
       ),
     ];

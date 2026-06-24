@@ -24,7 +24,7 @@ export const CityPageTemplate = ({ city, service, faqs = [] }: CityPageData) => 
     : `${SITE.brand} Property Solutions in ${city.name}, ${city.state}`;
   const description = service
     ? `${service.short} ${SITE.brand} serves ${city.name}, ${city.state}. ${city.responseTime}. Call ${SITE.phone}.`
-    : `${SITE.brand} Property Solutions serves ${city.name}, ${city.state}. Make-ready in 5 days. ${city.responseTime}. ${SITE.phone}.`;
+    : `${SITE.brand} Property Solutions serves ${city.name}, ${city.state}. Most make-readys in 5–7 days. Written guarantee. ${city.responseTime}. ${SITE.phone}.`;
 
   const heroTitle = service ? service.name : "Property Maintenance";
   const heroAccent = `in ${city.name}, ${city.state}`;

@@ -20,7 +20,7 @@ const SectionReveal = ({ children, className = "" }: { children: React.ReactNode
 };
 
 const PROMISE = [
-  { label: "5 Days", sub: "Make-Ready Guarantee" },
+  { label: "Written", sub: "Work Guarantee" },
   { label: "5 People", sub: "One Family" },
   { label: "5 Stars", sub: "Quality Standard" },
   { label: "1 Call", sub: "One Invoice" },
@@ -81,7 +81,7 @@ const AboutPage = () => {
             </p>
 
             <ul className="mt-6 flex flex-wrap items-center gap-x-6 gap-y-3 text-sm font-medium text-white">
-              {["Family-Owned", "Licensed & Insured", "5-Day Guarantee", "18 Cities Served"].map((t, i) => (
+              {["Family-Owned", "Licensed & Insured", "Written Work Guarantee", "18 Cities Served"].map((t, i) => (
                 <li key={t} className="flex items-center gap-3">
                   {i > 0 && <span aria-hidden className="text-brand-gold">|</span>}
                   <span>{t}</span>
@@ -114,7 +114,7 @@ const AboutPage = () => {
               <p>
                 <BrandName variant="dark" /> is built to last generations. The name says everything we stand for:{" "}
                 <span className="font-semibold text-gray-900">the family</span> behind the company, and a{" "}
-                <span className="font-semibold text-gray-900">five-day make-ready delivery</span> guaranteed in writing
+                <span className="font-semibold text-gray-900">written work guarantee</span> on every job
                 on every unit turn.
               </p>
               <p>

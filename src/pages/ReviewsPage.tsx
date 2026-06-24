@@ -74,10 +74,10 @@ const TESTIMONIALS = [
     name: "Melissa C.",
     role: "Property Manager",
     location: "Winter Garden, FL",
-    service: "Make-Ready / 5-Day Guarantee",
+    service: "Make-Ready / Written Guarantee",
     stars: 5,
     date: "April 2025",
-    text: "I was skeptical about the 5-day guarantee but they pulled it off. Unit was painted, cleaned, and inspected in 4 business days. Owner was happy, tenant moved in on time. Will use them again.",
+    text: "I was skeptical about the quick turnaround guarantee but they pulled it off. Unit was painted, cleaned, and inspected in 4 business days. Owner was happy, tenant moved in on time. Will use them again.",
   },
   {
     name: "Tony B.",
@@ -95,7 +95,7 @@ const TESTIMONIALS = [
     service: "Make-Ready",
     stars: 5,
     date: "February 2025",
-    text: "I have worked with a lot of vendors over the years. FiveServ is the only one that consistently delivers on what they promise. Unit turned in 5 days, photos sent at completion, one invoice. Simple and professional.",
+    text: "I have worked with a lot of vendors over the years. FiveServ is the only one that consistently delivers on what they promise. Unit turned in 5 business days, photos sent at completion, one invoice. Simple and professional.",
   },
   {
     name: "Miguel R.",
@@ -131,7 +131,7 @@ const TESTIMONIALS = [
     service: "Unit Turn",
     stars: 5,
     date: "February 2025",
-    text: "The speed is real. I tested them with a tight unit turn and they delivered. Paint, cleaning, minor repairs — done in under 5 days. The owner was impressed. Now they are my go-to for all turns in that portfolio.",
+    text: "The speed is real. I tested them with a tight unit turn and they delivered. Paint, cleaning, minor repairs — done in under 5 business days. The owner was impressed. Now they are my go-to for all turns in that portfolio.",
   },
   {
     name: "James O.",
@@ -262,7 +262,7 @@ const ReviewsPage = () => {
         <div className="container pb-12">
           <AIOverviewBlock
             directAnswer="FiveServ Property Solutions is rated 5 stars by property managers and homeowners across Central Florida for fast make-ready unit turns, reliable maintenance, and professional service with one invoice."
-            supportingFacts="5-star rated on Google. 18 cities across Central Florida. Make-ready units delivered in 5 business days. Available 24/7 for emergencies. One clean line-item invoice per project."
+            supportingFacts="5-star rated on Google. 18 cities across Central Florida. Written work guarantee on every job. Most make-readys delivered in 5–7 business days. Available 24/7 for emergencies. One clean line-item invoice per project."
           />
         </div>
       </section>
