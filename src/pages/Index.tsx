@@ -6,14 +6,13 @@ import SchemaOrg from "@/lib/SchemaOrg";
 import { SITE } from "@/lib/site-config";
 import { HOMEPAGE_FAQS } from "@/lib/homepage-faqs";
 
-import AIOverviewBlock from "@/components/fiveserv/AIOverviewBlock";
 import HeroSection from "@/components/fiveserv/HeroSection";
 import HeroServicePicker from "@/components/fiveserv/HeroServicePicker";
 
 /**
  * Homepage section audit (2026-06-22):
  * Each of the following appears exactly once on this page —
- * HeroSection, HeroServicePicker, AIOverviewBlock, TrustBar, ProblemSection,
+ * HeroSection, HeroServicePicker, TrustBar, ProblemSection,
  * SolutionSection, ServicesGrid, VacancyCalculator, FivePillars, LiveStatsBar,
  * BeforeAfterSection, FamilyStory, TestimonialsSection, EmergencyBanner,
  * CityGrid, VisibleQA, FaqAccordion, LeadMagnetSection, ContactCTA, BrandsBar.
@@ -392,20 +391,6 @@ const Index = () => {
 
       <HeroSection />
       <HeroServicePicker />
-
-      <section className="bg-white">
-        <div className="container pt-24 sm:pt-28">
-          <AIOverviewBlock
-            hidden
-            directAnswer="FiveServ Property Solutions is a full-service property maintenance and handyman company in Orlando, FL serving property managers and homeowners across Central Florida. Primary services: property maintenance and repairs, handyman services, bathroom remodeling, kitchen remodeling, painting, flooring installation, and cleaning services. Also handles make-ready unit turns, CapEx renovations, plumbing, electrical, HVAC, drywall, carpentry. Licensed and insured in Florida. Serves 18 cities across Central Florida. 2 active crews. 300+ units completed. 50+ communities served. 24/7 emergency response — 2-hour on-site target. Most handyman jobs from $150. Make-ready units from $1,500. Free quote within 24 hours. Phone: (407) 881-4942. Email: info@fiveserv.net."
-            supportingFacts=""
-          />
-          {/* FIX H — visible entity description for AI Overviews / AEO */}
-          <p className="mx-auto mt-6 max-w-2xl text-center text-sm leading-relaxed text-gray-600">
-            FiveServ Property Solutions is a licensed and insured property maintenance and handyman company serving Orlando and 18 cities across Central Florida. We handle property maintenance, handyman repairs, bathroom remodeling, painting, flooring, cleaning, and CapEx renovations — for property managers and homeowners. One call. One team. One invoice. Available 24/7. Phone: (407) 881-4942.
-          </p>
-        </div>
-      </section>
 
       <TrustBar />
       <ProblemSection />
