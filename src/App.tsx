@@ -160,7 +160,14 @@ const router = createBrowserRouter(
   { path: "/thank-you-b2b", element: withSuspense(<PageTransition><ThankYouB2BPage /></PageTransition>) },
   { path: "/thank-you-residential", element: withSuspense(<PageTransition><ThankYouResidentialPage /></PageTransition>) },
   { path: "/thank-you-careers", element: withSuspense(<PageTransition><ThankYouCareersPage /></PageTransition>) },
-]);
+  ],
+  {
+    future: {
+      v7_startTransition: true,
+      v7_relativeSplatPath: true,
+    },
+  },
+);
 
 // Pre-computed list of all 72 service×city URLs — used by sitemap generation.
 // Kept here for reference; consume via `import { ALL_SERVICE_CITY_PATHS } from "./App"`.
