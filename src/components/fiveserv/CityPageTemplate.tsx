@@ -1,20 +1,21 @@
-import { Link } from "react-router-dom";
-import { Phone, MapPin, Clock } from "lucide-react";
 import { SITE, SERVICES } from "@/lib/site-config";
 import Seo from "@/lib/Seo";
 import SchemaOrg from "@/lib/SchemaOrg";
-import StatsBar from "./StatsBar";
 import FaqAccordion from "./FaqAccordion";
 import AIOverviewBlock from "./AIOverviewBlock";
 import LeadMagnetSection from "./LeadMagnetSection";
-import SectionHeading from "./SectionHeading";
-import BrandName from "@/components/fiveserv/BrandName";
+import PageHero from "./shared/PageHero";
+import TrustStrip from "./shared/TrustStrip";
+import RelatedServicesPills from "./shared/RelatedServicesPills";
+import PageCTA from "./shared/PageCTA";
 
 export type CityPageData = {
   city: typeof import("@/lib/site-config").CITIES[number];
   service?: typeof SERVICES[number];
   faqs?: { q: string; a: string }[];
 };
+
+const cityImage = (slug: string) => `/images/cities/${slug}.jpg`;
 
 export const CityPageTemplate = ({ city, service, faqs = [] }: CityPageData) => {
   const path = service ? `/${service.slug}/${city.slug}` : `/cities/${city.slug}`;
@@ -24,6 +25,9 @@ export const CityPageTemplate = ({ city, service, faqs = [] }: CityPageData) => 
   const description = service
     ? `${service.short} ${SITE.brand} serves ${city.name}, ${city.state}. ${city.responseTime}. Call ${SITE.phone}.`
     : `${SITE.brand} Property Solutions serves ${city.name}, ${city.state}. Make-ready in 5 days. ${city.responseTime}. ${SITE.phone}.`;
+
+  const heroTitle = service ? service.name : "Property Maintenance";
+  const heroAccent = `in ${city.name}, ${city.state}`;
 
   return (
     <>
@@ -39,57 +43,62 @@ export const CityPageTemplate = ({ city, service, faqs = [] }: CityPageData) => 
         faqs={faqs}
       />
 
-      {/* Hero — dark with gradient overlay */}
-      <section className="relative bg-gradient-to-b from-brand-black via-brand-black to-brand-black/70 pt-32 pb-24">
-        <div className="container">
-          <p className="uppercase tracking-[0.12em] text-brand-gold text-base font-bold">— <BrandName variant="light" /> Property Solutions</p>
-          <h1 className="mt-3 font-display font-black text-4xl text-white lg:text-6xl leading-[1.05]">
-            {service ? service.name : "Property Maintenance"} in <span className="text-brand-gold">{city.name}, {city.state}</span>
-          </h1>
-          <div className="mt-6 flex flex-wrap gap-6 text-sm text-gray-300">
-            <span className="flex items-center gap-2"><MapPin className="h-4 w-4 text-brand-gold" /> {city.zones}</span>
-            <span className="flex items-center gap-2"><Clock className="h-4 w-4 text-brand-gold" /> Response: {city.responseTime}</span>
+      <PageHero
+        image={cityImage(city.slug)}
+        imageAlt={`${heroTitle} in ${city.name}, ${city.state}`}
+        eyebrow={`Local response · ${city.responseTime}`}
+        title={heroTitle}
+        titleAccent={heroAccent}
+        subtitle={service ? service.short : `Family-owned. Licensed and insured. Serving every neighborhood in ${city.name}.`}
+        primaryCTA={{ label: "Get a free quote", to: "/contact" }}
+      />
+
+      <TrustStrip
+        stats={[
+          { value: city.responseTime, label: "Local response" },
+          { value: `${city.zips.length}+`, label: "ZIPs served" },
+          { value: "24/7", label: "Emergency" },
+          { value: "5★", label: "Local reviews" },
+        ]}
+      />
+
+      <AIOverviewBlock
+        hidden
+        tone="dark"
+        answer={`${SITE.brand} Property Solutions provides ${service?.name.toLowerCase() ?? "property maintenance and make-ready services"} in ${city.name}, ${city.state}. We serve zip codes ${city.zips.slice(0, 5).join(", ")}${city.zips.length > 5 ? "+" : ""}. ${city.responseTime} response. Available 24/7.`}
+      />
+
+      {/* ZIPs */}
+      <section className="bg-white">
+        <div className="container py-20 sm:py-24">
+          <div className="text-center max-w-2xl mx-auto">
+            <p className="text-[11px] font-bold uppercase tracking-[0.18em] text-brand-black/55">
+              Coverage
+            </p>
+            <h2 className="mt-2 font-display text-3xl sm:text-4xl font-bold text-brand-black">
+              ZIP codes we serve in {city.name}
+            </h2>
+            <p className="mt-3 text-base text-brand-black/65">{city.zones}</p>
           </div>
-
-          <AIOverviewBlock hidden
-            tone="dark"
-            answer={`${SITE.brand} Property Solutions provides ${service?.name.toLowerCase() ?? "property maintenance and make-ready services"} in ${city.name}, ${city.state}. We serve zip codes ${city.zips.slice(0, 5).join(", ")}${city.zips.length > 5 ? "+" : ""}. Make-ready in 5 days. One call. One invoice. ${city.responseTime} response. Available 24/7.`}
-          />
-
-          <div className="mt-10 flex flex-wrap gap-4">
-            <Link
-              to="/contact"
-              className="rounded-lg bg-brand-gold px-8 py-4 text-sm font-bold uppercase tracking-wide text-brand-black transition-colors hover:bg-yellow-400"
-            >
-              Get a Free Quote
-            </Link>
-            <a
-              href={`tel:${SITE.phone}`}
-              className="flex items-center gap-2 rounded-lg border-2 border-brand-gold px-8 py-4 text-sm font-bold uppercase tracking-wide text-brand-gold transition-colors hover:bg-brand-gold hover:text-brand-black"
-            >
-              <Phone className="h-4 w-4" /> Call {SITE.phone}
-            </a>
-          </div>
-        </div>
-      </section>
-
-      {/* ZIPs — light gray */}
-      <section className="bg-gray-50">
-        <div className="container py-28 lg:py-32">
-          <SectionHeading eyebrow="Coverage">
-            ZIP Codes We Serve <span className="text-gray-900">in {city.name}</span>
-          </SectionHeading>
-          <div className="mt-12 flex flex-wrap justify-center gap-2">
+          <div className="mt-10 flex flex-wrap justify-center gap-2 max-w-3xl mx-auto">
             {city.zips.map((z) => (
-              <span key={z} className="rounded-md border border-gray-200 bg-white px-3 py-1.5 text-sm font-bold text-gray-900">{z}</span>
+              <span
+                key={z}
+                className="rounded-full border border-black/8 bg-[#FAF8F3] px-4 py-1.5 text-sm font-semibold text-brand-black"
+              >
+                {z}
+              </span>
             ))}
           </div>
         </div>
       </section>
 
-      <StatsBar />
+      <RelatedServicesPills excludeSlug={service?.slug} title="Other services in this city" />
+
       <LeadMagnetSection />
       {faqs.length > 0 && <FaqAccordion faqs={faqs} emitSchema={false} />}
+
+      <PageCTA />
     </>
   );
 };
