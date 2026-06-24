@@ -35,12 +35,12 @@ export const HeroSection = ({ imageSrc = "/images/orlando.webp" }: HeroProps) =>
           className="h-full w-full object-cover"
           style={{ objectPosition: "center 58%" }}
         />
-        <div className="absolute inset-0" style={{ background: "rgba(0,0,0,0.65)" }} />
+        <div className="absolute inset-0" style={{ background: "linear-gradient(180deg, rgba(0,0,0,0.55) 0%, rgba(0,0,0,0.75) 100%)" }} />
       </div>
 
       {/* Foreground content */}
       <div className="relative z-10 flex flex-col">
-        <div className="flex items-center pt-16 pb-16 sm:pt-20 sm:pb-20 lg:pt-24 lg:pb-24" style={{ minHeight: "72vh" }}>
+        <div className="flex items-center pt-12 pb-28 sm:pt-20 sm:pb-32 lg:pt-24 lg:pb-40" style={{ minHeight: "70vh" }}>
           <div ref={ref} className="container reveal">
             <div className="max-w-3xl">
               {/* Trust pill */}

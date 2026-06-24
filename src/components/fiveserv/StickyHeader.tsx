@@ -52,14 +52,20 @@ export const StickyHeader = () => {
 
   useEffect(() => {
     const updateHeight = () => {
-      const h = scrolled ? 120 : 160;
+      const isMobile = window.matchMedia("(max-width: 767px)").matches;
+      // Mobile only renders Level 2 (~70px). Desktop adds Level 3 nav (~50px).
+      const h = isMobile ? 70 : scrolled ? 120 : 160;
       document.documentElement.style.setProperty("--header-h", `${h}px`);
     };
     updateHeight();
     const onScroll = () => setScrolled(window.scrollY > 80);
     onScroll();
     window.addEventListener("scroll", onScroll, { passive: true });
-    return () => window.removeEventListener("scroll", onScroll);
+    window.addEventListener("resize", updateHeight);
+    return () => {
+      window.removeEventListener("scroll", onScroll);
+      window.removeEventListener("resize", updateHeight);
+    };
   }, [scrolled]);
 
   // Close mobile menu on route change
@@ -115,14 +121,18 @@ export const StickyHeader = () => {
             </Link>
           </div>
 
-          {/* Mobile: phone + hamburger */}
-          <div className="flex items-center gap-3 md:hidden">
-            <a href={`tel:${SITE.phone}`} aria-label="Call FiveServ">
+          {/* Mobile: phone + hamburger — 44x44 tap targets */}
+          <div className="flex items-center gap-1 md:hidden">
+            <a
+              href={`tel:${SITE.phone}`}
+              aria-label="Call FiveServ"
+              className="inline-flex h-11 w-11 items-center justify-center rounded-md"
+            >
               <Phone className="h-6 w-6 text-brand-gold" />
             </a>
             <button
               aria-label="Toggle menu"
-              className="text-brand-gold"
+              className="inline-flex h-11 w-11 items-center justify-center rounded-md text-brand-gold"
               onClick={() => setOpen((s) => !s)}
             >
               {open ? <X className="h-7 w-7" /> : <Menu className="h-7 w-7" />}

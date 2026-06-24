@@ -81,7 +81,8 @@ const queryClient = new QueryClient();
  * Total dynamic targets: 4 + 18 + 72 = 94 deep URLs from a handful of route patterns.
  * The 72 service×city pages are the "generateStaticParams" equivalent.
  */
-const router = createBrowserRouter([
+const router = createBrowserRouter(
+  [
   {
     path: "/",
     element: <RootLayout />,
@@ -159,7 +160,13 @@ const router = createBrowserRouter([
   { path: "/thank-you-b2b", element: withSuspense(<PageTransition><ThankYouB2BPage /></PageTransition>) },
   { path: "/thank-you-residential", element: withSuspense(<PageTransition><ThankYouResidentialPage /></PageTransition>) },
   { path: "/thank-you-careers", element: withSuspense(<PageTransition><ThankYouCareersPage /></PageTransition>) },
-]);
+  ],
+  {
+    future: {
+      v7_relativeSplatPath: true,
+    },
+  },
+);
 
 // Pre-computed list of all 72 service×city URLs — used by sitemap generation.
 // Kept here for reference; consume via `import { ALL_SERVICE_CITY_PATHS } from "./App"`.

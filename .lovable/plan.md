@@ -1,80 +1,105 @@
-# Fix homepage layout regressions
 
-## Problem 1 — Duplicate H1/subhead in HeroSection
+# Mobile Fixes + Homepage Redesign (inspirado en Stan's)
 
-**Confirmed in code.** `src/components/fiveserv/HeroSection.tsx` lines 79–85 contain the old block:
+Auditoría hecha a 390px (iPhone). Encontré 6 bugs reales en mobile y oportunidades claras de rediseño contra `stansac.com`.
+
+---
+
+## PARTE 1 — Bugs de mobile a corregir
+
+### Bug 1 (CRÍTICO) — Sofia Chat se abre sola en pantalla completa
+En mobile el widget de Sofia se monta como `fixed inset-0 z-[9999] bg-white` y **bloquea toda la homepage** (verificado: Playwright no podía hacer click en el menú porque Sofia interceptaba todo el viewport). Hoy aparece abierta apenas cargas en mobile.
+- Fix: en mobile NO auto-abrir; el widget arranca cerrado y solo se abre con tap en la burbuja. La burbuja flotante queda visible bottom-right (como hoy).
+
+### Bug 2 (CRÍTICO) — StickyBanner top rompe en mobile
+`StickyBanner` declara `height: 36px` pero los 3 items (50+ PMs / Free Quote / 24/7) se renderizan en **3 columnas que envuelven a 2 líneas cada una**, ocupando ~90px y empujando/cubriendo el hero. Por eso al cargar ves la barra negra grande arriba y el H1 corrido hacia abajo / tapado.
+- Fix: en mobile mostrar **un solo item rotativo** (o los 3 en una línea con texto súper corto y truncado), forzar `h-9` real, `whitespace-nowrap`, y aumentar el área del botón "X" a 44×44.
+
+### Bug 3 — Ticker "4 property managers requested a quote today" tapa el contenido
+La barra negra flotante (`SocialProofTicker` / `LiveStatsBar`) tiene z-index alto y queda **encima de los headings** al hacer scroll (visible en pantallazos m_01–m_04 tapando "Property Maintenance Central Florida", "Become a Partner", etc.).
+- Fix: bajar z-index por debajo del header, o moverla a `bottom` en mobile, o esconderla en mobile (preferido — mobile ya tiene la StickyMobileCTA abajo).
+
+### Bug 4 — `HeroServicePicker` no se ve en el viewport inicial
+El picker usa `-mt-12` asumiendo que el `HeroStatStrip` está justo arriba. En mobile la composición se rompe: aparece un bloque blanco vacío entre el header y el hero. Hay que rediseñar la composición del hero entero (ver Parte 2).
+
+### Bug 5 — Tap targets < 44×44 (accesibilidad / Google mobile usability)
+- Botón "Dismiss banner": 16×16
+- Icono teléfono header: 24×24
+- Hamburguesa: 28×28
+- Fix: subir todos a `min-h-11 min-w-11` con padding interno.
+
+### Bug 6 — Warning React Router v7 en consola
+`v7_startTransition` future flag warning. No rompe nada pero ensucia consola.
+- Fix: agregar `future={{ v7_startTransition: true }}` al `BrowserRouter`.
+
+---
+
+## PARTE 2 — Rediseño homepage (estilo Stan's, manteniendo negro+dorado suavizado)
+
+Stan's funciona porque: **(a)** foto real grande del van como hero, **(b)** una tarjeta sólida superpuesta con CTA + 4 botones pill de servicios con icono circular, **(c)** mucho espacio en blanco entre secciones, **(d)** una sola paleta consistente sin elementos flotantes que distraigan.
+
+Aplicado a FiveServ (negro + dorado, pero más aire, más blanco, menos saturación):
+
+### Hero (Index.tsx + HeroSection.tsx + HeroServicePicker.tsx)
+- Imagen real de fondo (van/equipo FiveServ — si no hay foto profesional aún, usar la actual de Orlando con un overlay degradado más sutil, no tan oscuro).
+- Bloque izquierdo: eyebrow dorada pequeña → H1 negro sobre placa crema/blanca (no blanco sobre foto) → tagline italic dorada → subhead → 2 CTAs (primario dorado sólido + secundario outline).
+- Tarjeta de servicios **a la derecha (desktop) / abajo (mobile)** estilo Stan's:
+  - Fondo blanco crema (`#FAF8F3`) en vez de negro casi puro
+  - 6 botones pill grandes (Maintenance, Handyman, Bathroom Remodel, Painting, Flooring, Cleaning)
+  - Cada botón: icono dorado dentro de círculo crema + label negro + flecha
+  - Tap target 56px alto
+  - Link inferior "View all services →"
+
+### Trust strip
+- Reemplazar el `HeroStatStrip` negro denso por una franja crema clara con 4 stats (1,200+ jobs · 50+ PMs · 18 cities · 24/7) en tipografía limpia. Sin gradientes oscuros.
+
+### Spacing / ritmo general
+- Aumentar padding vertical entre secciones a `py-20 sm:py-28` consistente.
+- Quitar bordes dorados decorativos repetidos.
+- Bajar saturación del dorado en fondos (usar `#FFD700` solo para acentos, no para bloques grandes).
+- Quitar el segundo CTA flotante (`StickyMobileCTA` + `LiveStatsBar` + `ExitIntentPopup` + Sofia abierta = sobrecarga). Mantener **solo** `StickyMobileCTA` en mobile.
+
+### Tipografía
+- Mantener la display serif italic del tagline (es identidad).
+- H1 a `text-4xl sm:text-6xl` en negro `#1A1A1A` sólido (no blanco sobre foto).
+
+### Secciones Problem / Solution / Pillars
+- Pasar fondo a blanco/crema alternado en vez de gris oscuro.
+- Quitar el efecto de texto gigante semi-transparente del Problem ("Managing Your Property Shouldn't…" en gris claro casi invisible); subir contraste a `text-gray-900`.
+
+---
+
+## Archivos a tocar
 
 ```
-<h1>Property Maintenance Central Florida
-  <span>One Call. One Team. Done.</span></h1>
-<p>Painting, plumbing, electrical, HVAC, drywall, flooring, make-ready…</p>
+src/components/fiveserv/SofiaChat.tsx       Bug 1
+src/components/fiveserv/StickyBanner.tsx    Bug 2 + tap target
+src/components/fiveserv/LiveStatsBar.tsx    Bug 3 (esconder en mobile o bajar z)
+src/components/fiveserv/SocialProofTicker.tsx  Bug 3 (revisar duplicados)
+src/components/fiveserv/StickyHeader.tsx    Bug 5 (tap targets)
+src/App.tsx                                 Bug 6 (future flag)
+src/components/fiveserv/HeroSection.tsx     Rediseño hero
+src/components/fiveserv/HeroServicePicker.tsx  Rediseño tarjeta pill
+src/components/fiveserv/HeroStatStrip.tsx   Aclarar
+src/components/fiveserv/ProblemSection.tsx  Subir contraste
+src/components/fiveserv/SolutionSection.tsx Spacing
+src/index.css                               Tokens crema, ajuste dorado
+src/pages/Index.tsx                         Composición + remover ExitIntent
 ```
 
-**Fix:** delete lines 79–85. Keep the new pill + H1 + subhead at lines 58–77 untouched.
+## Lo que NO se cambia
+- Identidad: negro + dorado siguen siendo la marca (solo más aire y menos saturación).
+- Schema/SEO/llms.txt/index.html → intactos.
+- FAQs, copy del H1, slogan, footer → intactos.
+- Rutas y componentes de páginas internas → intactos.
 
-## Problem 3 — Picker card overlaps the hero/next-section boundary
+## Cómo verifico antes de cerrar
+Playwright a 390px → screenshots de hero, picker, problem, solution, footer. Confirmo:
+- Sofia NO se abre sola.
+- Banner top mide ≤ 40px.
+- Ningún ticker flotante tapa headings.
+- Hero H1 visible en primer viewport sin scroll.
+- Tap targets ≥ 44px.
+- Sin warnings de Router.
 
-Restructure the picker so it floats on the seam:
-
-- Remove the picker from inside the `grid lg:grid-cols-12` row in HeroSection. The hero content area becomes a single column (pill + H1 + subhead + CTAs only).
-- Render the picker as a **separate full-width container** placed *after* `<HeroSection />` in `Index.tsx`, wrapped in a `relative` element with `margin-top: -64px` (desktop) / `-48px` (mobile) and `z-10` so it pulls up into the hero's bottom edge. The container below it (the white AIOverview section) gets `padding-top` increased so the lower half of the card sits over the white background — half on dark hero, half on white section.
-- Card style per your spec: `background: rgba(26,26,26,0.97)`, `border: 1px solid rgba(255,215,0,0.3)`, `border-radius: 12px`, generous padding (`p-6 sm:p-8`), `box-shadow: 0 24px 60px rgba(0,0,0,0.35)`. Same 2×2 tile grid, same labels (Property Maintenance / Handyman / Renovations / Residential), "Choose Your Service" label and "View all services" link unchanged.
-- Implementation file: new tiny component `src/components/fiveserv/HeroServicePicker.tsx` (clean separation, ~50 lines). Index.tsx renders `<HeroSection /> <HeroServicePicker /> <section bg-white>…AIOverview…</section>`.
-
-## Problem 2 — Stat strip position
-
-Your two constraints:
-- must NOT appear immediately below the picker card
-- must be a full-width dark strip below the hero
-
-To satisfy both, move `<HeroStatStrip />` so it renders **inside the hero's bottom band** rather than as a separate section after the hero. Concretely:
-
-- Render `<HeroStatStrip />` **as the last element inside `<HeroSection />`** (after CTAs), full-width across the hero's container, on the same dark hero background, with the existing gold top/bottom borders. It becomes the visual base of the hero.
-- Remove `<HeroStatStrip />` from `Index.tsx` (no longer a separate section).
-- The picker card then overlaps the seam **between the stat strip and the white section below** — picker sits above the stat strip in the visual stack via `z-index` and negative top margin from the white section's top padding.
-
-Net result vertically: hero image + text + CTAs → stat strip at hero base (dark) → picker card floats half over the stat strip / half over the white section → white AIOverview section continues.
-
-If you prefer the picker to overlap the **top** of the hero/section seam instead (picker over hero image bottom + first slice of white section, stat strip moved entirely below the white section), say so and I'll flip the order.
-
-## Problem 4 — Duplicate audit
-
-Scanned `src/pages/Index.tsx` and `src/layouts/RootLayout.tsx`:
-
-| Section | Count | Action |
-| --- | --- | --- |
-| HeroSection | 1 | OK |
-| HeroStatStrip | 1 (will move per Problem 2) | OK |
-| AIOverviewBlock | 1 | OK |
-| TrustBar | 1 | OK |
-| ProblemSection | 1 | OK |
-| SolutionSection | 1 | OK |
-| ServicesGrid | 1 | OK |
-| VacancyCalculator | 1 | OK |
-| FivePillars | 1 | OK |
-| **LiveStatsBar** | 1 | ⚠ separate stats component; visually similar to HeroStatStrip (animated counters vs static values). Not a literal duplicate but redundant content. **Recommend removing `<LiveStatsBar />`** to avoid two stats rows on one page. Will do this if you say "remove LiveStatsBar". |
-| BeforeAfterSection | 1 | OK |
-| FamilyStory | 1 | OK |
-| TestimonialsSection | 1 | OK |
-| EmergencyBanner | 1 | OK |
-| CityGrid | 1 | OK |
-| VisibleQA | 1 | OK |
-| FaqAccordion | 1 | OK |
-| Footer (RootLayout) | 1 | OK |
-| Inside HeroSection: H1, subhead, pill, CTAs | **H1 + subhead duplicated** (Problem 1) | Fix |
-
-A comment summarizing this audit will be added at the top of `Index.tsx`.
-
-## Files touched
-
-- `src/components/fiveserv/HeroSection.tsx` — delete duplicate H1/subhead (lines 79–85); remove the inline picker card column; collapse the inner grid to a single column; append `<HeroStatStrip />` inside the hero.
-- `src/components/fiveserv/HeroServicePicker.tsx` — new file, dark floating card with the 2×2 tile grid.
-- `src/pages/Index.tsx` — remove `<HeroStatStrip />` from the page body, insert `<HeroServicePicker />` between `<HeroSection />` and the AIOverview section, increase the AIOverview section's top padding to leave room for the overlapping card; add the audit comment. Optionally remove `<LiveStatsBar />` (only if you approve).
-- No changes to: colors, fonts, schema, SEO tags, copy, icons, any other component.
-
-## Confirmations needed
-
-1. Picker overlap orientation: **picker overlaps stat strip ↔ white section seam** (as planned above), or **picker overlaps hero image ↔ stat strip seam**?
-2. Remove `<LiveStatsBar />` from the homepage to eliminate the two-stats-rows redundancy? Yes / No.
-
-Reply with answers (or "go with defaults") and I'll implement.
+¿Apruebo y procedo?

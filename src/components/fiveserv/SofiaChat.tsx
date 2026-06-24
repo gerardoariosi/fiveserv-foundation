@@ -442,14 +442,21 @@ const SofiaChat = () => {
     };
   }, [open, messages.length, lang]);
 
-  // Auto-open + notification badge — fires once per session
+  // Auto-open + notification badge — fires once per session.
+  // On mobile we NEVER auto-open (fullscreen widget would block the entire homepage);
+  // we only show the bubble + a soft notification badge after a short delay so the
+  // user can tap to open Sofia themselves.
   useEffect(() => {
     if (typeof window === "undefined") return;
-    const isMobile = window.matchMedia("(max-width: 639px)").matches;
+    const isMobile = window.matchMedia("(max-width: 767px)").matches;
     const badgeDelay = 3000;
-    const openDelay = isMobile ? 5000 : 4000;
+    const openDelay = 4000;
 
     const badgeTimer = window.setTimeout(() => setShowBadge(true), badgeDelay);
+
+    if (isMobile) {
+      return () => window.clearTimeout(badgeTimer);
+    }
 
     const openTimer = window.setTimeout(() => {
       const alreadyOpened = sessionStorage.getItem(SS_OPENED) === "true";

@@ -3,7 +3,8 @@ import StickyHeader from "@/components/fiveserv/StickyHeader";
 import StickyBanner from "@/components/fiveserv/StickyBanner";
 import SocialProofTicker from "@/components/fiveserv/SocialProofTicker";
 import Footer from "@/components/fiveserv/Footer";
-import ExitIntentPopup from "@/components/fiveserv/ExitIntentPopup";
+// ExitIntentPopup removed from layout — too many simultaneous attention-grabbers
+// (Sofia chat + sticky mobile CTA + banner + live ticker). Bring back per-page if needed.
 import SofiaChat from "@/components/fiveserv/SofiaChat";
 import ScrollProgress from "@/components/fiveserv/ScrollProgress";
 import StickyMobileCTA from "@/components/fiveserv/StickyMobileCTA";
@@ -52,7 +53,7 @@ export const RootLayout = () => {
         </PageTransition>
       </main>
       <Footer />
-      <ExitIntentPopup />
+      {/* ExitIntentPopup intentionally removed */}
       <SofiaChat />
       <StickyMobileCTA />
 
