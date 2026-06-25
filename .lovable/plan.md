@@ -1,73 +1,64 @@
-# Rediseño Global Estilo Stan's
 
-Aplicar el lenguaje visual ya validado en la homepage (crema `#FAF8F3`, gold suave, más aire, pills, fotos reales con card overlay) a **todas las páginas internas** mediante componentes compartidos reutilizables.
+## Part 1 — Dropdown redesign (StickyHeader.tsx)
 
-## Fase 1 — Componentes compartidos (foundation)
+Goal: make the Services / Cities dropdowns feel like Stan's — minimal, light, professional. Today they are dark panels with gold dividers and a nested fly-out, which reads heavy.
 
-Crear en `src/components/fiveserv/shared/`:
+Proposed direction (single panel, light, structured):
 
-1. **`PageHero.tsx`** — Hero universal: foto de fondo + card crema overlay con eyebrow, H1, subtítulo, 2 CTAs y mini-trust row. Props: `image`, `eyebrow`, `title`, `subtitle`, `primaryCTA`, `secondaryCTA`.
-2. **`TrustStrip.tsx`** — Strip crema con 4 stats configurables (default: 1,200+ jobs · 50+ PMs · 18 ciudades · 24/7). Props: `stats?`.
-3. **`RelatedServicesPills.tsx`** — Sección con 6 pills tipo HeroServicePicker para cross-link entre servicios. Auto-excluye el servicio actual.
-4. **`SectionWrapper.tsx`** — Wrapper con padding consistente (`py-20 sm:py-28`), alterna fondos `bg-white` / `bg-[#FAF8F3]`.
-5. **`PageCTA.tsx`** — CTA final dorado unificado: "One call. One team. One invoice." + botón.
+- Light white panel, 1px hairline border `#E5E7EB`, soft shadow `0 12px 32px rgba(0,0,0,0.08)`, 8px radius. No dark fill, no top gold stripe.
+- Replace nested fly-out with one wide mega-panel (~640px) split in 3 columns:
+  - Column 1 "Core Services" (5 links)
+  - Column 2 "Remodeling" (2 links)
+  - Column 3 "Trade Services" (8 links, two sub-columns)
+- Section labels: 11px, uppercase, tracking-wider, `text-gray-400`.
+- Links: 14px, `text-[#1A1A1A]`, hover → `text-brand-gold` (color change only, no full-row fill).
+- Bottom strip inside panel: thin gold accent line + right-aligned "View all services →" link to `/services` in gold.
+- Open animation: fade + 4px translate-y, 120ms. Small gold underline grows under the "Services" trigger on hover.
+- Cities dropdown gets the same light treatment (single column, "View All Cities →" footer).
 
-## Fase 2 — Páginas de servicio (10 páginas)
+Result: airier, editorial, closer to Stan's; keeps brand black + gold but uses them as accents instead of as the panel background.
 
-Aplicar el patrón a: Maintenance, Handyman, Bathroom Remodel, Kitchen Remodel, Painting, Flooring, Cleaning, Electrical, Plumbing, HVAC.
+(Mobile drawer stays as-is — already clean.)
 
-Estructura unificada por página:
+## Part 2 — ServicesIndexPage.tsx rebuild
+
+Replace the page body with three grouped sections matching the spec exactly. Only this file changes.
+
+Structure:
+
+1. Keep existing `<Seo>`, `<SchemaOrg>`, and intro hero section (title + AIOverviewBlock) — unchanged.
+2. Remove the current 2-col `SERVICES.map` grid and the "Our Specialties" section.
+3. Add three new sections:
+
 ```text
-<PageHero image={serviceImage} ... />
-<TrustStrip />
-<ServiceFeatures />        ← existente, ajustar a paleta crema
-<ProcessSteps />           ← existente, ajustar
-<RelatedServicesPills />
-<FAQ />                    ← existente
-<PageCTA />
+SECTION 1  bg #FAFAF8   H2 "Core Services"        5 cards (3-col grid, 2 wrap)
+SECTION 2  bg #1A1A1A   H2 "Remodeling"           2 cards centered (max-w 2xl)
+SECTION 3  bg #FAFAF8   H2 "Trade Services"       8 cards (4-col grid)
+SECTION 4  bg #1A1A1A   CTA banner "One Call. One Team. Done."
 ```
 
-## Fase 3 — Páginas de ciudades (18 ciudades)
+Card content/links/descriptions copied verbatim from the user spec.
 
-Refactor del template city → mismo patrón:
-```text
-<PageHero image={cityImage} title="Property Maintenance in {City}" />
-<TrustStrip />
-<ServicesInCity />
-<LocalTestimonials />
-<RelatedServicesPills />
-<PageCTA />
-```
+Card styling:
 
-Una sola edición del template afecta las 18 ciudades.
+- Light-section card: `bg-white`, `border-l-[3px] border-[#FFD700]`, `shadow-[0_4px_12px_rgba(0,0,0,0.06)]`, gold Lucide icon, bold service name (Playfair Display via existing `font-display`), gray description, gold "Learn More →" arrow link.
+- Dark-section card: `bg-white/5`, `border border-[rgba(255,215,0,0.2)]`, `rounded-lg`, white text, gold icon, gold "Learn More →" arrow.
 
-## Fase 4 — Páginas institucionales
+Icon mapping (Lucide, already imported pattern):
 
-- **About**: hero crema con foto del equipo, sección historia, valores en grid de 3 cards crema, trust strip, CTA.
-- **Contact**: hero compacto + form en card crema a la izquierda + info contacto a la derecha.
-- **Service Areas**: hero + grid de 18 cards de ciudades estilo pill grande.
+- Maintenance → Wrench, Handyman → Hammer, Renovations → Building2, Residential → Home, Make-Ready → Sparkles
+- Bathroom → Bath (new import), Kitchen → ChefHat (new import)
+- Painting → PaintBucket, Flooring → Layers, Plumbing → Droplets, Electrical → Zap, HVAC → Wind, Drywall → Square, Carpentry → Hammer, Cleaning → Sparkles
 
-## Fase 5 — Blog
+CTA banner:
+- `bg-[#1A1A1A]`, centered. H2 white Playfair "One Call. One Team. Done." Subtext gray-300 "Available 24/7 across 18 cities in Central Florida." Two buttons: gold `Get a Free Quote` → `/contact`, white outline `Call (407) 881-4942` → `tel:4078814942`.
 
-- **Listing**: grid de cards estilo magazine con foto + categoría pill + título serif.
-- **Article**: hero con foto cover + título grande, contenido con tipografía editorial (max-width prose).
+Implementation notes (technical):
 
-## Orden de ejecución
+- Local component inside the file (e.g. `<ServiceItem>`) with `variant: "light" | "dark"` so we don't touch shared `ServiceCard`.
+- Define three local arrays (`CORE`, `REMODELING`, `TRADES`) with `{ title, href, description, Icon }`.
+- Use semantic `<section>` per group, container, `grid gap-6 md:grid-cols-2 lg:grid-cols-3` (Section 1), `md:grid-cols-2` centered (Section 2), `sm:grid-cols-2 lg:grid-cols-4` (Section 3).
+- Keep all existing imports; add `Bath`, `ChefHat`, plus any missing icons from lucide-react.
+- No changes outside `src/pages/ServicesIndexPage.tsx` for Part 2. Part 1 only edits `src/components/fiveserv/StickyHeader.tsx`.
 
-Fase 1 → Fase 2 (una página primero para validar, luego batch) → Fase 3 → Fase 4 → Fase 5.
-
-Te muestro la primera página de servicio (Maintenance) al terminar Fase 1+2 inicial para que apruebes el patrón antes de propagarlo al resto.
-
-## Detalles técnicos
-
-- Tokens: usar las CSS variables existentes (`--cream`, `--gold`, etc.). Si faltan, agregarlas a `index.css`.
-- Sin tocar: SEO/Schema/llms.txt/index.html, lógica de negocio, rutas, formularios funcionales.
-- Mobile-first: cada componente compartido se prueba a 390px antes de pasar al siguiente.
-- Imágenes: reutilizar las existentes; si una página no tiene foto adecuada, marcar TODO en vez de generar nuevas (para no consumir créditos sin tu OK).
-
-## Fuera de alcance
-
-- Generación de imágenes nuevas (pregunto antes si una página lo necesita).
-- Cambios de copy / contenido (solo visual).
-- Cambios de rutas o estructura de navegación.
-- Cambios de Schema.org, SEO meta, llms.txt, index.html.
+Confirm to proceed and I'll implement both parts.
