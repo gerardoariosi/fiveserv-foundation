@@ -5,26 +5,29 @@ import { SITE } from "@/lib/site-config";
 import Logo from "@/components/fiveserv/Logo";
 
 const SERVICES_MAIN = [
-  { to: "/make-ready", label: "Make-Ready & Unit Turns" },
-  { to: "/maintenance", label: "Maintenance & Repairs" },
+  { to: "/maintenance", label: "Property Maintenance & Repairs" },
+  { to: "/handyman-orlando", label: "Handyman Services" },
   { to: "/renovations", label: "CapEx & Renovations" },
   { to: "/residential", label: "Residential Services" },
+  { to: "/make-ready", label: "Make-Ready & Unit Turns" },
 ];
 
 const SERVICES_REMODELING = [
   { to: "/bathroom-remodel", label: "Bathroom Remodel" },
+  { to: "/kitchen-remodel", label: "Kitchen Remodel" },
 ];
 
 const SERVICES_ESPECIALIDADES = [
   { to: "/painting", label: "Painting" },
+  { to: "/flooring", label: "Flooring" },
   { to: "/plumbing", label: "Plumbing" },
   { to: "/electrical", label: "Electrical" },
   { to: "/hvac", label: "HVAC" },
   { to: "/drywall", label: "Drywall" },
-  { to: "/flooring", label: "Flooring" },
   { to: "/carpentry", label: "Carpentry" },
   { to: "/cleaning", label: "Cleaning" },
 ];
+
 
 const CITIES_FEATURED = [
   { to: "/maintenance-orlando-fl", label: "Orlando" },
