@@ -183,7 +183,7 @@ export const StickyHeader = () => {
               {/* Especialidades nested */}
               <div className="relative group/esp">
                 <button className="w-full flex items-center justify-between px-6 py-[10px] text-[14px] text-white hover:bg-[#FFD700] hover:text-[#1A1A1A] transition-colors">
-                  <span>Especialidades</span>
+                  <span>Trade Services</span>
                   <ChevronRight size={14} />
                 </button>
                 <div className="absolute left-full top-0 w-[220px] invisible opacity-0 group-hover/esp:visible group-hover/esp:opacity-100 transition-all duration-150 bg-[#1A1A1A] border-t-2 border-brand-gold rounded-lg shadow-[0_8px_24px_rgba(0,0,0,0.15)] py-4 ml-1">
@@ -264,7 +264,7 @@ export const StickyHeader = () => {
                   </Link>
                 ))}
                 <div className="h-px bg-brand-gold/40 my-2" />
-                <span className="text-brand-gold text-xs uppercase tracking-wider py-1">Especialidades</span>
+                <span className="text-brand-gold text-xs uppercase tracking-wider py-1">Trade Services</span>
                 {SERVICES_ESPECIALIDADES.map((s) => (
                   <Link key={s.to} to={s.to} className="py-2 text-white/90 text-[14px] hover:text-brand-gold">
                     {s.label}
