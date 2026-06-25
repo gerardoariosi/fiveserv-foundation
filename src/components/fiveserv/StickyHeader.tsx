@@ -151,55 +151,65 @@ export const StickyHeader = () => {
             Home
           </NavLink>
 
-          {/* Services with dropdown */}
+          {/* Services mega-dropdown */}
           <div className="relative group h-full flex items-center">
-            <button className={`${navItemBase} text-[#1A1A1A] group-hover:text-brand-gold flex items-center gap-1`}>
+            <button className={`${navItemBase} text-[#1A1A1A] group-hover:text-brand-gold flex items-center gap-1 relative`}>
               Services <ChevronDown size={14} />
+              <span className="absolute -bottom-[14px] left-0 right-0 mx-auto h-[2px] w-0 group-hover:w-full bg-brand-gold transition-all duration-200" />
             </button>
-            <div className="absolute left-0 top-full w-[280px] invisible opacity-0 translate-y-1 group-hover:visible group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-150 bg-[#1A1A1A] border-t-2 border-brand-gold rounded-b-lg shadow-[0_8px_24px_rgba(0,0,0,0.15)] py-4 z-50">
-              {SERVICES_MAIN.map((s) => (
-                <Link
-                  key={s.to}
-                  to={s.to}
-                  className="block px-6 py-[10px] text-[14px] text-white hover:bg-[#FFD700] hover:text-[#1A1A1A] transition-colors"
-                >
-                  {s.label}
-                </Link>
-              ))}
-              <div className="h-px bg-brand-gold/60 my-2 mx-6" />
-              <p className="px-6 py-1 text-[11px] font-bold uppercase tracking-[0.15em] text-brand-gold/80">
-                Remodeling
-              </p>
-              {SERVICES_REMODELING.map((s) => (
-                <Link
-                  key={s.to}
-                  to={s.to}
-                  className="block px-6 py-[10px] text-[14px] text-white hover:bg-[#FFD700] hover:text-[#1A1A1A] transition-colors"
-                >
-                  {s.label}
-                </Link>
-              ))}
-              <div className="h-px bg-brand-gold/60 my-2 mx-6" />
-              {/* Especialidades nested */}
-              <div className="relative group/esp">
-                <button className="w-full flex items-center justify-between px-6 py-[10px] text-[14px] text-white hover:bg-[#FFD700] hover:text-[#1A1A1A] transition-colors">
-                  <span>Trade Services</span>
-                  <ChevronRight size={14} />
-                </button>
-                <div className="absolute left-full top-0 w-[220px] invisible opacity-0 group-hover/esp:visible group-hover/esp:opacity-100 transition-all duration-150 bg-[#1A1A1A] border-t-2 border-brand-gold rounded-lg shadow-[0_8px_24px_rgba(0,0,0,0.15)] py-4 ml-1">
-                  {SERVICES_ESPECIALIDADES.map((s) => (
-                    <Link
-                      key={s.to}
-                      to={s.to}
-                      className="block px-6 py-[10px] text-[14px] text-white hover:bg-[#FFD700] hover:text-[#1A1A1A] transition-colors"
-                    >
-                      {s.label}
-                    </Link>
-                  ))}
+            <div className="absolute left-1/2 -translate-x-1/2 top-full w-[720px] invisible opacity-0 translate-y-1 group-hover:visible group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-150 bg-white border border-[#E5E7EB] rounded-lg shadow-[0_12px_32px_rgba(0,0,0,0.08)] z-50 normal-case">
+              <div className="grid grid-cols-3 gap-6 p-6">
+                <div>
+                  <p className="px-2 pb-3 text-[11px] font-bold uppercase tracking-[0.15em] text-gray-400">Core Services</p>
+                  <div className="flex flex-col">
+                    {SERVICES_MAIN.map((s) => (
+                      <Link
+                        key={s.to}
+                        to={s.to}
+                        className="px-2 py-[7px] text-[14px] text-[#1A1A1A] hover:text-brand-gold transition-colors"
+                      >
+                        {s.label}
+                      </Link>
+                    ))}
+                  </div>
                 </div>
+                <div>
+                  <p className="px-2 pb-3 text-[11px] font-bold uppercase tracking-[0.15em] text-gray-400">Remodeling</p>
+                  <div className="flex flex-col">
+                    {SERVICES_REMODELING.map((s) => (
+                      <Link
+                        key={s.to}
+                        to={s.to}
+                        className="px-2 py-[7px] text-[14px] text-[#1A1A1A] hover:text-brand-gold transition-colors"
+                      >
+                        {s.label}
+                      </Link>
+                    ))}
+                  </div>
+                </div>
+                <div>
+                  <p className="px-2 pb-3 text-[11px] font-bold uppercase tracking-[0.15em] text-gray-400">Trade Services</p>
+                  <div className="grid grid-cols-2 gap-x-2">
+                    {SERVICES_ESPECIALIDADES.map((s) => (
+                      <Link
+                        key={s.to}
+                        to={s.to}
+                        className="px-2 py-[7px] text-[14px] text-[#1A1A1A] hover:text-brand-gold transition-colors"
+                      >
+                        {s.label}
+                      </Link>
+                    ))}
+                  </div>
+                </div>
+              </div>
+              <div className="border-t border-[#E5E7EB] px-6 py-3 flex justify-end">
+                <Link to="/services" className="text-[13px] font-bold text-brand-gold hover:underline inline-flex items-center gap-1">
+                  View all services <ChevronRight size={14} />
+                </Link>
               </div>
             </div>
           </div>
+
 
           <NavLink to="/for-property-managers" className={navLinkCls}>
             Partners
@@ -207,28 +217,31 @@ export const StickyHeader = () => {
 
           {/* Cities dropdown */}
           <div className="relative group h-full flex items-center">
-            <button className={`${navItemBase} text-[#1A1A1A] group-hover:text-brand-gold flex items-center gap-1`}>
+            <button className={`${navItemBase} text-[#1A1A1A] group-hover:text-brand-gold flex items-center gap-1 relative`}>
               Cities <ChevronDown size={14} />
+              <span className="absolute -bottom-[14px] left-0 right-0 mx-auto h-[2px] w-0 group-hover:w-full bg-brand-gold transition-all duration-200" />
             </button>
-            <div className="absolute left-0 top-full w-[240px] invisible opacity-0 translate-y-1 group-hover:visible group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-150 bg-[#1A1A1A] border-t-2 border-brand-gold rounded-b-lg shadow-[0_8px_24px_rgba(0,0,0,0.15)] py-4 z-50">
+            <div className="absolute left-1/2 -translate-x-1/2 top-full w-[240px] invisible opacity-0 translate-y-1 group-hover:visible group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-150 bg-white border border-[#E5E7EB] rounded-lg shadow-[0_12px_32px_rgba(0,0,0,0.08)] z-50 normal-case py-3">
               {CITIES_FEATURED.map((c) => (
                 <Link
                   key={c.to}
                   to={c.to}
-                  className="block px-6 py-[10px] text-[14px] text-white hover:bg-[#FFD700] hover:text-[#1A1A1A] transition-colors"
+                  className="block px-5 py-[8px] text-[14px] text-[#1A1A1A] hover:text-brand-gold transition-colors"
                 >
                   {c.label}
                 </Link>
               ))}
-              <div className="h-px bg-brand-gold/60 my-2 mx-6" />
-              <Link
-                to="/cities"
-                className="block px-6 py-[10px] text-[14px] text-brand-gold font-bold hover:bg-[#FFD700] hover:text-[#1A1A1A] transition-colors"
-              >
-                View All Cities →
-              </Link>
+              <div className="border-t border-[#E5E7EB] mt-2 pt-2">
+                <Link
+                  to="/cities"
+                  className="block px-5 py-[8px] text-[14px] font-bold text-brand-gold hover:underline"
+                >
+                  View All Cities →
+                </Link>
+              </div>
             </div>
           </div>
+
 
           <NavLink to="/about" className={navLinkCls}>About</NavLink>
           <NavLink to="/blog" className={navLinkCls}>Blog</NavLink>
