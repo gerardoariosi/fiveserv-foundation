@@ -157,7 +157,7 @@ export const StickyHeader = () => {
               Services <ChevronDown size={14} />
               <span className="absolute -bottom-[14px] left-0 right-0 mx-auto h-[2px] w-0 group-hover:w-full bg-brand-gold transition-all duration-200" />
             </button>
-            <div className="absolute left-1/2 -translate-x-1/2 top-full w-[720px] invisible opacity-0 translate-y-1 group-hover:visible group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-150 bg-white border border-[#E5E7EB] rounded-lg shadow-[0_12px_32px_rgba(0,0,0,0.08)] z-50 normal-case">
+            <div className="absolute left-0 top-full w-[720px] max-w-[calc(100vw-2rem)] invisible opacity-0 translate-y-1 group-hover:visible group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-150 bg-white border border-[#E5E7EB] rounded-lg shadow-[0_12px_32px_rgba(0,0,0,0.08)] z-50 normal-case">
               <div className="grid grid-cols-3 gap-6 p-6">
                 <div>
                   <p className="px-2 pb-3 text-[11px] font-bold uppercase tracking-[0.15em] text-gray-400">Core Services</p>
@@ -221,7 +221,7 @@ export const StickyHeader = () => {
               Cities <ChevronDown size={14} />
               <span className="absolute -bottom-[14px] left-0 right-0 mx-auto h-[2px] w-0 group-hover:w-full bg-brand-gold transition-all duration-200" />
             </button>
-            <div className="absolute left-1/2 -translate-x-1/2 top-full w-[240px] invisible opacity-0 translate-y-1 group-hover:visible group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-150 bg-white border border-[#E5E7EB] rounded-lg shadow-[0_12px_32px_rgba(0,0,0,0.08)] z-50 normal-case py-3">
+            <div className="absolute left-0 top-full w-[240px] invisible opacity-0 translate-y-1 group-hover:visible group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-150 bg-white border border-[#E5E7EB] rounded-lg shadow-[0_12px_32px_rgba(0,0,0,0.08)] z-50 normal-case py-3">
               {CITIES_FEATURED.map((c) => (
                 <Link
                   key={c.to}
