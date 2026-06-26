@@ -124,6 +124,8 @@ const router = createBrowserRouter(
       { path: "flooring", element: withSuspense(<FlooringPage />) },
       { path: "carpentry", element: withSuspense(<CarpentryPage />) },
       { path: "cleaning", element: withSuspense(<CleaningPage />) },
+      { path: "handyman-orlando", element: withSuspense(<HandymanPage />) },
+      { path: "kitchen-remodel", element: withSuspense(<KitchenRemodelPage />) },
 
       // Comparison pages
       { path: "fiveserv-vs-handyman-orlando", element: withSuspense(<FiveServVsHandymanPage />) },
