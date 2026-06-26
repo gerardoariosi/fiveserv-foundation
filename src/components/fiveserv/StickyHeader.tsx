@@ -54,14 +54,19 @@ export const StickyHeader = () => {
   const location = useLocation();
 
   useEffect(() => {
+    const headerEl = document.querySelector("header[data-sticky-header]") as HTMLElement | null;
     const updateHeight = () => {
+      const measured = headerEl?.offsetHeight;
       const isMobile = window.matchMedia("(max-width: 767px)").matches;
-      // Mobile only renders Level 2 (~70px). Desktop adds Level 3 nav (~50px).
-      const h = isMobile ? 70 : scrolled ? 120 : 160;
+      const fallback = isMobile ? 70 : 121;
+      const h = measured && measured > 0 ? measured : fallback;
       document.documentElement.style.setProperty("--header-h", `${h}px`);
     };
     updateHeight();
-    const onScroll = () => setScrolled(window.scrollY > 80);
+    const onScroll = () => {
+      setScrolled(window.scrollY > 80);
+      updateHeight();
+    };
     onScroll();
     window.addEventListener("scroll", onScroll, { passive: true });
     window.addEventListener("resize", updateHeight);
@@ -70,6 +75,7 @@ export const StickyHeader = () => {
       window.removeEventListener("resize", updateHeight);
     };
   }, [scrolled]);
+
 
   // Close mobile menu on route change
   useEffect(() => {
@@ -85,11 +91,13 @@ export const StickyHeader = () => {
 
   return (
     <header
+      data-sticky-header
       style={{ top: "var(--banner-h, 0px)" }}
       className={`fixed inset-x-0 z-40 transition-all duration-300 ${
         scrolled ? "shadow-[0_2px_12px_rgba(0,0,0,0.1)]" : ""
       }`}
     >
+
       {/* LEVEL 1 — Announcement bar removed (duplicate of StickyBanner above) */}
 
       {/* LEVEL 2 — Logo + CTA bar */}
