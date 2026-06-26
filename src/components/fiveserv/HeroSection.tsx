@@ -1,6 +1,8 @@
 import { ArrowRight, Phone, ShieldCheck } from "lucide-react";
 import { SITE } from "@/lib/site-config";
 import { useReveal } from "@/hooks/use-fiveserv";
+import orlandoSkylineAsset from "@/assets/orlando-skyline-hero.jpg.asset.json";
+
 
 const WhatsAppIcon = ({ className }: { className?: string }) => (
   <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" className={className}>
@@ -16,7 +18,7 @@ type HeroProps = {
   imageSrc?: string;
 };
 
-export const HeroSection = ({ imageSrc = "/images/orlando.webp" }: HeroProps) => {
+export const HeroSection = ({ imageSrc = orlandoSkylineAsset.url }: HeroProps) => {
   const ref = useReveal<HTMLDivElement>();
   const waHref = `https://wa.me/${SITE.phone.replace(/[^\d]/g, "")}`;
 
