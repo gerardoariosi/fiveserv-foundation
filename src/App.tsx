@@ -45,6 +45,8 @@ const PaintingPage = lazy(() => import("./pages/PaintingPage"));
 const FlooringPage = lazy(() => import("./pages/FlooringPage"));
 const CarpentryPage = lazy(() => import("./pages/CarpentryPage"));
 const CleaningPage = lazy(() => import("./pages/CleaningPage"));
+const HandymanPage = lazy(() => import("./pages/HandymanPage"));
+const KitchenRemodelPage = lazy(() => import("./pages/KitchenRemodelPage"));
 const FiveServVsHandymanPage = lazy(() => import("./pages/FiveServVsHandymanPage"));
 const MakeReadyVsDIYPage = lazy(() => import("./pages/MakeReadyVsDIYPage"));
 const ForPropertyManagersPage = lazy(() => import("./pages/ForPropertyManagersPage"));
