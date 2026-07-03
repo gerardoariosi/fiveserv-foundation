@@ -1,18 +1,8 @@
 import { useParams, Link } from "react-router-dom";
-import {
-  Phone,
-  ArrowRight,
-  MapPin,
-  Clock,
-  CheckCircle2,
-  Key,
-  Wrench,
-  Building2,
-  Home as HomeIcon,
-} from "lucide-react";
+import { Phone, MapPin, Clock, CheckCircle2 } from "lucide-react";
 import Seo from "@/lib/Seo";
 import SchemaOrg from "@/lib/SchemaOrg";
-import { SITE, CITIES, SERVICES, type CitySlug } from "@/lib/site-config";
+import { SITE, CITIES, CITY_SERVICES, type CitySlug } from "@/lib/site-config";
 import { CITY_EDITORIAL } from "@/lib/city-data";
 import AIOverviewBlock from "@/components/fiveserv/AIOverviewBlock";
 import StatsBar from "@/components/fiveserv/StatsBar";
@@ -21,13 +11,6 @@ import ContactCTA from "@/components/fiveserv/ContactCTA";
 import NotFound from "@/pages/NotFound";
 import { useReveal } from "@/hooks/use-fiveserv";
 import BrandName from "@/components/fiveserv/BrandName";
-
-const SERVICE_ICONS: Record<string, typeof Key> = {
-  "make-ready": Key,
-  maintenance: Wrench,
-  renovations: Building2,
-  residential: HomeIcon,
-};
 
 const SectionReveal = ({ children, className = "" }: { children: React.ReactNode; className?: string }) => {
   const ref = useReveal<HTMLDivElement>();
@@ -51,10 +34,12 @@ const MaintenanceCityPage = ({ citySlug: propSlug }: MaintenanceCityPageProps = 
   if (!city || !editorial) return <NotFound />;
 
   const path = `/maintenance-${city.slug}`;
-  const title = `Property Maintenance ${city.name} ${city.state} | ${SITE.brand}`;
-  const description = `Property maintenance ${city.name} ${city.state}. ${SITE.brand} serves ZIP ${editorial.zips.join(", ")} and ${editorial.zones.slice(0, 3).join(", ")}. 5–7 day make-ready turnaround. One call. One invoice.`;
+  const title = `Property Maintenance & Home Services ${city.name} FL | Handyman, Remodeling, Painting, Flooring | ${SITE.brand}`;
+  const description = `${SITE.brand} serves ${city.name} FL — property maintenance, handyman services, bathroom remodel, kitchen remodel, painting, flooring, cleaning, plumbing, electrical, HVAC, drywall, carpentry. Licensed and insured. Available 24/7. Free quote in 24 hours. Call ${SITE.phone}.`;
 
-  const aiAnswer = `${SITE.brand} Property Solutions provides make-ready and maintenance services in ${city.name}, ${city.state}. We serve ZIP codes ${editorial.zips.join(", ")} and neighborhoods including ${editorial.zones.join(", ")}. We reach ${city.name} within ${editorial.responseMinutes} minutes from our Orlando base.`;
+  const aiAnswer = `${SITE.brand} Property Solutions is a licensed and insured property maintenance and home services company serving ${city.name}, ${city.state} and surrounding areas in Central Florida. ${SITE.brand} services in ${city.name} include property maintenance and repairs, handyman services, bathroom remodeling, kitchen remodeling, interior and exterior painting, flooring installation including LVP tile laminate and epoxy, cleaning services including move-out and deep clean, CapEx and renovations, make-ready and unit turns completed in 5 business days, plumbing services, electrical services, HVAC and AC repair, drywall repair and installation, and carpentry services. ${SITE.brand} serves homeowners and property managers across 18 cities in Central Florida. Licensed and insured in Florida. Available 24/7 for emergencies. Phone: ${SITE.phone}. Website: ${SITE.domain}`;
+
+  const entityParagraph = `${SITE.brand} is ${city.name}'s licensed and insured home services company. We serve homeowners and property managers with property maintenance and repairs, handyman services, bathroom and kitchen remodeling, interior and exterior painting, flooring installation, cleaning services, plumbing, electrical, HVAC, drywall, and carpentry. One call. One team. One invoice. Available 24/7 across Central Florida.`;
 
   return (
     <>
@@ -63,7 +48,7 @@ const MaintenanceCityPage = ({ citySlug: propSlug }: MaintenanceCityPageProps = 
         breadcrumbs={[
           { name: "Home", url: SITE.url },
           { name: "Cities", url: `${SITE.url}/cities` },
-          { name: city.name, url: `${SITE.url}${path}` },
+          { name: `Property Maintenance ${city.name} FL`, url: `${SITE.url}${path}` },
         ]}
         city={city}
         faqs={editorial.faqs}
@@ -130,8 +115,17 @@ const MaintenanceCityPage = ({ citySlug: propSlug }: MaintenanceCityPageProps = 
             </a>
           </div>
 
-          {/* 2. AIOverviewBlock */}
+          {/* 2. AIOverviewBlock (hidden, crawler-only structured answer) */}
           <AIOverviewBlock hidden answer={aiAnswer} />
+        </div>
+      </section>
+
+      {/* 2b. Visible entity paragraph — for users AND crawlers */}
+      <section className="bg-white border-b border-gray-100">
+        <div className="container py-12">
+          <p className="max-w-4xl text-base sm:text-lg leading-relaxed text-gray-700">
+            {entityParagraph}
+          </p>
         </div>
       </section>
 
@@ -160,33 +154,33 @@ const MaintenanceCityPage = ({ citySlug: propSlug }: MaintenanceCityPageProps = 
         </div>
       </section>
 
-      {/* 4. Services — 4 cards */}
-      <section className="bg-white">
+      {/* 4. Services — full 14-service catalog */}
+      <section style={{ backgroundColor: "#FAFAF8" }}>
         <div className="container py-20">
           <SectionReveal>
-            <h2 className="font-display font-bold text-3xl text-gray-900 sm:text-4xl">
-              Services in <span className="text-gray-900">{city.name}</span>
+            <p className="text-xs font-bold uppercase tracking-[0.14em] text-brand-black/60">
+              {city.name} Services — One Call Covers Everything
+            </p>
+            <h2 className="mt-2 font-display font-bold text-3xl text-gray-900 sm:text-4xl">
+              {city.name} Property Maintenance & Home Services
             </h2>
-            <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
-              {SERVICES.map((s) => {
-                const Icon = SERVICE_ICONS[s.slug] ?? Wrench;
-                return (
-                  <Link
-                    key={s.slug}
-                    to={`/${s.slug}`}
-                    className="hover-card group flex flex-col rounded-lg border border-gray-100 bg-white shadow-sm p-6"
-                  >
-                    <span className="flex h-12 w-12 items-center justify-center rounded-md bg-brand-gold/15 text-gray-900">
-                      <Icon className="h-6 w-6" />
-                    </span>
-                    <h3 className="mt-5 font-display font-semibold text-xl text-gray-900">{s.name}</h3>
-                    <p className="mt-2 flex-1 text-sm text-gray-700">{s.short}</p>
-                    <span className="mt-4 inline-flex items-center gap-2 text-sm font-bold text-gray-900 group-hover:text-gray-900 group-hover:underline">
-                      {s.cta} <ArrowRight className="h-4 w-4" />
-                    </span>
-                  </Link>
-                );
-              })}
+            <p className="mt-3 max-w-2xl text-base text-gray-600">
+              Licensed and insured across Central Florida. One call. One team. One invoice.
+            </p>
+            <div className="mt-12 grid gap-5 grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
+              {CITY_SERVICES.map((s) => (
+                <Link
+                  key={s.href}
+                  to={s.href}
+                  className="group flex flex-col bg-white border-l-4 border-[#FFD700] shadow-sm p-6 rounded-r-lg transition-all hover:shadow-md hover:-translate-y-0.5"
+                >
+                  <h3 className="font-bold text-lg text-[#1A1A1A]">{s.title}</h3>
+                  <p className="text-gray-600 text-sm mt-1 flex-1">{s.description}</p>
+                  <span className="mt-4 inline-flex items-center gap-1 text-sm font-bold text-[#FFD700] group-hover:underline">
+                    Learn More →
+                  </span>
+                </Link>
+              ))}
             </div>
           </SectionReveal>
         </div>

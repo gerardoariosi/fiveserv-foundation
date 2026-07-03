@@ -82,6 +82,97 @@ export const SERVICES: {
   },
 ];
 
+/**
+ * CITY_SERVICES — full 14-service catalog rendered on every /maintenance-<city> page.
+ * Separate from SERVICES (which powers the 4 top-level service routes).
+ */
+export const CITY_SERVICES = [
+  {
+    title: "Property Maintenance & Repairs",
+    description: "Work orders, emergency repairs, preventive maintenance. Available 24/7.",
+    href: "/maintenance",
+    keywords: "property maintenance repairs",
+  },
+  {
+    title: "Handyman Services",
+    description: "Plumbing fixtures, drywall, painting, tile, carpentry, ceiling fans. Most jobs $150–$400.",
+    href: "/handyman-orlando",
+    keywords: "handyman services",
+  },
+  {
+    title: "Bathroom Remodel",
+    description: "Full bathroom renovations — tile, vanity, shower, plumbing fixtures. Licensed and insured.",
+    href: "/bathroom-remodel",
+    keywords: "bathroom remodel",
+  },
+  {
+    title: "Kitchen Remodel",
+    description: "Cabinets, countertops, backsplash, appliances, lighting. Full kitchen transformations.",
+    href: "/kitchen-remodel",
+    keywords: "kitchen remodel",
+  },
+  {
+    title: "Interior & Exterior Painting",
+    description: "Full prep, prime, paint. Clean lines, no mess, one invoice. Residential and commercial.",
+    href: "/painting",
+    keywords: "painting services",
+  },
+  {
+    title: "Flooring Installation",
+    description: "LVP, tile, laminate, carpet, epoxy. All types installed across Central Florida.",
+    href: "/flooring",
+    keywords: "flooring installation",
+  },
+  {
+    title: "Cleaning Services",
+    description: "Move-out, move-in, deep clean, post-construction. Inspection-ready every time.",
+    href: "/cleaning",
+    keywords: "cleaning services",
+  },
+  {
+    title: "CapEx & Renovations",
+    description: "Large-scale projects that increase property value and allow owners to charge higher rents.",
+    href: "/renovations",
+    keywords: "renovations capex",
+  },
+  {
+    title: "Make-Ready & Unit Turns",
+    description: "Full unit turnover guaranteed in 5 business days. One invoice.",
+    href: "/make-ready",
+    keywords: "make ready unit turns",
+  },
+  {
+    title: "Plumbing Services",
+    description: "Faucets, toilets, leaks, drains, water heaters. Licensed plumbers.",
+    href: "/plumbing",
+    keywords: "plumbing services",
+  },
+  {
+    title: "Electrical Services",
+    description: "Outlets, switches, ceiling fans, lighting. Licensed electricians.",
+    href: "/electrical",
+    keywords: "electrical services",
+  },
+  {
+    title: "HVAC & AC Repair",
+    description: "AC repair, filter replacement, duct cleaning, thermostat installation. 24/7.",
+    href: "/hvac",
+    keywords: "hvac ac repair",
+  },
+  {
+    title: "Drywall Repair",
+    description: "Patching, crack repair, water damage, texture matching, full installation.",
+    href: "/drywall",
+    keywords: "drywall repair",
+  },
+  {
+    title: "Carpentry Services",
+    description: "Baseboards, crown molding, doors, shelving, trim work, closet build-outs.",
+    href: "/carpentry",
+    keywords: "carpentry services",
+  },
+] as const;
+
 export type CitySlug =
   | "orlando-fl"
   | "kissimmee-fl"

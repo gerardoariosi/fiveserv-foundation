@@ -171,14 +171,22 @@ export const SchemaOrg = ({
     });
   }
 
-  // 5. LocalBusiness per city
+  // 5. LocalBusiness + HomeAndConstructionBusiness per city — expanded with hasOfferCatalog (14 services)
   if (city) {
+    const cityOffer = (name: string, description: string) => ({
+      "@type": "Offer",
+      itemOffered: { "@type": "Service", name, description },
+    });
     blocks.push({
       "@context": "https://schema.org",
-      "@type": "LocalBusiness",
-      name: `${SITE.brand} — ${city.name}, ${city.state}`,
-      url: `${SITE.url}/maintenance-${city.slug}`,
-      telephone: SITE.phone,
+      "@type": ["LocalBusiness", "HomeAndConstructionBusiness"],
+      "@id": `https://fiveserv.net/maintenance-${city.slug}`,
+      name: "FiveServ Property Solutions",
+      description: `Licensed and insured property maintenance and home services company in ${city.name}, FL serving homeowners and property managers across Central Florida.`,
+      url: `https://fiveserv.net/maintenance-${city.slug}`,
+      telephone: "+14078814942",
+      email: "info@fiveserv.net",
+      priceRange: "$$",
       address: {
         "@type": "PostalAddress",
         addressLocality: city.name,
@@ -186,8 +194,44 @@ export const SchemaOrg = ({
         postalCode: city.zips[0],
         addressCountry: "US",
       },
-      areaServed: { "@type": "City", name: `${city.name}, ${city.state}` },
+      openingHoursSpecification: {
+        "@type": "OpeningHoursSpecification",
+        dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
+        opens: "00:00",
+        closes: "23:59",
+      },
+      areaServed: {
+        "@type": "City",
+        name: city.name,
+        containedInPlace: { "@type": "State", name: "Florida" },
+      },
       additionalProperty: city.zips.map((z) => ({ "@type": "PropertyValue", name: "zipCode", value: z })),
+      hasOfferCatalog: {
+        "@type": "OfferCatalog",
+        name: `Home Services in ${city.name} FL`,
+        itemListElement: [
+          cityOffer("Property Maintenance and Repairs", `Licensed property maintenance and repair services in ${city.name} FL. Work orders, emergency repairs, preventive maintenance. Available 24/7.`),
+          cityOffer("Handyman Services", `Professional handyman services in ${city.name} FL. Plumbing fixtures, drywall, painting, tile, carpentry, ceiling fans. Most jobs $150-$400.`),
+          cityOffer("Bathroom Remodel", `Full bathroom remodeling in ${city.name} FL. Tile, vanity, shower, plumbing fixtures. Licensed and insured.`),
+          cityOffer("Kitchen Remodel", `Kitchen remodeling in ${city.name} FL. Cabinets, countertops, backsplash, appliances, lighting.`),
+          cityOffer("Interior and Exterior Painting", `Professional painting services in ${city.name} FL. Interior, exterior, cabinets, trim. Licensed and insured.`),
+          cityOffer("Flooring Installation", `Flooring installation in ${city.name} FL. LVP, tile, laminate, carpet, epoxy. All types.`),
+          cityOffer("Cleaning Services", `Professional cleaning services in ${city.name} FL. Move-out, move-in, deep clean, post-construction.`),
+          cityOffer("Plumbing Services", `Licensed plumbing services in ${city.name} FL. Faucets, toilets, leaks, drains, water heaters.`),
+          cityOffer("Electrical Services", `Licensed electrical services in ${city.name} FL. Outlets, switches, ceiling fans, lighting installation.`),
+          cityOffer("HVAC and AC Repair", `HVAC and AC repair services in ${city.name} FL. AC repair, maintenance, thermostat installation. Available 24/7.`),
+          cityOffer("Drywall Repair and Installation", `Drywall repair and installation in ${city.name} FL. Patching, crack repair, water damage, texture matching.`),
+          cityOffer("Carpentry Services", `Professional carpentry in ${city.name} FL. Baseboards, crown molding, doors, shelving, trim work.`),
+          cityOffer("Make-Ready and Unit Turns", `Make-ready and unit turn services in ${city.name} FL. Full unit turnover guaranteed in 5 business days.`),
+          cityOffer("CapEx and Renovations", `CapEx and renovation projects in ${city.name} FL. Large-scale property improvements that increase value.`),
+        ],
+      },
+      sameAs: [
+        "https://www.instagram.com/fiveservps/",
+        "https://www.facebook.com/FiveServ",
+        "https://www.linkedin.com/company/fiveserv-property-solutions/",
+        "https://www.yelp.com/biz/fiveserv-property-solutions-orlando",
+      ],
     });
   }
 
