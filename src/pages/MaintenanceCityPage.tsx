@@ -132,8 +132,17 @@ const MaintenanceCityPage = ({ citySlug: propSlug }: MaintenanceCityPageProps = 
             </a>
           </div>
 
-          {/* 2. AIOverviewBlock */}
+          {/* 2. AIOverviewBlock (hidden, crawler-only structured answer) */}
           <AIOverviewBlock hidden answer={aiAnswer} />
+        </div>
+      </section>
+
+      {/* 2b. Visible entity paragraph — for users AND crawlers */}
+      <section className="bg-white border-b border-gray-100">
+        <div className="container py-12">
+          <p className="max-w-4xl text-base sm:text-lg leading-relaxed text-gray-700">
+            {entityParagraph}
+          </p>
         </div>
       </section>
 
@@ -162,33 +171,33 @@ const MaintenanceCityPage = ({ citySlug: propSlug }: MaintenanceCityPageProps = 
         </div>
       </section>
 
-      {/* 4. Services — 4 cards */}
-      <section className="bg-white">
+      {/* 4. Services — full 14-service catalog */}
+      <section style={{ backgroundColor: "#FAFAF8" }}>
         <div className="container py-20">
           <SectionReveal>
-            <h2 className="font-display font-bold text-3xl text-gray-900 sm:text-4xl">
-              Services in <span className="text-gray-900">{city.name}</span>
+            <p className="text-xs font-bold uppercase tracking-[0.14em] text-brand-black/60">
+              {city.name} Services — One Call Covers Everything
+            </p>
+            <h2 className="mt-2 font-display font-bold text-3xl text-gray-900 sm:text-4xl">
+              {city.name} Property Maintenance & Home Services
             </h2>
-            <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
-              {SERVICES.map((s) => {
-                const Icon = SERVICE_ICONS[s.slug] ?? Wrench;
-                return (
-                  <Link
-                    key={s.slug}
-                    to={`/${s.slug}`}
-                    className="hover-card group flex flex-col rounded-lg border border-gray-100 bg-white shadow-sm p-6"
-                  >
-                    <span className="flex h-12 w-12 items-center justify-center rounded-md bg-brand-gold/15 text-gray-900">
-                      <Icon className="h-6 w-6" />
-                    </span>
-                    <h3 className="mt-5 font-display font-semibold text-xl text-gray-900">{s.name}</h3>
-                    <p className="mt-2 flex-1 text-sm text-gray-700">{s.short}</p>
-                    <span className="mt-4 inline-flex items-center gap-2 text-sm font-bold text-gray-900 group-hover:text-gray-900 group-hover:underline">
-                      {s.cta} <ArrowRight className="h-4 w-4" />
-                    </span>
-                  </Link>
-                );
-              })}
+            <p className="mt-3 max-w-2xl text-base text-gray-600">
+              Licensed and insured across Central Florida. One call. One team. One invoice.
+            </p>
+            <div className="mt-12 grid gap-5 grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
+              {CITY_SERVICES.map((s) => (
+                <Link
+                  key={s.href}
+                  to={s.href}
+                  className="group flex flex-col bg-white border-l-4 border-[#FFD700] shadow-sm p-6 rounded-r-lg transition-all hover:shadow-md hover:-translate-y-0.5"
+                >
+                  <h3 className="font-bold text-lg text-[#1A1A1A]">{s.title}</h3>
+                  <p className="text-gray-600 text-sm mt-1 flex-1">{s.description}</p>
+                  <span className="mt-4 inline-flex items-center gap-1 text-sm font-bold text-[#FFD700] group-hover:underline">
+                    Learn More →
+                  </span>
+                </Link>
+              ))}
             </div>
           </SectionReveal>
         </div>
