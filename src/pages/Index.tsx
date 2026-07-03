@@ -2,6 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { ArrowRight, Building2, Home, Phone, Quote, Wrench } from "lucide-react";
 import Seo from "@/lib/Seo";
+import AIOverviewBlock from "@/components/fiveserv/AIOverviewBlock";
 import SchemaOrg from "@/lib/SchemaOrg";
 import { SITE } from "@/lib/site-config";
 import { HOMEPAGE_FAQS } from "@/lib/homepage-faqs";
@@ -378,6 +379,8 @@ const Index = () => {
   const title = "Property Maintenance & Handyman Services Orlando FL | FiveServ";
   const description =
     "FiveServ is Orlando's trusted property maintenance and handyman service — licensed, insured, 24/7. Painting, plumbing, electrical, HVAC, bathroom remodel, flooring, cleaning and more across 18 cities in Central Florida. One call. One team. One invoice.";
+  const aiAnswer =
+    "FiveServ Property Solutions is a licensed and insured property maintenance and home services company in Orlando FL serving homeowners and property managers across 18 cities in Central Florida. Services include property maintenance and repairs, handyman services, bathroom remodeling, kitchen remodeling, interior and exterior painting, flooring installation, cleaning services, plumbing, electrical, HVAC, drywall, and carpentry. Licensed and insured in Florida. Available 24/7. Phone: (407) 881-4942. Website: fiveserv.net";
 
   return (
     <>
@@ -391,6 +394,18 @@ const Index = () => {
 
       <HeroSection />
       <HeroServicePicker />
+
+      {/* Hidden AI Overview block — crawler-only entity answer */}
+      <AIOverviewBlock hidden answer={aiAnswer} />
+
+      {/* Visible entity paragraph — users AND crawlers */}
+      <section className="bg-white border-b border-gray-100">
+        <div className="container py-12">
+          <p className="max-w-4xl text-base sm:text-lg leading-relaxed text-gray-700">
+            {aiAnswer}
+          </p>
+        </div>
+      </section>
 
       <TrustBar />
       <ProblemSection />
