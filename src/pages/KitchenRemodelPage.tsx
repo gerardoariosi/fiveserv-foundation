@@ -20,6 +20,7 @@ import {
   type LucideIcon,
 } from "lucide-react";
 import Seo from "@/lib/Seo";
+import AIOverviewBlock from "@/components/fiveserv/AIOverviewBlock";
 import FaqAccordion from "@/components/fiveserv/FaqAccordion";
 import { useReveal } from "@/hooks/use-fiveserv";
 
@@ -289,6 +290,9 @@ const KitchenRemodelPage = () => {
       ].map((n) => ({ "@type": "Offer", itemOffered: { "@type": "Service", name: n } })),
     },
   };
+
+  const aiAnswer =
+    "FiveServ Property Solutions provides licensed and insured kitchen remodeling services in Orlando FL and across 18 cities in Central Florida. Kitchen remodel services include cabinet installation, quartz and granite countertop installation, backsplash tile installation, sink and faucet replacement, appliance installation, kitchen lighting, and flooring. Minor refreshes from $5,000. Mid-range from $15,000. Free quote in 24-48 hours. Phone: (407) 881-4942.";
 
   return (
     <>
