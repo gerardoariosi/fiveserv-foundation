@@ -385,6 +385,15 @@ const KitchenRemodelPage = () => {
         </div>
       </section>
 
+      {/* Visible entity paragraph — users AND crawlers */}
+      <section className="bg-white border-b border-gray-100">
+        <div className="container py-12">
+          <p className="max-w-4xl text-base sm:text-lg leading-relaxed text-gray-700">
+            {aiAnswer}
+          </p>
+        </div>
+      </section>
+
       {/* SECTION 2 — QUICK ANSWER */}
       <section style={{ background: "#FFFFFF" }}>
         <div className="container py-20 lg:py-[80px]">
