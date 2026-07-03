@@ -46,7 +46,7 @@ export const SchemaOrg = ({
   if (organization) {
     blocks.push({
       "@context": "https://schema.org",
-      "@type": ["Organization", "LocalBusiness"],
+      "@type": ["Organization", "LocalBusiness", "ProfessionalService", "HomeAndConstructionBusiness"],
       "@id": `${SITE.url}/#organization`,
       name: SITE.name,
       legalName: SITE.legal,
@@ -129,6 +129,70 @@ export const SchemaOrg = ({
         "Orlando Property Maintenance",
       ],
       hasMap: "https://maps.google.com/?cid=fiveserv-property-solutions",
+      contactPoint: [
+        {
+          "@type": "ContactPoint",
+          telephone: "+14078814942",
+          contactType: "customer service",
+          availLanguage: ["English", "Spanish"],
+          hoursAvailable: {
+            "@type": "OpeningHoursSpecification",
+            dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
+            opens: "00:00",
+            closes: "23:59",
+          },
+          contactOption: "TollFree",
+          areaServed: "US",
+        },
+        {
+          "@type": "ContactPoint",
+          telephone: "+14078814942",
+          contactType: "emergency",
+          availLanguage: ["English", "Spanish"],
+          hoursAvailable: {
+            "@type": "OpeningHoursSpecification",
+            dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
+            opens: "00:00",
+            closes: "23:59",
+          },
+        },
+      ],
+      hasCredential: [
+        {
+          "@type": "EducationalOccupationalCredential",
+          credentialCategory: "License",
+          name: "Licensed Contractor Florida",
+          recognizedBy: {
+            "@type": "GovernmentOrganization",
+            name: "State of Florida",
+          },
+        },
+        {
+          "@type": "EducationalOccupationalCredential",
+          credentialCategory: "Insurance",
+          name: "General Liability Insurance",
+          description: "Fully insured in the State of Florida",
+        },
+      ],
+    });
+
+    // 1b. WebSite + SearchAction — homepage only
+    blocks.push({
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "@id": `${SITE.url}/#website`,
+      url: SITE.url,
+      name: SITE.name,
+      description: "Licensed property maintenance and home services in Orlando FL and Central Florida",
+      publisher: { "@id": `${SITE.url}/#organization` },
+      potentialAction: {
+        "@type": "SearchAction",
+        target: {
+          "@type": "EntryPoint",
+          urlTemplate: `${SITE.url}/?s={search_term_string}`,
+        },
+        "query-input": "required name=search_term_string",
+      },
     });
   }
 
