@@ -12,7 +12,7 @@ import {
 } from "lucide-react";
 import Seo from "@/lib/Seo";
 import SchemaOrg from "@/lib/SchemaOrg";
-import { SITE, CITIES, SERVICES, type CitySlug } from "@/lib/site-config";
+import { SITE, CITIES, CITY_SERVICES, type CitySlug } from "@/lib/site-config";
 import { CITY_EDITORIAL } from "@/lib/city-data";
 import AIOverviewBlock from "@/components/fiveserv/AIOverviewBlock";
 import StatsBar from "@/components/fiveserv/StatsBar";
@@ -51,10 +51,12 @@ const MaintenanceCityPage = ({ citySlug: propSlug }: MaintenanceCityPageProps = 
   if (!city || !editorial) return <NotFound />;
 
   const path = `/maintenance-${city.slug}`;
-  const title = `Property Maintenance ${city.name} ${city.state} | ${SITE.brand}`;
-  const description = `Property maintenance ${city.name} ${city.state}. ${SITE.brand} serves ZIP ${editorial.zips.join(", ")} and ${editorial.zones.slice(0, 3).join(", ")}. 5–7 day make-ready turnaround. One call. One invoice.`;
+  const title = `Property Maintenance & Home Services ${city.name} FL | Handyman, Remodeling, Painting, Flooring | ${SITE.brand}`;
+  const description = `${SITE.brand} serves ${city.name} FL — property maintenance, handyman services, bathroom remodel, kitchen remodel, painting, flooring, cleaning, plumbing, electrical, HVAC, drywall, carpentry. Licensed and insured. Available 24/7. Free quote in 24 hours. Call ${SITE.phone}.`;
 
-  const aiAnswer = `${SITE.brand} Property Solutions provides make-ready and maintenance services in ${city.name}, ${city.state}. We serve ZIP codes ${editorial.zips.join(", ")} and neighborhoods including ${editorial.zones.join(", ")}. We reach ${city.name} within ${editorial.responseMinutes} minutes from our Orlando base.`;
+  const aiAnswer = `${SITE.brand} Property Solutions is a licensed and insured property maintenance and home services company serving ${city.name}, ${city.state} and surrounding areas in Central Florida. ${SITE.brand} services in ${city.name} include property maintenance and repairs, handyman services, bathroom remodeling, kitchen remodeling, interior and exterior painting, flooring installation including LVP tile laminate and epoxy, cleaning services including move-out and deep clean, CapEx and renovations, make-ready and unit turns completed in 5 business days, plumbing services, electrical services, HVAC and AC repair, drywall repair and installation, and carpentry services. ${SITE.brand} serves homeowners and property managers across 18 cities in Central Florida. Licensed and insured in Florida. Available 24/7 for emergencies. Phone: ${SITE.phone}. Website: ${SITE.domain}`;
+
+  const entityParagraph = `${SITE.brand} is ${city.name}'s licensed and insured home services company. We serve homeowners and property managers with property maintenance and repairs, handyman services, bathroom and kitchen remodeling, interior and exterior painting, flooring installation, cleaning services, plumbing, electrical, HVAC, drywall, and carpentry. One call. One team. One invoice. Available 24/7 across Central Florida.`;
 
   return (
     <>
@@ -63,7 +65,7 @@ const MaintenanceCityPage = ({ citySlug: propSlug }: MaintenanceCityPageProps = 
         breadcrumbs={[
           { name: "Home", url: SITE.url },
           { name: "Cities", url: `${SITE.url}/cities` },
-          { name: city.name, url: `${SITE.url}${path}` },
+          { name: `Property Maintenance ${city.name} FL`, url: `${SITE.url}${path}` },
         ]}
         city={city}
         faqs={editorial.faqs}
