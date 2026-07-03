@@ -46,7 +46,7 @@ export const SchemaOrg = ({
   if (organization) {
     blocks.push({
       "@context": "https://schema.org",
-      "@type": ["Organization", "LocalBusiness"],
+      "@type": ["Organization", "LocalBusiness", "ProfessionalService", "HomeAndConstructionBusiness"],
       "@id": `${SITE.url}/#organization`,
       name: SITE.name,
       legalName: SITE.legal,
