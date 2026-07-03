@@ -1,15 +1,5 @@
 import { useParams, Link } from "react-router-dom";
-import {
-  Phone,
-  ArrowRight,
-  MapPin,
-  Clock,
-  CheckCircle2,
-  Key,
-  Wrench,
-  Building2,
-  Home as HomeIcon,
-} from "lucide-react";
+import { Phone, MapPin, Clock, CheckCircle2 } from "lucide-react";
 import Seo from "@/lib/Seo";
 import SchemaOrg from "@/lib/SchemaOrg";
 import { SITE, CITIES, CITY_SERVICES, type CitySlug } from "@/lib/site-config";
@@ -21,13 +11,6 @@ import ContactCTA from "@/components/fiveserv/ContactCTA";
 import NotFound from "@/pages/NotFound";
 import { useReveal } from "@/hooks/use-fiveserv";
 import BrandName from "@/components/fiveserv/BrandName";
-
-const SERVICE_ICONS: Record<string, typeof Key> = {
-  "make-ready": Key,
-  maintenance: Wrench,
-  renovations: Building2,
-  residential: HomeIcon,
-};
 
 const SectionReveal = ({ children, className = "" }: { children: React.ReactNode; className?: string }) => {
   const ref = useReveal<HTMLDivElement>();
