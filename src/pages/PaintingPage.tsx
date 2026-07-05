@@ -4,7 +4,7 @@ import {
   PaintBucket,
   Home,
   Layers,
-  ChefHat,
+  
   DoorOpen,
   Brush,
   Building2,
