@@ -4,7 +4,7 @@ import {
   PaintBucket,
   Home,
   Layers,
-  ChefHat,
+  
   DoorOpen,
   Brush,
   Building2,
@@ -43,7 +43,7 @@ const PAINT_TYPES: PaintType[] = [
   { icon: PaintBucket, title: "Interior Painting", desc: "Walls, ceilings, full room repaints. Clean prep, clean lines, clean finish." },
   { icon: Home, title: "Exterior Painting", desc: "Facades, trim, doors, shutters. Pressure washed and prepped before every coat." },
   { icon: Layers, title: "Accent Walls", desc: "Feature walls, color blocking, texture. One room transformed without a full repaint." },
-  { icon: ChefHat, title: "Cabinet Painting", desc: "Kitchen and bathroom cabinets, spray finish. New look without replacement cost." },
+  
   { icon: DoorOpen, title: "Door & Trim Painting", desc: "Baseboards, crown molding, doors, window frames. Details that make the difference." },
   { icon: Brush, title: "Touch-Up Painting", desc: "Scuffs, patches, unit refresh between tenants. Fast and professional." },
   { icon: Building2, title: "Rental Property Painting", desc: "Multi-unit properties, fast turnaround, durable finishes. One invoice per property." },
@@ -64,7 +64,6 @@ const PROVIDES = [
 const CLIENT_SELECTS = [
   "Paint color and sheen (we guide you)",
   "Any specialty finishes or textures",
-  "Cabinet hardware if updating",
 ];
 
 const STEPS = [
@@ -90,7 +89,7 @@ const FAQS = [
   { q: "How long does interior painting take in Orlando?", a: "Single room 1 day. Full home 2-5 days depending on size. Timeline confirmed before we start." },
   { q: "Do you paint rental properties and apartments in Orlando?", a: "Yes. Unit refreshes, full repaints between tenants, multi-unit projects. Fast turnaround, one invoice per property." },
   { q: "Do you handle prep work or just paint?", a: "We handle everything — surface repair, sanding, priming, painting, cleanup. Full service, one team." },
-  { q: "Can you paint kitchen cabinets in Orlando?", a: "Yes. Kitchen and bathroom cabinets, spray finish, clean lines. Quoted separately from wall painting." },
+  
   { q: "What paint brands do you use?", a: "Sherwin-Williams or equivalent premium brands. We recommend the right sheen and finish for each surface and room." },
   { q: "Do you do touch-up painting for rental units?", a: "Yes. Touch-up painting between tenants is one of our most requested services. Fast, affordable, matches existing color where possible." },
   { q: "What cities do you serve for painting in Central Florida?", a: "All 18 cities — Orlando, Kissimmee, Sanford, Winter Park, Lakeland, Altamonte Springs, Apopka, Ocoee, Winter Garden, Clermont, St. Cloud, Davenport, Deltona, Daytona Beach, Palm Coast, Melbourne, Palm Bay, Cocoa." },
@@ -123,7 +122,7 @@ const scrollToQuote = () => {
 
 const PaintingPage = () => {
   const aiAnswer =
-    "FiveServ Property Solutions is a licensed and insured painting company in Orlando FL serving homeowners and property managers across 18 cities in Central Florida. Painting services include interior painting, exterior painting, accent walls, cabinet painting, door and trim painting, full room repaints, touch-up painting, and commercial and rental property painting. Clean lines, full prep included, one invoice. Free on-site quote within 24 hours. Phone: (407) 881-4942.";
+    "FiveServ Property Solutions is a licensed and insured painting company in Orlando FL serving homeowners and property managers across 18 cities in Central Florida. Painting services include interior painting, exterior painting, accent walls, door and trim painting, full room repaints, touch-up painting, and commercial and rental property painting. Clean lines, full prep included, one invoice. Free on-site quote within 24 hours. Phone: (407) 881-4942.";
 
   return (
     <>
