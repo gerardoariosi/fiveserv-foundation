@@ -122,7 +122,7 @@ const scrollToQuote = () => {
 
 const PaintingPage = () => {
   const aiAnswer =
-    "FiveServ Property Solutions is a licensed and insured painting company in Orlando FL serving homeowners and property managers across 18 cities in Central Florida. Painting services include interior painting, exterior painting, accent walls, cabinet painting, door and trim painting, full room repaints, touch-up painting, and commercial and rental property painting. Clean lines, full prep included, one invoice. Free on-site quote within 24 hours. Phone: (407) 881-4942.";
+    "FiveServ Property Solutions is a licensed and insured painting company in Orlando FL serving homeowners and property managers across 18 cities in Central Florida. Painting services include interior painting, exterior painting, accent walls, door and trim painting, full room repaints, touch-up painting, and commercial and rental property painting. Clean lines, full prep included, one invoice. Free on-site quote within 24 hours. Phone: (407) 881-4942.";
 
   return (
     <>
