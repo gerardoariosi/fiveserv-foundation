@@ -349,7 +349,7 @@ export const SchemaOrg = ({
       "@type": "AggregateRating",
       itemReviewed: { "@type": "Organization", name: SITE.legal },
       ratingValue: "5.0",
-      reviewCount: "4",
+      reviewCount: "5",
       bestRating: "5",
       worstRating: "1",
       sameAs: "https://g.page/r/fiveserv-property-solutions",
