@@ -43,7 +43,7 @@ const PAINT_TYPES: PaintType[] = [
   { icon: PaintBucket, title: "Interior Painting", desc: "Walls, ceilings, full room repaints. Clean prep, clean lines, clean finish." },
   { icon: Home, title: "Exterior Painting", desc: "Facades, trim, doors, shutters. Pressure washed and prepped before every coat." },
   { icon: Layers, title: "Accent Walls", desc: "Feature walls, color blocking, texture. One room transformed without a full repaint." },
-  { icon: ChefHat, title: "Cabinet Painting", desc: "Kitchen and bathroom cabinets, spray finish. New look without replacement cost." },
+  
   { icon: DoorOpen, title: "Door & Trim Painting", desc: "Baseboards, crown molding, doors, window frames. Details that make the difference." },
   { icon: Brush, title: "Touch-Up Painting", desc: "Scuffs, patches, unit refresh between tenants. Fast and professional." },
   { icon: Building2, title: "Rental Property Painting", desc: "Multi-unit properties, fast turnaround, durable finishes. One invoice per property." },
