@@ -89,7 +89,7 @@ const FAQS = [
   { q: "How long does interior painting take in Orlando?", a: "Single room 1 day. Full home 2-5 days depending on size. Timeline confirmed before we start." },
   { q: "Do you paint rental properties and apartments in Orlando?", a: "Yes. Unit refreshes, full repaints between tenants, multi-unit projects. Fast turnaround, one invoice per property." },
   { q: "Do you handle prep work or just paint?", a: "We handle everything — surface repair, sanding, priming, painting, cleanup. Full service, one team." },
-  { q: "Can you paint kitchen cabinets in Orlando?", a: "Yes. Kitchen and bathroom cabinets, spray finish, clean lines. Quoted separately from wall painting." },
+  
   { q: "What paint brands do you use?", a: "Sherwin-Williams or equivalent premium brands. We recommend the right sheen and finish for each surface and room." },
   { q: "Do you do touch-up painting for rental units?", a: "Yes. Touch-up painting between tenants is one of our most requested services. Fast, affordable, matches existing color where possible." },
   { q: "What cities do you serve for painting in Central Florida?", a: "All 18 cities — Orlando, Kissimmee, Sanford, Winter Park, Lakeland, Altamonte Springs, Apopka, Ocoee, Winter Garden, Clermont, St. Cloud, Davenport, Deltona, Daytona Beach, Palm Coast, Melbourne, Palm Bay, Cocoa." },
