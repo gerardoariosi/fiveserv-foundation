@@ -64,7 +64,6 @@ const PROVIDES = [
 const CLIENT_SELECTS = [
   "Paint color and sheen (we guide you)",
   "Any specialty finishes or textures",
-  "Cabinet hardware if updating",
 ];
 
 const STEPS = [
