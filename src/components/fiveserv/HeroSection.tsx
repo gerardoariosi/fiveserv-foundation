@@ -1,8 +1,8 @@
-import { ArrowRight, Phone, ShieldCheck } from "lucide-react";
+import { Phone, ShieldCheck } from "lucide-react";
 import { SITE } from "@/lib/site-config";
-import { useReveal } from "@/hooks/use-fiveserv";
+import { useScrollReveal, revealStyle } from "@/hooks/useScrollReveal";
+import CTAButton from "./shared/CTAButton";
 import orlandoSkylineAsset from "@/assets/orlando-hero-hd.jpg.asset.json";
-
 
 const WhatsAppIcon = ({ className }: { className?: string }) => (
   <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" className={className}>
@@ -14,12 +14,10 @@ const scrollToForm = () => {
   document.getElementById("contact-form")?.scrollIntoView({ behavior: "smooth", block: "start" });
 };
 
-type HeroProps = {
-  imageSrc?: string;
-};
+type HeroProps = { imageSrc?: string };
 
 export const HeroSection = ({ imageSrc = orlandoSkylineAsset.url }: HeroProps) => {
-  const ref = useReveal<HTMLDivElement>();
+  const { ref, visible } = useScrollReveal(0.01);
   const waHref = `https://wa.me/${SITE.phone.replace(/[^\d]/g, "")}`;
 
   return (
@@ -37,54 +35,65 @@ export const HeroSection = ({ imageSrc = orlandoSkylineAsset.url }: HeroProps) =
           className="h-full w-full object-cover"
           style={{ objectPosition: "center 58%" }}
         />
-        <div className="absolute inset-0" style={{ background: "linear-gradient(180deg, rgba(0,0,0,0.55) 0%, rgba(0,0,0,0.75) 100%)" }} />
+        <div
+          className="absolute inset-0"
+          style={{ background: "linear-gradient(180deg, rgba(0,0,0,0.55) 0%, rgba(0,0,0,0.8) 100%)" }}
+        />
       </div>
 
       {/* Foreground content */}
       <div className="relative z-10 flex flex-col">
-        <div className="flex items-center pt-12 pb-28 sm:pt-20 sm:pb-32 lg:pt-24 lg:pb-40" style={{ minHeight: "70vh" }}>
-          <div ref={ref} className="container reveal">
+        <div
+          className="flex items-center pt-14 pb-28 sm:pt-20 sm:pb-32 lg:pt-24 lg:pb-40"
+          style={{ minHeight: "72vh" }}
+        >
+          <div ref={ref} className="container" style={revealStyle(visible)}>
             <div className="max-w-3xl">
-              {/* Trust pill */}
+              {/* Trust pill — mono, gold outline */}
               <span
-                className="inline-flex items-center gap-2 rounded-full px-3.5 py-1.5 text-[11px] font-bold uppercase tracking-wider"
+                className="inline-flex items-center gap-2 px-3.5 py-2 font-mono text-[10px] font-medium uppercase tracking-[0.2em]"
                 style={{
-                  backgroundColor: "rgba(255,215,0,0.15)",
+                  backgroundColor: "rgba(255,215,0,0.1)",
                   color: "#FFD700",
-                  border: "1px solid rgba(255,215,0,0.5)",
+                  border: "1px solid rgba(255,215,0,0.4)",
+                  borderRadius: "2px",
                 }}
               >
                 <ShieldCheck className="h-3.5 w-3.5" />
-                Licensed & Insured · 18 Cities · 24/7
+                Licensed · Insured · 18 Cities · 24/7
               </span>
 
-              <h1 className="mt-5 text-3xl text-brand-white sm:text-4xl lg:text-6xl leading-tight">
-                Property Maintenance Central Florida
-                <span className="block text-brand-gold italic">One Call. One Team. Done.</span>
+              <h1 className="mt-6 font-display font-bold text-white text-4xl sm:text-5xl lg:text-7xl leading-[1.05] tracking-tight">
+                Property Maintenance
+                <br />
+                Central Florida.
+                <span className="block text-brand-gold italic font-normal">
+                  One call. One team. Done.
+                </span>
               </h1>
-              <p className="mt-5 max-w-2xl text-base sm:text-lg text-gray-300 leading-relaxed">
-                Property maintenance, handyman services, bathroom remodels, painting, flooring, and cleaning across Central Florida. Property managers and homeowners — one team handles it all. No vendor chaos. No surprises on the invoice.
+
+              <p className="mt-6 max-w-2xl text-base sm:text-lg text-white/75 leading-[1.7]">
+                Property maintenance, handyman, bathroom remodels, painting, flooring, and cleaning across Central Florida. Property managers and homeowners — one team handles it all. No vendor chaos. No surprises on the invoice.
               </p>
 
-              <div className="mt-7 flex flex-col sm:flex-row gap-3 w-full sm:w-auto">
-                <button
-                  type="button"
-                  onClick={scrollToForm}
-                  className="cta-gold btn-shimmer cta-pill w-full sm:w-auto justify-center"
-                >
-                  Get a free quote <ArrowRight className="ml-2 h-4 w-4" />
-                </button>
-                <a
+              <div className="mt-8 flex flex-col sm:flex-row gap-3 w-full sm:w-auto">
+                <CTAButton variant="gold" size="lg" onClick={scrollToForm} className="w-full sm:w-auto">
+                  Get a free quote
+                </CTAButton>
+                <CTAButton
+                  variant="ghost-dark"
+                  size="lg"
                   href={`tel:${SITE.phone}`}
-                  className="inline-flex items-center justify-center gap-2 rounded-full border-2 border-brand-white px-6 sm:px-8 py-3 text-sm font-semibold text-brand-white hover:bg-brand-white hover:text-brand-black transition-colors w-full sm:w-auto"
+                  showArrow={false}
+                  className="w-full sm:w-auto"
                 >
                   <Phone className="h-4 w-4" /> Call now
-                </a>
+                </CTAButton>
                 <a
                   href={waHref}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center justify-center gap-2 rounded-full bg-[#25D366] px-6 sm:px-8 py-3 text-sm font-semibold text-white hover:opacity-90 transition-opacity w-full sm:w-auto"
+                  className="inline-flex items-center justify-center gap-2 rounded-full bg-[#25D366] px-8 py-4 text-[15px] font-semibold text-white hover:opacity-90 transition-opacity w-full sm:w-auto"
                 >
                   <WhatsAppIcon className="h-4 w-4" /> WhatsApp us
                 </a>
