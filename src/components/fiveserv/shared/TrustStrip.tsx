@@ -1,3 +1,5 @@
+import BlueprintGrid from "../patterns/BlueprintGrid";
+
 export type TrustStat = { value: string; label: string };
 
 const DEFAULT_STATS: TrustStat[] = [
@@ -8,20 +10,43 @@ const DEFAULT_STATS: TrustStat[] = [
 ];
 
 /**
- * TrustStrip — cream strip with 4 stats. Sits between hero and content.
- * Inspired by stansac.com trust band.
+ * TrustStrip — dark band with 4 Fraunces stats + blueprint gold grid overlay.
  */
-export const TrustStrip = ({ stats = DEFAULT_STATS }: { stats?: TrustStat[] }) => {
+export const TrustStrip = ({
+  stats = DEFAULT_STATS,
+  tone = "dark",
+}: {
+  stats?: TrustStat[];
+  tone?: "dark" | "cream";
+}) => {
+  const dark = tone === "dark";
   return (
-    <section style={{ background: "#FAF8F3" }} className="border-y border-black/5">
-      <div className="container py-10 sm:py-12">
-        <div className="grid grid-cols-2 gap-6 sm:grid-cols-4">
-          {stats.map((s) => (
-            <div key={s.label} className="text-center">
-              <div className="font-display text-3xl sm:text-4xl font-bold text-brand-black">
+    <section
+      className="relative overflow-hidden border-y"
+      style={{
+        background: dark ? "#1A1A1A" : "#FAF7F0",
+        borderColor: dark ? "rgba(255,215,0,0.15)" : "rgba(0,0,0,0.06)",
+      }}
+    >
+      {dark && <BlueprintGrid variant="dark" />}
+      <div className="container relative z-10 py-12 sm:py-14">
+        <div className="grid grid-cols-2 gap-8 sm:grid-cols-4">
+          {stats.map((s, i) => (
+            <div
+              key={s.label}
+              className={`text-center ${i > 0 ? "sm:border-l" : ""}`}
+              style={{ borderColor: dark ? "rgba(255,255,255,0.08)" : "rgba(0,0,0,0.08)" }}
+            >
+              <div
+                className="font-display text-4xl font-bold sm:text-5xl"
+                style={{ color: dark ? "#FFD700" : "#1A1A1A" }}
+              >
                 {s.value}
               </div>
-              <div className="mt-1 text-[11px] sm:text-xs font-bold uppercase tracking-wider text-brand-black/60">
+              <div
+                className="mt-2 font-mono text-[10px] font-medium uppercase tracking-[0.2em]"
+                style={{ color: dark ? "rgba(255,255,255,0.6)" : "rgba(26,26,26,0.55)" }}
+              >
                 {s.label}
               </div>
             </div>
