@@ -80,6 +80,7 @@ export const SchemaOrg = ({
       },
       areaServed: CITIES.map((c) => `${c.name} ${c.state}`),
       sameAs: [
+        "https://www.google.com/maps/place/FiveServ+Property+Solutions/@28.4931361,-81.646989,17z/data=!3m1!4b1!4m6!3m5!1s0x83589b0562859357:0xeabbe48815d87dfa!8m2!3d28.4931361!4d-81.646989!16s%2Fg%2F11z5rz361s",
         "https://www.facebook.com/FiveServ",
         "https://www.instagram.com/fiveservps/",
         "https://www.linkedin.com/company/fiveserv-property-solutions/",
@@ -128,7 +129,7 @@ export const SchemaOrg = ({
         "Central Florida Property Maintenance",
         "Orlando Property Maintenance",
       ],
-      hasMap: "https://maps.google.com/?cid=fiveserv-property-solutions",
+      hasMap: "https://www.google.com/maps/place/FiveServ+Property+Solutions/@28.4931361,-81.646989,17z/data=!3m1!4b1!4m6!3m5!1s0x83589b0562859357:0xeabbe48815d87dfa!8m2!3d28.4931361!4d-81.646989!16s%2Fg%2F11z5rz361s",
       contactPoint: [
         {
           "@type": "ContactPoint",
@@ -352,7 +353,7 @@ export const SchemaOrg = ({
       reviewCount: "5",
       bestRating: "5",
       worstRating: "1",
-      sameAs: "https://g.page/r/fiveserv-property-solutions",
+      sameAs: "https://www.google.com/maps/place/FiveServ+Property+Solutions/@28.4931361,-81.646989,17z/data=!3m1!4b1!4m6!3m5!1s0x83589b0562859357:0xeabbe48815d87dfa!8m2!3d28.4931361!4d-81.646989!16s%2Fg%2F11z5rz361s",
     });
   }
 
