@@ -54,7 +54,15 @@
 
     /* Effects */
     --shadow-gold: 0 8px 30px hsl(51 100% 50% / 0.2);
+    --shadow-card: 0 2px 8px rgba(0,0,0,0.06);
+    --shadow-card-hover: 0 12px 32px rgba(0,0,0,0.12);
     --transition-cta: background-color 200ms ease;
+
+    /* Patterns & neutrals (Phase 1 redesign) */
+    --pattern-blueprint-light: rgba(44,62,80,0.06);
+    --pattern-blueprint-dark: rgba(255,215,0,0.05);
+    --cream: #FAF7F0;
+    --blueprint: #2C3E50;
 
     /* Sidebar (kept for shadcn compatibility) */
     --sidebar-background: 0 0% 100%;
