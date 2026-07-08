@@ -37,7 +37,7 @@ export const SectionHeading = ({
       {eyebrow && (
         <div className={`mb-5 flex items-center gap-3 ${align === "center" ? "justify-center" : ""}`}>
           <span className="block h-px w-10 bg-brand-gold" />
-          <span className={`font-mono text-[11px] font-medium uppercase tracking-[0.18em] ${eyebrowColor}`}>
+          <span className={`font-semibold text-[11px] font-medium uppercase tracking-[0.18em] ${eyebrowColor}`}>
             {eyebrow}
           </span>
         </div>

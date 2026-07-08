@@ -32,7 +32,7 @@ export const ServiceCard = ({
           className="group relative flex h-full flex-col overflow-hidden bg-white p-8 transition-all duration-300 hover:-translate-y-1"
           style={{
             border: "1px solid rgba(0,0,0,0.08)",
-            borderRadius: "2px",
+            borderRadius: "10px",
             boxShadow: "var(--shadow-card)",
           }}
           onMouseEnter={(e) => {
@@ -46,7 +46,7 @@ export const ServiceCard = ({
 
           {/* Badge */}
           {badge && (
-            <span className="absolute right-4 top-4 z-10 font-mono text-[9px] font-medium uppercase tracking-[0.15em] text-brand-black/50">
+            <span className="absolute right-4 top-4 z-10 font-semibold text-[9px] font-medium uppercase tracking-[0.15em] text-brand-black/50">
               {badge}
             </span>
           )}

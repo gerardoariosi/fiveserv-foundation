@@ -38,7 +38,7 @@ export const StatBlock = ({
         {suffix && <span>{suffix}</span>}
       </div>
       <div
-        className="mt-3 font-mono text-[10px] font-medium uppercase tracking-[0.22em]"
+        className="mt-3 font-semibold text-[10px] font-medium uppercase tracking-[0.22em]"
         style={{ color: dark ? "rgba(255,255,255,0.6)" : "rgba(26,26,26,0.55)" }}
       >
         {label}
