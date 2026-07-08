@@ -115,8 +115,9 @@ const TRADES = [
 const ServicesGrid = () => {
   const ref = useReveal<HTMLDivElement>();
   return (
-    <section style={dotGridDark}>
-      <div ref={ref} className="container reveal" style={SECTION_PAD}>
+    <section style={dotGridDark} className="relative overflow-hidden">
+      <BlueprintGrid variant="dark" />
+      <div ref={ref} className="container reveal relative z-10" style={SECTION_PAD}>
         <SectionLabel>— The Solution</SectionLabel>
         <h2 className="text-center font-display font-bold text-white" style={{ fontSize: "clamp(2rem,4vw,2.625rem)" }}>
           Full-Service Property Maintenance.{" "}
