@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import { Check, X } from "lucide-react";
 import { useReveal } from "@/hooks/use-fiveserv";
+import BlueprintGrid from "@/components/fiveserv/patterns/BlueprintGrid";
 
 import BrandName from "@/components/fiveserv/BrandName";
 
@@ -19,13 +20,11 @@ export const SolutionSection = () => {
   return (
     <section
       id="solution"
-      style={{
-        backgroundColor: "#1A1A1A",
-        backgroundImage: 'url("data:image/svg+xml,%3Csvg width=%2728%27 height=%2728%27 viewBox=%270 0 28 28%27 xmlns=%27http://www.w3.org/2000/svg%27%3E%3Cg fill=%27rgba(255,215,0,0.18)%27%3E%3Cpath d=%27M7 3 Q7.6 6.4 10 7 Q7.6 7.6 7 11 Q6.4 7.6 4 7 Q6.4 6.4 7 3 Z%27/%3E%3Cpath d=%27M21 17 Q21.6 20.4 24 21 Q21.6 21.6 21 25 Q20.4 21.6 18 21 Q20.4 20.4 21 17 Z%27/%3E%3C/g%3E%3C/svg%3E")',
-        backgroundSize: "48px 48px",
-      }}
+      className="relative overflow-hidden"
+      style={{ backgroundColor: "#1A1A1A" }}
     >
-      <div ref={ref} className="container reveal" style={{ paddingTop: 80, paddingBottom: 80 }}>
+      <BlueprintGrid variant="dark" />
+      <div ref={ref} className="container reveal relative z-10" style={{ paddingTop: 80, paddingBottom: 80 }}>
         <p className="text-center font-bold uppercase mb-3" style={{ color: "#FFD700", letterSpacing: "0.15em", fontSize: 11 }}>
           — The Solution
         </p>
