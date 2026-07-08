@@ -44,7 +44,7 @@ export const TrustStrip = ({
                 {s.value}
               </div>
               <div
-                className="mt-2 font-mono text-[10px] font-medium uppercase tracking-[0.2em]"
+                className="mt-2 font-semibold text-[10px] font-medium uppercase tracking-[0.2em]"
                 style={{ color: dark ? "rgba(255,255,255,0.6)" : "rgba(26,26,26,0.55)" }}
               >
                 {s.label}

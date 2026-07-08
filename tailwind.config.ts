@@ -14,7 +14,7 @@ export default {
     },
     extend: {
       fontFamily: {
-        display: ["Fraunces", "Georgia", "serif"],
+        display: ["Inter", "Arial", "sans-serif"],
         body: ["Inter", "Arial", "sans-serif"],
         sans: ["Inter", "Arial", "sans-serif"],
         mono: ["JetBrains Mono", "monospace"],

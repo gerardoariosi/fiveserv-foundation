@@ -15,7 +15,7 @@ export const TestimonialCard = ({ quote, name, title, company, photo }: Testimon
       className="group relative flex h-full flex-col bg-white p-8 transition-shadow duration-300"
       style={{
         border: "1px solid rgba(0,0,0,0.08)",
-        borderRadius: "2px",
+        borderRadius: "10px",
         boxShadow: "var(--shadow-card)",
       }}
       onMouseEnter={(e) => (e.currentTarget.style.boxShadow = "var(--shadow-card-hover)")}
@@ -63,7 +63,7 @@ export const TestimonialCard = ({ quote, name, title, company, photo }: Testimon
         )}
         <div>
           <div className="font-semibold text-brand-black">{name}</div>
-          <div className="font-mono text-[11px] uppercase tracking-wider text-brand-black/55">
+          <div className="font-semibold text-[11px] uppercase tracking-wider text-brand-black/55">
             {title} · {company}
           </div>
         </div>
