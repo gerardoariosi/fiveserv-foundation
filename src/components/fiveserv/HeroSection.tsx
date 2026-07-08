@@ -49,17 +49,16 @@ export const HeroSection = ({ imageSrc = orlandoSkylineAsset.url }: HeroProps) =
         >
           <div ref={ref} className="container" style={revealStyle(visible)}>
             <div className="max-w-3xl">
-              {/* Trust pill — mono, gold outline */}
+              {/* Trust pill — friendly rounded */}
               <span
-                className="inline-flex items-center gap-2 px-3.5 py-2 font-mono text-[10px] font-medium uppercase tracking-[0.2em]"
+                className="inline-flex items-center gap-2 rounded-full px-4 py-2 text-xs sm:text-sm font-semibold"
                 style={{
-                  backgroundColor: "rgba(255,215,0,0.1)",
+                  backgroundColor: "rgba(255,215,0,0.15)",
                   color: "#FFD700",
-                  border: "1px solid rgba(255,215,0,0.4)",
-                  borderRadius: "2px",
+                  border: "1px solid rgba(255,215,0,0.35)",
                 }}
               >
-                <ShieldCheck className="h-3.5 w-3.5" />
+                <ShieldCheck className="h-4 w-4" />
                 Licensed · Insured · 18 Cities · 24/7
               </span>
 
