@@ -294,8 +294,9 @@ const TestimonialsSection = () => {
 const BeforeAfterSection = () => {
   const ref = useReveal<HTMLDivElement>();
   return (
-    <section style={{ backgroundColor: "#FAFAF8" }}>
-      <div ref={ref} className="container reveal" style={SECTION_PAD}>
+    <section style={{ backgroundColor: "#FAF7F0" }} className="relative overflow-hidden">
+      <PaperTexture />
+      <div ref={ref} className="container reveal relative z-10" style={SECTION_PAD}>
         <SectionLabel>— The Results</SectionLabel>
         <h2 className="text-center font-display font-bold text-brand-black mb-10" style={{ fontSize: "clamp(2rem,4vw,2.625rem)" }}>
           See the Difference
