@@ -39,6 +39,8 @@ import TrustBar from "@/components/fiveserv/TrustBar";
 import { useReveal } from "@/hooks/use-fiveserv";
 import BrandName from "@/components/fiveserv/BrandName";
 import BrandsBar from "@/components/fiveserv/BrandsBar";
+import BlueprintGrid from "@/components/fiveserv/patterns/BlueprintGrid";
+import PaperTexture from "@/components/fiveserv/patterns/PaperTexture";
 
 /* ------------------------------------------------------------------ */
 /* Shared visual primitives                                            */
