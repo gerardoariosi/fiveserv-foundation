@@ -249,8 +249,9 @@ const TestimonialsSection = () => {
   ));
 
   return (
-    <section style={dotGridDark} className="overflow-hidden">
-      <div ref={ref} className="reveal" style={SECTION_PAD}>
+    <section style={dotGridDark} className="overflow-hidden relative">
+      <BlueprintGrid variant="dark" />
+      <div ref={ref} className="reveal relative z-10" style={SECTION_PAD}>
         <div className="container mb-10">
           <SectionLabel>— Testimonials</SectionLabel>
           <h2 className="text-center font-display font-bold text-white" style={{ fontSize: "clamp(2rem,4vw,2.625rem)" }}>
