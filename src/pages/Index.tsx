@@ -39,6 +39,8 @@ import TrustBar from "@/components/fiveserv/TrustBar";
 import { useReveal } from "@/hooks/use-fiveserv";
 import BrandName from "@/components/fiveserv/BrandName";
 import BrandsBar from "@/components/fiveserv/BrandsBar";
+import BlueprintGrid from "@/components/fiveserv/patterns/BlueprintGrid";
+import PaperTexture from "@/components/fiveserv/patterns/PaperTexture";
 
 /* ------------------------------------------------------------------ */
 /* Shared visual primitives                                            */
@@ -48,9 +50,6 @@ const SECTION_PAD = { paddingTop: 80, paddingBottom: 80 } as const;
 
 const dotGridDark: React.CSSProperties = {
   backgroundColor: "#1A1A1A",
-  backgroundImage:
-    'url("data:image/svg+xml,%3Csvg width=%2728%27 height=%2728%27 viewBox=%270 0 28 28%27 xmlns=%27http://www.w3.org/2000/svg%27%3E%3Cg fill=%27rgba(255,215,0,0.18)%27%3E%3Cpath d=%27M7 3 Q7.6 6.4 10 7 Q7.6 7.6 7 11 Q6.4 7.6 4 7 Q6.4 6.4 7 3 Z%27/%3E%3Cpath d=%27M21 17 Q21.6 20.4 24 21 Q21.6 21.6 21 25 Q20.4 21.6 18 21 Q20.4 20.4 21 17 Z%27/%3E%3C/g%3E%3C/svg%3E")',
-  backgroundSize: "48px 48px",
 };
 
 const SectionLabel = ({ children }: { children: React.ReactNode }) => (
@@ -116,8 +115,9 @@ const TRADES = [
 const ServicesGrid = () => {
   const ref = useReveal<HTMLDivElement>();
   return (
-    <section style={dotGridDark}>
-      <div ref={ref} className="container reveal" style={SECTION_PAD}>
+    <section style={dotGridDark} className="relative overflow-hidden">
+      <BlueprintGrid variant="dark" />
+      <div ref={ref} className="container reveal relative z-10" style={SECTION_PAD}>
         <SectionLabel>— The Solution</SectionLabel>
         <h2 className="text-center font-display font-bold text-white" style={{ fontSize: "clamp(2rem,4vw,2.625rem)" }}>
           Full-Service Property Maintenance.{" "}
@@ -249,8 +249,9 @@ const TestimonialsSection = () => {
   ));
 
   return (
-    <section style={dotGridDark} className="overflow-hidden">
-      <div ref={ref} className="reveal" style={SECTION_PAD}>
+    <section style={dotGridDark} className="overflow-hidden relative">
+      <BlueprintGrid variant="dark" />
+      <div ref={ref} className="reveal relative z-10" style={SECTION_PAD}>
         <div className="container mb-10">
           <SectionLabel>— Testimonials</SectionLabel>
           <h2 className="text-center font-display font-bold text-white" style={{ fontSize: "clamp(2rem,4vw,2.625rem)" }}>
@@ -293,8 +294,9 @@ const TestimonialsSection = () => {
 const BeforeAfterSection = () => {
   const ref = useReveal<HTMLDivElement>();
   return (
-    <section style={{ backgroundColor: "#FAFAF8" }}>
-      <div ref={ref} className="container reveal" style={SECTION_PAD}>
+    <section style={{ backgroundColor: "#FAF7F0" }} className="relative overflow-hidden">
+      <PaperTexture />
+      <div ref={ref} className="container reveal relative z-10" style={SECTION_PAD}>
         <SectionLabel>— The Results</SectionLabel>
         <h2 className="text-center font-display font-bold text-brand-black mb-10" style={{ fontSize: "clamp(2rem,4vw,2.625rem)" }}>
           See the Difference
