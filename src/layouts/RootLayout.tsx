@@ -1,7 +1,7 @@
 import { Outlet, ScrollRestoration } from "react-router-dom";
 import StickyHeader from "@/components/fiveserv/StickyHeader";
 import StickyBanner from "@/components/fiveserv/StickyBanner";
-import SocialProofTicker from "@/components/fiveserv/SocialProofTicker";
+// SocialProofTicker removed — too much visual noise stacked above the hero.
 import Footer from "@/components/fiveserv/Footer";
 // ExitIntentPopup removed from layout — too many simultaneous attention-grabbers
 // (Sofia chat + sticky mobile CTA + banner + live ticker). Bring back per-page if needed.
@@ -44,10 +44,7 @@ export const RootLayout = () => {
       <StickyBanner />
       <StickyHeader />
       <main className="flex-1">
-        {/* Non-fixed ticker — sits below the fixed header and scrolls away with the page. */}
-        <div style={{ paddingTop: "calc(var(--banner-h, 0px) + var(--header-h, 80px))" }}>
-          <SocialProofTicker />
-        </div>
+        <div style={{ paddingTop: "calc(var(--banner-h, 0px) + var(--header-h, 80px))" }} />
         <PageTransition>
           <Outlet />
         </PageTransition>

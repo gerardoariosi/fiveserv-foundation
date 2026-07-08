@@ -1,6 +1,5 @@
 import { Phone, ShieldCheck } from "lucide-react";
 import { SITE } from "@/lib/site-config";
-import { useScrollReveal, revealStyle } from "@/hooks/useScrollReveal";
 import CTAButton from "./shared/CTAButton";
 import orlandoSkylineAsset from "@/assets/orlando-hero-hd.jpg.asset.json";
 
@@ -17,7 +16,6 @@ const scrollToForm = () => {
 type HeroProps = { imageSrc?: string };
 
 export const HeroSection = ({ imageSrc = orlandoSkylineAsset.url }: HeroProps) => {
-  const { ref, visible } = useScrollReveal(0.01);
   const waHref = `https://wa.me/${SITE.phone.replace(/[^\d]/g, "")}`;
 
   return (
@@ -37,7 +35,7 @@ export const HeroSection = ({ imageSrc = orlandoSkylineAsset.url }: HeroProps) =
         />
         <div
           className="absolute inset-0"
-          style={{ background: "linear-gradient(180deg, rgba(0,0,0,0.55) 0%, rgba(0,0,0,0.8) 100%)" }}
+          style={{ background: "linear-gradient(180deg, rgba(0,0,0,0.65) 0%, rgba(0,0,0,0.85) 100%)" }}
         />
       </div>
 
@@ -47,7 +45,7 @@ export const HeroSection = ({ imageSrc = orlandoSkylineAsset.url }: HeroProps) =
           className="flex items-center pt-14 pb-28 sm:pt-20 sm:pb-32 lg:pt-24 lg:pb-40"
           style={{ minHeight: "72vh" }}
         >
-          <div ref={ref} className="container" style={revealStyle(visible)}>
+          <div className="container">
             <div className="max-w-3xl">
               {/* Trust pill — friendly rounded */}
               <span
