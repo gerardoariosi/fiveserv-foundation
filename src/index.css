@@ -150,11 +150,11 @@
 
 @layer utilities {
   .font-display {
-    font-family: "Playfair Display", Georgia, serif;
-    font-weight: 700;
+    font-family: "DM Serif Display", Georgia, serif;
+    font-weight: 400;
   }
   .font-body {
-    font-family: "Inter", system-ui, sans-serif;
+    font-family: "Fira Sans", system-ui, sans-serif;
   }
 
   /* Servpro-style pill CTA */
