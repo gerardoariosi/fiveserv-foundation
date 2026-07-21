@@ -33,7 +33,9 @@ export default {
           white: "hsl(var(--brand-white))",
           gray: "hsl(var(--brand-gray))",
           "gray-muted": "hsl(var(--brand-gray-muted))",
-          light: "#F5F5F5",
+          light: "#F3F2EE",
+          cream: "#FAF9F6",
+          "warm-gray": "#E5E5E1",
         },
         primary: {
           DEFAULT: "hsl(var(--primary))",
