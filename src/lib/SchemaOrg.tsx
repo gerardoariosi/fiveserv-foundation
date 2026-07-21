@@ -92,6 +92,7 @@ export const SchemaOrg = ({
         itemListElement: [
           { "@type": "Offer", itemOffered: { "@type": "Service", name: "Property Maintenance and Repairs", url: `${SITE.url}/maintenance` } },
           { "@type": "Offer", itemOffered: { "@type": "Service", name: "Handyman Services", url: `${SITE.url}/handyman-orlando` } },
+          { "@type": "Offer", itemOffered: { "@type": "Service", name: "Emergency Repair Orlando FL", url: `${SITE.url}/emergency-repair-orlando` } },
           { "@type": "Offer", itemOffered: { "@type": "Service", name: "Bathroom Remodel", url: `${SITE.url}/bathroom-remodel` } },
           { "@type": "Offer", itemOffered: { "@type": "Service", name: "Kitchen Remodel and Renovation", url: `${SITE.url}/kitchen-remodel` } },
           { "@type": "Offer", itemOffered: { "@type": "Service", name: "Interior and Exterior Painting", url: `${SITE.url}/painting` } },
