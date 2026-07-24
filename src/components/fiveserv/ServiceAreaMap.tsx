@@ -1,3 +1,4 @@
+/// <reference types="google.maps" />
 import { useEffect, useRef } from "react";
 import { CITIES, COMING_SOON_CITIES, type CitySlug } from "@/lib/site-config";
 
