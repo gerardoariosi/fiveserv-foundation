@@ -99,9 +99,14 @@ export const ServicePageTemplate = ({ service, faqs = [] }: ServicePageData) => 
         </div>
       </section>
 
+      <RelatedServicesPills excludeSlug={service.slug} />
+
+      <LeadMagnetSection />
+      {faqs.length > 0 && <FaqAccordion faqs={faqs} emitSchema={false} />}
+
       <section className="bg-[#FAF8F3]">
-        <div className="container py-20 sm:py-24">
-          <div className="text-center max-w-2xl mx-auto mb-10">
+        <div className="container pt-20 sm:pt-24 pb-10">
+          <div className="text-center max-w-2xl mx-auto">
             <p className="text-[11px] font-bold uppercase tracking-[0.18em] text-brand-black/55">
               Coverage Map
             </p>
@@ -112,14 +117,11 @@ export const ServicePageTemplate = ({ service, faqs = [] }: ServicePageData) => 
               Explore our full service area — tap any pin to see local response times.
             </p>
           </div>
-          <ServiceAreaMap />
+        </div>
+        <div className="w-full pb-16 sm:pb-20">
+          <ServiceAreaMap fullBleed />
         </div>
       </section>
-
-      <RelatedServicesPills excludeSlug={service.slug} />
-
-      <LeadMagnetSection />
-      {faqs.length > 0 && <FaqAccordion faqs={faqs} emitSchema={false} />}
 
       <PageCTA />
     </>
