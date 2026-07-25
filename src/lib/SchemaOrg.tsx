@@ -304,15 +304,19 @@ export const SchemaOrg = ({
   // 6. Person x5
   if (team && team.length > 0) {
     team.forEach((p) => {
-      blocks.push({
+      const personBlock: Record<string, unknown> = {
         "@context": "https://schema.org",
         "@type": "Person",
         name: p.name,
         jobTitle: p.role,
         worksFor: { "@type": "Organization", name: SITE.legal },
-        image: `${SITE.url}${p.photo}`,
-      });
+      };
+      if ((p as { photo?: string }).photo) {
+        personBlock.image = `${SITE.url}${(p as { photo?: string }).photo}`;
+      }
+      blocks.push(personBlock);
     });
+
   }
 
   // 7. BlogPosting
