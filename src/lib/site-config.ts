@@ -224,12 +224,11 @@ export const CITIES: {
 export const COMING_SOON_CITIES = [{ name: "Tampa Bay", state: "FL", slug: "tampa-bay-fl" }];
 
 export const TEAM = [
-  { name: "Gerardo Rios", role: "Founder & CEO" },
-  { name: "Gerardo Andrés Rios", role: "Client Relations & Systems Operations" },
-  { name: "Mariel Iragorry", role: "Accounting & Administration" },
-  { name: "Jose Rios", role: "Marketing & Growth" },
-  { name: "Luis Mora", role: "Lead Technician" },
-
+  { name: "Gerardo Rios", role: "Founder & CEO", photo: "/images/team/team-member-1.jpg" },
+  { name: "Gerardo Andrés Rios", role: "Client Relations & Systems Operations", photo: "/images/team/team-member-2.jpg" },
+  { name: "Mariel Iragorry", role: "Accounting & Administration", photo: "/images/team/team-member-3.jpg" },
+  { name: "Jose Rios", role: "Marketing & Growth", photo: "/images/team/team-member-4.jpg" },
+  { name: "Luis Mora", role: "Lead Technician", photo: "/images/team/team-member-5.jpg" },
 ];
 
 export const FIVE_PILLARS = [
