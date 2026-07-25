@@ -116,7 +116,9 @@ const loadGoogleMaps = (): Promise<typeof google> => {
   return mapsLoadingPromise;
 };
 
-const ServiceAreaMap = () => {
+type ServiceAreaMapProps = { fullBleed?: boolean };
+
+const ServiceAreaMap = ({ fullBleed = false }: ServiceAreaMapProps) => {
   const mapRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -204,9 +206,14 @@ const ServiceAreaMap = () => {
     };
   }, []);
 
+  const wrapperClass = fullBleed
+    ? "relative w-full overflow-hidden border-y border-brand-gold/30 shadow-md"
+    : "relative w-full overflow-hidden rounded-2xl border border-brand-gold/30 shadow-md";
+  const mapHeight = fullBleed ? 560 : 480;
+
   return (
-    <div className="relative w-full overflow-hidden rounded-2xl border border-brand-gold/30 shadow-md">
-      <div ref={mapRef} style={{ height: 480, width: "100%", background: "#F5F1E8" }} />
+    <div className={wrapperClass}>
+      <div ref={mapRef} style={{ height: mapHeight, width: "100%", background: "#F5F1E8" }} />
       <div
         className="pointer-events-none absolute inset-x-0 bottom-0 z-[400] px-5 pb-4 pt-6"
         style={{ background: "linear-gradient(to top, rgba(26,26,26,0.95), transparent)" }}
