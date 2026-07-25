@@ -10,6 +10,7 @@ import PageHero from "./shared/PageHero";
 import TrustStrip from "./shared/TrustStrip";
 import RelatedServicesPills from "./shared/RelatedServicesPills";
 import PageCTA from "./shared/PageCTA";
+import ServiceAreaMap from "./ServiceAreaMap";
 
 export type ServicePageData = {
   service: { slug: ServiceSlug; name: string; short: string; description: string; cta: string };
