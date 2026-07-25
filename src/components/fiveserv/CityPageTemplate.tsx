@@ -8,6 +8,7 @@ import PageHero from "./shared/PageHero";
 import TrustStrip from "./shared/TrustStrip";
 import RelatedServicesPills from "./shared/RelatedServicesPills";
 import PageCTA from "./shared/PageCTA";
+import ServiceAreaMap from "./ServiceAreaMap";
 
 export type CityPageData = {
   city: typeof import("@/lib/site-config").CITIES[number];
@@ -90,6 +91,23 @@ export const CityPageTemplate = ({ city, service, faqs = [] }: CityPageData) => 
               </span>
             ))}
           </div>
+        </div>
+      </section>
+
+      <section className="bg-[#FAF8F3]">
+        <div className="container py-20 sm:py-24">
+          <div className="text-center max-w-2xl mx-auto mb-10">
+            <p className="text-[11px] font-bold uppercase tracking-[0.18em] text-brand-black/55">
+              Coverage Map
+            </p>
+            <h2 className="mt-2 font-display text-3xl sm:text-4xl font-bold text-brand-black">
+              Where we work
+            </h2>
+            <p className="mt-3 text-base text-brand-black/65">
+              See our full coverage area, including {city.name}.
+            </p>
+          </div>
+          <ServiceAreaMap />
         </div>
       </section>
 
