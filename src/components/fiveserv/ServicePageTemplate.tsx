@@ -99,6 +99,23 @@ export const ServicePageTemplate = ({ service, faqs = [] }: ServicePageData) => 
         </div>
       </section>
 
+      <section className="bg-[#FAF8F3]">
+        <div className="container py-20 sm:py-24">
+          <div className="text-center max-w-2xl mx-auto mb-10">
+            <p className="text-[11px] font-bold uppercase tracking-[0.18em] text-brand-black/55">
+              Coverage Map
+            </p>
+            <h2 className="mt-2 font-display text-3xl sm:text-4xl font-bold text-brand-black">
+              18 Cities Across Central Florida
+            </h2>
+            <p className="mt-3 text-base text-brand-black/65">
+              Explore our full service area — tap any pin to see local response times.
+            </p>
+          </div>
+          <ServiceAreaMap />
+        </div>
+      </section>
+
       <RelatedServicesPills excludeSlug={service.slug} />
 
       <LeadMagnetSection />
