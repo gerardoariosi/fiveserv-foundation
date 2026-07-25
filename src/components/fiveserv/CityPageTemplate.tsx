@@ -8,6 +8,7 @@ import PageHero from "./shared/PageHero";
 import TrustStrip from "./shared/TrustStrip";
 import RelatedServicesPills from "./shared/RelatedServicesPills";
 import PageCTA from "./shared/PageCTA";
+import ServiceAreaMap from "./ServiceAreaMap";
 
 export type CityPageData = {
   city: typeof import("@/lib/site-config").CITIES[number];
