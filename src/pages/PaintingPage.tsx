@@ -22,6 +22,7 @@ import AIOverviewBlock from "@/components/fiveserv/AIOverviewBlock";
 import FaqAccordion from "@/components/fiveserv/FaqAccordion";
 import { useReveal } from "@/hooks/use-fiveserv";
 import { SITE } from "@/lib/site-config";
+import paintingHero from "@/assets/painting-hero.jpg.asset.json";
 
 const DOT_GRID_CARD = {
   backgroundImage:
@@ -145,23 +146,37 @@ const PaintingPage = () => {
         className="relative w-full"
         style={{
           minHeight: 560,
-          backgroundImage:
-            'url("https://images.unsplash.com/photo-1589939705384-5185137a7f0f?auto=format&fit=crop&w=1920&q=80")',
+          backgroundImage: `url("${paintingHero.url}")`,
           backgroundSize: "cover",
-          backgroundPosition: "center",
+          backgroundPosition: "center right",
+          backgroundRepeat: "no-repeat",
+          backgroundColor: "#1A1A1A",
         }}
         id="painting-quote"
       >
-        <div className="absolute inset-0" style={{ background: "rgba(0,0,0,0.72)" }} />
+        <div
+          className="absolute inset-0"
+          style={{
+            background:
+              "linear-gradient(90deg, rgba(15,15,15,0.94) 0%, rgba(15,15,15,0.82) 45%, rgba(15,15,15,0.45) 75%, rgba(15,15,15,0.25) 100%)",
+          }}
+        />
         <div className="relative z-10 container py-24 lg:py-32">
           <Reveal className="max-w-3xl">
             <h1
               className="font-display font-bold leading-[1.1]"
-              style={{ color: "#FFFFFF", fontSize: "clamp(2rem, 4.4vw, 3.25rem)" }}
+              style={{
+                color: "#FFFFFF",
+                fontSize: "clamp(2rem, 4.4vw, 3.25rem)",
+                textShadow: "0 2px 16px rgba(0,0,0,0.55)",
+              }}
             >
               Painting Company Orlando FL — Clean Lines. No Mess. Done Right.
             </h1>
-            <p className="mt-5 text-lg text-gray-300 max-w-2xl">
+            <p
+              className="mt-5 text-lg text-gray-200 max-w-2xl"
+              style={{ textShadow: "0 1px 8px rgba(0,0,0,0.5)" }}
+            >
               Interior and exterior painting for homeowners and property managers. Licensed, insured, full prep included. Serving 18 cities in Central Florida.
             </p>
             <button
