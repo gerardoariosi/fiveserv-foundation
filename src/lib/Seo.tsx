@@ -9,6 +9,7 @@ type SeoProps = {
   ogImage?: string;
   ogType?: "website" | "article";
   noIndex?: boolean;
+  keywords?: string[];
 };
 
 /**
@@ -17,7 +18,7 @@ type SeoProps = {
  *
  * SEO RULES enforced elsewhere: only 1 H1 per page, brand name in first 100 chars.
  */
-export const Seo = ({ title, description, path, ogImage, ogType = "website", noIndex }: SeoProps) => {
+export const Seo = ({ title, description, path, ogImage, ogType = "website", noIndex, keywords }: SeoProps) => {
   const url = `${SITE.url}${path}`;
   const image = ogImage || `${SITE.url}/og-default.png`;
   const fullTitle = title.includes("FiveServ") ? title : `${title} | ${SITE.brand}`;
@@ -27,6 +28,7 @@ export const Seo = ({ title, description, path, ogImage, ogType = "website", noI
       <html lang="en-US" />
       <title>{fullTitle}</title>
       <meta name="description" content={description} />
+      {keywords && keywords.length > 0 && <meta name="keywords" content={keywords.join(", ")} />}
       {noIndex && <meta name="robots" content="noindex,nofollow" />}
       <link rel="canonical" href={url} />
       <link rel="alternate" hrefLang="en-US" href={url} />
