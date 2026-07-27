@@ -9,6 +9,7 @@ type SeoProps = {
   ogImage?: string;
   ogType?: "website" | "article";
   noIndex?: boolean;
+  keywords?: string[];
 };
 
 /**
