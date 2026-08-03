@@ -1,30 +1,74 @@
-## Objetivo
-Reemplazar el fondo del hero de `src/pages/PaintingPage.tsx` (actualmente una foto de Unsplash) por la imagen subida `PAINTING_ORLANDO_FL_FIVESERV.tiff`, y ajustar overlay/tipografía si hace falta para que el texto blanco se lea bien.
+# FiveServ — Upgrade a nivel franquicia nacional
 
-## Problema con el archivo
-El archivo es `.tiff` (~392 KB codificado, ancho de línea enorme). Los navegadores **no renderizan TIFF**, así que hay que convertirlo antes de servirlo.
+Basado en tu análisis de las 25 franquicias, y respetando lo que ya funciona. **No se elimina ninguna página, integración ni funcionalidad existente.** Todo es aditivo o refinamiento visual.
 
-## Cambios (2 pasos, 1 archivo tocado)
+## Decisiones ya confirmadas
+- Fuente de referencia: tu documento de análisis (no investigación directa mía).
+- Tipografía: se mantiene **DM Serif Display + Fira Sans** (no se toca).
+- Sin garantía con nombre propio ni badge.
+- Material real: fotos antes/después y testimonios con nombre y ciudad (los cargamos cuando los tengas; mientras tanto quedan los placeholders "FS" actuales).
+- Ejecución **por fases**.
 
-### 1. Preparar la imagen como asset CDN
-- Convertir `/mnt/user-uploads/PAINTING_ORLANDO_FL_FIVESERV.tiff` → JPG optimizado (calidad 85, max width 1920px) usando ImageMagick/Pillow en `/tmp/painting-hero.jpg`.
-- Subirla con `lovable-assets create --file /tmp/painting-hero.jpg --filename painting-hero.jpg` y guardar el pointer en `src/assets/painting-hero.jpg.asset.json`.
-- No queda binario en el repo (solo el `.asset.json`).
+---
 
-### 2. Editar `src/pages/PaintingPage.tsx`
-- Importar el asset: `import paintingHero from "@/assets/painting-hero.jpg.asset.json";`
-- Reemplazar en el `<section>` del hero (líneas ~144-155) la `backgroundImage` de Unsplash por `` `url(${paintingHero.url})` ``.
-- Ajustar overlay/texto solo si es necesario para legibilidad. Plan tentativo (confirmo al ver la imagen renderizada):
-  - Cambiar overlay actual `rgba(0,0,0,0.72)` a un **gradient** `linear-gradient(90deg, rgba(0,0,0,0.82) 0%, rgba(0,0,0,0.55) 60%, rgba(0,0,0,0.35) 100%)` para que el lado izquierdo (donde está el H1) quede oscuro y el resto de la imagen se vea.
-  - `backgroundPosition: "center"` → probable `"center right"` para que si la imagen tiene sujeto principal a la derecha no lo tape el texto.
-  - Mantener `#FFFFFF` en el H1 y `text-gray-300` en el subtítulo (ya tienen buen contraste sobre negro).
-  - Si la imagen es muy clara/colorida y el texto pierde contraste incluso con el gradient, añadir `text-shadow: 0 2px 12px rgba(0,0,0,0.6)` al H1 y subtítulo.
+## Patrones aplicados y su marca de origen
 
-## Fuera de alcance
-- No tocar el resto del hero (stats card, botón, CTA).
-- No tocar otras páginas ni el sistema de diseño global.
-- No borrar el TIFF original del mount (es read-only).
+| Patrón | Origen | Cómo lo aplico a FiveServ |
+|---|---|---|
+| Mega-menú por categorías con íconos | Mr. Handyman, Servpro | Dropdown de servicios en columnas: Maintenance / Remodeling / Trades / For Property Managers |
+| Doble CTA persistente en header | Plantilla Neighborly (Mr. Rooter) | "Get a Free Quote" + click-to-call siempre visibles |
+| Localizador de ubicación | Orkin, TruGreen | Selector de las 18 ciudades integrado al header |
+| Bifurcación de audiencia | CertaPro, Mr. Rooter | Dos tarjetas bajo el hero: "I'm a Homeowner" / "I Manage Properties" — refuerza tu embudo de dos etapas |
+| Antes/después como galería protagonista | Bath Fitter, N-Hance, Re-Bath | El `BeforeAfterSlider` existente sube a sección principal del home |
+| Banda de urgencia 24/7 | Roto-Rooter | Franja con teléfono, 24/7, sin recargos nocturnos ni de fin de semana |
+| Prueba social cuantificada | CertaPro, Re-Bath | Reseñas con nombre + ciudad + servicio, y cifras reales de FiveServ |
+| Marca familiar con gente real | Two Men and a Truck | Se potencia `FamilyStory` con la historia venezolano-americana |
 
-## Verificación
-- `bun run build` para confirmar que el import del `.asset.json` compila.
-- Screenshot rápido del hero en preview para validar contraste antes de dar por hecho el ajuste de overlay.
+---
+
+## Fase 1 — Sistema global + Homepage
+
+**1. Sistema de diseño** (`src/index.css`, `tailwind.config.ts`)
+- Escala tipográfica y ritmo vertical uniformes (hoy el home mezcla `py-16`, `py-20`, `py-24` y `80px` inline).
+- Tokens unificados de elevación, bordes y estados hover.
+- Transiciones estandarizadas: reveal al scroll, hover de tarjetas, subrayado de nav.
+
+**2. Header** (`StickyHeader.tsx`)
+- Mega-menú de servicios en columnas, con ícono y descripción corta por servicio.
+- Doble CTA persistente (teléfono + cotización).
+- Selector de ciudad de las 18.
+- Condensa altura al hacer scroll manteniendo los CTAs visibles.
+
+**3. Footer** (`Footer.tsx`)
+- Reorganizado en 5 columnas con jerarquía real: Servicios / Ciudades / Empresa / Recursos / Contacto.
+- Franja de credenciales: licenciado, asegurado, 24/7, 18 ciudades, foto-documentación, una factura.
+
+**4. Homepage** (`Index.tsx`)
+- Hero refinado: mismo mensaje, mejor jerarquía y contraste, CTA principal más dominante.
+- Nueva bifurcación de audiencia bajo el hero (Homeowner / Property Manager).
+- Antes/después promovido a sección protagonista.
+- Reseñas rediseñadas en formato cita editorial con nombre, ciudad y servicio.
+- Franja de emergencia 24/7 con teléfono.
+- Se conservan todas las secciones actuales; cambian orden, densidad y tratamiento visual.
+
+**No se toca en Fase 1:** rutas, SEO/Schema, mapa de Google, formularios GHL, chat Sofia, blog, ni ninguna página interna.
+
+---
+
+## Fases siguientes (confirmamos antes de cada una)
+- **Fase 2** — `ServicePageTemplate` + servicios estrella (Maintenance, Handyman, Bathroom, Kitchen).
+- **Fase 3** — `CityPageTemplate`, las 18 ciudades y Tampa Bay.
+- **Fase 4** — Blog, FAQ, About, Contact, Careers y páginas de conversión.
+- **Fase 5** — Micro-interacciones, performance y pulido final.
+
+---
+
+## Lo que necesito de ti
+1. **Fotos antes/después** (4-6 pares: baño, cocina, pintura, pisos) — el activo de mayor impacto del proyecto.
+2. **Testimonios reales**: texto, nombre, ciudad y servicio.
+3. Opcional: foto del equipo, camioneta rotulada o uniformes.
+
+Puedes subirlos cuando quieras; Fase 1 se construye con los placeholders actuales y los sustituimos sin rehacer nada.
+
+## Detalles técnicos
+Archivos de Fase 1: `src/index.css`, `tailwind.config.ts`, `src/components/fiveserv/StickyHeader.tsx`, `Footer.tsx`, `src/pages/Index.tsx` y componentes de home (`BeforeAfterSlider`, `TestimonialCard`, `ContactCTA`). Sin cambios en rutas, backend, Schema.org ni integraciones.
