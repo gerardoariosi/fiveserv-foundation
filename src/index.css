@@ -137,13 +137,13 @@
   .section-light-gray  { @apply bg-muted text-brand-black; }
   .section-dark        { @apply bg-brand-black text-brand-white; }
 
-  /* Single-source-of-truth top padding that accounts for the fixed banner + header stack. */
+  /* Hero breathing room only. RootLayout already offsets the fixed banner + header stack. */
   .pt-stack {
-    padding-top: calc(var(--banner-h, 0px) + var(--header-h, 80px) + 2rem);
+    padding-top: 3rem;
   }
   @media (min-width: 768px) {
     .pt-stack {
-      padding-top: calc(var(--banner-h, 0px) + var(--header-h, 80px) + 3rem);
+      padding-top: 4.5rem;
     }
   }
 }
