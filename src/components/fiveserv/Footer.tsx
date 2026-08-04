@@ -108,9 +108,28 @@ export const Footer = () => {
                 <Clock className="h-4 w-4 text-brand-gold" /> Available 24/7 for emergencies
               </li>
             </ul>
-            <Link to="/contact" className="mt-6 inline-block cta-gold rounded-md px-5 py-2.5 text-sm font-bold uppercase tracking-wide">
+
+            {/* Branded van */}
+            <div className="mt-5">
+              <img
+                src={vanAsset.url}
+                alt="FiveServ Property Solutions branded service van serving Orlando and Central Florida"
+                loading="lazy"
+                decoding="async"
+                width={200}
+                height={82}
+                className="w-full max-w-[200px] h-auto drop-shadow-[0_10px_16px_rgba(0,0,0,0.7)]"
+              />
+              <p className="mt-2 text-[10px] font-bold uppercase tracking-[0.14em] text-brand-gold/75">
+                Licensed &amp; Insured · 18 Cities · 24/7
+              </p>
+              <div className="mt-3 h-px max-w-[200px] bg-gradient-to-r from-brand-gold/35 to-transparent" />
+            </div>
+
+            <Link to="/contact" className="mt-4 inline-block cta-gold rounded-md px-5 py-2.5 text-sm font-bold uppercase tracking-wide">
               Get a Free Quote
             </Link>
+
           </div>
         </div>
 
