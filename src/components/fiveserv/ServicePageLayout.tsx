@@ -18,6 +18,7 @@ import { SITE } from "@/lib/site-config";
 import FaqAccordion from "./FaqAccordion";
 import ContactCTA from "./ContactCTA";
 import { useReveal } from "@/hooks/use-fiveserv";
+import { FS_PATTERN_DARK } from "@/lib/fs-pattern";
 
 export type ServiceLayoutConfig = {
   category: string;
@@ -35,17 +36,7 @@ export type ServiceLayoutConfig = {
   extras?: ReactNode;
 };
 
-const DOT_GRID_DARK = {
-  backgroundImage:
-    'url("data:image/svg+xml,%3Csvg width=%2728%27 height=%2728%27 viewBox=%270 0 28 28%27 xmlns=%27http://www.w3.org/2000/svg%27%3E%3Cg fill=%27rgba(255,215,0,0.18)%27%3E%3Cpath d=%27M7 3 Q7.6 6.4 10 7 Q7.6 7.6 7 11 Q6.4 7.6 4 7 Q6.4 6.4 7 3 Z%27/%3E%3Cpath d=%27M21 17 Q21.6 20.4 24 21 Q21.6 21.6 21 25 Q20.4 21.6 18 21 Q20.4 20.4 21 17 Z%27/%3E%3C/g%3E%3C/svg%3E")',
-  backgroundSize: "48px 48px",
-};
 
-const DOT_GRID_CARD = {
-  backgroundImage:
-    'url("data:image/svg+xml,%3Csvg width=%2728%27 height=%2728%27 viewBox=%270 0 28 28%27 xmlns=%27http://www.w3.org/2000/svg%27%3E%3Cg fill=%27rgba(255,215,0,0.18)%27%3E%3Cpath d=%27M7 3 Q7.6 6.4 10 7 Q7.6 7.6 7 11 Q6.4 7.6 4 7 Q6.4 6.4 7 3 Z%27/%3E%3Cpath d=%27M21 17 Q21.6 20.4 24 21 Q21.6 21.6 21 25 Q20.4 21.6 18 21 Q20.4 20.4 21 17 Z%27/%3E%3C/g%3E%3C/svg%3E")',
-  backgroundSize: "48px 48px",
-};
 
 const WHY_REASONS = [
   { icon: Award, title: "15+ Years Experience", desc: "Combined experience across multifamily, commercial and residential property work." },
@@ -157,7 +148,7 @@ export const ServicePageLayout = ({ config }: { config: ServiceLayoutConfig }) =
                 style={{
                   background: "#1A1A1A",
                   border: "2px solid #FFD700",
-                  ...DOT_GRID_CARD,
+                  ...FS_PATTERN_DARK,
                 }}
               >
                 <p className="font-display font-bold text-xl text-white">{config.offer.title}</p>
@@ -301,7 +292,7 @@ export const ServicePageLayout = ({ config }: { config: ServiceLayoutConfig }) =
       </section>
 
       {/* SECTION 5 — WHY FIVESERV */}
-      <section className="relative" style={{ background: "#1A1A1A", ...DOT_GRID_DARK }}>
+      <section className="relative" style={{ background: "#1A1A1A", ...FS_PATTERN_DARK }}>
         <div className="container py-20 lg:py-[80px]">
           <Reveal>
             <p className="text-xs font-bold uppercase tracking-[0.15em] text-brand-gold">
@@ -375,7 +366,7 @@ export const ServicePageLayout = ({ config }: { config: ServiceLayoutConfig }) =
                 >
                   <div
                     className="flex aspect-[4/5] items-center justify-center"
-                    style={DOT_GRID_CARD}
+                    style={FS_PATTERN_DARK}
                   >
                     <div
                       className="flex h-28 w-28 items-center justify-center rounded-full font-display font-black text-5xl"
@@ -396,7 +387,7 @@ export const ServicePageLayout = ({ config }: { config: ServiceLayoutConfig }) =
       {config.extras}
 
       {/* SECTION 9 — CONTACT CTA */}
-      <div className="relative" style={{ background: "#1A1A1A", ...DOT_GRID_DARK }}>
+      <div className="relative" style={{ background: "#1A1A1A", ...FS_PATTERN_DARK }}>
         <ContactCTA />
       </div>
     </>

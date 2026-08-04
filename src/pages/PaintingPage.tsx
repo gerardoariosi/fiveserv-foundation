@@ -23,12 +23,8 @@ import FaqAccordion from "@/components/fiveserv/FaqAccordion";
 import { useReveal } from "@/hooks/use-fiveserv";
 import { SITE } from "@/lib/site-config";
 import paintingHero from "@/assets/painting-hero.jpg.asset.json";
+import { FS_PATTERN_DARK, FS_PATTERN_LIGHT } from "@/lib/fs-pattern";
 
-const DOT_GRID_CARD = {
-  backgroundImage:
-    'url("data:image/svg+xml,%3Csvg width=%2728%27 height=%2728%27 viewBox=%270 0 28 28%27 xmlns=%27http://www.w3.org/2000/svg%27%3E%3Cg fill=%27rgba(255,215,0,0.18)%27%3E%3Cpath d=%27M7 3 Q7.6 6.4 10 7 Q7.6 7.6 7 11 Q6.4 7.6 4 7 Q6.4 6.4 7 3 Z%27/%3E%3Cpath d=%27M21 17 Q21.6 20.4 24 21 Q21.6 21.6 21 25 Q20.4 21.6 18 21 Q20.4 20.4 21 17 Z%27/%3E%3C/g%3E%3C/svg%3E")',
-  backgroundSize: "48px 48px",
-};
 
 const Reveal = ({ children, className = "" }: { children: ReactNode; className?: string }) => {
   const ref = useReveal<HTMLDivElement>();
@@ -199,7 +195,7 @@ const PaintingPage = () => {
               style={{
                 background: "rgba(26,26,26,0.85)",
                 border: "2px solid #FFD700",
-                ...DOT_GRID_CARD,
+                ...FS_PATTERN_DARK,
               }}
             >
               <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-0 text-center">
@@ -246,7 +242,7 @@ const PaintingPage = () => {
                   style={{
                     background: "#FFFBF0",
                     borderTop: "3px solid #FFD700",
-                    ...DOT_GRID_CARD,
+                    ...FS_PATTERN_LIGHT,
                   }}
                 >
                   <t.icon className="h-10 w-10" style={{ color: "#FFD700" }} />
@@ -394,7 +390,7 @@ const PaintingPage = () => {
       </section>
 
       {/* SECTION 7 — WHY FIVESERV */}
-      <section style={{ background: "#FFFBF0", ...DOT_GRID_CARD }}>
+      <section style={{ background: "#FFFBF0", ...FS_PATTERN_LIGHT }}>
         <div className="container py-20 lg:py-[80px]">
           <Reveal>
             <h2 className="text-center font-display font-bold text-3xl sm:text-4xl" style={{ color: "#1A1A1A" }}>
@@ -417,7 +413,7 @@ const PaintingPage = () => {
       </section>
 
       {/* SECTION 8 — FAQs */}
-      <div style={{ background: "#FFFBF0", ...DOT_GRID_CARD }}>
+      <div style={{ background: "#FFFBF0", ...FS_PATTERN_LIGHT }}>
         <FaqAccordion
           title="Painting Services — Frequently Asked Questions"
           eyebrow="FAQ"

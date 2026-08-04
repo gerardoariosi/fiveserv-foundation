@@ -18,12 +18,8 @@ import Seo from "@/lib/Seo";
 import FaqAccordion from "@/components/fiveserv/FaqAccordion";
 import { useReveal } from "@/hooks/use-fiveserv";
 import { SITE } from "@/lib/site-config";
+import { FS_PATTERN_DARK } from "@/lib/fs-pattern";
 
-const DIAMOND_PATTERN = {
-  backgroundImage:
-    'url("data:image/svg+xml,%3Csvg width=%2728%27 height=%2728%27 viewBox=%270 0 28 28%27 xmlns=%27http://www.w3.org/2000/svg%27%3E%3Cg fill=%27rgba(255,215,0,0.18)%27%3E%3Cpath d=%27M7 3 Q7.6 6.4 10 7 Q7.6 7.6 7 11 Q6.4 7.6 4 7 Q6.4 6.4 7 3 Z%27/%3E%3Cpath d=%27M21 17 Q21.6 20.4 24 21 Q21.6 21.6 21 25 Q20.4 21.6 18 21 Q20.4 20.4 21 17 Z%27/%3E%3C/g%3E%3C/svg%3E")',
-  backgroundSize: "48px 48px",
-};
 
 const Reveal = ({ children, className = "" }: { children: ReactNode; className?: string }) => {
   const ref = useReveal<HTMLDivElement>();
@@ -230,7 +226,7 @@ const HandymanPage = () => {
       {/* SECTION 1 — HERO */}
       <section
         className="relative w-full"
-        style={{ background: "#1A1A1A", ...DIAMOND_PATTERN, minHeight: 560 }}
+        style={{ background: "#1A1A1A", ...FS_PATTERN_DARK, minHeight: 560 }}
       >
         <div className="relative z-10 container py-24 lg:py-32">
           <Reveal className="max-w-3xl">
@@ -350,7 +346,7 @@ const HandymanPage = () => {
       </section>
 
       {/* SECTION 4 — PRICING */}
-      <section style={{ background: "#1A1A1A", ...DIAMOND_PATTERN }}>
+      <section style={{ background: "#1A1A1A", ...FS_PATTERN_DARK }}>
         <div className="container py-20 lg:py-[80px]">
           <Reveal>
             <h2 className="text-center font-display font-bold text-3xl sm:text-4xl" style={{ color: "#FFFFFF" }}>
@@ -425,7 +421,7 @@ const HandymanPage = () => {
       </section>
 
       {/* SECTION 6 — SERVICE CITIES */}
-      <section style={{ background: "#1A1A1A", ...DIAMOND_PATTERN }}>
+      <section style={{ background: "#1A1A1A", ...FS_PATTERN_DARK }}>
         <div className="container py-20 lg:py-[80px]">
           <Reveal>
             <h2 className="text-center font-display font-bold text-3xl sm:text-4xl" style={{ color: "#FFFFFF" }}>
