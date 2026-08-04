@@ -2,18 +2,21 @@ import { Link } from "react-router-dom";
 import { Instagram, Facebook, Linkedin, Phone, Mail, MapPin, Clock } from "lucide-react";
 import { SITE, SERVICES, CITIES, COMING_SOON_CITIES } from "@/lib/site-config";
 import Logo from "@/components/fiveserv/Logo";
+import vanAsset from "@/assets/fiveserv-van.png.asset.json";
+import fsPatternAsset from "@/assets/fs-pattern-tile.png.asset.json";
 
 export const Footer = () => {
   return (
     <footer
       className="relative bg-brand-black border-t-2 border-brand-gold/30"
       style={{
-        backgroundImage:
-          'url("data:image/svg+xml,%3Csvg width=%2728%27 height=%2728%27 viewBox=%270 0 28 28%27 xmlns=%27http://www.w3.org/2000/svg%27%3E%3Cg fill=%27rgba(255,215,0,0.18)%27%3E%3Cpath d=%27M7 3 Q7.6 6.4 10 7 Q7.6 7.6 7 11 Q6.4 7.6 4 7 Q6.4 6.4 7 3 Z%27/%3E%3Cpath d=%27M21 17 Q21.6 20.4 24 21 Q21.6 21.6 21 25 Q20.4 21.6 18 21 Q20.4 20.4 21 17 Z%27/%3E%3C/g%3E%3C/svg%3E")',
-        backgroundSize: "48px 48px",
+        backgroundImage: `url("${fsPatternAsset.url}")`,
+        backgroundSize: "64px 64px",
+        backgroundRepeat: "repeat",
       }}
     >
       <div className="container py-16 relative z-10">
+
         <div className="grid gap-12 md:grid-cols-2 lg:grid-cols-4">
           {/* Col 1: Brand */}
           <div>
@@ -105,9 +108,28 @@ export const Footer = () => {
                 <Clock className="h-4 w-4 text-brand-gold" /> Available 24/7 for emergencies
               </li>
             </ul>
-            <Link to="/contact" className="mt-6 inline-block cta-gold rounded-md px-5 py-2.5 text-sm font-bold uppercase tracking-wide">
+
+            {/* Branded van */}
+            <div className="mt-5">
+              <img
+                src={vanAsset.url}
+                alt="FiveServ Property Solutions branded service van serving Orlando and Central Florida"
+                loading="lazy"
+                decoding="async"
+                width={200}
+                height={82}
+                className="w-full max-w-[200px] h-auto drop-shadow-[0_10px_16px_rgba(0,0,0,0.7)]"
+              />
+              <p className="mt-2 text-[10px] font-bold uppercase tracking-[0.14em] text-brand-gold/75">
+                Licensed &amp; Insured · 18 Cities · 24/7
+              </p>
+              <div className="mt-3 h-px max-w-[200px] bg-gradient-to-r from-brand-gold/35 to-transparent" />
+            </div>
+
+            <Link to="/contact" className="mt-4 inline-block cta-gold rounded-md px-5 py-2.5 text-sm font-bold uppercase tracking-wide">
               Get a Free Quote
             </Link>
+
           </div>
         </div>
 
