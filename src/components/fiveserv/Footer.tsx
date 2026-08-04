@@ -11,7 +11,7 @@ export const Footer = () => {
       className="relative bg-brand-black border-t-2 border-brand-gold/30"
       style={{
         backgroundImage: `url("${fsPatternAsset.url}")`,
-        backgroundSize: "56px 56px",
+        backgroundSize: "64px 64px",
         backgroundRepeat: "repeat",
       }}
     >
