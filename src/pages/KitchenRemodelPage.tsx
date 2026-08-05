@@ -222,7 +222,8 @@ const KEYWORDS = [
   "kitchen remodel warranty Orlando", "how long does kitchen remodel take Orlando", "kitchen remodel ROI Orlando homeowner",
 ].join(", ");
 
-const HERO_IMG = "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?auto=format&fit=crop&w=1920&q=80";
+const HERO_IMG = kitchenLakeNonaAsset.url;
+const HERO_IMG_ABS = `https://fiveserv.net${kitchenLakeNonaAsset.url}`;
 const QUICK_ANSWER_IMG = "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1600&q=80";
 const ROI_IMG = "https://images.unsplash.com/photo-1600607687644-c7171b42498f?auto=format&fit=crop&w=1600&q=80";
 const CREW_IMG = "https://images.unsplash.com/photo-1581092334651-ddf26d9a09d0?auto=format&fit=crop&w=1200&q=80";
