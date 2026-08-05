@@ -473,8 +473,35 @@ const KitchenRemodelPage = () => {
                 style={{ borderLeft: "3px solid #FFD700" }}
               >
                 <div className="w-full overflow-hidden" style={{ aspectRatio: "4 / 3" }}>
-                  <img src={s.img} alt={s.title} className="w-full h-full object-cover" loading="lazy" />
+                  {s.img ? (
+                    <img
+                      src={s.img}
+                      alt={s.alt ?? s.title}
+                      title={s.imgTitle ?? s.title}
+                      width={1280}
+                      height={960}
+                      className="w-full h-full object-cover"
+                      loading="lazy"
+                    />
+                  ) : (
+                    <div
+                      className="flex h-full w-full flex-col items-center justify-center gap-3"
+                      style={{ background: "#FFFBF0", ...FS_PATTERN_LIGHT }}
+                      aria-label={`${s.title} in Orlando FL — project photos coming soon`}
+                    >
+                      <div
+                        className="flex h-14 w-14 items-center justify-center rounded-full font-display font-black text-xl"
+                        style={{ background: "#FFD700", color: "#1A1A1A" }}
+                      >
+                        FS
+                      </div>
+                      <p className="text-[11px] font-bold uppercase tracking-[0.18em]" style={{ color: "#1A1A1A" }}>
+                        Photos coming soon
+                      </p>
+                    </div>
+                  )}
                 </div>
+
                 <div className="p-6">
                   <s.icon className="h-9 w-9" style={{ color: "#FFD700" }} />
                   <h3 className="mt-4 font-display font-bold text-lg" style={{ color: "#1A1A1A" }}>
