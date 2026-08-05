@@ -24,6 +24,7 @@ import AIOverviewBlock from "@/components/fiveserv/AIOverviewBlock";
 import FaqAccordion from "@/components/fiveserv/FaqAccordion";
 import { useReveal } from "@/hooks/use-fiveserv";
 import { FS_PATTERN_DARK } from "@/lib/fs-pattern";
+import kitchenLakeNonaAsset from "@/assets/kitchen-remodel-lake-nona-fl.webp.asset.json";
 
 
 const Reveal = ({ children, className = "" }: { children: ReactNode; className?: string }) => {
