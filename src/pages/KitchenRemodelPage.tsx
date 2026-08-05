@@ -23,8 +23,13 @@ import Seo from "@/lib/Seo";
 import AIOverviewBlock from "@/components/fiveserv/AIOverviewBlock";
 import FaqAccordion from "@/components/fiveserv/FaqAccordion";
 import { useReveal } from "@/hooks/use-fiveserv";
-import { FS_PATTERN_DARK } from "@/lib/fs-pattern";
+import { FS_PATTERN_DARK, FS_PATTERN_LIGHT } from "@/lib/fs-pattern";
 import kitchenLakeNonaAsset from "@/assets/kitchen-remodel-lake-nona-fl.webp.asset.json";
+import cabinetInstallAsset from "@/assets/kitchen-cabinet-installation-orlando-fl.webp.asset.json";
+import countertopInstallAsset from "@/assets/kitchen-countertop-installation-winter-garden-fl.webp.asset.json";
+import sinkFaucetAsset from "@/assets/sink-faucet-installation-orlando-fl.webp.asset.json";
+import kitchenFlooringAsset from "@/assets/kitchen-flooring-installation-winter-park-fl.webp.asset.json";
+import fullKitchenAsset from "@/assets/full-kitchen-remodel-orlando-fl.webp.asset.json";
 
 
 const Reveal = ({ children, className = "" }: { children: ReactNode; className?: string }) => {
@@ -38,57 +43,72 @@ const Reveal = ({ children, className = "" }: { children: ReactNode; className?:
 
 const PAGE_URL = "https://fiveserv.net/kitchen-remodel";
 
-type Service = { icon: LucideIcon; title: string; desc: string; img: string };
+type Service = {
+  icon: LucideIcon;
+  title: string;
+  desc: string;
+  img?: string;
+  alt?: string;
+  imgTitle?: string;
+};
 const SERVICES: Service[] = [
   {
     icon: Package,
     title: "Cabinet Installation & Replacement",
     desc: "Stock, semi-custom, and custom cabinets. Soft-close hardware. Marine-grade plywood recommended for Florida's high humidity.",
-    img: "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?auto=format&fit=crop&w=800&q=80",
+    img: cabinetInstallAsset.url,
+    alt: "Kitchen cabinet installation in Orlando FL by FiveServ Property Solutions — gray shaker cabinets with wood slat accent wall after remodel",
+    imgTitle: "Kitchen Cabinet Installation — Orlando, FL | FiveServ Property Solutions",
   },
   {
     icon: Layers,
     title: "Countertop Installation",
     desc: "Quartz, granite, laminate, butcher block. Humidity-resistant materials for Central Florida homes. Quartz is the #1 choice in Orlando in 2026.",
-    img: "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=800&q=80",
+    img: countertopInstallAsset.url,
+    alt: "Kitchen countertop installation in Winter Garden FL by FiveServ Property Solutions — quartz island countertop set on new base cabinets",
+    imgTitle: "Kitchen Countertop Installation — Winter Garden, FL | FiveServ Property Solutions",
   },
   {
     icon: Grid3x3,
     title: "Backsplash Installation",
     desc: "Tile, subway, mosaic, slab backsplash. Design guidance included. Full grout and sealing — done right.",
-    img: "https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?auto=format&fit=crop&w=800&q=80",
   },
   {
     icon: Droplets,
     title: "Sink & Faucet Replacement",
     desc: "Undermount, drop-in, farmhouse. Licensed plumbers handle every fixture under FiveServ coordination.",
-    img: "https://images.unsplash.com/photo-1584622650111-993a426fbf0a?auto=format&fit=crop&w=800&q=80",
+    img: sinkFaucetAsset.url,
+    alt: "Sink and faucet installation in Orlando FL by FiveServ Property Solutions — floating wood vanity with double integrated sinks and brushed gold faucets",
+    imgTitle: "Sink & Faucet Installation — Orlando, FL | FiveServ Property Solutions",
   },
   {
     icon: Zap,
     title: "Appliance Installation",
     desc: "Dishwasher, range, microwave, hood, refrigerator. All brands. Licensed electrical and plumbing included.",
-    img: "https://images.unsplash.com/photo-1556909114-4f5f9b62a7d5?auto=format&fit=crop&w=800&q=80",
   },
   {
     icon: Lightbulb,
     title: "Kitchen Lighting",
     desc: "Recessed lighting, under-cabinet LED, pendant lights, dimmer switches. Licensed electrical on every job.",
-    img: "https://images.unsplash.com/photo-1565538810643-b5bdb714032a?auto=format&fit=crop&w=800&q=80",
   },
   {
     icon: LayoutGrid,
     title: "Kitchen Flooring",
     desc: "Tile, LVP, hardwood, transitions. Waterproof options recommended for Florida kitchens.",
-    img: "https://images.unsplash.com/photo-1615529182904-14819c35db37?auto=format&fit=crop&w=800&q=80",
+    img: kitchenFlooringAsset.url,
+    alt: "Kitchen flooring installation in Winter Park FL by FiveServ Property Solutions — light waterproof plank flooring with white cabinets after remodel",
+    imgTitle: "Kitchen Flooring Installation — Winter Park, FL | FiveServ Property Solutions",
   },
   {
     icon: Sparkles,
     title: "Full Kitchen Transformation",
     desc: "Complete gut remodel. Cabinets, counters, backsplash, flooring, appliances, lighting. One crew. One invoice.",
-    img: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=800&q=80",
+    img: fullKitchenAsset.url,
+    alt: "Full kitchen remodel in Orlando FL by FiveServ Property Solutions — white shaker cabinets, marble-look quartz counters, wood slat island and stainless appliances",
+    imgTitle: "Full Kitchen Remodel — Orlando, FL | FiveServ Property Solutions",
   },
 ];
+
 
 const TIERS = [
   {
@@ -453,8 +473,35 @@ const KitchenRemodelPage = () => {
                 style={{ borderLeft: "3px solid #FFD700" }}
               >
                 <div className="w-full overflow-hidden" style={{ aspectRatio: "4 / 3" }}>
-                  <img src={s.img} alt={s.title} className="w-full h-full object-cover" loading="lazy" />
+                  {s.img ? (
+                    <img
+                      src={s.img}
+                      alt={s.alt ?? s.title}
+                      title={s.imgTitle ?? s.title}
+                      width={1280}
+                      height={960}
+                      className="w-full h-full object-cover"
+                      loading="lazy"
+                    />
+                  ) : (
+                    <div
+                      className="flex h-full w-full flex-col items-center justify-center gap-3"
+                      style={{ background: "#FFFBF0", ...FS_PATTERN_LIGHT }}
+                      aria-label={`${s.title} in Orlando FL — project photos coming soon`}
+                    >
+                      <div
+                        className="flex h-14 w-14 items-center justify-center rounded-full font-display font-black text-xl"
+                        style={{ background: "#FFD700", color: "#1A1A1A" }}
+                      >
+                        FS
+                      </div>
+                      <p className="text-[11px] font-bold uppercase tracking-[0.18em]" style={{ color: "#1A1A1A" }}>
+                        Photos coming soon
+                      </p>
+                    </div>
+                  )}
                 </div>
+
                 <div className="p-6">
                   <s.icon className="h-9 w-9" style={{ color: "#FFD700" }} />
                   <h3 className="mt-4 font-display font-bold text-lg" style={{ color: "#1A1A1A" }}>
