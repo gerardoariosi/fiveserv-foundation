@@ -342,7 +342,15 @@ const KitchenRemodelPage = () => {
               className="w-full rounded-lg overflow-hidden border-2"
               style={{ borderColor: "#FFD700", aspectRatio: "16 / 9" }}
             >
-              <img src={HERO_IMG} alt="Beautiful modern kitchen remodel in Orlando FL" className="w-full h-full object-cover" loading="eager" />
+              <img
+                src={HERO_IMG}
+                alt="Kitchen remodel in Lake Nona, Orlando FL — new shaker cabinets, stone countertop island and stainless appliances by FiveServ Property Solutions"
+                title="Kitchen Remodel — Lake Nona, Orlando, FL"
+                width={1920}
+                height={1080}
+                className="w-full h-full object-cover"
+                loading="eager"
+              />
             </div>
           </Reveal>
 
