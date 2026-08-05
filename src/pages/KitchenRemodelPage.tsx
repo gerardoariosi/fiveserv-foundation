@@ -23,7 +23,7 @@ import Seo from "@/lib/Seo";
 import AIOverviewBlock from "@/components/fiveserv/AIOverviewBlock";
 import FaqAccordion from "@/components/fiveserv/FaqAccordion";
 import { useReveal } from "@/hooks/use-fiveserv";
-import { FS_PATTERN_DARK } from "@/lib/fs-pattern";
+import { FS_PATTERN_DARK, FS_PATTERN_LIGHT } from "@/lib/fs-pattern";
 import kitchenLakeNonaAsset from "@/assets/kitchen-remodel-lake-nona-fl.webp.asset.json";
 import cabinetInstallAsset from "@/assets/kitchen-cabinet-installation-orlando-fl.webp.asset.json";
 import countertopInstallAsset from "@/assets/kitchen-countertop-installation-winter-garden-fl.webp.asset.json";
