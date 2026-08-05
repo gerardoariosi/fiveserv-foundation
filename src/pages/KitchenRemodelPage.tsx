@@ -24,6 +24,7 @@ import AIOverviewBlock from "@/components/fiveserv/AIOverviewBlock";
 import FaqAccordion from "@/components/fiveserv/FaqAccordion";
 import { useReveal } from "@/hooks/use-fiveserv";
 import { FS_PATTERN_DARK } from "@/lib/fs-pattern";
+import kitchenLakeNonaAsset from "@/assets/kitchen-remodel-lake-nona-fl.webp.asset.json";
 
 
 const Reveal = ({ children, className = "" }: { children: ReactNode; className?: string }) => {
@@ -222,7 +223,8 @@ const KEYWORDS = [
   "kitchen remodel warranty Orlando", "how long does kitchen remodel take Orlando", "kitchen remodel ROI Orlando homeowner",
 ].join(", ");
 
-const HERO_IMG = "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?auto=format&fit=crop&w=1920&q=80";
+const HERO_IMG = kitchenLakeNonaAsset.url;
+const HERO_IMG_ABS = `https://fiveserv.net${kitchenLakeNonaAsset.url}`;
 const QUICK_ANSWER_IMG = "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1600&q=80";
 const ROI_IMG = "https://images.unsplash.com/photo-1600607687644-c7171b42498f?auto=format&fit=crop&w=1600&q=80";
 const CREW_IMG = "https://images.unsplash.com/photo-1581092334651-ddf26d9a09d0?auto=format&fit=crop&w=1200&q=80";
@@ -269,6 +271,7 @@ const KitchenRemodelPage = () => {
     "@context": "https://schema.org",
     "@type": "Service",
     serviceType: "Kitchen Remodeling",
+    image: HERO_IMG_ABS,
     provider: { "@type": "LocalBusiness", name: "FiveServ Property Solutions", telephone: "+14078814942", url: PAGE_URL },
     areaServed: { "@type": "Place", name: "Central Florida" },
     hasOfferCatalog: {
@@ -340,7 +343,15 @@ const KitchenRemodelPage = () => {
               className="w-full rounded-lg overflow-hidden border-2"
               style={{ borderColor: "#FFD700", aspectRatio: "16 / 9" }}
             >
-              <img src={HERO_IMG} alt="Beautiful modern kitchen remodel in Orlando FL" className="w-full h-full object-cover" loading="eager" />
+              <img
+                src={HERO_IMG}
+                alt="Kitchen remodel in Lake Nona, Orlando FL — new shaker cabinets, stone countertop island and stainless appliances by FiveServ Property Solutions"
+                title="Kitchen Remodel — Lake Nona, Orlando, FL"
+                width={1920}
+                height={1080}
+                className="w-full h-full object-cover"
+                loading="eager"
+              />
             </div>
           </Reveal>
 
