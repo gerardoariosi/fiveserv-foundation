@@ -271,6 +271,7 @@ const KitchenRemodelPage = () => {
     "@context": "https://schema.org",
     "@type": "Service",
     serviceType: "Kitchen Remodeling",
+    image: HERO_IMG_ABS,
     provider: { "@type": "LocalBusiness", name: "FiveServ Property Solutions", telephone: "+14078814942", url: PAGE_URL },
     areaServed: { "@type": "Place", name: "Central Florida" },
     hasOfferCatalog: {
