@@ -25,6 +25,11 @@ import FaqAccordion from "@/components/fiveserv/FaqAccordion";
 import { useReveal } from "@/hooks/use-fiveserv";
 import { FS_PATTERN_DARK } from "@/lib/fs-pattern";
 import kitchenLakeNonaAsset from "@/assets/kitchen-remodel-lake-nona-fl.webp.asset.json";
+import cabinetInstallAsset from "@/assets/kitchen-cabinet-installation-orlando-fl.webp.asset.json";
+import countertopInstallAsset from "@/assets/kitchen-countertop-installation-winter-garden-fl.webp.asset.json";
+import sinkFaucetAsset from "@/assets/sink-faucet-installation-orlando-fl.webp.asset.json";
+import kitchenFlooringAsset from "@/assets/kitchen-flooring-installation-winter-park-fl.webp.asset.json";
+import fullKitchenAsset from "@/assets/full-kitchen-remodel-orlando-fl.webp.asset.json";
 
 
 const Reveal = ({ children, className = "" }: { children: ReactNode; className?: string }) => {
