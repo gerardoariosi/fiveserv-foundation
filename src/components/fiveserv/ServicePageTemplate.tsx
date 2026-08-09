@@ -25,7 +25,7 @@ const SERVICE_IMAGE: Record<string, string> = {
   cleaning: "/images/services/cleaning.jpg",
   electrical: "/images/services/electrical.jpg",
   plumbing: "/images/services/plumbing.jpg",
-  hvac: "/images/services/hvac.jpg",
+  "ac-maintenance": "/images/cities/orlando.jpg",
   drywall: "/images/services/drywall.jpg",
   carpentry: "/images/services/carpentry.jpg",
   "make-ready": "/images/make-ready-unit.jpg",

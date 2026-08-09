@@ -311,7 +311,7 @@ const faqResponse = (input: string, lang: Lang): Message[] | null => {
     return [mkSofia(lang === "es" ? "Electricidad licenciada 24/7." : "Licensed 24/7 electrical.", { ctas: [{ kind: "link", label: lang === "es" ? "Ver Electricidad" : "Electrical", href: "/electrical" }] })];
   }
   if (has("hvac", "ac ", "aire", "a/c")) {
-    return [mkSofia(lang === "es" ? "HVAC licenciado 24/7 — la ley de FL requiere AC funcionando." : "Licensed 24/7 HVAC — FL law requires working AC.", { ctas: [{ kind: "link", label: "HVAC", href: "/hvac" }] })];
+    return [mkSofia(lang === "es" ? "Ya no ofrecemos reparación ni reemplazo de AC. Ahora tenemos un AC Maintenance Plan (mantenimiento preventivo) — más detalles próximamente. Para otras reparaciones, te ayudamos con maintenance o handyman." : "We no longer offer AC repair or system replacement. We now have an AC Maintenance Plan (preventive upkeep only) — more details coming soon. For other repairs, maintenance or handyman has you covered.", { ctas: [{ kind: "link", label: lang === "es" ? "AC Maintenance" : "AC Maintenance", href: "/ac-maintenance" }, { kind: "link", label: lang === "es" ? "Mantenimiento" : "Maintenance", href: "/maintenance" }] })];
   }
   if (has("painting", "pintura")) {
     return [mkSofia(lang === "es" ? "Interior + exterior + make-ready — Sherwin-Williams." : "Interior + exterior + make-ready — Sherwin-Williams.", { ctas: [{ kind: "link", label: lang === "es" ? "Ver Pintura" : "Painting", href: "/painting" }] })];

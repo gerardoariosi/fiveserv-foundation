@@ -43,7 +43,7 @@ const TRADES: Item[] = [
   { title: "Flooring", href: "/flooring", Icon: Layers, description: "LVP, tile, laminate, carpet, epoxy. Installation and repair across Central Florida." },
   { title: "Plumbing", href: "/plumbing", Icon: Droplets, description: "Faucets, toilets, leaks, drains, water heaters. Licensed plumbers under our coordination." },
   { title: "Electrical", href: "/electrical", Icon: Zap, description: "Outlets, switches, ceiling fans, lighting. Licensed electricians, same-day response." },
-  { title: "HVAC", href: "/hvac", Icon: Wind, description: "AC repair, filter replacement, duct cleaning, thermostat installation. Available 24/7." },
+  { title: "AC Maintenance", href: "/ac-maintenance", Icon: Wind, description: "Preventive AC maintenance plan for Central Florida properties. Scheduled upkeep only \u2014 plan details coming soon." },
   { title: "Drywall", href: "/drywall", Icon: Square, description: "Patching, crack repair, water damage, texture matching, full installation." },
   { title: "Carpentry", href: "/carpentry", Icon: Hammer, description: "Baseboards, crown molding, doors, shelving, trim work, closet build-outs." },
   { title: "Cleaning", href: "/cleaning", Icon: Sparkles, description: "Move-out, move-in, deep clean, post-construction. Ready for inspection every time." },
