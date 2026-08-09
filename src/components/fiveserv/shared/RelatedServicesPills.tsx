@@ -11,7 +11,7 @@ const ALL = [
   { slug: "cleaning", label: "Cleaning", icon: Sparkles },
   { slug: "electrical", label: "Electrical", icon: Zap },
   { slug: "plumbing", label: "Plumbing", icon: Droplets },
-  { slug: "hvac", label: "HVAC", icon: Wind },
+  { slug: "ac-maintenance", label: "AC Maintenance", icon: Wind },
 ] as const;
 
 export type RelatedServicesPillsProps = {

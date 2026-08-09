@@ -59,9 +59,9 @@ export const SERVICES: {
   {
     slug: "maintenance",
     name: "Maintenance and Repairs",
-    short: "24/7 emergency. Plumbing, electrical, HVAC, drywall.",
+    short: "24/7 emergency. Plumbing, electrical, AC maintenance, drywall.",
     description:
-      "Plumbing, electrical, HVAC, drywall. We answer the phone. We show up. We finish.",
+      "Plumbing, electrical, AC maintenance, drywall. We answer the phone. We show up. We finish.",
     cta: "Call for Service",
   },
   {
@@ -154,10 +154,10 @@ export const CITY_SERVICES = [
     keywords: "electrical services",
   },
   {
-    title: "HVAC & AC Repair",
-    description: "AC repair, filter replacement, duct cleaning, thermostat installation. 24/7.",
-    href: "/hvac",
-    keywords: "hvac ac repair",
+    title: "AC Maintenance",
+    description: "Preventive AC maintenance plan. Scheduled upkeep only \u2014 no repairs or system replacement.",
+    href: "/ac-maintenance",
+    keywords: "ac maintenance",
   },
   {
     title: "Drywall Repair",

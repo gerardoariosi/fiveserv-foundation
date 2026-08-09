@@ -56,7 +56,7 @@ export const Footer = () => {
               {[
                 { slug: "plumbing", name: "Plumbing" },
                 { slug: "electrical", name: "Electrical" },
-                { slug: "hvac", name: "HVAC" },
+                { slug: "ac-maintenance", name: "AC Maintenance" },
                 { slug: "painting", name: "Painting" },
                 { slug: "flooring", name: "Flooring" },
                 { slug: "cleaning", name: "Cleaning" },

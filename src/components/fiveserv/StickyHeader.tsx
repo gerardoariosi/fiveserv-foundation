@@ -22,7 +22,7 @@ const SERVICES_ESPECIALIDADES = [
   { to: "/flooring", label: "Flooring" },
   { to: "/plumbing", label: "Plumbing" },
   { to: "/electrical", label: "Electrical" },
-  { to: "/hvac", label: "HVAC" },
+  { to: "/ac-maintenance", label: "AC Maintenance" },
   { to: "/drywall", label: "Drywall" },
   { to: "/carpentry", label: "Carpentry" },
   { to: "/cleaning", label: "Cleaning" },

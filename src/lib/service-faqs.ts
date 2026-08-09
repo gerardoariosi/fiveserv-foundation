@@ -88,34 +88,6 @@ export const PLUMBING_FAQS: { q: string; a: string }[] = [
   },
 ];
 
-/** HVAC page FAQs */
-export const HVAC_FAQS: { q: string; a: string }[] = [
-  {
-    q: "Is a landlord required to provide air conditioning in Florida?",
-    a: "Yes. Florida law requires landlords to maintain working air conditioning as part of the habitability standard. A broken AC is not a routine maintenance request, it is an emergency. FiveServ responds to no-cool calls within 2 hours across Central Florida.",
-  },
-  {
-    q: "How much does AC repair cost in Orlando Florida?",
-    a: "AC repair in Orlando typically runs 150 to 600 dollars for most common issues like refrigerant recharge, capacitor replacement, and thermostat problems. Full AC unit replacement runs 3,000 to 6,000 dollars depending on size and efficiency rating. FiveServ gives you a clear quote before any work starts.",
-  },
-  {
-    q: "Do you offer 24/7 emergency HVAC service in Central Florida?",
-    a: "Yes, 24 hours a day, 7 days a week emergency HVAC response across 18 cities in Central Florida. No-cool, no-heat, system failure. Call us any time. We target 2 hours on-site for HVAC emergencies. In Florida heat a broken AC cannot wait until Monday morning.",
-  },
-  {
-    q: "Are your HVAC technicians licensed in Florida?",
-    a: "Yes. All HVAC work is performed by licensed HVAC contractors under FiveServ coordination. FiveServ Group LLC is fully licensed and insured. You get licensed work with one call, one point of contact, and one invoice.",
-  },
-  {
-    q: "Do you offer HVAC maintenance plans for rental properties?",
-    a: "Yes. Preventive HVAC maintenance is one of the best ways to avoid expensive emergency calls. We offer quarterly filter changes, coil cleaning, system checks, and annual tune-ups for multifamily properties across Central Florida. Catch problems before tenants feel them.",
-  },
-  {
-    q: "What HVAC services do you offer in Orlando and Central Florida?",
-    a: "AC repair, full unit replacement, filter and coil maintenance, duct cleaning, thermostat installation, refrigerant recharge, and 24/7 emergency response. For property managers and homeowners across 18 cities in Central Florida.",
-  },
-];
-
 /** Drywall page FAQs */
 export const DRYWALL_FAQS: { q: string; a: string }[] = [
   {

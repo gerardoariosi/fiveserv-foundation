@@ -105,7 +105,7 @@ const TRADES = [
   { slug: "painting", label: "Painting" },
   { slug: "plumbing", label: "Plumbing" },
   { slug: "electrical", label: "Electrical" },
-  { slug: "hvac", label: "HVAC" },
+  { slug: "ac-maintenance", label: "AC Maintenance" },
   { slug: "drywall", label: "Drywall" },
   { slug: "flooring", label: "Flooring" },
   { slug: "carpentry", label: "Carpentry" },
