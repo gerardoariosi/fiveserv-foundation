@@ -1,6 +1,6 @@
 import { lazy, Suspense } from "react";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import { createBrowserRouter, Navigate, RouterProvider } from "react-router-dom";
 import { HelmetProvider } from "react-helmet-async";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { Toaster } from "@/components/ui/toaster";
@@ -39,7 +39,7 @@ const WorkPolicyPage = lazy(() => import("./pages/WorkPolicyPage"));
 const PrivacyPage = lazy(() => import("./pages/PrivacyPage"));
 const PlumbingPage = lazy(() => import("./pages/PlumbingPage"));
 const ElectricalPage = lazy(() => import("./pages/ElectricalPage"));
-const HvacPage = lazy(() => import("./pages/HvacPage"));
+const AcMaintenancePage = lazy(() => import("./pages/AcMaintenancePage"));
 const DrywallPage = lazy(() => import("./pages/DrywallPage"));
 const PaintingPage = lazy(() => import("./pages/PaintingPage"));
 const FlooringPage = lazy(() => import("./pages/FlooringPage"));
@@ -119,7 +119,9 @@ const router = createBrowserRouter(
       // Trade pages
       { path: "plumbing", element: withSuspense(<PlumbingPage />) },
       { path: "electrical", element: withSuspense(<ElectricalPage />) },
-      { path: "hvac", element: withSuspense(<HvacPage />) },
+      { path: "ac-maintenance", element: withSuspense(<AcMaintenancePage />) },
+      // 301-equivalent: legacy /hvac consolidates into /ac-maintenance
+      { path: "hvac", element: <Navigate to="/ac-maintenance" replace /> },
       { path: "drywall", element: withSuspense(<DrywallPage />) },
       { path: "painting", element: withSuspense(<PaintingPage />) },
       { path: "flooring", element: withSuspense(<FlooringPage />) },
