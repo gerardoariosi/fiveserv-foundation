@@ -28,14 +28,6 @@ const AcMaintenancePage = () => {
           { name: "Services", url: `${SITE.url}/services` },
           { name: "AC Maintenance", url: `${SITE.url}${path}` },
         ]}
-        service={{
-          slug: "ac-maintenance",
-          name: "AC Maintenance",
-          short: "Preventive AC maintenance plan.",
-          description:
-            "Preventive AC maintenance plan for properties in Central Florida. Scheduled upkeep only — no repairs and no system replacement.",
-          cta: "Get a Free Quote",
-        }}
       />
       <AIOverviewBlock
         hidden
