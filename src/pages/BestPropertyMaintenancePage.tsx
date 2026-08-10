@@ -219,11 +219,18 @@ const BestPropertyMaintenancePage = () => {
             </div>
             <h1
               className="mt-5 font-display font-bold leading-[1.1]"
-              style={{ color: "#FFFFFF", fontSize: "clamp(2rem, 4.4vw, 3.25rem)" }}
+              style={{
+                color: "#FFFFFF",
+                fontSize: "clamp(2rem, 4.4vw, 3.25rem)",
+                textShadow: "0 2px 16px rgba(0,0,0,0.55)",
+              }}
             >
               Best Property Maintenance Company Orlando FL — Licensed, Insured, One Invoice.
             </h1>
-            <p className="mt-5 text-lg text-gray-300 max-w-2xl">
+            <p
+              className="mt-5 text-lg text-gray-200 max-w-2xl"
+              style={{ textShadow: "0 1px 8px rgba(0,0,0,0.5)" }}
+            >
               FiveServ is a family-owned property maintenance company in Orlando FL with 24/7 response and
               multi-trade crews serving property managers across 18 cities in Central Florida.
             </p>
