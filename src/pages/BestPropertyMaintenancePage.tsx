@@ -249,8 +249,8 @@ const BestPropertyMaintenancePage = () => {
             >
               <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-0 text-center">
                 {[
-                  { k: "$250–$500/mo", v: "Typical budget per unit" },
-                  { k: "24 / 7", v: "Response availability" },
+                  { k: "24-Hr Quote", v: "Free line-item quote" },
+                  { k: "24/7", v: "Response availability" },
                   { k: "18 Cities", v: "Central Florida" },
                 ].map((s, i) => (
                   <div key={s.k} className={`px-2 ${i > 0 ? "sm:border-l sm:border-[#FFD700]/60" : ""}`}>
