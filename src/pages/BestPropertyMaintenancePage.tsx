@@ -23,6 +23,7 @@ import FaqAccordion from "@/components/fiveserv/FaqAccordion";
 import { useReveal } from "@/hooks/use-fiveserv";
 import { SITE, SERVICES } from "@/lib/site-config";
 import { FS_PATTERN_DARK, FS_PATTERN_LIGHT } from "@/lib/fs-pattern";
+import orlandoHero from "@/assets/orlando-hero-hd.jpg.asset.json";
 
 const Reveal = ({ children, className = "" }: { children: ReactNode; className?: string }) => {
   const ref = useReveal<HTMLDivElement>();
