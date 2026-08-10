@@ -1,59 +1,40 @@
-# HVAC → AC Maintenance (con redirect)
+# Plan: Add Orlando image to BestPropertyMaintenancePage hero background
 
-Reemplazar el servicio "HVAC / AC Repair" por "AC Maintenance" (solo plan preventivo), con la nueva ruta `/ac-maintenance` y redirección desde `/hvac`.
+## Goal
+Replace the current gradient + FS-pattern hero background on `/best-property-maintenance-orlando` with a real Orlando skyline/city image, while keeping the gold/black brand palette and full text legibility.
 
-## 1. Nueva página y ruta
+## Current state
+- `src/pages/BestPropertyMaintenancePage.tsx` hero (lines 192-205) uses a dark gradient plus `FS_PATTERN_DARK`.
+- Existing asset available: `src/assets/orlando-hero-hd.jpg.asset.json` (or `orlando-skyline-hero-hd.jpg.asset.json`).
+- Pattern used elsewhere on the page must remain available for lower sections.
 
-- Crear `src/pages/AcMaintenancePage.tsx` (archivo nuevo, más limpio) y eliminar `src/pages/HvacPage.tsx`.
-- Contenido:
-  - Hero editorial negro/dorado con imagen de fondo `/images/cities/orlando.jpg`, título "AC Maintenance Plan", subtítulo corto y CTAs (quote + teléfono), en línea con el resto del sitio.
-  - Debajo del hero: una sola sección placeholder "More info coming soon" con patrón FS y botón de contacto.
-  - Sin checklist, sin sub-servicios, sin FAQs, sin ninguna mención a reparación de AC, reemplazo de sistema, refrigerante o ductos.
-- `src/App.tsx`: registrar `/ac-maintenance` y cambiar `/hvac` por una redirección.
+## Proposed changes
 
-## 2. Redirect de /hvac
+### 1. Import the Orlando hero asset
+Add an import at the top of `src/pages/BestPropertyMaintenancePage.tsx`:
+```tsx
+import orlandoHero from "@/assets/orlando-hero-hd.jpg.asset.json";
+```
 
-- Ruta `/hvac` → `<Navigate to="/ac-maintenance" replace />` (redirección permanente del lado del cliente; el canonical de la nueva página consolida la señal en Google).
-- Nota técnica: el hosting de Lovable sirve una SPA y no permite un 301 real a nivel de servidor. Google trata este patrón (redirect JS + canonical) como redirección permanente y transfiere el ranking, solo que tarda algo más que un 301 puro.
-- `public/sitemap.xml` / `scripts/generate-sitemap.mjs`: reemplazar `/hvac` por `/ac-maintenance`.
+### 2. Update hero background
+In the hero `<section>` (currently lines 192-205):
+- Set `backgroundImage` to the imported asset URL.
+- Layer a dark overlay using `::before` or an inner `<div>` with `bg-black/60` (or equivalent `rgba(26,26,26,0.72)`) so white/gold text stays readable.
+- Keep `FS_PATTERN_DARK` as a subtle texture on top of the image (very low opacity) OR remove it from the hero if it competes with the photo.
+- Keep `minHeight: 560` and responsive padding.
 
-## 3. Menú, footer y home
+### 3. Preserve text readability
+- Ensure the H1, subheadline, CTA buttons, and stats card have enough contrast.
+- Add a slight text-shadow to the H1 and paragraph if needed, matching the treatment used on `PaintingPage.tsx`.
+- The stats card should keep its dark translucent background (`rgba(26,26,26,0.85)`) and gold border so it pops over the photo.
 
-- `src/components/fiveserv/StickyHeader.tsx`: "HVAC" → "AC Maintenance", link `/ac-maintenance`.
-- `src/components/fiveserv/Footer.tsx`: mismo cambio.
-- `src/pages/Index.tsx` (TRADES): slug `ac-maintenance`, label "AC Maintenance".
-- `src/components/fiveserv/shared/RelatedServicesPills.tsx`: pill "AC Maintenance" → `/ac-maintenance`.
-- `src/pages/ServicesIndexPage.tsx`: tarjeta "HVAC" → "AC Maintenance" con descripción de solo mantenimiento preventivo.
-- `src/components/fiveserv/ServicePageTemplate.tsx`: renombrar la clave de imagen `hvac` a `ac-maintenance`.
+### 4. Accessibility / SEO
+- Add a descriptive `alt`-style `aria-label` to the section or keep the image as a decorative background (no new DOM img needed).
+- Verify no layout shift and that the image covers the section on all breakpoints (`backgroundSize: "cover"`, `backgroundPosition: "center"`).
 
-## 4. Schema.org y SEO
+## Files to edit
+- `src/pages/BestPropertyMaintenancePage.tsx` only.
 
-- `src/lib/SchemaOrg.tsx`:
-  - `hasOfferCatalog` de la organización: "HVAC and AC Repair" → "AC Maintenance", url `/ac-maintenance`.
-  - `knowsAbout`: "HVAC Repair" → "AC Maintenance".
-  - Oferta por ciudad: "AC Maintenance" con descripción de mantenimiento preventivo (filtros, inspección, limpieza de línea de condensado), sin reparación ni reemplazo.
-  - Quitar "HVAC" de la descripción larga de la organización y poner "AC maintenance".
-- `src/lib/site-config.ts`:
-  - `CITY_SERVICES`: entrada "HVAC & AC Repair" → "AC Maintenance" (`/ac-maintenance`, keywords `ac maintenance`, descripción preventiva).
-  - Descripciones del servicio Maintenance que enumeran "HVAC" → "AC maintenance".
-- Metadatos de la página nueva: title tipo "AC Maintenance Plan Orlando FL | FiveServ" y description de mantenimiento preventivo, sin "AC Repair & Replacement".
-
-## 5. Fuera de alcance (no se tocan)
-
-- `src/content/blog/hvac-maintenance-apartments-florida.tsx` y `hvac-vs-ac-maintenance-florida.tsx`.
-- Cualquier otra página, ruta, integración o funcionalidad (incluidas otras menciones de HVAC en FAQs, `city-data.ts`, `llms.txt`, `SofiaChat`, páginas de comparación) salvo que lo pidas.
-
-## Archivos a tocar
-
-1. `src/pages/AcMaintenancePage.tsx` (nuevo)
-2. `src/pages/HvacPage.tsx` (borrar)
-3. `src/App.tsx`
-4. `src/components/fiveserv/StickyHeader.tsx`
-5. `src/components/fiveserv/Footer.tsx`
-6. `src/pages/Index.tsx`
-7. `src/components/fiveserv/shared/RelatedServicesPills.tsx`
-8. `src/pages/ServicesIndexPage.tsx`
-9. `src/components/fiveserv/ServicePageTemplate.tsx`
-10. `src/lib/SchemaOrg.tsx`
-11. `src/lib/site-config.ts`
-12. `public/sitemap.xml` + `scripts/generate-sitemap.mjs`
+## Verification
+- Type-check passes.
+- Preview the page at `/best-property-maintenance-orlando` to confirm the Orlando image loads, text is legible, and the stats card remains prominent.
