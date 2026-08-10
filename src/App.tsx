@@ -142,6 +142,10 @@ const router = createBrowserRouter(
       // Reviews — SEO/AEO page (not in nav)
       { path: "reviews", element: withSuspense(<ReviewsPage />) },
 
+      // High-intent SEO/AEO landing page (not in nav)
+      { path: "best-property-maintenance-orlando", element: withSuspense(<BestPropertyMaintenancePage />) },
+
+
       // Careers
       { path: "careers", element: withSuspense(<CareersPage />) },
 
