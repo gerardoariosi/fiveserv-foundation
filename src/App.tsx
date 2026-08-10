@@ -53,6 +53,7 @@ const MakeReadyVsDIYPage = lazy(() => import("./pages/MakeReadyVsDIYPage"));
 const ForPropertyManagersPage = lazy(() => import("./pages/ForPropertyManagersPage"));
 const ReviewsPage = lazy(() => import("./pages/ReviewsPage"));
 const CareersPage = lazy(() => import("./pages/CareersPage"));
+const BestPropertyMaintenancePage = lazy(() => import("./pages/BestPropertyMaintenancePage"));
 
 const RouteFallback = () => (
   <div className="min-h-screen w-full bg-background" aria-hidden="true" />
