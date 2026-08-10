@@ -194,15 +194,20 @@ const BestPropertyMaintenancePage = () => {
         className="relative w-full overflow-hidden"
         style={{
           minHeight: 560,
-          background: "linear-gradient(135deg, #1A1A1A 0%, #2a2a1a 60%, #1A1A1A 100%)",
-          ...FS_PATTERN_DARK,
+          backgroundImage: `url("${orlandoHero.url}")`,
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+          backgroundRepeat: "no-repeat",
+          backgroundColor: "#1A1A1A",
         }}
         id="maintenance-quote"
       >
-        <Wrench
-          className="pointer-events-none absolute -right-10 -bottom-16 opacity-[0.06]"
-          style={{ color: "#FFD700", width: 520, height: 520 }}
-          aria-hidden
+        <div
+          className="absolute inset-0"
+          style={{
+            background:
+              "linear-gradient(90deg, rgba(15,15,15,0.94) 0%, rgba(15,15,15,0.82) 45%, rgba(15,15,15,0.55) 75%, rgba(15,15,15,0.35) 100%)",
+          }}
         />
         <div className="relative z-10 container py-24 lg:py-32">
           <Reveal className="max-w-3xl">
