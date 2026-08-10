@@ -193,15 +193,20 @@ const BestPropertyMaintenancePage = () => {
         className="relative w-full overflow-hidden"
         style={{
           minHeight: 560,
-          background: "linear-gradient(135deg, #1A1A1A 0%, #2a2a1a 60%, #1A1A1A 100%)",
-          ...FS_PATTERN_DARK,
+          backgroundImage: `url("/images/orlando.jpg")`,
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+          backgroundRepeat: "no-repeat",
+          backgroundColor: "#1A1A1A",
         }}
         id="maintenance-quote"
       >
-        <Wrench
-          className="pointer-events-none absolute -right-10 -bottom-16 opacity-[0.06]"
-          style={{ color: "#FFD700", width: 520, height: 520 }}
-          aria-hidden
+        <div
+          className="absolute inset-0"
+          style={{
+            background:
+              "linear-gradient(90deg, rgba(15,15,15,0.82) 0%, rgba(15,15,15,0.62) 45%, rgba(15,15,15,0.35) 75%, rgba(15,15,15,0.18) 100%)",
+          }}
         />
         <div className="relative z-10 container py-24 lg:py-32">
           <Reveal className="max-w-3xl">
@@ -213,11 +218,18 @@ const BestPropertyMaintenancePage = () => {
             </div>
             <h1
               className="mt-5 font-display font-bold leading-[1.1]"
-              style={{ color: "#FFFFFF", fontSize: "clamp(2rem, 4.4vw, 3.25rem)" }}
+              style={{
+                color: "#FFFFFF",
+                fontSize: "clamp(2rem, 4.4vw, 3.25rem)",
+                textShadow: "0 2px 16px rgba(0,0,0,0.55)",
+              }}
             >
               Best Property Maintenance Company Orlando FL — Licensed, Insured, One Invoice.
             </h1>
-            <p className="mt-5 text-lg text-gray-300 max-w-2xl">
+            <p
+              className="mt-5 text-lg text-gray-200 max-w-2xl"
+              style={{ textShadow: "0 1px 8px rgba(0,0,0,0.5)" }}
+            >
               FiveServ is a family-owned property maintenance company in Orlando FL with 24/7 response and
               multi-trade crews serving property managers across 18 cities in Central Florida.
             </p>
