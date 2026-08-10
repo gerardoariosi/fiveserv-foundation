@@ -193,7 +193,7 @@ const BestPropertyMaintenancePage = () => {
         className="relative w-full overflow-hidden"
         style={{
           minHeight: 560,
-          backgroundImage: `url("${orlandoHero.url}")`,
+          backgroundImage: `url("/images/orlando.jpg")`,
           backgroundSize: "cover",
           backgroundPosition: "center",
           backgroundRepeat: "no-repeat",
@@ -205,7 +205,7 @@ const BestPropertyMaintenancePage = () => {
           className="absolute inset-0"
           style={{
             background:
-              "linear-gradient(90deg, rgba(15,15,15,0.94) 0%, rgba(15,15,15,0.82) 45%, rgba(15,15,15,0.55) 75%, rgba(15,15,15,0.35) 100%)",
+              "linear-gradient(90deg, rgba(15,15,15,0.82) 0%, rgba(15,15,15,0.62) 45%, rgba(15,15,15,0.35) 75%, rgba(15,15,15,0.18) 100%)",
           }}
         />
         <div className="relative z-10 container py-24 lg:py-32">
