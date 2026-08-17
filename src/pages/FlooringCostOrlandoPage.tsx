@@ -108,8 +108,8 @@ const WHY_POINTS: { icon: LucideIcon; title: string; href?: string }[] = [
 const FAQS = [
   { q: "How much does it cost to install flooring in Orlando in 2026?", a: "Flooring cost in Orlando depends on the size of the area, the material you choose, whether old flooring needs removal, and how much subfloor prep is needed. Call (407) 881-4942 or request a free quote and we'll give you the exact number the same day." },
   { q: "What is the cheapest flooring option in Orlando?", a: "The most budget-friendly options are usually entry-level vinyl plank and basic ceramic tile, but the real savings come from matching the material to the job. For rental turnovers, waterproof LVP is often the better long-term value because it installs faster and repairs are plank-by-plank." },
-  { q: "How much is vinyl plank flooring per square foot in Orlando?", a: "Vinyl plank cost depends on wear-layer thickness, plank width, whether old flooring needs removal, and whether the subfloor needs leveling. We quote every job per line item so you see exactly where the money goes. Call (407) 881-4942 for a free same-day quote." },
-  { q: "How much does hardwood flooring cost to install in Orlando?", a: "Hardwood pricing depends on species, plank width, engineered vs. solid, and the condition of the subfloor. Engineered hardwood is usually the better choice in Central Florida because it handles humidity swings on concrete slabs. Request a free quote for your exact number." },
+  { q: "What affects vinyl plank flooring cost in Orlando?", a: "Vinyl plank cost depends on wear-layer thickness, plank width, whether old flooring needs removal, and whether the subfloor needs leveling. We quote every job per line item so you see exactly what each part of the scope costs. Call (407) 881-4942 for a free same-day quote." },
+  { q: "What affects hardwood flooring installation in Orlando?", a: "Hardwood pricing depends on species, plank width, engineered vs. solid, and the condition of the subfloor. Engineered hardwood is usually the better choice in Central Florida because it handles humidity swings on concrete slabs. Request a free quote for your exact scope." },
   { q: "Is tile or vinyl better for Florida humidity?", a: "Both handle Florida humidity well, but waterproof vinyl plank (LVP) is the more practical choice for most units — it is fully water-resistant, warmer and quieter underfoot, faster to install, and cheaper to repair. Tile still wins in bathrooms, laundry rooms, and entries where standing water is common." },
   { q: "How long does flooring installation take in a typical unit?", a: "A typical 900 to 1,200 square foot unit takes one to three working days for LVP or laminate, and three to five days for tile once setting and grout cure time are included. Old floor removal and subfloor leveling can add a day depending on slab condition." },
   { q: "Does FiveServ handle flooring for rental and multifamily properties?", a: "Yes. FiveServ works primarily with property managers across Central Florida, installing flooring in rental units, multifamily buildings, and full make-ready turnovers. Multiple units can be scheduled on one work order with one consolidated invoice." },
@@ -121,7 +121,7 @@ const FAQS = [
 const KEYWORDS = [
   "flooring cost Orlando",
   "flooring installation cost Orlando FL",
-  "cost to install flooring per square foot Orlando",
+  "flooring installation quote Orlando",
   "vinyl plank flooring cost Orlando",
   "hardwood flooring cost Orlando",
   "laminate flooring cost Orlando",
@@ -395,7 +395,7 @@ const FlooringCostOrlandoPage = () => {
                   <h3 className="font-display font-black text-lg" style={{ color: "#1A1A1A" }}>Residential</h3>
                   <p className="mt-2 text-sm text-gray-700">
                     Priced per job. Material selection is personal, scope varies room to room, and premium options like
-                    hardwood or large-format tile push the per-square-foot number toward the top of the range.
+                    hardwood or large-format tile require more labor and material than entry-level LVP.
                   </p>
                 </div>
                 <div className="rounded-lg p-5" style={{ background: "#FFFFFF", border: "1px solid rgba(255,215,0,0.5)" }}>
@@ -516,8 +516,8 @@ const FlooringCostOrlandoPage = () => {
               Tell Us the Size & Flooring Type — Get Your Price the Same Day.
             </h2>
             <p className="mt-4 text-base max-w-2xl mx-auto" style={{ color: "#1A1A1A" }}>
-              No price guessing. We quote material, labor, removal, and prep as separate line items so you know exactly
-              where every dollar goes.
+              Send us the size, material, and photos. We quote material, labor, removal, and prep as separate line items
+              so you know exactly what is included.
             </p>
             <a
               href="/contact"
