@@ -106,7 +106,7 @@ const WHY_POINTS: { icon: LucideIcon; title: string; href?: string }[] = [
 ];
 
 const FAQS = [
-  { q: "How much does it cost to install flooring in Orlando in 2026?", a: "Flooring cost in Orlando depends on the size of the area, the material you choose, whether old flooring needs removal, and how much subfloor prep is needed. Call (407) 881-4942 or request a free quote and we'll give you the exact number the same day." },
+  { q: "What determines the cost of installing flooring in Orlando in 2026?", a: "Flooring cost in Orlando depends on the size of the area, the material you choose, whether old flooring needs removal, and how much subfloor prep is needed. Call (407) 881-4942 or request a free quote and we'll give you the exact scope the same day." },
   { q: "What is the cheapest flooring option in Orlando?", a: "The most budget-friendly options are usually entry-level vinyl plank and basic ceramic tile, but the real savings come from matching the material to the job. For rental turnovers, waterproof LVP is often the better long-term value because it installs faster and repairs are plank-by-plank." },
   { q: "What affects vinyl plank flooring cost in Orlando?", a: "Vinyl plank cost depends on wear-layer thickness, plank width, whether old flooring needs removal, and whether the subfloor needs leveling. We quote every job per line item so you see exactly what each part of the scope costs. Call (407) 881-4942 for a free same-day quote." },
   { q: "What affects hardwood flooring installation in Orlando?", a: "Hardwood pricing depends on species, plank width, engineered vs. solid, and the condition of the subfloor. Engineered hardwood is usually the better choice in Central Florida because it handles humidity swings on concrete slabs. Request a free quote for your exact scope." },
@@ -332,7 +332,7 @@ const FlooringCostOrlandoPage = () => {
               What Actually Drives Your Flooring Cost
             </h2>
             <p className="mt-4 text-center text-base text-gray-600 max-w-2xl mx-auto">
-              Six variables explain almost every dollar of difference between two flooring quotes in Orlando.
+              Six variables explain why two flooring quotes in Orlando can look different.
             </p>
             <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
               {FACTORS.map((t) => (
