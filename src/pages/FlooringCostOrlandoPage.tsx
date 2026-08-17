@@ -66,7 +66,7 @@ const FACTORS: { icon: LucideIcon; title: string; desc: ReactNode }[] = [
   {
     icon: Hammer,
     title: "Old Flooring Removal",
-    desc: "Tear-out and haul-away typically adds $1.00–$2.50 per sq ft depending on what's coming up — carpet and pad is quick, glued tile or thinset is not.",
+    desc: "Tear-out and haul-away varies by what's coming up — carpet and pad is quick, glued tile or thinset takes more labor.",
   },
   {
     icon: Layers,
@@ -201,7 +201,7 @@ const FlooringCostOrlandoPage = () => {
               className="inline-flex items-center gap-2 rounded-full px-4 py-1.5 text-xs font-bold uppercase tracking-wider"
               style={{ background: "rgba(255,215,0,0.12)", color: "#FFD700", border: "1px solid rgba(255,215,0,0.4)" }}
             >
-              <Award className="h-3.5 w-3.5" /> 2026 Orlando Pricing · Licensed · Insured
+              <Award className="h-3.5 w-3.5" /> 2026 Central Florida · Licensed · Insured
             </div>
             <h1
               className="mt-5 font-display font-black leading-[1.1]"
@@ -211,14 +211,14 @@ const FlooringCostOrlandoPage = () => {
                 textShadow: "0 2px 16px rgba(0,0,0,0.55)",
               }}
             >
-              Flooring Cost in Orlando FL (2026) — Real Price Per Square Foot, Installed.
+              Flooring Installed in Orlando FL (2026) — Get Your Exact Price, Same Day.
             </h1>
             <p
               className="mt-5 text-lg text-gray-200 max-w-2xl"
               style={{ textShadow: "0 1px 8px rgba(0,0,0,0.5)" }}
             >
-              Vinyl plank, laminate, hardwood, tile, and epoxy — what each one actually costs installed in Orlando,
-              what drives the number up, and how rental turnovers are priced differently.
+              Vinyl plank, laminate, hardwood, tile, and epoxy — what drives your price, how rental turnovers are
+              quoted, and why we price every job as a free line-item quote.
             </p>
             <div className="mt-7 flex flex-wrap gap-3">
               <a
@@ -248,7 +248,7 @@ const FlooringCostOrlandoPage = () => {
             >
               <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-0 text-center">
                 {[
-                  { k: "$2.50–$6", v: "LVP per sq ft installed" },
+                  { k: "Same Day", v: "Free line-item quote" },
                   { k: "24-Hr Quote", v: "Free line-item pricing" },
                   { k: "18 Cities", v: "Central Florida" },
                 ].map((s, i) => (
