@@ -56,13 +56,6 @@ const ImagePlaceholder = ({
   </figure>
 );
 
-const PRICE_ROWS: { type: string; range: string; note: string }[] = [
-  { type: "Vinyl Plank / LVP", range: "$2.50 – $6.00 / sq ft", note: "Installed. Most popular choice in Florida — waterproof and turnover-friendly." },
-  { type: "Laminate", range: "$5.50 – $6.00 / sq ft", note: "Installed. Good looks at mid-range cost, but less humidity-tolerant than LVP." },
-  { type: "Hardwood", range: "$7.22 – $16.00 / sq ft", note: "Installed. Premium finish for owner-occupied homes and high-end rentals." },
-  { type: "Tile", range: "$1.00 – $25.00 / sq ft", note: "Material-dependent. Ceramic on the low end, large-format porcelain and stone on the high end." },
-  { type: "Epoxy", range: "$5.00 – $8.00 / sq ft", note: "Installed. Garages, utility rooms, and common areas." },
-];
 
 const FACTORS: { icon: LucideIcon; title: string; desc: ReactNode }[] = [
   {
@@ -113,15 +106,15 @@ const WHY_POINTS: { icon: LucideIcon; title: string; href?: string }[] = [
 ];
 
 const FAQS = [
-  { q: "How much does it cost to install flooring in Orlando in 2026?", a: "In Orlando FL, installed flooring costs roughly $2.50 to $6.00 per square foot for vinyl plank (LVP), $5.50 to $6.00 for laminate, $7.22 to $16.00 for hardwood, $1.00 to $25.00 for tile depending on material, and $5.00 to $8.00 for epoxy. A typical 900 sq ft rental unit in LVP lands around $2,250 to $5,400 installed, before old-floor removal and subfloor prep." },
-  { q: "What is the cheapest flooring option in Orlando?", a: "Entry-level vinyl plank and basic ceramic tile are the cheapest installed options in Orlando, starting near $1.00 to $3.00 per square foot. For rentals, cheap LVP is usually the better value than cheap tile because installation labor is lower and repairs are plank-by-plank instead of a full section." },
-  { q: "How much is vinyl plank flooring per square foot in Orlando?", a: "Vinyl plank (LVP) flooring in Orlando runs about $2.50 to $6.00 per square foot installed in 2026. The spread comes from wear-layer thickness, plank width, and whether the job includes old floor removal, subfloor leveling, and new baseboard or quarter round." },
-  { q: "How much does hardwood flooring cost to install in Orlando?", a: "Hardwood flooring in Orlando costs about $7.22 to $16.00 per square foot installed, depending on species, plank width, and whether it is engineered or solid. Engineered hardwood is usually recommended over solid in Central Florida because it handles humidity swings better on concrete slabs." },
+  { q: "How much does it cost to install flooring in Orlando in 2026?", a: "Flooring cost in Orlando depends on the size of the area, the material you choose, whether old flooring needs removal, and how much subfloor prep is needed. Call (407) 881-4942 or request a free quote and we'll give you the exact number the same day." },
+  { q: "What is the cheapest flooring option in Orlando?", a: "The most budget-friendly options are usually entry-level vinyl plank and basic ceramic tile, but the real savings come from matching the material to the job. For rental turnovers, waterproof LVP is often the better long-term value because it installs faster and repairs are plank-by-plank." },
+  { q: "How much is vinyl plank flooring per square foot in Orlando?", a: "Vinyl plank cost depends on wear-layer thickness, plank width, whether old flooring needs removal, and whether the subfloor needs leveling. We quote every job per line item so you see exactly where the money goes. Call (407) 881-4942 for a free same-day quote." },
+  { q: "How much does hardwood flooring cost to install in Orlando?", a: "Hardwood pricing depends on species, plank width, engineered vs. solid, and the condition of the subfloor. Engineered hardwood is usually the better choice in Central Florida because it handles humidity swings on concrete slabs. Request a free quote for your exact number." },
   { q: "Is tile or vinyl better for Florida humidity?", a: "Both handle Florida humidity well, but waterproof vinyl plank (LVP) is the more practical choice for most units — it is fully water-resistant, warmer and quieter underfoot, faster to install, and cheaper to repair. Tile still wins in bathrooms, laundry rooms, and entries where standing water is common." },
   { q: "How long does flooring installation take in a typical unit?", a: "A typical 900 to 1,200 square foot unit takes one to three working days for LVP or laminate, and three to five days for tile once setting and grout cure time are included. Old floor removal and subfloor leveling can add a day depending on slab condition." },
   { q: "Does FiveServ handle flooring for rental and multifamily properties?", a: "Yes. FiveServ works primarily with property managers across Central Florida, installing flooring in rental units, multifamily buildings, and full make-ready turnovers. Multiple units can be scheduled on one work order with one consolidated invoice." },
   { q: "What flooring is best for high-turnover rental units?", a: "Waterproof vinyl plank with a 12 mil or thicker wear layer is the best flooring for high-turnover rentals in Orlando. It resists moisture and scratches, survives repeated move-ins, and damaged planks can be swapped individually instead of re-flooring the whole room between tenants." },
-  { q: "Do you charge extra to remove the old flooring?", a: "Old floor removal and disposal is quoted as its own line item, typically $1.00 to $2.50 per square foot depending on the existing material. Carpet and pad is on the low end; glued-down tile, thinset, and adhesive residue are on the high end because they require grinding." },
+  { q: "Do you charge extra to remove the old flooring?", a: "Old floor removal and disposal is quoted as its own line item. The cost depends on the existing material — carpet and pad are simpler, while glued-down tile, thinset, and adhesive residue require grinding. We inspect and quote removal up front so there are no surprises." },
   { q: "Can I get a same-day flooring quote in Orlando?", a: "Yes. Call (407) 881-4942 or submit the contact form and FiveServ returns a free line-item flooring quote — often same day, and within 24 hours for larger multi-unit scopes across the 18 Central Florida cities we serve." },
 ];
 
@@ -154,13 +147,13 @@ const CITIES = [
 
 const FlooringCostOrlandoPage = () => {
   const aiAnswer =
-    "Flooring installation in Orlando FL costs about $2.50–$6 per square foot for vinyl plank (LVP), $5.50–$6 for laminate, $7.22–$16 for hardwood, $1–$25 for tile, and $5–$8 for epoxy, installed. Waterproof LVP is the most common choice in Florida humidity. FiveServ Property Solutions quotes flooring line-item for Orlando property managers.";
+    "Flooring cost in Orlando FL depends on unit size, material choice, old-floor removal, subfloor prep, and whether the job is a residential remodel or a rental turnover. FiveServ Property Solutions gives Orlando property managers a free line-item quote the same day, with material, labor, removal, and prep priced separately.";
 
   return (
     <>
       <Seo
-        title="Flooring Cost Orlando FL 2026 | Price Per Square Foot Installed"
-        description="What flooring costs in Orlando FL in 2026: vinyl plank $2.50–$6/sq ft, laminate $5.50–$6, hardwood $7.22–$16, tile $1–$25, epoxy $5–$8 installed. Free line-item quote from FiveServ."
+        title="Flooring Cost Orlando FL 2026 | Free Quote Per Job | FiveServ"
+        description="See what drives flooring cost in Orlando FL in 2026 and get a free line-item quote the same day. FiveServ installs LVP, laminate, hardwood, tile and epoxy across Central Florida."
         path="/flooring-cost-orlando"
         keywords={KEYWORDS}
       />
@@ -289,37 +282,43 @@ const FlooringCostOrlandoPage = () => {
                 Quick Answer
               </p>
               <h2 className="mt-2 font-display font-black text-2xl sm:text-3xl" style={{ color: "#1A1A1A" }}>
-                How much does flooring cost per square foot in Orlando?
+                What determines flooring cost in Orlando?
               </h2>
+              <p className="mt-4 text-base leading-relaxed" style={{ color: "#1A1A1A" }}>
+                Every flooring quote is different because the job is different. Here are the five variables that move
+                your final number — and why we quote each one as a separate line item.
+              </p>
 
-              <div className="mt-6 overflow-x-auto">
-                <table className="w-full text-left text-sm">
-                  <caption className="sr-only">Orlando FL flooring cost per square foot installed, 2026</caption>
-                  <thead>
-                    <tr style={{ borderBottom: "2px solid #FFD700" }}>
-                      <th scope="col" className="py-2 pr-4 font-bold" style={{ color: "#1A1A1A" }}>Flooring Type</th>
-                      <th scope="col" className="py-2 pr-4 font-bold" style={{ color: "#1A1A1A" }}>Installed Cost</th>
-                      <th scope="col" className="py-2 font-bold" style={{ color: "#1A1A1A" }}>Notes</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    {PRICE_ROWS.map((r) => (
-                      <tr key={r.type} className="border-b border-gray-200 align-top">
-                        <th scope="row" className="py-3 pr-4 font-bold" style={{ color: "#1A1A1A" }}>{r.type}</th>
-                        <td className="py-3 pr-4 font-bold whitespace-nowrap" style={{ color: "#1A1A1A" }}>{r.range}</td>
-                        <td className="py-3 text-gray-600">{r.note}</td>
-                      </tr>
-                    ))}
-                  </tbody>
-                </table>
+              <div className="mt-6 grid gap-4 sm:grid-cols-2">
+                {[
+                  { title: "Unit size & layout", desc: "Larger areas lower the per-foot setup cost. Hallways, closets, and stairs add cuts and transitions." },
+                  { title: "Material type & grade", desc: "Wear layer, plank width, tile format, and species all change the material line item." },
+                  { title: "Old flooring removal", desc: "Carpet is quick. Glued tile or thinset takes more labor and disposal." },
+                  { title: "Subfloor prep", desc: "Leveling, patching, and moisture barriers prevent callbacks on Florida slabs." },
+                  { title: "Residential vs. turnover", desc: "Single remodels are priced per job. Repeatable rental specs lower cost per door." },
+                ].map((v) => (
+                  <div key={v.title} className="rounded-lg p-4" style={{ background: "#FFFBF0", border: "1px solid rgba(255,215,0,0.4)" }}>
+                    <h3 className="font-bold" style={{ color: "#1A1A1A" }}>{v.title}</h3>
+                    <p className="mt-1 text-sm text-gray-700">{v.desc}</p>
+                  </div>
+                ))}
               </div>
 
-              <p className="mt-6 text-base leading-relaxed" style={{ color: "#1A1A1A" }}>
-                Ranges are 2026 Orlando-market figures for installed flooring and exclude old-floor removal and subfloor
-                leveling, which are quoted separately. Call{" "}
-                <a href={`tel:${SITE.phone}`} className="underline" style={{ color: "#1A1A1A" }}>{SITE.phone}</a> or{" "}
-                <a href="/contact" className="underline" style={{ color: "#1A1A1A" }}>request a free line-item quote</a>.
-              </p>
+              <div className="mt-8 rounded-lg p-6 text-center" style={{ background: "#1A1A1A", ...FS_PATTERN_DARK }}>
+                <p className="font-display font-black text-xl" style={{ color: "#FFD700" }}>
+                  Get Your Exact Price
+                </p>
+                <p className="mt-2 text-sm text-gray-300">
+                  Tell us the size and flooring type. We return a free line-item quote — usually the same day.
+                </p>
+                <a
+                  href="/contact"
+                  className="mt-4 inline-flex items-center gap-2 rounded-md px-6 py-3 text-sm font-bold uppercase tracking-wide"
+                  style={{ background: "#FFD700", color: "#1A1A1A" }}
+                >
+                  Request a Free Quote
+                </a>
+              </div>
             </div>
           </Reveal>
         </div>
@@ -424,17 +423,17 @@ const FlooringCostOrlandoPage = () => {
         <div className="container py-20 lg:py-[80px] text-center">
           <Reveal>
             <p className="text-sm" style={{ color: "#FFFFFF" }}>
-              Installed vinyl plank flooring in Orlando, per square foot
+              Free line-item flooring quote in Orlando
             </p>
             <p
               className="mt-4 font-display font-black"
               style={{ color: "#FFD700", fontSize: "clamp(3rem, 9vw, 6.5rem)", lineHeight: 1 }}
             >
-              $2.50–$6
+              24-Hr Quote
             </p>
             <p className="mt-4 text-sm text-gray-400 max-w-xl mx-auto">
-              That range reflects current Central Florida market pricing. It is not a flat fee — FiveServ quotes every
-              floor per job, with material, labor, removal, and subfloor prep listed as separate line items.
+              Send us the unit size, material, and photos. We return material, labor, removal, and prep as separate
+              line items — usually within 24 hours.
             </p>
             <a
               href="/contact"
@@ -514,18 +513,18 @@ const FlooringCostOrlandoPage = () => {
         <div className="container py-20 lg:py-[80px] text-center">
           <Reveal>
             <h2 className="font-display font-black text-3xl sm:text-4xl" style={{ color: "#1A1A1A" }}>
-              Get Your Orlando Flooring Quote — Line Item, No Guesswork.
+              Tell Us the Size & Flooring Type — Get Your Price the Same Day.
             </h2>
             <p className="mt-4 text-base max-w-2xl mx-auto" style={{ color: "#1A1A1A" }}>
-              Send us the unit size and the flooring you want. We come back with material, labor, removal, and prep
-              priced separately — usually the same day.
+              No price guessing. We quote material, labor, removal, and prep as separate line items so you know exactly
+              where every dollar goes.
             </p>
             <a
               href="/contact"
               className="mt-8 inline-flex items-center gap-2 rounded-md px-7 py-3.5 text-sm font-bold uppercase tracking-wide"
               style={{ background: "#1A1A1A", color: "#FFD700" }}
             >
-              Get Your Free Quote
+              Get Your Exact Price
             </a>
             <p className="mt-5 font-display font-black text-2xl" style={{ color: "#1A1A1A" }}>
               <a href={`tel:${SITE.phone}`}>{SITE.phone}</a>
