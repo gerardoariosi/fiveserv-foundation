@@ -26,6 +26,9 @@ const STATIC = [
   { path: "/make-ready-vs-diy-property-management/", priority: 0.8 },
   { path: "/for-property-managers", priority: 0.9 },
   { path: "/reviews", priority: 0.7 },
+  { path: "/best-property-maintenance-orlando", priority: 0.9 },
+  { path: "/flooring-cost-orlando", priority: 0.9 },
+  { path: "/painting-cost-orlando", priority: 0.9 },
 ];
 
 const urls = [
