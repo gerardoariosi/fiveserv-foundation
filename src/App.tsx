@@ -56,6 +56,7 @@ const CareersPage = lazy(() => import("./pages/CareersPage"));
 const BestPropertyMaintenancePage = lazy(() => import("./pages/BestPropertyMaintenancePage"));
 const FlooringCostOrlandoPage = lazy(() => import("./pages/FlooringCostOrlandoPage"));
 const PaintingCostOrlandoPage = lazy(() => import("./pages/PaintingCostOrlandoPage"));
+const RentalPropertyMaintenancePage = lazy(() => import("./pages/RentalPropertyMaintenancePage"));
 
 const RouteFallback = () => (
   <div className="min-h-screen w-full bg-background" aria-hidden="true" />
