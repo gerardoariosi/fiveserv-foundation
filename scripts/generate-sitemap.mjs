@@ -29,6 +29,7 @@ const STATIC = [
   { path: "/best-property-maintenance-orlando", priority: 0.9 },
   { path: "/flooring-cost-orlando", priority: 0.9 },
   { path: "/painting-cost-orlando", priority: 0.9 },
+  { path: "/property-maintenance-rental-orlando", priority: 0.9 },
 ];
 
 const urls = [

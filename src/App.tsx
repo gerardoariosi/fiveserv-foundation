@@ -149,6 +149,7 @@ const router = createBrowserRouter(
       { path: "best-property-maintenance-orlando", element: withSuspense(<BestPropertyMaintenancePage />) },
       { path: "flooring-cost-orlando", element: withSuspense(<FlooringCostOrlandoPage />) },
       { path: "painting-cost-orlando", element: withSuspense(<PaintingCostOrlandoPage />) },
+      { path: "property-maintenance-rental-orlando", element: withSuspense(<RentalPropertyMaintenancePage />) },
 
 
       // Careers
