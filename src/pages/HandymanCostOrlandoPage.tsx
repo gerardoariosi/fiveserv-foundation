@@ -114,7 +114,7 @@ const HandymanCostOrlandoPage = () => {
     <AIOverviewBlock hidden answer={aiAnswer} />
 
     <section className="relative bg-brand-black" id="handyman-quote" style={FS_PATTERN_DARK}>
-      <div className="absolute inset-0 bg-hero-overlay/70" aria-hidden="true" />
+      <div className="absolute inset-0 bg-hero-overlay/[0.72]" aria-hidden="true" />
       <div className="container relative py-24 lg:py-32">
         <Reveal className="max-w-3xl">
           <p className="text-sm font-bold uppercase text-brand-gold">2026 Orlando handyman pricing</p>
