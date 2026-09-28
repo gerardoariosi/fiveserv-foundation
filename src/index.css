@@ -25,6 +25,9 @@
     --cream-50: 40 33% 98%;          /* #FAF9F6 */
     --cream-100: 40 20% 94%;         /* #F3F2EE */
     --cream-200: 40 12% 90%;         /* #EAE8E4 */
+    --surface-warm: 45 100% 97%;     /* #FFFBF0 */
+    --surface-soft: 60 14% 98%;      /* #FAFAF8 */
+    --hero-overlay: 0 0% 0%;
     --warm-gray-200: 40 6% 89%;      /* #E5E5E1 */
     --warm-gray-500: 0 0% 42%;       /* #6B6B6B */
 

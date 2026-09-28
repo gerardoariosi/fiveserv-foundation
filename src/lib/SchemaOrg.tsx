@@ -13,6 +13,8 @@ type SchemaProps = {
   breadcrumbs?: Crumb[];
   /** Render Organization + LocalBusiness — homepage */
   organization?: boolean;
+  /** Override the generic business price range for a specific service page. */
+  organizationPriceRange?: string;
   /** Render Service schema for a single service */
   service?: (typeof SERVICES)[number];
   /** Render LocalBusiness for a single city page */
@@ -32,6 +34,7 @@ type SchemaProps = {
 export const SchemaOrg = ({
   breadcrumbs,
   organization,
+  organizationPriceRange,
   service,
   city,
   faqs,
@@ -60,7 +63,7 @@ export const SchemaOrg = ({
       slogan: "One Call. One Team. Done.",
       email: SITE.email,
       telephone: SITE.phone,
-      priceRange: "$$",
+      priceRange: organizationPriceRange ?? "$$",
       address: {
         "@type": "PostalAddress",
         addressLocality: SITE.baseCity,

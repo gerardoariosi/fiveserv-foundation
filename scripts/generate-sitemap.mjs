@@ -30,6 +30,7 @@ const STATIC = [
   { path: "/flooring-cost-orlando", priority: 0.9 },
   { path: "/painting-cost-orlando", priority: 0.9 },
   { path: "/property-maintenance-rental-orlando", priority: 0.9 },
+  { path: "/handyman-cost-orlando", priority: 0.9, lastmod: "2026-09-28" },
 ];
 
 const urls = [
@@ -47,7 +48,7 @@ ${urls
   .map(
     (u) => `  <url>
     <loc>${SITE_URL}${u.path}</loc>
-    <lastmod>${today}</lastmod>
+    <lastmod>${u.lastmod ?? today}</lastmod>
     <changefreq>weekly</changefreq>
     <priority>${u.priority.toFixed(1)}</priority>
   </url>`,

@@ -1,0 +1,3 @@
+- [ ] Create and register the handyman cost page with all requested content and structured data.
+- [ ] Synchronize the generated sitemap source and served sitemap for the five high-intent pages.
+- [ ] Verify the page and sitemap in the preview without publishing.
