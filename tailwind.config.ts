@@ -26,6 +26,9 @@ export default {
         ring: "hsl(var(--ring))",
         background: "hsl(var(--background))",
         foreground: "hsl(var(--foreground))",
+        "surface-warm": "hsl(var(--surface-warm))",
+        "surface-soft": "hsl(var(--surface-soft))",
+        "hero-overlay": "hsl(var(--hero-overlay))",
         brand: {
           black: "hsl(var(--brand-black))",
           gold: "hsl(var(--brand-gold))",
