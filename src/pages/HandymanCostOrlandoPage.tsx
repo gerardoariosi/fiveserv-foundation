@@ -1,8 +1,8 @@
 import { type ReactNode } from "react";
 import { Link } from "react-router-dom";
 import {
-  Award, Camera, CheckCircle2, Clock3, FileText, MapPin, Phone, ShieldCheck,
-  Users, Wrench, type LucideIcon,
+  Award, Camera, CheckCircle2, Clock3, MapPin, Phone, ShieldCheck,
+  Users, type LucideIcon,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import AIOverviewBlock from "@/components/fiveserv/AIOverviewBlock";
@@ -115,30 +115,30 @@ const HandymanCostOrlandoPage = () => {
 
     <section className="relative bg-brand-black" id="handyman-quote" style={FS_PATTERN_DARK}>
       <div className="absolute inset-0 bg-hero-overlay/[0.72]" aria-hidden="true" />
-      <div className="container relative py-24 lg:py-32">
+      <div className="container relative py-12 sm:py-24 lg:py-32">
         <Reveal className="max-w-3xl">
           <p className="text-sm font-bold uppercase text-brand-gold">2026 Orlando handyman pricing</p>
-          <h1 className="mt-5 font-display text-4xl font-bold leading-tight text-brand-white sm:text-5xl">
+          <h1 className="mt-5 font-display text-3xl font-bold leading-tight text-brand-white sm:text-5xl">
             Handyman Cost Orlando FL (2026) — Real Prices, No Surprises.
           </h1>
-          <p className="mt-5 max-w-2xl text-lg text-brand-white/85">Hourly vs flat-rate, what common jobs actually cost, and how to avoid overpaying.</p>
-          <div className="mt-7 flex flex-wrap gap-3">
+          <p className="mt-4 max-w-2xl text-base text-brand-white/85 sm:mt-5 sm:text-lg">Hourly vs flat-rate, what common jobs actually cost, and how to avoid overpaying.</p>
+          <div className="mt-5 flex flex-wrap gap-3 sm:mt-7">
             <Button asChild size="lg" className="font-bold uppercase"><Link to="/contact">Get a Free Quote</Link></Button>
             <Button asChild size="lg" variant="outline" className="border-brand-white/50 bg-transparent text-brand-white hover:bg-brand-white hover:text-brand-black">
               <a href={`tel:${SITE.phone}`}><Phone aria-hidden="true" /> Call {SITE.phone}</a>
             </Button>
           </div>
         </Reveal>
-        <Reveal className="mt-10 max-w-2xl">
-          <div className="rounded-md border-2 border-brand-gold bg-brand-black/85 p-6" style={FS_PATTERN_DARK}>
-            <div className="grid gap-4 text-center sm:grid-cols-3 sm:gap-0">
+        <Reveal className="mt-7 max-w-2xl sm:mt-10">
+          <div className="rounded-md border-2 border-brand-gold bg-brand-black/85 p-3 sm:p-6" style={FS_PATTERN_DARK}>
+            <div className="grid grid-cols-3 gap-0 text-center">
               {[
                 { k: "Most Jobs $150–$400", v: "Scope determines final price" },
                 { k: "Written Price First", v: "Know the cost before work" },
                 { k: "Licensed & Insured", v: "Florida property services" },
-              ].map((s, i) => <div key={s.k} className={`px-2 ${i ? "sm:border-l sm:border-brand-gold/60" : ""}`}>
-                <p className="font-display text-xl font-bold text-brand-gold">{s.k}</p>
-                <p className="mt-1 text-xs text-brand-white/80">{s.v}</p>
+              ].map((s, i) => <div key={s.k} className={`px-1 sm:px-2 ${i ? "border-l border-brand-gold/60" : ""}`}>
+                <p className="font-display text-sm font-bold leading-tight text-brand-gold sm:text-xl">{s.k}</p>
+                <p className="mt-1 text-[10px] leading-tight text-brand-white/80 sm:text-xs">{s.v}</p>
               </div>)}
             </div>
           </div>
