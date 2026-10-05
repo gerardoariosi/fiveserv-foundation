@@ -31,6 +31,7 @@ const STATIC = [
   { path: "/painting-cost-orlando", priority: 0.9 },
   { path: "/property-maintenance-rental-orlando", priority: 0.9 },
   { path: "/handyman-cost-orlando", priority: 0.9, lastmod: "2026-09-28" },
+  { path: "/bathroom-remodel-cost-orlando", priority: 0.9, lastmod: "2026-10-05" },
 ];
 
 const urls = [

@@ -1,3 +1,6 @@
 - [x] Create and register the handyman cost page with all requested content and structured data.
 - [x] Synchronize the generated sitemap source and served sitemap for the five high-intent pages.
 - [x] Verify the page and sitemap in the preview without publishing.
+- [ ] Create and register the bathroom remodel cost page with matching visible content and structured data.
+- [ ] Synchronize the sitemap generator and served sitemap with the new URL and date.
+- [ ] Verify desktop, mobile, metadata, JSON-LD, FAQ parity, and sitemap without publishing.

@@ -58,6 +58,7 @@ const FlooringCostOrlandoPage = lazy(() => import("./pages/FlooringCostOrlandoPa
 const PaintingCostOrlandoPage = lazy(() => import("./pages/PaintingCostOrlandoPage"));
 const RentalPropertyMaintenancePage = lazy(() => import("./pages/RentalPropertyMaintenancePage"));
 const HandymanCostOrlandoPage = lazy(() => import("./pages/HandymanCostOrlandoPage"));
+const BathroomRemodelCostOrlandoPage = lazy(() => import("./pages/BathroomRemodelCostOrlandoPage"));
 
 const RouteFallback = () => (
   <div className="min-h-screen w-full bg-background" aria-hidden="true" />
@@ -152,6 +153,7 @@ const router = createBrowserRouter(
       { path: "painting-cost-orlando", element: withSuspense(<PaintingCostOrlandoPage />) },
       { path: "property-maintenance-rental-orlando", element: withSuspense(<RentalPropertyMaintenancePage />) },
       { path: "handyman-cost-orlando", element: withSuspense(<HandymanCostOrlandoPage />) },
+      { path: "bathroom-remodel-cost-orlando", element: withSuspense(<BathroomRemodelCostOrlandoPage />) },
 
 
       // Careers
