@@ -4,3 +4,6 @@
 - [x] Create and register the bathroom remodel cost page with matching visible content and structured data.
 - [x] Synchronize the sitemap generator and served sitemap with the new URL and date.
 - [x] Verify desktop, mobile, metadata, JSON-LD, FAQ parity, and sitemap without publishing.
+- [ ] Create and register the matching kitchen remodel cost page with requested sections and ten FAQs.
+- [ ] Align sitemap generator and served sitemap, repair fallback lastmod dates, and check llms listing eligibility.
+- [ ] Verify kitchen cost page on desktop and mobile, FAQ/schema parity, metadata, links, and sitemap without publishing.
