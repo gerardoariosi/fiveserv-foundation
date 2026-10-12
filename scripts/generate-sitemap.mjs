@@ -26,12 +26,16 @@ const STATIC = [
   { path: "/make-ready-vs-diy-property-management/", priority: 0.8 },
   { path: "/for-property-managers", priority: 0.9 },
   { path: "/reviews", priority: 0.7 },
-  { path: "/best-property-maintenance-orlando", priority: 0.9 },
-  { path: "/flooring-cost-orlando", priority: 0.9 },
-  { path: "/painting-cost-orlando", priority: 0.9 },
-  { path: "/property-maintenance-rental-orlando", priority: 0.9 },
+  // Preserve existing page-specific values whose original source is unknown.
+  { path: "/best-property-maintenance-orlando", priority: 0.9, lastmod: "2026-09-28" },
+  { path: "/flooring-cost-orlando", priority: 0.9, lastmod: "2026-09-28" },
+  { path: "/painting-cost-orlando", priority: 0.9, lastmod: "2026-09-28" },
+  { path: "/property-maintenance-rental-orlando", priority: 0.9, lastmod: "2026-09-28" },
   { path: "/handyman-cost-orlando", priority: 0.9, lastmod: "2026-09-28" },
   { path: "/bathroom-remodel-cost-orlando", priority: 0.9, lastmod: "2026-10-05" },
+  // Authoritative creation date of this page's initial content.
+  { path: "/kitchen-remodel-cost-orlando", priority: 0.9, lastmod: "2026-10-12" },
+  { path: "/emergency-repair-orlando", priority: 0.95, lastmod: "2026-07-21" },
 ];
 
 const urls = [
@@ -41,17 +45,14 @@ const urls = [
   ...SERVICES.flatMap((s) => CITIES.map((c) => ({ path: `/${s}/${c}`, priority: 0.8 }))),
 ];
 
-const today = new Date().toISOString().split("T")[0];
-
 const xml = `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 ${urls
   .map(
     (u) => `  <url>
     <loc>${SITE_URL}${u.path}</loc>
-    <lastmod>${u.lastmod ?? today}</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>${u.priority.toFixed(1)}</priority>
+${u.lastmod ? `    <lastmod>${u.lastmod}</lastmod>\n` : ""}    <changefreq>weekly</changefreq>
+    <priority>${u.priority === 0.95 ? "0.95" : u.priority.toFixed(1)}</priority>
   </url>`,
   )
   .join("\n")}
