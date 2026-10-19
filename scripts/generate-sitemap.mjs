@@ -35,7 +35,7 @@ const STATIC = [
   { path: "/bathroom-remodel-cost-orlando", priority: 0.9, lastmod: "2026-10-05" },
   // Authoritative creation date of this page's initial content.
   { path: "/kitchen-remodel-cost-orlando", priority: 0.9, lastmod: "2026-10-12" },
-  { path: "/emergency-repair-orlando", priority: 0.95, lastmod: "2026-07-21" },
+  { path: "/emergency-repair-orlando", priority: 0.95, lastmod: "2026-10-19" },
 ];
 
 const urls = [

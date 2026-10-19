@@ -78,6 +78,42 @@ const WHY_POINTS = [
   { icon: MapPin, title: "18 cities across Central Florida" },
 ];
 
+const KEYWORDS = [
+  "emergency repair Orlando", "emergency repair cost Orlando", "24/7 emergency plumber Orlando",
+  "emergency AC repair Orlando", "burst pipe repair Orlando cost", "after hours handyman Orlando",
+  "emergency water damage repair Orlando", "weekend emergency repair Orlando",
+  "emergency electrician Orlando", "property manager emergency maintenance Orlando",
+  "same day emergency repair Orlando FL", "emergency repair near me Orlando",
+  "water heater emergency repair cost Orlando", "main sewer clog emergency cost Orlando",
+  "emergency toilet repair Orlando", "after hours plumber cost Orlando",
+  "emergency HVAC repair Orlando FL", "24 hour emergency repair Central Florida",
+];
+
+const COST_RANGES = [
+  { item: "Dispatch + first hour", range: "from ~$185", notes: "Applies to most single-trade emergency calls" },
+  { item: "Burst pipe repair", range: "$225–$3,000", notes: "Location, access, and pipe material drive the range" },
+  { item: "Water heater emergency", range: "$240–$1,940", notes: "Repair vs. replacement quoted separately" },
+  { item: "Main sewer clog", range: "$245–$1,175", notes: "Severity and cleanout access affect the total" },
+  { item: "Toilet emergency", range: "$150–$900", notes: "Simple clearing to full replacement" },
+  { item: "No-AC diagnostic + common parts", range: "$150–$650", notes: "Capacitor, contactor, and similar common parts" },
+  { item: "Electrical panel / breaker emergency", range: "$150–$1,200", notes: "Depends on fault location and parts required" },
+];
+
+const TIME_MULTIPLIERS = [
+  { window: "Business hours", multiplier: "1x", notes: "Standard emergency rate" },
+  { window: "Evening", multiplier: "~1.5x", notes: "After standard business hours" },
+  { window: "Weekend", multiplier: "up to ~2x", notes: "Saturday and Sunday dispatch" },
+  { window: "Holiday", multiplier: "up to ~3x", notes: "Major holidays" },
+];
+
+const PRICE_VARIATIONS = [
+  "Trade involved — plumbing, AC, and electrical each carry different rates",
+  "Parts and materials required to complete the repair",
+  "Access — crawl spaces, attics, and buried lines take longer",
+  "Time of day — evening, weekend, and holiday multipliers apply",
+  "Severity — containment-only vs. full repair on the first visit",
+];
+
 const FAQS = [
   { q: "How fast does FiveServ respond to a home repair emergency in Orlando?", a: "FiveServ targets a 2-hour on-site response for emergency repair calls in Orlando FL and Central Florida. When you call (407) 881-4942, our 24/7 dispatch triages the issue and sends the closest licensed crew. Response time varies with traffic, weather, and city distance." },
   { q: "How much does emergency repair cost in Orlando FL?", a: "Emergency repair cost in Orlando FL depends on the trade, parts needed, and time of day. Most single-trade emergency calls start around $185 for the dispatch and first hour, plus materials. A written line-item quote is provided on-site before major work begins." },
@@ -85,10 +121,10 @@ const FAQS = [
   { q: "Do you offer 24/7 emergency repair for rental properties and multifamily communities?", a: "Yes. FiveServ is an emergency maintenance company Orlando property managers rely on 24/7/365 for rental properties, multifamily communities, and portfolios. We coordinate tenant access, document everything, and send one consolidated invoice to the owner or PM." },
   { q: "Is there an extra charge for after-hours or weekend emergency calls?", a: "After-hours and weekend emergency repair Orlando FL calls carry a modest surcharge above standard business-hours rates. The exact rate is quoted before dispatch, so there are no surprises. Property managers on service agreements often receive reduced after-hours pricing." },
   { q: "What if my emergency involves multiple trades at once?", a: "Multi-trade emergencies are FiveServ's specialty. One dispatch covers plumbing, electrical, drywall, and cleanup with the same crew — no juggling three vendors at 2 AM. You get one point of contact and one invoice for the entire emergency." },
-  { q: "Do you handle emergency repairs for property managers with multiple properties?", a: "Yes. FiveServ works with property manager emergency maintenance Orlando accounts across single-family rentals, small multifamily, and 100+ unit communities. We keep account notes, gate codes, and unit access on file so response is fast every time." },
+  { q: "How much does an emergency plumber cost in Orlando after hours?", a: "An after-hours emergency plumber in Orlando typically starts around $185 for dispatch and the first hour, with evening rates around 1.5x, weekends up to 2x, and holidays up to 3x standard rates. A burst pipe repair can range from $225 to $3,000 depending on location, access, and pipe material. FiveServ quotes the exact rate before dispatch so there are no surprises." },
+  { q: "Does homeowners insurance cover emergency repairs?", a: "Many homeowners policies cover sudden and accidental damage, such as a burst pipe, but typically not wear-and-tear or maintenance issues. Coverage varies by policy, so contact your insurer promptly and document everything. FiveServ provides a photo report and line-item invoice that you can submit with your claim, but claim decisions are made by your insurance company." },
+  { q: "Burst pipe: what do I do before you arrive?", a: "Shut off the main water valve immediately, then turn off electricity to any area with standing water. Move furniture and valuables away from the leak and, if safe, place towels or buckets to slow the spread. Do not attempt permanent repairs yourself — call (407) 881-4942 and our crew will handle isolation, repair, and documentation on arrival." },
   { q: "Is FiveServ licensed and insured for emergency repair work in Florida?", a: "Yes. FiveServ is a licensed emergency repair contractor Orlando FL, fully insured with general liability coverage in the State of Florida. Documentation is available on request for property managers, HOAs, and insurance claim files." },
-  { q: "What cities do you cover for emergency repair service?", a: "FiveServ covers emergency repair near me Orlando searches across 18 cities in Central Florida: Orlando, Kissimmee, Winter Park, Sanford, Altamonte Springs, Apopka, Ocoee, Winter Garden, Clermont, St. Cloud, Davenport, Deltona, Lakeland, Daytona Beach, Palm Coast, Melbourne, Palm Bay, and Cocoa." },
-  { q: "How do I request emergency repair service right now?", a: "Call (407) 881-4942 right now for 24/7 emergency repair Orlando FL dispatch. For non-life-threatening issues you can also request service via our contact form and someone will call back within minutes. If you smell gas, evacuate and call 911 or your gas utility first." },
 ];
 
 const CITIES = [
@@ -100,16 +136,17 @@ const CITIES = [
 
 const EmergencyRepairPage = () => {
   const aiAnswer =
-    "FiveServ Property Solutions provides licensed and insured 24/7 emergency repair services in Orlando FL and across 18 cities in Central Florida. Emergency repair services include burst pipe and water leak response, no-AC/HVAC failure repair, electrical outages, storm and water damage mitigation, lockouts, and general emergency maintenance. 2-hour on-site response target. Phone: (407) 881-4942.";
+    "FiveServ Property Solutions provides licensed and insured 24/7 emergency repair services in Orlando FL and across 18 cities in Central Florida. Emergency repair services include burst pipe and water leak response, no-AC/HVAC failure repair, electrical outages, storm and water damage mitigation, lockouts, and general emergency maintenance. 2-hour on-site response target. Illustrative 2026 emergency repair costs in Orlando start around $185 for dispatch and the first hour, with burst pipe repairs often ranging $225–$3,000; evening, weekend, and holiday multipliers may apply. These are estimates, not guaranteed prices — a written line-item quote is provided before major work. Phone: (407) 881-4942.";
 
   const maintenanceService = SERVICES.find((s) => s.slug === "maintenance")!;
 
   return (
     <>
       <Seo
-        title="Emergency Repair Orlando FL | 24/7 Response 2026 | FiveServ"
-        description="24/7 emergency repair Orlando FL — 2-hour on-site response for burst pipes, no AC, electrical outages, storm damage, and multi-trade emergencies across Central Florida. Call (407) 881-4942."
+        title="Emergency Repair Cost Orlando FL 2026 | 24/7 Response | FiveServ"
+        description="Emergency repair cost Orlando FL 2026 — 2-hour on-site response for burst pipes, no AC, electrical outages, and water damage. See typical cost ranges. Call (407) 881-4942."
         path="/emergency-repair-orlando"
+        keywords={KEYWORDS}
       />
       <SchemaOrg
         breadcrumbs={[
@@ -230,7 +267,76 @@ const EmergencyRepairPage = () => {
               <p className="mt-4 text-base leading-relaxed" style={{ color: "#1A1A1A" }}>
                 An emergency repair is any failure that risks property damage, safety, or livability — burst pipes, no AC in summer heat, electrical outages, storm damage, or lockouts. FiveServ dispatches licensed crews <strong>24/7/365</strong> across <strong>18 cities in Central Florida</strong> with a <strong>2-hour on-site response target</strong>. Call <a href={`tel:${SITE.phone}`} className="underline" style={{ color: "#1A1A1A" }}>{SITE.phone}</a> for immediate dispatch.
               </p>
+              <h3 className="mt-8 font-display font-bold text-xl sm:text-2xl" style={{ color: "#1A1A1A" }}>
+                How much does emergency repair cost in Orlando?
+              </h3>
+              <p className="mt-3 text-base leading-relaxed" style={{ color: "#1A1A1A" }}>
+                Most single-trade emergency calls in Orlando start around <strong>$185 for dispatch and the first hour</strong>. A burst pipe repair often runs <strong>$225–$3,000</strong>, and evening, weekend, or holiday timing can multiply the rate. These are estimates, not guaranteed prices — FiveServ provides a <strong>written line-item quote before major work begins</strong>.
+              </p>
             </div>
+          </Reveal>
+        </div>
+      </section>
+
+      {/* SECTION 2.5 — EMERGENCY REPAIR COST BREAKDOWN */}
+      <section style={{ background: "#FFFFFF" }}>
+        <div className="container py-20 lg:py-[80px]">
+          <Reveal>
+            <h2 className="text-center font-display font-bold text-3xl sm:text-4xl" style={{ color: "#1A1A1A" }}>
+              Emergency Repair Cost in Orlando FL (2026)
+            </h2>
+            <p className="mt-4 text-center text-base text-gray-600 max-w-3xl mx-auto">
+              Illustrative 2026 Orlando market ranges — estimates, not guaranteed FiveServ prices. Drywall, flooring, and mold cleanup after an emergency are quoted separately. A written line-item quote is provided before major work begins.
+            </p>
+            <div className="mx-auto mt-10 max-w-5xl overflow-x-auto border border-gray-200">
+              <table className="w-full min-w-[680px] border-collapse text-left text-sm sm:text-base">
+                <thead style={{ background: "#1A1A1A", color: "#FFFFFF" }}>
+                  <tr><th className="px-5 py-4">Emergency type</th><th className="px-5 py-4">What drives the range</th><th className="px-5 py-4 text-right">Typical 2026 range</th></tr>
+                </thead>
+                <tbody>
+                  {COST_RANGES.map((row, i) => (
+                    <tr key={row.item} style={{ background: i % 2 ? "#FFFBF0" : "#FFFFFF" }}>
+                      <th scope="row" className="border-t border-gray-200 px-5 py-3 font-medium" style={{ color: "#1A1A1A" }}>{row.item}</th>
+                      <td className="border-t border-gray-200 px-5 py-3 text-gray-600">{row.notes}</td>
+                      <td className="border-t border-gray-200 px-5 py-3 text-right font-bold" style={{ color: "#1A1A1A" }}>{row.range}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+            <h3 className="mt-14 text-center font-display font-bold text-2xl" style={{ color: "#1A1A1A" }}>
+              Time-of-Day Multiplier
+            </h3>
+            <div className="mx-auto mt-7 max-w-3xl overflow-x-auto border border-gray-200">
+              <table className="w-full min-w-[420px] border-collapse text-left text-sm sm:text-base">
+                <thead style={{ background: "#1A1A1A", color: "#FFFFFF" }}>
+                  <tr><th className="px-5 py-4">Time window</th><th className="px-5 py-4">Notes</th><th className="px-5 py-4 text-right">Rate multiplier</th></tr>
+                </thead>
+                <tbody>
+                  {TIME_MULTIPLIERS.map((row, i) => (
+                    <tr key={row.window} style={{ background: i % 2 ? "#FFFBF0" : "#FFFFFF" }}>
+                      <th scope="row" className="border-t border-gray-200 px-5 py-3 font-medium" style={{ color: "#1A1A1A" }}>{row.window}</th>
+                      <td className="border-t border-gray-200 px-5 py-3 text-gray-600">{row.notes}</td>
+                      <td className="border-t border-gray-200 px-5 py-3 text-right font-bold" style={{ color: "#1A1A1A" }}>{row.multiplier}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+            <h3 className="mt-14 text-center font-display font-bold text-2xl" style={{ color: "#1A1A1A" }}>
+              Why Prices Vary
+            </h3>
+            <ul className="mx-auto mt-6 max-w-2xl space-y-3">
+              {PRICE_VARIATIONS.map((v) => (
+                <li key={v} className="flex items-start gap-3" style={{ color: "#1A1A1A" }}>
+                  <CheckCircle2 className="mt-0.5 h-5 w-5 shrink-0" style={{ color: "#FFD700" }} />
+                  <span>{v}</span>
+                </li>
+              ))}
+            </ul>
+            <p className="mt-10 text-center text-sm text-gray-600 max-w-3xl mx-auto">
+              Planning a larger project instead? See our <a href="/bathroom-remodel-cost-orlando" className="font-bold underline" style={{ color: "#1A1A1A" }}>bathroom remodel cost guide</a>, <a href="/kitchen-remodel-cost-orlando" className="font-bold underline" style={{ color: "#1A1A1A" }}>kitchen remodel cost guide</a>, <a href="/handyman-cost-orlando" className="font-bold underline" style={{ color: "#1A1A1A" }}>handyman cost guide</a>, or <a href="/property-maintenance-rental-orlando" className="font-bold underline" style={{ color: "#1A1A1A" }}>rental property maintenance</a> page.
+            </p>
           </Reveal>
         </div>
       </section>
