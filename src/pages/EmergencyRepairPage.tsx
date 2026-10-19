@@ -169,7 +169,7 @@ const EmergencyRepairPage = () => {
         className="relative w-full overflow-hidden"
         style={{
           minHeight: 560,
-          background: "linear-gradient(135deg, #1A1A1A 0%, #2a2a1a 60%, #1A1A1A 100%)",
+          backgroundColor: "#1A1A1A",
           ...FS_PATTERN_DARK,
         }}
         id="emergency-quote"
