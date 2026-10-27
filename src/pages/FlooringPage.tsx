@@ -20,7 +20,7 @@ import SchemaOrg from "@/lib/SchemaOrg";
 import AIOverviewBlock from "@/components/fiveserv/AIOverviewBlock";
 import FaqAccordion from "@/components/fiveserv/FaqAccordion";
 import { useReveal } from "@/hooks/use-fiveserv";
-import { SITE, SERVICES } from "@/lib/site-config";
+import { SITE } from "@/lib/site-config";
 import { FS_PATTERN_DARK, FS_PATTERN_LIGHT } from "@/lib/fs-pattern";
 
 
@@ -172,26 +172,25 @@ const QuoteButton = ({ dark = false }: { dark?: boolean }) => (
 
 const FlooringPage = () => {
   const aiAnswer = `FiveServ Property Solutions installs and repairs LVP, tile, laminate and carpet flooring in Orlando FL and across 18 cities in Central Florida. Flooring installation starts from $3.99 per square foot for LVP, with final pricing based on size, material, removal, subfloor prep, and residential or turnover scope. Free on-site quote within 24 hours. Phone: ${SITE.phone}.`;
-  const flooringService = SERVICES.find((service) => service.slug === "flooring");
 
   return (
-    <>
+    <div className="flooring-page">
       <Seo
         title="Flooring Installation Orlando FL 2026 | LVP, Tile & Carpet From $3.99/sq ft | FiveServ"
         description="Flooring installation in Orlando and Central Florida. LVP, tile, laminate, carpet. From $3.99/sq ft. Licensed, insured. Free quote within 24 hours."
         path="/flooring"
         keywords={KEYWORDS}
       />
-      <SchemaOrg organization service={flooringService} faqs={FAQS} breadcrumbs={[
+      <SchemaOrg organization faqs={FAQS} breadcrumbs={[
         { name: "Home", url: SITE.url },
         { name: "Flooring", url: `${SITE.url}/flooring` },
       ]} />
       <AIOverviewBlock hidden answer={aiAnswer} />
 
       <section className="relative isolate overflow-hidden bg-brand-black text-brand-white">
-        <div className="absolute inset-0 -z-10" style={FS_PATTERN_DARK} aria-hidden="true" />
-        <div className="absolute inset-0 -z-10 bg-gradient-to-b from-brand-black/40 to-brand-black" aria-hidden="true" />
-        <div className="container py-16 lg:py-20">
+        <div className="absolute inset-0" style={FS_PATTERN_DARK} aria-hidden="true" />
+        <div className="flooring-hero-gradient absolute inset-0" aria-hidden="true" />
+        <div className="relative z-10 container py-16 lg:py-20">
           <Reveal className="max-w-3xl">
             <h1 className="font-display font-black text-4xl sm:text-5xl leading-tight">Flooring Installation Orlando FL — From $3.99/sq ft.</h1>
             <p className="mt-5 max-w-2xl text-lg text-brand-white/80">LVP, tile, laminate and carpet for homes, apartment turns, and commercial properties across Central Florida. Licensed, insured, one invoice.</p>
@@ -300,7 +299,7 @@ const FlooringPage = () => {
       <section className="bg-card">
         <div className="container py-20"><Reveal><h2 className={`${heading} text-center`}>Serving Central Florida</h2><div className="mt-10 flex flex-wrap justify-center gap-x-8 gap-y-4 text-center">{CITIES.map((city) => <p key={city} className="text-base text-brand-gray"><span className="font-bold text-brand-black">Flooring Installation</span> in {city}</p>)}</div></Reveal></div>
       </section>
-    </>
+    </div>
   );
 };
 

@@ -322,3 +322,12 @@ p { line-height: 1.75; }
 body { -webkit-font-smoothing: antialiased; }
 
 .rounded-full { transition: all 0.2s ease; }
+
+/* Flooring keeps the requested exact gold without changing other pages. */
+.flooring-page {
+  --brand-gold: 50.5882352941 100% 50%;
+  --flooring-hero-gradient: linear-gradient(180deg, hsl(var(--brand-black) / 0.35), hsl(var(--brand-black) / 0.8));
+}
+.flooring-page h1, .flooring-page h2, .flooring-page h3 { letter-spacing: 0; }
+.flooring-page .font-black { font-weight: 900; }
+.flooring-hero-gradient { background-image: var(--flooring-hero-gradient); }
