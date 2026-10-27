@@ -7,3 +7,4 @@
 - [x] Create and register the matching kitchen remodel cost page with requested sections and ten FAQs.
 - [x] Align sitemap generator and served sitemap, repair fallback lastmod dates, and check llms listing eligibility (no existing cost-page listings; unchanged).
 - [x] Verify kitchen cost page on desktop and mobile, FAQ/schema parity, metadata, links, and sitemap without publishing.
+- [x] Update flooring design, cost guidance, placeholders, and schema; verify desktop and mobile without publishing.

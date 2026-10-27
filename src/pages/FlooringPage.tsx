@@ -1,4 +1,6 @@
 import { ReactNode } from "react";
+import { Link } from "react-router-dom";
+import { Button } from "@/components/ui/button";
 import {
   CheckCircle2,
   Layers,
@@ -18,7 +20,7 @@ import SchemaOrg from "@/lib/SchemaOrg";
 import AIOverviewBlock from "@/components/fiveserv/AIOverviewBlock";
 import FaqAccordion from "@/components/fiveserv/FaqAccordion";
 import { useReveal } from "@/hooks/use-fiveserv";
-import { SITE, SERVICES } from "@/lib/site-config";
+import { SITE } from "@/lib/site-config";
 import { FS_PATTERN_DARK, FS_PATTERN_LIGHT } from "@/lib/fs-pattern";
 
 
@@ -72,14 +74,14 @@ const WHY_POINTS = [
 ];
 
 const FAQS = [
-  { q: "How much does flooring installation cost in Orlando FL?", a: "Flooring installation in Orlando starts from $3.99 per square foot for LVP. Installed pricing typically runs $4.50 to $12 per square foot for LVP, around $5.50 to $6 per square foot for laminate, and varies for tile depending on material (tile material starts at about $0.60 per square foot). Final cost depends on square footage, material selected, and subfloor condition. FiveServ delivers a free on-site quote within 24 hours." },
+  { q: "How much does flooring installation cost per square foot in Orlando FL in 2026?", a: "Flooring installation in Orlando starts from $3.99 per square foot for LVP. Installed pricing typically runs $4.50 to $12 per square foot for LVP, around $5.50 to $6 per square foot for laminate, and varies for tile depending on material (tile material starts at about $0.60 per square foot). Final cost depends on square footage, material selected, and subfloor condition. FiveServ delivers a free on-site quote within 24 hours." },
   { q: "What is the best flooring for a rental property in Central Florida?", a: "Luxury vinyl plank (LVP) is the most-recommended flooring for rental properties in Central Florida. It is waterproof, scratch-resistant, and stands up to Florida humidity and heavy tenant turnover. LVP is faster to install than tile and holds its look longer than carpet, which is why property managers pick it for unit turns." },
   { q: "How long does flooring installation take?", a: "Most flooring installations are completed in 3 to 5 days. A single apartment turn is typically done in 1 to 2 days, and a full home in 3 to 5 days depending on square footage and material. FiveServ sequences subfloor prep, install, and baseboards so no time is lost between trades." },
   { q: "What is the difference between LVP and laminate flooring?", a: "LVP is 100% waterproof and made of PVC, so it is the safer choice for kitchens, bathrooms, and rental properties in Florida. Laminate is made of compressed wood with a printed top layer — it looks similar but swells if exposed to standing water. LVP typically runs $4.50 to $12 per square foot installed, laminate around $5.50 to $6 per square foot installed." },
   { q: "Can you install flooring in occupied apartments during a unit turn?", a: "FiveServ installs flooring during unit turns and make-readys when the unit is vacant between tenants. For occupied units we schedule around the resident and typically complete room-by-room. Either way, the crew coordinates with the property manager to minimize vacancy days and disruption." },
-  { q: "Is vinyl or tile better for Florida humidity?", a: "Both handle Florida humidity well. Tile is the most durable choice for wet areas like bathrooms and entryways, and it lasts decades. LVP is more affordable, faster to install, and softer underfoot — better for full-unit installs and rentals. FiveServ installs both and can help you pick the right one for each space." },
+  { q: "Is LVP or tile better for Florida humidity?", a: "Both handle Florida humidity well. Tile is the most durable choice for wet areas like bathrooms and entryways, and it lasts decades. LVP is more affordable, faster to install, and softer underfoot — better for full-unit installs and rentals. FiveServ installs both and can help you pick the right one for each space." },
   { q: "Do I need to buy my own flooring materials?", a: "You can supply your own material or let FiveServ handle procurement. Clients typically select the material and color, and FiveServ provides all labor, subfloor prep, underlayment, adhesive, transitions, and baseboards. If you prefer not to shop, we source the material and charge it at invoice." },
-  { q: "How do I find a reliable flooring contractor in Orlando?", a: "Look for a contractor licensed and insured in Florida who provides a written quote before starting and delivers photo documentation on completion. FiveServ is fully licensed and insured, quotes within 24 hours, and installs flooring across 18 cities in Central Florida with verified reviews from property managers and homeowners." },
+  { q: "Can I get a same-day flooring quote in Orlando?", a: "FiveServ provides a free on-site quote within 24 hours. A same-day quote may be possible depending on scheduling and whether we have the measurements, material choice, and subfloor details. Contact us to confirm availability; same-day pricing is not guaranteed." },
   { q: "Do you handle flooring for rental properties and property managers in Central Florida?", a: "Yes. Property managers use FiveServ for LVP and carpet on apartment turns, unit turnovers, and full-community re-flooring across Central Florida. We work within the property schedule, minimize vacancy days, and deliver photo documentation for every job. One call handles the quote, the install, and the invoice." },
   { q: "Can water-damaged flooring be repaired, or does it need full replacement?", a: "It depends on the material and the extent of damage. LVP planks and tiles can often be replaced in the affected area only. Laminate and engineered wood usually need full replacement in that room because they swell when wet. FiveServ inspects the subfloor first — if there is hidden moisture damage, we address it before installing new flooring." },
 ];
@@ -124,356 +126,180 @@ const KEYWORDS = [
   "unit turn flooring Orlando",
   "make ready flooring Orlando",
   "Central Florida flooring contractor",
+  "flooring cost Orlando 2026",
+  "LVP installation cost per square foot Orlando",
+  "waterproof flooring Florida humidity",
+  "flooring contractor Winter Park",
+  "flooring Kissimmee FL",
+  "best flooring for Florida rental property",
+  "tile vs LVP Florida",
+  "subfloor prep Florida slab",
 ];
 
-const scrollToQuote = () => {
-  document.getElementById("flooring-quote")?.scrollIntoView({ behavior: "smooth", block: "start" });
-};
+const COST_VARIABLES = [
+  { title: "Size & layout", desc: "Square footage, closets, doorways, and transitions determine the amount of material and installation work." },
+  { title: "Material", desc: "LVP, laminate, tile, carpet, and engineered hardwood have different material and installation requirements." },
+  { title: "Old flooring removal", desc: "Removing existing flooring and disposing of debris changes the scope of labor." },
+  { title: "Subfloor prep", desc: "Florida slabs may need moisture testing, patching, leveling, or a moisture barrier before installation." },
+  { title: "Residential vs. turnover", desc: "Furniture, resident access, and repeatable rental specifications affect scheduling and the scope of work." },
+];
+
+const COMPARISON = [
+  { material: "Luxury Vinyl Plank (LVP)", price: "$4.50–$12/sq ft installed", use: "Full-unit rentals, kitchens, and everyday living spaces.", humidity: "Waterproof planks suit Florida humidity; slab moisture still needs assessment.", time: "Typically faster than tile. Single apartment: 1–2 days; full home: 3–5 days, depending on scope." },
+  { material: "Laminate", price: "Around $5.50–$6/sq ft installed", use: "Dry living areas where a wood-look finish is preferred.", humidity: "Compressed wood can swell with standing water; avoid wet areas and address slab moisture.", time: "Plan within the existing 3–5 day project window; size and prep determine the schedule." },
+  { material: "Tile", price: "Material starts around $0.60/sq ft; installation quoted separately", use: "Bathrooms, kitchens, and entryways.", humidity: "Handles humidity well and is durable in wet areas; correct substrate prep remains essential.", time: "Generally slower than LVP. Confirm the schedule for prep, setting, and grout; project scope may extend the 3–5 day window." },
+  { material: "Carpet", price: "Project-specific quote", use: "Bedrooms and rental turns where a soft finish is desired.", humidity: "Not waterproof; moisture and spills need prompt drying to protect carpet and pad.", time: "Apartment turns typically take 1–2 days; removal, prep, and access can change timing." },
+  { material: "Engineered Hardwood", price: "Project-specific quote", use: "Dry residential living areas and amenity spaces.", humidity: "Wood can swell when wet; moisture control and manufacturer requirements matter.", time: "Confirm material acclimation and slab prep before booking; installation is scoped against the 3–5 day project window." },
+];
+
+const PLACEHOLDERS = [
+  "Photo placeholder: waterproof LVP throughout an Orlando rental living room, with clean transitions and reinstalled baseboards.",
+  "Photo placeholder: tile flooring in a Central Florida bathroom, showing straight grout lines and finished trim.",
+  "Photo placeholder: carpet replacement in a vacant apartment bedroom, with new pad and a neatly finished doorway.",
+  "Photo placeholder: laminate in a dry residential living area, showing plank alignment and doorway transitions.",
+  "Photo placeholder: engineered hardwood in an amenity space, with finished perimeter trim.",
+  "Photo placeholder: Florida concrete slab preparation before flooring installation, showing patched and leveled areas.",
+];
+
+const heading = "font-display font-black text-3xl sm:text-4xl text-brand-black";
+const textLink = "font-semibold underline underline-offset-4 hover:text-brand-gray-muted";
+
+const QuoteButton = ({ dark = false }: { dark?: boolean }) => (
+  <Button asChild size="lg" className={`h-auto whitespace-normal py-3.5 font-bold ${dark ? "bg-brand-black text-brand-white hover:bg-brand-gray" : "bg-brand-gold text-brand-black hover:bg-brand-gold-hover"}`}>
+    <Link to="/contact">Get Your Free Quote</Link>
+  </Button>
+);
 
 const FlooringPage = () => {
-  const aiAnswer =
-    "FiveServ Property Solutions installs and repairs LVP, tile, laminate and carpet flooring in Orlando FL and across 18 cities in Central Florida. Flooring installation starts from $3.99 per square foot for LVP. Property managers use FiveServ for apartment turns and unit turnovers; homeowners for full home flooring replacement. Free on-site quote and material samples within 24 hours. Phone: (407) 881-4942.";
+  const aiAnswer = `FiveServ Property Solutions installs and repairs LVP, tile, laminate and carpet flooring in Orlando FL and across 18 cities in Central Florida. Flooring installation starts from $3.99 per square foot for LVP, with final pricing based on size, material, removal, subfloor prep, and residential or turnover scope. Free on-site quote within 24 hours. Phone: ${SITE.phone}.`;
 
   return (
-    <>
+    <div className="flooring-page">
       <Seo
         title="Flooring Installation Orlando FL 2026 | LVP, Tile & Carpet From $3.99/sq ft | FiveServ"
-        description="Flooring installation in Orlando and Central Florida. LVP, tile, laminate, carpet. From $3.99/sq ft. Licensed, insured, one invoice. Free quote in 24 hours."
+        description="Flooring installation in Orlando and Central Florida. LVP, tile, laminate, carpet. From $3.99/sq ft. Licensed, insured. Free quote within 24 hours."
         path="/flooring"
         keywords={KEYWORDS}
       />
-      <SchemaOrg
-        breadcrumbs={[
-          { name: "Home", url: SITE.url },
-          { name: "Flooring", url: `${SITE.url}/flooring` },
-        ]}
-        organization
-        service={SERVICES.find((s) => s.slug === "maintenance")!}
-        faqs={FAQS}
-      />
-
-      <style>{`
-        .fl-card { transition: transform 0.3s ease, box-shadow 0.3s ease; }
-        .fl-card:hover { transform: translateY(-4px); box-shadow: 0 14px 28px -10px rgba(255,215,0,0.35); }
-      `}</style>
-
-      {/* Hidden AI Overview block */}
+      <SchemaOrg organization faqs={FAQS} breadcrumbs={[
+        { name: "Home", url: SITE.url },
+        { name: "Flooring", url: `${SITE.url}/flooring` },
+      ]} />
       <AIOverviewBlock hidden answer={aiAnswer} />
 
-      {/* SECTION 1 — HERO */}
-      <section
-        className="relative w-full"
-        style={{
-          minHeight: 560,
-          backgroundImage:
-            'url("https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1920&q=80")',
-          backgroundSize: "cover",
-          backgroundPosition: "center",
-        }}
-        id="flooring-quote"
-      >
-        <div className="absolute inset-0" style={{ background: "rgba(0,0,0,0.72)" }} />
-        <div className="relative z-10 container py-24 lg:py-32">
+      <section className="relative isolate overflow-hidden bg-brand-black text-brand-white">
+        <div className="absolute inset-0" style={FS_PATTERN_DARK} aria-hidden="true" />
+        <div className="flooring-hero-gradient absolute inset-0" aria-hidden="true" />
+        <div className="relative z-10 container py-16 lg:py-20">
           <Reveal className="max-w-3xl">
-            <h1
-              className="font-display font-bold leading-[1.1]"
-              style={{ color: "#FFFFFF", fontSize: "clamp(2rem, 4.4vw, 3.25rem)", textShadow: "0 2px 12px rgba(0,0,0,0.6)" }}
-            >
-              Flooring Installation Orlando FL — From $3.99/sq ft. Installed Clean, On Schedule.
-            </h1>
-            <p className="mt-5 text-lg text-gray-300 max-w-2xl" style={{ textShadow: "0 1px 6px rgba(0,0,0,0.5)" }}>
-              LVP, tile, laminate and carpet for homes, apartment turns, and commercial properties across Central Florida. Licensed, insured, one invoice.
-            </p>
-            <button
-              type="button"
-              onClick={scrollToQuote}
-              className="mt-7 inline-flex items-center gap-2 rounded-md px-7 py-3.5 text-sm font-bold uppercase tracking-wide transition-transform hover:scale-[1.02]"
-              style={{ background: "#FFD700", color: "#1A1A1A" }}
-            >
-              Get Free Quote
-            </button>
-            <p className="mt-3 text-xs text-gray-400 max-w-md">
-              Starting price varies by material and square footage. Timeline 3-5 days depending on project.
-            </p>
+            <h1 className="font-display font-black text-4xl sm:text-5xl leading-tight">Flooring Installation Orlando FL — From $3.99/sq ft.</h1>
+            <p className="mt-5 max-w-2xl text-lg text-brand-white/80">LVP, tile, laminate and carpet for homes, apartment turns, and commercial properties across Central Florida. Licensed, insured, one invoice.</p>
+            <div className="mt-7"><QuoteButton /></div>
+            <p className="mt-3 text-xs text-brand-white/70">Starting price varies by material, square footage, and prep. Most projects take 3–5 days, depending on scope.</p>
           </Reveal>
+          <Reveal className="mt-9 max-w-3xl">
+            <div className="grid gap-4 border-y border-brand-gold/60 py-5 text-center sm:grid-cols-3">
+              {[
+                { k: "From $3.99/sq ft", v: "Scope-dependent starting price" },
+                { k: "3–5 Days", v: "Typical project window" },
+                { k: "24-Hour Quote", v: "Free on-site assessment" },
+              ].map((stat) => <div key={stat.k}><p className="font-display font-black text-xl text-brand-gold">{stat.k}</p><p className="mt-1 text-xs text-brand-white/80">{stat.v}</p></div>)}
+            </div>
+          </Reveal>
+          <Reveal className="mt-8 max-w-3xl">
+            <div className="flex min-h-32 items-center justify-center border border-dashed border-brand-gold/60 p-6 text-center text-sm text-brand-white/75">Photo placeholder: finished waterproof LVP in an Orlando home, showing the full floor, doorway transitions, and clean baseboards.</div>
+          </Reveal>
+        </div>
+      </section>
 
-          <Reveal className="mt-10 max-w-2xl">
-            <div
-              className="rounded-lg p-6"
-              style={{
-                background: "rgba(26,26,26,0.85)",
-                border: "2px solid #FFD700",
-                ...FS_PATTERN_DARK,
-              }}
-            >
-              <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-0 text-center">
-                {[
-                  { k: "From $3.99/sq ft", v: "Transparent pricing" },
-                  { k: "3-5 Day Turnaround", v: "Fast turnaround" },
-                  { k: "Licensed & Insured", v: "Florida certified" },
-                ].map((s, i) => (
-                  <div
-                    key={s.k}
-                    className={`px-2 ${i > 0 ? "sm:border-l sm:border-[#FFD700]/60" : ""}`}
-                  >
-                    <p className="font-display font-bold text-xl" style={{ color: "#FFD700" }}>{s.k}</p>
-                    <p className="mt-1 text-xs text-gray-300">{s.v}</p>
-                  </div>
-                ))}
-              </div>
+      <section className="border-b border-border bg-card">
+        <div className="container py-12"><p className="max-w-4xl text-base sm:text-lg leading-relaxed text-brand-gray">{aiAnswer}</p></div>
+      </section>
+
+      <section className="bg-surface-warm" style={FS_PATTERN_LIGHT}>
+        <div className="container py-16 lg:py-20">
+          <Reveal className="mx-auto max-w-4xl border-y-2 border-brand-gold py-8">
+            <p className="text-xs font-bold uppercase text-brand-gray-muted">Quick Answer</p>
+            <h2 className={`${heading} mt-2`}>How much does flooring installation cost in Orlando?</h2>
+            <p className="mt-4 leading-relaxed text-brand-gray">LVP installation starts from $3.99 per square foot. Existing installed ranges are $4.50–$12 per square foot for LVP and around $5.50–$6 for laminate. These are planning figures, not guaranteed FiveServ prices; the written quote confirms your scope.</p>
+            <dl className="mt-6 grid gap-x-8 gap-y-5 sm:grid-cols-2">
+              {COST_VARIABLES.map((factor) => <div key={factor.title}><dt className="font-bold text-brand-black">{factor.title}</dt><dd className="mt-1 text-sm leading-relaxed text-brand-gray">{factor.desc}</dd></div>)}
+            </dl>
+            <p className="mt-7 text-brand-black">See the <Link className={textLink} to="/flooring-cost-orlando">detailed flooring cost and line-item breakdown</Link>.</p>
+          </Reveal>
+        </div>
+      </section>
+
+      <section className="bg-card">
+        <div className="container py-20">
+          <Reveal>
+            <h2 className={`${heading} text-center`}>What Type of Flooring Do You Need?</h2>
+            <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+              {FLOORING_TYPES.map((type) => <article key={type.title} className="rounded-md border-t-4 border-brand-gold bg-surface-warm p-6" style={FS_PATTERN_LIGHT}><type.icon className="h-10 w-10 text-brand-gold" /><h3 className="mt-4 font-display font-black text-xl text-brand-black">{type.title}</h3><p className="mt-2 text-sm leading-relaxed text-brand-gray">{type.desc}</p></article>)}
             </div>
           </Reveal>
         </div>
       </section>
 
-      {/* Visible entity paragraph */}
-      <section className="bg-white border-b border-gray-100">
-        <div className="container py-12">
-          <p className="max-w-4xl text-base sm:text-lg leading-relaxed text-gray-700">
-            {aiAnswer}
-          </p>
-        </div>
-      </section>
-
-      {/* SECTION 2 — TYPES */}
-      <section style={{ background: "#FFFFFF" }}>
-        <div className="container py-20 lg:py-[80px]">
+      <section className="bg-surface-soft">
+        <div className="container py-20">
           <Reveal>
-            <h2 className="text-center font-display font-bold text-3xl sm:text-4xl" style={{ color: "#1A1A1A" }}>
-              What Type of Flooring Do You Need?
-            </h2>
-            <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-              {FLOORING_TYPES.map((t) => (
-                <article
-                  key={t.title}
-                  className="fl-card rounded-lg p-6"
-                  style={{
-                    background: "#FFFBF0",
-                    borderTop: "3px solid #FFD700",
-                    ...FS_PATTERN_LIGHT,
-                  }}
-                >
-                  <t.icon className="h-10 w-10" style={{ color: "#FFD700" }} />
-                  <h3 className="mt-4 font-display font-bold text-xl" style={{ color: "#1A1A1A" }}>
-                    {t.title}
-                  </h3>
-                  <p className="mt-2 text-sm" style={{ color: "#1A1A1A" }}>{t.desc}</p>
-                </article>
-              ))}
+            <h2 className={heading}>Flooring Breakdown: LVP vs. Laminate vs. Tile vs. Carpet vs. Engineered Hardwood</h2>
+            <p className="mt-4 max-w-3xl text-brand-gray">Compare best use, moisture behavior, and scheduling. Times reuse the existing apartment and full-home project windows, not material-specific guarantees. All floors require a suitable, dry subfloor.</p>
+            <div className="mt-8 overflow-x-auto" tabIndex={0} role="region" aria-label="Flooring material comparison">
+              <table className="w-full min-w-[850px] border-collapse text-left text-sm">
+                <caption className="sr-only">Flooring material, existing price guidance, best use case, Florida humidity behavior, and installation timing</caption>
+                <thead className="bg-brand-black text-brand-white"><tr>{["Flooring", "Existing price guidance", "Best use case", "Florida humidity", "Installation time"].map((title) => <th key={title} scope="col" className="p-4 font-bold">{title}</th>)}</tr></thead>
+                <tbody>{COMPARISON.map((row) => <tr key={row.material} className="border-b border-border"><th scope="row" className="p-4 align-top font-bold text-brand-black">{row.material}</th>{[row.price, row.use, row.humidity, row.time].map((cell) => <td key={cell} className="p-4 align-top leading-relaxed text-brand-gray">{cell}</td>)}</tr>)}</tbody>
+              </table>
             </div>
+            <p className="mt-5 text-sm text-brand-gray-muted">Tile’s material-only starting figure is not an installed price. Carpet and engineered hardwood require a project-specific quote.</p>
           </Reveal>
         </div>
       </section>
 
-      {/* SECTION 3 — WHAT'S INCLUDED */}
-      <section style={{ background: "#FFFBF0" }}>
-        <div className="container py-20 lg:py-[80px]">
+      <section className="bg-surface-warm">
+        <div className="container py-20">
           <Reveal>
-            <h2 className="text-center font-display font-bold text-3xl sm:text-4xl" style={{ color: "#1A1A1A" }}>
-              What FiveServ Handles vs. What You Select
-            </h2>
-            <div className="mt-12 grid gap-10 lg:grid-cols-2 max-w-5xl mx-auto">
-              <div>
-                <h3 className="font-display font-bold text-2xl" style={{ color: "#FFD700" }}>
-                  FiveServ Provides
-                </h3>
-                <ul className="mt-6 space-y-3">
-                  {PROVIDES.map((p) => (
-                    <li key={p} className="flex items-start gap-3" style={{ color: "#1A1A1A" }}>
-                      <CheckCircle2 className="mt-0.5 h-5 w-5 shrink-0" style={{ color: "#FFD700" }} />
-                      <span>{p}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-              <div>
-                <h3 className="font-display font-bold text-2xl" style={{ color: "#1A1A1A" }}>
-                  Client Selects and Purchases
-                </h3>
-                <ul className="mt-6 space-y-3">
-                  {CLIENT_SELECTS.map((c) => (
-                    <li key={c} className="flex items-start gap-3" style={{ color: "#1A1A1A" }}>
-                      <span className="mt-2 h-2 w-2 shrink-0 rounded-full bg-gray-400" />
-                      <span>{c}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
+            <h2 className={`${heading} text-center`}>What FiveServ Handles vs. What You Select</h2>
+            <div className="mx-auto mt-10 grid max-w-5xl gap-10 lg:grid-cols-2">
+              <div><h3 className="font-display font-black text-2xl text-brand-black border-b-2 border-brand-gold pb-3">FiveServ Provides</h3><ul className="mt-6 space-y-3">{PROVIDES.map((item) => <li key={item} className="flex items-start gap-3 text-brand-gray"><CheckCircle2 className="mt-0.5 h-5 w-5 shrink-0 text-brand-gold" /><span>{item}</span></li>)}</ul></div>
+              <div><h3 className="font-display font-black text-2xl text-brand-black border-b-2 border-brand-gold pb-3">Client Selects and Purchases</h3><ul className="mt-6 space-y-3">{CLIENT_SELECTS.map((item) => <li key={item} className="flex items-start gap-3 text-brand-gray"><CheckCircle2 className="mt-0.5 h-5 w-5 shrink-0 text-brand-gold" /><span>{item}</span></li>)}</ul></div>
             </div>
-            <p className="mt-10 text-center italic text-gray-600">
-              Don't want to shop for material? We handle procurement and charge at invoice.
-            </p>
+            <p className="mt-10 text-center italic text-brand-gray-muted">Don't want to shop for material? We handle procurement and charge at invoice.</p>
           </Reveal>
         </div>
       </section>
 
-      {/* SECTION 4 — HOW IT WORKS */}
-      <section style={{ background: "#FAFAF8" }}>
-        <div className="container py-20 lg:py-[80px]">
-          <Reveal>
-            <h2 className="text-center font-display font-bold text-3xl sm:text-4xl" style={{ color: "#1A1A1A" }}>
-              How It Works
-            </h2>
-            <div className="relative mt-16 grid gap-10 lg:grid-cols-4">
-              <div
-                className="hidden lg:block absolute left-[12%] right-[12%] top-[28px] h-px"
-                style={{ background: "#FFD700", opacity: 0.3 }}
-                aria-hidden
-              />
-              {STEPS.map((s) => (
-                <div key={s.n} className="relative text-center lg:text-left">
-                  <div
-                    className="mx-auto lg:mx-0 flex h-14 w-14 items-center justify-center rounded-full font-display font-bold text-2xl"
-                    style={{ background: "#FAFAF8", color: "#FFD700", border: "2px solid #FFD700" }}
-                  >
-                    {s.n}
-                  </div>
-                  <h3 className="mt-4 font-display font-bold text-lg" style={{ color: "#1A1A1A" }}>
-                    {s.title}
-                  </h3>
-                  <p className="mt-2 text-sm text-gray-600">{s.desc}</p>
-                </div>
-              ))}
-            </div>
-          </Reveal>
+      <section className="bg-card">
+        <div className="container py-20">
+          <Reveal><h2 className={`${heading} text-center`}>How It Works</h2><div className="mt-12 grid gap-8 sm:grid-cols-2 lg:grid-cols-4">{STEPS.map((step) => <div key={step.n}><div className="flex h-14 w-14 items-center justify-center rounded-full border-2 border-brand-gold font-display font-black text-2xl text-brand-black">{step.n}</div><h3 className="mt-4 font-display font-black text-xl text-brand-black">{step.title}</h3><p className="mt-2 text-sm leading-relaxed text-brand-gray-muted">{step.desc}</p></div>)}</div></Reveal>
+          <p className="mt-10 text-brand-gray">Planning a rental turn? Coordinate flooring with <Link to="/make-ready" className={textLink}>make-ready services</Link>. Updating wet areas too? Explore <Link to="/bathroom-remodel" className={textLink}>bathroom remodeling</Link>.</p>
         </div>
       </section>
 
-      {/* SECTION 5 — PRICING */}
-      <section style={{ background: "#1A1A1A" }}>
-        <div className="container py-20 lg:py-[80px] text-center">
-          <Reveal>
-            <p className="text-sm" style={{ color: "#FFFFFF" }}>Flooring installation starting from</p>
-            <p
-              className="mt-4 font-display font-bold"
-              style={{ color: "#FFD700", fontSize: "clamp(4rem, 10vw, 7rem)", lineHeight: 1 }}
-            >
-              $3.99/sq ft
-            </p>
-            <p className="mt-4 text-sm text-gray-400 max-w-xl mx-auto">
-              Price depends on material (LVP, tile, laminate, carpet), square footage, and subfloor condition.
-            </p>
-            <button
-              type="button"
-              onClick={scrollToQuote}
-              className="mt-8 inline-flex items-center gap-2 rounded-md px-7 py-3.5 text-sm font-bold uppercase tracking-wide transition-transform hover:scale-[1.02]"
-              style={{ background: "#FFD700", color: "#1A1A1A" }}
-            >
-              Get Your Free Quote
-            </button>
-          </Reveal>
-        </div>
+      <section className="bg-brand-black text-center text-brand-white" style={FS_PATTERN_DARK}>
+        <div className="container py-20"><Reveal><p>Flooring installation starting from</p><p className="mt-4 font-display font-black text-5xl sm:text-7xl text-brand-gold">$3.99/sq ft</p><p className="mx-auto mt-4 max-w-xl text-sm text-brand-white/75">Final pricing depends on material, size, removal, and subfloor condition. Your written quote confirms what is included.</p><div className="mt-8"><QuoteButton /></div></Reveal></div>
       </section>
 
-      {/* SECTION 6 — OUR WORK */}
-      <section style={{ background: "#FFFBF0" }}>
-        <div className="container py-20 lg:py-[80px]">
-          <Reveal>
-            <h2 className="text-center font-display font-bold text-3xl sm:text-4xl" style={{ color: "#1A1A1A" }}>
-              Our Work
-            </h2>
-            <div className="mt-12 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
-              {[0, 1, 2, 3, 4, 5].map((i) => (
-                <div
-                  key={i}
-                  className="aspect-[4/5] flex items-center justify-center"
-                  style={{
-                    borderRadius: 20,
-                    border: "3px solid #FFD700",
-                    background: "#FAFAF8",
-                    transform: i % 2 === 0 ? "rotate(-2deg)" : "rotate(2deg)",
-                  }}
-                >
-                  <div
-                    className="flex h-20 w-20 items-center justify-center rounded-full font-display font-black text-3xl"
-                    style={{ background: "#FFD700", color: "#1A1A1A" }}
-                  >
-                    FS
-                  </div>
-                </div>
-              ))}
-            </div>
-          </Reveal>
-        </div>
+      <section className="bg-surface-warm">
+        <div className="container py-20"><Reveal><h2 className={`${heading} text-center`}>Our Work</h2><div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">{PLACEHOLDERS.map((text) => <div key={text} className="flex aspect-[4/3] items-center justify-center rounded-md border-2 border-dashed border-brand-gold bg-surface-soft p-6 text-center text-sm leading-relaxed text-brand-gray">{text}</div>)}</div></Reveal></div>
       </section>
 
-      {/* SECTION 7 — WHY FIVESERV */}
-      <section style={{ background: "#FFFBF0", ...FS_PATTERN_LIGHT }}>
-        <div className="container py-20 lg:py-[80px]">
-          <Reveal>
-            <h2 className="text-center font-display font-bold text-3xl sm:text-4xl" style={{ color: "#1A1A1A" }}>
-              Why Property Managers and Homeowners Choose FiveServ
-            </h2>
-            <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-              {WHY_POINTS.map((p) => (
-                <div
-                  key={p.title}
-                  className="fl-card rounded-lg p-6"
-                  style={{ background: "#FFFFFF", border: "1px solid rgba(255,215,0,0.4)" }}
-                >
-                  <p.icon className="h-9 w-9" style={{ color: "#FFD700" }} />
-                  <p className="mt-4 font-bold" style={{ color: "#1A1A1A" }}>{p.title}</p>
-                </div>
-              ))}
-            </div>
-          </Reveal>
-        </div>
+      <section className="bg-surface-warm" style={FS_PATTERN_LIGHT}>
+        <div className="container py-20"><Reveal><h2 className={`${heading} text-center`}>Why Property Managers and Homeowners Choose FiveServ</h2><div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">{WHY_POINTS.map((point) => <article key={point.title} className="rounded-md border border-brand-gold/40 bg-card p-6"><point.icon className="h-9 w-9 text-brand-gold" /><h3 className="mt-4 font-display font-black text-xl text-brand-black">{point.title}</h3></article>)}</div></Reveal></div>
       </section>
 
-      {/* SECTION 8 — FAQs */}
-      <div style={{ background: "#FFFBF0", ...FS_PATTERN_LIGHT }}>
-        <FaqAccordion
-          title="Flooring Installation — Frequently Asked Questions"
-          eyebrow="FAQ"
-          faqs={FAQS}
-          emitSchema={false}
-        />
-      </div>
+      <div className="bg-surface-warm" style={FS_PATTERN_LIGHT}><FaqAccordion title="Flooring Installation — Frequently Asked Questions" eyebrow="FAQ" faqs={FAQS} emitSchema={false} /></div>
 
-      {/* SECTION 9 — FINAL CTA */}
-      <section style={{ background: "#FFD700" }}>
-        <div className="container py-20 lg:py-[80px] text-center">
-          <Reveal>
-            <h2 className="font-display font-bold text-3xl sm:text-4xl" style={{ color: "#1A1A1A" }}>
-              Ready to Install New Flooring?
-            </h2>
-            <button
-              type="button"
-              onClick={scrollToQuote}
-              className="mt-8 inline-flex items-center gap-2 rounded-md px-7 py-3.5 text-sm font-bold uppercase tracking-wide"
-              style={{ background: "#1A1A1A", color: "#FFFFFF" }}
-            >
-              Get Your Free Quote
-            </button>
-            <p className="mt-5 font-display font-bold text-2xl" style={{ color: "#1A1A1A" }}>
-              <a href={`tel:${SITE.phone}`}>{SITE.phone}</a>
-            </p>
-            <p className="mt-3 text-sm" style={{ color: "#1A1A1A" }}>
-              Also need painting or a bathroom remodel? Same team. One invoice.
-            </p>
-          </Reveal>
-        </div>
+      <section className="bg-brand-gold text-brand-black">
+        <div className="container py-20 text-center"><Reveal><h2 className={heading}>Ready to Install New Flooring?</h2><div className="mt-8"><QuoteButton dark /></div><p className="mt-5 font-display font-black text-2xl"><a href={`tel:${SITE.phone}`}>{SITE.phone}</a></p><p className="mt-3 text-sm">Also need painting or a bathroom remodel? Same team. One invoice.</p></Reveal></div>
       </section>
 
-      {/* SECTION 10 — CITIES */}
-      <section style={{ background: "#FFFFFF" }}>
-        <div className="container py-20 lg:py-[80px]">
-          <Reveal>
-            <h2 className="text-center font-display font-bold text-3xl sm:text-4xl" style={{ color: "#1A1A1A" }}>
-              Serving Central Florida
-            </h2>
-            <div className="mt-10 flex flex-wrap justify-center gap-x-8 gap-y-4 text-center">
-              {CITIES.map((c) => (
-                <p key={c} className="text-base">
-                  <span style={{ color: "#FFD700" }} className="font-bold">Flooring Installation</span>{" "}
-                  <span style={{ color: "#1A1A1A" }}>in {c}</span>
-                </p>
-              ))}
-            </div>
-          </Reveal>
-        </div>
+      <section className="bg-card">
+        <div className="container py-20"><Reveal><h2 className={`${heading} text-center`}>Serving Central Florida</h2><div className="mt-10 flex flex-wrap justify-center gap-x-8 gap-y-4 text-center">{CITIES.map((city) => <p key={city} className="text-base text-brand-gray"><span className="font-bold text-brand-black">Flooring Installation</span> in {city}</p>)}</div></Reveal></div>
       </section>
-    </>
+    </div>
   );
 };
 
