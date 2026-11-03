@@ -8,3 +8,5 @@
 - [x] Align sitemap generator and served sitemap, repair fallback lastmod dates, and check llms listing eligibility (no existing cost-page listings; unchanged).
 - [x] Verify kitchen cost page on desktop and mobile, FAQ/schema parity, metadata, links, and sitemap without publishing.
 - [x] Update flooring design, cost guidance, placeholders, and schema; verify desktop and mobile without publishing.
+- [x] Update cleaning design, SEO, quote guidance, service checklists, ten FAQs, and descriptive placeholders without publishing.
+- [x] Synchronize cleaning sitemap date and verify desktop/mobile, JSON-LD, FAQ parity, and quote links.
