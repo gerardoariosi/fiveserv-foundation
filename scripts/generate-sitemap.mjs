@@ -36,6 +36,8 @@ const STATIC = [
   // Authoritative creation date of this page's initial content.
   { path: "/kitchen-remodel-cost-orlando", priority: 0.9, lastmod: "2026-10-12" },
   { path: "/emergency-repair-orlando", priority: 0.95, lastmod: "2026-10-19" },
+  // Authoritative date of the cleaning page's significant content update.
+  { path: "/cleaning", priority: 0.9, lastmod: "2026-11-03" },
 ];
 
 const urls = [
