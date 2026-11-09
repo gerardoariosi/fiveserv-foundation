@@ -335,3 +335,10 @@ body { -webkit-font-smoothing: antialiased; }
 /* Cleaning keeps exact requested brand colors scoped to its service page. */
 .cleaning-page { --brand-gold: 50.5882352941 100% 50%; --brand-black: 0 0% 10.1960784314%; }
 .cleaning-page h1, .cleaning-page h2, .cleaning-page h3 { letter-spacing: 0; }
+.cleaning-page .br-card { transition: transform 300ms ease, box-shadow 300ms ease; }
+.cleaning-page .br-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-gold); }
+@media (prefers-reduced-motion: reduce) {
+  .cleaning-page .br-card { transition: none; }
+  .cleaning-page .br-card:hover { transform: none; }
+  .cleaning-page .reveal { opacity: 1; transform: none; transition: none; }
+}

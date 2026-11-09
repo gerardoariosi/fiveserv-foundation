@@ -10,3 +10,5 @@
 - [x] Update flooring design, cost guidance, placeholders, and schema; verify desktop and mobile without publishing.
 - [x] Update cleaning design, SEO, quote guidance, service checklists, ten FAQs, and descriptive placeholders without publishing.
 - [x] Synchronize cleaning sitemap date and verify desktop/mobile, JSON-LD, FAQ parity, and quote links.
+- [x] Refresh cleaning to the bathroom service-page layout, preserve quote-only pricing and links, and expand search keywords and the ten FAQ topics.
+- [x] Verify cleaning desktop/mobile, single FAQPage and service/entity schemas, placeholders, and quote navigation without publishing.

@@ -24,6 +24,8 @@ const KEYWORDS = [
   "property manager cleaning Orlando", "common area cleaning Orlando", "recurring cleaning Orlando FL",
   "same-day cleaning quote Orlando", "cleaning service Winter Park", "move-out cleaning Kissimmee",
   "licensed insured cleaning company Florida", "post-renovation cleaning Orlando", "rental turnover cleaning Central Florida",
+  "move out cleaning Orlando", "airbnb turnover cleaning Orlando", "vacation rental cleaning Kissimmee",
+  "apartment turnover cleaning cost Orlando", "post construction cleaning Orlando FL", "deep cleaning cost per square foot Orlando",
 ];
 
 const CLEANING_TYPES = [
@@ -59,7 +61,7 @@ const WHY_POINTS = [
 ];
 
 const FAQS = [
-  { q: "How much does move-out or deep cleaning cost in Orlando FL in 2026?", a: "Cleaning cost depends on unit size, condition, the type of cleaning, construction dust or residue, and the urgency of your turnover. FiveServ provides a free line-item quote for your property rather than a fixed price that may not match the work. Send the address, unit size, photos and target date to confirm the scope." },
+  { q: "How much does move-out or deep cleaning cost in Orlando FL in 2026, and how much per square foot?", a: "Cleaning cost depends on unit size, condition, the type of cleaning, construction dust or residue, and the urgency of your turnover. There is no universal per-square-foot rate: square footage helps estimate time, but appliance detail, buildup and the agreed checklist also affect the quote. FiveServ provides a free line-item quote for your property rather than a fixed price that may not match the work. Send the address, unit size, photos and target date to confirm the scope." },
   { q: "How long does a move-out or deep clean take?", a: "Timing depends on the size and condition of the property, access, appliance detail and whether other trades are still working. We confirm a cleaning window after reviewing the scope. For a complete make-ready, the 5-day guarantee applies only when the scope qualifies and the written terms are agreed." },
   { q: "What is included in a move-out clean?", a: "The agreed checklist can include kitchen and bathroom detail, cabinets, appliance interiors and exteriors, baseboards, accessible vents, window sills, fixtures, vacuuming and mopping. Your written quote identifies included tasks and optional extras, and a photo report is provided on completion." },
   { q: "Do you offer post-construction cleaning in Orlando?", a: "Yes. FiveServ cleans accessible construction dust, surface residue, fixtures and floors after renovation work is complete. The quote confirms debris removal, delicate surfaces and any specialist requirements. Hazardous materials, mold remediation and unsafe areas are not treated as routine cleaning." },
@@ -67,7 +69,7 @@ const FAQS = [
   { q: "Can I book recurring cleaning for common areas?", a: "Yes. We can establish an agreed schedule and checklist for leasing offices, clubhouses, entries and accessible multifamily common areas. Frequency, access, supplies and reporting are confirmed in the line-item quote." },
   { q: "Can I get a same-day cleaning quote or same-day service?", a: "Request a free same-day quote by sending the unit size, photos, cleaning needs and target date. An inspection or additional details may be needed before pricing is finalized. Same-day cleaning itself depends on crew availability, access and scope; confirm the appointment before planning a turnover." },
   { q: "Do you clean apartments and multifamily properties for property managers?", a: "Yes. FiveServ coordinates apartment turnover cleaning, make-ready work and common-area cleaning for landlords and multifamily property managers. We agree on unit checklists, access and deadlines, then deliver completion photos and a consolidated invoice for approved work." },
-  { q: "Do you clean vacation rentals in Central Florida?", a: "Yes. We can quote deep cleans and turnover cleaning for vacation rentals. Share guest departure and arrival times, access instructions and your checklist. Laundry, linen changes, restocking and same-day scheduling must be agreed as part of the scope rather than assumed included." },
+  { q: "Do you offer Airbnb and vacation-rental turnover cleaning in Orlando and Kissimmee?", a: "Yes. We can quote deep cleans and Airbnb or vacation-rental turnover cleaning in Orlando, Kissimmee and across Central Florida. Share guest departure and arrival times, access instructions and your checklist. Laundry, linen changes, restocking and same-day scheduling must be agreed as part of the scope rather than assumed included." },
   { q: "Which Central Florida cities do you serve for cleaning?", a: "FiveServ serves Orlando, Kissimmee, Winter Park, Lakeland, Sanford, Altamonte Springs, Apopka, Ocoee, Winter Garden, Clermont, St. Cloud, Davenport, Deltona, Daytona Beach, Palm Coast, Melbourne, Palm Bay and Cocoa. Contact us with the property address to confirm scheduling and the cleaning scope." },
 ];
 
@@ -108,7 +110,7 @@ const CleaningPage = () => {
   return (
     <div className="cleaning-page">
       <Seo
-        title="Cleaning Services Orlando FL 2026 | Move-Out, Deep & Make-Ready | FiveServ"
+        title="Cleaning Services Orlando FL 2026 | Move-Out, Deep & Post-Construction | FiveServ"
         description="Move-out, deep and post-construction cleaning in Orlando FL. Free line-item quote, completion photos and make-ready coordination across 18 cities."
         path={path} keywords={KEYWORDS}
       />
@@ -119,7 +121,6 @@ const CleaningPage = () => {
           { name: "Services", url: `${SITE.url}/services` },
           { name: "Cleaning", url: `${SITE.url}${path}` },
         ]}
-        faqs={FAQS}
       />
       <Helmet><script type="application/ld+json">{JSON.stringify(serviceSchema)}</script></Helmet>
       <AIOverviewBlock hidden answer={aiAnswer} />
@@ -136,8 +137,8 @@ const CleaningPage = () => {
             </div>
           </Reveal>
           <Reveal className="mt-10 max-w-3xl">
-            <div className="grid gap-5 rounded-md border-2 border-brand-gold bg-brand-black/80 p-6 text-center sm:grid-cols-3">
-              {[{ title: "Same-day quote", detail: "Free line-item scope" }, { title: "Photo report on every job", detail: "Completion documented" }, { title: "18 Cities", detail: "Central Florida" }].map((stat) => <div key={stat.title}><p className="font-display text-xl font-bold text-brand-gold">{stat.title}</p><p className="mt-1 text-xs text-brand-white/75">{stat.detail}</p></div>)}
+            <div className="grid gap-5 rounded-md border-2 border-brand-gold bg-brand-black/80 p-6 text-center shadow-gold sm:grid-cols-3" style={FS_PATTERN_DARK}>
+              {[{ title: "Same-day quote", detail: "Free line-item scope" }, { title: "Photo report on every job", detail: "Completion documented" }, { title: "18 Cities", detail: "Central Florida" }].map((stat, index) => <div key={stat.title} className={index > 0 ? "sm:border-l sm:border-brand-gold/60 sm:pl-5" : ""}><p className="font-display text-xl font-bold text-brand-gold">{stat.title}</p><p className="mt-1 text-xs text-brand-white/75">{stat.detail}</p></div>)}
             </div>
           </Reveal>
         </div>
@@ -159,34 +160,54 @@ const CleaningPage = () => {
       <section className="bg-card"><div className="container py-20"><Reveal>
         <h2 className={`${heading} text-center`}>What Type of Cleaning Does Your Property Need?</h2>
         <p className="mx-auto mt-4 max-w-2xl text-center text-brand-gray-muted">Every checklist is confirmed in your quote. Pair the final clean with the trades your property actually needs.</p>
-        <div className="mt-10 grid gap-6 sm:grid-cols-2">{CLEANING_TYPES.map((type) => <article key={type.title} className="rounded-md border-t-4 border-brand-gold bg-surface-warm p-6" style={FS_PATTERN_LIGHT}>
+        <div className="mt-10 grid gap-6 sm:grid-cols-2">{CLEANING_TYPES.map((type) => <article key={type.title} className="br-card rounded-md border-t-[3px] border-brand-gold bg-surface-warm p-6" style={FS_PATTERN_LIGHT}>
           <type.icon className="h-9 w-9 text-brand-black" /><h3 className="mt-4 font-display text-2xl font-bold text-brand-black">{type.title}</h3><p className="mt-3 text-sm leading-relaxed text-brand-gray">{type.desc}</p>
           <ul className="mt-5 space-y-3">{type.checklist.map((item) => <li key={item} className="flex items-start gap-3 text-sm text-brand-gray"><CheckCircle2 className="mt-0.5 h-4 w-4 shrink-0 text-brand-black" /><span>{item}</span></li>)}</ul>
           <Link to={type.href} className="mt-6 inline-block font-semibold text-brand-black underline underline-offset-4">{type.link}</Link>
         </article>)}</div>
       </Reveal></div></section>
 
+      <section className="bg-surface-warm"><div className="container py-20"><Reveal>
+        <h2 className={`${heading} text-center`}>What FiveServ Handles vs. What You Select/Provide</h2>
+        <div className="mx-auto mt-12 grid max-w-5xl gap-10 lg:grid-cols-2">
+          <div><h3 className="font-display text-2xl font-bold text-brand-black">FiveServ Provides</h3>
+            <ul className="mt-6 space-y-4">{["Cleaning crew", "Cleaning supplies suited to the agreed surfaces", "Equipment for the approved cleaning scope", "Completion photo report on every job"].map((item) => <li key={item} className="flex items-start gap-3 text-brand-gray"><CheckCircle2 className="mt-0.5 h-5 w-5 shrink-0 text-brand-black" /><span>{item}</span></li>)}</ul>
+          </div>
+          <div><h3 className="font-display text-2xl font-bold text-brand-black">Client Selects/Provides</h3>
+            <ul className="mt-6 space-y-4">{["Property access and entry instructions", "Cleaning scope and priorities", "Target date and turnover window", "Landlord or vacation-rental checklist, if applicable"].map((item) => <li key={item} className="flex items-start gap-3 text-brand-gray"><span className="mt-2.5 h-2 w-2 shrink-0 rounded-full bg-brand-gray-muted" /><span>{item}</span></li>)}</ul>
+          </div>
+        </div>
+        <p className="mx-auto mt-10 max-w-3xl text-center text-sm text-brand-gray-muted">Your written quote confirms the checklist, optional extras and any special surface or equipment requirements before work begins.</p>
+      </Reveal></div></section>
+
       <section className="bg-surface-soft"><div className="container py-20"><Reveal>
         <h2 className={`${heading} text-center`}>How It Works</h2>
-        <div className="mt-12 grid gap-8 sm:grid-cols-2 lg:grid-cols-4">{[
+        <div className="relative mt-12 grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
+          <div aria-hidden="true" className="absolute left-[12%] right-[12%] top-7 hidden h-px bg-brand-gold/40 lg:block" />{[
           { title: "Share the Property", desc: "Send the unit size, current photos, access details and target date." },
           { title: "Approve the Free Quote", desc: "Review the line-item checklist, extras and scheduling before work starts." },
           { title: "We Coordinate the Clean", desc: "Cleaning follows approved repairs and finishes so the sequence makes sense." },
           { title: "Review the Photo Report", desc: "Receive completion photos for sign-off and your property records." },
-        ].map((step, index) => <div key={step.title}><div className="flex h-14 w-14 items-center justify-center rounded-full border-2 border-brand-gold font-display text-2xl font-bold text-brand-black">{index + 1}</div><h3 className="mt-4 font-display text-xl font-bold text-brand-black">{step.title}</h3><p className="mt-2 text-sm text-brand-gray-muted">{step.desc}</p></div>)}</div>
+        ].map((step, index) => <div key={step.title} className="relative text-center lg:text-left"><div className="mx-auto flex h-14 w-14 items-center justify-center rounded-full border-2 border-brand-gold bg-surface-soft font-display text-2xl font-bold text-brand-black lg:mx-0">{index + 1}</div><h3 className="mt-4 font-display text-xl font-bold text-brand-black">{step.title}</h3><p className="mt-2 text-sm text-brand-gray-muted">{step.desc}</p></div>)}</div>
+      </Reveal></div></section>
+
+      <section className="bg-brand-black text-brand-white" style={FS_PATTERN_DARK}><div className="container py-20 text-center"><Reveal>
+        <h2 className="font-display text-3xl font-bold leading-tight text-brand-gold sm:text-4xl">Free line-item quote — same-day response</h2>
+        <p className="mx-auto mt-5 max-w-2xl text-brand-white/80">Send the unit size, current photos, cleaning needs and target date. Your quote confirms the scope and optional extras; an inspection or more details may be needed before pricing is finalized.</p>
+        <div className="mt-8"><QuoteButton /></div>
+      </Reveal></div></section>
+
+      <section className="bg-surface-warm"><div className="container py-20"><Reveal>
+        <h2 className={`${heading} text-center`}>Our Work</h2>
+        <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">{PLACEHOLDERS.map((label) => <ImagePlaceholder key={label} label={label} />)}</div>
       </Reveal></div></section>
 
       <section className="bg-surface-warm" style={FS_PATTERN_LIGHT}><div className="container py-20"><Reveal>
         <h2 className={`${heading} text-center`}>Why Property Managers and Homeowners Choose FiveServ</h2>
-        <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">{WHY_POINTS.map((point) => <article key={point.title} className="rounded-md border border-brand-gold/40 bg-card p-6"><point.icon className="h-9 w-9 text-brand-black" /><h3 className="mt-4 font-display text-xl font-bold text-brand-black">{point.title}</h3><p className="mt-3 text-sm text-brand-gray-muted">{point.desc}</p>{point.href && <Link to={point.href} className="mt-4 inline-block text-sm font-semibold text-brand-black underline">See make-ready details</Link>}</article>)}</div>
+        <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">{WHY_POINTS.map((point) => <article key={point.title} className="br-card rounded-md border border-brand-gold/40 border-t-[3px] border-t-brand-gold bg-card p-6" style={FS_PATTERN_LIGHT}><point.icon className="h-9 w-9 text-brand-black" /><h3 className="mt-4 font-display text-xl font-bold text-brand-black">{point.title}</h3><p className="mt-3 text-sm text-brand-gray-muted">{point.desc}</p>{point.href && <Link to={point.href} className="mt-4 inline-block text-sm font-semibold text-brand-black underline">See make-ready details</Link>}</article>)}</div>
       </Reveal></div></section>
 
-      <section className="bg-card"><div className="container py-20"><Reveal>
-        <h2 className={`${heading} text-center`}>Cleaning Projects — Photos Coming Soon</h2>
-        <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">{PLACEHOLDERS.map((label) => <ImagePlaceholder key={label} label={label} />)}</div>
-      </Reveal></div></section>
-
-      <FaqAccordion title="Cleaning Services — Frequently Asked Questions" faqs={FAQS} emitSchema={false} />
+      <FaqAccordion title="Cleaning Services — Frequently Asked Questions" faqs={FAQS} emitSchema />
 
       <section className="bg-brand-gold text-brand-black"><div className="container py-20 text-center"><Reveal>
         <h2 className={heading}>Ready for a Clean, Inspection-Ready Property?</h2>

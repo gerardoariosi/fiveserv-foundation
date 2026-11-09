@@ -2,4 +2,4 @@ High-intent SEO pages use shared Seo and SchemaOrg components, while public/site
 Cost pages follow the bathroom cost page structure and use one FAQ array for visible answers and SchemaOrg, with FaqAccordion schema emission disabled, to prevent duplicate or inconsistent FAQ markup.
 Sitemap lastmod values must be explicit authoritative page-specific dates, never current-date or generation-time fallbacks, so regeneration does not imply content changes.
 Flooring-specific visual corrections use scoped semantic tokens under .flooring-page to preserve other service pages while keeping the requested palette and typography.
-Cleaning uses page-local service data and one FAQ array with shared SchemaOrg plus a dedicated cleaning Service schema, because SERVICES is reserved for the four top-level service routes; visual overrides stay scoped to .cleaning-page.
+Cleaning uses page-local service data and a dedicated cleaning Service schema, because SERVICES is reserved for the four top-level service routes; FaqAccordion alone emits FAQPage from the page's FAQ array to avoid duplication, and visual overrides stay scoped to .cleaning-page.
